@@ -23,6 +23,7 @@
 \usepackage{hyperref}
 \usepackage{flafter}
 \usepackage{color,soul} % Highlighting 
+\usepackage{subfigmat}
 
 \usepackage{float} % In-text figs
 \usepackage{varioref}%  smart page, figure, table, and equation ref
@@ -195,54 +196,61 @@ AoA & Angle of Attack & \\
 % Gonsalves Circulation VF
 % The proposed research seeks to improve the use of vector field obstacle avoidance by eliminating singularities and saturated control conditions through the use of a scalar time paramatrized circulation function. 
 
-Unmanned Aerial Vehicles (UAVs) are powerful robotic tools used by military and civilian communities alike. Advances in lightweight materials and commercial electronics have increased the range, payload, and reliability of the crafts. Popular applications for UAVs have been military reconnaissance, environmental surveying, aerial photography, and competitive racing. Much research has been conducted in the areas of UAV navigation, guidance, and control to promote the use of UAVs for more complex tasks. Turning high level tasks such as obstacle avoidance and path following into lower level guidance and control efforts has proven to be difficult and there appears to be no one-fits-all solution. Traditional control systems have been adapted for tasks such as following a moving path \cite{oliveira_moving_2016}, but prove to be fairly complicated and difficult to implement. Researches have found success in vector field methods for guidance and control. Vector fields provide continuous directional guidance to low-level control systems and have been effective at converging to and following a path of primitives \cite{nelson_cooperative_2005}, tracking uncertain moving targets \cite{chen_tracking_2009}, and for obstacle avoidance \cite{chen_uav_2013}. Several methods have been used in literature to construct vector fields consisting primarily of the Lyapunov method \cite{nelson_cooperative_2005}\cite{griffiths_vector_2006}\cite{frew_cooperative_2007}\cite{frew_lyapunov_nodate}  and the intersection of surfaces method \cite{goncalves_artificial_2009}. The vector field method allows for obstacle and goal fields to be generated separately and summed to yield a resulting guidance. Determining the weight of each field and the parameters that define circulation and convergence of the vector fields has yet to be investigated. Current field summation has been avoided due to the possibilities for singularities \cite{nelson_cooperative_2005}, which may be prevented with proper decay and vector field parameter tuning. The method presented in \cite{goncalves_artificial_2009} provides a convenient method for building vector fields consisting of convergence, circulation, and time varying terms. \textbf{The proposed research seeks to provide a goal and obstacle vector field summation strategy that improves circumnavigation around circular and elliptical obstacles}. 
+%Unmanned Aerial Vehicles (UAVs) are powerful robotic tools used by military and civilian communities alike. Advances in lightweight materials and commercial electronics have increased the range, payload, and reliability of the crafts. Popular applications for UAVs have been military reconnaissance, environmental surveying, aerial photography, and competitive racing.
+%
+% Much research has been conducted in the areas of UAV navigation, guidance, and control to promote the use of UAVs for more complex tasks. 
+% 
+% Turning high level tasks such as obstacle avoidance and path following into lower level guidance and control efforts has proven to be difficult and there appears to be no one-fits-all solution. Traditional control systems have been adapted for tasks such as following a moving path \cite{oliveira_moving_2016}, but prove to be fairly complicated and difficult to implement. 
+% 
+% Researches have found success in vector field methods for guidance and control.
+% 
+%  Vector fields provide continuous directional guidance to low-level control systems and have been effective at converging to and following a path of primitives \cite{nelson_cooperative_2005}, tracking uncertain moving targets \cite{chen_tracking_2009}, and for obstacle avoidance \cite{chen_uav_2013}. Several methods have been used in literature to construct vector fields consisting primarily of the Lyapunov method \cite{nelson_cooperative_2005}\cite{griffiths_vector_2006}\cite{frew_cooperative_2007}\cite{frew_lyapunov_nodate}  and the intersection of surfaces method \cite{goncalves_artificial_2009}. The vector field method allows for obstacle and goal fields to be generated separately and summed to yield a resulting guidance. Determining the weight of each field and the parameters that define circulation and convergence of the vector fields has yet to be investigated. Current field summation has been avoided due to the possibilities for singularities \cite{nelson_cooperative_2005}, which may be prevented with proper decay and vector field parameter tuning. The method presented in \cite{goncalves_artificial_2009} provides a convenient method for building vector fields consisting of convergence, circulation, and time varying terms. \textbf{The proposed research seeks to provide a goal and obstacle vector field summation strategy that improves circumnavigation around circular and elliptical obstacles}. 
+
+
+% UAVs definition and uses
+% How they do what they do (high level commands to fly-able path, guidance, control)
+% Turning high lvel tasks such as obstacle avoidance and complex path following into guidance and lower level control has proven to be difficult. 
+% Researches have found success in vector field methods for guidance and control.
+%
+
+
+Fixed wing Unmanned Aerial Vehicles (UAVs) have had an increase use in combat due to their outstanding endurance and autonomy. UAVs are well suited for surveillance and reconnaissance in hostile environments since no on-board pilot is required and missions can be programmed remotely. On-board autopilot systems consisting of path planners, navigation, and guidance are responsible for taking remotely programmed missions and producing flyable paths to a low level controller. Most tasks for UAVs can be framed as a path following problem which has been studied extensively in literature. Control systems have been developed for converging to and following moving paths \cite{oliveira_moving_2016}, but are not necessarily ideal for avoiding obstacles since the path must be recalculated. Much success has been found in vector field guidance methods for converging to and following paths, disturbance rejection, and obstacle avoidance. Vector fields provide continuous directional guidance to low-level control systems and have been effective at converging to and following a path of primitives \cite{nelson_cooperative_2005}, tracking uncertain moving targets \cite{chen_tracking_2009}, and for obstacle avoidance \cite{chen_uav_2013}. Several methods have been used in literature to construct vector fields consisting primarily of the Lyapunov method \cite{nelson_cooperative_2005}\cite{griffiths_vector_2006}\cite{frew_cooperative_2007}\cite{frew_lyapunov_nodate}  and the intersection of surfaces method \cite{goncalves_artificial_2009}. Intersection of surfaces method generates a field that converges to and follows a path by summing convergence, circulation, and time varying terms. The same method has been applied to generate a strictly repulsive vector field for obstacles by changing the sign of the convergence term [Wilhelm, Wambold, Clem]. Adding circulation to a vector field could reduce the distance to circumnavigate an obstacle in comparison to a strictly repulsive field. Vector field parameters have been kept constant and do not consider the state of the vehicle. The state of the UAV could be used to determine the strength of each vector field parameter and the decay function that represents the obstacle to reduce distance traveled. \textbf{The proposed research seeks to provide a goal and obstacle vector field parametrization and decay strategy that improves circumnavigation around circular and elliptical obstacles}.
 
 
 \section{Methods Overview}
-Developing a goal and obstacle vector field summation strategy will be accomplished in three phases. First, singularities described in literature will be reproduced and show qualitatively how adding circulation to an obstacle field promotes circumnavigation. Next, the combination of decay functions and vector field parameters that improve obstacle avoidance will be investigated. Lastly, the modified vector field guidance will be tested on a mobile robot platform operating under the same constraints as a fixed wing will be used to validate the algorithm. 
+%Developing a goal and obstacle vector field summation strategy will be accomplished in three phases. First, singularities described in literature will be reproduced and show qualitatively how adding circulation to an obstacle field promotes circumnavigation. Next, the combination of decay functions and vector field parameters that improve obstacle avoidance will be investigated. Lastly, the modified vector field guidance will be tested on a mobile robot platform operating under the same constraints as a fixed wing will be used to validate the algorithm. 
 
-%Reproduce singularities described in literature and show qualitatively how adding circulation to an obstacle field promotes circumnavigation
-%Next, the combination of decay functions and vector field parameters that improve obstacle avoidance and circumnavigation will be investigated.
-% Lastly, the modified vector field guidance will be tested on a mobile robot platform operating under the same constraints as a fixed wing UAV will be performed to validate the alogorithm
-
+Developing vector field parametrization and decay strategy for circumnavigating an obstacle will be accomplished in three phases. First, vector fields will be produced for circular and elliptical objects using the intersection of surfaces method. Obstacles will be given a strictly repulsive field and summed with a constant goal field resulting in several singularities. Next, a modified vector field will be investigated by varying the vector field parameters and decay as a function of a UAV state for the purposes of reducing the circumnavigation distance and eliminating singularities. A UAV represented by a Dubins airplane model will be given guidance by the field and the distance measured to determine which combinations of parameter and decay functions produce the least distance. Lastly, the algorithm will be implemented in a mobile robot to validate the modified guidance as a real-time path following and obstacle circumnavigating algorithm. 
 
 
 \section{Phase I}
-\textbf{The objective of Phase I is to demonstrate vector field summing singularity and compare strictly repulsive obstacles to circulating obstacles.} A resultant vector field with singularities will be produced by summing a strictly repulsive vector field with a goal field of equal weight. Next, it will be shown that singularities can be avoided by adding a non-zero circulation term to the obstacle vector field. A qualitative side-by-side comparison to circulating and non-circulating vector fields are expected to show that adding a non-zero circulation multiplier reduces the impact of singularities and assists in circumnavigating an obstacle. 
-
-%\begin{enumerate}
-%	\item Generate a constant goal vector field that is non-zero only in the x-direction
-%	\item Generate an obstacle centered at the origin with a repulsive vector field
-%	\item Sum the goal and obstacle field together
-%	\item Plot the resulting field and observe the singularities
-%	\item Modify the repulsive vector field to have an equally weighted circulation and convergence multiplier
-%	\item Plot the resulting field and observe the singularities 
-%\end{enumerate}
-
-
+\textbf{The objective of Phase I is to recreate vector fields for circular and elliptical obstacles and demonstrate the possibility for singularities.} The intersection of two surfaces method for generating a path following vector field can also be used to generate repulsive vector fields by changing the sign of the convergence parameter. Two repulsive fields will be investigated consisting of circular and elliptical shapes. The equations for each field will be derived and it will be shown how modifying the convergence and circulation parameters effect the shape of a vector field. Lastly, the repulsive vector fields will be placed inside of goal vector field of constant heading to characterize the possibility to encounter singularities when summing opposing fields. 
 
 \section{Phase II}
-\textbf{The objective of Phase II is to Discover what combination of flight parameters has the most positive effect on obstacle avoidance.} The simulations from Phase I will be repeated with a modified repulsive vector field that includes a time parametrized circulation term. Commonly used flight parameters such as closing velocity, position, and heading will be used to form in isolation and in combination to create several scalar time parameterized functions that modify the circulation of the vector field. Decay functions that determine the weight of the goal and obstacle vector fields will be investigated. The combination of vector field convergence and circulation parameters along with the decay functions will be compared by implementing a Dubins vehicle with forward velocity and turning rate constraints.
+\textbf{The objective of Phase II is to investigate methods for selecting vector field parameters and decay functions to improve obstacle circumnavigation.} Obstacle vector fields placed in a goal field will theoretically put the UAV on a path to eventually circumnavigate an obstacle and reach the goal. The direction and intensity in which the UAV will maneuver around the obstacle is dependent on the weight of the convergence and circulation terms of a vector field. Calculating the convergence and circulation as a function of vehicle state may improve performance in comparison to a static hand-picked set of convergence and circulation terms. Common parameters used by autopilots such as heading, closing rate, position, and range will be used to develop functions that modify an obstacles vector field components. Decay functions for the obstacle and goal vector field weights will be investigated. Decay functions have been used for obstacles in [Wilhelm, Wambold, Clem] to repel a fixed wing UAV from an obstacle while circumnavigating a moving target, however weights for the goal field was not considered. Adding decay functions for both a goal and obstacle field prior to summing the two may help prevent singularities and deadzones. 
+
+
+The modified field will be compared against a strictly repulsive field in simulation. Each simulation will consist of a circular or elliptical obstacle placed in a map where a constant goal vector field is present. A UAV modeled as a Dubins airplaine will use the resulting vector field guidance to navigate the map. The total distance traveled will be used to determine if a parametrized and decay function modified obstacle vector field improves the performance.
 
 
 \section{Phase III}
-\textbf{The objective of Phase III is to Validate parametrized vector field circulation model through mobile robot experiments.} The modified vector field with parametrized circulation determined from Phase II will be implemented on a mobile ground robot with scaled forward velocity and turning rate constraints present on fixed wing UAV aircraft.
+\textbf{The objective of Phase III is to validate parametrized vector field circulation model through mobile robot experiments.} The modified obstacle vector field simulation scenarios from Phase II will be programmed into Python for easy implementation on a mobile robot. Simulations performed in Python will be compared against those done in MATLAB to ensure the algorithm is correct. The Python vector field guidance will be copied to a raspberry pi which receives position data from a Vicon motion capture system. Using the position and heading from the Vicon system, the modified guidance algorithm will calculate a commanded heading. The guidance command will be given to a low level controller that will calculate the necessary PWM commands to achieve the desired guidance.
 
 
 \section{Summary of Objectives}
 \textbf{Phase I:}
 \begin{itemize}
-\item The objective of Phase I is to demonstrate vector field summing singularity and compare strictly repulsive obstacles to circulating obstacles
+\item The objective of Phase I is to recreate vector fields for circular and elliptical obstacles and demonstrate the possibility for singularities
 \end{itemize}
 
 \textbf{Phase II:}
 \begin{itemize}
-	\item The objective of Phase II is to Discover what combination of flight parameters has the most positive effect on obstacle avoidance
+	\item The objective of Phase II is to investigate methods for selecting vector field parameters and decay functions to improve obstacle circumnavigation
 \end{itemize}
 
 \textbf{Phase III:}
 \begin{itemize}
-\item The objective of Phase III is to Validate parametrized vector field circulation model through mobile robot experiments
+\item The objective of Phase III is to validate parametrized vector field circulation model through mobile robot experiments
 \end{itemize}
 
 
@@ -255,32 +263,45 @@ The objectives listed above are put fourth so that the following deliverable can
 
 \chapter{Literature Review}
 \section{Introduction to Literature Review}
+
+% The following sections provide a discussion on the literature in regards to the modeling of fixed wing UAVs and the navigation, guidance, and control systems that govern the behavior of the crafts
+% 
+%
+
 The following sections provide a discussion on the literature in regards to the modeling of fixed wing UAVs and the navigation, guidance, and control systems that govern the behavior of the crafts. First, the fixed wing is introduced and a brief discussion on the modeling techniques commonly used for navigation, guidance, and control design. An overview of the structure of autopilots that execute the models is presented. Then, an overview of navigation, guidance, and control is given along with the cutting edge techniques for guidance. (Revisit this section when a rough draft is complete)
 
 
 \section{Fixed Wing Unmanned Aerial Vehicle}
 \subsection{Introduction to Fixed Wing UAV}
+%  Fixed wing UAVs have found significant use in surveillance and reconnaissance in hostile environments since no on-board pilot is required.
+%  UAVs can be sent missions and piloted remotely, keeping soldiers out of harms way
+%  Operators can be relieved easily when becoming fatigued without landing the UAV, allowing it to fly for extended missions, accomplishing more tasks
+%  Fixed wings come in many different sizes and configurations but can be categorized into large and hand lanched varieties
+%  Large fixed wing UAVs require long stretches of runway to takeoff and land, are gas powered, and can carry large payloads consisting of sensor packages, high resolution cameras, and scientific instrumentation shown in Figure \ref{fig:globalhawk}.
 
+Fixed wing UAVs have been used for surveillance and reconnaissance in hostile environments since no on-board pilot is required. Ground stations allow for remote data collection and piloting, keeping soldiers out of harms way. During long endurance missions, operators can easily be changed out when fatigued allowing the UAV to remain in service for many hours beyond what a single pilot could safely handle. Keeping the UAV in service for longer allows more tasks to be accomplished. Fixed wing UAVs come in many different sizes and configurations, but can be categorized into large and hand-launched varieties. Large fixed wing UAVs require long stretches of runway to takeoff and land, are gas powered, and can carry large payloads consisting of sensor packages, high resolution cameras, and scientific instrumentation shown in Figure \ref{fig:fixedwings}a. Hand-launched UAVs can be easily broken down and carried by a single person and are often battery powered. Easily deployed, the hand-launched UAVs take-off by being thrown in a similar way as a javelin shown in Figure \ref{fig:fixedwings}b. The smaller form factor makes hand-launched UAVs well suited for short range reconnaissance and for carrying lightweight payloads with low to medium resolution cameras.
 
+%Fixed wing UAVs have found uses in surveillance, reconnaissance, environmental surveying, aerial photography, and competitive racing. The crafts are well suited to carry out tasks that require long endurance and large payloads.
+%Fixed wing UAVs come in many different sizes and configurations, but can be categorized into large and hand-launched varieties. Large fixed wing UAVs require long stretches of runway to takeoff and land, are gas powered, and can carry large payloads consisting of sensor packages, high resolution cameras, and scientific instrumentation shown in Figure \ref{fig:globalhawk}. Hand-launched UAVs can be easily broken down and carried by a single person and are often battery powered. Easily deployed, the hand-launched UAVs take-off by being thrown in a similar way as a javelin shown in Figure \ref{fig:handlaunched}. The smaller form factor makes hand-launched UAVs well suited for short range reconnaissance and for carrying lightweight payloads with low to medium resolution cameras. \\
 
-
-Fixed wing UAVs have found uses in surveillance, reconnaissance, environmental surveying, aerial photography, and competitive racing. The crafts are well suited to carry out tasks that require long endurance and large payloads. Fixed wing UAVs come in many different sizes and configurations, but can be categorized into large and hand-launched varieties. Large fixed wing UAVs require long streches of runway to takeoff and land, are gas powered, and can carry large payloads consisting of sensor packages, high resolution cameras, and scientific instrumentation shown in Figure . Hand-launched UAVs can be easily broken down and carried by a single person and are often battery powered. Easily deployed, the hand-launched UAVs take-off by being thrown in a similar way as a javelin shown in Figure \ref{fig:handlaunched}. The smaller form factor makes hand-launched UAVs well suited for short range reconnaissance and for carrying lightweight payloads with low to medium resolution cameras. \\
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.5\linewidth]{PaperFigures/globalhawk}
-	\caption{}
-	\label{fig:globalhawk}
+\begin{figure}[H]
+	\begin{subfigmatrix}{2}% number of columns
+		\centering
+		\subfigure []{\includegraphics[width=7.7cm] {PaperFigures/globalhawk}}
+		\subfigure []{\includegraphics[width=7cm] {PaperFigures/handlaunched}}
+		\hspace*{0mm}
+	\end{subfigmatrix}
+	\caption{Global Hawk and Hand Launched Fixed Wing UAV}
+	\label{fig:fixedwings}
 \end{figure}
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.5\linewidth]{PaperFigures/handlaunched}
-	\caption{}
-	\label{fig:handlaunched}
-\end{figure}
 
-Both large and hand-launched UAVs operate under the same basic principle consisting of navigation, guidance, and control depicted in Figure \ref{fig:ngcflow}. The desired path to be flown is passed to a guidance algorithm whose purpose is to produce guidance ocmmands consumable by the low level-control system that puts the UAV on the desired path. Navigation systems are responsible for estimating the state of the UAV to provide feedback to both guidance and control loops. For more detail on NGC systems, refer to section \ref{NGC}. Each of the NGC sub systems are typically not evaluated independently and must be integrated into a complete NGC system to evaluate th performance as a whole. The most common ways to measure the performance of a UAV system are tracking error with respect to the desired path and control effort.
+
+
+
+Both large and hand-launched UAVs operate by using path planning, navigation, guidance, and control algorithms depicted in Figure \ref{fig:ngcflow}. Most UAV tasks can be framed as path following problems such as waypoint navigation or loitering. The UAVs path planner is responsible for generating a flyable path from the current state to the desired state while avoiding known obstacles. Guidance systems are responsible for producing guidance commands to the low level controller that guide the UAV towards the desired path. Navigation systems are responsible for estimating the state of the UAV to provide feedback to both guidance and control loops. For more detail on navigation, guidance, and control systems, refer to section \ref{NGC}. Each of the navigation, guidance, and control sub systems are typically not evaluated independently and must be integrated into a complete system to evaluate the performance as a whole. The most common ways to measure the performance of a UAV system are tracking error with respect to the desired path and control effort. Next, common UAV modeling techniques will be discussed.
+
+%Both large and hand-launched UAVs operate under the same basic principle consisting of navigation, guidance, and control depicted in Figure \ref{fig:ngcflow}. The desired path to be flown is passed to a guidance algorithm whose purpose is to produce guidance ocmmands consumable by the low level-control system that puts the UAV on the desired path. Navigation systems are responsible for estimating the state of the UAV to provide feedback to both guidance and control loops. For more detail on NGC systems, refer to section \ref{NGC}. Each of the NGC sub systems are typically not evaluated independently and must be integrated into a complete NGC system to evaluate th performance as a whole. The most common ways to measure the performance of a UAV system are tracking error with respect to the desired path and control effort.
 
 \begin{figure}[]
 	\centering
@@ -291,11 +312,17 @@ Both large and hand-launched UAVs operate under the same basic principle consist
 
 
 
-
-
-
 \subsection{Modeling}
-The fixed wing UAV is a 6 degree of freedom (DOF) system with four degrees of control consisting of pitch, roll, yaw, and thrust. Change in the control variables is done by actuating the elevator (pitch), ailerons (roll), rudder (yaw), and propeller or jet (thrust). Due to the under actuation and complex non-linear dynamics of the UAV, high fidelity models tend to be high order and non-linear. High order non-linear models can be linearized and simplified to be used in low level control systems to maintain vehicle stability. Beyond the control aspect of UAVs, the high order non-linear models are not always necessary. It is common in literature to simplify complex non-linear dynamics of a fixed wing UAV by implementing a 2D Dubins vehicle model \cite{chen_tracking_2009} \cite{liang_tangent_2017} \cite{nelson_cooperative_2005} \cite{griffiths_vector_2006} \cite{jung_unmanned_2016}. When simplified kinematics are used when developing navigation and guidance systems, it is assumed that there already exists a low level control loop that maintains vehicle stability and performs according to the kinematic model in Equations \ref{dubinsx}-\ref{dubinsy}. 
+% Modeling of fixed wing UAVs is often simplified
+% High fidelity models are complex because they are high-order and non-linear
+% The 6 degree of freedom crafts only have 4 degrees of controllable freedom resulting in state coupling which also complicates the models
+% High order non-linear models can be simplified when developing control systems that accurately capture the dynamics of the UAV
+% Beyond the control aspect of UAVs, the high order non-linear models are not always necessary. It is common in literature to simplify complex non-linear dynamics of a fixed wing UAV by implementing a 2D Dubins vehicle model \cite{chen_tracking_2009} \cite{liang_tangent_2017} \cite{nelson_cooperative_2005} \cite{griffiths_vector_2006} \cite{jung_unmanned_2016}. When simplified kinematics are used when developing navigation and guidance systems, it is assumed that there already exists a low level control loop that maintains vehicle stability and performs according to the kinematic model in Equations \ref{dubinsx}-\ref{dubinsy}.
+%
+
+Accurate models of fixed wing UAVs tend to be high order, coupled, non-linear systems that can be difficult to solve for. The complexity is due to the fact that a fixed UAV has 6 degrees of freedom with only 4 degrees of control and has non-linear aerodynamic external forces. Models can be linearized and simplified when designing control systems, but still maintain high complexity and require significant effort to implement. Beyond the control aspect of UAVs, the high order non-linear models are not always necessary. It is common in literature to simplify complex non-linear dynamics of a fixed wing UAV by implementing a 2D Dubins vehicle model \cite{chen_tracking_2009} \cite{liang_tangent_2017} \cite{nelson_cooperative_2005} \cite{griffiths_vector_2006} \cite{jung_unmanned_2016}. When simplified kinematics are used when developing navigation and guidance systems, it is assumed that there already exists a low level control loop that maintains vehicle stability and performs according to the kinematic model in Equations \ref{dubinsx}-\ref{dubinsy}.
+
+%The fixed wing UAV is a 6 degree of freedom (DOF) system with four degrees of control consisting of pitch, roll, yaw, and thrust. Change in the control variables is done by actuating the elevator (pitch), ailerons (roll), rudder (yaw), and propeller or jet (thrust). Due to the under actuation and complex non-linear dynamics of the UAV, high fidelity models tend to be high order and non-linear. High order non-linear models can be linearized and simplified to be used in low level control systems to maintain vehicle stability. Beyond the control aspect of UAVs, the high order non-linear models are not always necessary. It is common in literature to simplify complex non-linear dynamics of a fixed wing UAV by implementing a 2D Dubins vehicle model \cite{chen_tracking_2009} \cite{liang_tangent_2017} \cite{nelson_cooperative_2005} \cite{griffiths_vector_2006} \cite{jung_unmanned_2016}. When simplified kinematics are used when developing navigation and guidance systems, it is assumed that there already exists a low level control loop that maintains vehicle stability and performs according to the kinematic model in Equations \ref{dubinsx}-\ref{dubinsy}. 
 
 
 The position of the vehicle at any point in 2D Cartesian space is defined as $(x,y)$ and the velocity of a vehicle in each axis is defined as $(\dot{x},\dot{y})$.
@@ -310,7 +337,7 @@ The position of the vehicle at any point in 2D Cartesian space is defined as $(x
 \end{equation}
 
 
-The position of the vehicle at any point in 2D Cartesian space is defined as $(x,y)$ and the velocity of a vehicle in each axis is defined as $(\dot{x},\dot{y})$. The heading of the vehicle $\theta$ is most frequently used as the input $\boldsymbol{u} = \theta$. To more closely represent the dynamics of a fixed wing, constraints are given to the velocity $V$ and turning rate $\dot{\theta}$. 
+The heading of the vehicle $\theta$ is most frequently used as the input $\boldsymbol{u} = \theta$. To more closely represent the dynamics of a fixed wing, constraints are given to the velocity $V$ and turning rate $\dot{\theta}$. 
 
 
 
@@ -325,20 +352,18 @@ The devices that are assumed to be in control of the UAV when designing guidance
 
 
 \subsection{Autopilot}
-The autopilot is a software and hardware package that brings navigation, guidance, and control techniques to realization. A typical autopilot system is depicted in Figure \ref{fig:pixhawk}, consisting of a hard shell protecting sensors with numerous input and output connectors for power, communication, and servo actuation. The flight controller is responsible for several major tasks including maintaining vehicle stability, turning high level commands into low level control effort, and recording and transmitting data to ground stations. Autopilots accomplish these tasks by implementing several layers of algorithms consisting of navigation, guidance, and control which will be discussed next. An autopilot is a software and hardware package that executes the NGC systems that allow for complex flight. A typical autopilot system is depicted in Figure \ref{fig:pixhawk}, consisting of a hard shell protecting sensors with numerous input and output connectors for power, communication, and servo actuation. The flight controller is responsible for several major tasks including maintaining vehicle stability, turning high level commands into low level control effort, and recording and transmitting data to ground stations.
+The autopilot is a software and hardware package that brings navigation, guidance, and control techniques to realization. A typical autopilot system is depicted in Figure \ref{fig:pixhawk}, consisting of a hard shell protecting sensors with numerous input and output connectors for power, communication, and servo actuation. The flight controller is responsible for several major tasks including maintaining vehicle stability, turning high level commands into low level control effort, and recording and transmitting data to ground stations. Autopilots accomplish these tasks by implementing several layers of algorithms consisting of navigation, guidance, and control which will be discussed next.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.\linewidth]{PaperFigures/pixhawk}
+	\includegraphics[width=0.3\linewidth]{PaperFigures/pixhawk}
 	\caption{Pixhawk Flight Controller}
 	\label{fig:pixhawk}
 \end{figure}
 
-
 \section{Navigation, Guidance and Control} \label{NGC}
 \subsection{Introduction to NGC}
 Nearly all of the systems that go into an autopilot system for a fixed wing UAV can be put under the category of Navigation, Guidance, or Control (NGC). Traditionally, NGC could be thought of separate but equally important algorithm layers that aid an autopilot in accomplishing a given task. Navigation is the study of measuring and filtering the state of a vehicle. Guidance produces a commanded state based on high level requests from a path planner or user. Control maintains vehicle stability while attempting to achieve the state commanded by the high level guidance system. Lately, the lines between guidance and control have become less clear as the systems become more integrated with each other, resulting in more complex capabilities. Continuing with the convention in literature, navigation will be discussed as a separate unit while guidance and control will be discussed simultaneously. Guidance and control will be discussed as a single system and two commonly researched algorithms, potential and vector field methods, will be discussed.
-
 
 \subsection{Navigation}
 
