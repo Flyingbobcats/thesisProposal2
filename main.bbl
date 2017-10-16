@@ -4,8 +4,16 @@
 \bibitem{bone_uavs_2003}
 Bone, E., \enquote{{UAVs} backbround and issues for congress.pdf,} 2003.
 
-\bibitem{nelson_cooperative_2005}
-Nelson, D.~R., \enquote{Cooperative control of miniature air vehicles,} 2005.
+\bibitem{sujit_unmanned_2014}
+Sujit, P., Saripalli, S., and Sousa, J.~B., \enquote{Unmanned {Aerial}
+  {Vehicle} {Path} {Following}: {A} {Survey} and {Analysis} of {Algorithms} for
+  {Fixed}-{Wing} {Unmanned} {Aerial} {Vehicless},} {\em IEEE Control
+  Systems\/}, Vol.~34, No.~1, Feb. 2014, pp.~42--59.
+
+\bibitem{goncalves_artificial_2009}
+Goncalves, V.~M., Pimenta, L. C.~A., Maia, C.~A., and Pereira, G. A.~S.,
+  \enquote{Artificial vector fields for robot convergence and circulation of
+  time-varying curves in n-dimensional spaces,} IEEE, 2009, pp. 2012--2017.
 
 \bibitem{chen_tracking_2009}
 Chen, H., Chang, K., and Agate, C.~S., \enquote{Tracking with {UAV} using
@@ -13,21 +21,13 @@ Chen, H., Chang, K., and Agate, C.~S., \enquote{Tracking with {UAV} using
   2009. {FUSION}'09. 12th {International} {Conference} on\/}, IEEE, 2009, pp.
   363--372.
 
-\bibitem{chen_uav_2013}
-Chen, H., Chang, K., and Agate, C.~S., \enquote{{UAV} path planning with
-  tangent-plus-{Lyapunov} vector field guidance and obstacle avoidance,} {\em
-  IEEE Transactions on Aerospace and Electronic Systems\/}, Vol.~49, No.~2,
-  2013, pp.~840--856.
-
-\bibitem{goncalves_artificial_2009}
-Goncalves, V.~M., Pimenta, L. C.~A., Maia, C.~A., and Pereira, G. A.~S.,
-  \enquote{Artificial vector fields for robot convergence and circulation of
-  time-varying curves in n-dimensional spaces,} IEEE, 2009, pp. 2012--2017.
-
 \bibitem{liang_tangent_2017}
 Liang, Y. and Jia, Y., \enquote{Tangent vector field approach for curved path
   following with input saturation,} {\em Systems \& Control Letters\/},
   Vol.~104, June 2017, pp.~49--58.
+
+\bibitem{nelson_cooperative_2005}
+Nelson, D.~R., \enquote{Cooperative control of miniature air vehicles,} 2005.
 
 \bibitem{griffiths_vector_2006}
 Griffiths, S., \enquote{Vector {Field} {Approach} for {Curved} {Path}

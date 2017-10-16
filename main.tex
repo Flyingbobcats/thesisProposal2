@@ -226,61 +226,65 @@ AoA & Angle of Attack & \\
 % Fixed wing Unmanned Aerial Vehicles (UAVs) have been successful at performing missions that historically are flown by manned aircraft, removing pilots from dangerous situations \cite{bone_uavs_2003}.
 % The ability to pilot the UAV remotely not only removes a pilot from harms way, but also allows pilots to trade-off when fatigued, allowing the UAV to remain in service for longer periods of time. Locating targets, surveillance, and damage assessment are all tasks given to UAVs. Missions are built from simple maneuvers such as loitering and point to-point navigation which are programmed a priori. More complex tasks such as obstacle avoidance and path following require an off-line ground station to construct flyable and collision free paths, which takes time and resources. If obstacle avoidance would be delegated to processes running on the autopilot instead of the ground station UAVs can begin a mission earlier. Vector field guidance is a low computation cost method that can guide a UAV to a path \cite{nelson_cooperative_2005}, track uncertain moving targets \cite{chen_tracking_2009}, and avoid obstacles \cite{chen_uav_2013}. Parameters of a vector field determine the shape of the field and ultimately the path of a UAV. A convenient vector field method generates a field that converges and follows a path by summing convergence, circulation, and time varying terms is introduced in \cite{goncalves_artificial_2009}. The same method has been applied to generate repulsive obstacles by changing the sign of the convergence term [Wilhelm, Wambold, Clem]. There has been no investigation into the selection of the vector field convergence and circulation parameters for the purposes obstacle avoidance. The state of the UAV could be used to determine the strength of each vector field parameter and the decay function that represents the obstacle to reduce distance traveled. \textbf{The proposed research seeks to determine the vector field parameters that have the strongest effect on obstacle avoidance}.
  
- Fixed wing Unmanned Aerial Vehicles are used for long endurance missions such as surveillance that would fatigue pilots or  put them in harms way.  Missions are built from primitive flight maneuvers such as waypoint navigation and loitering which are executed by path following. Obstacle free paths are typically pre-planned on ground stations and relayed to a UAVs guidance system which provides reference commands to an autopilot.  Obstacles are not always known a priori and once discovered a new path must be generated and relayed to the UAV.  Planning obstacle free and flyable paths takes time and may be impossible to relay to a UAV if communication is not reliable.  An on-board real-time guidance that follows mission paths while avoiding obstacles without the need for constant communication with a ground station or complete path recalculation may be realized through Gradient Vector Fields (GVF). GVFs produce heading guidance at any point in space for converging and following a path by summing together convergence and circulation field components. The convergence component produces vectors that point to a path and the circulation component produces vectors that follow a path. Each component is multiplied by a static scalar to weight how much influence each has on the total field. Obstacles have been represented as separate repulsive GVFs that are later summed to the path following GVF. Static GVF weights do not consider the state of the UAV resulting in sub-optimal guidance. Modifying the GVF convergence and circulation weights to be functions of common UAV states may generate an optimal guidance. \textbf{The proposed research seeks to determine vector field weighting functions that construct optimal obstacle avoidance.}
+ Fixed wing Unmanned Aerial Vehicles are used for long endurance missions such as surveillance that would fatigue pilots or  put them in harms way \cite{bone_uavs_2003}.  Missions are built from primitive flight maneuvers such as waypoint navigation and loitering which are executed by path following \cite{sujit_unmanned_2014}. Obstacle free paths are typically pre-planned on ground stations and relayed to a UAVs guidance system which provides reference commands to an autopilot.  Obstacles are not always known a priori and once discovered a new path must be generated and relayed to the UAV.  Planning obstacle free and flyable paths takes time and may be impossible to relay to a UAV if communication is not reliable.  An on-board real-time guidance that follows mission paths while avoiding obstacles without the need for constant communication with a ground station or complete path recalculation may be realized through Gradient Vector Fields (GVF) \cite{goncalves_artificial_2009}. GVFs produce heading guidance at any point in space for converging and following a path by summing together convergence and circulation field components. The convergence component produces vectors that point to a path and the circulation component produces vectors that follow a path. Each component is multiplied by a static scalar to weight how much influence each has on the total field. Obstacles have been represented as separate repulsive GVFs that are later summed to the path following GVF [Wilhelm, Wambold, Clem]. Static GVF weights do not consider the state of the UAV resulting in sub-optimal guidance. Modifying the GVF convergence and circulation weights to be functions of common UAV states may generate an optimal guidance. \textbf{The proposed research seeks to determine GVF weighting functions that construct optimal obstacle avoidance.}
 
 \section{Methods Overview}
 %Developing a goal and obstacle vector field summation strategy will be accomplished in three phases. First, singularities described in literature will be reproduced and show qualitatively how adding circulation to an obstacle field promotes circumnavigation. Next, the combination of decay functions and vector field parameters that improve obstacle avoidance will be investigated. Lastly, the modified vector field guidance will be tested on a mobile robot platform operating under the same constraints as a fixed wing will be used to validate the algorithm. 
 
 %Developing vector field parametrization and decay strategy for circumnavigating an obstacle will be accomplished in three phases. First, vector fields will be produced for circular and elliptical objects using the intersection of surfaces method. Obstacles will be given a strictly repulsive field and summed with a constant goal field resulting in several singularities. Next, a modified vector field will be investigated by varying the vector field parameters and decay as a function of a UAV state for the purposes of reducing the circumnavigation distance and eliminating singularities. A UAV represented by a Dubins airplane model will be given guidance by the field and the distance measured to determine which combinations of parameter and decay functions produce the least distance. Lastly, the algorithm will be implemented in a mobile robot to validate the modified guidance as a real-time path following and obstacle circumnavigating algorithm. 
 
-The proposed research will be conducted in three phases, each seeking to accomplish a single objective. Vector fields will be reproduced from literature for circular and elliptical obstacles. Singularities and the conditions that cause them will be demonstrated. A modified vector field with variable parameters and decay functions will be investigated and compared against the unmodified vector field. The combination of parameters and decay functions that produce the best guidance will be implemented on a mobile robot for verification. 
+%The proposed research will be conducted in three phases, each seeking to accomplish a single objective. Vector fields will be reproduced from literature for circular and elliptical obstacles. Singularities and the conditions that cause them will be demonstrated. A modified vector field with variable parameters and decay functions will be investigated and compared against the unmodified vector field. The combination of parameters and decay functions that produce the best guidance will be implemented on a mobile robot for verification. 
+
+The proposed research will be conducted in three phases where GVF singularities will be demonstrated, GVF weighting functions will be investigated, and the modified GVF will be validated on a ground robot. Phases I and II will be conducted in a simulation environment that combines mission paths and obstacles into a single GVF. Phase III will be conducted with a ground robot guided by the modified GVF in real-time. Dubins fixed wing constraints will be imposed in simulations and experiments. 
 
 
 \section{Phase I}
-\textbf{The objective of Phase I is to recreate vector fields for circular and elliptical obstacles and demonstrate conditions of singularities.} The intersection of two surfaces method for generating a path following vector field can also be used to generate repulsive vector fields by changing the sign of the convergence parameter. Two repulsive fields will be investigated consisting of circular and elliptical shapes. The equations for each field will be derived and it will be shown how modifying the convergence and circulation parameters effect the shape of a vector field. Lastly, the repulsive vector fields will be placed inside of goal vector field of constant heading to characterize the singularities when summing opposing fields. 
+\textbf{Recreate vector fields for circular and elliptical obstacles and demonstrate singularities.} A simulation environment will be built that generates GVFs consisting of mission paths and obstacles. Circular and elliptical obstacles will be investigated and the resulting singularities will be characterized. 
+
+
 
 \section{Phase II}
-\textbf{The objective of Phase II is to investigate methods for selecting vector field parameters and decay functions to improve obstacle avoidance.} Common parameters used by autopilots such as heading, closing rate, position, and range will be used to develop functions that modify an obstacles vector field components. Decay functions for the obstacle and goal vector field weights will be investigated. The modified field will be compared against a strictly repulsive field in simulation. Each simulation will consist of a circular or elliptical obstacle placed in a map where a constant goal vector field is present. A UAV modeled as a Dubins airplaine will use the resulting vector field guidance to navigate the map. The total distance traveled will be used to determine if a parametrized and decay function modified obstacle vector field improves the performance.
+\textbf{Investigate GVF weighting functions that influence obstacle avoidance.} UAV closing rate, position, and range will be used to develop GVF weights for convergence and circulation. The modified GVF will be compared against a static and strictly repulsive GVF. Distance traveled and time of flight will be used to compare the modified GVF to the unmodified GVF.  
 
-%Obstacle vector fields placed in a goal field will theoretically put the UAV on a path to eventually circumnavigate an obstacle and reach the goal. 
-% 
-% The direction and intensity in which the UAV will maneuver around the obstacle is dependent on the weight of the convergence and circulation terms of a vector field. Calculating the convergence and circulation as a function of vehicle state may improve performance in comparison to a static hand-picked set of convergence and circulation terms. 
-% 
-% Common parameters used by autopilots such as heading, closing rate, position, and range will be used to develop functions that modify an obstacles vector field components.
-% 
-%  Decay functions for the obstacle and goal vector field weights will be investigated. 
-%  
-%  Decay functions have been used for obstacles in [Wilhelm, Wambold, Clem] to repel a fixed wing UAV from an obstacle while circumnavigating a moving target, however weights for the goal field was not considered. Adding decay functions for both a goal and obstacle field prior to summing the two may help prevent singularities and deadzones. 
-
-
-%The modified field will be compared against a strictly repulsive field in simulation. Each simulation will consist of a circular or elliptical obstacle placed in a map where a constant goal vector field is present. A UAV modeled as a Dubins airplaine will use the resulting vector field guidance to navigate the map. The total distance traveled will be used to determine if a parametrized and decay function modified obstacle vector field improves the performance.
 
 
 \section{Phase III}
-\textbf{The objective of Phase III is to validate parametrized vector field circulation model through mobile robot experiments.} The modified obstacle vector field simulation scenarios from Phase II will be programmed into Python for easy implementation on a mobile robot. Simulations performed in Python will be compared against those done in MATLAB to ensure the algorithm is correct. The Python vector field guidance will be copied to a raspberry pi which receives position data from a Vicon motion capture system. Using the position and heading from the Vicon system, the modified guidance algorithm will calculate a commanded heading. The guidance command will be given to a low level controller that will calculate the necessary PWM commands to achieve the desired guidance.
+\textbf{Validate modified GVF model with ground robot experiments.} The modified GVF developed in Phase II will be implemented on a differential drive ground robot operating under fixed wing Dubins constraints. Guidance will be calculated on-board to guide the robot to a path while avoiding obstacles. Performance of the GVF in experiment will be compared against simulation to conclude if the modified GVF operating in real-time is a viable guidance method. 
+
+\section{Summary of Phases}
+
+Each phases consists of a \textbf{goal} that will be accomplished by executing \textit{objectives}. Completion of all objectives and phases will result in the final \underline{deliverable}. \\
+
+\textbf{Phase I:} Demonstrate Gradient Vector Field Singularities.
+\textit{
+\begin{enumerate}
+	\item Build a GVF simulation environment
+	\item Derive GVF for circular and elliptical obstacles
+	\item Sum mission path and obstacles together to demonstrate singularities 
+\end{enumerate}
+}
+
+\textbf{Phase II:} Investigate GVF weighting functions that influence obstacle avoidance.
+\textit{
+\begin{enumerate}
+	\item Formulate circulation and convergence weights as functions of UAV state
+	\item Determine combination of GVF weights that produces optimal guidance in simulation
+\end{enumerate}
+}
+
+\textbf{Phase III:} Validate modified GVF model with ground robot experiments.
+\textit{
+\begin{enumerate}
+	\item Build differential drive robot
+	\item Build robotic framework to take guidance commands
+	\item Repeat simulations performed in Phase II on ground robot
+\end{enumerate}
+}
 
 
-\section{Summary of Objectives}
-\textbf{Phase I:}
-\begin{itemize}
-\item Recreate vector fields for circular and elliptical obstacles and demonstrate conditions of singularities
-\end{itemize}
-
-\textbf{Phase II:}
-\begin{itemize}
-	\item Investigate methods for selecting vector field parameters and decay functions to improve obstacle avoidance 
-\end{itemize}
-
-\textbf{Phase III:}
-\begin{itemize}
-\item Validate parametrized vector field circulation model through mobile robot experiments
-\end{itemize}
+\textbf{Deliverable:} \underline{Modified GVF optimal guidance for path following and obstacle avoidance}.
 
 
-
-
-\subsection{Deliverables}
-The objectives listed above are put fourth so that the following deliverable can be presented at the conclusion of the research. \textbf{The proposed research seeks to provide a goal and obstacle vector field summation strategy that improves circumnavigation around circular and elliptical obstacles.}
 
 
 
