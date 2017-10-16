@@ -1,11 +1,8 @@
 \begin{thebibliography}{10}
 \newcommand{\enquote}[1]{``#1''}
 
-\bibitem{oliveira_moving_2016}
-Oliveira, T., Aguiar, A.~P., and Encarnacao, P., \enquote{Moving {Path}
-  {Following} for {Unmanned} {Aerial} {Vehicles} {With} {Applications} to
-  {Single} and {Multiple} {Target} {Tracking} {Problems},} {\em IEEE
-  Transactions on Robotics\/}, Vol.~32, No.~5, Oct. 2016, pp.~1062--1078.
+\bibitem{bone_uavs_2003}
+Bone, E., \enquote{{UAVs} backbround and issues for congress.pdf,} 2003.
 
 \bibitem{nelson_cooperative_2005}
 Nelson, D.~R., \enquote{Cooperative control of miniature air vehicles,} 2005.
@@ -22,20 +19,6 @@ Chen, H., Chang, K., and Agate, C.~S., \enquote{{UAV} path planning with
   IEEE Transactions on Aerospace and Electronic Systems\/}, Vol.~49, No.~2,
   2013, pp.~840--856.
 
-\bibitem{griffiths_vector_2006}
-Griffiths, S., \enquote{Vector {Field} {Approach} for {Curved} {Path}
-  {Following} for {Miniature} {Aerial} {Vehicles},} American Institute of
-  Aeronautics and Astronautics, Aug. 2006.
-
-\bibitem{frew_cooperative_2007}
-Frew, E.~W., \enquote{Cooperative standoff tracking of uncertain moving targets
-  using active robot networks,} {\em Robotics and {Automation}, 2007 {IEEE}
-  {International} {Conference} on\/}, IEEE, 2007, pp. 3277--3282.
-
-\bibitem{frew_lyapunov_nodate}
-Frew, E., \enquote{Lyapunov {Guidance} {Vector} {Fields} for {Unmanned}
-  {Aircraft} {Applications}.pdf,} .
-
 \bibitem{goncalves_artificial_2009}
 Goncalves, V.~M., Pimenta, L. C.~A., Maia, C.~A., and Pereira, G. A.~S.,
   \enquote{Artificial vector fields for robot convergence and circulation of
@@ -45,6 +28,11 @@ Goncalves, V.~M., Pimenta, L. C.~A., Maia, C.~A., and Pereira, G. A.~S.,
 Liang, Y. and Jia, Y., \enquote{Tangent vector field approach for curved path
   following with input saturation,} {\em Systems \& Control Letters\/},
   Vol.~104, June 2017, pp.~49--58.
+
+\bibitem{griffiths_vector_2006}
+Griffiths, S., \enquote{Vector {Field} {Approach} for {Curved} {Path}
+  {Following} for {Miniature} {Aerial} {Vehicles},} American Institute of
+  Aeronautics and Astronautics, Aug. 2006.
 
 \bibitem{jung_unmanned_2016}
 Jung, W., Lim, S., Lee, D., and Bang, H., \enquote{Unmanned {Aircraft} {Vector}
@@ -56,14 +44,26 @@ Zhao, S., Wang, X., Zhang, D., and Shen, L., \enquote{Curved {Path} {Following}
   {Control} for {Fixed}-wing {Unmanned} {Aerial} {Vehicles} with {Control}
   {Constraint},} {\em Journal of Intelligent \& Robotic Systems\/}, Jan. 2017.
 
+\bibitem{oliveira_moving_2016}
+Oliveira, T., Aguiar, A.~P., and Encarnacao, P., \enquote{Moving {Path}
+  {Following} for {Unmanned} {Aerial} {Vehicles} {With} {Applications} to
+  {Single} and {Multiple} {Target} {Tracking} {Problems},} {\em IEEE
+  Transactions on Robotics\/}, Vol.~32, No.~5, Oct. 2016, pp.~1062--1078.
+
 \bibitem{khatib_real-time_1986}
 Khatib, O., \enquote{Real-time obstacle avoidance for manipulators and mobile
   robots,} {\em The international journal of robotics research\/}, Vol.~5,
   No.~1, 1986, pp.~90--98.
 
-\bibitem{koren_potential_1991}
-Koren, Y. and Borenstein, J., \enquote{Potential {Field} {Methods} and their
-  inherent limitions for morbile robot navigation.pdf,} 1991.
+\bibitem{liu_virtual-waypoint_2016}
+Liu, Y. and Zhao, Y., \enquote{A virtual-waypoint based artificial potential
+  field method for {UAV} path planning,} {\em Guidance, {Navigation} and
+  {Control} {Conference} ({CGNCC}), 2016 {IEEE} {Chinese}\/}, IEEE, 2016, pp.
+  949--953.
+
+\bibitem{rimon_exact_1992}
+Rimon, E., \enquote{Exact {Robot} {Navigation} {Using} {Artificial} {Potential}
+  {Functions}.pdf,} 1992.
 
 \bibitem{goerzen_survey_2010}
 Goerzen, C., Kong, Z., and Mettler, B., \enquote{A {Survey} of {Motion}
@@ -82,6 +82,10 @@ Borenstein, J. and Koren, Y., \enquote{The vector field histogram-fast obstacle
   avoidance for mobile robots,} {\em IEEE transactions on robotics and
   automation\/}, Vol.~7, No.~3, 1991, pp.~278--288.
 
+\bibitem{frew_lyapunov_nodate}
+Frew, E., \enquote{Lyapunov {Guidance} {Vector} {Fields} for {Unmanned}
+  {Aircraft} {Applications}.pdf,} .
+
 \bibitem{de_marina_guidance_2017}
 de~Marina, H.~G., Kapitanyuk, Y.~A., Bronz, M., Hattenberger, G., and Cao, M.,
   \enquote{Guidance algorithm for smooth trajectory tracking of a fixed wing
@@ -93,5 +97,10 @@ Miao, Z., Thakur, D., Erwin, R.~S., Pierre, J., Wang, Y., and Fierro, R.,
   \enquote{Orthogonal vector field-based control for a multi-robot system
   circumnavigating a moving target in 3D,} {\em Decision and {Control} ({CDC}),
   2016 {IEEE} 55th {Conference} on\/}, IEEE, 2016, pp. 6004--6009.
+
+\bibitem{frew_cooperative_2007}
+Frew, E.~W., \enquote{Cooperative standoff tracking of uncertain moving targets
+  using active robot networks,} {\em Robotics and {Automation}, 2007 {IEEE}
+  {International} {Conference} on\/}, IEEE, 2007, pp. 3277--3282.
 
 \end{thebibliography}
