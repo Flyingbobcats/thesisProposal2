@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.9.26)  16 OCT 2017 14:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.9.26)  17 OCT 2017 14:13
 entering extended mode
 **./main.tex
 (main.tex
@@ -1018,170 +1018,170 @@ Chapter 1.
 [11
 
 ] [12]
-Overfull \hbox (32.12698pt too wide) in paragraph at lines 285--286
-[]\OT1/txr/bx/n/12 Deliverable: $[]$\OT1/txr/m/n/12 . 
+Overfull \hbox (24.32399pt too wide) in paragraph at lines 239--241
+\OT1/txr/bx/n/12 Deliverable: $[]$\OT1/txr/m/n/12 . 
  []
 
 [13]
 Chapter 2.
-<PaperFigures/globalhawk.jpg, id=232, 758.835pt x 504.98662pt>
+<PaperFigures/globalhawk.jpg, id=230, 758.835pt x 504.98662pt>
 File: PaperFigures/globalhawk.jpg Graphic file (type jpg)
 
 <use PaperFigures/globalhawk.jpg>
-Package pdftex.def Info: PaperFigures/globalhawk.jpg used on input line 317.
+Package pdftex.def Info: PaperFigures/globalhawk.jpg used on input line 272.
 (pdftex.def)             Requested size: 219.08612pt x 145.7951pt.
 
-<PaperFigures/handlaunched.jpg, id=233, 2029.5825pt x 1481.535pt>
+<PaperFigures/handlaunched.jpg, id=231, 2029.5825pt x 1481.535pt>
 File: PaperFigures/handlaunched.jpg Graphic file (type jpg)
 
 <use PaperFigures/handlaunched.jpg>
-Package pdftex.def Info: PaperFigures/handlaunched.jpg used on input line 318.
+Package pdftex.def Info: PaperFigures/handlaunched.jpg used on input line 273.
 (pdftex.def)             Requested size: 199.16928pt x 145.38159pt.
  [14
 
 ]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbh') on input line 333.
+               Default added (so using `tbh') on input line 288.
 
-<PaperFigures/ngcFlow.png, id=240, 972.63374pt x 271.0125pt>
+<PaperFigures/ngcFlow.png, id=238, 972.63374pt x 271.0125pt>
 File: PaperFigures/ngcFlow.png Graphic file (type png)
 
 <use PaperFigures/ngcFlow.png>
-Package pdftex.def Info: PaperFigures/ngcFlow.png used on input line 335.
+Package pdftex.def Info: PaperFigures/ngcFlow.png used on input line 290.
 (pdftex.def)             Requested size: 303.53267pt x 84.5754pt.
  [15pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.351 
+l.306 
        <./PaperFigures/globalhawk.jpg> <./PaperFigures/handlaunched.jpg>]
 [16pdfTeX warning (ext4): destination with the same identifier (name{figure.2.2
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.374 \begin{equation}
+l.329 \begin{equation}
                       \label{minVel} <./PaperFigures/ngcFlow.png>]
-Underfull \hbox (badness 1406) in paragraph at lines 400--401
+Underfull \hbox (badness 1406) in paragraph at lines 355--356
 []\OT1/txr/m/n/12 Autopilots and ground stations work together to configure veh
 icle settings,
  []
 
-<PaperFigures/pixhawk.jpg, id=269, 325.215pt x 178.5069pt>
+<PaperFigures/pixhawk.jpg, id=267, 325.215pt x 178.5069pt>
 File: PaperFigures/pixhawk.jpg Graphic file (type jpg)
 
 <use PaperFigures/pixhawk.jpg>
-Package pdftex.def Info: PaperFigures/pixhawk.jpg used on input line 409.
+Package pdftex.def Info: PaperFigures/pixhawk.jpg used on input line 364.
 (pdftex.def)             Requested size: 227.62204pt x 124.94305pt.
  [17pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.416 
+l.371 
        <./PaperFigures/pixhawk.jpg>]
-<PaperFigures/groundUAVTransmitter.png, id=278, 603.0028pt x 407.27156pt>
+<PaperFigures/groundUAVTransmitter.png, id=276, 603.0028pt x 407.27156pt>
 File: PaperFigures/groundUAVTransmitter.png Graphic file (type png)
 
 <use PaperFigures/groundUAVTransmitter.png>
 Package pdftex.def Info: PaperFigures/groundUAVTransmitter.png used on input li
-ne 419.
+ne 374.
 (pdftex.def)             Requested size: 284.52756pt x 192.1696pt.
  [18pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.432 
+l.387 
        <./PaperFigures/groundUAVTransmitter.png>] [19]
-<PaperFigures/pfObstacle.png, id=294, 319.94531pt x 216.05719pt>
+<PaperFigures/pfObstacle.png, id=292, 319.94531pt x 216.05719pt>
 File: PaperFigures/pfObstacle.png Graphic file (type png)
 
 <use PaperFigures/pfObstacle.png>
-Package pdftex.def Info: PaperFigures/pfObstacle.png used on input line 455.
+Package pdftex.def Info: PaperFigures/pfObstacle.png used on input line 410.
 (pdftex.def)             Requested size: 199.16928pt x 134.49802pt.
  [20]
-<PaperFigures/pfObstacleLocalMin.png, id=310, 295.1025pt x 194.22563pt>
+<PaperFigures/pfObstacleLocalMin.png, id=308, 295.1025pt x 194.22563pt>
 File: PaperFigures/pfObstacleLocalMin.png Graphic file (type png)
 
 <use PaperFigures/pfObstacleLocalMin.png>
 Package pdftex.def Info: PaperFigures/pfObstacleLocalMin.png used on input line
- 467.
+ 422.
 (pdftex.def)             Requested size: 199.16928pt x 131.08774pt.
 
-<PaperFigures/pfObstacleLocalMinTopology.png, id=311, 304.88907pt x 233.37187pt
+<PaperFigures/pfObstacleLocalMinTopology.png, id=309, 304.88907pt x 233.37187pt
 >
 File: PaperFigures/pfObstacleLocalMinTopology.png Graphic file (type png)
  <use PaperFigures/pfObstacleLocalMinTopology.png>
 Package pdftex.def Info: PaperFigures/pfObstacleLocalMinTopology.png used on in
-put line 468.
+put line 423.
 (pdftex.def)             Requested size: 199.16928pt x 152.45552pt.
  [21pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.473 \end{figure}
+l.428 \end{figure}
                    <./PaperFigures/pfObstacle.png>]
-<PaperFigures/obstacleClustering.png, id=324, 319.1925pt x 242.40562pt>
+<PaperFigures/obstacleClustering.png, id=322, 319.1925pt x 242.40562pt>
 File: PaperFigures/obstacleClustering.png Graphic file (type png)
 
 <use PaperFigures/obstacleClustering.png>
 Package pdftex.def Info: PaperFigures/obstacleClustering.png used on input line
- 479.
+ 434.
 (pdftex.def)             Requested size: 142.26378pt x 108.03845pt.
  [22pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.485 
+l.440 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 2.7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.485 
+l.440 
        <./PaperFigures/pfObstacleLocalMin.png> <./PaperFigures/pfObstacleLocalM
 inTopology.png> <./PaperFigures/obstacleClustering.png>] [23]
-<PaperFigures/convergence.png, id=350, 421.575pt x 316.18124pt>
+<PaperFigures/convergence.png, id=348, 421.575pt x 316.18124pt>
 File: PaperFigures/convergence.png Graphic file (type png)
 
 <use PaperFigures/convergence.png>
-Package pdftex.def Info: PaperFigures/convergence.png used on input line 586.
+Package pdftex.def Info: PaperFigures/convergence.png used on input line 541.
 (pdftex.def)             Requested size: 303.53267pt x 227.65514pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<PaperFigures/circulation.png, id=351, 421.575pt x 316.18124pt>
+<PaperFigures/circulation.png, id=349, 421.575pt x 316.18124pt>
 File: PaperFigures/circulation.png Graphic file (type png)
 
 <use PaperFigures/circulation.png>
-Package pdftex.def Info: PaperFigures/circulation.png used on input line 594.
+Package pdftex.def Info: PaperFigures/circulation.png used on input line 549.
 (pdftex.def)             Requested size: 303.53267pt x 227.65514pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<"PaperFigures/time varying".png, id=352, 421.575pt x 316.18124pt>
+<"PaperFigures/time varying".png, id=350, 421.575pt x 316.18124pt>
 File: "PaperFigures/time varying".png Graphic file (type png)
 
 <use "PaperFigures/time varying".png>
-Package pdftex.def Info: "PaperFigures/time varying".png used on input line 601
+Package pdftex.def Info: "PaperFigures/time varying".png used on input line 556
 .
 (pdftex.def)             Requested size: 303.53267pt x 227.65514pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<PaperFigures/total.png, id=353, 421.575pt x 316.18124pt>
+<PaperFigures/total.png, id=351, 421.575pt x 316.18124pt>
 File: PaperFigures/total.png Graphic file (type png)
 
 <use PaperFigures/total.png>
-Package pdftex.def Info: PaperFigures/total.png used on input line 609.
+Package pdftex.def Info: PaperFigures/total.png used on input line 564.
 (pdftex.def)             Requested size: 303.53267pt x 227.65514pt.
 
 
@@ -1196,13 +1196,13 @@ LaTeX Warning: Text page 25 contains only floats.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.619 \end{itemize}
+l.574 \end{itemize}
                    pdfTeX warning (ext4): destination with the same identifier 
 (name{figure.2.9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.619 \end{itemize}
+l.574 \end{itemize}
                     <./PaperFigures/convergence.png (PNG copy)> <./PaperFigures
 /circulation.png (PNG copy)>]
 
@@ -1213,27 +1213,27 @@ LaTeX Warning: Text page 26 contains only floats.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.619 \end{itemize}
+l.574 \end{itemize}
                    pdfTeX warning (ext4): destination with the same identifier 
 (name{figure.2.11}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.619 \end{itemize}
+l.574 \end{itemize}
                     <./PaperFigures/time varying.png (PNG copy)> <./PaperFigure
 s/total.png (PNG copy)>] (main.bbl [27] [28
 
 ]) 
 AED: lastpage setting LastPage
 [29]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 631.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 631.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 584.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 584.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 631.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 631.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 584.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 584.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 0B6CC79E624B7BB830F0D9953E27B1AC;1244.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 631.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 584.
  ) 
 Here is how much of TeX's memory you used:
  10272 strings out of 493320
@@ -1242,7 +1242,7 @@ Here is how much of TeX's memory you used:
  13459 multiletter control sequences out of 15000+200000
  33943 words of font info for 82 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,7n,40p,2462b,496s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 34i,7n,40p,1863b,496s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/txfonts/rtcxr.pfb><C:/Program Files/MiKTeX 2.9/font
 s/type1/public/txfonts/rtxbsc.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
@@ -1252,9 +1252,9 @@ gram Files/MiKTeX 2.9/fonts/type1/public/txfonts/txsy.pfb><C:/Program Files/MiK
 TeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
 e1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utm
 r8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (29 pages, 3218647 bytes).
+Output written on main.pdf (29 pages, 3218042 bytes).
 PDF statistics:
- 442 PDF objects out of 1000 (max. 8388607)
+ 441 PDF objects out of 1000 (max. 8388607)
  110 named destinations out of 1000 (max. 500000)
  234 words of extra memory for PDF output out of 10000 (max. 10000000)
 
