@@ -1,2 +1,7 @@
 \addvspace {\@lineskip }
 \addvspace {\@lineskip }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Single Obstacle Potential Field Gradient \cite {liu_virtual-waypoint_2016}}}{17}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Potential Field Local Minimum \cite {liu_virtual-waypoint_2016}}}{18}{figure.2.2}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{18}{figure.2.2}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{18}{figure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Obstacle Clustering \cite {liu_virtual-waypoint_2016}}}{18}{figure.2.3}

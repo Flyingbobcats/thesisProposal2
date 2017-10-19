@@ -164,8 +164,7 @@ AoA & Angle of Attack & \\
 \chapter{Introduction}
 \section{Motivation and Problem Statement}
 
-%%%% OLD
-% Fixed wing Unmanned Aerial Vehicles are used for long endurance missions such as surveillance that would fatigue pilots or  put them in harms way \cite{bone_uavs_2003}.  Missions are built from primitive flight maneuvers such as waypoint navigation and loitering which are executed by path following \cite{sujit_unmanned_2014}. Obstacle free paths are typically pre-planned on ground stations and relayed to a UAVs guidance system which provides reference commands to an autopilot.  Obstacles are not always known a priori and once discovered a new path must be generated and relayed to the UAV.  Planning obstacle free and flyable paths takes time and may be impossible to relay to a UAV if communication is not reliable.  An on-board real-time guidance that follows mission paths while avoiding obstacles without the need for constant communication with a ground station or complete path recalculation may be realized through Gradient Vector Fields (GVF) \cite{goncalves_artificial_2009}. GVFs produce heading guidance at any point in space for converging and following a path by summing together convergence and circulation field components. The convergence component produces vectors that point to a path and the circulation component produces vectors that follow a path. Each component is multiplied by a static scalar to weight how much influence each has on the total field. Obstacles have been represented as separate repulsive GVFs that are later summed to the path following GVF [Wilhelm, Wambold, Clem]. Static GVF weights do not consider the state of the UAV resulting in sub-optimal guidance. Modifying the GVF convergence and circulation weights to be functions of common UAV states may generate an optimal guidance. \textbf{The proposed research seeks to determine GVF weighting functions that construct optimal obstacle avoidance.}
+
 
 
 %%%NEW
@@ -174,16 +173,8 @@ AoA & Angle of Attack & \\
   
  \pagebreak
   
-%  from primitive flight maneuvers such as waypoint navigation and loitering which are executed by path following \cite{sujit_unmanned_2014}. Obstacle free paths are typically pre-planned on ground stations and relayed to a UAVs guidance system which provides reference commands to an autopilot. 
-  
-%   Obstacles are not always known a priori and once discovered a new path must be generated and relayed to the UAV.  Planning obstacle free and flyable paths takes time and may be impossible to relay to a UAV if communication is not reliable.  An on-board real-time guidance that follows mission paths while avoiding obstacles without the need for constant communication with a ground station or complete path recalculation may be realized through Gradient Vector Fields (GVF) \cite{goncalves_artificial_2009}. GVFs produce heading guidance at any point in space for converging and following a path by summing together convergence and circulation field components. The convergence component produces vectors that point to a path and the circulation component produces vectors that follow a path. Each component is multiplied by a static scalar to weight how much influence each has on the total field. Obstacles have been represented as separate repulsive GVFs that are later summed to the path following GVF [Wilhelm, Wambold, Clem]. Static GVF weights do not consider the state of the UAV resulting in sub-optimal guidance. Modifying the GVF convergence and circulation weights to be functions of common UAV states may generate an optimal guidance. \textbf{The proposed research seeks to determine GVF weighting functions that construct optimal obstacle avoidance.}
 
 \section{Methods Overview}
-%Developing a goal and obstacle vector field summation strategy will be accomplished in three phases. First, singularities described in literature will be reproduced and show qualitatively how adding circulation to an obstacle field promotes circumnavigation. Next, the combination of decay functions and vector field parameters that improve obstacle avoidance will be investigated. Lastly, the modified vector field guidance will be tested on a mobile robot platform operating under the same constraints as a fixed wing will be used to validate the algorithm. 
-
-%Developing vector field parametrization and decay strategy for circumnavigating an obstacle will be accomplished in three phases. First, vector fields will be produced for circular and elliptical objects using the intersection of surfaces method. Obstacles will be given a strictly repulsive field and summed with a constant goal field resulting in several singularities. Next, a modified vector field will be investigated by varying the vector field parameters and decay as a function of a UAV state for the purposes of reducing the circumnavigation distance and eliminating singularities. A UAV represented by a Dubins airplane model will be given guidance by the field and the distance measured to determine which combinations of parameter and decay functions produce the least distance. Lastly, the algorithm will be implemented in a mobile robot to validate the modified guidance as a real-time path following and obstacle circumnavigating algorithm. 
-
-%The proposed research will be conducted in three phases, each seeking to accomplish a single objective. Vector fields will be reproduced from literature for circular and elliptical obstacles. Singularities and the conditions that cause them will be demonstrated. A modified vector field with variable parameters and decay functions will be investigated and compared against the unmodified vector field. The combination of parameters and decay functions that produce the best guidance will be implemented on a mobile robot for verification. 
 
 The proposed research will be conducted in three phases where singularities will be demonstrated, weighting functions will be investigated, and a developed GVF will be validated on a ground robot simulating a UAV.  Phases I and II will be conducted in a simulation environment that combines mission paths and obstacles into a single GVF. Phase III will be conducted with a ground robot simulating a UAV guided by the modified GVF in real-time. Dubins fixed wing constraints will be imposed in simulations and experiments. 
 
@@ -249,37 +240,117 @@ Each phases consists of a \textbf{goal} that will be accomplished by executing \
 
 \section{Fixed Wing Unmanned Aerial Vehicle}
 \subsection{Introduction to Fixed Wing UAV}
-
-
-
-\subsection{Modeling}
-
-
+\begin{itemize}
+	\item Introductory sentence ?
+	\item Fixed wing UAVs operate under the same principles as conventional fixed wing aircraft, except piloted remotely
+	\item Operated remotely removing pilots from harms way
+	\item All types and sizes, generally categorized into hang-launched and large varieties
+	\item Hand-launched varieties can be carried on the back of a soldier and made airborne by throwing like a javlin
+	\item Hand-launched 
+	\item Operated remotely allows pilots/operators to trade off when becoming fatigued, which allows the aircraft to stay in service longer
+	\item Long service is ideal for surveillance missions 
+\end{itemize}
 
 \subsection{Autopilot and Ground Station}
 
 
+\begin{itemize}
+	\item What is an autopilot and a ground station
+	\item What are their purposes
+	\item Why one cannot exist without the other (lack of autonomy?)
+	\item FIGURE of how they are connected
+	
+	\item Ground station 
+	\begin{itemize}
+		\item Program or set of programs that provide interface for a pilot or operator to communicate with the UAV
+		\item Vehicle configurations
+		\item Mission planning (map, waypoints, loitering, altitude)
+		\item Missions decomposed into obstacle free and flyable paths that will be sent to the UAV
+		\item FIGURE of waypoints and loitering being decomposed into flyable paths
+		\item Unlike conventional robotic systems, path planning is chosen over trajectory planning (getting uav to certain point at certain time when there are constant wind disturbances is difficult)
+		\item OR maybe trajectory planning is difficult because too many unknowns such as wind disturbances. . .
+		\item Provides a way to collect data
+		\item Communicates with UAV through a radio link
+	\end{itemize}
+
+	\item Autopilot
+	\begin{itemize}
+		
+		
+		\item Receives instructions from ground station and implements navigation, guidance, and control algorithms to accomplish missions (to the best of its ability)
+		
+		\item Navigation
+		\begin{itemize}
+			\item Navigation is the process of measuring sensors, estimating data, .. . . .etc
+		 	\item Use current material 
+		\end{itemize}
+	
+		\item Guidance
+		\begin{itemize}
+			\item Purpose of guidance system (reference path to a command consumable to the controller)
+			\item Guidance uses current position and reference path to determine deviation from path
+			\item Deviation from the path is used to calculate a heading command that will put the UAV back on the path
+			\item Methods for path following (Read Sujuits paper again)
+			\item Summary of findings, vector field has lowest cross track error, parameter tuning, and chattering
+			\item Parameter tuning . . . (ask jay)
+			\item More detailed discussion on different vector fields presented in section . . .
+		\end{itemize}
+	
+		
+		\item Control
+		\begin{itemize}
+			\item Converts sensor information and guidance commands into actuator output
+			\item Read chapter 6 beard and Mclain, find more sources
+			\item FIGURE of control loop
+		\end{itemize}
+
+		
+	\end{itemize}
+\end{itemize}
+
+\subsection{Guidance Navigation and Control Overview}
 
 
 
+%Transition to potential field
+\section{Potential Field}
 
+%%%%%%%%%%
+Potential field was first introduced as a real-time robotic manipulator algorithm for obstacle avoidance \cite{khatib_real-time_1986}. The potential field algorithm represents a robots workspace as a gradient potential of attractive and repulsive artificial forces that drive the robot to a desired goal. Goals are given the lowest potential and act as attractive forces. Obstacles have high potential and act as repulsive forces. A simple example is depicted in Figure \ref{fig:pfobstacle} consisting of an initial state, a goal, and a single obstacle. The initial state of the robot is at the edge of a gradient where the potential is maximum. In the lowest part of the gradient a goal exists at the global minimum. Obstacles are added to the potential field, but have limited effect due to a decay function.
 
-\section{Navigation, Guidance and Control} \label{NGC}
-\subsection{Introduction to NGC}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=7cm]{PaperFigures/pfObstacle}
+	\caption{Single Obstacle Potential Field Gradient \cite{liu_virtual-waypoint_2016}}
+	\label{fig:pfobstacle}
+\end{figure}
 
+Potential field is unique in that path planning, trajectory planning, and control are lumped into a single system \cite{rimon_exact_1992}. Transition from an initial state to a goal state traditionally occurred by executing three steps consisting of path planning, trajectory planning, and control. Path planning dealt with finding an obstacle free path from an initial state to a goal state. Trajectory planning time parametrized the obstacle free path with some high level vehicle constraints considered. Lastly, control attempts to reduce the tracking error with respect to the reference trajectory. Combining the three motion planning steps into a single algorithm has been shown to be computational inexpensive \cite{goerzen_survey_2010}. 
 
-\subsection{Navigation}
+As pointed out in \cite{borenstein_real-time_1990}, robots using potential field are susceptible to local minimum. Encountering a local minimum prevents the robot from continuing down the gradient and into the global minimum because equilibrium has been reached prematurely. Figure \ref{fig:pfLocalMin} demonstrates local minimum by adding several obstacles into a goal field. Several methods have been developed to mitigate the effects of local minimums as pointed out in \cite{goerzen_survey_2010} through the use of navigation functions. Local minimum produced as a result of closely spaced obstacles as shown in Figure \ref{fig:pfLocalMin} have been addressed by grouping obstacles together into a cluster \cite{liu_virtual-waypoint_2016}.
 
+\begin{figure}[h]
+	\begin{subfigmatrix}{2}% number of columns
+		\centering
+		\subfigure []{\includegraphics[width=7cm] {PaperFigures/pfObstacleLocalMin}}
+		\subfigure []{\includegraphics[width=7cm] {PaperFigures/pfObstacleLocalMinTopology}}
+		%		\hspace*{1cm}
+	\end{subfigmatrix}
+	\caption{Potential Field Local Minimum \cite{liu_virtual-waypoint_2016}}
+	\label{fig:pfLocalMin}
+\end{figure}
 
+Several methods have been developed to mitigate the effects of local minimums as pointed out in \cite{goerzen_survey_2010} through the use of navigation functions. Local minimum produced as a result of closely spaced obstacles as shown in Figure \ref{fig:pfLocalMin} have been addressed by grouping obstacles together into a cluster \cite{liu_virtual-waypoint_2016}. Grouping obstacles addresses the risk of local minima before forming the potential field. If local minima are encountered after the field is generated, additional forces can be applied to push the robot away from the local minima. 
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=5cm]{PaperFigures/obstacleClustering}
+	\caption{Obstacle Clustering \cite{liu_virtual-waypoint_2016}}
+	\label{fig:obstacleclustering}
+\end{figure}
 
-\subsection{Guidance and Control}
+Potential fields ability to avoid obstacles and combine path planning, trajectory planning, and control into a single system while being computationally inexpensive makes it an attractive option for many robotic systems. Fixed wing UAVs must maintain a minimum forward velocity and cannot converge to a single point, making potential field difficult to implement.  
 
-
-\subsection{Potential Field}
-
-
-\subsection{Gradient Vector Field}
 
 \section{Vector Field Guidance}
 \begin{itemize}
@@ -317,10 +388,8 @@ Each phases consists of a \textbf{goal} that will be accomplished by executing \
 	\item Obstacles discovered during flight need renewed path planning
 	\item Cannot reach ground station or not enough time
 
-	
-	
-	
-	\item Gradeint vector field
+	\subsection{Gradient Vector Field}
+	\item Gradient vector field
 	\begin{itemize}
 		\item Intersection of surfaces, zero sets represent path
 		\item n-dimensions for any shapes (unlike some Lyapunov made of primitives)
@@ -339,7 +408,23 @@ Each phases consists of a \textbf{goal} that will be accomplished by executing \
 \end{itemize}
 \end{itemize}
 
+
+\section{Unmanned Aerial Vehicle Simulation}
+\begin{itemize}
+	\item Methods for testing UAVs
+	\item SITL
+	\item Actual flight tests
+	\item Testing UAVs costly, setup, environment difficulties
+	\item Simulation on ground robot (citations)
+	\item Benefits, use as Dubins constraint vehicle to prove algorithm can run real time prior to flights
+	\item Less expensive, saves resources, time, etc
+\end{itemize}
+
 \section{Literature Review Summary}
+
+\begin{itemize}
+	\item 
+\end{itemize}
 
 \bibliographystyle{aiaa}   
 \bibliography{bib}
