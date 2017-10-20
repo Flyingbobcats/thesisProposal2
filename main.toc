@@ -16,13 +16,13 @@
 \contentsline {section}{\numberline {2.1}Introduction to Literature Review}{14}{section.2.1}
 \contentsline {section}{\numberline {2.2}Fixed Wing Unmanned Aerial Vehicle}{14}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Introduction to Fixed Wing UAV}{14}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Autopilot and Ground Station}{14}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Guidance Navigation and Control Overview}{16}{subsection.2.2.3}
-\contentsline {section}{\numberline {2.3}Potential Field}{16}{section.2.3}
-\contentsline {section}{\numberline {2.4}Vector Field Guidance}{19}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Histogram Vector Field}{19}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}Lyapunov Vector Field}{20}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}Gradient Vector Field}{21}{subsection.2.4.3}
-\contentsline {section}{\numberline {2.5}Unmanned Aerial Vehicle Simulation}{22}{section.2.5}
-\contentsline {section}{\numberline {2.6}Literature Review Summary}{22}{section.2.6}
-\contentsline {chapter}{References}{23}{schapter.8}
+\contentsline {subsection}{\numberline {2.2.2}Autopilot and Ground Station}{15}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Guidance Navigation and Control Overview}{20}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}Potential Field}{20}{section.2.3}
+\contentsline {section}{\numberline {2.4}Vector Field Guidance}{23}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Histogram Vector Field}{23}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Lyapunov Vector Field}{24}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Gradient Vector Field}{25}{subsection.2.4.3}
+\contentsline {section}{\numberline {2.5}Unmanned Aerial Vehicle Simulation}{25}{section.2.5}
+\contentsline {section}{\numberline {2.6}Literature Review Summary}{26}{section.2.6}
+\contentsline {chapter}{References}{27}{schapter.8}

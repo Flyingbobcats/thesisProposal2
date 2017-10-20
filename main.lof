@@ -1,7 +1,14 @@
 \addvspace {\@lineskip }
 \addvspace {\@lineskip }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Single Obstacle Potential Field Gradient \cite {liu_virtual-waypoint_2016}}}{17}{figure.2.1}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Potential Field Local Minimum \cite {liu_virtual-waypoint_2016}}}{18}{figure.2.2}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{18}{figure.2.2}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{18}{figure.2.2}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Obstacle Clustering \cite {liu_virtual-waypoint_2016}}}{18}{figure.2.3}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Hand Launched Fixed Wing UAV and Global Hawk}}{14}{figure.2.1}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{14}{figure.2.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{14}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Autopilot Navigation Guidance and Control}}{16}{figure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Pixhawk Autopilot}}{16}{figure.2.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Unmanned Aerial System}}{17}{figure.2.4}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Ground Station Software QGroundControl}}{18}{figure.2.5}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Single Obstacle Potential Field Gradient \cite {liu_virtual-waypoint_2016}}}{21}{figure.2.6}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Potential Field Local Minimum \cite {liu_virtual-waypoint_2016}}}{22}{figure.2.7}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{22}{figure.2.7}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{22}{figure.2.7}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Obstacle Clustering \cite {liu_virtual-waypoint_2016}}}{22}{figure.2.8}
