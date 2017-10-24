@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.9.26)  20 OCT 2017 15:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.10.13)  23 OCT 2017 20:47
 entering extended mode
 **./main.tex
 (main.tex
@@ -1114,7 +1114,7 @@ Package pdftex.def Info: PaperFigures/pfObstacle.png used on input line 364.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[20] <PaperFigures/pfObstacleLocalMin.png, id=288, 295.1025pt x 194.22563pt>
+[20] <PaperFigures/pfObstacleLocalMin.png, id=289, 295.1025pt x 194.22563pt>
 File: PaperFigures/pfObstacleLocalMin.png Graphic file (type png)
 
 <use PaperFigures/pfObstacleLocalMin.png>
@@ -1122,7 +1122,7 @@ Package pdftex.def Info: PaperFigures/pfObstacleLocalMin.png used on input line
  376.
 (pdftex.def)             Requested size: 199.16928pt x 131.08774pt.
 
-<PaperFigures/pfObstacleLocalMinTopology.png, id=289, 304.88907pt x 233.37187pt
+<PaperFigures/pfObstacleLocalMinTopology.png, id=290, 304.88907pt x 233.37187pt
 >
 File: PaperFigures/pfObstacleLocalMinTopology.png Graphic file (type png)
  <use PaperFigures/pfObstacleLocalMinTopology.png>
@@ -1140,7 +1140,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
                                                   \fi \fi 
 l.385 
        <./PaperFigures/pfObstacle.png>]
-<PaperFigures/obstacleClustering.png, id=302, 319.1925pt x 242.40562pt>
+<PaperFigures/obstacleClustering.png, id=303, 319.1925pt x 242.40562pt>
 File: PaperFigures/obstacleClustering.png Graphic file (type png)
 
 <use PaperFigures/obstacleClustering.png>
@@ -1152,47 +1152,71 @@ Package pdftex.def Info: PaperFigures/obstacleClustering.png used on input line
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.396 \section
-              {Vector Field Guidance}pdfTeX warning (ext4): destination with th
-e same identifier (name{figure.2.8}) has been already used, duplicate ignored
+l.398 I
+       ntroduction sentence (claim of what vector fields can do?)pdfTeX warning
+ (ext4): destination with the same identifier (name{figure.2.8}) has been alrea
+dy used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.396 \section
-              {Vector Field Guidance} <./PaperFigures/pfObstacleLocalMin.png> <
-./PaperFigures/pfObstacleLocalMinTopology.png> <./PaperFigures/obstacleClusteri
-ng.png>] [23] [24] [25] (main.bbl [26]) 
+l.398 I
+       ntroduction sentence (claim of what vector fields can do?) <./PaperFigur
+es/pfObstacleLocalMin.png> <./PaperFigures/pfObstacleLocalMinTopology.png> <./P
+aperFigures/obstacleClustering.png>] [23] [24] [25] (main.bbl [26])
+
 AED: lastpage setting LastPage
 [27
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 474.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 474.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 479.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 479.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 474.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 474.
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: C26E9B6B41842C69480F935BCE21BB48;1378.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 474.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 479.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 479.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: C26E9B6B41842C69480F935BCE21BB48;1378
+(rerunfilecheck)             After:  A374C281018A6841BBA424C7E19E656E;1315.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 479.
  ) 
 Here is how much of TeX's memory you used:
- 10190 strings out of 493320
- 145719 string characters out of 3138948
+ 10194 strings out of 493320
+ 145783 string characters out of 3138956
  260786 words of memory out of 3000000
  13408 multiletter control sequences out of 15000+200000
  29914 words of font info for 76 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  34i,7n,40p,1356b,549s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/txfonts/rtcxr.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/public/txfonts/rtxbsc.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/txfonts/rtxi.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/txfonts/rtx
-r.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program
- Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9
-/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (27 pages, 2961012 bytes).
+pdfTeX warning (dest): name{subsection.2.4.3} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.2.4.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.2.4.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.2.2.3} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.2.6} has been referenced but does not exist
+, replaced by a fixed one
+
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/txfonts/rtcxr.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/txfonts/rtxbsc.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
+/txfonts/rtxi.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/txfonts/rtxr.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (27 pages, 2961286 bytes).
 PDF statistics:
- 378 PDF objects out of 1000 (max. 8388607)
- 88 named destinations out of 1000 (max. 500000)
+ 383 PDF objects out of 1000 (max. 8388607)
+ 92 named destinations out of 1000 (max. 500000)
  235 words of extra memory for PDF output out of 10000 (max. 10000000)
 

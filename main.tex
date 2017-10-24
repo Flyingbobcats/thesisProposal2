@@ -349,12 +349,12 @@ Low tracking error in the presence of wind and has led to the algorithm being us
 	\end{itemize}
 \end{itemize}
 
-\subsection{Guidance Navigation and Control Overview}
 
 
 
+\section{Vector Field Guidance}
 %Transition to potential field
-\section{Potential Field}
+\subsection{Potential Field}
 
 %%%%%%%%%%
 Potential field was first introduced as a real-time robotic manipulator algorithm for obstacle avoidance \cite{khatib_real-time_1986}. The potential field algorithm represents a robots workspace as a gradient potential of attractive and repulsive artificial forces that drive the robot to a desired goal. Goals are given the lowest potential and act as attractive forces. Obstacles have high potential and act as repulsive forces. A simple example is depicted in Figure \ref{fig:pfobstacle} consisting of an initial state, a goal, and a single obstacle. The initial state of the robot is at the edge of a gradient where the potential is maximum. In the lowest part of the gradient a goal exists at the global minimum. Obstacles are added to the potential field, but have limited effect due to a decay function.
@@ -390,10 +390,15 @@ Several methods have been developed to mitigate the effects of local minimums as
 	\label{fig:obstacleclustering}
 \end{figure}
 
-Potential fields ability to avoid obstacles and combine path planning, trajectory planning, and control into a single system while being computationally inexpensive makes it an attractive option for many robotic systems. Fixed wing UAVs must maintain a minimum forward velocity and cannot converge to a single point, making potential field difficult to implement.  
+Potential fields ability to avoid obstacles and combine path planning, trajectory planning, and control into a single system while being computationally inexpensive makes it an attractive option for many robotic systems. Fixed wing UAVs must maintain a minimum forward velocity and cannot converge to a single point, making potential field difficult to implement. 
 
 
-\section{Vector Field Guidance}
+
+%%%% Start path following vector fields
+Introduction sentence (claim of what vector fields can do?)
+Description of vector fields
+	
+
 \begin{itemize}
 	\item Discussion on vector fields (what, uses, types....)
 	\item Vector field description (Generation of vectors at any point in space)
