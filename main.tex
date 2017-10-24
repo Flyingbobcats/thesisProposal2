@@ -353,11 +353,20 @@ Low tracking error in the presence of wind and has led to the algorithm being us
 
 
 \section{Vector Field Guidance}
-%Transition to potential field
+
+\subsection{Introduction to Vector Field Guidance}
+Vector field is a continuous guidance and control method that applies artificial attractive and repulsive forces to a point mass. The two broad categories of algorithms that produce vector fields consist of potential field algorithms and path following algorithms. Potential field produces guidance and control to a robot for converging to a distinct point. Path following algorithms produce guidance for converging and following a path. Several path following vector field algorithms have been investigated including gradient vector field, which provides convenient convergence and circulation weights that may be useful for providing an optimal guidance for obstacle avoidance. 
+
+%Intro (what are vector fields and what are they used for)
+%Two types
+%PF
+%Path following
+%Gradient vector field is good
+
 \subsection{Potential Field}
 
 %%%%%%%%%%
-Potential field was first introduced as a real-time robotic manipulator algorithm for obstacle avoidance \cite{khatib_real-time_1986}. The potential field algorithm represents a robots workspace as a gradient potential of attractive and repulsive artificial forces that drive the robot to a desired goal. Goals are given the lowest potential and act as attractive forces. Obstacles have high potential and act as repulsive forces. A simple example is depicted in Figure \ref{fig:pfobstacle} consisting of an initial state, a goal, and a single obstacle. The initial state of the robot is at the edge of a gradient where the potential is maximum. In the lowest part of the gradient a goal exists at the global minimum. Obstacles are added to the potential field, but have limited effect due to a decay function.
+Potential field was introduced as a real-time robotic manipulator algorithm for obstacle avoidance \cite{khatib_real-time_1986}. The potential field algorithm represents a robots workspace as a gradient potential of attractive and repulsive artificial forces that drive the robot to a desired goal. Goals are given the lowest potential and act as attractive forces. Obstacles have high potential and act as repulsive forces. A simple example is depicted in Figure \ref{fig:pfobstacle} consisting of an initial state, a goal, and a single obstacle. The initial state of the robot is at the edge of a gradient where the potential is maximum. In the lowest part of the gradient a goal exists at the global minimum. Obstacles are added to the potential field, but have limited effect due to a decay function.
 
 \begin{figure}[h!]
 	\centering
@@ -393,21 +402,7 @@ Several methods have been developed to mitigate the effects of local minimums as
 Potential fields ability to avoid obstacles and combine path planning, trajectory planning, and control into a single system while being computationally inexpensive makes it an attractive option for many robotic systems. Fixed wing UAVs must maintain a minimum forward velocity and cannot converge to a single point, making potential field difficult to implement. 
 
 
-
-%%%% Start path following vector fields
-Introduction sentence (claim of what vector fields can do?)
-Description of vector fields
-	
-
-\begin{itemize}
-	\item Discussion on vector fields (what, uses, types....)
-	\item Vector field description (Generation of vectors at any point in space)
-	\item VF benefits (Guidance to established control system, continuous guidance, works well for disturbance rejection (wind))
-	\item No need to modify existing autopilot controllers (let controllers reduce error, not track)
-	\item Conclusion 
-\end{itemize}
-
-\subsection{Histogram Vector Field}
+\subsection{Virtual Force Field - Histogram Method}
 \begin{itemize}
 	\item Guidance method discretized space
 	\item Obstacles detected and a confidence integer assigned to active cell
@@ -418,6 +413,17 @@ Description of vector fields
 	\item Although no disturbances were modeled, for a UAV they could conceivably be added to the system
 	\item Moving target not explored, only static case (conceivably could be extended to moving target)
 \end{itemize}
+
+	
+\begin{itemize}
+	\item Discussion on vector fields (what, uses, types....)
+	\item Vector field description (Generation of vectors at any point in space)
+	\item VF benefits (Guidance to established control system, continuous guidance, works well for disturbance rejection (wind))
+	\item No need to modify existing autopilot controllers (let controllers reduce error, not track)
+	\item Conclusion 
+\end{itemize}
+
+
 
 \subsection{Lyapunov Vector Field}
 \begin{itemize}
