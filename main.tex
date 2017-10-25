@@ -286,68 +286,68 @@ Ground stations are computers that run mission management software that allow us
 Once paths have been generated, such as that shown in Figure \ref{fig:qground}, they are sent to the UAV via radio link. The guidance system is then responsible for guiding the UAV to get on and follow the path. Common methods for guiding algorithms for getting on and following a path include carrot chasing, non-linear guidance law (NLGL), pure pursuit line of sight (PLOS), linear quadratic regulator (LQR) and vector field \cite{sujit_unmanned_2014}. Benchmarks for how each guidance algorithm performs is commonly quantified in control effort and tracking error with respect to the reference path. Sujit et al. compared the above guidance laws and discussed the benefits and disadvantages of the guidance laws, and in terms of control effort and tracking error LQR and vector field performed the best respectively. LQR was shown to have optimal control effort but exhibited large cross track error when subjected to high wind speeds. Vector field produced guidance with the lowest tracking error but experienced osculations once on the path. 
 
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=15cm]{PaperFigures/qGround}
-	\caption{Ground Station Software QGroundControl}
-	\label{fig:qground}
-\end{figure}
-
-Low tracking error in the presence of wind and has led to the algorithm being used for 
-
-\begin{itemize}
-	\item What is an autopilot and a ground station
-	\item What are their purposes
-	\item Why one cannot exist without the other (lack of autonomy?)
-	\item FIGURE of how they are connected
-	
-	\item Ground station 
-	\begin{itemize}
-		\item Program or set of programs that provide interface for a pilot or operator to communicate with the UAV
-		\item Vehicle configurations
-		\item Mission planning (map, waypoints, loitering, altitude)
-		\item Missions decomposed into obstacle free and flyable paths that will be sent to the UAV
-		\item FIGURE of waypoints and loitering being decomposed into flyable paths
-		\item Unlike conventional robotic systems, path planning is chosen over trajectory planning (getting uav to certain point at certain time when there are constant wind disturbances is difficult)
-		\item OR maybe trajectory planning is difficult because too many unknowns such as wind disturbances. . .
-		\item Provides a way to collect data
-		\item Communicates with UAV through a radio link
-	\end{itemize}
-
-	\item Autopilot
-	\begin{itemize}
-		
-		
-		\item Receives instructions from ground station and implements navigation, guidance, and control algorithms to accomplish missions (to the best of its ability)
-		
-		\item Navigation
-		\begin{itemize}
-			\item Navigation is the process of measuring sensors, estimating data, .. . . .etc
-		 	\item Use current material 
-		\end{itemize}
-	
-		\item Guidance
-		\begin{itemize}
-			\item Purpose of guidance system (reference path to a command consumable to the controller)
-			\item Guidance uses current position and reference path to determine deviation from path
-			\item Deviation from the path is used to calculate a heading command that will put the UAV back on the path
-			\item Methods for path following (Read Sujuits paper again)
-			\item Summary of findings, vector field has lowest cross track error, parameter tuning, and chattering
-			\item Parameter tuning . . . (ask jay)
-			\item More detailed discussion on different vector fields presented in section . . .
-		\end{itemize}
-	
-		
-		\item Control
-		\begin{itemize}
-			\item Converts sensor information and guidance commands into actuator output
-			\item Read chapter 6 beard and Mclain, find more sources
-			\item FIGURE of control loop
-		\end{itemize}
-
-		
-	\end{itemize}
-\end{itemize}
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[width=15cm]{PaperFigures/qGround}
+%	\caption{Ground Station Software QGroundControl}
+%	\label{fig:qground}
+%\end{figure}
+%
+%Low tracking error in the presence of wind and has led to the algorithm being used for 
+%
+%\begin{itemize}
+%	\item What is an autopilot and a ground station
+%	\item What are their purposes
+%	\item Why one cannot exist without the other (lack of autonomy?)
+%	\item FIGURE of how they are connected
+%	
+%	\item Ground station 
+%	\begin{itemize}
+%		\item Program or set of programs that provide interface for a pilot or operator to communicate with the UAV
+%		\item Vehicle configurations
+%		\item Mission planning (map, waypoints, loitering, altitude)
+%		\item Missions decomposed into obstacle free and flyable paths that will be sent to the UAV
+%		\item FIGURE of waypoints and loitering being decomposed into flyable paths
+%		\item Unlike conventional robotic systems, path planning is chosen over trajectory planning (getting uav to certain point at certain time when there are constant wind disturbances is difficult)
+%		\item OR maybe trajectory planning is difficult because too many unknowns such as wind disturbances. . .
+%		\item Provides a way to collect data
+%		\item Communicates with UAV through a radio link
+%	\end{itemize}
+%
+%	\item Autopilot
+%	\begin{itemize}
+%		
+%		
+%		\item Receives instructions from ground station and implements navigation, guidance, and control algorithms to accomplish missions (to the best of its ability)
+%		
+%		\item Navigation
+%		\begin{itemize}
+%			\item Navigation is the process of measuring sensors, estimating data, .. . . .etc
+%		 	\item Use current material 
+%		\end{itemize}
+%	
+%		\item Guidance
+%		\begin{itemize}
+%			\item Purpose of guidance system (reference path to a command consumable to the controller)
+%			\item Guidance uses current position and reference path to determine deviation from path
+%			\item Deviation from the path is used to calculate a heading command that will put the UAV back on the path
+%			\item Methods for path following (Read Sujuits paper again)
+%			\item Summary of findings, vector field has lowest cross track error, parameter tuning, and chattering
+%			\item Parameter tuning . . . (ask jay)
+%			\item More detailed discussion on different vector fields presented in section . . .
+%		\end{itemize}
+%	
+%		
+%		\item Control
+%		\begin{itemize}
+%			\item Converts sensor information and guidance commands into actuator output
+%			\item Read chapter 6 beard and Mclain, find more sources
+%			\item FIGURE of control loop
+%		\end{itemize}
+%
+%		
+%	\end{itemize}
+%\end{itemize}
 
 
 
@@ -403,6 +403,64 @@ Potential fields ability to avoid obstacles and combine path planning, trajector
 
 
 \subsection{Virtual Force Field - Histogram Method}
+When the environment changes, such as a new obstacle or the goal has moved, the potential field has to be recalculated. Koren and Borenstein developed a virtual force field (VFF) histogram method that guides a mobile robot to a known goal while avoiding initially unknown obstacles \cite{borenstein_real-time_1990}. VFF decomposes a robots workspace into discretized cells that contain an integer certainty value associated with the confidence that an obstacle occupies the cell. A global goal applies an artificial attractive force on the robot that pulls it closer to the goal. As the robot detects obstacles, the certainty value increases in the cell associated with the obstacles position. Cells apply artificial repulsive forces with magnitudes that depend on the certainty value and the distance to the cell. 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=7cm]{PaperFigures/histogram}
+	\caption{Virtual force field histogram acting on a mobile robot}
+	\label{fig:histogram}
+\end{figure}
+
+
+The VFF histogram method was validated on a mobile robot platform using ultrasonic sensors in \cite{borenstein_real-time_1990} and \cite{borenstein_vector_1991}, avoiding obstacles and seeking a goal. Certainty cells in VFF only provide strictly repulsive vectors which guide the robot away, but provide no guidance for getting around the obstacle. 
+ 
+\subsection{Lyapunov Vector Fields}
+
+Fixed wing UAVs must maintain a minimum forward velocity therefore cannot converge to a single point making potential field or VFF guidance difficult. Missions for UAVs are typically constructed from obstacle free paths build from straight line and circular arc primitives. Path planning provides a reference to the autopilot that guides the UAV to first arrive at and subsequently follow the desired path while under the influence of external disturbances. 
+Ariving at and following the path are typically is typically achieved by generating vectors normal and parallel to the path respectively. Nelson et al. introduced a vector field generation method for straight line and circular arcs using Lyapunov stability arguments \cite{nelson_cooperative_2005} and is depicted in Figure \ref{fig:nelsonlyapunov}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=13cm]{PaperFigures/nelsonLyapunov}
+	\caption{Lyapunov vector field for straight line and circular primitives}
+	\label{fig:nelsonlyapunov}
+\end{figure}
+
+To construct flyable paths out of the primitives, it was necessary to determine how the resulting vector fields should be combined. Summing the fields directly result in \hl{deadzones, sinks, and singularities}. The solution was to have a single field active at any time, switching when the UAV reached the end of a primitive. Nelson's method was extended by Griffiths for curved path following and showed that the vectors asymptotically approach the curved path, shown in Figure \ref{fig:griffiths}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=7cm]{PaperFigures/griffiths}
+	\caption{Lyapunov vector field approach curved path asymptotically}
+	\label{fig:griffiths}
+\end{figure}
+
+
+Primitive circular fields can be modified via non-linear coordinate transformations to produce globally convergent elliptical fields \cite{frew_lyapunov_nodate}\cite{frew_cooperative_2007}. Frew simulated and experimentally validated the transformed vector field where multiple fixed wing UAVs cooperatively tracked a moving target while maintaining a staggered distance from each other, preventing collision and multiple surveillance angles. The location of a target being tracked is not known with absolute certainty. The covariance matrix from a kalman filter to transform a circular vector field around an uncertain target was investigated in \cite{frew_cooperative_2007} and an example field is shown in Figure \ref{fig:lyapunovFrew}b.
+
+\begin{figure}[h]
+	\begin{subfigmatrix}{2}% number of columns
+		\centering
+		\subfigure []{\includegraphics[width=6.25cm] {PaperFigures/lyapunovFrew}}
+		\subfigure []{\includegraphics[width=8cm] {PaperFigures/lyapunovFrewUncertain}}
+		%		\hspace*{1cm}
+	\end{subfigmatrix}
+	\caption{Elliptical VF produced by non-linear coordinate transformations a)\cite{frew_lyapunov_nodate} b)\cite{frew_cooperative_2007}}
+	\label{fig:lyapunovFrew}
+\end{figure}
+
+A target tracking lyapunov plus tangent vector field was introduced in \cite{chen_tracking_2009} that produced shorter paths compared to lyapunov alone. Outside of the standoff circle, tangent vectors were said to provide the shortest distance to the circle. Inside the standoff circle, no tangent lines exist and lyapunov is used in its place. Figure \ref{fig:lyapunovChen} shows the difference in paths taken for lyapunov and tangent vector fields outside the standoff circle. The TPLVF was later used for path planning to avoid obstacles in \cite{chen_uav_2013}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=7cm]{PaperFigures/lyapunovChen}
+	\caption{Tangent plus lyapunov vector fields for shortest path target tracking \cite{chen_uav_2013}}
+	\label{fig:lyapunovChen}
+\end{figure}
+
+
+
 \begin{itemize}
 	\item Guidance method discretized space
 	\item Obstacles detected and a confidence integer assigned to active cell
@@ -427,11 +485,7 @@ Potential fields ability to avoid obstacles and combine path planning, trajector
 
 \subsection{Lyapunov Vector Field}
 \begin{itemize}
-	\item Unlike HVF, LVF has continuous guidance
 	\item VF are constructed to follow path
-	\item VF in literature have guided/followed paths that have been pre-defined
-	\item Lyapunov arguments to show stability
-	\item Path following with primitives, activate and deactivate fields, no summing together to prevent singularities
 	\item Nelsons method of primitives extended to curved paths
 	\item Tracking uncertain targets (uncertainty used for coordinate transformation to alter field)
 	\item Tangent-plus-lyapunov used for path following and obstacle avoidance (Mixture of Dubins paths and VF)
@@ -443,6 +497,7 @@ Potential fields ability to avoid obstacles and combine path planning, trajector
 	\subsection{Gradient Vector Field}
 	\item Gradient vector field
 	\begin{itemize}
+		\item VF in literature have guided/followed paths that have been pre-defined
 		\item Intersection of surfaces, zero sets represent path
 		\item n-dimensions for any shapes (unlike some Lyapunov made of primitives)
 		\item Guaranteed vectors converge to path
