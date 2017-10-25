@@ -401,6 +401,13 @@ Several methods have been developed to mitigate the effects of local minimums as
 
 Potential fields ability to avoid obstacles and combine path planning, trajectory planning, and control into a single system while being computationally inexpensive makes it an attractive option for many robotic systems. Fixed wing UAVs must maintain a minimum forward velocity and cannot converge to a single point, making potential field difficult to implement. 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \subsection{Virtual Force Field - Histogram Method}
 When the environment changes, such as a new obstacle or the goal has moved, the potential field has to be recalculated. Koren and Borenstein developed a virtual force field (VFF) histogram method that guides a mobile robot to a known goal while avoiding initially unknown obstacles \cite{borenstein_real-time_1990}. VFF decomposes a robots workspace into discretized cells that contain an integer certainty value associated with the confidence that an obstacle occupies the cell. A global goal applies an artificial attractive force on the robot that pulls it closer to the goal. As the robot detects obstacles, the certainty value increases in the cell associated with the obstacles position. Cells apply artificial repulsive forces with magnitudes that depend on the certainty value and the distance to the cell. 
@@ -414,6 +421,14 @@ When the environment changes, such as a new obstacle or the goal has moved, the 
 
 
 The VFF histogram method was validated on a mobile robot platform using ultrasonic sensors in \cite{borenstein_real-time_1990} and \cite{borenstein_vector_1991}, avoiding obstacles and seeking a goal. Certainty cells in VFF only provide strictly repulsive vectors which guide the robot away, but provide no guidance for getting around the obstacle. 
+ 
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+ 
+ 
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
 \subsection{Lyapunov Vector Fields}
 
@@ -460,6 +475,33 @@ A target tracking lyapunov plus tangent vector field was introduced in \cite{che
 \end{figure}
 
 
+\subsection{Non-Lyapunov Vector Fields}
+
+All methods that consider obstacles so far build a vector field that guides the UAV to an obstacle free path. Another approach is to build a vector field tending to a path and use optimal rapid random trees (RRT*) to explore the space for obstacles and select the optimal path. Pereia et al. developed such a method that builds a tree that makes up possible paths for the UAV to take. Branches extend from the root, or initial location of the UAV, randomly throughout the map with a constrained deviation from the initial vector field. When a branch encounters an obstacle it is trimmed and no longer explored. The path of minimum cost, or least distance, is selected for the UAV to use as a reference path. An example of the algorithm is shown in Figure \ref{fig:rrtvf}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=12cm]{PaperFigures/rrtVF}
+	\caption{RRT* path planner with a VF used as a task specification}
+	\label{fig:rrtvf}
+\end{figure}
+
+
+For well known obstacles in urban environments, such as buildings, an optimal path can be constructed with constrained delaunay triangulation (CDT) which has been previously used in computer animation \cite{Zollars}. CTD was used to construct vector fields in \cite{pimenta_fully_2007} that restricts robots movements inside the triangles while moving towards a global goal. A simulation of a robot traversing a vector field inside a set of CDTs can be seen in Figure \ref{fig:cdtVF}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=15cm]{PaperFigures/cdtVF}
+	\caption{Vector field within a set of constrained delaunay triangles}
+	\label{fig:cdtVF}
+\end{figure}
+
+
+
+Getting on and staying on optimal path inside triangular regions explored in (triangular vector field)
+
+Triangulation and vector fields
+Marine vehicle, similar to fixed wing, ideal to directly counteract disturbances of waves 
 
 \begin{itemize}
 	\item Guidance method discretized space

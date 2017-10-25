@@ -1,0 +1,15 @@
+@article {OMICS International.,:10.4172/2168-9792.1000197,
+author = {Zollars MD, Cobb RG and Grymin DJ},
+title = {Simplex Solutions for Optimal Control Flight Paths in Urban Environments},
+journal = {Journal of Aeronautics & Aerospace Engineering},
+volume = {6},
+number = {3},
+publisher = {OMICS International.,},
+issn = {2168-9792},
+url = {https://www.omicsonline.org/open-access/simplex-solutions-for-optimal-control-flight-paths-in-urban-environments-2168-9792-1000197.php?aid=93708},
+doi = {10.4172/2168-9792.1000197},
+pages = {1-8},
+keywords = {Optimal control, Optimization, Unmanned systems, Direct orthogonal collocation,&nbsp; Path planning, Triangulated mesh},
+year = {2017},
+}
+

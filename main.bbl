@@ -71,4 +71,10 @@ Chen, H., Chang, K., and Agate, C.~S., \enquote{{UAV} path planning with
   IEEE Transactions on Aerospace and Electronic Systems\/}, Vol.~49, No.~2,
   2013, pp.~840--856.
 
+\bibitem{pimenta_fully_2007}
+Pimenta, L.~C., Pereira, G.~A., and Mesquita, R.~C., \enquote{Fully continuous
+  vector fields for mobile robot navigation on sequences of discrete triangular
+  regions,} {\em Robotics and {Automation}, 2007 {IEEE} {International}
+  {Conference} on\/}, IEEE, 2007, pp. 1992--1997.
+
 \end{thebibliography}

@@ -22,8 +22,9 @@
 \contentsline {subsection}{\numberline {2.3.2}Potential Field}{18}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3}Virtual Force Field - Histogram Method}{21}{subsection.2.3.3}
 \contentsline {subsection}{\numberline {2.3.4}Lyapunov Vector Fields}{22}{subsection.2.3.4}
-\contentsline {subsection}{\numberline {2.3.5}Lyapunov Vector Field}{26}{subsection.2.3.5}
-\contentsline {subsection}{\numberline {2.3.6}Gradient Vector Field}{26}{subsection.2.3.6}
-\contentsline {section}{\numberline {2.4}Unmanned Aerial Vehicle Simulation}{27}{section.2.4}
-\contentsline {section}{\numberline {2.5}Literature Review Summary}{28}{section.2.5}
-\contentsline {chapter}{References}{29}{schapter.8}
+\contentsline {subsection}{\numberline {2.3.5}Non-Lyapunov Vector Fields}{25}{subsection.2.3.5}
+\contentsline {subsection}{\numberline {2.3.6}Lyapunov Vector Field}{27}{subsection.2.3.6}
+\contentsline {subsection}{\numberline {2.3.7}Gradient Vector Field}{28}{subsection.2.3.7}
+\contentsline {section}{\numberline {2.4}Unmanned Aerial Vehicle Simulation}{29}{section.2.4}
+\contentsline {section}{\numberline {2.5}Literature Review Summary}{29}{section.2.5}
+\contentsline {chapter}{References}{30}{schapter.8}

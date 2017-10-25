@@ -18,3 +18,5 @@
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{24}{figure.2.11}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{24}{figure.2.11}
 \contentsline {figure}{\numberline {2.12}{\ignorespaces Tangent plus lyapunov vector fields for shortest path target tracking \cite {chen_uav_2013}}}{24}{figure.2.12}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces RRT* path planner with a VF used as a task specification}}{25}{figure.2.13}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Vector field within a set of constrained delaunay triangles}}{26}{figure.2.14}
