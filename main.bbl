@@ -71,10 +71,20 @@ Chen, H., Chang, K., and Agate, C.~S., \enquote{{UAV} path planning with
   IEEE Transactions on Aerospace and Electronic Systems\/}, Vol.~49, No.~2,
   2013, pp.~840--856.
 
+\bibitem{md_simplex_2017}
+Md, Z., Rg, C., and Dj, G., \enquote{Simplex {Solutions} for {Optimal}
+  {Control} {Flight} {Paths} in {Urban} {Environments},} {\em Journal of
+  Aeronautics \& Aerospace Engineering\/}, Vol.~06, No.~03, 2017.
+
 \bibitem{pimenta_fully_2007}
 Pimenta, L.~C., Pereira, G.~A., and Mesquita, R.~C., \enquote{Fully continuous
   vector fields for mobile robot navigation on sequences of discrete triangular
   regions,} {\em Robotics and {Automation}, 2007 {IEEE} {International}
   {Conference} on\/}, IEEE, 2007, pp. 1992--1997.
+
+\bibitem{goncalves_artificial_2009}
+Goncalves, V.~M., Pimenta, L. C.~A., Maia, C.~A., and Pereira, G. A.~S.,
+  \enquote{Artificial vector fields for robot convergence and circulation of
+  time-varying curves in n-dimensional spaces,} IEEE, 2009, pp. 2012--2017.
 
 \end{thebibliography}

@@ -17,7 +17,7 @@
 \documentclass[numbered,pdftex]{ohio-etd}
 \usepackage{cite}
 \usepackage{notoccite}
-\usepackage{amsmath} % Inserting Equations
+
 \usepackage{ragged2e}
 \usepackage{verbatim} 
 \usepackage{hyperref}
@@ -51,6 +51,8 @@
 \usepackage{graphicx} % Standard package to incorporate graphics
 \usepackage[printonlyused]{acronym} % Provides a method for incorporating
                                     % acronyms and building an acronym list
+\usepackage{relsize}
+\usepackage{amsmath} % Inserting Equations
 
 \graphicspath{{figures/}} % Allows graphics files to be stored in a
                           % separate directory
@@ -487,7 +489,7 @@ All methods that consider obstacles so far build a vector field that guides the 
 \end{figure}
 
 
-For well known obstacles in urban environments, such as buildings, an optimal path can be constructed with constrained delaunay triangulation (CDT) which has been previously used in computer animation \cite{Zollars}. CTD was used to construct vector fields in \cite{pimenta_fully_2007} that restricts robots movements inside the triangles while moving towards a global goal. A simulation of a robot traversing a vector field inside a set of CDTs can be seen in Figure \ref{fig:cdtVF}.
+For well known obstacles in urban environments, such as buildings, an optimal path can be constructed with constrained delaunay triangulation (CDT) which has been previously used in computer animation \cite{md_simplex_2017}. CTD was used to construct vector fields in \cite{pimenta_fully_2007} that restricts robots movements inside the triangles while moving towards a global goal. A simulation of a robot traversing a vector field inside a set of CDTs can be seen in Figure \ref{fig:cdtVF}.
 
 \begin{figure}
 	\centering
@@ -497,47 +499,74 @@ For well known obstacles in urban environments, such as buildings, an optimal pa
 \end{figure}
 
 
-
-Getting on and staying on optimal path inside triangular regions explored in (triangular vector field)
-
-Triangulation and vector fields
-Marine vehicle, similar to fixed wing, ideal to directly counteract disturbances of waves 
-
-\begin{itemize}
-	\item Guidance method discretized space
-	\item Obstacles detected and a confidence integer assigned to active cell
-	\item Goal applied attractive force
-	\item Obstacles applied repulsive force
-	\item Similar to PF in that "artificial forces" are applied, however they are more guidance than actual states
-	\item Problems with HVF (Discretization, fields point away from obstacles only, no parameters to guide around)
-	\item Although no disturbances were modeled, for a UAV they could conceivably be added to the system
-	\item Moving target not explored, only static case (conceivably could be extended to moving target)
-\end{itemize}
-
-	
-\begin{itemize}
-	\item Discussion on vector fields (what, uses, types....)
-	\item Vector field description (Generation of vectors at any point in space)
-	\item VF benefits (Guidance to established control system, continuous guidance, works well for disturbance rejection (wind))
-	\item No need to modify existing autopilot controllers (let controllers reduce error, not track)
-	\item Conclusion 
-\end{itemize}
+So far all of the vector field methods discussed have avoided obstacles by planning paths around them. Paths are typically calculated at the ground station and if communication is lost a new path may not be relayed to a UAV encountering a new obstacle. A possible solution is using vector fields to provide a repulsive force, not unlike the VFF method, immigrating around the obstacle. 
 
 
 
-\subsection{Lyapunov Vector Field}
-\begin{itemize}
-	\item VF are constructed to follow path
-	\item Nelsons method of primitives extended to curved paths
-	\item Tracking uncertain targets (uncertainty used for coordinate transformation to alter field)
-	\item Tangent-plus-lyapunov used for path following and obstacle avoidance (Mixture of Dubins paths and VF)
-	\item TPL relies on prior knowledge of obstacle for path planning (double check) essentially pp problem 
-	\item Genetic algorithm path planning (Jay)
-	\item Obstacles discovered during flight need renewed path planning
-	\item Cannot reach ground station or not enough time
+% = = = = = = = = = = = = = = = = = = Think about using something like this in the literature review summary
+%So far vector fields built from straight line and circular primitives that are commonly used by path planners to construct missions have been discussed. The method used to build primitives can be extended to construct vector fields that asymptotically converge to curved paths.  Primitives can be modified with coordinate transforms to construct racetrack and elliptical shapes for target following of moving and uncertain targets. Obstacles can be avoided through RRT* that uses a vector field to sense the general direction of branch expansion, and a robotic system can maintain a collision free path inside of a set of constrained triangles with vector fields.
 
-	\subsection{Gradient Vector Field}
-	\item Gradient vector field
+\subsection{Gradient Vector Field}
+
+The gradient vector field method was first introduced in \cite{goncalves_artificial_2009} and produces an n-dimensional field whose vectors are guaranteed to converge to the level sets of the intersection of surfaces. Three terms are summed to produce the total field, consisting of convergence, circulation, and time varying seen in equation \ref{gonFieldeq}.
+
+\begin{equation}
+% Component vector field with conv and circ
+\vec{V} = \boldsymbol{G}\vec{V}_{conv} + \boldsymbol{H}\vec{V}_{circ} +  \boldsymbol{L}\vec{V}_{tv} 
+\label{gonAllComp}
+\end{equation}
+
+Each term is multiplied by a scalar, \textit{\textbf{G}}, \textit{\textbf{H}}, \textit{\textbf{L}}, that weights the contribution of each term on the total field $\vec{V}$.
+\begin{equation}
+% Total field with Conv, Circ, and Time
+\vec{V} = \boldsymbol{G}\sum_{i=1}^{n-1}\alpha_i\nabla_q\alpha_i  +  \boldsymbol{H}\wedge_{i=1}^{n-1}\nabla_q\alpha_i   +  \boldsymbol{L}M^{-1}a
+\label{gonFieldeq}
+\end{equation}
+
+\begin{equation}
+% Component vector field with conv and circ
+\vec{V} = \boldsymbol{G}\vec{V}_{conv} + \boldsymbol{H}\vec{V}_{circ} 
+\label{gonComp}
+\end{equation}
+
+
+
+
+\begin{equation}
+%Spatial dimensions of gon vf
+q = [x_1,x_2,...x_n]
+\label{gonDims}
+\end{equation}
+
+\begin{equation}
+\label{partials}
+\nabla_q=\begin{bmatrix}
+\frac{\partial}{\partial x_1} \\
+\frac{\partial}{\partial x_2} \\
+\vdots\\
+\frac{\partial}{\partial x_n}
+\end{bmatrix}
+\end{equation}
+
+\begin{equation}
+\label{cylinder}
+\alpha_1 = x^2+y2-r
+\end{equation}
+
+\begin{equation}
+\label{plane}
+\alpha_2 = z
+\end{equation}
+
+\begin{equation}
+% Component vector field with conv and circ
+\vec{V} = \boldsymbol{G}\lvert\lvert\vec{V}_{conv}\lvert\lvert + \boldsymbol{H}\lvert\lvert\vec{V}_{circ}\lvert\lvert 
+\label{gonCompNorm}
+\end{equation}
+
+
+
+
 	\begin{itemize}
 		\item VF in literature have guided/followed paths that have been pre-defined
 		\item Intersection of surfaces, zero sets represent path
@@ -555,7 +584,7 @@ Marine vehicle, similar to fixed wing, ideal to directly counteract disturbances
 		%Last Point to make
 		\item \hl{Dynamic GVF weights as a function of vehicle state may provide an optimal guidance for obstacle avoidance}
 \end{itemize}
-\end{itemize}
+
 
 
 \section{Unmanned Aerial Vehicle Simulation}
