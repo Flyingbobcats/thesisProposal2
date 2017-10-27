@@ -507,8 +507,7 @@ So far all of the vector field methods discussed have avoided obstacles by plann
 %So far vector fields built from straight line and circular primitives that are commonly used by path planners to construct missions have been discussed. The method used to build primitives can be extended to construct vector fields that asymptotically converge to curved paths.  Primitives can be modified with coordinate transforms to construct racetrack and elliptical shapes for target following of moving and uncertain targets. Obstacles can be avoided through RRT* that uses a vector field to sense the general direction of branch expansion, and a robotic system can maintain a collision free path inside of a set of constrained triangles with vector fields.
 
 \subsection{Gradient Vector Field}
-
-The gradient vector field method was first introduced in \cite{goncalves_artificial_2009} and produces an n-dimensional field whose vectors are guaranteed to converge to the level sets of the intersection of surfaces. Three terms are summed to produce the total field, consisting of convergence, circulation, and time varying seen in equation \ref{gonFieldeq}.
+The gradient vector field method was first introduced in \cite{goncalves_artificial_2009} and produces an $n$-dimensional vector field guaranteed to converge to a path made of points that lie at the intersection of two surfaces. The total vector field $\vec{V}$ is produced by summing together a convergence, circulation, and time varying terms seen in Equation \ref{gonFieldeq}. Convergence terms contribute vectors normal to the path, circulation terms contribute vectors parallel to the path, and time varying vectors account for changes in the path as a function of time. 
 
 \begin{equation}
 % Component vector field with conv and circ
@@ -516,9 +515,68 @@ The gradient vector field method was first introduced in \cite{goncalves_artific
 \label{gonAllComp}
 \end{equation}
 
-Each term is multiplied by a scalar, \textit{\textbf{G}}, \textit{\textbf{H}}, \textit{\textbf{L}}, that weights the contribution of each term on the total field $\vec{V}$.
+Each term is multiplied by a scalar, \textit{\textbf{G}}, \textit{\textbf{H}}, \textit{\textbf{L}}, that weights the contribution of each term on the total field $\vec{V}$. Only static paths will be discussed so it is assumed the time varying field is null. The advantage of GVF is the convenient access to the weighting terms that independently effect the total field. Magnitude of the weights modifies the strength of each fields influence, whereas the sign indicates the direction. Convergence can be modified to repel by assigning a negative number to the weight. A side-by-side comparison of an attractive and repulsive GVF is shown in Figure \ref{fig:gFields}. Notice that the attractive field vectors point to the path regardless of the vector origin. Changing the sign of the convergence weight produces an identical field with the exception that the vectors are now rotated $180^{\circ}$ which has been used as a repulsive field in [Wilhelm, Wambold, Clem]. Vectors inside of the repulsive field point inward which poses the risk of a UAV being guided to the obstacle instead of repelled. Shrinking the radius of the circle eliminates this risk. .........
 
-${[x1,x2,...,xn]^T \in \!R}$
+If used for guidance, there is the possibility that the UAV would violate the no-fly zone where the vectors change sign and guide towards the center.  
+
+
+
+while circulation can change from clockwise to counterclockwise with a negative scalar
+
+
+
+
+.
+
+%\begin{figure}[H]
+%	\begin{subfigmatrix}{3}% number of columns
+%		\centering	
+%		\subfigure []{\includegraphics[width=5cm] {PaperFigures/convergence}}
+%		\subfigure []{\includegraphics[width=5cm] {PaperFigures/circulation}}
+%	    \subfigure []{\includegraphics[width=5cm] {PaperFigures/timevarying}}
+%		\hspace*{0mm}
+%	\end{subfigmatrix}
+%	\caption{Gradient Vector Field Components}
+%	\label{fig:gvfComp}
+%\end{figure}
+
+
+
+\begin{figure}[H]
+	\begin{subfigmatrix}{2}% number of columns
+		\centering	
+		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/gFieldOnly}}
+		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/_gFieldOnly}}
+		\hspace*{0mm}
+	\end{subfigmatrix}
+	\caption{a) Positive unity weight and b) Negative unity weight for convergence field}
+	\label{fig:gFields}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{subfigmatrix}{2}% number of columns
+		\centering	
+		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/hFieldOnly}}
+		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/_hFieldOnly}}
+		\hspace*{0mm}
+	\end{subfigmatrix}
+	\caption{a) Positive unity weight and b) Negative unity weight for circulation field}
+	\label{fig:hFields}
+\end{figure}
+
+
+Constructing the paths for a UAV flying at constant altitude requires three-dimensional surfaces intersecting to form two-dimensional paths. Consider a UAV in 2-dimensional space tracking a path $\tau$, which is made of points that lie at the intersection of two surfaces. Each of the surfaces $\alpha_i$ is continuous, differentiable, and is a function of the set $q = [x,y,z]$. The convergence field $\vec{V_{conv}}$ is the sum of the surfaces multiplied by their respective partial gradient $\nabla_q\alpha_i$. 
+
+
+
+
+
+Only static paths will be discussed meaning that the time varying component $\vec{V_{TV}} = [0,0]$ for all points in space. Construct
+
+
+
+
+${[x_1,x_2,\cdots,x_n]^T \in \!R} : $
 $\alpha_i(x_1,x_2,. . .,x_n)$
 $(i=1,2,...,n-1)$
 \begin{equation}s

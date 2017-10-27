@@ -20,3 +20,9 @@
 \contentsline {figure}{\numberline {2.12}{\ignorespaces Tangent plus lyapunov vector fields for shortest path target tracking \cite {chen_uav_2013}}}{24}{figure.2.12}
 \contentsline {figure}{\numberline {2.13}{\ignorespaces RRT* path planner with a VF used as a task specification}}{25}{figure.2.13}
 \contentsline {figure}{\numberline {2.14}{\ignorespaces Vector field within a set of constrained delaunay triangles}}{26}{figure.2.14}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces a) Positive unity weight and b) Negative unity weight for convergence field}}{27}{figure.2.15}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{27}{figure.2.15}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{27}{figure.2.15}
+\contentsline {figure}{\numberline {2.16}{\ignorespaces a) Positive unity weight and b) Negative unity weight for circulation field}}{28}{figure.2.16}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{28}{figure.2.16}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{28}{figure.2.16}
