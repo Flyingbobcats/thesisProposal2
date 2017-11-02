@@ -494,7 +494,7 @@ For well known obstacles in urban environments, such as buildings, an optimal pa
 \begin{figure}
 	\centering
 	\includegraphics[width=15cm]{PaperFigures/cdtVF}
-	\caption{Vector field within a set of constrained delaunay triangles}
+	\caption{Vector field within a set of constrained delaunay triangles \cite{pimenta_fully_2007}}
 	\label{fig:cdtVF}
 \end{figure}
 
@@ -515,104 +515,84 @@ The gradient vector field method was first introduced in \cite{goncalves_artific
 \label{gonAllComp}
 \end{equation}
 
-Each term is multiplied by a scalar, \textit{\textbf{G}}, \textit{\textbf{H}}, \textit{\textbf{L}}, that weights the contribution of each term on the total field $\vec{V}$. Only static paths will be discussed so it is assumed the time varying field is null. The advantage of GVF is the convenient access to the weighting terms that independently effect the total field. Magnitude of the weights modifies the strength of each fields influence, whereas the sign indicates the direction. Convergence can be modified to repel by assigning a negative number to the weight. A side-by-side comparison of an attractive and repulsive GVF is shown in Figure \ref{fig:gFields}. Notice that the attractive field vectors point to the path regardless of the vector origin. Changing the sign of the convergence weight produces an identical field with the exception that the vectors are now rotated $180^{\circ}$ which has been used as a repulsive field in [Wilhelm, Wambold, Clem]. Vectors inside of the repulsive field point inward which poses the risk of a UAV being guided to the obstacle instead of repelled. Shrinking the radius of the circle eliminates this risk. .........
+Each term is multiplied by a scalar, \textit{\textbf{G}}, \textit{\textbf{H}}, \textit{\textbf{L}}, that weights the contribution of each term on the total field $\vec{V}$. Only static paths will be discussed so it is assumed the time varying field is null. The advantage of GVF is the convenient access to the weighting terms that independently effect the total field. Magnitude of the weights modifies the strength of each fields influence, whereas the sign indicates the direction. Figure \ref{fig:positiveUnity} shows convergence and circulation fields for a circular path where the weights \textit{\textbf{G}} and \textit{\textbf{H}} are unity and positive. The convergence field contains vectors that are normal to the circular path for all points in space, with exception to the center of the circle which is undefined. Circulation fields contain vectors that are parallel to the path for all points in space with the same exception of no definition at the center of the circle. 
 
-If used for guidance, there is the possibility that the UAV would violate the no-fly zone where the vectors change sign and guide towards the center.  
-
-
-
-while circulation can change from clockwise to counterclockwise with a negative scalar
-
-
-
-
-.
-
-%\begin{figure}[H]
-%	\begin{subfigmatrix}{3}% number of columns
-%		\centering	
-%		\subfigure []{\includegraphics[width=5cm] {PaperFigures/convergence}}
-%		\subfigure []{\includegraphics[width=5cm] {PaperFigures/circulation}}
-%	    \subfigure []{\includegraphics[width=5cm] {PaperFigures/timevarying}}
-%		\hspace*{0mm}
-%	\end{subfigmatrix}
-%	\caption{Gradient Vector Field Components}
-%	\label{fig:gvfComp}
-%\end{figure}
-
-
-
-\begin{figure}[H]
+\begin{figure}[]
 	\begin{subfigmatrix}{2}% number of columns
 		\centering	
 		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/gFieldOnly}}
-		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/_gFieldOnly}}
+		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/hFieldOnly}}
 		\hspace*{0mm}
 	\end{subfigmatrix}
-	\caption{a) Positive unity weight and b) Negative unity weight for convergence field}
-	\label{fig:gFields}
+	\caption{Attractive vector field (a) and clockwise circulation field (b)}
+	\label{fig:positiveUnity}
 \end{figure}
 
-\begin{figure}[H]
+Modifying the signs of \textit{\textbf{G}} and \textit{\textbf{H}} to be unity and negative results in similar fields but with a $180^{\circ}$ rotation about the center of the circle, Figure \ref{fig:negativeUnity}. The attractive convergence field becomes a repulsive field, where all vectors are anti-normal to the path. The circulation field changes direction and rotates counterclockwise around the path. 
+
+\begin{figure}[]
 	\begin{subfigmatrix}{2}% number of columns
 		\centering	
-		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/hFieldOnly}}
+		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/_gFieldOnly}}
 		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/_hFieldOnly}}
 		\hspace*{0mm}
 	\end{subfigmatrix}
-	\caption{a) Positive unity weight and b) Negative unity weight for circulation field}
-	\label{fig:hFields}
+	\caption{Repulsive vector field a) and counterclockwise circulation field b)}
+	\label{fig:negativeUnity}
+\end{figure}
+
+Repulsive fields have been used for obstacle avoidance for a UAV loitering around a moving target in [w,w,c]. A circular goal path was attached to a ground vehicle and a convergence and circulation vector field was generated. Circular paths were with small radii were placed on top of obstacles with strictly repulsive weights. Notice in Figure \ref{fig:negativeUnity}a that inside of the path, vectors guide inward, which is not desired for obstacle avoidance. The problem is aleviated by reducing the radius significantly. Goal and obstacle field are summed together to provide a total field that provides guidance to a UAV. Loitering is accomplished while avoiding two obstacles, as shown in Figure  \ref{fig:gvfMovingTarget} 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=7cm]{PaperFigures/gvfMovingTarget}
+	\caption{Place holder image of UAV following ground target}
+	\label{fig:gvfMovingTarget}
 \end{figure}
 
 
-Constructing the paths for a UAV flying at constant altitude requires three-dimensional surfaces intersecting to form two-dimensional paths. Consider a UAV in 2-dimensional space tracking a path $\tau$, which is made of points that lie at the intersection of two surfaces. Each of the surfaces $\alpha_i$ is continuous, differentiable, and is a function of the set $q = [x,y,z]$. The convergence field $\vec{V_{conv}}$ is the sum of the surfaces multiplied by their respective partial gradient $\nabla_q\alpha_i$. 
+Similar to potential field and VFF, the strength of the repulsive field depends on the distance from an obstacle. In [w,w,c], a tangent hyperbolic decay function was assigned to the obstacle fields which varied the total strength from null to unity, shown in Figure \ref{fig:tanhICUAS2018}. 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=10cm]{PaperFigures/tanh_ICUAS2018}
+	\caption{}
+	\label{fig:tanhICUAS2018}
+\end{figure}
 
 
 
-
-
-Only static paths will be discussed meaning that the time varying component $\vec{V_{TV}} = [0,0]$ for all points in space. Construct
-
+Constructing the paths for a UAV flying at constant altitude requires three-dimensional surfaces intersecting to form two-dimensional paths. Consider a UAV in 2-dimensional space tracking a path $\tau$, which is made of points that lie at the intersection of two surfaces. Each of the surfaces $\alpha_i$ is continuous, differentiable, and is a function of the set $q = [x,y,z]$. The convergence field $\vec{V_{conv}}$ is produced by the sum of surfaces multiplied by their respective partial gradient $\nabla_q\alpha_i$. The definition of the convergence field is summarized in Equations \ref{convOnly} and \ref{partials}.
 
 
 
-${[x_1,x_2,\cdots,x_n]^T \in \!R} : $
-$\alpha_i(x_1,x_2,. . .,x_n)$
-$(i=1,2,...,n-1)$
-\begin{equation}s
+\begin{equation}
 % Total field with Conv, Circ, and Time
-\vec{V} = \boldsymbol{G}\sum_{i=1}^{n-1}\alpha_i\nabla_q\alpha_i  +  \boldsymbol{H}\wedge_{i=1}^{n-1}\nabla_q\alpha_i   +  \boldsymbol{L}M^{-1}a
-\label{gonFieldeq}
-\end{equation}
-
-\begin{equation}
-% Component vector field with conv and circ
-\vec{V} = \boldsymbol{G}\vec{V}_{conv} + \boldsymbol{H}\vec{V}_{circ} 
-\label{gonComp}
-\end{equation}
-
-
-
-
-\begin{equation}
-%Spatial dimensions of gon vf
-q = [x_1,x_2,...x_n]
-\label{gonDims}
+\vec{V}_{conv} = \boldsymbol{G}\sum_{i=1}^{n-1}\alpha_i\nabla_q\alpha_i  
+\label{convOnly}
 \end{equation}
 
 \begin{equation}
 \label{partials}
 \nabla_q=\begin{bmatrix}
-\frac{\partial}{\partial x_1} \\
-\frac{\partial}{\partial x_2} \\
-\vdots\\
-\frac{\partial}{\partial x_n}
+\frac{\partial}{\partial x} \\
+\frac{\partial}{\partial y} \\
+\frac{\partial}{\partial z}
 \end{bmatrix}
 \end{equation}
 
+To produce a circular path of radius $r$ the intersection of a cylinder and plane are used, as shown in Equations \ref{cylinder}-\ref{plane} and pictured in Figure \ref{fig:cylinderPlane}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=7cm]{PaperFigures/cylinderPlane}
+	\caption{}
+	\label{fig:cylinderPlane}
+\end{figure}
+
 \begin{equation}
 \label{cylinder}
-\alpha_1 = x^2+y2-r
+\alpha_1 = x^2+y^2-r
 \end{equation}
 
 \begin{equation}
@@ -620,45 +600,98 @@ q = [x_1,x_2,...x_n]
 \alpha_2 = z
 \end{equation}
 
+Convergence vector field term is produced by taking the wedge product of the partials $\nabla_q\alpha_i$, which in three dimensions simplifies to the cross product as shown in Equations \ref{circOnly} and \ref{circOnlySimp}.
+
+
 \begin{equation}
-% Component vector field with conv and circ
-\vec{V} = \boldsymbol{G}\lvert\lvert\vec{V}_{conv}\lvert\lvert + \boldsymbol{H}\lvert\lvert\vec{V}_{circ}\lvert\lvert 
-\label{gonCompNorm}
+% Total field with Conv, Circ, and Time
+\vec{V}_{circ} =  \boldsymbol{H}\wedge_{i=1}^{n-1}\nabla_q\alpha_i 
+\label{circOnly}
+\end{equation}
+
+\begin{equation}
+% Total field with Conv, Circ, and Time
+\vec{V}_{circ} =  \boldsymbol{H}(\nabla_q\alpha_1 \times \nabla_q\alpha_2) 
+\label{circOnlySimp}
 \end{equation}
 
 
+Circulation and convergence terms may have different magnitudes depending on the location of origin of a vector and the equations used for surfaces. Normalizing each component prior to weighting allows for more predictable results when assigning values. So far the VF weights have been used for high level specification of the desired behavior for a UAV, whether it be for convergence, avoidance, or circulation. Furthermore, there is no guarauntee that when using a vector field for avoidance that the UAV will not violate the no-fly zone. If the UAV turn rate is at saturation an increased reference command will do nothing to aid in avoidance. A demonstration of saturation is seen in Figure \ref{fig:inputSat} where a UAV is provided guidance by a convergent and circulating vector field about a circular path. 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=12cm]{PaperFigures/inputSat}
+	\caption{Dubins UAV actuator saturation}
+	\label{fig:inputSat}
+\end{figure}
+
+If the VF was adjusted earlier at an earlier state, the tracking error may be reduced. When using an obstacle, determining which direction the UAV must fly around the obstacle is important to reduce distance flown. Determining functions for the sign and magnitude of the vector field weights to produce an optimal guidance.
+
+%${[x_1,x_2,\cdots,x_n]^T \in \!R} : $
+%$\alpha_i(x_1,x_2,. . .,x_n)$
+%$(i=1,2,...,n-1)$
+%\begin{equation}
+%% Total field with Conv, Circ, and Time
+%\vec{V} = \boldsymbol{G}\sum_{i=1}^{n-1}\alpha_i\nabla_q\alpha_i  +  \boldsymbol{H}\wedge_{i=1}^{n-1}\nabla_q\alpha_i   +  \boldsymbol{L}M^{-1}a
+%\label{gonFieldeq}
+%\end{equation}
+
+%\begin{equation}
+%% Component vector field with conv and circ
+%\vec{V} = \boldsymbol{G}\vec{V}_{conv} + \boldsymbol{H}\vec{V}_{circ} 
+%\label{gonComp}
+%\end{equation}
 
 
-	\begin{itemize}
-		\item VF in literature have guided/followed paths that have been pre-defined
-		\item Intersection of surfaces, zero sets represent path
-		\item n-dimensions for any shapes (unlike some Lyapunov made of primitives)
-		\item Guaranteed vectors converge to path
-		\item Equations (convergence, circulation, tv)
-		\item Obstacles and paths are static, TV term is not considered
-		\item Examples of components FIGURES: (circulation,convergence,total)
-		\item Normalization of vectors gives each component equal influence on the total vector
-		\item After normalization a scalar weight influences how much influence each component has
-		\item Weights do not effect the guarantee of convergence (non zero and positive)
-		\item FIGURE: With normalization, without normalization (SIDE BY SIDE)
-		\item Dubins vehicle example of saturation
-		\item Static GVF weights do not consider state of the vehicle and provide sub-optimal guidance for obstacle avoidance
-		%Last Point to make
-		\item \hl{Dynamic GVF weights as a function of vehicle state may provide an optimal guidance for obstacle avoidance}
-\end{itemize}
+%\begin{equation}
+%%Spatial dimensions of gon vf
+%q = [x_1,x_2,...x_n]
+%\label{gonDims}
+%\end{equation}
+
+
+
+
+%	\begin{itemize}
+%		\item VF in literature have guided/followed paths that have been pre-defined
+%		\item Intersection of surfaces, zero sets represent path
+%		\item n-dimensions for any shapes (unlike some Lyapunov made of primitives)
+%		\item Guaranteed vectors converge to path
+%		\item Equations (convergence, circulation, tv)
+%		\item Obstacles and paths are static, TV term is not considered
+%		\item Examples of components FIGURES: (circulation,convergence,total)
+%		\item Normalization of vectors gives each component equal influence on the total vector
+%		\item After normalization a scalar weight influences how much influence each component has
+%		\item Weights do not effect the guarantee of convergence (non zero and positive)
+%		\item FIGURE: With normalization, without normalization (SIDE BY SIDE)
+%		\item Dubins vehicle example of saturation
+%		\item Static GVF weights do not consider state of the vehicle and provide sub-optimal guidance for obstacle avoidance
+%		%Last Point to make
+%		\item \hl{Dynamic GVF weights as a function of vehicle state may provide an optimal guidance for obstacle avoidance}
+%\end{itemize}
 
 
 
 \section{Unmanned Aerial Vehicle Simulation}
-\begin{itemize}
-	\item Methods for testing UAVs
-	\item SITL
-	\item Actual flight tests
-	\item Testing UAVs costly, setup, environment difficulties
-	\item Simulation on ground robot (citations)
-	\item Benefits, use as Dubins constraint vehicle to prove algorithm can run real time prior to flights
-	\item Less expensive, saves resources, time, etc
-\end{itemize}
+Testing new guidance, navigation, and control algorithms can be costly, require significant time, and requires an adequately large airspace. Ground stations need to be established which require power and shelter. Some small fixed wing UAVs may not be suitable to fly in all weather, therefore test flights may be canceled due to weather conditions. Lastly, larger UAVs need to have FAA clearance before flight which has to be pre-approved and takes time. Before spending the time to reserve airspace and allocate man hours for flight tests it is important to test algorithms in a controlled environment. One way to accomplish testing without actual flight is through validation through mobile robots simulating fixed wing constraints \cite{ren_experimental_2007}, \cite{louali_designing_2014}, \cite{louali_experimental_2016}. Programming a mobile robot, such as one shown in Figure
+
+\begin{figure}
+	\centering
+	\includegraphics[width=12cm]{PaperFigures/robot}
+	\caption{Differential drive mobile robot simulating fixed wing UAV Dubins constraints}
+	\label{fig:robot}
+\end{figure}
+
+
+%\begin{itemize}
+%	\item Methods for testing UAVs
+%	\item SITL
+%	\item Actual flight tests
+%	\item Testing UAVs costly, setup, environment difficulties
+%	\item Simulation on ground robot (citations)
+%	\item Benefits, use as Dubins constraint vehicle to prove algorithm can run real time prior to flights
+%	\item Less expensive, saves resources, time, etc
+%\end{itemize}
 
 \section{Literature Review Summary}
 

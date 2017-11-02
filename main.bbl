@@ -87,4 +87,21 @@ Goncalves, V.~M., Pimenta, L. C.~A., Maia, C.~A., and Pereira, G. A.~S.,
   \enquote{Artificial vector fields for robot convergence and circulation of
   time-varying curves in n-dimensional spaces,} IEEE, 2009, pp. 2012--2017.
 
+\bibitem{ren_experimental_2007}
+Ren, W., McLain, T., Sun, J.-S., and Beard, R., \enquote{Experimental
+  validation of an autonomous control system on a mobile robot platform,} {\em
+  IET Control Theory \& Applications\/}, Vol.~1, No.~6, Nov. 2007,
+  pp.~1621--1629.
+
+\bibitem{louali_designing_2014}
+Louali, R., Djouadi, M.~S., Nemra, A., Bouaziz, S., and Elouardi, A.,
+  \enquote{Designing embedded systems for fixed-wing {UAVs}: {Dynamic} models
+  study for the choice of an emulation vehicle,} IEEE, Feb. 2014, pp. 1--6.
+
+\bibitem{louali_experimental_2016}
+Louali, R., Elouardi, A., Bouaziz, S., and Djouadi, M.~S.,
+  \enquote{Experimental {Approach} for {Evaluating} an {UAV} {COTS}-{Based}
+  {Embedded} {Sensors} {System},} {\em Journal of Intelligent \& Robotic
+  Systems\/}, Vol.~83, No.~2, Aug. 2016, pp.~289--313.
+
 \end{thebibliography}
