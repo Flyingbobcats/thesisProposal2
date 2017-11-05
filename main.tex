@@ -221,22 +221,24 @@ Each phase consists of an \textbf{objective} that will be accomplished by execut
 
 
 \section{Fixed Wing Unmanned Aerial Vehicle}
-\subsection{Introduction to Fixed Wing UAV}
 
-Unmanned Aerial Vehicles (UAVs) operate without an on-board pilot making them ideal for high endurance and dangerous missions. Remotely piloted aircraft can trade-off pilots when they become fatigued allowing the aircraft to remain in service for longer periods of time. UAVs do not have cockpits or life support systems which free up space for additional equipment and reduces costs. The lack of an on-board pilot and low system costs also allows a UAV to be expendable.  UAVs can be found in rotorcraft and fixed wing varieties. Fixed wing UAVs range widely in form factor and size, but typically fall under either hand-launched or large systems. Hand launched varieties can be carried on the back of a soldier and launched without the use of a runway and are typically battery powered. Large fixed wing UAVs are typically gas powered and require a runway to take-off and land.
 
-\begin{figure}[H]
-	\begin{subfigmatrix}{2}% number of columns
-		\centering
-		\subfigure []{\includegraphics[width=7cm] {PaperFigures/handlaunched}}
-		\subfigure []{\includegraphics[width=7.7cm] {PaperFigures/globalhawk}}
-		\hspace*{0mm}
-	\end{subfigmatrix}
-	\caption{Hand Launched Fixed Wing UAV and Global Hawk}
-	\label{fig:fixedwings}
-\end{figure}
+Unmanned Aerial Vehicles have potential uses for military, police, and civilian communities performing tasks that may put pilots of manned aircraft in harms way.  On-board sensors such as cameras can relay information making UAVs ideal for surveillance, reconnaissance, damage assessment, and natural disaster surveying. Fixed wing UAVs come in a wide range of sizes from micro to large varieties.  Micro to small hand launched UAVs can be easily transported, are inexpensive, and are fast to deploy.  Large UAVs can perform the same tasks as smaller varieties as well as carry weapons. UAVs are part of an Unmanned aerial system consisting of the aircraft, an autopilot, ground station, radios, and transmitters. Ground stations are used for planning missions, configuring UAV parameters, and collecting UAV sensor data.  Missions are typically relayed to a UAV as a path that accomplishes tasks such as waypoint navigation and loitering. Autopilots attempt to follow the path as closely as possible using navigation, guidance, and control algorithms. 
 
-Hand-launched UAVs are primarily tasked with surveilling the immediate area for soldiers on the ground. Cameras on-board relay video to the ground allowing soldiers to identify threats prior to engagement. Large UAVs are tasked with surveillance and can be used for armed reconnaissance \cite{bone_uavs_2003}. Missions can be described in terms of a path that a UAV is required to fly on. The paths are typically constructed from simple primitives such as straight lines connecting waypoints and circular loiter paths. Obstacle free and flyable paths are generated at a ground station prior to flight and sent to the UAV. The UAVs autopilot uses the path as a reference and attempts to keep the UAV as close to the path as possible.  The relationship between a ground station and a UAV is discussed in more detail in the following section. 
+%Unmanned Aerial Vehicles (UAVs) operate without an on-board pilot making them ideal for high endurance and dangerous missions. Remotely piloted aircraft can trade-off pilots when they become fatigued allowing the aircraft to remain in service for longer periods of time. UAVs do not have cockpits or life support systems which free up space for additional equipment and reduces costs. The lack of an on-board pilot and low system costs also allows a UAV to be expendable.  UAVs can be found in rotorcraft and fixed wing varieties. Fixed wing UAVs range widely in form factor and size, but typically fall under either hand-launched or large systems. Hand launched varieties can be carried on the back of a soldier and launched without the use of a runway and are typically battery powered. Large fixed wing UAVs are typically gas powered and require a runway to take-off and land.
+%
+%\begin{figure}[H]
+%	\begin{subfigmatrix}{2}% number of columns
+%		\centering
+%		\subfigure []{\includegraphics[width=7cm] {PaperFigures/handlaunched}}
+%		\subfigure []{\includegraphics[width=7.7cm] {PaperFigures/globalhawk}}
+%		\hspace*{0mm}
+%	\end{subfigmatrix}
+%	\caption{Hand Launched Fixed Wing UAV and Global Hawk}
+%	\label{fig:fixedwings}
+%\end{figure}
+%
+%Hand-launched UAVs are primarily tasked with surveilling the immediate area for soldiers on the ground. Cameras on-board relay video to the ground allowing soldiers to identify threats prior to engagement. Large UAVs are tasked with surveillance and can be used for armed reconnaissance \cite{bone_uavs_2003}. Missions can be described in terms of a path that a UAV is required to fly on. The paths are typically constructed from simple primitives such as straight lines connecting waypoints and circular loiter paths. Obstacle free and flyable paths are generated at a ground station prior to flight and sent to the UAV. The UAVs autopilot uses the path as a reference and attempts to keep the UAV as close to the path as possible.  The relationship between a ground station and a UAV is discussed in more detail in the following section. 
 
 
 
