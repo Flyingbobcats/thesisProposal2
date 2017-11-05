@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.9.26)  1 NOV 2017 15:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.10.13)  5 NOV 2017 15:25
 entering extended mode
 **./main.tex
 (main.tex
@@ -1020,8 +1020,20 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 Chapter 1.
 [11
 
-] [12]
-Overfull \hbox (24.32399pt too wide) in paragraph at lines 212--214
+]
+Underfull \hbox (badness 1072) in paragraph at lines 161--162
+\OT1/txr/m/n/12 singularities will be demonstrated, weighting functions will be
+ investigated, and a
+ []
+
+
+Underfull \hbox (badness 1430) in paragraph at lines 165--166
+[]\OT1/txr/bx/n/12 Recreate gradient vector fields for circular and elliptical 
+obstacles and
+ []
+
+[12]
+Overfull \hbox (135.132pt too wide) in paragraph at lines 212--214
 \OT1/txr/bx/n/12 Deliverable: $[]$\OT1/txr/m/n/12 . 
  []
 
@@ -1272,11 +1284,11 @@ LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbh') on input line 520.
 
 Package epstopdf Info: Source file: <PaperFigures/gFieldOnly.eps>
-(epstopdf)                    date: 2017-10-27 15:53:25
-(epstopdf)                    size: 119279 bytes
+(epstopdf)                    date: 2017-11-05 13:47:29
+(epstopdf)                    size: 121181 bytes
 (epstopdf)             Output file: <PaperFigures/gFieldOnly-eps-converted-to.p
 df>
-(epstopdf)                    date: 2017-10-27 15:54:36
+(epstopdf)                    date: 2017-11-05 13:47:29
 (epstopdf)                    size: 18959 bytes
 (epstopdf)             Command: <epstopdf --outfile=PaperFigures/gFieldOnly-eps
 -converted-to.pdf PaperFigures/gFieldOnly.eps>
@@ -1290,11 +1302,11 @@ Package pdftex.def Info: PaperFigures/gFieldOnly-eps-converted-to.pdf used on i
 nput line 523.
 (pdftex.def)             Requested size: 213.39566pt x 160.04898pt.
 Package epstopdf Info: Source file: <PaperFigures/hFieldOnly.eps>
-(epstopdf)                    date: 2017-10-27 15:52:26
-(epstopdf)                    size: 119245 bytes
+(epstopdf)                    date: 2017-11-05 13:47:29
+(epstopdf)                    size: 121147 bytes
 (epstopdf)             Output file: <PaperFigures/hFieldOnly-eps-converted-to.p
 df>
-(epstopdf)                    date: 2017-10-27 15:56:14
+(epstopdf)                    date: 2017-11-05 13:47:29
 (epstopdf)                    size: 20329 bytes
 (epstopdf)             Command: <epstopdf --outfile=PaperFigures/hFieldOnly-eps
 -converted-to.pdf PaperFigures/hFieldOnly.eps>
@@ -1313,11 +1325,11 @@ LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbh') on input line 533.
 
 Package epstopdf Info: Source file: <PaperFigures/_gFieldOnly.eps>
-(epstopdf)                    date: 2017-10-27 15:53:07
-(epstopdf)                    size: 119228 bytes
+(epstopdf)                    date: 2017-11-05 13:47:29
+(epstopdf)                    size: 121130 bytes
 (epstopdf)             Output file: <PaperFigures/_gFieldOnly-eps-converted-to.
 pdf>
-(epstopdf)                    date: 2017-10-27 15:54:39
+(epstopdf)                    date: 2017-11-05 13:47:29
 (epstopdf)                    size: 18966 bytes
 (epstopdf)             Command: <epstopdf --outfile=PaperFigures/_gFieldOnly-ep
 s-converted-to.pdf PaperFigures/_gFieldOnly.eps>
@@ -1332,11 +1344,11 @@ Package pdftex.def Info: PaperFigures/_gFieldOnly-eps-converted-to.pdf used on
 input line 536.
 (pdftex.def)             Requested size: 213.39566pt x 160.04898pt.
 Package epstopdf Info: Source file: <PaperFigures/_hFieldOnly.eps>
-(epstopdf)                    date: 2017-10-27 15:52:03
-(epstopdf)                    size: 119246 bytes
+(epstopdf)                    date: 2017-11-05 13:47:29
+(epstopdf)                    size: 121148 bytes
 (epstopdf)             Output file: <PaperFigures/_hFieldOnly-eps-converted-to.
 pdf>
-(epstopdf)                    date: 2017-10-27 15:56:17
+(epstopdf)                    date: 2017-11-05 13:47:29
 (epstopdf)                    size: 20310 bytes
 (epstopdf)             Command: <epstopdf --outfile=PaperFigures/_hFieldOnly-ep
 s-converted-to.pdf PaperFigures/_hFieldOnly.eps>
@@ -1366,11 +1378,11 @@ Package pdftex.def Info: PaperFigures/gvfMovingTarget.png used on input line 54
 8.
 (pdftex.def)             Requested size: 199.16928pt x 141.4648pt.
 Package epstopdf Info: Source file: <PaperFigures/tanh_ICUAS2018.eps>
-(epstopdf)                    date: 2017-10-20 16:20:42
+(epstopdf)                    date: 2017-11-05 13:47:29
 (epstopdf)                    size: 19399 bytes
 (epstopdf)             Output file: <PaperFigures/tanh_ICUAS2018-eps-converted-
 to.pdf>
-(epstopdf)                    date: 2017-10-30 13:52:42
+(epstopdf)                    date: 2017-11-05 13:47:29
 (epstopdf)                    size: 4194 bytes
 (epstopdf)             Command: <epstopdf --outfile=PaperFigures/tanh_ICUAS2018
 -eps-converted-to.pdf PaperFigures/tanh_ICUAS2018.eps>
@@ -1406,11 +1418,11 @@ gures/_hFieldOnly-eps-converted-to.pdf> <./PaperFigures/gvfMovingTarget.png>]
 l.582 \end{equation}
                      <./PaperFigures/tanh_ICUAS2018-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <PaperFigures/cylinderPlane.eps>
-(epstopdf)                    date: 2017-10-30 13:27:02
-(epstopdf)                    size: 36739 bytes
+(epstopdf)                    date: 2017-11-05 13:47:29
+(epstopdf)                    size: 37202 bytes
 (epstopdf)             Output file: <PaperFigures/cylinderPlane-eps-converted-t
 o.pdf>
-(epstopdf)                    date: 2017-10-30 13:27:05
+(epstopdf)                    date: 2017-11-05 13:47:29
 (epstopdf)                    size: 5445 bytes
 (epstopdf)             Command: <epstopdf --outfile=PaperFigures/cylinderPlane-
 eps-converted-to.pdf PaperFigures/cylinderPlane.eps>
@@ -1482,12 +1494,12 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 706.
  ) 
 Here is how much of TeX's memory you used:
  10452 strings out of 493320
- 151091 string characters out of 3138948
+ 151091 string characters out of 3138956
  263693 words of memory out of 3000000
  13584 multiletter control sequences out of 15000+200000
  34790 words of font info for 84 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,7n,40p,1356b,496s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 34i,7n,40p,1503b,496s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/txfonts/rtcxr.pfb><C:/Program Files/MiKTeX 2.9/font
 s/type1/public/txfonts/rtxbsc.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
@@ -1498,7 +1510,7 @@ TeX 2.9/fonts/type1/public/txfonts/txsy.pfb><C:/Program Files/MiKTeX 2.9/fonts/
 type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/u
 tmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (35 pages, 6993605 bytes).
+Output written on main.pdf (35 pages, 6993889 bytes).
 PDF statistics:
  571 PDF objects out of 1000 (max. 8388607)
  135 named destinations out of 1000 (max. 500000)
