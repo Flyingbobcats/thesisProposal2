@@ -152,33 +152,33 @@ AoA & Angle of Attack & \\
 
 \chapter{Introduction}
 \section{Motivation and Problem Statement}
- Fixed wing Unmanned Aerial Vehicles are used for long endurance missions such as surveillance that would fatigue pilots or put them in harms way \cite{bone_uavs_2003}. Missions are typically built using waypoiont navigation and loitering executed by path following \cite{sujit_unmanned_2014}. Obstacles are not always known during path planning and once discovered, a new path must be generated. Planning obstacle free and flyable paths takes time and may be impossible to relay to a UAV if communication is not reliable. Guidance that follows mission paths while avoiding obstacles without the need for constant communication with a ground station  may be beneficial. Gradient Vector Fields (GVF) produce heading guidance at any point in space by summing together convergence and circulation field components. Each component uses a static scalar weight. Obstacles have been represented as separate repulsive GVFs that are later summed to the path following GVF [Wilhelm, Wambold, Clem]. Static GVF weights do not consider the state of the UAV resulting in sub-optimal guidance. Modifying the GVF convergence and circulation weights to be functions of common UAV states may generate an optimal guidance. \textbf{The proposed research seeks to determine GVF weighting functions that construct optimal obstacle avoidance.}
+ Fixed wing Unmanned Aerial Vehicles are used for  missions such as surveillance and reconnaissance that might put pilots harms way \cite{bone_uavs_2003}. UAVs carry out mission objectives such as waypoint navigation and loitering by following paths that are typically pre-planned \cite{sujit_unmanned_2014}. Known obstacles are avoided during the planning processes to avoid collisions. Paths must be of obstacles which may not be known during planning. Obstacles are not always known during planning and once discovered a new path may have to be re-planned. Guidance that follows mission paths while avoiding obstacles without the need for re-planning may be beneficial. Gradient vector field (GVF) guidance is a path following method that provides continuous guidance that guaranteed to converge and follow an arbitrary path. Guidance for getting on and following a path is produced by summing together convergence and circulation terms that are weighted by static scalars. Obstacles have been represented as separate repulsive GVFs that are later summed to the path following GVF [Wilhelm, Wambold, Clem]. Static GVFs do not always route the UAV around an obstacle and could be improved. Modifying the GVF convergence and circulation weights to be functions of common UAV states could be used to produce an optimal guidance for obstacle avoidance. \textbf{The proposed research seeks to determine GVF weighting functions that construct optimal obstacle avoidance.}
  \pagebreak
  
  
  
 \section{Methods Overview}
-The proposed research will be conducted in three phases where singularities will be demonstrated, weighting functions will be investigated, and a developed GVF will be validated on a ground robot simulating a UAV.  Phases I and II will be conducted in a simulation environment that combines mission paths and obstacles into a single GVF. Phase III will be conducted with a ground robot simulating a UAV guided by the modified GVF in real-time. Dubins fixed wing constraints will be imposed in simulations and experiments. 
+The proposed research will be conducted in three phases where VF guidance  singularities will be demonstrated, weighting functions will be investigated, and a developed GVF will be validated on a ground robot simulating a UAV.  Phases I and II will be conducted in a simulation environment that combines mission paths and obstacles into a single GVF. Phase III will be conducted with a ground robot simulating a UAV guided by the modified GVF in real-time. Dubins fixed wing constraints will be imposed in simulations and experiments. 
 
 
 \section{Phase I}
-\textbf{Recreate vector fields for circular and elliptical obstacles and demonstrate singularities.} A simulation environment will be built that generates GVFs consisting of mission paths and obstacles. Circular and elliptical obstacles will be investigated and the resulting singularities will be characterized. Static weights will be used and the performance of the guidance measured in distance traveled and time of flight. 
+\textbf{Recreate gradient vector fields for circular and elliptical obstacles and demonstrate singularities.} A simulation environment will be built that generates GVFs consisting of mission paths and obstacles. Circular and elliptical obstacles will be investigated and the resulting singularities will be characterized. Static weights will be used and the performance of the guidance measured in distance traveled and time of flight. 
 
 
 
 \section{Phase II}
-\textbf{Investigate GVF weighting functions that influence obstacle avoidance.} UAV closing rate, position, and range will be used to develop dynamic GVF weights for convergence and circulation. The modified GVF will be compared against a static and strictly repulsive GVF. Distance traveled and time of flight will be used to compare the modified GVF to the unmodified GVF.  
+\textbf{Investigate GVF weighting functions that influence obstacle avoidance.} UAV closing rate, position, and range will be used to develop dynamic GVF weights for convergence and circulation. The modified GVF will be compared against a static and strictly repulsive GVF. Distance traveled and time of flight will be used to as metrics to compare the modified GVF to the unmodified GVF.  
 
 
 
 \section{Phase III}
-\textbf{Validate modified GVF model with ground robot experiments.} The modified GVF developed in Phase II will be implemented on a differential drive ground robot simulating a fixed wing UAV. Guidance to guide the robot to a path while avoiding static obstacles will be demonstrated. 
-
+\textbf{Validate modified GVF model with ground robot experiments.} The modified GVF developed in Phase II will be implemented on a differential drive ground robot simulating a fixed wing UAV. Guidance performance while avoiding static obstacles will be demonstrated.
  
 
 \section{Summary of Phases}
 
-Each phases consists of a \textbf{goal} that will be accomplished by executing \textit{objectives}. Completion of all objectives and phases will result in the final \underline{deliverable}. \\[1cm]
+Each phase consists of an \textbf{objective} that will be accomplished by executing \textit{tasks}.
+ Completion of all objectives and phases will result in the final \underline{deliverable}. \\[1cm]
 
 \noindent
 \textbf{Phase I:} Demonstrate Gradient Vector Field Singularities
@@ -210,7 +210,7 @@ Each phases consists of a \textbf{goal} that will be accomplished by executing \
 }
 
 \noindent
-\textbf{Deliverable:} \underline{Modified GVF optimal guidance for path following and static obstacle avoidance}.
+\textbf{Deliverable:} \underline{Adaptive GVF parameterized weights optimal guidance for path following and static obstacle avoidance}.
 
 
 
@@ -221,22 +221,24 @@ Each phases consists of a \textbf{goal} that will be accomplished by executing \
 
 
 \section{Fixed Wing Unmanned Aerial Vehicle}
-\subsection{Introduction to Fixed Wing UAV}
 
-Unmanned Aerial Vehicles (UAVs) operate without an on-board pilot making them ideal for high endurance and dangerous missions. Remotely piloted aircraft can trade-off pilots when they become fatigued allowing the aircraft to remain in service for longer periods of time. UAVs do not have cockpits or life support systems which free up space for additional equipment and reduces costs. The lack of an on-board pilot and low system costs also allows a UAV to be expendable.  UAVs can be found in rotorcraft and fixed wing varieties. Fixed wing UAVs range widely in form factor and size, but typically fall under either hand-launched or large systems. Hand launched varieties can be carried on the back of a soldier and launched without the use of a runway and are typically battery powered. Large fixed wing UAVs are typically gas powered and require a runway to take-off and land.
 
-\begin{figure}[H]
-	\begin{subfigmatrix}{2}% number of columns
-		\centering
-		\subfigure []{\includegraphics[width=7cm] {PaperFigures/handlaunched}}
-		\subfigure []{\includegraphics[width=7.7cm] {PaperFigures/globalhawk}}
-		\hspace*{0mm}
-	\end{subfigmatrix}
-	\caption{Hand Launched Fixed Wing UAV and Global Hawk}
-	\label{fig:fixedwings}
-\end{figure}
+Unmanned Aerial Vehicles have potential uses for military, police, and civilian communities performing tasks that may put pilots of manned aircraft in harms way.  On-board sensors such as cameras can relay information making UAVs ideal for surveillance, reconnaissance, damage assessment, and natural disaster surveying. Fixed wing UAVs come in a wide range of sizes from micro to large varieties.  Micro to small hand launched UAVs can be easily transported, are inexpensive, and are fast to deploy.  Large UAVs can perform the same tasks as smaller varieties as well as carry weapons. UAVs are part of an Unmanned Aerial System (UAS) consisting of the aircraft, an autopilot, ground station, radios, and transmitters. Ground stations are used for planning missions, configuring UAV parameters, and collecting UAV sensor data.  Missions are typically relayed to a UAV as a path that accomplishes tasks such as waypoint navigation and loitering. Autopilots attempt to follow the path while minimizing tracking error using navigation, guidance, and control algorithms. 
 
-Hand-launched UAVs are primarily tasked with surveilling the immediate area for soldiers on the ground. Cameras on-board relay video to the ground allowing soldiers to identify threats prior to engagement. Large UAVs are tasked with surveillance and can be used for armed reconnaissance \cite{bone_uavs_2003}. Missions can be described in terms of a path that a UAV is required to fly on. The paths are typically constructed from simple primitives such as straight lines connecting waypoints and circular loiter paths. Obstacle free and flyable paths are generated at a ground station prior to flight and sent to the UAV. The UAVs autopilot uses the path as a reference and attempts to keep the UAV as close to the path as possible.  The relationship between a ground station and a UAV is discussed in more detail in the following section. 
+%Unmanned Aerial Vehicles (UAVs) operate without an on-board pilot making them ideal for high endurance and dangerous missions. Remotely piloted aircraft can trade-off pilots when they become fatigued allowing the aircraft to remain in service for longer periods of time. UAVs do not have cockpits or life support systems which free up space for additional equipment and reduces costs. The lack of an on-board pilot and low system costs also allows a UAV to be expendable.  UAVs can be found in rotorcraft and fixed wing varieties. Fixed wing UAVs range widely in form factor and size, but typically fall under either hand-launched or large systems. Hand launched varieties can be carried on the back of a soldier and launched without the use of a runway and are typically battery powered. Large fixed wing UAVs are typically gas powered and require a runway to take-off and land.
+%
+%\begin{figure}[H]
+%	\begin{subfigmatrix}{2}% number of columns
+%		\centering
+%		\subfigure []{\includegraphics[width=7cm] {PaperFigures/handlaunched}}
+%		\subfigure []{\includegraphics[width=7.7cm] {PaperFigures/globalhawk}}
+%		\hspace*{0mm}
+%	\end{subfigmatrix}
+%	\caption{Hand Launched Fixed Wing UAV and Global Hawk}
+%	\label{fig:fixedwings}
+%\end{figure}
+%
+%Hand-launched UAVs are primarily tasked with surveilling the immediate area for soldiers on the ground. Cameras on-board relay video to the ground allowing soldiers to identify threats prior to engagement. Large UAVs are tasked with surveillance and can be used for armed reconnaissance \cite{bone_uavs_2003}. Missions can be described in terms of a path that a UAV is required to fly on. The paths are typically constructed from simple primitives such as straight lines connecting waypoints and circular loiter paths. Obstacle free and flyable paths are generated at a ground station prior to flight and sent to the UAV. The UAVs autopilot uses the path as a reference and attempts to keep the UAV as close to the path as possible.  The relationship between a ground station and a UAV is discussed in more detail in the following section. 
 
 
 
