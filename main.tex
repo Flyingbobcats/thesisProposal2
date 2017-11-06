@@ -210,7 +210,7 @@ Each phase consists of an \textbf{objective} that will be accomplished by execut
 }
 
 \noindent
-\textbf{Deliverable:} \underline{Adaptive GVF parameterized weights optimal guidance for path following and static obstacle avoidance}.
+\textbf{Deliverable:} \underline{Adaptive GVF parameterized weights optimal guidance for path following and static} \underline{ obstacle avoidance}.
 
 
 
@@ -220,140 +220,27 @@ Each phase consists of an \textbf{objective} that will be accomplished by execut
 \section{Introduction to Literature Review}
 
 
-\section{Fixed Wing Unmanned Aerial Vehicle}
+\section{Unmanned Aerial Vehicle}
 
+Unmanned Aerial Vehicles (UAVs) are pilotless aircraft used by military, police, and civilian communities for tasks such as surveillance, reconnaissance, damage assessment, and natural disaster surveying.  UAVs are generally categorized into fixed wing and rotor craft varieties that range in size, payload, and flight time capabilities. The aircrafts can be controlled remotely with a RC transmitter or fly on pre-planned paths executing maneuvers such as waypoint navigation and loitering. Data can be collected with on-board sensors such as cameras which then can be stored or relayed to the ground. UAVs are part of an Unmanned Aerial System (UAS) which is made up of the vehicle, autopilot, ground station, transmitter, and two way radio which is depicted in Figure \ref{fig:uas}. Ground stations are responsible for monitoring the vehicle's status, planning missions, and generating obstacle free and flyable paths which are sent to the autopilot via two way radio. 
 
-Unmanned Aerial Vehicles have potential uses for military, police, and civilian communities performing tasks that may put pilots of manned aircraft in harms way.  On-board sensors such as cameras can relay information making UAVs ideal for surveillance, reconnaissance, damage assessment, and natural disaster surveying. Fixed wing UAVs come in a wide range of sizes from micro to large varieties.  Micro to small hand launched UAVs can be easily transported, are inexpensive, and are fast to deploy.  Large UAVs can perform the same tasks as smaller varieties as well as carry weapons. UAVs are part of an Unmanned Aerial System (UAS) consisting of the aircraft, an autopilot, ground station, radios, and transmitters. Ground stations are used for planning missions, configuring UAV parameters, and collecting UAV sensor data.  Missions are typically relayed to a UAV as a path that accomplishes tasks such as waypoint navigation and loitering. Autopilots attempt to follow the path while minimizing tracking error using navigation, guidance, and control algorithms. 
+\begin{figure}
+	\centering
+	\includegraphics[width=8cm]{PaperFigures/UAS}
+	\caption{Unmanned Aerial System (UAS)}
+	\label{fig:uas}
+\end{figure}
 
-%Unmanned Aerial Vehicles (UAVs) operate without an on-board pilot making them ideal for high endurance and dangerous missions. Remotely piloted aircraft can trade-off pilots when they become fatigued allowing the aircraft to remain in service for longer periods of time. UAVs do not have cockpits or life support systems which free up space for additional equipment and reduces costs. The lack of an on-board pilot and low system costs also allows a UAV to be expendable.  UAVs can be found in rotorcraft and fixed wing varieties. Fixed wing UAVs range widely in form factor and size, but typically fall under either hand-launched or large systems. Hand launched varieties can be carried on the back of a soldier and launched without the use of a runway and are typically battery powered. Large fixed wing UAVs are typically gas powered and require a runway to take-off and land.
-%
-%\begin{figure}[H]
-%	\begin{subfigmatrix}{2}% number of columns
-%		\centering
-%		\subfigure []{\includegraphics[width=7cm] {PaperFigures/handlaunched}}
-%		\subfigure []{\includegraphics[width=7.7cm] {PaperFigures/globalhawk}}
-%		\hspace*{0mm}
-%	\end{subfigmatrix}
-%	\caption{Hand Launched Fixed Wing UAV and Global Hawk}
-%	\label{fig:fixedwings}
-%\end{figure}
-%
-%Hand-launched UAVs are primarily tasked with surveilling the immediate area for soldiers on the ground. Cameras on-board relay video to the ground allowing soldiers to identify threats prior to engagement. Large UAVs are tasked with surveillance and can be used for armed reconnaissance \cite{bone_uavs_2003}. Missions can be described in terms of a path that a UAV is required to fly on. The paths are typically constructed from simple primitives such as straight lines connecting waypoints and circular loiter paths. Obstacle free and flyable paths are generated at a ground station prior to flight and sent to the UAV. The UAVs autopilot uses the path as a reference and attempts to keep the UAV as close to the path as possible.  The relationship between a ground station and a UAV is discussed in more detail in the following section. 
-
-
-
-%What are UAVS?
-%Unmanned Aerial Vehicles are aircraft that are piloted remotely from a ground station. 
-%\begin{itemize}
-%	\item Introductory sentence ?
-%	\item Fixed wing UAVs operate under the same principles as conventional fixed wing aircraft, except piloted remotely
-%	\item Operated remotely removing pilots from harms way
-%	\item All types and sizes, generally categorized into hang-launched and large varieties
-%	\item Hand-launched varieties can be carried on the back of a soldier and made airborne by throwing like a javlin
-%	\item Hand-launched 
-%	\item Operated remotely allows pilots/operators to trade off when becoming fatigued, which allows the aircraft to stay in service longer
-%	\item Long service is ideal for surveillance missions 
-%\end{itemize}
-
-\subsection{Autopilot and Ground Station}
-%Autopilots are devices that receive information from a ground station computer or a transmitter and generate actuator commands to control the UAVs motion. A typical autopilot is depicted in Figure \ref{fig:pixhawk} which contains accelerometer, gyroscopic, and barometric sensors. Peripheral communication devices, sensors, and actuators are connected to the autopilot. 
-
-Autopilots are devices that control the position and attitude of a UAV by implementing guidance, navigation, and control systems. Accelerometers, gyroscopes, barometers, and compasses measure the state of a UAV and are passed to the navigation system. Measurements are often noisy and need to be fused together which is commonly done with a kalman filter \cite{beard_small_2012}. The state estimates are used as feedback for both the guidance and control systems, depicted in Figure \ref{fig:autopilotloops}. Sensor uncertainty and wind disturbances cause the UAV to deviate from the reference path over time and needs to be corrected. The guidance system compares the estimated state of a UAV to the reference path and provides guidance commands in the form of a heading to the control system. State estimates are also fed into the control system as feedback along with guidance commands to produce pulse width modulation commands to actuators. The actuators produce a physical output that alters the state of the UAV which is again measured and estimated by the navigation system. 
+The autopilot is responsible for following the pre-planned path and maintaining vehicle stability while under the influence of external wind disturbances. Stable flight while path following is accomplished by implementing feed-back control, navigation, and guidance systems. Feed-back refers to the closure of an open-loop control system which allows an error to be calculated between the desired state of the UAV, the reference, and the current state of the UAV. Reference error is used to calculate the necessary actuator output required to modify the vehicles attitude and position while preventing unbounded osculations. Feed-back is provided by the navigation system which uses sensors to measure the attitude and position of the aircraft. Sensors often provide noisy data and are sampled at varying rates. Filtering and estimation techniques such as the Kalman filter which fuses and filters measurements to provide an improved state estimation. A high level overview of the autopilots systems can be seen in Figure \ref{fig:autopilotloops}.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=15cm]{PaperFigures/autopilotLoops}
-	\caption{Autopilot Navigation Guidance and Control}
+	\caption{Autopilot's Navigation, Guidance, and Control Architecture}
 	\label{fig:autopilotloops}
 \end{figure}
 
-A typical autopilot is shown in Figure \ref{fig:pixhawk} which is programmed with navigation, guidance, and control software. Accelerometers, gyroscopes, barometers and the compass are included inside the autopilot and makeup the inertial measurement unit (IMU). Additional sensors such as GPS and airspeed sensors can be connected as peripheral devices. Radios are connected to receive transmitter commands and communicate with a ground station. 
-
-\begin{figure}
-	\centering
-	\includegraphics[width=7cm]{PaperFigures/pixhawk}
-	\caption{Pixhawk Autopilot}
-	\label{fig:pixhawk}
-\end{figure}
-
-
-Ground stations are computers that run mission management software that allow users to configure vehicles and program missions. Missions are planned at the ground station where high level mission objectives are assigned to points on a map such as waypoints and loitering maneuvers. Ground station software generates obstacle free and flyable paths that connect mission objectives and relay paths to the autopilot over radio link. Information collected by the UAV can be relayed back to the ground station for analysis. Transmitters can be used to control the UAVs movements directly. Ground stations and autopilots work together to form an Unmanned Aerial System (UAS) depicted in Figure \ref{fig:uas}.
-
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=10cm]{PaperFigures/UAS}
-	\caption{Unmanned Aerial System}
-	\label{fig:uas}
-\end{figure}
-
-Once paths have been generated, such as that shown in Figure \ref{fig:qground}, they are sent to the UAV via radio link. The guidance system is then responsible for guiding the UAV to get on and follow the path. Common methods for guiding algorithms for getting on and following a path include carrot chasing, non-linear guidance law (NLGL), pure pursuit line of sight (PLOS), linear quadratic regulator (LQR) and vector field \cite{sujit_unmanned_2014}. Benchmarks for how each guidance algorithm performs is commonly quantified in control effort and tracking error with respect to the reference path. Sujit et al. compared the above guidance laws and discussed the benefits and disadvantages of the guidance laws, and in terms of control effort and tracking error LQR and vector field performed the best respectively. LQR was shown to have optimal control effort but exhibited large cross track error when subjected to high wind speeds. Vector field produced guidance with the lowest tracking error but experienced osculations once on the path. 
-
-
-%\begin{figure}[H]
-%	\centering
-%	\includegraphics[width=15cm]{PaperFigures/qGround}
-%	\caption{Ground Station Software QGroundControl}
-%	\label{fig:qground}
-%\end{figure}
-%
-%Low tracking error in the presence of wind and has led to the algorithm being used for 
-%
-%\begin{itemize}
-%	\item What is an autopilot and a ground station
-%	\item What are their purposes
-%	\item Why one cannot exist without the other (lack of autonomy?)
-%	\item FIGURE of how they are connected
-%	
-%	\item Ground station 
-%	\begin{itemize}
-%		\item Program or set of programs that provide interface for a pilot or operator to communicate with the UAV
-%		\item Vehicle configurations
-%		\item Mission planning (map, waypoints, loitering, altitude)
-%		\item Missions decomposed into obstacle free and flyable paths that will be sent to the UAV
-%		\item FIGURE of waypoints and loitering being decomposed into flyable paths
-%		\item Unlike conventional robotic systems, path planning is chosen over trajectory planning (getting uav to certain point at certain time when there are constant wind disturbances is difficult)
-%		\item OR maybe trajectory planning is difficult because too many unknowns such as wind disturbances. . .
-%		\item Provides a way to collect data
-%		\item Communicates with UAV through a radio link
-%	\end{itemize}
-%
-%	\item Autopilot
-%	\begin{itemize}
-%		
-%		
-%		\item Receives instructions from ground station and implements navigation, guidance, and control algorithms to accomplish missions (to the best of its ability)
-%		
-%		\item Navigation
-%		\begin{itemize}
-%			\item Navigation is the process of measuring sensors, estimating data, .. . . .etc
-%		 	\item Use current material 
-%		\end{itemize}
-%	
-%		\item Guidance
-%		\begin{itemize}
-%			\item Purpose of guidance system (reference path to a command consumable to the controller)
-%			\item Guidance uses current position and reference path to determine deviation from path
-%			\item Deviation from the path is used to calculate a heading command that will put the UAV back on the path
-%			\item Methods for path following (Read Sujuits paper again)
-%			\item Summary of findings, vector field has lowest cross track error, parameter tuning, and chattering
-%			\item Parameter tuning . . . (ask jay)
-%			\item More detailed discussion on different vector fields presented in section . . .
-%		\end{itemize}
-%	
-%		
-%		\item Control
-%		\begin{itemize}
-%			\item Converts sensor information and guidance commands into actuator output
-%			\item Read chapter 6 beard and Mclain, find more sources
-%			\item FIGURE of control loop
-%		\end{itemize}
-%
-%		
-%	\end{itemize}
-%\end{itemize}
-
-
+The navigation system is responsible for taking high level pre-planned paths from the ground station and providing a reference heading command to the control system. Several methods for path following guidance were investigated in \cite{sujit_unmanned_2014} consisting of carrot chasing, non-linear guidance law, pure line-of-sight, linear quadratic regulator, and gradient vector field method. A Monte Carlo simulation with wind disturbances was conducted for the guidance methods above in \cite{sujit_unmanned_2014}. It was determined that the vector field method followed the path with least tracking error and control effort which is the primary goal of path following. 
 
 
 \section{Vector Field Guidance}
