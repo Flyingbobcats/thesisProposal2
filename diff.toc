@@ -14,15 +14,16 @@
 \contentsline {section}{\numberline {1.6}Summary of Phases}{13}{section.1.6}
 \contentsline {chapter}{\numberline {2}Literature Review}{14}{chapter.2}
 \contentsline {section}{\numberline {2.1}Introduction to Literature Review}{14}{section.2.1}
-\contentsline {section}{\numberline {2.2}Fixed Wing Unmanned Aerial Vehicle}{14}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Autopilot and Ground Station}{14}{subsection.2.2.1}
-\contentsline {section}{\numberline {2.3}Vector Field Guidance}{17}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Introduction to Vector Field Guidance}{17}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Potential Field}{17}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Virtual Force Field - Histogram Method}{20}{subsection.2.3.3}
-\contentsline {subsection}{\numberline {2.3.4}Lyapunov Vector Fields}{21}{subsection.2.3.4}
-\contentsline {subsection}{\numberline {2.3.5}Non-Lyapunov Vector Fields}{24}{subsection.2.3.5}
-\contentsline {subsection}{\numberline {2.3.6}Gradient Vector Field}{26}{subsection.2.3.6}
-\contentsline {section}{\numberline {2.4}Unmanned Aerial Vehicle Simulation}{31}{section.2.4}
-\contentsline {section}{\numberline {2.5}Literature Review Summary}{32}{section.2.5}
-\contentsline {chapter}{References}{33}{schapter.8}
+\contentsline {section}{\numberline {2.2}\DIFdelbegin {\color {red}\sout {Fixed Wing }}\DIFdelend Unmanned Aerial Vehicle}{14}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}{\color {red}\sout {Introduction to Fixed Wing UAV}}}{14}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.1}{\color {red}\sout {Autopilot and Ground Station}}}{15}{subsection.2.2.1}
+\contentsline {section}{\numberline {2.3}Vector Field Guidance}{18}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Introduction to Vector Field Guidance}{18}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Potential Field}{19}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Virtual Force Field - Histogram Method}{21}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}Lyapunov Vector Fields}{22}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.5}Non-Lyapunov Vector Fields}{25}{subsection.2.3.5}
+\contentsline {subsection}{\numberline {2.3.6}Gradient Vector Field}{27}{subsection.2.3.6}
+\contentsline {section}{\numberline {2.4}Unmanned Aerial Vehicle Simulation}{32}{section.2.4}
+\contentsline {section}{\numberline {2.5}Literature Review Summary}{33}{section.2.5}
+\contentsline {chapter}{References}{34}{schapter.8}
