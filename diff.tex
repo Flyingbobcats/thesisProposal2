@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL old.tex   Thu Nov  2 18:29:44 2017
-%DIF ADD new.tex   Mon Nov  6 16:09:58 2017
+%DIF DEL old.tex   Mon Nov  6 16:09:58 2017
+%DIF ADD new.tex   Wed Nov 15 16:29:47 2017
 %%
 %% This file provides a template that can be used in concert with the
 %% ohio-etd class to generate an electronic thesis or dissertation which
@@ -230,36 +230,42 @@ AoA & Angle of Attack & \\
 
 \chapter{Introduction}
 \section{Motivation and Problem Statement}
- Fixed wing Unmanned Aerial Vehicles are used for  \DIFdelbegin \DIFdel{long endurance }\DIFdelend missions such as surveillance \DIFdelbegin \DIFdel{that would fatigue pilots or put them in }\DIFdelend \DIFaddbegin \DIFadd{and reconnaissance that might put pilots }\DIFaddend harms way \cite{bone_uavs_2003}. \DIFdelbegin \DIFdel{Missions are typically built using waypoiont }\DIFdelend \DIFaddbegin \DIFadd{UAVs carry out mission objectives such as waypoint }\DIFaddend navigation and loitering \DIFdelbegin \DIFdel{executed by path following \mbox{%DIFAUXCMD
+%DIF >  Fixed wing Unmanned Aerial Vehicles are used for  missions such as surveillance and reconnaissance that might put pilots harms way \cite{bone_uavs_2003}. UAVs carry out mission objectives such as waypoint navigation and loitering by following paths that are typically pre-planned \cite{sujit_unmanned_2014}. Known obstacles are avoided during the planning processes to avoid collisions. Paths must be of obstacles which may not be known during planning. Obstacles are not always known during planning and once discovered a new path may have to be re-planned. Guidance that follows mission paths while avoiding obstacles without the need for re-planning may be beneficial. Gradient vector field (GVF) guidance is a path following method that provides continuous guidance that guaranteed to converge and follow an arbitrary path. Guidance for getting on and following a path is produced by summing together convergence and circulation terms that are weighted by static scalars. Obstacles have been represented as separate repulsive GVFs that are later summed to the path following GVF [Wilhelm, Wambold, Clem]. Static GVFs do not always route the UAV around an obstacle and could be improved. Modifying the GVF convergence and circulation weights to be functions of common UAV states could be used to produce an optimal guidance for obstacle avoidance. \textbf{The proposed research seeks to determine GVF weighting functions that construct optimal obstacle avoidance.}
+%DIF >  \pagebreak
+Fixed wing Unmanned Aerial Vehicles are used for missions such as surveillance and reconnaissance that might put pilots \DIFdelbegin \DIFdel{harms }\DIFdelend \DIFaddbegin \DIFadd{harm’s }\DIFaddend way \cite{bone_uavs_2003}. \DIFdelbegin \DIFdel{UAVs carry out mission objectives such as waypoint navigation and loitering by following paths that }\DIFdelend \DIFaddbegin \DIFadd{Missions consist of sequential objectives that are represented by a path that the UAV attempts to follow. Paths }\DIFaddend are typically pre-planned \DIFdelbegin \DIFdel{\mbox{%DIFAUXCMD
 \cite{sujit_unmanned_2014}}\hspace{0pt}%DIFAUXCMD
-. }\DIFdelend \DIFaddbegin \DIFadd{by following paths that are typically pre-planned \mbox{%DIFAUXCMD
-\cite{sujit_unmanned_2014}}\hspace{0pt}%DIFAUXCMD
-. Known obstacles are avoided during the planning processes to avoid collisions. Paths must be of obstacles which may not be known during planning. }\DIFaddend Obstacles are not always known during \DIFdelbegin \DIFdel{path }\DIFdelend planning and once discovered \DIFdelbegin \DIFdel{, }\DIFdelend a new path \DIFdelbegin \DIFdel{must be generated. Planning obstacle free and flyable paths takes time and may be impossible to relay to a UAV if communication is not reliable}\DIFdelend \DIFaddbegin \DIFadd{may have to be re-planned}\DIFaddend . Guidance that follows mission paths while avoiding obstacles without the need for \DIFdelbegin \DIFdel{constant communication with a ground station  }\DIFdelend \DIFaddbegin \DIFadd{re-planning }\DIFaddend may be beneficial. Gradient \DIFdelbegin \DIFdel{Vector Fields }\DIFdelend \DIFaddbegin \DIFadd{vector field }\DIFaddend (GVF) \DIFdelbegin \DIFdel{produce heading guidance at any point in space }\DIFdelend \DIFaddbegin \DIFadd{guidance is a path following method that provides continuous guidance that guaranteed to converge and follow an arbitrary path. Guidance for getting on and following a path is produced }\DIFaddend by summing together convergence and circulation \DIFdelbegin \DIFdel{field components. Each component uses a static scalar weight}\DIFdelend \DIFaddbegin \DIFadd{terms that are weighted by static scalars}\DIFaddend . Obstacles have been represented as separate repulsive GVFs that are later summed to the path following GVF [Wilhelm, Wambold, Clem]. Static \DIFdelbegin \DIFdel{GVF weights do not consider the state of the UAV resulting in sub-optimal guidance}\DIFdelend \DIFaddbegin \DIFadd{GVFs do not always route the UAV around an obstacle and could be improved}\DIFaddend . Modifying the GVF convergence and circulation weights to be functions of common UAV states \DIFdelbegin \DIFdel{may generate }\DIFdelend \DIFaddbegin \DIFadd{could be used to produce }\DIFaddend an optimal guidance \DIFaddbegin \DIFadd{for obstacle avoidance}\DIFaddend . \textbf{The proposed research seeks to determine GVF weighting functions that construct optimal obstacle avoidance.}
- \pagebreak
+. Known obstacles are avoided during the planning processes to avoid collisions }\DIFdelend \DIFaddbegin \DIFadd{before flight and are constructed by connecting straight lines and circular arcs. Vehicle turn rate constraints and obstacles are considered when planning a path to prevent collisions or entry into no-fly zones. UAVs are guided to follow a path by implementing guidance algorithms which calculate headings that minimize the distance to a path. UAVs may encounter an obstacle whose position was previously unknown while following a pre-planned path which may require a new path to be generated}\DIFaddend . \DIFdelbegin \DIFdel{Paths must be of obstacles which may not be known during planning. Obstacles are not always known during planning and once discovered a new path may have to be re-planned. }\DIFdelend Guidance that follows mission paths while avoiding obstacles without the need for re-planning may be beneficial. 
+\DIFdelbegin \DIFdel{Gradient vector field }\DIFdelend \DIFaddbegin \\
+\DIFadd{Gradient Vector Field }\DIFaddend (GVF) guidance is a path following method that \DIFdelbegin \DIFdel{provides continuous guidance that guaranteed }\DIFdelend \DIFaddbegin \DIFadd{has been adapted for obstacle avoidance. GVFs produces continuous heading vectors that guide a UAV }\DIFaddend to converge and follow \DIFdelbegin \DIFdel{an arbitrary path. Guidance for getting on and following a path is produced }\DIFdelend \DIFaddbegin \DIFadd{a path }\DIFaddend by summing together convergence and \DIFdelbegin \DIFdel{circulation }\DIFdelend \DIFaddbegin \DIFadd{circulating }\DIFaddend terms that are weighted by static scalars. \DIFdelbegin \DIFdel{Obstacles have been represented as separate repulsive GVFs that are later summed to the path following GVF }%DIFDELCMD < [%%%
+\DIFdel{Wilhelm, Wambold, Clem}%DIFDELCMD < ]%%%
+\DIFdelend \DIFaddbegin \DIFadd{An obstacle represented as a path and given a negative convergence weight results in a repulsive field that can be used for obstacle avoidance}\DIFaddend . Static GVFs do not always route the UAV around an obstacle and could be improved. Modifying the GVF convergence and circulation weights \DIFaddbegin \DIFadd{of obstacle fields }\DIFaddend to be functions of common UAV states could be used to produce an optimal guidance for obstacle avoidance. \textbf{The proposed research seeks to determine GVF weighting functions that construct optimal obstacle avoidance.}
+\DIFaddbegin 
+
+
+ \DIFaddend \pagebreak
 
  
- 
 \section{Methods Overview}
-The proposed research will be conducted in three phases where \DIFaddbegin \DIFadd{VF guidance  }\DIFaddend singularities will be demonstrated, weighting functions will be investigated, and a developed GVF will be validated on a ground robot simulating a UAV.  Phases I and II will be conducted in a simulation environment that combines mission paths and obstacles into a single GVF. Phase III will be conducted with a ground robot simulating a UAV guided by the modified GVF in real-time. Dubins fixed wing constraints will be imposed in simulations and experiments. 
+The proposed research will be conducted in three phases where VF guidance  singularities will be demonstrated, weighting functions will be investigated, and a developed GVF will be validated on a ground robot simulating a UAV.  Phases I and II will be conducted in a simulation environment that combines mission paths and obstacles into a single GVF. Phase III will be conducted with a ground robot simulating a UAV guided by the modified GVF in real-time. \DIFdelbegin \DIFdel{Dubins }\DIFdelend \DIFaddbegin \DIFadd{Dubin's }\DIFaddend fixed wing constraints will be imposed in simulations and experiments. 
 
 
 \section{Phase I}
-\textbf{Recreate \DIFaddbegin \DIFadd{gradient }\DIFaddend vector fields for circular and elliptical obstacles and demonstrate singularities.} A simulation environment will be built that generates GVFs consisting of mission paths and obstacles. Circular and elliptical obstacles will be investigated and the resulting singularities will be characterized. Static weights will be used and the performance of the guidance measured in distance traveled and time of flight. 
+\textbf{Recreate gradient vector fields for circular and elliptical obstacles and demonstrate singularities.} A simulation environment will be built that generates GVFs consisting of mission paths and obstacles. Circular and elliptical obstacles will be investigated and the resulting singularities will be characterized. Static weights will be used and the performance of the guidance measured in distance traveled and time of flight. 
 
 
 
 \section{Phase II}
-\textbf{Investigate GVF weighting functions that influence obstacle avoidance.} UAV closing rate, position, and range will be used to develop dynamic GVF weights for convergence and circulation. The modified GVF will be compared against a static and strictly repulsive GVF. Distance traveled and time of flight will be used to \DIFaddbegin \DIFadd{as metrics to }\DIFaddend compare the modified GVF to the unmodified GVF.  
+\textbf{Investigate GVF weighting functions that influence obstacle avoidance.} UAV closing rate, position, and range will be used to develop dynamic GVF weights for convergence and circulation. The modified GVF will be compared against a static and strictly repulsive GVF. Distance traveled and time of flight will be used to as metrics to compare the modified GVF to the unmodified GVF.  
 
 
 
 \section{Phase III}
-\textbf{Validate modified GVF model with ground robot experiments.} The modified GVF developed in Phase II will be implemented on a differential drive ground robot simulating a fixed wing UAV. Guidance \DIFdelbegin \DIFdel{to guide the robot to a path }\DIFdelend \DIFaddbegin \DIFadd{performance }\DIFaddend while avoiding static obstacles will be demonstrated.
+\textbf{Validate modified GVF model with ground robot experiments.} The modified GVF developed in Phase II will be implemented on a differential drive ground robot simulating a fixed wing UAV. Guidance performance while avoiding static obstacles will be demonstrated.
 
 
 \section{Summary of Phases}
 
-Each \DIFdelbegin \DIFdel{phases consists of a }\DIFdelend \DIFaddbegin \DIFadd{phase consists of an }\DIFaddend \textbf{\DIFdelbegin \DIFdel{goal}\DIFdelend \DIFaddbegin \DIFadd{objective}\DIFaddend } that will be accomplished by executing \textit{\DIFdelbegin \DIFdel{objectives}\DIFdelend \DIFaddbegin \DIFadd{tasks}\DIFaddend }.
+Each phase consists of an \textbf{objective} that will be accomplished by executing \textit{tasks}.
  Completion of all objectives and phases will result in the final \underline{deliverable}. \\[1cm]
 
 \noindent
@@ -292,7 +298,7 @@ Each \DIFdelbegin \DIFdel{phases consists of a }\DIFdelend \DIFaddbegin \DIFadd{
 }
 
 \noindent
-\textbf{Deliverable:} \underline{\DIFdelbegin \DIFdel{Modified }\DIFdelend \DIFaddbegin \DIFadd{Adaptive }\DIFaddend GVF \DIFaddbegin \DIFadd{parameterized weights }\DIFaddend optimal guidance for path following and static\DIFdelbegin \DIFdel{obstacle avoidance}\DIFdelend } \DIFaddbegin \underline{ \DIFadd{obstacle avoidance}}\DIFaddend .
+\textbf{Deliverable:} \underline{Adaptive GVF parameterized weights optimal guidance for path following and static} \underline{ obstacle avoidance}.
 
 
 
@@ -302,186 +308,27 @@ Each \DIFdelbegin \DIFdel{phases consists of a }\DIFdelend \DIFaddbegin \DIFadd{
 \section{Introduction to Literature Review}
 
 
-\section{\DIFdelbegin \DIFdel{Fixed Wing }\DIFdelend Unmanned Aerial Vehicle}
-\DIFdelbegin \subsection{\DIFdel{Introduction to Fixed Wing UAV}}
-%DIFAUXCMD
-\addtocounter{subsection}{-1}%DIFAUXCMD
-\DIFdelend 
+\section{Unmanned Aerial Vehicle}
 
-Unmanned Aerial Vehicles (UAVs) \DIFdelbegin \DIFdel{operate without an }\DIFdelend \DIFaddbegin \DIFadd{are pilotless aircraft used by military, police, and civilian communities for tasks such as surveillance, reconnaissance, damage assessment, and natural disaster surveying.  UAVs are generally categorized into fixed wing and rotor craft varieties that range in size, payload, and flight time capabilities. The aircrafts can be controlled remotely with a RC transmitter or fly on pre-planned paths executing maneuvers such as waypoint navigation and loitering. Data can be collected with }\DIFaddend on-board \DIFdelbegin \DIFdel{pilot making them ideal for high endurance and dangerous missions. Remotely piloted aircraft can trade-off pilots when they become fatigued allowing the aircraft to remain in service for longer periods of time. UAVs do not have cockpits or life support systems which free up space for additional equipment and reduces costs.  The lack of an on-board pilot and low system costs also allows a UAV to be expendable.  UAVs can be found in rotorcraft and fixed wing varieties. Fixed wing UAVs range widely in form factor and size, but typically fall under either hand-launched or large systems. Hand launched varieties can be carried on the back of a soldier and launched without the use of a runway and are typically battery powered. Large fixed wing UAVs are typically gas powered and require a runway to take-off and land.
-}%DIFDELCMD < 
+Unmanned Aerial Vehicles (UAVs) are pilotless aircraft used by military, police, and civilian communities for tasks such as surveillance, reconnaissance, damage assessment, and natural disaster surveying.  UAVs are generally categorized into fixed wing and rotor craft varieties that range in size, payload, and flight time capabilities. The aircrafts can be controlled remotely with a RC transmitter or fly on pre-planned paths executing maneuvers such as waypoint navigation and loitering. Data can be collected with on-board sensors such as cameras which then can be stored or relayed to the ground. UAVs are part of an Unmanned Aerial System (UAS) which is made up of the vehicle, autopilot, ground station, transmitter, and two way radio which is depicted in Figure \ref{fig:uas}. Ground stations are responsible for monitoring the vehicle's status, planning missions, and generating obstacle free and flyable paths which are sent to the autopilot via two way radio. 
 
-%DIFDELCMD < \begin{figure}[H]
-%DIFDELCMD < 	\begin{subfigmatrix}{2}%%%
-%DIF <  number of columns
-		%DIFDELCMD < \centering
-%DIFDELCMD < 		\subfigure []{\includegraphics[width=7cm] {%%%
-\DIFdelFL{PaperFigures/handlaunched}%DIFDELCMD < }}
-%DIFDELCMD < 		\subfigure []{\includegraphics[width=7.7cm] {%%%
-\DIFdelFL{PaperFigures/globalhawk}%DIFDELCMD < }}
-%DIFDELCMD < 		%%%
-\DIFdelFL{\hspace*{0mm}
-	}%DIFDELCMD < \end{subfigmatrix}
-%DIFDELCMD < 	%%%
-%DIFDELCMD < \caption{%
-{%DIFAUXCMD
-\DIFdelFL{Hand Launched Fixed Wing UAV and Global Hawk}}
-	%DIFAUXCMD
-%DIFDELCMD < \label{fig:fixedwings}
-%DIFDELCMD < \end{figure}
-%DIFDELCMD < 
-
-%DIFDELCMD < %%%
-\DIFdel{Hand-launched UAVs are primarily tasked with surveilling the immediate area for soldiers on the ground. Cameras on-board relay video }\DIFdelend \DIFaddbegin \DIFadd{sensors such as cameras which then can be stored or relayed }\DIFaddend to the ground\DIFdelbegin \DIFdel{allowing soldiers to identify threats prior to engagement. Large UAVs are tasked with surveillance and can be used for armed reconnaissance \mbox{%DIFAUXCMD
-\cite{bone_uavs_2003}}\hspace{0pt}%DIFAUXCMD
-. Missions can be described in terms of a path that a UAV is required to fly on. The paths are typically constructed from simple primitives such as straight lines connecting waypoints and circular loiter paths. Obstacle }\DIFdelend \DIFaddbegin \DIFadd{. UAVs are part of an Unmanned Aerial System (UAS) which is made up of the vehicle, autopilot, ground station, transmitter, and two way radio which is depicted in Figure \ref{fig:uas}. Ground stations are responsible for monitoring the vehicle's status, planning missions, and generating obstacle }\DIFaddend free and flyable paths \DIFdelbegin \DIFdel{are generated at a ground station prior to flight and }\DIFdelend \DIFaddbegin \DIFadd{which are }\DIFaddend sent to the \DIFdelbegin \DIFdel{UAV. 
-The UAVs autopilot uses the path as a reference and attempts to keep the UAV as close to the path as possible. The relationship between a ground station and a UAV is discussed in more detail in the following section. 
-}\DIFdelend \DIFaddbegin \DIFadd{autopilot via two way radio. 
-}\DIFaddend 
-
-%DIF < What are UAVS?
-%DIF < Unmanned Aerial Vehicles are aircraft that are piloted remotely from a ground station. 
-%DIF < \begin{itemize}
-%DIF < 	\item Introductory sentence ?
-%DIF < 	\item Fixed wing UAVs operate under the same principles as conventional fixed wing aircraft, except piloted remotely
-%DIF < 	\item Operated remotely removing pilots from harms way
-%DIF < 	\item All types and sizes, generally categorized into hang-launched and large varieties
-%DIF < 	\item Hand-launched varieties can be carried on the back of a soldier and made airborne by throwing like a javlin
-%DIF < 	\item Hand-launched 
-%DIF < 	\item Operated remotely allows pilots/operators to trade off when becoming fatigued, which allows the aircraft to stay in service longer
-%DIF < 	\item Long service is ideal for surveillance missions 
-%DIF < \end{itemize}
-\DIFdelbegin %DIFDELCMD < 
-
-%DIFDELCMD < %%%
-\subsection{\DIFdel{Autopilot and Ground Station}}
-%DIFAUXCMD
-\addtocounter{subsection}{-1}%DIFAUXCMD
-%DIF < Autopilots are devices that receive information from a ground station computer or a transmitter and generate actuator commands to control the UAVs motion. A typical autopilot is depicted in Figure \ref{fig:pixhawk} which contains accelerometer, gyroscopic, and barometric sensors. Peripheral communication devices, sensors, and actuators are connected to the autopilot. 
-%DIFDELCMD < 
-
-%DIFDELCMD < %%%
-\DIFdel{Autopilots are devices that control the position and attitude of a UAV by implementing guidance}\DIFdelend \DIFaddbegin \begin{figure}
+\begin{figure}
 	\centering
 	\includegraphics[width=8cm]{PaperFigures/UAS}
-	\caption{\DIFaddFL{Unmanned Aerial System (UAS)}}
+	\caption{Unmanned Aerial System (UAS)}
 	\label{fig:uas}
 \end{figure}
 
-\DIFadd{The autopilot is responsible for following the pre-planned path and maintaining vehicle stability while under the influence of external wind disturbances. Stable flight while path following is accomplished by implementing feed-back control}\DIFaddend , navigation, and \DIFdelbegin \DIFdel{control systems. Accelerometers, gyroscopes, barometers, and compasses measure the state of a UAV and are passed to the navigation system . Measurements are often noisy and need to be fused together which is commonly done with a kalman filter \mbox{%DIFAUXCMD
-\cite{beard_small_2012}}\hspace{0pt}%DIFAUXCMD
-. The state estimates are used as feedback for both the guidance and control systems, depicted in Figure \ref{fig:autopilotloops}. Sensor uncertainty and wind disturbances cause the UAV to deviate from the reference path over time and needs to be corrected. The guidance system compares the estimated state of a UAVto the referencepath and provides guidance commands in the form of a heading to the control system. State estimates are also fed into the control system as feedback along with guidance commands to produce pulse width modulation commands to actuators. The actuators produce a physical output that alters the state of the UAV which is again measured and estimated }\DIFdelend \DIFaddbegin \DIFadd{guidance systems. Feed-back refers to the closure of an open-loop control system which allows an error to be calculated between the desired state of the UAV, the reference, and the current state of the UAV. Reference error is used to calculate the necessary actuator output required to modify the vehicles attitude and position while preventing unbounded osculations. Feed-back is provided }\DIFaddend by the navigation system \DIFaddbegin \DIFadd{which uses sensors to measure the attitude and position of the aircraft. Sensors often provide noisy data and are sampled at varying rates. Filtering and estimation techniques such as the Kalman filter which fuses and filters measurements to provide an improved state estimation. A high level overview of the autopilots systems can be seen in Figure \ref{fig:autopilotloops}}\DIFaddend .
+The autopilot is responsible for following \DIFdelbegin \DIFdel{the }\DIFdelend \DIFaddbegin \DIFadd{a }\DIFaddend pre-planned path and maintaining vehicle stability while under the influence of external wind disturbances. Stable flight while path following is accomplished by implementing feed-back control, navigation, and guidance systems. Feed-back refers to the closure of an open-loop control system which allows an error to be calculated between the desired state of the UAV, the reference, and the current state of the UAV. Reference error is used to calculate the necessary actuator output required to modify the vehicles attitude and position while preventing unbounded osculations. Feed-back is provided by the navigation system which uses sensors to measure the attitude and position of the aircraft. Sensors often provide noisy data and are sampled at varying rates. Filtering and estimation techniques such as the Kalman filter which fuses and filters measurements to provide an improved state estimation. A high level overview of the autopilots systems can be seen in Figure \ref{fig:autopilotloops}.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=15cm]{PaperFigures/autopilotLoops}
-	\DIFdelbeginFL %DIFDELCMD < \caption{%
-{%DIFAUXCMD
-\DIFdelFL{Autopilot Navigation Guidance and Control}}
-	%DIFAUXCMD
-%DIFDELCMD < \label{fig:autopilotloops}
-%DIFDELCMD < \end{figure}
-%DIFDELCMD < 
+	\caption{Autopilot's Navigation, Guidance, and Control Architecture}
+	\label{fig:autopilotloops}
+\end{figure}
 
-%DIFDELCMD < %%%
-\DIFdel{A typical autopilot is shown in Figure \ref{fig:pixhawk} which is programmed with navigation, guidance, and control software. Accelerometers, gyroscopes, barometers and the compass are included inside the autopilot and makeup the inertial measurement unit (IMU). Additional sensors such as GPS and airspeed sensors can be connected as peripheral devices. Radios are connected to receive transmitter commands and communicate with a ground station. }%DIFDELCMD < 
-
-%DIFDELCMD < \begin{figure}
-%DIFDELCMD < 	\centering
-%DIFDELCMD < 	\includegraphics[width=7cm]{PaperFigures/pixhawk}
-%DIFDELCMD < 	%%%
-%DIFDELCMD < \caption{%
-{%DIFAUXCMD
-\DIFdelFL{Pixhawk Autopilot}}
-	%DIFAUXCMD
-%DIFDELCMD < \label{fig:pixhawk}
-%DIFDELCMD < \end{figure}
-%DIFDELCMD < 
-
-%DIFDELCMD < %%%
-\DIFdel{Ground stations are computers that run mission management software that allow users to configure vehicles and program missions. Missions are planned at the ground station where high level mission objectives are assigned to points on a map such as waypoints and loitering maneuvers. Ground station software generates obstacle free and flyable paths that connect mission objectives and relay paths to the autopilot over radio link. Information collected by the UAV can be relayed back to the ground station for analysis. Transmitters can be used to control the UAVs movements directly. Ground stations and autopilots work together to form an Unmanned Aerial System (UAS) depicted in Figure \ref{fig:uas}.
-}%DIFDELCMD < 
-
-%DIFDELCMD < \begin{figure}[H]
-%DIFDELCMD < 	\centering
-%DIFDELCMD < 	\includegraphics[width=10cm]{PaperFigures/UAS}
-%DIFDELCMD < 	%%%
-\DIFdelendFL \caption{\DIFdelbeginFL \DIFdelFL{Unmanned Aerial System}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Autopilot's Navigation, Guidance, and Control Architecture}\DIFaddendFL }
-	\DIFdelbeginFL %DIFDELCMD < \label{fig:uas}
-%DIFDELCMD < %%%
-\DIFdelendFL \DIFaddbeginFL \label{fig:autopilotloops}
-\DIFaddendFL \end{figure}
-
-\DIFdelbegin \DIFdel{Once paths have been generated, such as that shown in Figure \ref{fig:qground}, they are sent to the UAV via radio link. The guidance system is then responsible for guiding the UAV to get on and follow the path. Common methods for guiding algorithms for getting on and following a path include }\DIFdelend \DIFaddbegin \DIFadd{The navigation system is responsible for taking high level pre-planned paths from the ground station and providing a reference heading command to the control system. Several methods for path following guidance were investigated in \mbox{%DIFAUXCMD
-\cite{sujit_unmanned_2014} }\hspace{0pt}%DIFAUXCMD
-consisting of }\DIFaddend carrot chasing, non-linear guidance law\DIFdelbegin \DIFdel{(NLGL), pure pursuit line of sight (PLOS)}\DIFdelend , \DIFaddbegin \DIFadd{pure line-of-sight, }\DIFaddend linear quadratic regulator\DIFdelbegin \DIFdel{(LQR) and vector field }\DIFdelend \DIFaddbegin \DIFadd{, and gradient vector field method. A Monte Carlo simulation with wind disturbances was conducted for the guidance methods above in }\DIFaddend \cite{sujit_unmanned_2014}. \DIFdelbegin \DIFdel{Benchmarks for how each guidance algorithm performs is commonly quantified in control effort and tracking error with respect to the reference path. Sujit et al. compared the above guidance laws and discussed the benefits and disadvantages of the guidance laws, and in terms of control effort and tracking error LQR and vector field performed the best respectively. LQR was shown to have optimal control effort but exhibited large cross track error when subjected to high wind speeds. Vector field produced guidance with the lowest tracking error but experienced osculations once on the path . 
-}%DIFDELCMD < 
-
-%DIFDELCMD < %%%
-%DIF < \begin{figure}[H]
-%DIF < 	\centering
-%DIF < 	\includegraphics[width=15cm]{PaperFigures/qGround}
-%DIF < 	\caption{Ground Station Software QGroundControl}
-%DIF < 	\label{fig:qground}
-%DIF < \end{figure}
-%DIF < 
-%DIF < Low tracking error in the presence of wind and has led to the algorithm being used for 
-%DIF < 
-%DIF < \begin{itemize}
-%DIF < 	\item What is an autopilot and a ground station
-%DIF < 	\item What are their purposes
-%DIF < 	\item Why one cannot exist without the other (lack of autonomy?)
-%DIF < 	\item FIGURE of how they are connected
-%DIF < 	
-%DIF < 	\item Ground station 
-%DIF < 	\begin{itemize}
-%DIF < 		\item Program or set of programs that provide interface for a pilot or operator to communicate with the UAV
-%DIF < 		\item Vehicle configurations
-%DIF < 		\item Mission planning (map, waypoints, loitering, altitude)
-%DIF < 		\item Missions decomposed into obstacle free and flyable paths that will be sent to the UAV
-%DIF < 		\item FIGURE of waypoints and loitering being decomposed into flyable paths
-%DIF < 		\item Unlike conventional robotic systems, path planning is chosen over trajectory planning (getting uav to certain point at certain time when there are constant wind disturbances is difficult)
-%DIF < 		\item OR maybe trajectory planning is difficult because too many unknowns such as wind disturbances. . .
-%DIF < 		\item Provides a way to collect data
-%DIF < 		\item Communicates with UAV through a radio link
-%DIF < 	\end{itemize}
-%DIF < 
-%DIF < 	\item Autopilot
-%DIF < 	\begin{itemize}
-%DIF < 		
-%DIF < 		
-%DIF < 		\item Receives instructions from ground station and implements navigation, guidance, and control algorithms to accomplish missions (to the best of its ability)
-%DIF < 		
-%DIF < 		\item Navigation
-%DIF < 		\begin{itemize}
-%DIF < 			\item Navigation is the process of measuring sensors, estimating data, .. . . .etc
-%DIF < 		 	\item Use current material 
-%DIF < 		\end{itemize}
-%DIF < 	
-%DIF < 		\item Guidance
-%DIF < 		\begin{itemize}
-%DIF < 			\item Purpose of guidance system (reference path to a command consumable to the controller)
-%DIF < 			\item Guidance uses current position and reference path to determine deviation from path
-%DIF < 			\item Deviation from the path is used to calculate a heading command that will put the UAV back on the path
-%DIF < 			\item Methods for path following (Read Sujuits paper again)
-%DIF < 			\item Summary of findings, vector field has lowest cross track error, parameter tuning, and chattering
-%DIF < 			\item Parameter tuning . . . (ask jay)
-%DIF < 			\item More detailed discussion on different vector fields presented in section . . .
-%DIF < 		\end{itemize}
-%DIF < 	
-%DIF < 		
-%DIF < 		\item Control
-%DIF < 		\begin{itemize}
-%DIF < 			\item Converts sensor information and guidance commands into actuator output
-%DIF < 			\item Read chapter 6 beard and Mclain, find more sources
-%DIF < 			\item FIGURE of control loop
-%DIF < 		\end{itemize}
-%DIF < 
-%DIF < 		
-%DIF < 	\end{itemize}
-%DIF < \end{itemize}
-\DIFdelend \DIFaddbegin \DIFadd{It was determined that the vector field method followed the path with least tracking error and control effort which is the primary goal of path following. 
-}\DIFaddend 
+The navigation system is responsible for taking high level pre-planned paths from the ground station and providing a reference heading command to the control system. Several methods for path following guidance were investigated in \cite{sujit_unmanned_2014} consisting of carrot chasing, non-linear guidance law, pure line-of-sight, linear quadratic regulator, and gradient vector field method. A Monte Carlo simulation with wind disturbances was conducted for the guidance methods above in \cite{sujit_unmanned_2014}. It was determined that the vector field method followed the path with least tracking error and control effort which is the primary goal of path following. 
 
 
 \section{Vector Field Guidance}
