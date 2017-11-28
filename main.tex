@@ -253,11 +253,18 @@ The navigation system is responsible for taking high level pre-planned paths fro
 
 \section{Vector Field Guidance}
 \subsection{Introduction to Vector Field Guidance}
+
+- External disturbances
+- Transitioning to a new state
+- Avoiding known obstacles
+- Avoiding pop-up obstacles
+- Rejecting external disturbances
+- Computationally inexpensive
+
 Vector field is a continuous guidance method that can be used for guiding a UAV to a singular point or for path following. Potential field and virtual force field guide to a singular point while avoiding obstacles by representing goals and obstacles as artificial attractive and repulsive forces respectively. Path following guidance can be achieved with Lyapunov and gradient vector field techniques that produce heading commands that converge and follow a path. 
 
 \subsection{Potential Field}
-
-Potential field is a robotic manipulator method that models a robots workspace as a gradient potential of attractive and repulsive artificial forces \cite{khatib_real-time_1986}. A robot can be represented as a point mass initially located at a globally maximum potential that transitions to a goal located at a globally minimum potential. Obstacles are represented by a high potential that act as repulsive forces with an exponentially decaying strength as to only influence the robot when approaching the obstacle. The potential gradient can be depicted as a mesh such as that shown in Figure \ref{fig:pfobstacle}.
+Potential field is a robotic manipulator method that models a robots workspace as a gradient potential of attractive and repulsive artificial forces \cite{khatib_real-time_1986}. A robot can be represented as a point mass initially located at a globally maximum potential that transitions to a goal located at a globally minimum potential. Obstacles are represented by a high potential that act as repulsive forces with an exponentially decaying strength as to only influence the robot when approaching the obstacle. The potential gradient can be depicted as a mesh such as that shown in Figure \ref{fig:pfobstacle}. Potential field is unique in that it combines path planning, trajectory planning, and control into a single system \cite{rimon_exact_1992}. 
 
 \begin{figure}[h!]
 	\centering
@@ -266,10 +273,29 @@ Potential field is a robotic manipulator method that models a robots workspace a
 	\label{fig:pfobstacle}
 \end{figure}
 
-Transitioning from one state to another traditionally occurs by executing three steps consisting of planning an obstacle free path, time parameterizing the path to consider basic dynamic constraints, and feed-back control to account for errors. Potential field is unique in that it combines path planning, trajectory planning, and control into a single system \cite{rimon_exact_1992}.  
 
-\pagebreak
-An inherent problem for potential field is the possibility to be trapped in a local minimum which is produced when multiple repulsive fields are placed in close proximity to each other. An example can be seen in Figure \ref{fig:pfLocalMin} where a cluster of obstacles produces a local minimum that may prevent a robot from reaching the final goal state. 
+Inherent problems with potential field methods were identified when experimentally validating the virtual force field (VFF) method in \cite{koren_potential_1991}. VFF operates on the artificial  attractive and repulsive force principle and is intended specifically for mobile robots seeking a goal in an environment with initially unknown obstacles. VFF decomposes a robots workspace into discretized cells that contain an integer certainty value associated with the confidence that an obstacle occupies the cell. A global goal applies an artificial attractive force on the robot that pulls it closer to the goal. As the robot detects obstacles, the certainty value increases in the cell associated with the obstacles position. Cells apply artificial repulsive forces with magnitudes that depend on the certainty value and the distance to the cell.
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=7cm]{PaperFigures/histogram}
+	\caption{Virtual force field histogram acting on a mobile robot}
+	\label{fig:histogram}
+\end{figure}
+
+The VFF histogram method was validated on a mobile robot platform using ultrasonic sensors in \cite{borenstein_real-time_1990} and \cite{borenstein_vector_1991}, avoiding obstacles and seeking a goal. Several problems inherent to all potential field methods were identified while validating the VFF histogram method.  Local minimum produced by closely spaced obstacles may create a situation where a robot settles into a lower potential prior to finding the global minimum which is shown in Figure \ref{fig:pfLocalMin}. Additionally, closely spaced obstacles may also be difficult to pass between, shown in Figure \ref{fig:vff}a. Oscillations can also be experienced near obstacles or in narrow passages at high speeds, shown in Figure \ref{fig:vff}b. 
+
+\begin{figure}[H]
+	\begin{subfigmatrix}{2}% number of columns
+		\centering
+		\subfigure []{\includegraphics[width=9cm] {PaperFigures/multipleObsVff}}
+		\subfigure []{\includegraphics[width=6cm] {PaperFigures/unstableCooridorMotionVff}}
+	\end{subfigmatrix}
+	\caption{Potential Field Local Minimum \cite{liu_virtual-waypoint_2016}}
+	\label{fig:vff}
+\end{figure}
+
 
 \begin{figure}[H]
 	\begin{subfigmatrix}{2}% number of columns
@@ -291,61 +317,11 @@ Several methods have been developed to eliminate local minimums through the use 
 	\label{fig:obstacleclustering}
 \end{figure}
 
-Potential fields ability to avoid obstacles and combine path planning, trajectory planning, and control into a single computationally inexpensive system makes it an attractive motion control system for robots seeking a singular point. Fixed wing UAVs must maintain a minimum forward velocity and cannot converge to a single point, therefore may not be ideal for fixed wings. 
-
-
-
-
-
-
-%Potential field was introduced as a real-time robotic manipulator algorithm for obstacle avoidance \cite{khatib_real-time_1986}. The potential field algorithm represents a robots workspace as a gradient potential of attractive and repulsive artificial forces that drive the robot to a desired goal. Goals are given the lowest potential and act as attractive forces. Obstacles have high potential and act as repulsive forces. A simple example is depicted in Figure \ref{fig:pfobstacle} consisting of an initial state, a goal, and a single obstacle. The initial state of the robot is at the edge of a gradient where the potential is maximum. In the lowest part of the gradient a goal exists at the global minimum. Obstacles are added to the potential field, but have limited effect due to a decay function.
-
-
-
-
-%
-%Potential field is unique in that path planning, trajectory planning, and control are lumped into a single system \cite{rimon_exact_1992}. Transition from an initial state to a goal state traditionally occurred by executing three steps consisting of path planning, trajectory planning, and control. Path planning dealt with finding an obstacle free path from an initial state to a goal state. Trajectory planning time parametrized the obstacle free path with some high level vehicle constraints considered. Lastly, control attempts to reduce the tracking error with respect to the reference trajectory. Combining the three motion planning steps into a single algorithm has been shown to be computational inexpensive \cite{goerzen_survey_2010}. 
-%
-%As pointed out in \cite{borenstein_real-time_1990}, robots using potential field are susceptible to local minimum. Encountering a local minimum prevents the robot from continuing down the gradient and into the global minimum because equilibrium has been reached prematurely. Figure \ref{fig:pfLocalMin} demonstrates local minimum by adding several obstacles into a goal field. Several methods have been developed to mitigate the effects of local minimums as pointed out in \cite{goerzen_survey_2010} through the use of navigation functions. Local minimum produced as a result of closely spaced obstacles as shown in Figure \ref{fig:pfLocalMin} have been addressed by grouping obstacles together into a cluster \cite{liu_virtual-waypoint_2016}.
-
-
-%Several methods have been developed to mitigate the effects of local minimums as pointed out in \cite{goerzen_survey_2010} through the use of navigation functions. Local minimum produced as a result of closely spaced obstacles as shown in Figure \ref{fig:pfLocalMin} have been addressed by grouping obstacles together into a cluster \cite{liu_virtual-waypoint_2016}. Grouping obstacles addresses the risk of local minima before forming the potential field. If local minima are encountered after the field is generated, additional forces can be applied to push the robot away from the local minima. 
-
-
-
-%Potential fields ability to avoid obstacles and combine path planning, trajectory planning, and control into a single system while being computationally inexpensive makes it an attractive option for many robotic systems. Fixed wing UAVs must maintain a minimum forward velocity and cannot converge to a single point, making potential field difficult to implement. 
-
-
-
-
-
-
-\subsection{Virtual Force Field - Histogram Method}
-When the environment changes, such as a new obstacle or the goal has moved, the potential field has to be recalculated. Koren and Borenstein developed a virtual force field (VFF) histogram method that guides a mobile robot to a known goal while avoiding initially unknown obstacles \cite{borenstein_real-time_1990}. VFF decomposes a robots workspace into discretized cells that contain an integer certainty value associated with the confidence that an obstacle occupies the cell. A global goal applies an artificial attractive force on the robot that pulls it closer to the goal. As the robot detects obstacles, the certainty value increases in the cell associated with the obstacles position. Cells apply artificial repulsive forces with magnitudes that depend on the certainty value and the distance to the cell. 
-
-\begin{figure}
-	\centering
-	\includegraphics[width=7cm]{PaperFigures/histogram}
-	\caption{Virtual force field histogram acting on a mobile robot}
-	\label{fig:histogram}
-\end{figure}
-
-
-The VFF histogram method was validated on a mobile robot platform using ultrasonic sensors in \cite{borenstein_real-time_1990} and \cite{borenstein_vector_1991}, avoiding obstacles and seeking a goal. Certainty cells in VFF only provide strictly repulsive vectors which guide the robot away, but provide no guidance for getting around the obstacle. 
+Potential fields ability to avoid obstacles and combine path planning, trajectory planning, and control into a single computationally inexpensive system makes it an attractive motion control system for robots seeking a singular point, even with the limitations discussed in \cite{koren_potential_1991}. Unlike ground mobile robots, fixed wing UAVs must maintain a minimum forward velocity and cannot converge to a single point. Vector fields that direct a UAV to paths connecting waypoints have been developed using Lyapunov and gradient vector field techniques. 
  
- 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- 
- 
- 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
 \subsection{Lyapunov Vector Fields}
-
-Fixed wing UAVs must maintain a minimum forward velocity therefore cannot converge to a single point making potential field or VFF guidance difficult. Missions for UAVs are typically constructed from obstacle free paths build from straight line and circular arc primitives. Path planning provides a reference to the autopilot that guides the UAV to first arrive at and subsequently follow the desired path while under the influence of external disturbances. 
-Ariving at and following the path are typically is typically achieved by generating vectors normal and parallel to the path respectively. Nelson et al. introduced a vector field generation method for straight line and circular arcs using Lyapunov stability arguments \cite{nelson_cooperative_2005} and is depicted in Figure \ref{fig:nelsonlyapunov}.
-
+Lyapunov vector fields produce heading guidance that asymptotically converges and circulates along a path passing through waypoints. Paths can be built from straight line and circular arc primitives taking UAV dynamic constraints into consideration. Nelson et al. introduced a vector field generation method for line primitives in \cite{nelson_cooperative_2005}. Farther away from the path, vectors are constant and point in the direction perpendicular to the path. Within a transition region the vectors begin to rotate and point more parallel to the path. Vectors on the path point directly in the direction of the path. Lyapunov vector fields for straight line and circular arcs are shown in Figure \ref{fig:nelsonlyapunov}.
 \begin{figure}
 	\centering
 	\includegraphics[width=13cm]{PaperFigures/nelsonLyapunov}
@@ -353,9 +329,19 @@ Ariving at and following the path are typically is typically achieved by generat
 	\label{fig:nelsonlyapunov}
 \end{figure}
 
-To construct flyable paths out of the primitives, it was necessary to determine how the resulting vector fields should be combined. Summing the fields directly result in \hl{deadzones, sinks, and singularities}. The solution was to have a single field active at any time, switching when the UAV reached the end of a primitive. Nelson's method was extended by Griffiths for curved path following and showed that the vectors asymptotically approach the curved path, shown in Figure \ref{fig:griffiths}.
+Combining path primitives together can result in fairly complex paths such as that shown in Figure \ref{fig:urbanfollowingnelson}. Each path primitive has a vector field associated with it and determining which field to use can be approached in two different ways. Fields from all of the primitives can be summed together similar to the attractive and repulsive forces in potential field. Second, fields can be selectively activated and deactivated based on the position of the UAV. Summing together vector fields, as pointed out in \cite{nelson_cooperative_2005}, can result in several problems including dead zones, sinks, and singularities. Selectively activating each vector field as a UAV nears waypoints was used in \cite{nelson_cooperative_2005} \cite{nelson_vector_2006} \cite{nelson_vector_2007}.
 
-\begin{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=7cm]{PaperFigures/urbanFollowingNelson}
+	\caption{}
+	\label{fig:urbanfollowingnelson}
+\end{figure}
+
+
+Nelson's method was extended by Griffiths for curved path following and showed that the vectors asymptotically approach the curved path \cite{griffiths_vector_2006}, shown in Figure \ref{fig:griffiths}. Constructing a vector field for an arbitrary curve in place of stitching together primitives has the advantage of not determining which field to activate and may allow for more complex paths.
+
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=7cm]{PaperFigures/griffiths}
 	\caption{Lyapunov vector field approach curved path asymptotically}

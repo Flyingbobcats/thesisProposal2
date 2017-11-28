@@ -3,27 +3,31 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Unmanned Aerial System (UAS)}}{14}{figure.2.1}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Autopilot's Navigation, Guidance, and Control Architecture}}{15}{figure.2.2}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Single Obstacle Potential Field Gradient \cite {liu_virtual-waypoint_2016}}}{17}{figure.2.3}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Potential Field Local Minimum \cite {liu_virtual-waypoint_2016}}}{17}{figure.2.4}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{17}{figure.2.4}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{17}{figure.2.4}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Obstacle Clustering \cite {liu_virtual-waypoint_2016}}}{18}{figure.2.5}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Virtual force field histogram acting on a mobile robot}}{19}{figure.2.6}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Lyapunov vector field for straight line and circular primitives}}{20}{figure.2.7}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Lyapunov vector field approach curved path asymptotically}}{21}{figure.2.8}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Elliptical VF produced by non-linear coordinate transformations a)\cite {frew_lyapunov_nodate} b)\cite {frew_cooperative_2007}}}{21}{figure.2.9}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{21}{figure.2.9}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{21}{figure.2.9}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Tangent plus lyapunov vector fields for shortest path target tracking \cite {chen_uav_2013}}}{22}{figure.2.10}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces RRT* path planner with a VF used as a task specification}}{23}{figure.2.11}
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Vector field within a set of constrained delaunay triangles \cite {pimenta_fully_2007}}}{23}{figure.2.12}
-\contentsline {figure}{\numberline {2.13}{\ignorespaces Attractive vector field (a) and clockwise circulation field (b)}}{25}{figure.2.13}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{25}{figure.2.13}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{25}{figure.2.13}
-\contentsline {figure}{\numberline {2.14}{\ignorespaces Repulsive vector field a) and counterclockwise circulation field b)}}{25}{figure.2.14}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{25}{figure.2.14}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{25}{figure.2.14}
-\contentsline {figure}{\numberline {2.15}{\ignorespaces Place holder image of UAV following ground target}}{26}{figure.2.15}
-\contentsline {figure}{\numberline {2.16}{\ignorespaces }}{26}{figure.2.16}
-\contentsline {figure}{\numberline {2.17}{\ignorespaces }}{27}{figure.2.17}
-\contentsline {figure}{\numberline {2.18}{\ignorespaces Dubins UAV actuator saturation}}{29}{figure.2.18}
-\contentsline {figure}{\numberline {2.19}{\ignorespaces Differential drive mobile robot simulating fixed wing UAV Dubins constraints}}{30}{figure.2.19}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Virtual force field histogram acting on a mobile robot}}{18}{figure.2.4}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Potential Field Local Minimum \cite {liu_virtual-waypoint_2016}}}{19}{figure.2.5}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{19}{figure.2.5}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{19}{figure.2.5}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Potential Field Local Minimum \cite {liu_virtual-waypoint_2016}}}{19}{figure.2.6}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{19}{figure.2.6}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{19}{figure.2.6}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Obstacle Clustering \cite {liu_virtual-waypoint_2016}}}{20}{figure.2.7}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Lyapunov vector field for straight line and circular primitives}}{21}{figure.2.8}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces }}{22}{figure.2.9}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Lyapunov vector field approach curved path asymptotically}}{22}{figure.2.10}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Elliptical VF produced by non-linear coordinate transformations a)\cite {frew_lyapunov_nodate} b)\cite {frew_cooperative_2007}}}{23}{figure.2.11}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{23}{figure.2.11}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{23}{figure.2.11}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Tangent plus lyapunov vector fields for shortest path target tracking \cite {chen_uav_2013}}}{24}{figure.2.12}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces RRT* path planner with a VF used as a task specification}}{25}{figure.2.13}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Vector field within a set of constrained delaunay triangles \cite {pimenta_fully_2007}}}{25}{figure.2.14}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Attractive vector field (a) and clockwise circulation field (b)}}{27}{figure.2.15}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{27}{figure.2.15}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{27}{figure.2.15}
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Repulsive vector field a) and counterclockwise circulation field b)}}{27}{figure.2.16}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{27}{figure.2.16}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{27}{figure.2.16}
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Place holder image of UAV following ground target}}{28}{figure.2.17}
+\contentsline {figure}{\numberline {2.18}{\ignorespaces }}{28}{figure.2.18}
+\contentsline {figure}{\numberline {2.19}{\ignorespaces }}{29}{figure.2.19}
+\contentsline {figure}{\numberline {2.20}{\ignorespaces Dubins UAV actuator saturation}}{31}{figure.2.20}
+\contentsline {figure}{\numberline {2.21}{\ignorespaces Differential drive mobile robot simulating fixed wing UAV Dubins constraints}}{32}{figure.2.21}

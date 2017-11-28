@@ -15,21 +15,19 @@ Khatib, O., \enquote{Real-time obstacle avoidance for manipulators and mobile
   robots,} {\em The international journal of robotics research\/}, Vol.~5,
   No.~1, 1986, pp.~90--98.
 
+\bibitem{rimon_exact_1992}
+Rimon, E., \enquote{Exact {Robot} {Navigation} {Using} {Artificial} {Potential}
+  {Functions}.pdf,} 1992.
+
 \bibitem{liu_virtual-waypoint_2016}
 Liu, Y. and Zhao, Y., \enquote{A virtual-waypoint based artificial potential
   field method for {UAV} path planning,} {\em Guidance, {Navigation} and
   {Control} {Conference} ({CGNCC}), 2016 {IEEE} {Chinese}\/}, IEEE, 2016, pp.
   949--953.
 
-\bibitem{rimon_exact_1992}
-Rimon, E., \enquote{Exact {Robot} {Navigation} {Using} {Artificial} {Potential}
-  {Functions}.pdf,} 1992.
-
-\bibitem{goerzen_survey_2010}
-Goerzen, C., Kong, Z., and Mettler, B., \enquote{A {Survey} of {Motion}
-  {Planning} {Algorithms} from the {Perspective} of {Autonomous} {UAV}
-  {Guidance},} {\em Journal of Intelligent and Robotic Systems\/}, Vol.~57, No.
-  1-4, Jan. 2010, pp.~65--100.
+\bibitem{koren_potential_1991}
+Koren, Y. and Borenstein, J., \enquote{Potential {Field} {Methods} and their
+  inherent limitions for morbile robot navigation.pdf,} 1991.
 
 \bibitem{borenstein_real-time_1990}
 Borenstein, J. and Koren, Y., \enquote{Real-time obstacle avoidance for fast
@@ -42,8 +40,29 @@ Borenstein, J. and Koren, Y., \enquote{The vector field histogram-fast obstacle
   avoidance for mobile robots,} {\em IEEE transactions on robotics and
   automation\/}, Vol.~7, No.~3, 1991, pp.~278--288.
 
+\bibitem{goerzen_survey_2010}
+Goerzen, C., Kong, Z., and Mettler, B., \enquote{A {Survey} of {Motion}
+  {Planning} {Algorithms} from the {Perspective} of {Autonomous} {UAV}
+  {Guidance},} {\em Journal of Intelligent and Robotic Systems\/}, Vol.~57, No.
+  1-4, Jan. 2010, pp.~65--100.
+
 \bibitem{nelson_cooperative_2005}
 Nelson, D.~R., \enquote{Cooperative control of miniature air vehicles,} 2005.
+
+\bibitem{nelson_vector_2006}
+Nelson, D.~R., Barber, D.~B., McLain, T.~W., and Beard, R.~W., \enquote{Vector
+  field path following for small unmanned air vehicles,} {\em American
+  {Control} {Conference}, 2006\/}, IEEE, 2006, pp. 7--pp.
+
+\bibitem{nelson_vector_2007}
+Nelson, D., Barber, D., McLain, T., and Beard, R., \enquote{Vector {Field}
+  {Path} {Following} for {Miniature} {Air} {Vehicles},} {\em IEEE Transactions
+  on Robotics\/}, Vol.~23, No.~3, June 2007, pp.~519--529.
+
+\bibitem{griffiths_vector_2006}
+Griffiths, S., \enquote{Vector {Field} {Approach} for {Curved} {Path}
+  {Following} for {Miniature} {Aerial} {Vehicles},} American Institute of
+  Aeronautics and Astronautics, Aug. 2006.
 
 \bibitem{frew_lyapunov_nodate}
 Frew, E., \enquote{Lyapunov {Guidance} {Vector} {Fields} for {Unmanned}
