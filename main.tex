@@ -152,11 +152,14 @@ AoA & Angle of Attack & \\
 
 \chapter{Introduction}
 \section{Motivation and Problem Statement}
-% Fixed wing Unmanned Aerial Vehicles are used for  missions such as surveillance and reconnaissance that might put pilots harms way \cite{bone_uavs_2003}. UAVs carry out mission objectives such as waypoint navigation and loitering by following paths that are typically pre-planned \cite{sujit_unmanned_2014}. Known obstacles are avoided during the planning processes to avoid collisions. Paths must be of obstacles which may not be known during planning. Obstacles are not always known during planning and once discovered a new path may have to be re-planned. Guidance that follows mission paths while avoiding obstacles without the need for re-planning may be beneficial. Gradient vector field (GVF) guidance is a path following method that provides continuous guidance that guaranteed to converge and follow an arbitrary path. Guidance for getting on and following a path is produced by summing together convergence and circulation terms that are weighted by static scalars. Obstacles have been represented as separate repulsive GVFs that are later summed to the path following GVF [Wilhelm, Wambold, Clem]. Static GVFs do not always route the UAV around an obstacle and could be improved. Modifying the GVF convergence and circulation weights to be functions of common UAV states could be used to produce an optimal guidance for obstacle avoidance. \textbf{The proposed research seeks to determine GVF weighting functions that construct optimal obstacle avoidance.}
-% \pagebreak
-Fixed wing Unmanned Aerial Vehicles are used for missions such as surveillance and reconnaissance that might put pilots harm’s way \cite{bone_uavs_2003}. Missions consist of sequential objectives that are represented by a path that the UAV attempts to follow. Paths are typically pre-planned before flight and are constructed by connecting straight lines and circular arcs. Vehicle turn rate constraints and obstacles are considered when planning a path to prevent collisions or entry into no-fly zones. UAVs are guided to follow a path by implementing guidance algorithms which calculate headings that minimize the distance to a path. UAVs may encounter an obstacle whose position was previously unknown while following a pre-planned path which may require a new path to be generated. Guidance that follows mission paths while avoiding obstacles without the need for re-planning may be beneficial. 
+
+%Fixed wing Unmanned Aerial Vehicles are used for missions such as surveillance and reconnaissance that might put pilots harm’s way \cite{bone_uavs_2003}. Missions consist of sequential objectives that are represented by a path that the UAV attempts to follow. Paths are typically pre-planned before flight and are constructed by connecting straight lines and circular arcs. Vehicle turn rate constraints and obstacles are considered when planning a path to prevent collisions or entry into no-fly zones. UAVs are guided to follow a path by implementing guidance algorithms which calculate headings that minimize the distance to a path. UAVs may encounter an obstacle whose position was previously unknown while following a pre-planned path which may require a new path to be generated. Guidance that follows mission paths while avoiding obstacles without the need for re-planning may be beneficial. 
+%\\
+%Gradient Vector Field (GVF) guidance is a path following method that has been adapted for obstacle avoidance. GVFs produces continuous heading vectors that guide a UAV to converge and follow a path by summing together convergence and circulating terms that are weighted by static scalars. An obstacle represented as a path and given a negative convergence weight results in a repulsive field that can be used for obstacle avoidance. Static GVFs do not always route the UAV around an obstacle and could be improved. Modifying the GVF convergence and circulation weights of obstacle fields to be functions of common UAV states could be used to produce an optimal guidance for obstacle avoidance. \textbf{The proposed research seeks to determine GVF weighting functions that construct optimal obstacle avoidance.}
+Fixed wing Unmanned Aerial Vehicles (UAVs) are used for missions such as surveillance and reconnaissance that might put pilots in harm’s way \cite{bone_uavs_2003}. Missions typically consist of sequential objectives represented as waypoints that the UAV follows. Waypoints may be pre-planned before flight where vehicle constraints and obstacles can be considered to prevent collisions or entry into no-fly zones. UAVs follow waypoints by implementing guidance algorithms that calculate headings that direct the UAV along a path connecting the waypoints. Obstacles may be discovered during flight that were unknown at initial planning and a new set of waypoints may have to be generated.  Waypoints are typically computed at a ground station and are relayed to the UAV by radio, which may be problematic if communication with the UAV is lost. Guidance that accomplishes mission objectives while avoiding obstacles without the need for re-planning waypoints may be beneficial. 
 \\
-Gradient Vector Field (GVF) guidance is a path following method that has been adapted for obstacle avoidance. GVFs produces continuous heading vectors that guide a UAV to converge and follow a path by summing together convergence and circulating terms that are weighted by static scalars. An obstacle represented as a path and given a negative convergence weight results in a repulsive field that can be used for obstacle avoidance. Static GVFs do not always route the UAV around an obstacle and could be improved. Modifying the GVF convergence and circulation weights of obstacle fields to be functions of common UAV states could be used to produce an optimal guidance for obstacle avoidance. \textbf{The proposed research seeks to determine GVF weighting functions that construct optimal obstacle avoidance.}
+Vector Field (VF) guidance is a method that is mainly used for path following and can be useful for obstacle avoidance [W,W,C]. VFs can produce continuous heading vectors that can be used guide a UAV to coverage and follow a path. Vectors are calculated by summing together convergence and circulation terms that are weighted by static scalars. Obstacles can be represented as a path and given a negative convergence weight resulting in a repulsive field. Static repulsive VFs do not always route the UAV around an obstacle. Modifying repulsive VF parameters to be functions of common UAV states could be used to produce an optimal guidance. \textbf{The proposed research seeks to determine VF weighting functions that enable optimal obstacle avoidance.}
+
 
 
  \pagebreak
@@ -227,7 +230,7 @@ Each phase consists of an \textbf{objective} that will be accomplished by execut
 
 \section{Unmanned Aerial Vehicle}
 
-Unmanned Aerial Vehicles (UAVs) are pilotless aircraft used by military, police, and civilian communities for tasks such as surveillance, reconnaissance, damage assessment, and natural disaster surveying.  UAVs are generally categorized into fixed wing and rotor craft varieties that range in size, payload, and flight time capabilities. The aircrafts can be controlled remotely with a RC transmitter or fly on pre-planned paths executing maneuvers such as waypoint navigation and loitering. Data can be collected with on-board sensors such as cameras which then can be stored or relayed to the ground. UAVs are part of an Unmanned Aerial System (UAS) which is made up of the vehicle, autopilot, ground station, transmitter, and two way radio which is depicted in Figure \ref{fig:uas}. Ground stations are responsible for monitoring the vehicle's status, planning missions, and generating obstacle free and flyable paths which are sent to the autopilot via two way radio. 
+Unmanned Aerial Vehicles (UAVs) are pilotless aircraft used by military, police, and civilian communities for tasks such as surveillance, reconnaissance, damage assessment, and natural disaster surveying.  UAVs are generally categorized into fixed wing and rotor craft varieties that range in size, payload, and flight time capabilities. The aircrafts can be controlled remotely with a RC transmitter or fly on paths connecting pre-planned waypoints. Data can be collected with on-board sensors, such as cameras, which can be stored or relayed to the ground. UAVs are part of an Unmanned Aerial System (UAS) which is made up of the vehicle, autopilot, ground station, transmitter, and two way radio, depicted in Figure \ref{fig:uas}. Ground stations are responsible for monitoring the vehicle's status, planning missions, and generating obstacle free and flyable paths which are sent to the autopilot via two way radio. 
 
 \begin{figure}
 	\centering
@@ -249,20 +252,12 @@ The navigation system is responsible for taking high level pre-planned paths fro
 
 
 \section{Vector Field Guidance}
-
 \subsection{Introduction to Vector Field Guidance}
-Vector field is a continuous guidance and control method that applies artificial attractive and repulsive forces to a point mass. The two broad categories of algorithms that produce vector fields consist of potential field algorithms and path following algorithms. Potential field produces guidance and control to a robot for converging to a distinct point. Path following algorithms produce guidance for converging and following a path. Several path following vector field algorithms have been investigated including gradient vector field, which provides convenient convergence and circulation weights that may be useful for providing an optimal guidance for obstacle avoidance. 
-
-%Intro (what are vector fields and what are they used for)
-%Two types
-%PF
-%Path following
-%Gradient vector field is good
+Vector field is a continuous guidance method that can be used for guiding a UAV to a singular point or for path following. Potential field and virtual force field guide to a singular point while avoiding obstacles by representing goals and obstacles as artificial attractive and repulsive forces respectively. Path following guidance can be achieved with Lyapunov and gradient vector field techniques that produce heading commands that converge and follow a path. 
 
 \subsection{Potential Field}
 
-%%%%%%%%%%
-Potential field was introduced as a real-time robotic manipulator algorithm for obstacle avoidance \cite{khatib_real-time_1986}. The potential field algorithm represents a robots workspace as a gradient potential of attractive and repulsive artificial forces that drive the robot to a desired goal. Goals are given the lowest potential and act as attractive forces. Obstacles have high potential and act as repulsive forces. A simple example is depicted in Figure \ref{fig:pfobstacle} consisting of an initial state, a goal, and a single obstacle. The initial state of the robot is at the edge of a gradient where the potential is maximum. In the lowest part of the gradient a goal exists at the global minimum. Obstacles are added to the potential field, but have limited effect due to a decay function.
+Potential field is a robotic manipulator method that models a robots workspace as a gradient potential of attractive and repulsive artificial forces \cite{khatib_real-time_1986}. A robot can be represented as a point mass initially located at a globally maximum potential that transitions to a goal located at a globally minimum potential. Obstacles are represented by a high potential that act as repulsive forces with an exponentially decaying strength as to only influence the robot when approaching the obstacle. The potential gradient can be depicted as a mesh such as that shown in Figure \ref{fig:pfobstacle}.
 
 \begin{figure}[h!]
 	\centering
@@ -271,22 +266,23 @@ Potential field was introduced as a real-time robotic manipulator algorithm for 
 	\label{fig:pfobstacle}
 \end{figure}
 
-Potential field is unique in that path planning, trajectory planning, and control are lumped into a single system \cite{rimon_exact_1992}. Transition from an initial state to a goal state traditionally occurred by executing three steps consisting of path planning, trajectory planning, and control. Path planning dealt with finding an obstacle free path from an initial state to a goal state. Trajectory planning time parametrized the obstacle free path with some high level vehicle constraints considered. Lastly, control attempts to reduce the tracking error with respect to the reference trajectory. Combining the three motion planning steps into a single algorithm has been shown to be computational inexpensive \cite{goerzen_survey_2010}. 
+Transitioning from one state to another traditionally occurs by executing three steps consisting of planning an obstacle free path, time parameterizing the path to consider basic dynamic constraints, and feed-back control to account for errors. Potential field is unique in that it combines path planning, trajectory planning, and control into a single system \cite{rimon_exact_1992}.  
 
-As pointed out in \cite{borenstein_real-time_1990}, robots using potential field are susceptible to local minimum. Encountering a local minimum prevents the robot from continuing down the gradient and into the global minimum because equilibrium has been reached prematurely. Figure \ref{fig:pfLocalMin} demonstrates local minimum by adding several obstacles into a goal field. Several methods have been developed to mitigate the effects of local minimums as pointed out in \cite{goerzen_survey_2010} through the use of navigation functions. Local minimum produced as a result of closely spaced obstacles as shown in Figure \ref{fig:pfLocalMin} have been addressed by grouping obstacles together into a cluster \cite{liu_virtual-waypoint_2016}.
+\pagebreak
+An inherent problem for potential field is the possibility to be trapped in a local minimum which is produced when multiple repulsive fields are placed in close proximity to each other. An example can be seen in Figure \ref{fig:pfLocalMin} where a cluster of obstacles produces a local minimum that may prevent a robot from reaching the final goal state. 
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\begin{subfigmatrix}{2}% number of columns
 		\centering
 		\subfigure []{\includegraphics[width=7cm] {PaperFigures/pfObstacleLocalMin}}
 		\subfigure []{\includegraphics[width=7cm] {PaperFigures/pfObstacleLocalMinTopology}}
-		%		\hspace*{1cm}
 	\end{subfigmatrix}
 	\caption{Potential Field Local Minimum \cite{liu_virtual-waypoint_2016}}
 	\label{fig:pfLocalMin}
 \end{figure}
 
-Several methods have been developed to mitigate the effects of local minimums as pointed out in \cite{goerzen_survey_2010} through the use of navigation functions. Local minimum produced as a result of closely spaced obstacles as shown in Figure \ref{fig:pfLocalMin} have been addressed by grouping obstacles together into a cluster \cite{liu_virtual-waypoint_2016}. Grouping obstacles addresses the risk of local minima before forming the potential field. If local minima are encountered after the field is generated, additional forces can be applied to push the robot away from the local minima. 
+
+Several methods have been developed to eliminate local minimums through the use of navigation functions \cite{goerzen_survey_2010} and obstacle clustering \cite{liu_virtual-waypoint_2016}. Navigation functions relate kinematic constraints to the gradient potential to produce a bounded and local minimum free solution \cite{rimon_exact_1992}. Clustering closely spaced obstacles into a single and equally repulsive obstacle prevents local minimum from forming. Typical clustering can be seen in Figure \ref{fig:obstacleclustering}. 
 
 \begin{figure}[H]
 	\centering
@@ -295,14 +291,33 @@ Several methods have been developed to mitigate the effects of local minimums as
 	\label{fig:obstacleclustering}
 \end{figure}
 
-Potential fields ability to avoid obstacles and combine path planning, trajectory planning, and control into a single system while being computationally inexpensive makes it an attractive option for many robotic systems. Fixed wing UAVs must maintain a minimum forward velocity and cannot converge to a single point, making potential field difficult to implement. 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Potential fields ability to avoid obstacles and combine path planning, trajectory planning, and control into a single computationally inexpensive system makes it an attractive motion control system for robots seeking a singular point. Fixed wing UAVs must maintain a minimum forward velocity and cannot converge to a single point, therefore may not be ideal for fixed wings. 
 
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%Potential field was introduced as a real-time robotic manipulator algorithm for obstacle avoidance \cite{khatib_real-time_1986}. The potential field algorithm represents a robots workspace as a gradient potential of attractive and repulsive artificial forces that drive the robot to a desired goal. Goals are given the lowest potential and act as attractive forces. Obstacles have high potential and act as repulsive forces. A simple example is depicted in Figure \ref{fig:pfobstacle} consisting of an initial state, a goal, and a single obstacle. The initial state of the robot is at the edge of a gradient where the potential is maximum. In the lowest part of the gradient a goal exists at the global minimum. Obstacles are added to the potential field, but have limited effect due to a decay function.
+
+
+
+
+%
+%Potential field is unique in that path planning, trajectory planning, and control are lumped into a single system \cite{rimon_exact_1992}. Transition from an initial state to a goal state traditionally occurred by executing three steps consisting of path planning, trajectory planning, and control. Path planning dealt with finding an obstacle free path from an initial state to a goal state. Trajectory planning time parametrized the obstacle free path with some high level vehicle constraints considered. Lastly, control attempts to reduce the tracking error with respect to the reference trajectory. Combining the three motion planning steps into a single algorithm has been shown to be computational inexpensive \cite{goerzen_survey_2010}. 
+%
+%As pointed out in \cite{borenstein_real-time_1990}, robots using potential field are susceptible to local minimum. Encountering a local minimum prevents the robot from continuing down the gradient and into the global minimum because equilibrium has been reached prematurely. Figure \ref{fig:pfLocalMin} demonstrates local minimum by adding several obstacles into a goal field. Several methods have been developed to mitigate the effects of local minimums as pointed out in \cite{goerzen_survey_2010} through the use of navigation functions. Local minimum produced as a result of closely spaced obstacles as shown in Figure \ref{fig:pfLocalMin} have been addressed by grouping obstacles together into a cluster \cite{liu_virtual-waypoint_2016}.
+
+
+%Several methods have been developed to mitigate the effects of local minimums as pointed out in \cite{goerzen_survey_2010} through the use of navigation functions. Local minimum produced as a result of closely spaced obstacles as shown in Figure \ref{fig:pfLocalMin} have been addressed by grouping obstacles together into a cluster \cite{liu_virtual-waypoint_2016}. Grouping obstacles addresses the risk of local minima before forming the potential field. If local minima are encountered after the field is generated, additional forces can be applied to push the robot away from the local minima. 
+
+
+
+%Potential fields ability to avoid obstacles and combine path planning, trajectory planning, and control into a single system while being computationally inexpensive makes it an attractive option for many robotic systems. Fixed wing UAVs must maintain a minimum forward velocity and cannot converge to a single point, making potential field difficult to implement. 
+
+
+
+
 
 
 \subsection{Virtual Force Field - Histogram Method}

@@ -18,8 +18,8 @@
 \contentsline {section}{\numberline {2.3}Vector Field Guidance}{16}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Introduction to Vector Field Guidance}{16}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Potential Field}{16}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Virtual Force Field - Histogram Method}{19}{subsection.2.3.3}
-\contentsline {subsection}{\numberline {2.3.4}Lyapunov Vector Fields}{20}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.3}Virtual Force Field - Histogram Method}{18}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}Lyapunov Vector Fields}{19}{subsection.2.3.4}
 \contentsline {subsection}{\numberline {2.3.5}Non-Lyapunov Vector Fields}{22}{subsection.2.3.5}
 \contentsline {subsection}{\numberline {2.3.6}Gradient Vector Field}{24}{subsection.2.3.6}
 \contentsline {section}{\numberline {2.4}Unmanned Aerial Vehicle Simulation}{29}{section.2.4}
