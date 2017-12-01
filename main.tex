@@ -362,7 +362,7 @@ Primitive circular fields can be modified via non-linear coordinate transformati
 	\label{fig:lyapunovFrew}
 \end{figure}
 
-A target tracking lyapunov plus tangent vector field was introduced in \cite{chen_tracking_2009} that produced shorter paths compared to lyapunov alone. Outside of the standoff circle, tangent vectors were said to provide the shortest distance to the circle. Inside the standoff circle, no tangent lines exist and lyapunov is used in its place. Figure \ref{fig:lyapunovChen} shows the difference in paths taken for lyapunov and tangent vector fields outside the standoff circle. The TPLVF was later used for path planning to avoid obstacles in \cite{chen_uav_2013}.
+A target tracking Lyapunov plus tangent vector field was introduced in \cite{chen_tracking_2009} that produced shorter paths compared to Lyapunov alone. Outside of the standoff circle, tangent vectors were provided the shortest distance to the circle. Inside the standoff circle, no tangent lines exist and Lyapunov is used in its place. Figure \ref{fig:lyapunovChen} shows the difference in paths taken for Lyapunov and tangent vector fields outside the standoff circle. The TPLVF was later used for path planning to avoid obstacles in \cite{chen_uav_2013}.
 
 \begin{figure}
 	\centering
@@ -373,8 +373,7 @@ A target tracking lyapunov plus tangent vector field was introduced in \cite{che
 
 
 \subsection{Non-Lyapunov Vector Fields}
-
-All methods that consider obstacles so far build a vector field that guides the UAV to an obstacle free path. Another approach is to build a vector field tending to a path and use optimal rapid random trees (RRT*) to explore the space for obstacles and select the optimal path. Pereia et al. developed such a method that builds a tree that makes up possible paths for the UAV to take. Branches extend from the root, or initial location of the UAV, randomly throughout the map with a constrained deviation from the initial vector field. When a branch encounters an obstacle it is trimmed and no longer explored. The path of minimum cost, or least distance, is selected for the UAV to use as a reference path. An example of the algorithm is shown in Figure \ref{fig:rrtvf}.
+All methods that consider obstacles so far build a vector field that guides the UAV to an obstacle free path. Another approach is to build a vector field tending to a path and use optimal rapid random trees (RRT*) to explore the space for obstacles and select the optimal path. Pereia et al. developed such a method that builds a tree that makes up possible paths for the UAV. Branches extend from the root, or initial location of the UAV, randomly throughout the map with a constrained deviation from the initial vector field. When a branch encounters an obstacle it is trimmed and no longer explored. The path of minimum cost, or least distance, is selected for the UAV to use as a reference path. An example of the algorithm is shown in Figure \ref{fig:rrtvf}.
 
 \begin{figure}
 	\centering
@@ -394,7 +393,7 @@ For well known obstacles in urban environments, such as buildings, an optimal pa
 \end{figure}
 
 
-So far all of the vector field methods discussed have avoided obstacles by planning paths around them. Paths are typically calculated at the ground station and if communication is lost a new path may not be relayed to a UAV encountering a new obstacle. A possible solution is using vector fields to provide a repulsive force, not unlike the VFF method, immigrating around the obstacle. 
+So far all of the vector field methods discussed have avoided obstacles by planning paths around them. Paths are typically calculated at the ground station and if communication is lost a new path may not be relayed to a UAV encountering a new obstacle. A possible solution is using vector fields to provide a repulsive force, not unlike the VFF method, circumnavigating around the obstacle. 
 
 
 
@@ -402,7 +401,7 @@ So far all of the vector field methods discussed have avoided obstacles by plann
 %So far vector fields built from straight line and circular primitives that are commonly used by path planners to construct missions have been discussed. The method used to build primitives can be extended to construct vector fields that asymptotically converge to curved paths.  Primitives can be modified with coordinate transforms to construct racetrack and elliptical shapes for target following of moving and uncertain targets. Obstacles can be avoided through RRT* that uses a vector field to sense the general direction of branch expansion, and a robotic system can maintain a collision free path inside of a set of constrained triangles with vector fields.
 
 \subsection{Gradient Vector Field}
-The gradient vector field method was first introduced in \cite{goncalves_artificial_2009} and produces an $n$-dimensional vector field guaranteed to converge to a path made of points that lie at the intersection of two surfaces. The total vector field $\vec{V}$ is produced by summing together a convergence, circulation, and time varying terms seen in Equation \ref{gonFieldeq}. Convergence terms contribute vectors normal to the path, circulation terms contribute vectors parallel to the path, and time varying vectors account for changes in the path as a function of time. 
+The gradient vector field method was first introduced in \cite{goncalves_artificial_2009} and produces an $n$-dimensional vector field guaranteed to converge to a path made of points that lie at the intersection of two surfaces. The vector field $\vec{V}$ is produced by summing together convergence, circulation, and time varying terms seen in Equation \ref{gonAllComp}. Convergence terms contribute vectors normal to the path, circulation terms contribute vectors parallel to the path, and time varying vectors account for changes in the path as a function of time. 
 
 \begin{equation}
 % Component vector field with conv and circ
@@ -410,9 +409,9 @@ The gradient vector field method was first introduced in \cite{goncalves_artific
 \label{gonAllComp}
 \end{equation}
 
-Each term is multiplied by a scalar, \textit{\textbf{G}}, \textit{\textbf{H}}, \textit{\textbf{L}}, that weights the contribution of each term on the total field $\vec{V}$. Only static paths will be discussed so it is assumed the time varying field is null. The advantage of GVF is the convenient access to the weighting terms that independently effect the total field. Magnitude of the weights modifies the strength of each fields influence, whereas the sign indicates the direction. Figure \ref{fig:positiveUnity} shows convergence and circulation fields for a circular path where the weights \textit{\textbf{G}} and \textit{\textbf{H}} are unity and positive. The convergence field contains vectors that are normal to the circular path for all points in space, with exception to the center of the circle which is undefined. Circulation fields contain vectors that are parallel to the path for all points in space with the same exception of no definition at the center of the circle. 
+Each term is multiplied by a scalar, \textit{\textbf{G}}, \textit{\textbf{H}}, \textit{\textbf{L}}, that weights the contribution of each term on the total field $\vec{V}$. Only static paths will be discussed so it is assumed the time varying field is null. The advantage of GVF is the convenient access to the weighting terms that independently effect the total field. Magnitude of the weights modifies the strength of each field's influence, whereas the sign indicates the direction. Figure \ref{fig:positiveUnity} shows convergence and circulation fields for a circular path where the weights \textit{\textbf{G}} and \textit{\textbf{H}} are unity and positive. The convergence field contains vectors that are normal to the circular path for all points in space, with exception to the center of the circle which is undefined. Circulation fields contain vectors that are parallel to the path for all points in space with the same exception of no definition at the center of the circle. 
 
-\begin{figure}[]
+\begin{figure}[H]
 	\begin{subfigmatrix}{2}% number of columns
 		\centering	
 		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/gFieldOnly}}
@@ -423,9 +422,9 @@ Each term is multiplied by a scalar, \textit{\textbf{G}}, \textit{\textbf{H}}, \
 	\label{fig:positiveUnity}
 \end{figure}
 
-Modifying the signs of \textit{\textbf{G}} and \textit{\textbf{H}} to be unity and negative results in similar fields but with a $180^{\circ}$ rotation about the center of the circle, Figure \ref{fig:negativeUnity}. The attractive convergence field becomes a repulsive field, where all vectors are anti-normal to the path. The circulation field changes direction and rotates counterclockwise around the path. 
+Modifying the signs of \textit{\textbf{G}} and \textit{\textbf{H}} to be unity and negative results in similar fields but with a $180^{\circ}$ rotation about the tail of each vector, Figure \ref{fig:negativeUnity}. The attractive convergence field becomes a repulsive field, where all vectors are anti-normal to the path. The circulation field changes direction and rotates counterclockwise around the path. 
 
-\begin{figure}[]
+\begin{figure}[H]
 	\begin{subfigmatrix}{2}% number of columns
 		\centering	
 		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/_gFieldOnly}}
@@ -436,17 +435,17 @@ Modifying the signs of \textit{\textbf{G}} and \textit{\textbf{H}} to be unity a
 	\label{fig:negativeUnity}
 \end{figure}
 
-Repulsive fields have been used for obstacle avoidance for a UAV loitering around a moving target in [w,w,c]. A circular goal path was attached to a ground vehicle and a convergence and circulation vector field was generated. Circular paths were with small radii were placed on top of obstacles with strictly repulsive weights. Notice in Figure \ref{fig:negativeUnity}a that inside of the path, vectors guide inward, which is not desired for obstacle avoidance. The problem is aleviated by reducing the radius significantly. Goal and obstacle field are summed together to provide a total field that provides guidance to a UAV. Loitering is accomplished while avoiding two obstacles, as shown in Figure  \ref{fig:gvfMovingTarget} 
+Repulsive fields have been used for obstacle avoidance for a UAV loitering around a moving target in [w,w,c]. A circular path was attached to a ground vehicle and a convergence and circulation vector field was generated. Circular paths with small radii were placed on top of obstacles with strictly repulsive weights. Notice in Figure \ref{fig:negativeUnity}a that inside of the path, vectors guide inward, which is not desired for obstacle avoidance. The problem is alleviated by reducing the radius significantly. Goal and obstacle field are summed together to provide a total field that provides guidance to a UAV. Loitering is accomplished while avoiding two obstacles, as shown in Figure  \ref{fig:gvfMovingTarget} 
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=7cm]{PaperFigures/gvfMovingTarget}
+	\includegraphics[width=10cm]{PaperFigures/gvfMovingTarget}
 	\caption{Place holder image of UAV following ground target}
 	\label{fig:gvfMovingTarget}
 \end{figure}
 
 
-Similar to potential field and VFF, the strength of the repulsive field depends on the distance from an obstacle. In [w,w,c], a tangent hyperbolic decay function was assigned to the obstacle fields which varied the total strength from null to unity, shown in Figure \ref{fig:tanhICUAS2018}. 
+Similar to potential field and VFF, the strength of repulsive field depends on the distance from an obstacle. In [w,w,c], a tangent hyperbolic decay function was assigned to the obstacle fields which varied the total strength from null to unity, shown in Figure \ref{fig:tanhICUAS2018}. 
 
 \begin{figure}
 	\centering
@@ -456,6 +455,10 @@ Similar to potential field and VFF, the strength of the repulsive field depends 
 \end{figure}
 
 
+
+
+
+\pagebreak
 
 Constructing the paths for a UAV flying at constant altitude requires three-dimensional surfaces intersecting to form two-dimensional paths. Consider a UAV in 2-dimensional space tracking a path $\tau$, which is made of points that lie at the intersection of two surfaces. Each of the surfaces $\alpha_i$ is continuous, differentiable, and is a function of the set $q = [x,y,z]$. The convergence field $\vec{V_{conv}}$ is produced by the sum of surfaces multiplied by their respective partial gradient $\nabla_q\alpha_i$. The definition of the convergence field is summarized in Equations \ref{convOnly} and \ref{partials}.
 
