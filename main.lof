@@ -20,14 +20,16 @@
 \contentsline {figure}{\numberline {2.12}{\ignorespaces Tangent plus lyapunov vector fields for shortest path target tracking \cite {chen_uav_2013}}}{24}{figure.2.12}
 \contentsline {figure}{\numberline {2.13}{\ignorespaces RRT* path planner with a VF used as a task specification}}{25}{figure.2.13}
 \contentsline {figure}{\numberline {2.14}{\ignorespaces Vector field within a set of constrained delaunay triangles \cite {pimenta_fully_2007}}}{25}{figure.2.14}
-\contentsline {figure}{\numberline {2.15}{\ignorespaces Attractive vector field (a) and clockwise circulation field (b)}}{27}{figure.2.15}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces GVF straight line and circular primitives}}{27}{figure.2.15}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{27}{figure.2.15}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{27}{figure.2.15}
-\contentsline {figure}{\numberline {2.16}{\ignorespaces Repulsive vector field a) and counterclockwise circulation field b)}}{27}{figure.2.16}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{27}{figure.2.16}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{27}{figure.2.16}
-\contentsline {figure}{\numberline {2.17}{\ignorespaces Place holder image of UAV following ground target}}{28}{figure.2.17}
-\contentsline {figure}{\numberline {2.18}{\ignorespaces }}{29}{figure.2.18}
-\contentsline {figure}{\numberline {2.19}{\ignorespaces }}{30}{figure.2.19}
-\contentsline {figure}{\numberline {2.20}{\ignorespaces Dubins UAV actuator saturation}}{31}{figure.2.20}
-\contentsline {figure}{\numberline {2.21}{\ignorespaces Differential drive mobile robot simulating fixed wing UAV Dubins constraints}}{32}{figure.2.21}
+\contentsline {figure}{\numberline {2.16}{\ignorespaces GVF circular attractive field without normalization (a) and with normalization (b)}}{28}{figure.2.16}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{28}{figure.2.16}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{28}{figure.2.16}
+\contentsline {figure}{\numberline {2.17}{\ignorespaces GVF circular circulation field without normalization (a) and with normalization (b)}}{29}{figure.2.17}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{29}{figure.2.17}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{29}{figure.2.17}
+\contentsline {figure}{\numberline {2.18}{\ignorespaces GBF circular time varying field without normalization (a) and with normalization (b)}}{30}{figure.2.18}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{30}{figure.2.18}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{30}{figure.2.18}
+\contentsline {figure}{\numberline {2.19}{\ignorespaces Differential drive mobile robot simulating fixed wing UAV Dubins constraints}}{31}{figure.2.19}
