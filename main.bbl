@@ -101,6 +101,19 @@ Goncalves, V.~M., Pimenta, L. C.~A., Maia, C.~A., and Pereira, G. A.~S.,
   \enquote{Artificial vector fields for robot convergence and circulation of
   time-varying curves in n-dimensional spaces,} IEEE, 2009, pp. 2012--2017.
 
+\bibitem{goncalves_circulation_2010}
+Gonçalves, V.~M., Pimenta, L.~C., Maia, C.~A., Pereira, G.~A., Dutra, B.~C.,
+  Michael, N., Fink, J., and Kumar, V., \enquote{Circulation of curves using
+  vector fields: actual robot experiments in 2D and 3D workspaces,} {\em
+  Robotics and {Automation} ({ICRA}), 2010 {IEEE} {International} {Conference}
+  on\/}, IEEE, 2010, pp. 1136--1141.
+
+\bibitem{goncalves_vector_2010}
+Gonçalves, V.~M., Pimenta, L.~C., Maia, C.~A., Dutra, B.~C., and Pereira,
+  G.~A., \enquote{Vector fields for robot navigation along time-varying curves
+  in \$ n \$-dimensions,} {\em IEEE Transactions on Robotics\/}, Vol.~26,
+  No.~4, 2010, pp.~647--659.
+
 \bibitem{ren_experimental_2007}
 Ren, W., McLain, T., Sun, J.-S., and Beard, R., \enquote{Experimental
   validation of an autonomous control system on a mobile robot platform,} {\em

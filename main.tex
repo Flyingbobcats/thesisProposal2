@@ -253,18 +253,10 @@ The navigation system is responsible for taking high level pre-planned paths fro
 
 \section{Vector Field Guidance}
 \subsection{Introduction to Vector Field Guidance}
-
-- External disturbances
-- Transitioning to a new state
-- Avoiding known obstacles
-- Avoiding pop-up obstacles
-- Rejecting external disturbances
-- Computationally inexpensive
-
-Vector field is a continuous guidance method that can be used for guiding a UAV to a singular point or for path following. Potential field and virtual force field guide to a singular point while avoiding obstacles by representing goals and obstacles as artificial attractive and repulsive forces respectively. Path following guidance can be achieved with Lyapunov and gradient vector field techniques that produce heading commands that converge and follow a path. 
+ Vector Field is a computationally inexpensive guidance and control approach that can be used to transition a robotic system from an initial state to a goal state. Goals act as artificial attractive forces that pull on the robotic system while obstacles act as artificial repulsive forces that push the robotic system away. Classes of vector fields can be categorized as singular or path following algorithms. Potential Field and Virtual Force Field (VFF) methods converge to a single point and avoid obstacles by applying artificial attractive and repulsive forces. Lyapunov and Gradient Vector Fields provide guidance that asymptotically converges to path. Obstacle avoidance has been achieved with Gradient Vector Fields by assigning repulsive weights to a convergence term. Weights currently act as a high level specification of the desired guidance behavior and may be further optimized. 
 
 \subsection{Potential Field}
-Potential field is a robotic manipulator method that models a robots workspace as a gradient potential of attractive and repulsive artificial forces \cite{khatib_real-time_1986}. A robot can be represented as a point mass initially located at a globally maximum potential that transitions to a goal located at a globally minimum potential. Obstacles are represented by a high potential that act as repulsive forces with an exponentially decaying strength as to only influence the robot when approaching the obstacle. The potential gradient can be depicted as a mesh such as that shown in Figure \ref{fig:pfobstacle}. Potential field is unique in that it combines path planning, trajectory planning, and control into a single system \cite{rimon_exact_1992}. 
+Potential field models a robots workspace as a gradient potential of attractive and repulsive artificial forces \cite{khatib_real-time_1986}. Robots can be represented as a point mass initially located at a globally maximum potential that transitions to a goal located at a globally minimum potential. Obstacles are represented by a high potential that act as repulsive forces with an exponentially decaying strength as to only influence the robot when approaching the obstacle. The potential gradient can be depicted as a mesh such as that shown in Figure \ref{fig:pfobstacle}. Potential field is unique in that it combines path planning, trajectory planning, and control into a single system \cite{rimon_exact_1992}. 
 
 \begin{figure}[h!]
 	\centering
@@ -274,13 +266,13 @@ Potential field is a robotic manipulator method that models a robots workspace a
 \end{figure}
 
 
-Inherent problems with potential field methods were identified when experimentally validating the virtual force field (VFF) method in \cite{koren_potential_1991}. VFF operates on the artificial  attractive and repulsive force principle and is intended specifically for mobile robots seeking a goal in an environment with initially unknown obstacles. VFF decomposes a robots workspace into discretized cells that contain an integer certainty value associated with the confidence that an obstacle occupies the cell. A global goal applies an artificial attractive force on the robot that pulls it closer to the goal. As the robot detects obstacles, the certainty value increases in the cell associated with the obstacles position. Cells apply artificial repulsive forces with magnitudes that depend on the certainty value and the distance to the cell.
+Inherent problems with potential field methods were identified when experimentally validating the Virtual Force Field (VFF) method in \cite{koren_potential_1991}, including local minimums and osculations. VFF operates on the artificial  attractive and repulsive force principle and is intended specifically for mobile robots seeking a goal in an environment with initially unknown obstacles. VFF decomposes a robots workspace into discretized cells that contain an integer certainty value associated with the confidence that an obstacle occupies the cell. A global goal applies an artificial attractive force on the robot that pulls it closer to the goal. As the robot detects obstacle's, the certainty value increases in the cell associated with the obstacles position. Cells apply artificial repulsive forces with magnitudes that depend on the certainty value and the distance to the cell.
 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=7cm]{PaperFigures/histogram}
-	\caption{Virtual force field histogram acting on a mobile robot}
+	\caption{Virtual force field histogram acting on a mobile robot \cite{borenstein_vector_1991}}
 	\label{fig:histogram}
 \end{figure}
 
@@ -308,7 +300,7 @@ The VFF histogram method was validated on a mobile robot platform using ultrason
 \end{figure}
 
 
-Several methods have been developed to eliminate local minimums through the use of navigation functions \cite{goerzen_survey_2010} and obstacle clustering \cite{liu_virtual-waypoint_2016}. Navigation functions relate kinematic constraints to the gradient potential to produce a bounded and local minimum free solution \cite{rimon_exact_1992}. Clustering closely spaced obstacles into a single and equally repulsive obstacle prevents local minimum from forming. Typical clustering can be seen in Figure \ref{fig:obstacleclustering}. 
+Several methods have been developed to eliminate local minimums of potential fields through the use of navigation functions \cite{goerzen_survey_2010} and obstacle clustering \cite{liu_virtual-waypoint_2016}. Navigation functions relate kinematic constraints to the gradient potential to produce a bounded and local minimum free solution \cite{rimon_exact_1992}. Clustering closely spaced obstacles into a single and equally repulsive obstacle prevents local minimum from forming. Typical clustering can be seen in Figure \ref{fig:obstacleclustering}. 
 
 \begin{figure}[H]
 	\centering
@@ -317,24 +309,24 @@ Several methods have been developed to eliminate local minimums through the use 
 	\label{fig:obstacleclustering}
 \end{figure}
 
-Potential fields ability to avoid obstacles and combine path planning, trajectory planning, and control into a single computationally inexpensive system makes it an attractive motion control system for robots seeking a singular point, even with the limitations discussed in \cite{koren_potential_1991}. Unlike ground mobile robots, fixed wing UAVs must maintain a minimum forward velocity and cannot converge to a single point. Vector fields that direct a UAV to paths connecting waypoints have been developed using Lyapunov and gradient vector field techniques. 
+Potential Field's ability to avoid obstacles and combine path planning, trajectory planning, and control into a single computationally inexpensive system makes it an attractive motion control system for robots seeking a singular point, even with the limitations discussed in \cite{koren_potential_1991}. Unlike ground mobile robots, fixed wing UAVs must maintain a minimum forward velocity and cannot converge to a single point. Vector fields that direct a UAV to paths connecting waypoints have been developed using Lyapunov and gradient vector field techniques. 
  
  
 \subsection{Lyapunov Vector Fields}
-Lyapunov vector fields produce heading guidance that asymptotically converges and circulates along a path passing through waypoints. Paths can be built from straight line and circular arc primitives taking UAV dynamic constraints into consideration. Nelson et al. introduced a vector field generation method for line primitives in \cite{nelson_cooperative_2005}. Farther away from the path, vectors are constant and point in the direction perpendicular to the path. Within a transition region the vectors begin to rotate and point more parallel to the path. Vectors on the path point directly in the direction of the path. Lyapunov vector fields for straight line and circular arcs are shown in Figure \ref{fig:nelsonlyapunov}.
+Lyapunov vector fields produce heading guidance that asymptotically converges and circulates along a path passing through waypoints. Paths can be built from straight line and circular arc primitives taking UAV dynamic constraints into consideration. Vector Fields that guide to straight line and circular paths was introduced in \cite{nelson_cooperative_2005}. Farther away from the path, vectors are constant and point in the direction perpendicular to the path. Within a transition region the vectors begin to rotate and point more parallel to the path. Vectors on the path point directly in the direction of the path. Lyapunov vector fields for straight line and circular arcs are shown in Figure \ref{fig:nelsonlyapunov}.
 \begin{figure}
 	\centering
 	\includegraphics[width=13cm]{PaperFigures/nelsonLyapunov}
-	\caption{Lyapunov vector field for straight line and circular primitives}
+	\caption{Lyapunov vector field for straight line and circular primitives \cite{nelson_cooperative_2005}}
 	\label{fig:nelsonlyapunov}
 \end{figure}
 
-Combining path primitives together can result in fairly complex paths such as that shown in Figure \ref{fig:urbanfollowingnelson}. Each path primitive has a vector field associated with it and determining which field to use can be approached in two different ways. Fields from all of the primitives can be summed together similar to the attractive and repulsive forces in potential field. Second, fields can be selectively activated and deactivated based on the position of the UAV. Summing together vector fields, as pointed out in \cite{nelson_cooperative_2005}, can result in several problems including dead zones, sinks, and singularities. Selectively activating each vector field as a UAV nears waypoints was used in \cite{nelson_cooperative_2005} \cite{nelson_vector_2006} \cite{nelson_vector_2007}.
+Combining path primitives together can result in fairly complex paths such as that shown in Figure \ref{fig:urbanfollowingnelson}. Each path primitive has a vector field associated with it and determining which field to use can be approached in two different ways. Fields from all of the primitives can be summed together similar to the attractive and repulsive forces in potential field. Second, fields can be selectively activated and deactivated based on the position of the UAV. Summing together vector fields, as pointed out in \cite{nelson_cooperative_2005}, can result in several problems including dead zones, sinks, and singularities. Selectively activating each vector field as a UAV nears waypoints was used in \cite{nelson_cooperative_2005,nelson_vector_2006,nelson_vector_2007}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=7cm]{PaperFigures/urbanFollowingNelson}
-	\caption{}
+	\caption{Straight path following in urban environment \cite{nelson_cooperative_2005 using} Lyapunov Vector Field}
 	\label{fig:urbanfollowingnelson}
 \end{figure}
 
@@ -344,12 +336,12 @@ Nelson's method was extended by Griffiths for curved path following and showed t
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=7cm]{PaperFigures/griffiths}
-	\caption{Lyapunov vector field approach curved path asymptotically}
+	\caption{Lyapunov vector field approach curved path asymptotically \cite{griffiths_vector_2006}}
 	\label{fig:griffiths}
 \end{figure}
 
 
-Primitive circular fields can be modified via non-linear coordinate transformations to produce globally convergent elliptical fields \cite{frew_lyapunov_nodate}\cite{frew_cooperative_2007}. Frew simulated and experimentally validated the transformed vector field where multiple fixed wing UAVs cooperatively tracked a moving target while maintaining a staggered distance from each other, preventing collision and multiple surveillance angles. The location of a target being tracked is not known with absolute certainty. The covariance matrix from a kalman filter to transform a circular vector field around an uncertain target was investigated in \cite{frew_cooperative_2007} and an example field is shown in Figure \ref{fig:lyapunovFrew}b.
+Primitive circular fields can be modified via non-linear coordinate transformations to produce globally convergent elliptical fields \cite{frew_lyapunov_nodate,frew_cooperative_2007}. Frew simulated and experimentally validated the transformed vector field where multiple fixed wing UAVs cooperatively tracked a moving target while maintaining a staggered distance from each other, preventing collision and multiple surveillance angles. The location of a target being tracked is not known with absolute certainty. The covariance matrix from a kalman filter to transform a circular vector field around an uncertain target was investigated in \cite{frew_cooperative_2007} and an example field is shown in Figure \ref{fig:lyapunovFrew}b.
 
 \begin{figure}[h]
 	\begin{subfigmatrix}{2}% number of columns
@@ -362,7 +354,7 @@ Primitive circular fields can be modified via non-linear coordinate transformati
 	\label{fig:lyapunovFrew}
 \end{figure}
 
-A target tracking Lyapunov plus tangent vector field was introduced in \cite{chen_tracking_2009} that produced shorter paths compared to Lyapunov alone. Outside of the standoff circle, tangent vectors were provided the shortest distance to the circle. Inside the standoff circle, no tangent lines exist and Lyapunov is used in its place. Figure \ref{fig:lyapunovChen} shows the difference in paths taken for Lyapunov and tangent vector fields outside the standoff circle. The TPLVF was later used for path planning to avoid obstacles in \cite{chen_uav_2013}.
+Target tracking Lyapunov Plus Tangent Vector Field (TPVLF) was introduced in \cite{chen_tracking_2009} that produced shorter paths compared to Lyapunov alone. Outside of the standoff circle, tangent vectors were provided the shortest distance to the circle. Inside the standoff circle, no tangent lines exist and Lyapunov is used in its place. Figure \ref{fig:lyapunovChen} shows the difference in paths taken for Lyapunov and tangent vector fields outside the standoff circle. The TPLVF was later used for path planning to avoid obstacles in \cite{chen_uav_2013}.
 
 \begin{figure}
 	\centering
@@ -373,7 +365,7 @@ A target tracking Lyapunov plus tangent vector field was introduced in \cite{che
 
 
 \subsection{Non-Lyapunov Vector Fields}
-All methods that consider obstacles so far build a vector field that guides the UAV to an obstacle free path. Another approach is to build a vector field tending to a path and use optimal rapid random trees (RRT*) to explore the space for obstacles and select the optimal path. Pereia et al. developed such a method that builds a tree that makes up possible paths for the UAV. Branches extend from the root, or initial location of the UAV, randomly throughout the map with a constrained deviation from the initial vector field. When a branch encounters an obstacle it is trimmed and no longer explored. The path of minimum cost, or least distance, is selected for the UAV to use as a reference path. An example of the algorithm is shown in Figure \ref{fig:rrtvf}.
+All methods that consider obstacles thus far built a vector field that guides the UAV to an obstacle free path. Another approach is to build a vector field tending to a path and use optimal rapid random trees (RRT*) to explore the space for obstacles and select the optimal path. Pereia et al. developed such a method that builds a tree that makes up possible paths for the UAV. Branches extend from the root, or initial location of the UAV, randomly throughout the map with a constrained deviation from the initial vector field. When a branch encounters an obstacle it is trimmed and no longer explored. The path of minimum cost, or least distance, is selected for the UAV to use as a reference path. An example of the algorithm is shown in Figure \ref{fig:rrtvf}.
 
 \begin{figure}
 	\centering
@@ -383,7 +375,7 @@ All methods that consider obstacles so far build a vector field that guides the 
 \end{figure}
 
 
-For well known obstacles in urban environments, such as buildings, an optimal path can be constructed with constrained delaunay triangulation (CDT) which has been previously used in computer animation \cite{md_simplex_2017}. CTD was used to construct vector fields in \cite{pimenta_fully_2007} that restricts robots movements inside the triangles while moving towards a global goal. A simulation of a robot traversing a vector field inside a set of CDTs can be seen in Figure \ref{fig:cdtVF}.
+Constrained Delaunay triangulation (CDT) has been used to generate an optimal path in an urban environment containing buildings \cite{md_simplex_2017}. CTD was used to construct vector fields in \cite{pimenta_fully_2007} that restricts robots movements inside the triangles while moving towards a global goal. A simulation of a robot traversing a vector field inside a set of CDTs can be seen in Figure \ref{fig:cdtVF}.
 
 \begin{figure}
 	\centering
@@ -401,51 +393,70 @@ So far all of the vector field methods discussed have avoided obstacles by plann
 %So far vector fields built from straight line and circular primitives that are commonly used by path planners to construct missions have been discussed. The method used to build primitives can be extended to construct vector fields that asymptotically converge to curved paths.  Primitives can be modified with coordinate transforms to construct racetrack and elliptical shapes for target following of moving and uncertain targets. Obstacles can be avoided through RRT* that uses a vector field to sense the general direction of branch expansion, and a robotic system can maintain a collision free path inside of a set of constrained triangles with vector fields.
 
 \subsection{Gradient Vector Field}
+Gradient vector field (GVF) is a method that produces an \textit{n}-dimensional vector field that converges and circulates a target path\cite{goncalves_artificial_2009}. Paths can be static or time-varying and consist of points that lie at the intersection of surfaces defined by implicit functions. The surface functions are used to calculate a total vector field that is a sum of a convergence, circulation, and time-varying term. Convergence effectively attracts a robot to the target curve while circulation guides the robot to traverse the target curve. Time-varying is a feed-forward term that accounts for changes in the target path as a function of time \textit{t}. The total field is summarized in Equation \ref{simpleGVF}.
 
-
-Gradient vector fields (GVF) were introduced in \cite{goncalves_artificial_2009} and produce a vector field \textbf{h} that circulates and converges to a static or dynamic path $\tau$ in n-dimensional configuration space $\mathbb{C}$. Vectors are produced by summing together three terms consisting of convergence $\vec{v}_{conv}$, circulation $\vec{v}_{circ}$, and a time-varying $\vec{v}_{tv}$ term. Convergence effectively attracts a robot to the target curve while circulation guides the robot to traverse the target curve. Time-varying is a feed-forward term that accounts for changes in the target path as a function of time \textit{t}. The total vector $\vec{v}$ can be used a velocity or acceleration inputs.
-
-\begin{equation}\label{key}
+\begin{equation}\label{simpleGVF}
 \vec{v} = \vec{v}_{conv} + \vec{v}_{circ} + \vec{v}_{tv} 
 \end{equation}
 
-Target paths are represented by a set of points that exist in $\mathbb{R}^n$ which also lie at the level set, or intersection, of $(n-1)$ surfaces. Surfaces are constructed from implicit functions $(\alpha_i, i=1,2,...n-1)$  that have continuous partial derivatives and have bounded second order partials for all dimensions. Two dimensional paths are commonly used to construct UAV flight paths, therefore three spatial dimensions $(n=3)$ will be considered to construct 2-dimensional paths. 
-\\
+Multiplicative scalar weights (\textit{\textbf{G,H,L}}) have been used to modify the strength of each term in \cite{goncalves_circulation_2010}[wwc], shown in Equation \ref{weightedSimpleGVF}
 
-GVFs for straight line and circular primitives, similar to that in \cite{nelson_cooperative_2005}, can be constructed by intersecting planes and cylinders represented by the implicit functions \ref{plane} and \ref{cylinder} respectively. The resulting gradient vector fields that converge and circulate static straight line and circular paths can be shown in Figure \ref{fig:gvfPrimitives}.  
+\begin{equation}\label{weightedSimpleGVF}
+\vec{v} = \boldsymbol{G}\vec{v}_{conv} + \boldsymbol{H}\vec{v}_{circ} + \boldsymbol{L}\vec{v}_{tv} 
+\end{equation}
 
 
+Producing a GVF that converges and circulates a target path consisting of points $\in$ $\mathbb{R}^n$, first requires \textit{(n-1)} implicit surface functions {$\alpha_i(x_1,x_2,...x_{n-1},t), i=1,2,...n-1$} to be defined. UAVs are restricted to $\mathbb{R}^3$ spatial configuration space, therefore two surface functions must be defined to calculate a GVF. Surface functions must have 1) \textit{continuous first order partial derivatives} and 2)\textit{ bounded second order partial derivatives} to guarantee convergence to the curve \cite{goncalves_circulation_2010}. The total gradient vector field converges and circulates the intersection, or level sets, of the two surfaces. For a UAV traveling at constant altitude, the first surface can be represented as a flat plane in Equation \ref{planeZ}. Intersecting the flat plane with a static vertical plane, Equation \ref{planeX}, produces a gradient vector field that converges and follows a straight line, Figure \ref{fig:gvfLinePrimitive}.
 
 \begin{equation}
-\label{plane}
-\alpha_2 = z
+\label{planeZ}
+\alpha_1 = z
 \end{equation}
 
 \begin{equation}
-\label{cylinder}
-\alpha_1 = x^2+y^2-r
+\label{planeX}
+\alpha_2 = x
 \end{equation}
 
 \begin{figure}[H]
 	\begin{subfigmatrix}{2}% number of columns
 		\centering	
+		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/planeIntersection}}
 		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/compWithoutTitles/lineConvCirc}}
+		\hspace*{0mm}
+	\end{subfigmatrix}
+	\caption{Intersection of planes (a) and resultant Gradient Vector Field (b)}
+	\label{fig:gvfLinePrimitive}
+\end{figure}
+
+Similarly, intersecting the flat plane with a static cylinder, Equation \ref{cylinder}, results in a vector field that converges and follows a circular path shown in Figure \ref{fig:gvfCircPrimitive}.
+
+\begin{equation}
+\label{cylinder}
+\alpha_2 = x^2+y^2-r^2
+\end{equation}
+
+\begin{figure}[H]
+	\begin{subfigmatrix}{2}% number of columns
+		\centering	
+		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/planeIntersection}}
 		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/compWithoutTitles/circConvCirc}}
 		\hspace*{0mm}
 	\end{subfigmatrix}
-	\caption{GVF straight line and circular primitives}
-	\label{fig:gvfPrimitives}
+	\caption{Intersection of plane / cylinder (a) and resultant Gradient Vector Field (b)}
+	\label{fig:gvfCircPrimitive}
 \end{figure}
 
-Static paths do not require the time-varying term of the vector field calculation and can be considered zero in such cases. The convergence term of the vector field is calculated by summing the product of each implicit function with its own first order partial derivative, which is shown in Equation \ref{convOnly}. 
+Static paths do not require the time-varying term of the vector field calculation and can be considered zero in such cases. The convergence term of the vector field is calculated by summing the product of each implicit function with its own gradient, which is shown in Equation \ref{convOnly}.
 
 \begin{equation}
 % Total field with Conv, Circ, and Time
-\vec{c}_{conv} = \sum_{i=1}^{n-1}\alpha_i\nabla_q\alpha_i  
+\vec{v}_{conv} = \sum_{i=1}^{n-1}\alpha_i\nabla_q\alpha_i  
 \label{convOnly}
 \end{equation}
 
-Evaluating equation \ref{convOnly} for a cylinder intersecting a plane results in a vector field that converges to a circular path shown in Figure \ref{fig:gvfCircAttractive}a. Note that the vectors are not of equal length for the entire configuration space, decaying in strength when approaching the curve. Normalizing the field was done in [wwc] to allow for convenient weighting of each term at a later process. The normalized convergence field for a circular path is shown in Figure \ref{fig:gvfCircAttractive}b. 
+
+Evaluating equation \ref{convOnly} for a cylinder intersecting a plane results in a vector field that converges to a circular path shown in Figure \ref{fig:gvfCircAttractive}a. Note that the vectors are not of equal length for the entire configuration space, decaying in strength when approaching the curve. Normalizing the field was done in [wwc] \cite{goncalves_circulation_2010,goncalves_vector_2010} to allow for convenient weighting of each term at a later process. The normalized convergence field for a circular path is shown in Figure \ref{fig:gvfCircAttractive}b. 
 
 \begin{figure}[H]
 	\begin{subfigmatrix}{2}% number of columns
@@ -458,7 +469,7 @@ Evaluating equation \ref{convOnly} for a cylinder intersecting a plane results i
 	\label{fig:gvfCircAttractive}
 \end{figure}
 
-For the same circular path in the above example, the circulation term is calculated by taking the wedge product of each surfaces partial derivative, shown in Equation \ref{circOnly} . For surfaces in 3 dimensions, the wedge product can be simplified to the cross product shown in Equation \ref{circOnlySimp}.
+The circulation term is calculated by taking the wedge product of each surface's gradient, shown in Equation \ref{circOnly}. For surfaces in $\mathbb{R}^3$, the wedge product can be simplified to the cross product shown in Equation \ref{circOnlySimp}.
 
 \begin{equation}
 % Total field with Conv, Circ, and Time
@@ -473,7 +484,7 @@ For the same circular path in the above example, the circulation term is calcula
 \end{equation}
 
 
-Evaluating the circulation term results in a vector field that is parallel to a circular path, shown in Figure \ref{fig:gvfCircCirculation}a. The field is normalized to produce a field with equal length vectors for the configuration space which is sown in Figure \ref{fig:gvfCircCirculation}b. 
+Evaluating the circulation term results in a vector field that is parallel to a circular path, shown in Figure \ref{fig:gvfCircCirculation}a. The field is normalized to produce a field with equal length vectors for the configuration space which is shown in Figure \ref{fig:gvfCircCirculation}b. 
 
 \begin{figure}[H]
 	\begin{subfigmatrix}{2}% number of columns
@@ -482,11 +493,29 @@ Evaluating the circulation term results in a vector field that is parallel to a 
 		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/compWithoutTitles/circCW}}
 		\hspace*{0mm}
 	\end{subfigmatrix}
-	\caption{GVF circular circulation field without normalization (a) and with normalization (b)}
+	\caption{Circular GVF without normalization (a) and with normalization (b)}
 	\label{fig:gvfCircCirculation}
 \end{figure}
 
-Feed-forward compensation for a moving path is accomplished with the time-varying term, which is calculated by multiplying the inverse of the gradient matrix M with the column vector (a) shown in Equation []. The resulting vector field for a circular path moving in the positive x direction can be shown in Figure []a and the normalized version in Figure []b.
+For dynamic paths that vary in time \textit{t}, feedforward compensation is accomplished by calculating the time-varying term. The time-varying field is calculated by multiplying the inverse of the gradient matrix $M$ with the column vector $a$ shown in Equations \ref{mMatrix} and \ref{aVector} respectively. The resulting vector field for a circular path moving in the positive x direction can be shown in Figure \ref{fig:gvfCircTimeVarying}a and the normalized version in Figure \ref{fig:gvfCircTimeVarying}b.
+
+
+\begin{equation}
+\label{mMatrix}
+M =\begin{bmatrix}
+\nabla\alpha_1^T \\
+\nabla\alpha_2^T \\
+(\nabla\alpha_1 \times \nabla\alpha_2)^T
+\end{bmatrix}
+\end{equation}
+
+\begin{equation}
+\label{aVector}
+a =\begin{bmatrix}
+\frac{\partial \alpha_1}{\partial t} \quad   \frac{\partial \alpha_2}{\partial t} \quad   0
+\end{bmatrix}^T
+\end{equation}
+
 
 \begin{figure}[H]
 	\begin{subfigmatrix}{2}% number of columns
@@ -495,11 +524,11 @@ Feed-forward compensation for a moving path is accomplished with the time-varyin
 		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/compWithoutTitles/circTv}}
 		\hspace*{0mm}
 	\end{subfigmatrix}
-	\caption{GBF circular time varying field without normalization (a) and with normalization (b)}
+	\caption{Circular time-varying GVF without normalization (a) and with normalization (b)}
 	\label{fig:gvfCircTimeVarying}
 \end{figure}
 
-Summing together the normalized convergence, circulation, and time-varying terms results in equation []. Scalar weights (G,H,L) can be added after normalization to increase or decrease the contribution of each term shown in equation []. 
+Summing together the normalized convergence, circulation, and time-varying terms results in the total field $\vec{V}$ shown defined in Equation \ref{gonAllComp}. Scalar weights, (\textit{\textbf{G,H,L}}), are added after normalization to increase or decrease the contribution of convergence, circulation, and time-varying respectively. 
 
 \begin{equation}
 % Component vector field with conv and circ
@@ -508,639 +537,116 @@ Summing together the normalized convergence, circulation, and time-varying terms
 \end{equation}
 
 
+\begin{figure}
+	\centering
+	\includegraphics[width=8cm]{PaperFigures/compWithoutTitles/circConvCircTv}
+	\caption{GVF with unity (\textit{\textbf{G=H=L=1}}) weights for a moving circular path}
+	\label{fig:circconvcirctv}
+\end{figure}
 
-%The gradient vector field method was first introduced in \cite{goncalves_artificial_2009} and produces an $n$-dimensional vector field guaranteed to converge to a path made of points that lie at the intersection of two surfaces. The vector field $\vec{V}$ is produced by summing together convergence, circulation, and time varying terms seen in Equation \ref{gonAllComp}. Convergence terms contribute vectors normal to the path, circulation terms contribute vectors parallel to the path, and time varying vectors account for changes in the path as a function of time. 
-%
-%\begin{equation}
-%% Component vector field with conv and circ
-%\vec{V} = \boldsymbol{G}\vec{V}_{conv} + \boldsymbol{H}\vec{V}_{circ} +  \boldsymbol{L}\vec{V}_{tv} 
-%\label{gonAllComp}
-%\end{equation}
-%
-%Straight line and circular paths can be calculated by intersecting a plane and cylinder with an additional plane. The resulting gradient vector field for straight line and circular paths can be seen in Figure \ref{fig:gvfPrimitives}a and \ref{fig:gvfPrimitives}b.
-%
-%
-%%Primitives (Line and circle)
-%\begin{figure}[H]
-%	\begin{subfigmatrix}{2}% number of columns
-%		\centering	
-%		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/compWithoutTitles/lineConvCirc}}
-%		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/compWithoutTitles/circConvCirc}}
-%		\hspace*{0mm}
-%	\end{subfigmatrix}
-%	\caption{GVF straight line and circular primitives}
-%	\label{fig:gvfPrimitives}
-%\end{figure}
-%
-%
-%%NN Attractive vs N Attractive
-%\begin{figure}[H]
-%	\begin{subfigmatrix}{2}% number of columns
-%		\centering	
-%		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/NNcompWithoutTitles/circAttractive}}
-%		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/compWithoutTitles/circAttractive}}
-%		\hspace*{0mm}
-%	\end{subfigmatrix}
-%	\caption{GVF circular attractive field without normalization (a) and with normalization (b)}
-%	\label{fig:gvfCircAttractive}
-%\end{figure}
-%
-%%NN Circulation vs N Circulation
-%\begin{figure}[H]
-%	\begin{subfigmatrix}{2}% number of columns
-%		\centering	
-%		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/NNcompWithoutTitles/circCW}}
-%		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/compWithoutTitles/circCW}}
-%		\hspace*{0mm}
-%	\end{subfigmatrix}
-%	\caption{GVF circular circulation field without normalization (a) and with normalization (b)}
-%	\label{fig:gvfCircCirculation}
-%\end{figure}
-%
-%
-%%NN TV vs N TV
-%\begin{figure}[H]
-%	\begin{subfigmatrix}{2}% number of columns
-%		\centering	
-%		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/NNcompWithoutTitles/circTv}}
-%		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/compWithoutTitles/circTv}}
-%		\hspace*{0mm}
-%	\end{subfigmatrix}
-%	\caption{GBF circular time varying field without normalization (a) and with normalization (b)}
-%	\label{fig:gvfCircTimeVarying}
-%\end{figure}
-%
-%
-%%Single obstacle avoidance
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[width=15cm]{PaperFigures/singleObstacle}
-%	\caption{Circular Obstacle Avoidance Strictly Repulsive Field}
-%	\label{fig:gvfSingleObstacleAvoidance}
-%\end{figure}
-%
-%
-%
-%
-%======================================
-%
-%The gradient vector field method was first introduced in \cite{goncalves_artificial_2009} and produces an $n$-dimensional vector field guaranteed to converge to a path made of points that lie at the intersection of two surfaces. The vector field $\vec{V}$ is produced by summing together convergence, circulation, and time varying terms seen in Equation \ref{gonAllComp}. Convergence terms contribute vectors normal to the path, circulation terms contribute vectors parallel to the path, and time varying vectors account for changes in the path as a function of time. 
-%
-%
-%
-%Each term is multiplied by a scalar, \textit{\textbf{G}}, \textit{\textbf{H}}, \textit{\textbf{L}}, that weights the contribution of each term on the total field $\vec{V}$. Only static paths will be discussed so it is assumed the time varying field is null. The advantage of GVF is the convenient access to the weighting terms that independently effect the total field. Magnitude of the weights modifies the strength of each field's influence, whereas the sign indicates the direction. Figure \ref{fig:positiveUnity} shows convergence and circulation fields for a circular path where the weights \textit{\textbf{G}} and \textit{\textbf{H}} are unity and positive. The convergence field contains vectors that are normal to the circular path for all points in space, with exception to the center of the circle which is undefined. Circulation fields contain vectors that are parallel to the path for all points in space with the same exception of no definition at the center of the circle. 
-%
-%\begin{figure}[H]
-%	\begin{subfigmatrix}{2}% number of columns
-%		\centering	
-%		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/gFieldOnly}}
-%		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/hFieldOnly}}
-%		\hspace*{0mm}
-%	\end{subfigmatrix}
-%	\caption{Attractive vector field (a) and clockwise circulation field (b)}
-%	\label{fig:positiveUnity}
-%\end{figure}
-%
-%Modifying the signs of \textit{\textbf{G}} and \textit{\textbf{H}} to be unity and negative results in similar fields but with a $180^{\circ}$ rotation about the tail of each vector, Figure \ref{fig:negativeUnity}. The attractive convergence field becomes a repulsive field, where all vectors are anti-normal to the path. The circulation field changes direction and rotates counterclockwise around the path. 
-%
-%\begin{figure}[H]
-%	\begin{subfigmatrix}{2}% number of columns
-%		\centering	
-%		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/_gFieldOnly}}
-%		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/_hFieldOnly}}
-%		\hspace*{0mm}
-%	\end{subfigmatrix}
-%	\caption{Repulsive vector field a) and counterclockwise circulation field b)}
-%	\label{fig:negativeUnity}
-%\end{figure}
-%
-%Repulsive fields have been used for obstacle avoidance for a UAV loitering around a moving target in [w,w,c]. A circular path was attached to a ground vehicle and a convergence and circulation vector field was generated. Circular paths with small radii were placed on top of obstacles with strictly repulsive weights. Notice in Figure \ref{fig:negativeUnity}a that inside of the path, vectors guide inward, which is not desired for obstacle avoidance. The problem is alleviated by reducing the radius significantly. Goal and obstacle field are summed together to provide a total field that provides guidance to a UAV. Loitering is accomplished while avoiding two obstacles, as shown in Figure  \ref{fig:gvfMovingTarget} 
-%
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[width=10cm]{PaperFigures/gvfMovingTarget}
-%	\caption{Place holder image of UAV following ground target}
-%	\label{fig:gvfMovingTarget}
-%\end{figure}
-%
-%
-%Similar to potential field and VFF, the strength of repulsive field depends on the distance from an obstacle. In [w,w,c], a tangent hyperbolic decay function was assigned to the obstacle fields which varied the total strength from null to unity, shown in Figure \ref{fig:tanhICUAS2018}. 
-%
-%\begin{figure}
-%	\centering
-%	\includegraphics[width=10cm]{PaperFigures/tanh_ICUAS2018}
-%	\caption{}
-%	\label{fig:tanhICUAS2018}
-%\end{figure}
-%
-%
-%
-%
-%
-%\pagebreak
-%
-%Constructing the paths for a UAV flying at constant altitude requires three-dimensional surfaces intersecting to form two-dimensional paths. Consider a UAV in 2-dimensional space tracking a path $\tau$, which is made of points that lie at the intersection of two surfaces. Each of the surfaces $\alpha_i$ is continuous, differentiable, and is a function of the set $q = [x,y,z]$. The convergence field $\vec{V_{conv}}$ is produced by the sum of surfaces multiplied by their respective partial gradient $\nabla_q\alpha_i$. The definition of the convergence field is summarized in Equations \ref{convOnly} and \ref{partials}.
-%
-%
-%
-%\begin{equation}
-%% Total field with Conv, Circ, and Time
-%\vec{V}_{conv} = \boldsymbol{G}\sum_{i=1}^{n-1}\alpha_i\nabla_q\alpha_i  
-%\label{convOnly}
-%\end{equation}
-%
-%\begin{equation}
-%\label{partials}
-%\nabla_q=\begin{bmatrix}
-%\frac{\partial}{\partial x} \\
-%\frac{\partial}{\partial y} \\
-%\frac{\partial}{\partial z}
-%\end{bmatrix}
-%\end{equation}
-%
-%To produce a circular path of radius $r$ the intersection of a cylinder and plane are used, as shown in Equations \ref{cylinder}-\ref{plane} and pictured in Figure \ref{fig:cylinderPlane}.
-%
-%\begin{figure}
-%	\centering
-%	\includegraphics[width=7cm]{PaperFigures/cylinderPlane}
-%	\caption{}
-%	\label{fig:cylinderPlane}
-%\end{figure}
-%
-%\begin{equation}
-%\label{cylinder}
-%\alpha_1 = x^2+y^2-r
-%\end{equation}
-%
-%\begin{equation}
-%\label{plane}
-%\alpha_2 = z
-%\end{equation}
-%
-%Convergence vector field term is produced by taking the wedge product of the partials $\nabla_q\alpha_i$, which in three dimensions simplifies to the cross product as shown in Equations \ref{circOnly} and \ref{circOnlySimp}.
-%
-%
-%\begin{equation}
-%% Total field with Conv, Circ, and Time
-%\vec{V}_{circ} =  \boldsymbol{H}\wedge_{i=1}^{n-1}\nabla_q\alpha_i 
-%\label{circOnly}
-%\end{equation}
-%
-%\begin{equation}
-%% Total field with Conv, Circ, and Time
-%\vec{V}_{circ} =  \boldsymbol{H}(\nabla_q\alpha_1 \times \nabla_q\alpha_2) 
-%\label{circOnlySimp}
-%\end{equation}
-%
-%
-%Circulation and convergence terms may have different magnitudes giving unequal weighting to each term. Normalizing each component prior to weighting allows for more predictable results when assigning values. 
-%
-%So far the VF weights have been used for high level specification of the desired behavior for a UAV, whether it be for convergence, avoidance, or circulation. Furthermore, there is no guarantee that when using a vector field for avoidance that the UAV will not violate the no-fly zone. If the UAV turn rate is at saturation an increased reference command will do nothing to aid in avoidance. A demonstration of saturation is seen in Figure \ref{fig:inputSat} where a UAV is provided guidance by a convergent and circulating vector field about a circular path. 
-%
-%\begin{figure}
-%	\centering
-%	\includegraphics[width=12cm]{PaperFigures/inputSat}
-%	\caption{Dubins UAV actuator saturation}
-%	\label{fig:inputSat}
-%\end{figure}
-%
-%If the VF was adjusted earlier at an earlier state, the tracking error may be reduced. When using an obstacle, determining which direction the UAV must fly around the obstacle is important to reduce distance flown. Determining functions for the sign and magnitude of the vector field weights to produce an optimal guidance.
-
-%${[x_1,x_2,\cdots,x_n]^T \in \!R} : $
-%$\alpha_i(x_1,x_2,. . .,x_n)$
-%$(i=1,2,...,n-1)$
-%\begin{equation}
-%% Total field with Conv, Circ, and Time
-%\vec{V} = \boldsymbol{G}\sum_{i=1}^{n-1}\alpha_i\nabla_q\alpha_i  +  \boldsymbol{H}\wedge_{i=1}^{n-1}\nabla_q\alpha_i   +  \boldsymbol{L}M^{-1}a
-%\label{gonFieldeq}
-%\end{equation}
-
-%\begin{equation}
-%% Component vector field with conv and circ
-%\vec{V} = \boldsymbol{G}\vec{V}_{conv} + \boldsymbol{H}\vec{V}_{circ} 
-%\label{gonComp}
-%\end{equation}
+The GVF weights are decoupled from each term calculation, therefore modifications to the GVF weights do not require a new derivation of the resulting field. Magnitude of the weights effectively scales the contribution of each term. Negating the GVF weights has been used to provide a repulsive field for obstacle avoidance in [wwc] for a UAV tracking a moving loiter circle. Assigning weights \textbf{G=-1} and \textbf{H=L=0} rotates the attractive field vectors in Figure \ref{fig:gvfCircAttractive}b 180$^\circ$ about the tail of each vector, which is shown in Figure \ref{fig:gvfRepulsiveRadius}a. Note how the repulsive field vectors point away from the circular curve for the entire configuration space. Encircling an obstacle by a path produces vectors that may provide guidance into the obstacle, which is not desired. Reducing the radius to be smaller than the radius of the obstacle produces a GVF with nearly all vectors directing away. 
 
 
-%\begin{equation}
-%%Spatial dimensions of gon vf
-%q = [x_1,x_2,...x_n]
-%\label{gonDims}
-%\end{equation}
+\begin{figure}[H]
+	\begin{subfigmatrix}{2}% number of columns
+		\centering	
+		\subfigure []{\includegraphics[width=6.5cm] {PaperFigures/compWithoutTitles/circRepulsive}}
+		\subfigure []{\includegraphics[width=6.5cm] {PaperFigures/compWithoutTitles/circRepulsiveSmallr}}
+		\hspace*{0mm}
+	\end{subfigmatrix}
+	\caption{Repulsive field with large path radius (a) and small radius (b)}
+	\label{fig:gvfRepulsiveRadius}
+\end{figure}
+
+The strength of the repulsive field was varied as a function of proximity $d$ by multiplying the repulsive field by a decay function $P$ bounded on the interval [-1,0], shown in Equation \ref{repulsiveDecay} and Figure \ref{fig:tanhICUAS2018}. The radius $R$ is the distance from the center of the field where vectors have effectively zero strength. 
+
+\begin{equation}
+P = R\frac{tanh(2\pi d-\pi)+1}{2}
+\label{repulsiveDecay}
+\end{equation}
+
+\begin{equation}
+\vec{v}_{repulsive} = -G||\vec{v_{conv}}||P
+\label{replulsiveField}
+\end{equation}
+
+
+
+\begin{figure}[H]
+	\begin{subfigmatrix}{2}% number of columns
+		\centering	
+		\subfigure []{\includegraphics[width=8cm] {PaperFigures/tanh_ICUAS2018}}
+		\subfigure []{\includegraphics[width=7cm] {PaperFigures/repulsiveFields/circRepulsiveDecay}}
+		\hspace*{0mm}
+	\end{subfigmatrix}
+	\caption{Repulsive field activation [wwc](a) resulting repulsive field (b)}
+	\label{fig:tanhICUAS2018}
+\end{figure}
+
+
+Attractive and repulsive fields were added together and the resulting vector shown in Equation \ref{summedAttRepulsive}. The resultant heading vector was used to guide a UAV to track a moving loiter circle while avoiding static obstacles, shown in Figure \ref{fig:gvfMovingTarget}.
+
+\begin{equation}
+\vec{V} = \vec{v}_{attractive}+\vec{v}_{repulsive}
+\label{summedAttRepulsive}
+\end{equation}
+
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=10cm]{PaperFigures/gvfMovingTarget}
+	\caption{Place holder image of UAV following ground target [wwc]}
+	\label{fig:gvfMovingTarget}
+\end{figure}
+
+
+GVF weights have been used for high level specification of the desired behavior for a UAV, whether it be for convergence, circulation, or avoidance. Repulsive GVFs have considered obstacle fields that strictly repel. The strictly repulsive guidance is effective at directing a UAV away from an obstacle, but provides no information on how to circumnavigate one. Additionally, further specification on the minimum radius and strength of the repulsive field may be useful in preventing a UAV from violating the obstacle circle. A preliminary simulation shows that a UAV encountering an obstacle while tracking a path may result in violation of the obstacle space, shown in Figure \ref{fig:singleobstacle}. UAVs traveling at lower velocities
+ may also enter a trap situation where the guidance is confined to an infinite loop.
+ \pagebreak
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{PaperFigures/singleObstacle}
+	\caption{}
+	\label{fig:singleobstacle}
+\end{figure}
+
+
+Adding circulation \textit{\textbf{H=1}} to the GVF in Figure \ref{fig:singleobstacle} prevented the trap situation for a velocity $v = 0.6$ and reduced the circumnavigation distance, which is shown in Figure \ref{fig:singleobstacleWithCirc}. Specifying vector field weights as functions of a UAV's state may enable an optimal guidance for obstacle avoidance. 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{PaperFigures/singleObstacleWithCirc}
+	\caption{}
+	\label{fig:singleobstacleWithCirc}
+\end{figure}
 
 
 
 
-%	\begin{itemize}
-%		\item VF in literature have guided/followed paths that have been pre-defined
-%		\item Intersection of surfaces, zero sets represent path
-%		\item n-dimensions for any shapes (unlike some Lyapunov made of primitives)
-%		\item Guaranteed vectors converge to path
-%		\item Equations (convergence, circulation, tv)
-%		\item Obstacles and paths are static, TV term is not considered
-%		\item Examples of components FIGURES: (circulation,convergence,total)
-%		\item Normalization of vectors gives each component equal influence on the total vector
-%		\item After normalization a scalar weight influences how much influence each component has
-%		\item Weights do not effect the guarantee of convergence (non zero and positive)
-%		\item FIGURE: With normalization, without normalization (SIDE BY SIDE)
-%		\item Dubins vehicle example of saturation
-%		\item Static GVF weights do not consider state of the vehicle and provide sub-optimal guidance for obstacle avoidance
-%		%Last Point to make
-%		\item \hl{Dynamic GVF weights as a function of vehicle state may provide an optimal guidance for obstacle avoidance}
-%\end{itemize}
-
-
-
+\pagebreak
 \section{Unmanned Aerial Vehicle Simulation}
-Testing new guidance, navigation, and control algorithms can be costly, require significant time, and requires an adequately large airspace. Ground stations need to be established which require power and shelter. Some small fixed wing UAVs may not be suitable to fly in all weather, therefore test flights may be canceled due to weather conditions. Lastly, larger UAVs need to have FAA clearance before flight which has to be pre-approved and takes time. Before spending the time to reserve airspace and allocate man hours for flight tests it is important to test algorithms in a controlled environment. One way to accomplish testing without actual flight is through validation through mobile robots simulating fixed wing constraints \cite{ren_experimental_2007}, \cite{louali_designing_2014}, \cite{louali_experimental_2016}. Programming a mobile robot, such as one shown in Figure
+Testing new guidance, navigation, and control algorithms on flight hardware can be costly, require significant time, and requires an adequately large airspace. Before spending the time to reserve airspace and allocate man hours for flight tests it is important to test algorithms in a controlled environment. One way to accomplish testing without actual flight is through validation through mobile robots simulating fixed wing constraints \cite{ren_experimental_2007}, \cite{louali_designing_2014}, \cite{louali_experimental_2016}. Programming a mobile robot, such as one shown in Figure \ref{fig:robot}.
 
 \begin{figure}
 	\centering
-	\includegraphics[width=12cm]{PaperFigures/robot}
+	\includegraphics[width=15cm]{PaperFigures/robot}
 	\caption{Differential drive mobile robot simulating fixed wing UAV Dubins constraints}
 	\label{fig:robot}
 \end{figure}
 
 
-%\begin{itemize}
-%	\item Methods for testing UAVs
-%	\item SITL
-%	\item Actual flight tests
-%	\item Testing UAVs costly, setup, environment difficulties
-%	\item Simulation on ground robot (citations)
-%	\item Benefits, use as Dubins constraint vehicle to prove algorithm can run real time prior to flights
-%	\item Less expensive, saves resources, time, etc
-%\end{itemize}
-
 \section{Literature Review Summary}
 
-\begin{itemize}
-	\item 
-\end{itemize}
+
+Vector fields can provide guidance and control for robots through the use of artificial attractive and repulsive forces. Converging to a singular point while avoiding obstacles can be achieved with Potential Field or Virtual Force Field methods. Fixed wing UAVs cannot converge to a singular point therefore vector fields that asymptotically converge and follow a path is beneficial. Lyapunov and Gradient Vector Fields have been used for path following, standoff tracking, and obstacle avoidance. Gradient Vector Field provides convenient and decoupled access to scalar multiplicative weights for the convergence, circulation, and time-varying terms. Negative weights can be used for obstacle avoidance, however have so far been used only as high level specification of guidance behavior. Specifying vector field weights as functions of a UAV's state may enable an optimal guidance for obstacle avoidance. Validation of a modified GVF guidance can be performed on mobile ground robots simulating UAV dynamics.
+
+
+
 
 \bibliographystyle{aiaa}   
 \bibliography{bib}
 
 
 \end{document}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%% Old Literature Review Material
-
-%
-%
-%\chapter{Literature Review}
-%\section{Introduction to Literature Review}
-%
-%% The following sections provide a discussion on the literature in regards to the modeling of fixed wing UAVs and the navigation, guidance, and control systems that govern the behavior of the crafts
-%% 
-%%
-%
-%The following sections provide a discussion on the literature in regards to the modeling of fixed wing UAVs and the navigation, guidance, and control systems that govern the behavior of the crafts. First, the fixed wing is introduced and a brief discussion on the modeling techniques commonly used for navigation, guidance, and control design. An overview of the structure of autopilots that execute the models is presented. Then, an overview of navigation, guidance, and control is given along with the cutting edge techniques for guidance. (Revisit this section when a rough draft is complete)
-%
-%
-%\section{Fixed Wing Unmanned Aerial Vehicle}
-%\subsection{Introduction to Fixed Wing UAV}
-%%  Fixed wing UAVs have found significant use in surveillance and reconnaissance in hostile environments since no on-board pilot is required.
-%%  UAVs can be sent missions and piloted remotely, keeping soldiers out of harms way
-%%  Operators can be relieved easily when becoming fatigued without landing the UAV, allowing it to fly for extended missions, accomplishing more tasks
-%%  Fixed wings come in many different sizes and configurations but can be categorized into large and hand lanched varieties
-%%  Large fixed wing UAVs require long stretches of runway to takeoff and land, are gas powered, and can carry large payloads consisting of sensor packages, high resolution cameras, and scientific instrumentation shown in Figure \ref{fig:globalhawk}.
-%
-%Fixed wing UAVs have been used for surveillance and reconnaissance in hostile environments since no on-board pilot is required. Ground stations allow for remote data collection and piloting, keeping soldiers out of harms way. During long endurance missions, operators can easily be changed out when fatigued allowing the UAV to remain in service for many hours beyond what a single pilot could safely handle. Keeping the UAV in service for longer allows more tasks to be accomplished. Fixed wing UAVs come in many different sizes and configurations, but can be categorized into large and hand-launched varieties. Large fixed wing UAVs require long stretches of runway to takeoff and land, are gas powered, and can carry large payloads consisting of sensor packages, high resolution cameras, and scientific instrumentation shown in Figure \ref{fig:fixedwings}a. Hand-launched UAVs can be easily broken down and carried by a single person and are often battery powered. Easily deployed, the hand-launched UAVs take-off by being thrown in a similar way as a javelin shown in Figure \ref{fig:fixedwings}b. The smaller form factor makes hand-launched UAVs well suited for short range reconnaissance and for carrying lightweight payloads with low to medium resolution cameras.
-%
-%%Fixed wing UAVs have found uses in surveillance, reconnaissance, environmental surveying, aerial photography, and competitive racing. The crafts are well suited to carry out tasks that require long endurance and large payloads.
-%%Fixed wing UAVs come in many different sizes and configurations, but can be categorized into large and hand-launched varieties. Large fixed wing UAVs require long stretches of runway to takeoff and land, are gas powered, and can carry large payloads consisting of sensor packages, high resolution cameras, and scientific instrumentation shown in Figure \ref{fig:globalhawk}. Hand-launched UAVs can be easily broken down and carried by a single person and are often battery powered. Easily deployed, the hand-launched UAVs take-off by being thrown in a similar way as a javelin shown in Figure \ref{fig:handlaunched}. The smaller form factor makes hand-launched UAVs well suited for short range reconnaissance and for carrying lightweight payloads with low to medium resolution cameras. \\
-%
-%\begin{figure}[H]
-%	\begin{subfigmatrix}{2}% number of columns
-%		\centering
-%		\subfigure []{\includegraphics[width=7.7cm] {PaperFigures/globalhawk}}
-%		\subfigure []{\includegraphics[width=7cm] {PaperFigures/handlaunched}}
-%		\hspace*{0mm}
-%	\end{subfigmatrix}
-%	\caption{Global Hawk and Hand Launched Fixed Wing UAV}
-%	\label{fig:fixedwings}
-%\end{figure}
-%
-%
-%
-%
-%
-%Both large and hand-launched UAVs operate by using path planning, navigation, guidance, and control algorithms depicted in Figure \ref{fig:ngcflow}. Most UAV tasks can be framed as path following problems such as waypoint navigation or loitering. The UAVs path planner is responsible for generating a flyable path from the current state to the desired state while avoiding known obstacles. Guidance systems are responsible for producing guidance commands to the low level controller that guide the UAV towards the desired path. Navigation systems are responsible for estimating the state of the UAV to provide feedback to both guidance and control loops. For more detail on navigation, guidance, and control systems, refer to section \ref{NGC}. Each of the navigation, guidance, and control sub systems are typically not evaluated independently and must be integrated into a complete system to evaluate the performance as a whole. The most common ways to measure the performance of a UAV system are tracking error with respect to the desired path and control effort. Next, common UAV modeling techniques will be discussed.
-%
-%%Both large and hand-launched UAVs operate under the same basic principle consisting of navigation, guidance, and control depicted in Figure \ref{fig:ngcflow}. The desired path to be flown is passed to a guidance algorithm whose purpose is to produce guidance ocmmands consumable by the low level-control system that puts the UAV on the desired path. Navigation systems are responsible for estimating the state of the UAV to provide feedback to both guidance and control loops. For more detail on NGC systems, refer to section \ref{NGC}. Each of the NGC sub systems are typically not evaluated independently and must be integrated into a complete NGC system to evaluate th performance as a whole. The most common ways to measure the performance of a UAV system are tracking error with respect to the desired path and control effort.
-%
-%\begin{figure}[]
-%	\centering
-%	\includegraphics[width=0.7\linewidth]{PaperFigures/ngcFlow}
-%	\caption{}
-%	\label{fig:ngcflow}
-%\end{figure}
-%
-%
-%
-%\subsection{Modeling}
-%% Modeling of fixed wing UAVs is often simplified
-%% High fidelity models are complex because they are high-order and non-linear
-%% The 6 degree of freedom crafts only have 4 degrees of controllable freedom resulting in state coupling which also complicates the models
-%% High order non-linear models can be simplified when developing control systems that accurately capture the dynamics of the UAV
-%% Beyond the control aspect of UAVs, the high order non-linear models are not always necessary. It is common in literature to simplify complex non-linear dynamics of a fixed wing UAV by implementing a 2D Dubins vehicle model \cite{chen_tracking_2009} \cite{liang_tangent_2017} \cite{nelson_cooperative_2005} \cite{griffiths_vector_2006} \cite{jung_unmanned_2016}. When simplified kinematics are used when developing navigation and guidance systems, it is assumed that there already exists a low level control loop that maintains vehicle stability and performs according to the kinematic model in Equations \ref{dubinsx}-\ref{dubinsy}.
-%%
-%
-%Accurate models of fixed wing UAVs tend to be high order, coupled, non-linear systems that can be difficult to solve for. The complexity is due to the fact that a fixed UAV has 6 degrees of freedom with only 4 degrees of control and has non-linear aerodynamic external forces. Models can be linearized and simplified when designing control systems, but still maintain high complexity and require significant effort to implement. Beyond the control aspect of UAVs, the high order non-linear models are not always necessary. It is common in literature to simplify complex non-linear dynamics of a fixed wing UAV by implementing a 2D Dubins vehicle model \cite{chen_tracking_2009} \cite{liang_tangent_2017} \cite{nelson_cooperative_2005} \cite{griffiths_vector_2006} \cite{jung_unmanned_2016}. When simplified kinematics are used when developing navigation and guidance systems, it is assumed that there already exists a low level control loop that maintains vehicle stability and performs according to the kinematic model in Equations \ref{dubinsx}-\ref{dubinsy}.
-%
-%
-%
-%
-%%The fixed wing UAV is a 6 degree of freedom (DOF) system with four degrees of control consisting of pitch, roll, yaw, and thrust. Change in the control variables is done by actuating the elevator (pitch), ailerons (roll), rudder (yaw), and propeller or jet (thrust). Due to the under actuation and complex non-linear dynamics of the UAV, high fidelity models tend to be high order and non-linear. High order non-linear models can be linearized and simplified to be used in low level control systems to maintain vehicle stability. Beyond the control aspect of UAVs, the high order non-linear models are not always necessary. It is common in literature to simplify complex non-linear dynamics of a fixed wing UAV by implementing a 2D Dubins vehicle model \cite{chen_tracking_2009} \cite{liang_tangent_2017} \cite{nelson_cooperative_2005} \cite{griffiths_vector_2006} \cite{jung_unmanned_2016}. When simplified kinematics are used when developing navigation and guidance systems, it is assumed that there already exists a low level control loop that maintains vehicle stability and performs according to the kinematic model in Equations \ref{dubinsx}-\ref{dubinsy}. 
-%
-%
-%The position of the vehicle at any point in 2D Cartesian space is defined as $(x,y)$ and the velocity of a vehicle in each axis is defined as $(\dot{x},\dot{y})$.
-%
-%\begin{equation}
-%\label{dubinsx}
-%\dot{x} = V\cos(\theta)
-%\end{equation}
-%\begin{equation}
-%\label{dubinsy}
-%\dot{y} = V\sin(\theta)
-%\end{equation}
-%
-%
-%The heading of the vehicle $\theta$ is most frequently used as the input $\boldsymbol{u} = \theta$. To more closely represent the dynamics of a fixed wing, constraints are given to the velocity $V$ and turning rate $\dot{\theta}$. 
-%
-%
-%
-%\begin{equation}\label{minVel}
-%V \geq V_{stall}
-%\end{equation}
-%\begin{equation}\label{headingRate}
-%-\dot{\theta}_{max} \leq \dot{\theta} \geq \dot{\theta}_{max}
-%\end{equation}
-%
-%The devices that are assumed to be in control of the UAV when designing guidance and navigation systems are called autopilots or flight controllers, which will be discussed briefly in the next section. 
-%
-%
-%\subsection{Autopilot and Ground Station}
-%
-%%%%%%
-%% Fixed wings will rarely be flown without some supplementary ground support
-%% UAS - consists of the UAV itself, ground station, and transmitter
-%% Ground station acts as a high level command interface for programming mission objectives such as waypoint navigation
-%% Ground station is used to interface with autopilot for configurations
-%% Ground station can be used to collect data
-%% Transmitter allows a pilot to take direct control of the craft in case of an energency
-%% Transmitter allows a pilot to take direct control 
-%
-%% What are autopilots and ground stations
-%% Autopilots
-%% Ground stations
-%% Transmitters
-%
-%Autopilots and ground stations work together to configure vehicle settings, exchange high-level mission objectives, and collect data. The autopilot is a software and hardware package that brings navigation, guidance, and control techniques to realization. A typical autopilot system is depicted in Figure \ref{fig:pixhawk}, consisting of a hard shell protecting sensors with numerous input and output connectors for power, servo actuation, and communication. Major responsibilities for a autopilot are  maintaining vehicle stability, turning high level commands into low level control effort, and transmitting data to ground stations.
-%
-%
-%
-%%The autopilot is a software and hardware package that brings navigation, guidance, and control techniques to realization. A typical autopilot system is depicted in Figure \ref{fig:pixhawk}, consisting of a hard shell protecting sensors with numerous input and output connectors for power, communication, and servo actuation. The flight controller is responsible for several major tasks including maintaining vehicle stability, turning high level commands into low level control effort, and recording and transmitting data to ground stations. Autopilots accomplish these tasks by implementing several layers of algorithms consisting of navigation, guidance, and control which will be discussed next.
-%
-%
-%\begin{figure}[h!]
-%	\centering
-%	\includegraphics[width=8cm]{PaperFigures/pixhawk}
-%	\caption{Pixhawk Flight Controller}
-%	\label{fig:pixhawk}
-%\end{figure}
-%
-%
-%Ground stations provide an interface for configuring vehicle settings such as cruising velocity and safety protocols. High level mission objectives for waypoint navigation, path following, and loitering are programmed and sent from the ground station to the autopilot. Data collected by the autopilot can also be relayed to the ground station for real time mission updates and for diagnosing problems. 
-%
-%\begin{figure}
-%	\centering
-%	\includegraphics[width=10cm]{PaperFigures/groundUAVTransmitter}
-%	\caption{}
-%	\label{fig:grounduavtransmitter}
-%\end{figure}
-%In the event that manual control is required, a transmitter can be used to directly control actuation of the control surfaces on the aircraft. An overview of the autopilot, ground station, and transmitter system is shown in Figure \ref{fig:grounduavtransmitter}.
-%
-%
-%
-%
-%
-%\section{Navigation, Guidance and Control} \label{NGC}
-%\subsection{Introduction to NGC}
-%Nearly all of the systems that go into an autopilot system for a fixed wing UAV can be put under the category of Navigation, Guidance, or Control (NGC). Traditionally, NGC could be thought of separate but equally important algorithm layers that aid an autopilot in accomplishing a given task. Navigation is the study of measuring, filtering, and estimating the state of a vehicle. Guidance produces a commanded state based on high level requests from a path planner or user. Control maintains vehicle stability while attempting to achieve the state commanded by the high level guidance system. Lately, the lines between guidance and control have become less clear as the systems become more integrated with each other, resulting in more complex capabilities. Continuing with the convention in literature, navigation will be discussed as a separate unit while guidance and control will be discussed simultaneously. Guidance and control will be discussed as a single system and two commonly researched algorithms, potential and vector field methods, will be discussed.
-%
-%\subsection{Navigation}
-%
-%Navigation is the study of measuring the position and attitude of the UAV for the purposes of building guidance and providing feedback for the low level control system. Modern flight controllers contain a package of sensors called an Inertial Measurement Unit (IMU) which consists of a 3-axis accelerometer, gyroscope, compass, and barometer. The accelerometer and gyroscope are measured to determine the translational and angular acceleration of the craft. The compass measures heading, and the barometer measures air pressure which is correlated to altitude. IMUs are best for determining the attitude of a UAV but are not used to determine local position due to high noise levels and susceptibility to drift. GPS or motion capture are commonly used to determine local position of a UAV. One of the major challenges in navigation is the noise and uncertainty in sensor measurements. Filters are used to fuse information and provide more accurate estimates of the vehicles position and rate of change. A popular method for filtering and estimating navigation data is done through some variety of a Kalman filter which is a recursive probability method that provides an improved estimation as more information becomes available. The estimates determined by the navigation system are passed to guidance and control systems.
-%
-%
-%\subsection{Guidance and Control}
-%
-%%Need more citations on traditional guidance systems for path following to add to the discussion
-%Guidance and control have traditionally been separate systems, but as the need for UAVs to perform complex tasks increases, so does the complexity of the control systems. A common high level request provided to a UAV is to follow an arbitrary path which can be done with traditional controls \cite{zhao_curved_2017}. A control system for following a moving path was developed in \cite{oliveira_moving_2016}, which was successful at reducing the tracking error in simulation and real flight tests. To accomplish path following of a mobile path, the control law becomes complex and less intuitive. 
-%
-%%Needs a better transition and explaination of the control system presented in oliveira 
-%%Another argument can be made for the distinction between the methods - PF works well for singular point seeking and VF is path seeking
-%Instead of relying on complex control laws, there has been much research on methods that combine guidance and control.  Two categories will be discussed consisting of potential field and vector field methods. In literature, the two methods have been seen used interchangeably. In the work presented, potential field is in reference to a gradient potential converging to a local minimum while vector field is in reference to a space of vectors whose integral lines converge and follow a path. It can be argued that vector fields are essentially a potential field, but for organizational purposes, they will be referred to as completely different methods. 
-%
-%\subsection{Potential Field}
-%
-%
-%%%%%%%%%%%
-%Potential field was first introduced as a real-time robotic manipulator algorithm for obstacle avoidance \cite{khatib_real-time_1986}. The potential field algorithm represents a robots workspace as a gradient potential of attractive and repulsive artificial forces that drive the robot to a desired goal. Goals are given the lowest potential and act as attractive forces. Obstacles have high potential and act as repulsive forces. A simple example is depicted in Figure \ref{fig:pfobstacle} consisting of an initial state, a goal, and a single obstacle. The initial state of the robot is at the edge of a gradient where the potential is maximum. In the lowest part of the gradient a goal exists at the global minimum. Obstacles are added to the potential field, but have limited effect due to a decay function.
-%
-%\begin{figure}[h!]
-%	\centering
-%	\includegraphics[width=7cm]{PaperFigures/pfObstacle}
-%	\caption{Single Obstacle Potential Field Gradient \cite{liu_virtual-waypoint_2016}}
-%	\label{fig:pfobstacle}
-%\end{figure}
-%
-%Potential field is unique in that path planning, trajectory planning, and control are lumped into a single system \cite{rimon_exact_1992}. Transition from an initial state to a goal state traditionally occurred by executing three steps consisting of path planning, trajectory planning, and control. Path planning dealt with finding an obstacle free path from an initial state to a goal state. Trajectory planning time parametrized the obstacle free path with some high level vehicle constraints considered. Lastly, control attempts to reduce the tracking error with respect to the reference trajectory. Combining the three motion planning steps into a single algorithm has been shown to be computational inexpensive \cite{goerzen_survey_2010}. 
-%
-%As pointed out in \cite{borenstein_real-time_1990}, robots using potential field are susceptible to local minimum. Encountering a local minimum prevents the robot from continuing down the gradient and into the global minimum because equilibrium has been reached prematurely. Figure \ref{fig:pfLocalMin} demonstrates local minimum by adding several obstacles into a goal field. Several methods have been developed to mitigate the effects of local minimums as pointed out in \cite{goerzen_survey_2010} through the use of navigation functions. Local minimum produced as a result of closely spaced obstacles as shown in Figure \ref{fig:pfLocalMin} have been addressed by grouping obstacles together into a cluster \cite{liu_virtual-waypoint_2016}.
-%
-%\begin{figure}[h]
-%	\begin{subfigmatrix}{2}% number of columns
-%		\centering
-%		\subfigure []{\includegraphics[width=7cm] {PaperFigures/pfObstacleLocalMin}}
-%		\subfigure []{\includegraphics[width=7cm] {PaperFigures/pfObstacleLocalMinTopology}}
-%		%		\hspace*{1cm}
-%	\end{subfigmatrix}
-%	\caption{Potential Field Local Minimum \cite{liu_virtual-waypoint_2016}}
-%	\label{fig:pfLocalMin}
-%\end{figure}
-%
-%Several methods have been developed to mitigate the effects of local minimums as pointed out in \cite{goerzen_survey_2010} through the use of navigation functions. Local minimum produced as a result of closely spaced obstacles as shown in Figure \ref{fig:pfLocalMin} have been addressed by grouping obstacles together into a cluster \cite{liu_virtual-waypoint_2016}. Grouping obstacles addresses the risk of local minima before forming the potential field. If local minima are encountered after the field is generated, additional forces can be applied to push the robot away from the local minima. 
-%
-%\begin{figure}[H]
-%	\centering
-%	\includegraphics[width=5cm]{PaperFigures/obstacleClustering}
-%	\caption{Obstacle Clustering \cite{liu_virtual-waypoint_2016}}
-%	\label{fig:obstacleclustering}
-%\end{figure}
-%
-%Potential fields ability to avoid obstacles and combine path planning, trajectory planning, and control into a single system while being computationally inexpensive makes it an attractive option for many robotic systems. Fixed wing UAVs must maintain a minimum forward velocity and cannot converge to a single point, making potential field difficult to implement.  
-%
-%%Several methods have been developed to mitigate the effects of local minima as pointed out in \cite{goerzen_survey_2010}
-%
-%
-%
-%%Potential field is a real-time robotic manipulator algorithm that distributes the task of goal seeking and obstacle avoidance among multiple layers of control \cite{khatib_real-time_1986}. The robot's workspace is represented as a gradient potential of attractive and repulsive artificial forces that drive the robot to a desired state. Goals are represented as an attractive force while obstacles provide a repulsive force. The potential field is constructed by modeling the robots motion in terms of Lagrangian mechanics shown in Equation \ref{LeeMotion}. The Lagrangian is defined as the difference in kinetic energy $T(x,\dot{x})$ and potential energy $U(x)$ in a system. The goal of the system imparts a potential $U_{xd}$ while obstacles impart a repulsive potential $U_o$. 
-%%
-%%\begin{equation}\label{LeeMotion}
-%%\frac{d}{dt} \left(\frac{\partial L}{\partial \dot{x}}\right) - \frac{\partial L}{\partial x} = F
-%%\end{equation}
-%%
-%%\begin{equation}\label{lagrange}
-%%L(x,\dot{x}) = T(x,\dot{x}) - U(x)
-%%\end{equation}
-%%
-%%\begin{equation}\label{potential}
-%%U_{art}(x) = U_{xd} + U_o(x)
-%%\end{equation}
-%%
-%%Potential field has been shown to be successful at driving a robot from an initial state to a goal state while avoiding obstacles by taking the path of least action formed by the gradient. One of the weaknesses of potential field identified early on is the methods susceptibility to local minima, preventing the robot from reaching the desired global minima, or goal state \cite{koren_potential_1991}. Local minima can be avoided in the potential field method if navigation functions are used \cite{goerzen_survey_2010}.\\
-%%
-%%Potential field is useful for point-to-point guidance and control which is often the task of UAVs traveling to waypoints, however it is often desired for a UAV to converge to and follow a path. 
-%
-%%%%%%%%%%% Additional points and clarification needed here before moving on
-%%
-%% Address navigation functions
-%% Re-read Goerzens review article and understand the scope of PF to a better degree
-%% Improve the transition to vector field
-%%		- Potential fields have proven to be useful for point-to-point navigation, however lack the framework for one of the common applications for fixed wing UAVs, path following
-%%
-%%
-%
-%
-%
-%
-%
-%
-%\subsection{Vector Field}
-%
-%Converging and following a path instead of a point is more applicable to fixed wing UAVs and has been accomplished through the use of vector fields which will be discussed next.
-%
-%Path following  
-%
-%Vector field is a continuous guidance technique that provides heading commands that asymptotically converges and follows a path. 
-%
-%% intro sentence
-%% What is vector field
-%% Why is it useful
-%% what methods will be discussed
-%
-%Several methods have been developed to generate vector fields that converge to and follow paths. Histogram virtual force field (VFF) breaks the workspace into discrete cells that contain information in regards to the certainty of the presence of an obstacle \cite{borenstein_real-time_1990} \cite{borenstein_vector_1991}. Cells containing an obstacle apply an artificial guidance force away from the cell. Goals apply a global attractive force that drive the robot towards the desired state. The resultant guidance vector for the VFF method is the sum of the contributions of obstacle repulsive cells and the globally attractive goal. Lyapunov and navigation functions have been successfully used to provide guidance for converging to and following a path. Nelson et al. developed a method for generating a vector field that converges to and follows a path for line and circular primitives \cite{nelson_cooperative_2005}. Sinks, dead zones, and singularities were avoided when constructing more complex flight paths from the primitives by only allowing a single field to be active at any time. A vector field construction method for curved paths was presented in \cite{griffiths_vector_2006} by extending Nelson's method. Elliptical paths have been generated by from primitives by applying coordinate transformations to the field \cite{frew_lyapunov_nodate}.
-%
-%
-%Vector fields have many advantages to traditional guidance. UAVs often encounter disturbances in the form of wind which can be difficult to plan for. In the event a UAV encounters wind disturbances and is pushed off course, the field will drive the vehicle back on course \cite{de_marina_guidance_2017}. In addition to path following, vector field has been used to track a moving target in 3D \cite{miao_orthogonal_2016}. When the location of the target is unknown, loitering about an uncertain target can be achieved by building a circular vector field and applying a linear coordinate transformation to form an elliptical loiter based on the uncertainty in targets position estimate \cite{frew_cooperative_2007}. 
-%
-%
-%%
-%% 3D Vector field 
-%% \cite{meenakshisundaram_vector_2010}
-%%
-%%
-%%
-%
-%- Following curved paths in a constant wind \cite{griffiths_vector_2006}
-%
-%
-%%%%%%% Points to make for vector field
-%%
-%% - Disturbance rejection (wind)
-%% - Well suited for unplanned obstacle avoidance
-%% - Many applications are best described as path following instead of singular point convergence like potential field
-%% - Standoff tracking of uncertain targets
-%%
-%%
-%
-%Another method for constructing a vector field is by forming integral curves that converge at the intersection of surfaces \cite{goncalves_artificial_2009}. 
-%
-%- construct an n-dimensional vector field by forming integral curves that converge at the intersection of surfaces
-%- Field is a result of the sum of 3 terms
-%- Convergence
-%- Circulation
-%- Time varying\\
-%
-%
-%% Note, modify the field equation to what jay has in his paper
-%\begin{equation}\label{gonFieldeq}
-%\boldsymbol{u} = G\nabla_qV+H\wedge_{i=1}\nabla_q\alpha_i - M(\alpha)^{-1}\boldsymbol{a}(\alpha)
-%\end{equation}
-%
-%- Define all variables
-%- u is the resulting 2x1 vector
-%- Gradient
-%- $alpha_i$ is a surface function
-%- Wedge product simplifies to cross product in 2d
-%- G, H, L scalar weighting quantities 
-%- The intersection of the surfaces represents a path to converge and follow
-%- Cylinder and plane example
-%
-%
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[width=0.7\linewidth]{PaperFigures/convergence}
-%	\caption{Convergence}
-%	\label{fig:convergence}
-%	
-%\end{figure}
-%
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[width=0.7\linewidth]{PaperFigures/circulation}
-%	\caption{Circulation}
-%	\label{fig:circulation}
-%\end{figure}
-%
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[width=0.7\linewidth]{"PaperFigures/time varying"}
-%	\caption{Time Varying}
-%	\label{fig:time-varying}
-%\end{figure}
-%
-%
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[width=0.7\linewidth]{PaperFigures/total}
-%	\caption{Total Field}
-%	\label{fig:total}
-%\end{figure}
-%
-%\begin{itemize}
-%	\item Cooperative Standoff Tracking of Uncertain moving targets (2007, Frew)
-%	\item VF usefulness extended to loitering about an uncertain target
-%	\item Lyapunov vector field generation for a circular loiter
-%	\item Linear transformation applied to stretch the field into an ellipse shape
-%\end{itemize}
-%
-%
-%
-%\section{Literature Review Summary}
