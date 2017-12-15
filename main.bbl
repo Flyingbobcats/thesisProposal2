@@ -29,16 +29,16 @@ Liu, Y. and Zhao, Y., \enquote{A virtual-waypoint based artificial potential
 Koren, Y. and Borenstein, J., \enquote{Potential {Field} {Methods} and their
   inherent limitions for morbile robot navigation.pdf,} 1991.
 
+\bibitem{borenstein_vector_1991}
+Borenstein, J. and Koren, Y., \enquote{The vector field histogram-fast obstacle
+  avoidance for mobile robots,} {\em IEEE transactions on robotics and
+  automation\/}, Vol.~7, No.~3, 1991, pp.~278--288.
+
 \bibitem{borenstein_real-time_1990}
 Borenstein, J. and Koren, Y., \enquote{Real-time obstacle avoidance for fast
   mobile robots in cluttered environments,} {\em Robotics and {Automation},
   1990. {Proceedings}., 1990 {IEEE} {International} {Conference} on\/}, IEEE,
   1990, pp. 572--577.
-
-\bibitem{borenstein_vector_1991}
-Borenstein, J. and Koren, Y., \enquote{The vector field histogram-fast obstacle
-  avoidance for mobile robots,} {\em IEEE transactions on robotics and
-  automation\/}, Vol.~7, No.~3, 1991, pp.~278--288.
 
 \bibitem{goerzen_survey_2010}
 Goerzen, C., Kong, Z., and Mettler, B., \enquote{A {Survey} of {Motion}
@@ -84,6 +84,11 @@ Chen, H., Chang, K., and Agate, C.~S., \enquote{{UAV} path planning with
   tangent-plus-{Lyapunov} vector field guidance and obstacle avoidance,} {\em
   IEEE Transactions on Aerospace and Electronic Systems\/}, Vol.~49, No.~2,
   2013, pp.~840--856.
+
+\bibitem{pereira_framework_2016}
+Pereira, G. A.~S., Choudhury, S., and Scherer, S., \enquote{A framework for
+  optimal repairing of vector field-based motion plans,} IEEE, June 2016, pp.
+  261--266.
 
 \bibitem{md_simplex_2017}
 Md, Z., Rg, C., and Dj, G., \enquote{Simplex {Solutions} for {Optimal}

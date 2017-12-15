@@ -1,9 +1,14 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
+White space in argument---line 79 of file main.aux
+ : \citation{nelson_cooperative_2005
+ :                                   using}
+I'm skipping whatever remains of this command
 The style file: aiaa.bst
 Database file #1: bib.bib
 Warning--empty journal in nelson_cooperative_2005
 Warning--empty booktitle in griffiths_vector_2006
 Warning--empty pages in griffiths_vector_2006
+Warning--empty booktitle in pereira_framework_2016
 Warning--empty booktitle in goncalves_artificial_2009
 Warning--empty booktitle in louali_designing_2014
-(There were 5 warnings)
+(There was 1 error message)
