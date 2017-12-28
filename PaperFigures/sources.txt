@@ -22,6 +22,9 @@ https://docs.px4.io/en/getting_started/rc_transmitter_receiver.html
 researchUAV.png
 http://aerialdatasystems.com/fixed-wing/
 
+3drIris
+http://drone-pilot-zone.com/wp-content/uploads/2015/06/3-3DR-IRIS-Battery-5100-mAh-3S-8C-3DR-Balance-Charger-for-IRIS-Flight-Battery-Microfiber-Cleaning-Cloth-for-3DR-IRIS-Quadcopter-0-4.jpg
+
 pfObstacle PfObstacleLocalMin PfObstacleLocalMinTopology
 A Virtual-Waypoint Based Artificial Potential Field Method for UAV Path Planning
 

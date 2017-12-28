@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.9.26)  12 DEC 2017 12:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.10.13)  16 DEC 2017 05:27
 entering extended mode
 **./main.tex
 (main.tex
@@ -1408,11 +1408,11 @@ l.508
 mpWithoutTitles/circRepulsive.pdf> <./PaperFigures/compWithoutTitles/circRepuls
 iveSmallr.pdf>]
 Package epstopdf Info: Source file: <PaperFigures/tanh_ICUAS2018.eps>
-(epstopdf)                    date: 2017-11-05 13:47:30
+(epstopdf)                    date: 2017-12-16 05:27:02
 (epstopdf)                    size: 19399 bytes
 (epstopdf)             Output file: <PaperFigures/tanh_ICUAS2018-eps-converted-
 to.pdf>
-(epstopdf)                    date: 2017-11-05 13:47:30
+(epstopdf)                    date: 2017-12-16 05:27:02
 (epstopdf)                    size: 4194 bytes
 (epstopdf)             Command: <epstopdf --outfile=PaperFigures/tanh_ICUAS2018
 -eps-converted-to.pdf PaperFigures/tanh_ICUAS2018.eps>
@@ -1550,7 +1550,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 653.
  ) 
 Here is how much of TeX's memory you used:
  10568 strings out of 493320
- 154690 string characters out of 3138948
+ 154690 string characters out of 3138956
  265229 words of memory out of 3000000
  13655 multiletter control sequences out of 15000+200000
  36106 words of font info for 86 fonts, out of 3000000 for 9000
@@ -1569,7 +1569,7 @@ onts/txsy.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:
 /Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/M
 iKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
 ype1/urw/times/utmri8a.pfb>
-Output written on main.pdf (40 pages, 5273243 bytes).
+Output written on main.pdf (40 pages, 5273244 bytes).
 PDF statistics:
  715 PDF objects out of 1000 (max. 8388607)
  166 named destinations out of 1000 (max. 500000)
