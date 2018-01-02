@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.10.13)  16 DEC 2017 05:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.9.26)  2 JAN 2018 17:10
 entering extended mode
 **./main.tex
 (main.tex
@@ -1059,7 +1059,7 @@ Package pdftex.def Info: PaperFigures/autopilotLoops.png used on input line 192
                                                   \fi \fi 
 l.200 \section
               {Vector Field Guidance} <./PaperFigures/autopilotLoops.png>]
-<PaperFigures/pfObstacle.png, id=284, 319.94531pt x 216.05719pt>
+<PaperFigures/pfObstacle.png, id=290, 319.94531pt x 216.05719pt>
 File: PaperFigures/pfObstacle.png Graphic file (type png)
 
 <use PaperFigures/pfObstacle.png>
@@ -1069,7 +1069,7 @@ Package pdftex.def Info: PaperFigures/pfObstacle.png used on input line 209.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[14] <PaperFigures/histogram.png, id=293, 277.78781pt x 337.26pt>
+[14] <PaperFigures/histogram.png, id=299, 277.78781pt x 337.26pt>
 File: PaperFigures/histogram.png Graphic file (type png)
 
 <use PaperFigures/histogram.png>
@@ -1082,7 +1082,7 @@ Package pdftex.def Info: PaperFigures/histogram.png used on input line 220.
                                                   \fi \fi 
 l.224 
        <./PaperFigures/pfObstacle.png>]
-<PaperFigures/multipleObsVff.png, id=306, 531.48563pt x 311.66437pt>
+<PaperFigures/multipleObsVff.png, id=312, 531.48563pt x 311.66437pt>
 File: PaperFigures/multipleObsVff.png Graphic file (type png)
 
 <use PaperFigures/multipleObsVff.png>
@@ -1090,7 +1090,7 @@ Package pdftex.def Info: PaperFigures/multipleObsVff.png used on input line 230
 .
 (pdftex.def)             Requested size: 256.0748pt x 150.1631pt.
 
-<PaperFigures/unstableCooridorMotionVff.png, id=307, 387.69844pt x 420.82219pt>
+<PaperFigures/unstableCooridorMotionVff.png, id=313, 387.69844pt x 420.82219pt>
 File: PaperFigures/unstableCooridorMotionVff.png Graphic file (type png)
 <use PaperFigures/unstableCooridorMotionVff.png>
 Package pdftex.def Info: PaperFigures/unstableCooridorMotionVff.png used on inp
@@ -1103,7 +1103,7 @@ ut line 231.
                                                   \fi \fi 
 l.236 
        <./PaperFigures/histogram.png>]
-<PaperFigures/pfObstacleLocalMin.png, id=315, 295.1025pt x 194.22563pt>
+<PaperFigures/pfObstacleLocalMin.png, id=321, 295.1025pt x 194.22563pt>
 File: PaperFigures/pfObstacleLocalMin.png Graphic file (type png)
 
 <use PaperFigures/pfObstacleLocalMin.png>
@@ -1111,7 +1111,7 @@ Package pdftex.def Info: PaperFigures/pfObstacleLocalMin.png used on input line
  241.
 (pdftex.def)             Requested size: 199.16928pt x 131.08774pt.
 
-<PaperFigures/pfObstacleLocalMinTopology.png, id=316, 304.88907pt x 233.37187pt
+<PaperFigures/pfObstacleLocalMinTopology.png, id=322, 304.88907pt x 233.37187pt
 >
 File: PaperFigures/pfObstacleLocalMinTopology.png Graphic file (type png)
  <use PaperFigures/pfObstacleLocalMinTopology.png>
@@ -1119,7 +1119,7 @@ Package pdftex.def Info: PaperFigures/pfObstacleLocalMinTopology.png used on in
 put line 242.
 (pdftex.def)             Requested size: 199.16928pt x 152.45552pt.
 
-<PaperFigures/obstacleClustering.png, id=322, 319.1925pt x 242.40562pt>
+<PaperFigures/obstacleClustering.png, id=328, 319.1925pt x 242.40562pt>
 File: PaperFigures/obstacleClustering.png Graphic file (type png)
 
 <use PaperFigures/obstacleClustering.png>
@@ -1141,7 +1141,7 @@ l.256 \end{figure}
                    <./PaperFigures/multipleObsVff.png> <./PaperFigures/unstable
 CooridorMotionVff.png> <./PaperFigures/pfObstacleLocalMin.png> <./PaperFigures/
 pfObstacleLocalMinTopology.png>]
-<PaperFigures/nelsonLyapunov.png, id=340, 871.75688pt x 395.22656pt>
+<PaperFigures/nelsonLyapunov.png, id=346, 871.75688pt x 395.22656pt>
 File: PaperFigures/nelsonLyapunov.png Graphic file (type png)
 
 <use PaperFigures/nelsonLyapunov.png>
@@ -1155,7 +1155,7 @@ Package pdftex.def Info: PaperFigures/nelsonLyapunov.png used on input line 265
                                                   \fi \fi 
 l.271 
        <./PaperFigures/obstacleClustering.png>]
-<PaperFigures/urbanFollowingNelson.png, id=351, 310.91156pt x 319.94531pt>
+<PaperFigures/urbanFollowingNelson.png, id=357, 310.91156pt x 319.94531pt>
 File: PaperFigures/urbanFollowingNelson.png Graphic file (type png)
 
 <use PaperFigures/urbanFollowingNelson.png>
@@ -1174,7 +1174,7 @@ LaTeX Warning: Citation `nelson_cooperative_2005 using' on page 19 undefined on
                                                   \fi \fi 
 l.278 
        <./PaperFigures/nelsonLyapunov.png>]
-<PaperFigures/griffiths.png, id=361, 560.0925pt x 526.96875pt>
+<PaperFigures/griffiths.png, id=367, 560.0925pt x 526.96875pt>
 File: PaperFigures/griffiths.png Graphic file (type png)
 
 <use PaperFigures/griffiths.png>
@@ -1193,14 +1193,14 @@ l.291
                                                   \fi \fi 
 l.291 
        <./PaperFigures/urbanFollowingNelson.png> <./PaperFigures/griffiths.png>
-] <PaperFigures/lyapunovFrew.png, id=373, 444.91219pt x 438.13687pt>
+] <PaperFigures/lyapunovFrew.png, id=379, 444.91219pt x 438.13687pt>
 File: PaperFigures/lyapunovFrew.png Graphic file (type png)
 
 <use PaperFigures/lyapunovFrew.png>
 Package pdftex.def Info: PaperFigures/lyapunovFrew.png used on input line 295.
 (pdftex.def)             Requested size: 177.82971pt x 175.11792pt.
 
-<PaperFigures/lyapunovFrewUncertain.png, id=374, 402.75468pt x 308.65312pt>
+<PaperFigures/lyapunovFrewUncertain.png, id=380, 402.75468pt x 308.65312pt>
 File: PaperFigures/lyapunovFrewUncertain.png Graphic file (type png)
 
 <use PaperFigures/lyapunovFrewUncertain.png>
@@ -1208,7 +1208,7 @@ Package pdftex.def Info: PaperFigures/lyapunovFrewUncertain.png used on input l
 ine 296.
 (pdftex.def)             Requested size: 227.62204pt x 174.43643pt.
 
-<PaperFigures/lyapunovChen.png, id=382, 463.7325pt x 371.13657pt>
+<PaperFigures/lyapunovChen.png, id=388, 463.7325pt x 371.13657pt>
 File: PaperFigures/lyapunovChen.png Graphic file (type png)
 
 <use PaperFigures/lyapunovChen.png>
@@ -1221,14 +1221,14 @@ Package pdftex.def Info: PaperFigures/lyapunovChen.png used on input line 307.
                                                   \fi \fi 
 l.315 
        <./PaperFigures/lyapunovFrew.png> <./PaperFigures/lyapunovFrewUncertain.
-png>] <PaperFigures/rrtVF.png, id=395, 812.28468pt x 438.8897pt>
+png>] <PaperFigures/rrtVF.png, id=401, 812.28468pt x 438.8897pt>
 File: PaperFigures/rrtVF.png Graphic file (type png)
 
 <use PaperFigures/rrtVF.png>
 Package pdftex.def Info: PaperFigures/rrtVF.png used on input line 318.
 (pdftex.def)             Requested size: 341.43306pt x 184.47974pt.
 
-<PaperFigures/cdtVF.png, id=400, 1389.69188pt x 505.13719pt>
+<PaperFigures/cdtVF.png, id=406, 1389.69188pt x 505.13719pt>
 File: PaperFigures/cdtVF.png Graphic file (type png)
 
 <use PaperFigures/cdtVF.png>
@@ -1254,7 +1254,7 @@ l.343
                                                   \fi \fi 
 l.343 
        <./PaperFigures/rrtVF.png> <./PaperFigures/cdtVF.png>] [24]
-<PaperFigures/planeIntersection.png, id=435, 361.35pt x 361.35pt>
+<PaperFigures/planeIntersection.png, id=441, 361.35pt x 361.35pt>
 File: PaperFigures/planeIntersection.png Graphic file (type png)
 
 <use PaperFigures/planeIntersection.png>
@@ -1262,7 +1262,7 @@ Package pdftex.def Info: PaperFigures/planeIntersection.png used on input line
 370.
 (pdftex.def)             Requested size: 213.39566pt x 213.39867pt.
 
-<PaperFigures/compWithoutTitles/lineConvCirc.pdf, id=436, 361.35pt x 361.35pt>
+<PaperFigures/compWithoutTitles/lineConvCirc.pdf, id=442, 361.35pt x 361.35pt>
 File: PaperFigures/compWithoutTitles/lineConvCirc.pdf Graphic file (type pdf)
 
 <use PaperFigures/compWithoutTitles/lineConvCirc.pdf>
@@ -1276,7 +1276,7 @@ Package pdftex.def Info: PaperFigures/planeIntersection.png used on input line
 388.
 (pdftex.def)             Requested size: 213.39566pt x 213.39867pt.
 
-<PaperFigures/compWithoutTitles/circConvCirc.pdf, id=439, 361.35pt x 361.35pt>
+<PaperFigures/compWithoutTitles/circConvCirc.pdf, id=445, 361.35pt x 361.35pt>
 File: PaperFigures/compWithoutTitles/circConvCirc.pdf Graphic file (type pdf)
 
 <use PaperFigures/compWithoutTitles/circConvCirc.pdf>
@@ -1291,7 +1291,7 @@ n input line 389.
 l.395 
        <./PaperFigures/planeIntersection.png (PNG copy)> <./PaperFigures/compWi
 thoutTitles/lineConvCirc.pdf>]
-<PaperFigures/NNcompWithoutTitles/circAttractive.pdf, id=456, 361.35pt x 361.35
+<PaperFigures/NNcompWithoutTitles/circAttractive.pdf, id=462, 361.35pt x 361.35
 pt>
 File: PaperFigures/NNcompWithoutTitles/circAttractive.pdf Graphic file (type pd
 f)
@@ -1300,7 +1300,7 @@ Package pdftex.def Info: PaperFigures/NNcompWithoutTitles/circAttractive.pdf us
 ed on input line 410.
 (pdftex.def)             Requested size: 213.39566pt x 213.39867pt.
 
-<PaperFigures/compWithoutTitles/circAttractive.pdf, id=457, 361.35pt x 361.35pt
+<PaperFigures/compWithoutTitles/circAttractive.pdf, id=463, 361.35pt x 361.35pt
 >
 File: PaperFigures/compWithoutTitles/circAttractive.pdf Graphic file (type pdf)
 
@@ -1315,7 +1315,7 @@ Package pdftex.def Info: PaperFigures/compWithoutTitles/circAttractive.pdf used
                                                   \fi \fi 
 l.417 
        <./PaperFigures/compWithoutTitles/circConvCirc.pdf>]
-<PaperFigures/NNcompWithoutTitles/circCW.pdf, id=473, 361.35pt x 361.35pt>
+<PaperFigures/NNcompWithoutTitles/circCW.pdf, id=479, 361.35pt x 361.35pt>
 File: PaperFigures/NNcompWithoutTitles/circCW.pdf Graphic file (type pdf)
 
 <use PaperFigures/NNcompWithoutTitles/circCW.pdf>
@@ -1323,7 +1323,7 @@ Package pdftex.def Info: PaperFigures/NNcompWithoutTitles/circCW.pdf used on in
 put line 438.
 (pdftex.def)             Requested size: 213.39566pt x 213.39867pt.
 
-<PaperFigures/compWithoutTitles/circCW.pdf, id=474, 361.35pt x 361.35pt>
+<PaperFigures/compWithoutTitles/circCW.pdf, id=480, 361.35pt x 361.35pt>
 File: PaperFigures/compWithoutTitles/circCW.pdf Graphic file (type pdf)
 
 <use PaperFigures/compWithoutTitles/circCW.pdf>
@@ -1338,7 +1338,7 @@ t line 439.
 l.445 
        <./PaperFigures/NNcompWithoutTitles/circAttractive.pdf> <./PaperFigures/
 compWithoutTitles/circAttractive.pdf>]
-<PaperFigures/NNcompWithoutTitles/circTv.pdf, id=491, 361.35pt x 361.35pt>
+<PaperFigures/NNcompWithoutTitles/circTv.pdf, id=497, 361.35pt x 361.35pt>
 File: PaperFigures/NNcompWithoutTitles/circTv.pdf Graphic file (type pdf)
 
 <use PaperFigures/NNcompWithoutTitles/circTv.pdf>
@@ -1346,7 +1346,7 @@ Package pdftex.def Info: PaperFigures/NNcompWithoutTitles/circTv.pdf used on in
 put line 469.
 (pdftex.def)             Requested size: 213.39566pt x 213.39867pt.
 
-<PaperFigures/compWithoutTitles/circTv.pdf, id=492, 361.35pt x 361.35pt>
+<PaperFigures/compWithoutTitles/circTv.pdf, id=498, 361.35pt x 361.35pt>
 File: PaperFigures/compWithoutTitles/circTv.pdf Graphic file (type pdf)
 
 <use PaperFigures/compWithoutTitles/circTv.pdf>
@@ -1361,7 +1361,7 @@ t line 470.
 l.476 
        <./PaperFigures/NNcompWithoutTitles/circCW.pdf> <./PaperFigures/compWith
 outTitles/circCW.pdf>]
-<PaperFigures/compWithoutTitles/circConvCircTv.pdf, id=506, 361.35pt x 361.35pt
+<PaperFigures/compWithoutTitles/circConvCircTv.pdf, id=512, 361.35pt x 361.35pt
 >
 File: PaperFigures/compWithoutTitles/circConvCircTv.pdf Graphic file (type pdf)
 
@@ -1377,14 +1377,14 @@ Package pdftex.def Info: PaperFigures/compWithoutTitles/circConvCircTv.pdf used
 l.494 
        <./PaperFigures/NNcompWithoutTitles/circTv.pdf> <./PaperFigures/compWith
 outTitles/circTv.pdf>]
-<PaperFigures/compWithoutTitles/circRepulsive.pdf, id=521, 361.35pt x 361.35pt>
+<PaperFigures/compWithoutTitles/circRepulsive.pdf, id=527, 361.35pt x 361.35pt>
 File: PaperFigures/compWithoutTitles/circRepulsive.pdf Graphic file (type pdf)
 <use PaperFigures/compWithoutTitles/circRepulsive.pdf>
 Package pdftex.def Info: PaperFigures/compWithoutTitles/circRepulsive.pdf used 
 on input line 499.
 (pdftex.def)             Requested size: 184.9429pt x 184.9422pt.
 
-<PaperFigures/compWithoutTitles/circRepulsiveSmallr.pdf, id=522, 361.35pt x 361
+<PaperFigures/compWithoutTitles/circRepulsiveSmallr.pdf, id=528, 361.35pt x 361
 .35pt>
 File: PaperFigures/compWithoutTitles/circRepulsiveSmallr.pdf Graphic file (type
  pdf)
@@ -1408,18 +1408,18 @@ l.508
 mpWithoutTitles/circRepulsive.pdf> <./PaperFigures/compWithoutTitles/circRepuls
 iveSmallr.pdf>]
 Package epstopdf Info: Source file: <PaperFigures/tanh_ICUAS2018.eps>
-(epstopdf)                    date: 2017-12-16 05:27:02
+(epstopdf)                    date: 2017-11-05 13:47:30
 (epstopdf)                    size: 19399 bytes
 (epstopdf)             Output file: <PaperFigures/tanh_ICUAS2018-eps-converted-
 to.pdf>
-(epstopdf)                    date: 2017-12-16 05:27:02
+(epstopdf)                    date: 2017-11-05 13:47:30
 (epstopdf)                    size: 4194 bytes
 (epstopdf)             Command: <epstopdf --outfile=PaperFigures/tanh_ICUAS2018
 -eps-converted-to.pdf PaperFigures/tanh_ICUAS2018.eps>
 (epstopdf)             \includegraphics on input line 524.
 Package epstopdf Info: Output file is already uptodate.
 
-<PaperFigures/tanh_ICUAS2018-eps-converted-to.pdf, id=537, 421.575pt x 316.1812
+<PaperFigures/tanh_ICUAS2018-eps-converted-to.pdf, id=543, 421.575pt x 316.1812
 4pt>
 File: PaperFigures/tanh_ICUAS2018-eps-converted-to.pdf Graphic file (type pdf)
  <use PaperFigures/tanh_ICUAS2018-eps-converted-to.pdf>
@@ -1427,7 +1427,7 @@ Package pdftex.def Info: PaperFigures/tanh_ICUAS2018-eps-converted-to.pdf used
 on input line 524.
 (pdftex.def)             Requested size: 227.62204pt x 170.72084pt.
 
-<PaperFigures/repulsiveFields/circRepulsiveDecay.pdf, id=538, 361.35pt x 361.35
+<PaperFigures/repulsiveFields/circRepulsiveDecay.pdf, id=544, 361.35pt x 361.35
 pt>
 File: PaperFigures/repulsiveFields/circRepulsiveDecay.pdf Graphic file (type pd
 f)
@@ -1436,7 +1436,7 @@ Package pdftex.def Info: PaperFigures/repulsiveFields/circRepulsiveDecay.pdf us
 ed on input line 525.
 (pdftex.def)             Requested size: 199.16928pt x 199.16766pt.
 
-<PaperFigures/gvfMovingTarget.png, id=541, 753.5653pt x 535.2497pt>
+<PaperFigures/gvfMovingTarget.png, id=547, 753.5653pt x 535.2497pt>
 File: PaperFigures/gvfMovingTarget.png Graphic file (type png)
 
 <use PaperFigures/gvfMovingTarget.png>
@@ -1462,7 +1462,7 @@ red
                                                   \fi \fi 
 l.553 
        <./PaperFigures/gvfMovingTarget.png>]
-<PaperFigures/singleObstacle.pdf, id=572, 361.35pt x 180.675pt>
+<PaperFigures/singleObstacle.pdf, id=578, 361.35pt x 180.675pt>
 File: PaperFigures/singleObstacle.pdf Graphic file (type pdf)
 
 <use PaperFigures/singleObstacle.pdf>
@@ -1470,7 +1470,7 @@ Package pdftex.def Info: PaperFigures/singleObstacle.pdf used on input line 556
 .
 (pdftex.def)             Requested size: 341.43306pt x 170.7167pt.
 
-<PaperFigures/singleObstacleWithCirc.pdf, id=575, 361.35pt x 180.675pt>
+<PaperFigures/singleObstacleWithCirc.pdf, id=581, 361.35pt x 180.675pt>
 File: PaperFigures/singleObstacleWithCirc.pdf Graphic file (type pdf)
 
 <use PaperFigures/singleObstacleWithCirc.pdf>
@@ -1492,7 +1492,7 @@ cate ignored
 l.575 \section
               {Unmanned Aerial Vehicle Simulation} <./PaperFigures/singleObstac
 le.pdf> <./PaperFigures/singleObstacleWithCirc.pdf>]
-<PaperFigures/robot.jpg, id=590, 5331.92pt x 2999.205pt>
+<PaperFigures/robot.jpg, id=596, 5331.92pt x 2999.205pt>
 File: PaperFigures/robot.jpg Graphic file (type jpg)
 
 <use PaperFigures/robot.jpg>
@@ -1526,15 +1526,15 @@ Missing character: There is no Ã in font txr!
 Missing character: There is no § in font txr!
 Missing character: There is no Ã in font txr!
 Missing character: There is no § in font txr!
-
-Underfull \hbox (badness 1231) in paragraph at lines 134--138
+ [40]
+Underfull \hbox (badness 1231) in paragraph at lines 150--154
 \OT1/txr/m/n/12 for Evaluating an UAV COTS-Based Embedded Sensors System,'' \OT
 1/txr/m/it/12 Journal of
  []
 
 ) 
 AED: lastpage setting LastPage
-[40]
+[41]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 653.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 653.
  (main.aux)
@@ -1549,10 +1549,10 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 653.
  ) 
 Here is how much of TeX's memory you used:
- 10568 strings out of 493320
- 154690 string characters out of 3138956
- 265229 words of memory out of 3000000
- 13655 multiletter control sequences out of 15000+200000
+ 10578 strings out of 493320
+ 154952 string characters out of 3138948
+ 265374 words of memory out of 3000000
+ 13661 multiletter control sequences out of 15000+200000
  36106 words of font info for 86 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  34i,7n,40p,1079b,498s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1569,9 +1569,9 @@ onts/txsy.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:
 /Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/M
 iKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
 ype1/urw/times/utmri8a.pfb>
-Output written on main.pdf (40 pages, 5273244 bytes).
+Output written on main.pdf (41 pages, 5275738 bytes).
 PDF statistics:
- 715 PDF objects out of 1000 (max. 8388607)
- 166 named destinations out of 1000 (max. 500000)
+ 726 PDF objects out of 1000 (max. 8388607)
+ 170 named destinations out of 1000 (max. 500000)
  360 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -10,6 +10,22 @@ Sujit, P., Saripalli, S., and Sousa, J.~B., \enquote{Unmanned {Aerial}
   {Fixed}-{Wing} {Unmanned} {Aerial} {Vehicless},} {\em IEEE Control
   Systems\/}, Vol.~34, No.~1, Feb. 2014, pp.~42--59.
 
+\bibitem{manjunath_application_2016}
+Manjunath, A., Mehrok, P., Sharma, R., and Ratnoo, A., \enquote{Application of
+  virtual target based guidance laws to path following of a quadrotor {UAV},}
+  IEEE, June 2016, pp. 252--260.
+
+\bibitem{fortuna_cascaded_2015}
+Fortuna, J. and Fossen, T.~I., \enquote{Cascaded line-of-sight path-following
+  and sliding mode controllers for fixed-wing {UAVs},} {\em Control
+  {Applications} ({CCA}), 2015 {IEEE} {Conference} on\/}, IEEE, 2015, pp.
+  798--803.
+
+\bibitem{capello_simulation-based_2012}
+Capello, E. and Tempo, R., \enquote{A simulation-based approach for control
+  design of uncertain {UAVs},} {\em Decision and {Control} ({CDC}), 2012 {IEEE}
+  51st {Annual} {Conference} on\/}, IEEE, 2012, pp. 3086--3091.
+
 \bibitem{khatib_real-time_1986}
 Khatib, O., \enquote{Real-time obstacle avoidance for manipulators and mobile
   robots,} {\em The international journal of robotics research\/}, Vol.~5,
