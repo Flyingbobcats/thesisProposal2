@@ -15,7 +15,7 @@
 \contentsline {subsection}{\numberline {2.3.2}Potential Field}{14}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3}Lyapunov Vector Fields}{18}{subsection.2.3.3}
 \contentsline {subsection}{\numberline {2.3.4}Non-Lyapunov Vector Fields}{22}{subsection.2.3.4}
-\contentsline {subsection}{\numberline {2.3.5}Gradient Vector Field}{23}{subsection.2.3.5}
+\contentsline {subsection}{\numberline {2.3.5}Gradient Vector Field}{24}{subsection.2.3.5}
 \contentsline {section}{\numberline {2.4}Unmanned Aerial Vehicle Simulation}{34}{section.2.4}
 \contentsline {section}{\numberline {2.5}Literature Review Summary}{34}{section.2.5}
 \contentsline {chapter}{\numberline {3}Methodology}{36}{chapter.3}
