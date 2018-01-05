@@ -29,4 +29,7 @@ pfObstacle PfObstacleLocalMin PfObstacleLocalMinTopology
 A Virtual-Waypoint Based Artificial Potential Field Method for UAV Path Planning
 
 
+drone-in-the-sky-clipart-3
+https://classroomclipart.com/clipart-view/Clipart/Aircraft/drone-in-the-sky-clipart-3_jpg.htm
+
 

@@ -14,12 +14,12 @@
 \contentsline {figure}{\numberline {2.8}{\ignorespaces Lyapunov vector field for straight line and circular primitives \cite {nelson_cooperative_2005}}}{19}{figure.2.8}
 \contentsline {figure}{\numberline {2.9}{\ignorespaces Straight path following in urban environment \cite {nelson_cooperative_2005} using Lyapunov Vector Field}}{20}{figure.2.9}
 \contentsline {figure}{\numberline {2.10}{\ignorespaces Lyapunov vector field approach curved path asymptotically \cite {griffiths_vector_2006}}}{20}{figure.2.10}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Elliptical VF produced by non-linear coordinate transformations a)\cite {frew_lyapunov_nodate} b)\cite {frew_cooperative_2007}}}{21}{figure.2.11}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Elliptical VF produced by non-linear coordinate transformations a)\cite {frew_cooperative_2007} and b) \cite {frew_lyapunov_nodate}}}{21}{figure.2.11}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{21}{figure.2.11}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{21}{figure.2.11}
 \contentsline {figure}{\numberline {2.12}{\ignorespaces Tangent plus lyapunov vector fields for shortest path target tracking \cite {chen_uav_2013}}}{22}{figure.2.12}
 \contentsline {figure}{\numberline {2.13}{\ignorespaces RRT* path planner with a VF used as a task specification \cite {pereira_framework_2016}}}{23}{figure.2.13}
-\contentsline {figure}{\numberline {2.14}{\ignorespaces Vector field within a set of \cite {wwc} delaunay triangles \cite {pimenta_fully_2007}}}{23}{figure.2.14}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Vector field within a set of delaunay triangles \cite {pimenta_fully_2007}}}{23}{figure.2.14}
 \contentsline {figure}{\numberline {2.15}{\ignorespaces Intersection of planes (a) and resultant Gradient Vector Field (b)}}{25}{figure.2.15}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{25}{figure.2.15}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{25}{figure.2.15}
@@ -39,11 +39,11 @@
 \contentsline {figure}{\numberline {2.21}{\ignorespaces Repulsive field with large path radius (a) and small radius (b)}}{30}{figure.2.21}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{30}{figure.2.21}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{30}{figure.2.21}
-\contentsline {figure}{\numberline {2.22}{\ignorespaces Repulsive field activation [wwc](a) resulting repulsive field (b)}}{31}{figure.2.22}
+\contentsline {figure}{\numberline {2.22}{\ignorespaces Repulsive field activation \cite {wwc} (a) resulting repulsive field (b)}}{31}{figure.2.22}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{31}{figure.2.22}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{31}{figure.2.22}
-\contentsline {figure}{\numberline {2.23}{\ignorespaces Place holder image of UAV following ground target [wwc]}}{32}{figure.2.23}
-\contentsline {figure}{\numberline {2.24}{\ignorespaces }}{33}{figure.2.24}
-\contentsline {figure}{\numberline {2.25}{\ignorespaces }}{33}{figure.2.25}
+\contentsline {figure}{\numberline {2.23}{\ignorespaces Place holder image of UAV following ground target \cite {wwc}}}{32}{figure.2.23}
+\contentsline {figure}{\numberline {2.24}{\ignorespaces Strictly repulsive obstacle on straight path}}{33}{figure.2.24}
+\contentsline {figure}{\numberline {2.25}{\ignorespaces Circulating repulsive obstacle on straight path}}{33}{figure.2.25}
 \contentsline {figure}{\numberline {2.26}{\ignorespaces Differential drive mobile robot simulating fixed wing UAV Dubins constraints}}{34}{figure.2.26}
 \addvspace {\@lineskip }
