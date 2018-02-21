@@ -1,27 +1,24 @@
 \contentsline {chapter}{Abstract}{3}{schapter.1}
-\contentsline {chapter}{Dedication}{4}{schapter.2}
-\contentsline {chapter}{Acknowledgments}{5}{schapter.3}
-\contentsline {chapter}{List of Tables}{7}{schapter.4}
-\contentsline {chapter}{List of Figures}{8}{schapter.5}
-\contentsline {chapter}{List of Symbols}{9}{schapter.6}
-\contentsline {chapter}{List of Acronyms}{10}{schapter.7}
-\contentsline {chapter}{\numberline {1}Introduction}{11}{chapter.1}
-\contentsline {section}{\numberline {1.1}Motivation and Problem Statement}{11}{section.1.1}
-\contentsline {chapter}{\numberline {2}Literature Review}{12}{chapter.2}
-\contentsline {section}{\numberline {2.1}Introduction to Literature Review}{12}{section.2.1}
-\contentsline {section}{\numberline {2.2}Unmanned Aerial Vehicle}{12}{section.2.2}
-\contentsline {section}{\numberline {2.3}Vector Field Guidance}{14}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Introduction to Vector Field Guidance}{14}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Potential Field}{14}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Lyapunov Vector Fields}{18}{subsection.2.3.3}
-\contentsline {subsection}{\numberline {2.3.4}Non-Lyapunov Vector Fields}{22}{subsection.2.3.4}
-\contentsline {subsection}{\numberline {2.3.5}Gradient Vector Field}{24}{subsection.2.3.5}
-\contentsline {section}{\numberline {2.4}Unmanned Aerial Vehicle Simulation}{34}{section.2.4}
-\contentsline {section}{\numberline {2.5}Literature Review Summary}{34}{section.2.5}
-\contentsline {chapter}{\numberline {3}Methodology}{36}{chapter.3}
-\contentsline {section}{\numberline {3.1}Methods Overview}{36}{section.3.1}
-\contentsline {section}{\numberline {3.2}Phase I}{36}{section.3.2}
-\contentsline {section}{\numberline {3.3}Phase II}{36}{section.3.3}
-\contentsline {section}{\numberline {3.4}Phase III}{37}{section.3.4}
-\contentsline {section}{\numberline {3.5}Summary of Phases}{37}{section.3.5}
-\contentsline {chapter}{References}{39}{schapter.8}
+\contentsline {chapter}{List of Figures}{5}{schapter.2}
+\contentsline {chapter}{List of Symbols}{6}{schapter.3}
+\contentsline {chapter}{List of Acronyms}{7}{schapter.4}
+\contentsline {chapter}{\numberline {1}Introduction}{8}{chapter.1}
+\contentsline {section}{\numberline {1.1}Motivation and Problem Statement}{8}{section.1.1}
+\contentsline {chapter}{\numberline {2}Literature Review}{9}{chapter.2}
+\contentsline {section}{\numberline {2.1}Introduction to Literature Review}{9}{section.2.1}
+\contentsline {section}{\numberline {2.2}Unmanned Aerial Vehicle}{9}{section.2.2}
+\contentsline {section}{\numberline {2.3}Vector Field Guidance}{11}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Introduction to Vector Field Guidance}{11}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Potential Field}{11}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Lyapunov Vector Fields}{15}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}Non-Lyapunov Vector Fields}{19}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.5}Gradient Vector Field}{20}{subsection.2.3.5}
+\contentsline {section}{\numberline {2.4}Unmanned Aerial Vehicle Simulation}{32}{section.2.4}
+\contentsline {section}{\numberline {2.5}Literature Review Summary}{32}{section.2.5}
+\contentsline {chapter}{\numberline {3}Methodology}{34}{chapter.3}
+\contentsline {section}{\numberline {3.1}Methods Overview}{34}{section.3.1}
+\contentsline {section}{\numberline {3.2}Phase I}{34}{section.3.2}
+\contentsline {section}{\numberline {3.3}Phase II}{34}{section.3.3}
+\contentsline {section}{\numberline {3.4}Phase III}{35}{section.3.4}
+\contentsline {section}{\numberline {3.5}Summary of Phases}{35}{section.3.5}
+\contentsline {chapter}{References}{37}{schapter.5}

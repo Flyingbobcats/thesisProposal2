@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.9.26)  5 JAN 2018 15:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.9.26)  11 FEB 2018 18:07
 entering extended mode
 **./main.tex
 (main.tex
@@ -860,56 +860,71 @@ Package: relsize 2003/07/04 ver 3.1
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\fancyref\fancyref.sty"
 Package: fancyref 1999/02/03 v0.9c Fancy cross-referencing
-) (main.aux)
+) (main.aux
+
+LaTeX Warning: Label `weightedSimpleGVF' multiply defined.
+
+
+LaTeX Warning: Label `weightedSimpleGVF' multiply defined.
+
+
+LaTeX Warning: Label `weightedSimpleGVF' multiply defined.
+
+
+LaTeX Warning: Label `weightedSimpleGVF' multiply defined.
+
+
+LaTeX Warning: Label `weightedSimpleGVF' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 124.
-LaTeX Font Info:    Try loading font information for OML+txmi on input line 124
+LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 157.
+LaTeX Font Info:    Try loading font information for OML+txmi on input line 157
 .
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\txfonts\omltxmi.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\txfonts\omltxmi.fd"
 File: omltxmi.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 124.
-LaTeX Font Info:    Try loading font information for OMS+txsy on input line 124
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 157.
+LaTeX Font Info:    Try loading font information for OMS+txsy on input line 157
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\txfonts\omstxsy.fd"
 File: omstxsy.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 124.
-LaTeX Font Info:    Try loading font information for OMX+txex on input line 124
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 157.
+LaTeX Font Info:    Try loading font information for OMX+txex on input line 157
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\txfonts\omxtxex.fd"
 File: omxtxex.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 124.
-LaTeX Font Info:    Try loading font information for U+txexa on input line 124.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 157.
+LaTeX Font Info:    Try loading font information for U+txexa on input line 157.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\txfonts\utxexa.fd"
 File: utxexa.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 124.
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 124.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 124.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 157.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 157.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 124.
-LaTeX Font Info:    Try loading font information for OT1+txr on input line 124.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Try loading font information for OT1+txr on input line 157.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\txfonts\ot1txr.fd"
@@ -917,9 +932,9 @@ File: ot1txr.fd 2000/12/15 v3.1
 )
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 124.
+(lastpage)             ! on input line 157.
 \AtBeginShipoutBox=\box33
-Package hyperref Info: Link coloring ON on input line 124.
+Package hyperref Info: Link coloring ON on input line 157.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -930,17 +945,17 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 \c@section@level=\count138
 LaTeX Info: Redefining \Ref on input line 515.
 )
-LaTeX Info: Redefining \ref on input line 124.
-LaTeX Info: Redefining \pageref on input line 124.
-LaTeX Info: Redefining \nameref on input line 124.
+LaTeX Info: Redefining \ref on input line 157.
+LaTeX Info: Redefining \pageref on input line 157.
+LaTeX Info: Redefining \nameref on input line 157.
 
 (main.out) (main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
-LaTeX Info: Redefining \Ref on input line 124.
+LaTeX Info: Redefining \Ref on input line 157.
  ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 124.
+LaTeX Info: Redefining \selectfont on input line 157.
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -957,17 +972,13 @@ LaTeX Info: Redefining \selectfont on input line 124.
 \everyMPtoPDFconversion=\toks40
 )
 \c@lstlisting=\count145
-LaTeX Font Info:    Try loading font information for TS1+txr on input line 126.
+LaTeX Font Info:    Try loading font information for TS1+txr on input line 159.
 
  ("C:\Program Files\MiKTeX 2.9\tex\latex\txfonts\ts1txr.fd"
 File: ts1txr.fd 2000/12/15 v3.1
 ) [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3
-
-] [4
-
-] [5
 
 ] (main.toc
 LaTeX Font Info:    Try loading font information for U+txmia on input line 1.
@@ -993,411 +1004,436 @@ File: utxsyc.fd 2000/12/15 v3.1
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [6
+ [4
 
-
-] (main.lot)
-\tf@lot=\write6
-\openout6 = `main.lot'.
-
-
-[7
 
 ] (main.lof)
-\tf@lof=\write7
-\openout7 = `main.lof'.
+\tf@lof=\write6
+\openout6 = `main.lof'.
 
- [8
 
-] [9
+[5
 
-]
-("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+] [6
+
+] ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
-) [10
+)
+[7
 
 ]
 Chapter 1.
 Missing character: There is no â in font txr!
 Missing character: There is no € in font txr!
 Missing character: There is no ™ in font txr!
-[11
+[8
 
 ]
 Chapter 2.
-<PaperFigures/UAS.png, id=279, 621.82312pt x 502.87875pt>
+<PaperFigures/UAS.png, id=254, 942.52126pt x 387.69844pt>
 File: PaperFigures/UAS.png Graphic file (type png)
 
 <use PaperFigures/UAS.png>
-Package pdftex.def Info: PaperFigures/UAS.png used on input line 183.
-(pdftex.def)             Requested size: 227.62204pt x 184.0825pt.
- [12
+Package pdftex.def Info: PaperFigures/UAS.png used on input line 216.
+(pdftex.def)             Requested size: 341.43306pt x 140.44685pt.
+ [9
 
-]
-<PaperFigures/autopilotLoops.png, id=294, 952.30782pt x 249.18094pt>
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.222 
+       <./PaperFigures/UAS.png>]
+<PaperFigures/autopilotLoops.png, id=270, 952.30782pt x 249.18094pt>
 File: PaperFigures/autopilotLoops.png Graphic file (type png)
 
 <use PaperFigures/autopilotLoops.png>
-Package pdftex.def Info: PaperFigures/autopilotLoops.png used on input line 192
+Package pdftex.def Info: PaperFigures/autopilotLoops.png used on input line 225
 .
 (pdftex.def)             Requested size: 426.79134pt x 111.6741pt.
- [13pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
-1}) has been already used, duplicate ignored
+ [10pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.198 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-2.2}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.198 
-       <./PaperFigures/UAS.png> <./PaperFigures/autopilotLoops.png>]
-<PaperFigures/pfObstacle.png, id=314, 319.94531pt x 216.05719pt>
+l.233 \section
+              {Vector Field Guidance} <./PaperFigures/autopilotLoops.png>]
+<PaperFigures/pfObstacle.png, id=289, 319.94531pt x 216.05719pt>
 File: PaperFigures/pfObstacle.png Graphic file (type png)
 
 <use PaperFigures/pfObstacle.png>
-Package pdftex.def Info: PaperFigures/pfObstacle.png used on input line 209.
+Package pdftex.def Info: PaperFigures/pfObstacle.png used on input line 242.
 (pdftex.def)             Requested size: 199.16928pt x 134.49802pt.
- [14]
-<PaperFigures/histogram.png, id=323, 277.78781pt x 337.26pt>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[11] <PaperFigures/histogram.png, id=299, 277.78781pt x 337.26pt>
 File: PaperFigures/histogram.png Graphic file (type png)
 
 <use PaperFigures/histogram.png>
-Package pdftex.def Info: PaperFigures/histogram.png used on input line 220.
+Package pdftex.def Info: PaperFigures/histogram.png used on input line 253.
 (pdftex.def)             Requested size: 199.16928pt x 241.81322pt.
- [15pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+ [12pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.224 
+l.257 
        <./PaperFigures/pfObstacle.png>]
-<PaperFigures/pfObstacleLocalMin.png, id=338, 295.1025pt x 194.22563pt>
+<PaperFigures/pfObstacleLocalMin.png, id=313, 295.1025pt x 194.22563pt>
 File: PaperFigures/pfObstacleLocalMin.png Graphic file (type png)
 
 <use PaperFigures/pfObstacleLocalMin.png>
 Package pdftex.def Info: PaperFigures/pfObstacleLocalMin.png used on input line
- 230.
+ 263.
 (pdftex.def)             Requested size: 199.16928pt x 131.08774pt.
 
-<PaperFigures/pfObstacleLocalMinTopology.png, id=339, 304.88907pt x 233.37187pt
+<PaperFigures/pfObstacleLocalMinTopology.png, id=314, 304.88907pt x 233.37187pt
 >
 File: PaperFigures/pfObstacleLocalMinTopology.png Graphic file (type png)
  <use PaperFigures/pfObstacleLocalMinTopology.png>
 Package pdftex.def Info: PaperFigures/pfObstacleLocalMinTopology.png used on in
-put line 231.
+put line 264.
 (pdftex.def)             Requested size: 199.16928pt x 152.45552pt.
- [16pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+ [13pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.236 
+l.269 
        <./PaperFigures/histogram.png>]
-<PaperFigures/multipleObsVff.png, id=347, 531.48563pt x 311.66437pt>
+<PaperFigures/multipleObsVff.png, id=323, 531.48563pt x 311.66437pt>
 File: PaperFigures/multipleObsVff.png Graphic file (type png)
 
 <use PaperFigures/multipleObsVff.png>
-Package pdftex.def Info: PaperFigures/multipleObsVff.png used on input line 240
+Package pdftex.def Info: PaperFigures/multipleObsVff.png used on input line 273
 .
 (pdftex.def)             Requested size: 256.0748pt x 150.1631pt.
 
-<PaperFigures/unstableCooridorMotionVff.png, id=348, 387.69844pt x 420.82219pt>
+<PaperFigures/unstableCooridorMotionVff.png, id=324, 387.69844pt x 420.82219pt>
 File: PaperFigures/unstableCooridorMotionVff.png Graphic file (type png)
 <use PaperFigures/unstableCooridorMotionVff.png>
 Package pdftex.def Info: PaperFigures/unstableCooridorMotionVff.png used on inp
-ut line 241.
+ut line 274.
 (pdftex.def)             Requested size: 170.71652pt x 185.30359pt.
 
-<PaperFigures/obstacleClustering.png, id=354, 319.1925pt x 242.40562pt>
+<PaperFigures/obstacleClustering.png, id=330, 319.1925pt x 242.40562pt>
 File: PaperFigures/obstacleClustering.png Graphic file (type png)
 
 <use PaperFigures/obstacleClustering.png>
 Package pdftex.def Info: PaperFigures/obstacleClustering.png used on input line
- 251.
+ 284.
 (pdftex.def)             Requested size: 142.26378pt x 108.03845pt.
- [17pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+ [14pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.254 \end{figure}
+l.287 \end{figure}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{figure.2.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.254 \end{figure}
+l.287 \end{figure}
                    <./PaperFigures/pfObstacleLocalMin.png> <./PaperFigures/pfOb
 stacleLocalMinTopology.png> <./PaperFigures/multipleObsVff.png> <./PaperFigures
 /unstableCooridorMotionVff.png>]
-<PaperFigures/nelsonLyapunov.png, id=372, 871.75688pt x 395.22656pt>
+<PaperFigures/nelsonLyapunov.png, id=348, 871.75688pt x 395.22656pt>
 File: PaperFigures/nelsonLyapunov.png Graphic file (type png)
 
 <use PaperFigures/nelsonLyapunov.png>
-Package pdftex.def Info: PaperFigures/nelsonLyapunov.png used on input line 263
+Package pdftex.def Info: PaperFigures/nelsonLyapunov.png used on input line 296
 .
 (pdftex.def)             Requested size: 369.88582pt x 167.69466pt.
- [18pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+ [15pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.269 
+l.302 
        <./PaperFigures/obstacleClustering.png>]
-<PaperFigures/urbanFollowingNelson.png, id=383, 310.91156pt x 319.94531pt>
+<PaperFigures/urbanFollowingNelson.png, id=360, 310.91156pt x 319.94531pt>
 File: PaperFigures/urbanFollowingNelson.png Graphic file (type png)
 
 <use PaperFigures/urbanFollowingNelson.png>
 Package pdftex.def Info: PaperFigures/urbanFollowingNelson.png used on input li
-ne 272.
+ne 305.
 (pdftex.def)             Requested size: 199.16928pt x 204.95468pt.
- [19pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+ [16pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 8}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.276 
+l.309 
        <./PaperFigures/nelsonLyapunov.png>]
-<PaperFigures/griffiths.png, id=395, 560.0925pt x 526.96875pt>
+<PaperFigures/griffiths.png, id=372, 560.0925pt x 526.96875pt>
 File: PaperFigures/griffiths.png Graphic file (type png)
 
 <use PaperFigures/griffiths.png>
-Package pdftex.def Info: PaperFigures/griffiths.png used on input line 281.
+Package pdftex.def Info: PaperFigures/griffiths.png used on input line 314.
 (pdftex.def)             Requested size: 199.16928pt x 187.39282pt.
- [20pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+ [17pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.288 
+l.321 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 2.10}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.288 
+l.321 
        <./PaperFigures/urbanFollowingNelson.png> <./PaperFigures/griffiths.png>
-] <PaperFigures/lyapunovFrewUncertain.png, id=408, 402.75468pt x 308.65312pt>
+] <PaperFigures/lyapunovFrewUncertain.png, id=385, 402.75468pt x 308.65312pt>
 File: PaperFigures/lyapunovFrewUncertain.png Graphic file (type png)
 
 <use PaperFigures/lyapunovFrewUncertain.png>
 Package pdftex.def Info: PaperFigures/lyapunovFrewUncertain.png used on input l
-ine 292.
+ine 325.
 (pdftex.def)             Requested size: 227.62204pt x 174.43643pt.
 
-<PaperFigures/lyapunovFrew.png, id=409, 444.91219pt x 438.13687pt>
+<PaperFigures/lyapunovFrew.png, id=386, 444.91219pt x 438.13687pt>
 File: PaperFigures/lyapunovFrew.png Graphic file (type png)
 
 <use PaperFigures/lyapunovFrew.png>
-Package pdftex.def Info: PaperFigures/lyapunovFrew.png used on input line 293.
+Package pdftex.def Info: PaperFigures/lyapunovFrew.png used on input line 326.
 (pdftex.def)             Requested size: 177.82971pt x 175.11792pt.
 
-<PaperFigures/lyapunovChen.png, id=418, 463.7325pt x 371.13657pt>
+<PaperFigures/lyapunovChen.png, id=395, 463.7325pt x 371.13657pt>
 File: PaperFigures/lyapunovChen.png Graphic file (type png)
 
 <use PaperFigures/lyapunovChen.png>
-Package pdftex.def Info: PaperFigures/lyapunovChen.png used on input line 304.
+Package pdftex.def Info: PaperFigures/lyapunovChen.png used on input line 337.
 (pdftex.def)             Requested size: 199.16928pt x 159.40439pt.
- [21pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+ [18pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 11}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.313 A
-       nother approach is to use vector fields as a high level specification...
- <./PaperFigures/lyapunovFrewUncertain.png> <./PaperFigures/lyapunovFrew.png>]
-<PaperFigures/rrtVF.png, id=432, 812.28468pt x 438.8897pt>
+l.345 
+       <./PaperFigures/lyapunovFrewUncertain.png> <./PaperFigures/lyapunovFrew.
+png>] <PaperFigures/rrtVF.png, id=409, 812.28468pt x 438.8897pt>
 File: PaperFigures/rrtVF.png Graphic file (type png)
 
 <use PaperFigures/rrtVF.png>
-Package pdftex.def Info: PaperFigures/rrtVF.png used on input line 317.
+Package pdftex.def Info: PaperFigures/rrtVF.png used on input line 348.
 (pdftex.def)             Requested size: 341.43306pt x 184.47974pt.
 
-<PaperFigures/cdtVF.png, id=437, 1389.69188pt x 505.13719pt>
+<PaperFigures/cdtVF.png, id=414, 1389.69188pt x 505.13719pt>
 File: PaperFigures/cdtVF.png Graphic file (type png)
 
 <use PaperFigures/cdtVF.png>
-Package pdftex.def Info: PaperFigures/cdtVF.png used on input line 328.
+Package pdftex.def Info: PaperFigures/cdtVF.png used on input line 359.
 (pdftex.def)             Requested size: 426.79134pt x 155.12643pt.
- [22pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+ [19pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 12}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.334 
-       <./PaperFigures/lyapunovChen.png>] [23pdfTeX warning (ext4): destination
+l.365 
+       <./PaperFigures/lyapunovChen.png>] [20pdfTeX warning (ext4): destination
  with the same identifier (name{figure.2.13}) has been already used, duplicate 
 ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.338 
+l.369 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 2.14}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.338 
-       <./PaperFigures/rrtVF.png> <./PaperFigures/cdtVF.png>] [24]
-<PaperFigures/planeIntersection.png, id=476, 361.35pt x 361.35pt>
+l.369 
+       <./PaperFigures/rrtVF.png> <./PaperFigures/cdtVF.png>]
+
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 400.
+
+
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 400
+.
+
+LaTeX Font Info:    Calculating math sizes for size <> on input line 401.
+
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 404.
+
+
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 404
+.
+
+
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 409.
+
+
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 409
+.
+
+
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 414.
+
+
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 414
+.
+
+
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 418.
+
+
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 418
+.
+
+[21] <PaperFigures/planeIntersection.png, id=458, 361.35pt x 361.35pt>
 File: PaperFigures/planeIntersection.png Graphic file (type png)
 
 <use PaperFigures/planeIntersection.png>
 Package pdftex.def Info: PaperFigures/planeIntersection.png used on input line 
-365.
+445.
 (pdftex.def)             Requested size: 213.39566pt x 213.39867pt.
 
-<PaperFigures/compWithoutTitles/lineConvCirc.pdf, id=477, 361.35pt x 361.35pt>
+<PaperFigures/compWithoutTitles/lineConvCirc.pdf, id=459, 361.35pt x 361.35pt>
 File: PaperFigures/compWithoutTitles/lineConvCirc.pdf Graphic file (type pdf)
 
 <use PaperFigures/compWithoutTitles/lineConvCirc.pdf>
 Package pdftex.def Info: PaperFigures/compWithoutTitles/lineConvCirc.pdf used o
-n input line 366.
+n input line 446.
 (pdftex.def)             Requested size: 213.39566pt x 213.39867pt.
-
-<PaperFigures/cylinderIntersection.png, id=480, 361.35pt x 361.35pt>
-File: PaperFigures/cylinderIntersection.png Graphic file (type png)
-
-<use PaperFigures/cylinderIntersection.png>
-Package pdftex.def Info: PaperFigures/cylinderIntersection.png used on input li
-ne 383.
-(pdftex.def)             Requested size: 213.39566pt x 213.39867pt.
-
-<PaperFigures/compWithoutTitles/circConvCirc.pdf, id=481, 361.35pt x 361.35pt>
-File: PaperFigures/compWithoutTitles/circConvCirc.pdf Graphic file (type pdf)
-
-<use PaperFigures/compWithoutTitles/circConvCirc.pdf>
-Package pdftex.def Info: PaperFigures/compWithoutTitles/circConvCirc.pdf used o
-n input line 384.
-(pdftex.def)             Requested size: 213.39566pt x 213.39867pt.
- [25pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+ [22pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 15}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.390 
-       <./PaperFigures/planeIntersection.png (PNG copy)> <./PaperFigures/compWi
-thoutTitles/lineConvCirc.pdf>]
-<PaperFigures/NNcompWithoutTitles/circAttractive.pdf, id=498, 361.35pt x 361.35
+l.455 \begin{equation}
+                       <./PaperFigures/planeIntersection.png (PNG copy)> <./Pap
+erFigures/compWithoutTitles/lineConvCirc.pdf>]
+<PaperFigures/cylinderIntersection.png, id=472, 361.35pt x 361.35pt>
+File: PaperFigures/cylinderIntersection.png Graphic file (type png)
+
+<use PaperFigures/cylinderIntersection.png>
+Package pdftex.def Info: PaperFigures/cylinderIntersection.png used on input li
+ne 463.
+(pdftex.def)             Requested size: 213.39566pt x 213.39867pt.
+
+<PaperFigures/compWithoutTitles/circConvCirc.pdf, id=473, 361.35pt x 361.35pt>
+File: PaperFigures/compWithoutTitles/circConvCirc.pdf Graphic file (type pdf)
+
+<use PaperFigures/compWithoutTitles/circConvCirc.pdf>
+Package pdftex.def Info: PaperFigures/compWithoutTitles/circConvCirc.pdf used o
+n input line 464.
+(pdftex.def)             Requested size: 213.39566pt x 213.39867pt.
+ [23pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+16}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.481 
+       <./PaperFigures/cylinderIntersection.png (PNG copy)> <./PaperFigures/com
+pWithoutTitles/circConvCirc.pdf>]
+<PaperFigures/NNcompWithoutTitles/circAttractive.pdf, id=492, 361.35pt x 361.35
 pt>
 File: PaperFigures/NNcompWithoutTitles/circAttractive.pdf Graphic file (type pd
 f)
  <use PaperFigures/NNcompWithoutTitles/circAttractive.pdf>
 Package pdftex.def Info: PaperFigures/NNcompWithoutTitles/circAttractive.pdf us
-ed on input line 405.
+ed on input line 485.
 (pdftex.def)             Requested size: 213.39566pt x 213.39867pt.
 
-<PaperFigures/compWithoutTitles/circAttractive.pdf, id=499, 361.35pt x 361.35pt
+<PaperFigures/compWithoutTitles/circAttractive.pdf, id=493, 361.35pt x 361.35pt
 >
 File: PaperFigures/compWithoutTitles/circAttractive.pdf Graphic file (type pdf)
 
  <use PaperFigures/compWithoutTitles/circAttractive.pdf>
 Package pdftex.def Info: PaperFigures/compWithoutTitles/circAttractive.pdf used
- on input line 406.
+ on input line 486.
 (pdftex.def)             Requested size: 213.39566pt x 213.39867pt.
- [26pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
-16}) has been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.412 
-       <./PaperFigures/cylinderIntersection.png (PNG copy)> <./PaperFigures/com
-pWithoutTitles/circConvCirc.pdf>]
-<PaperFigures/NNcompWithoutTitles/circCW.pdf, id=515, 361.35pt x 361.35pt>
+<PaperFigures/NNcompWithoutTitles/circCW.pdf, id=498, 361.35pt x 361.35pt>
 File: PaperFigures/NNcompWithoutTitles/circCW.pdf Graphic file (type pdf)
 
 <use PaperFigures/NNcompWithoutTitles/circCW.pdf>
 Package pdftex.def Info: PaperFigures/NNcompWithoutTitles/circCW.pdf used on in
-put line 433.
+put line 513.
 (pdftex.def)             Requested size: 213.39566pt x 213.39867pt.
 
-<PaperFigures/compWithoutTitles/circCW.pdf, id=516, 361.35pt x 361.35pt>
+<PaperFigures/compWithoutTitles/circCW.pdf, id=499, 361.35pt x 361.35pt>
 File: PaperFigures/compWithoutTitles/circCW.pdf Graphic file (type pdf)
 
 <use PaperFigures/compWithoutTitles/circCW.pdf>
 Package pdftex.def Info: PaperFigures/compWithoutTitles/circCW.pdf used on inpu
-t line 434.
+t line 514.
 (pdftex.def)             Requested size: 213.39566pt x 213.39867pt.
- [27pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+ [24pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 17}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.440 
-       <./PaperFigures/NNcompWithoutTitles/circAttractive.pdf> <./PaperFigures/
-compWithoutTitles/circAttractive.pdf>]
-<PaperFigures/NNcompWithoutTitles/circTv.pdf, id=533, 361.35pt x 361.35pt>
+l.519 \end{figure}
+                   <./PaperFigures/NNcompWithoutTitles/circAttractive.pdf> <./P
+aperFigures/compWithoutTitles/circAttractive.pdf>] [25pdfTeX warning (ext4): de
+stination with the same identifier (name{figure.2.18}) has been already used, d
+uplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.535 \end{equation}
+                     <./PaperFigures/NNcompWithoutTitles/circCW.pdf> <./PaperFi
+gures/compWithoutTitles/circCW.pdf>]
+<PaperFigures/NNcompWithoutTitles/circTv.pdf, id=531, 361.35pt x 361.35pt>
 File: PaperFigures/NNcompWithoutTitles/circTv.pdf Graphic file (type pdf)
 
 <use PaperFigures/NNcompWithoutTitles/circTv.pdf>
 Package pdftex.def Info: PaperFigures/NNcompWithoutTitles/circTv.pdf used on in
-put line 468.
+put line 548.
 (pdftex.def)             Requested size: 213.39566pt x 213.39867pt.
 
-<PaperFigures/compWithoutTitles/circTv.pdf, id=534, 361.35pt x 361.35pt>
+<PaperFigures/compWithoutTitles/circTv.pdf, id=532, 361.35pt x 361.35pt>
 File: PaperFigures/compWithoutTitles/circTv.pdf Graphic file (type pdf)
 
 <use PaperFigures/compWithoutTitles/circTv.pdf>
 Package pdftex.def Info: PaperFigures/compWithoutTitles/circTv.pdf used on inpu
-t line 469.
+t line 549.
 (pdftex.def)             Requested size: 213.39566pt x 213.39867pt.
- [28pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
-18}) has been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.475 
-       <./PaperFigures/NNcompWithoutTitles/circCW.pdf> <./PaperFigures/compWith
-outTitles/circCW.pdf>]
-<PaperFigures/compWithoutTitles/circConvCircTv.pdf, id=549, 361.35pt x 361.35pt
+<PaperFigures/compWithoutTitles/circConvCircTv.pdf, id=534, 361.35pt x 361.35pt
 >
 File: PaperFigures/compWithoutTitles/circConvCircTv.pdf Graphic file (type pdf)
 
  <use PaperFigures/compWithoutTitles/circConvCircTv.pdf>
 Package pdftex.def Info: PaperFigures/compWithoutTitles/circConvCircTv.pdf used
- on input line 487.
+ on input line 567.
 (pdftex.def)             Requested size: 227.62204pt x 227.62413pt.
- [29pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+ [26pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 19}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.493 
+l.573 
        <./PaperFigures/NNcompWithoutTitles/circTv.pdf> <./PaperFigures/compWith
 outTitles/circTv.pdf>]
-<PaperFigures/compWithoutTitles/circRepulsive.pdf, id=564, 361.35pt x 361.35pt>
+<PaperFigures/compWithoutTitles/circRepulsive.pdf, id=549, 361.35pt x 361.35pt>
 File: PaperFigures/compWithoutTitles/circRepulsive.pdf Graphic file (type pdf)
 <use PaperFigures/compWithoutTitles/circRepulsive.pdf>
 Package pdftex.def Info: PaperFigures/compWithoutTitles/circRepulsive.pdf used 
-on input line 498.
+on input line 578.
 (pdftex.def)             Requested size: 184.9429pt x 184.9422pt.
 
-<PaperFigures/compWithoutTitles/circRepulsiveSmallr.pdf, id=565, 361.35pt x 361
+<PaperFigures/compWithoutTitles/circRepulsiveSmallr.pdf, id=550, 361.35pt x 361
 .35pt>
 File: PaperFigures/compWithoutTitles/circRepulsiveSmallr.pdf Graphic file (type
  pdf)
  <use PaperFigures/compWithoutTitles/circRepulsiveSmallr.pdf>
 Package pdftex.def Info: PaperFigures/compWithoutTitles/circRepulsiveSmallr.pdf
- used on input line 499.
+ used on input line 579.
 (pdftex.def)             Requested size: 184.9429pt x 184.9422pt.
- [30pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+ [27pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 20}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.507 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-2.21}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.507 
-       <./PaperFigures/compWithoutTitles/circConvCircTv.pdf> <./PaperFigures/co
-mpWithoutTitles/circRepulsive.pdf> <./PaperFigures/compWithoutTitles/circRepuls
-iveSmallr.pdf>]
+l.585 
+       <./PaperFigures/compWithoutTitles/circConvCircTv.pdf>]
 Package epstopdf Info: Source file: <PaperFigures/tanh_ICUAS2018.eps>
 (epstopdf)                    date: 2017-11-05 13:47:30
 (epstopdf)                    size: 19399 bytes
@@ -1407,111 +1443,124 @@ to.pdf>
 (epstopdf)                    size: 4194 bytes
 (epstopdf)             Command: <epstopdf --outfile=PaperFigures/tanh_ICUAS2018
 -eps-converted-to.pdf PaperFigures/tanh_ICUAS2018.eps>
-(epstopdf)             \includegraphics on input line 523.
+(epstopdf)             \includegraphics on input line 603.
 Package epstopdf Info: Output file is already uptodate.
 
-<PaperFigures/tanh_ICUAS2018-eps-converted-to.pdf, id=580, 421.575pt x 316.1812
+<PaperFigures/tanh_ICUAS2018-eps-converted-to.pdf, id=559, 421.575pt x 316.1812
 4pt>
 File: PaperFigures/tanh_ICUAS2018-eps-converted-to.pdf Graphic file (type pdf)
  <use PaperFigures/tanh_ICUAS2018-eps-converted-to.pdf>
 Package pdftex.def Info: PaperFigures/tanh_ICUAS2018-eps-converted-to.pdf used 
-on input line 523.
+on input line 603.
 (pdftex.def)             Requested size: 227.62204pt x 170.72084pt.
 
-<PaperFigures/repulsiveFields/circRepulsiveDecay.pdf, id=581, 361.35pt x 361.35
+<PaperFigures/repulsiveFields/circRepulsiveDecay.pdf, id=560, 361.35pt x 361.35
 pt>
 File: PaperFigures/repulsiveFields/circRepulsiveDecay.pdf Graphic file (type pd
 f)
  <use PaperFigures/repulsiveFields/circRepulsiveDecay.pdf>
 Package pdftex.def Info: PaperFigures/repulsiveFields/circRepulsiveDecay.pdf us
-ed on input line 524.
+ed on input line 604.
 (pdftex.def)             Requested size: 199.16928pt x 199.16766pt.
+ [28pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+21}) has been already used, duplicate ignored
 
-<PaperFigures/gvfMovingTarget.png, id=586, 753.5653pt x 535.2497pt>
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.610 
+       <./PaperFigures/compWithoutTitles/circRepulsive.pdf> <./PaperFigures/com
+pWithoutTitles/circRepulsiveSmallr.pdf>]
+<PaperFigures/gvfMovingTarget.png, id=577, 753.5653pt x 535.2497pt>
 File: PaperFigures/gvfMovingTarget.png Graphic file (type png)
 
 <use PaperFigures/gvfMovingTarget.png>
-Package pdftex.def Info: PaperFigures/gvfMovingTarget.png used on input line 54
+Package pdftex.def Info: PaperFigures/gvfMovingTarget.png used on input line 62
 3.
 (pdftex.def)             Requested size: 284.52756pt x 202.09023pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[31pdfTeX warning (ext4): destination with the same identifier (name{figure.2.2
+[29pdfTeX warning (ext4): destination with the same identifier (name{figure.2.2
 2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.552 
+l.632 
        <./PaperFigures/tanh_ICUAS2018-eps-converted-to.pdf> <./PaperFigures/rep
-ulsiveFields/circRepulsiveDecay.pdf>] [32pdfTeX warning (ext4): destination wit
+ulsiveFields/circRepulsiveDecay.pdf>] [30pdfTeX warning (ext4): destination wit
 h the same identifier (name{figure.2.23}) has been already used, duplicate igno
 red
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.552 
+l.632 
        <./PaperFigures/gvfMovingTarget.png>]
-<PaperFigures/singleObstacle.pdf, id=618, 361.35pt x 180.675pt>
+<PaperFigures/singleObstacle.pdf, id=606, 361.35pt x 180.675pt>
 File: PaperFigures/singleObstacle.pdf Graphic file (type pdf)
 
 <use PaperFigures/singleObstacle.pdf>
-Package pdftex.def Info: PaperFigures/singleObstacle.pdf used on input line 555
+Package pdftex.def Info: PaperFigures/singleObstacle.pdf used on input line 635
 .
 (pdftex.def)             Requested size: 341.43306pt x 170.7167pt.
 
-<PaperFigures/singleObstacleWithCirc.pdf, id=621, 361.35pt x 180.675pt>
+<PaperFigures/singleObstacleWithCirc.pdf, id=609, 361.35pt x 180.675pt>
 File: PaperFigures/singleObstacleWithCirc.pdf Graphic file (type pdf)
 
 <use PaperFigures/singleObstacleWithCirc.pdf>
 Package pdftex.def Info: PaperFigures/singleObstacleWithCirc.pdf used on input 
-line 565.
+line 645.
 (pdftex.def)             Requested size: 341.43306pt x 170.7167pt.
- [33pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+ [31pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 24}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.574 \section
+l.654 \section
               {Unmanned Aerial Vehicle Simulation}pdfTeX warning (ext4): destin
 ation with the same identifier (name{figure.2.25}) has been already used, dupli
 cate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.574 \section
+l.654 \section
               {Unmanned Aerial Vehicle Simulation} <./PaperFigures/singleObstac
 le.pdf> <./PaperFigures/singleObstacleWithCirc.pdf>]
-<PaperFigures/robot.jpg, id=637, 5331.92pt x 2999.205pt>
+<PaperFigures/robot.jpg, id=626, 5331.92pt x 2999.205pt>
 File: PaperFigures/robot.jpg Graphic file (type jpg)
 
 <use PaperFigures/robot.jpg>
-Package pdftex.def Info: PaperFigures/robot.jpg used on input line 579.
+Package pdftex.def Info: PaperFigures/robot.jpg used on input line 659.
 (pdftex.def)             Requested size: 426.79134pt x 240.03284pt.
- [34pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+ [32pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 26}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.589 
-       <./PaperFigures/robot.jpg>] [35]
+l.669 
+       <./PaperFigures/robot.jpg>] [33]
 Chapter 3.
 
-Underfull \hbox (badness 1072) in paragraph at lines 592--593
+Underfull \hbox (badness 1072) in paragraph at lines 672--673
 \OT1/txr/m/n/12 singularities will be demonstrated, weighting functions will be
  investigated, and a
  []
 
-[36
+[34
 
 ]
-Overfull \hbox (38.64pt too wide) in paragraph at lines 643--645
+Underfull \hbox (badness 1418) in paragraph at lines 706--715
+\OT1/txr/bx/n/12 Phase II Objective: \OT1/txr/m/n/12 Investigate GVF weighting 
+functions that influence obstacle
+ []
+
+[35]
+Overfull \hbox (38.64pt too wide) in paragraph at lines 729--731
 \OT1/txr/bx/n/12 Deliverable: $[]$
  []
 
-(main.bbl [37] [38]
-Underfull \hbox (badness 1226) in paragraph at lines 13--16
+(main.bbl [36]
+Underfull \hbox (badness 1226) in paragraph at lines 22--25
 []\OT1/txr/m/n/12 Teuliere, C., Eck, L., and Marchand, E., ``Chasing a moving t
 arget from a
  []
@@ -1522,16 +1571,16 @@ Missing character: There is no Ã in font txr!
 Missing character: There is no ³ in font txr!
 Missing character: There is no Ã in font txr!
 Missing character: There is no © in font txr!
-[39
+[37
 
-] [40]
+] [38]
 Missing character: There is no Ã in font txr!
 Missing character: There is no § in font txr!
- [41]
+ [39]
 Missing character: There is no Ã in font txr!
 Missing character: There is no § in font txr!
 
-Underfull \hbox (badness 1231) in paragraph at lines 239--243
+Underfull \hbox (badness 1231) in paragraph at lines 227--231
 \OT1/txr/m/n/12 for Evaluating an UAV COTS-Based Embedded Sensors System,'' \OT
 1/txr/m/it/12 Journal of
  []
@@ -1541,40 +1590,46 @@ Missing character: There is no € in font txr!
 Missing character: There is no ” in font txr!
 ) 
 AED: lastpage setting LastPage
-[42]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 652.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 652.
+[40]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 738.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 738.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 652.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 652.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 738.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 738.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 0E18AD8EA6FC03984BADEDAF88CEB2BC;1352.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 652.
+(rerunfilecheck)             Checksum: 3EC74A214FEC22EA9752D4F8FB78872D;1199.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 738.
  ) 
 Here is how much of TeX's memory you used:
- 10643 strings out of 493320
- 156435 string characters out of 3138948
- 267416 words of memory out of 3000000
- 13704 multiletter control sequences out of 15000+200000
- 36106 words of font info for 86 fonts, out of 3000000 for 9000
+ 10692 strings out of 493320
+ 157069 string characters out of 3138948
+ 268392 words of memory out of 3000000
+ 13751 multiletter control sequences out of 15000+200000
+ 55376 words of font info for 141 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,7n,40p,1390b,498s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 34i,7n,40p,1388b,498s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTe
 X 2.9/fonts/type1/public/txfonts/rtcxr.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
 ype1/public/txfonts/rtxb.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/tx
-fonts/rtxbi.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/txfonts/rtxbsc.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/txfonts/rtxi.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/txfonts/rtxmi.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/txfonts/rtxr.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/txfonts/txex.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/txf
-onts/txsy.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:
-/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/M
-iKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/urw/times/utmri8a.pfb>
-Output written on main.pdf (42 pages, 5330659 bytes).
+fonts/rtxbi.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/txfonts/rtxbmi.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/txfonts/rtxbsc.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/txfonts/rtxi.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/txfonts/rtxmi.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/txfonts/rtxr.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/t
+xfonts/txbsy.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/txfonts/txex.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/txfonts/txsy.pfb><C:/Program
+ Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw
+/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pf
+b>
+Output written on main.pdf (40 pages, 5366670 bytes).
 PDF statistics:
- 781 PDF objects out of 1000 (max. 8388607)
- 191 named destinations out of 1000 (max. 500000)
- 365 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 773 PDF objects out of 1000 (max. 8388607)
+ 189 named destinations out of 1000 (max. 500000)
+ 341 words of extra memory for PDF output out of 10000 (max. 10000000)
 
