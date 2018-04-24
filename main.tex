@@ -395,38 +395,6 @@ Multiplicative scalar weights (\textit{\textbf{G,H,L}}) have been used to modify
 \vec{v} = \boldsymbol{G}\vec{v}_{conv} + \boldsymbol{H}\vec{v}_{circ} + \boldsymbol{L}\vec{v}_{tv} 
 \end{equation}
 
-
-\begin{equation}\label{weightedSimpleGVF}
-\boldmath{sign(H)} = -sign(\lambda)
-\end{equation}
-
-\begin{equation}\label{weightedSimpleGVF}
-\boldmath{|H|} \propto \frac{d\lambda}{dt}
-\end{equation}
-
-
-\begin{equation}\label{weightedSimpleGVF}
-\boldmath{G} \propto v_{closing}
-\end{equation}
-
-
-\begin{equation}\label{weightedSimpleGVF}
-\boldmath{R} \propto v_{closing}
-\end{equation}
-
-\begin{equation}\label{weightedSimpleGVF}
-\boldmath{R} \propto Range
-\end{equation}
-
-
-
-
-
-
-
-
-
-
 Producing a GVF that converges and circulates a target path consisting of points $q=[x_1(t),x_2(t)...x_n(t)]$ $\in$ $\mathbb{R}^n$, first requires \textit{(n-1)} implicit surface functions {$\alpha_i(x_1,x_2,...x_n,t), i=1,2,...n-1$} to be defined. UAVs are restricted to $\mathbb{R}^3$ spatial configuration space, therefore two surface functions must be defined to calculate a GVF. Surface functions must have 1) \textit{continuous first order partial derivatives} and 2)\textit{ bounded second order partial derivatives} to guarantee convergence to the curve \cite{goncalves_circulation_2010}. The total gradient vector field converges and circulates the intersection, or level sets, of the two surfaces. For a UAV traveling at constant altitude, the first surface can be represented as a flat plane in Equation \ref{planeZ}. Intersecting the flat plane with a static vertical plane, Equation \ref{planeX}, produces a gradient vector field that converges and follows a straight line, Figure \ref{fig:gvfLinePrimitive}.
 
 \begin{equation}

@@ -13,12 +13,12 @@
 \contentsline {subsection}{\numberline {2.3.3}Lyapunov Vector Fields}{15}{subsection.2.3.3}
 \contentsline {subsection}{\numberline {2.3.4}Non-Lyapunov Vector Fields}{19}{subsection.2.3.4}
 \contentsline {subsection}{\numberline {2.3.5}Gradient Vector Field}{20}{subsection.2.3.5}
-\contentsline {section}{\numberline {2.4}Unmanned Aerial Vehicle Simulation}{32}{section.2.4}
-\contentsline {section}{\numberline {2.5}Literature Review Summary}{32}{section.2.5}
-\contentsline {chapter}{\numberline {3}Methodology}{34}{chapter.3}
-\contentsline {section}{\numberline {3.1}Methods Overview}{34}{section.3.1}
-\contentsline {section}{\numberline {3.2}Phase I}{34}{section.3.2}
-\contentsline {section}{\numberline {3.3}Phase II}{34}{section.3.3}
-\contentsline {section}{\numberline {3.4}Phase III}{35}{section.3.4}
-\contentsline {section}{\numberline {3.5}Summary of Phases}{35}{section.3.5}
-\contentsline {chapter}{References}{37}{schapter.5}
+\contentsline {section}{\numberline {2.4}Unmanned Aerial Vehicle Simulation}{31}{section.2.4}
+\contentsline {section}{\numberline {2.5}Literature Review Summary}{31}{section.2.5}
+\contentsline {chapter}{\numberline {3}Methodology}{33}{chapter.3}
+\contentsline {section}{\numberline {3.1}Methods Overview}{33}{section.3.1}
+\contentsline {section}{\numberline {3.2}Phase I}{33}{section.3.2}
+\contentsline {section}{\numberline {3.3}Phase II}{33}{section.3.3}
+\contentsline {section}{\numberline {3.4}Phase III}{34}{section.3.4}
+\contentsline {section}{\numberline {3.5}Summary of Phases}{34}{section.3.5}
+\contentsline {chapter}{References}{36}{schapter.5}
