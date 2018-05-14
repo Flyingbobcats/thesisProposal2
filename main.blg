@@ -1,6 +1,10 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
 The style file: aiaa.bst
 Database file #1: bib.bib
+Warning--I didn't find a database entry for "wilhelm_direct_2017"
+Warning--I didn't find a database entry for "kim_escaping_2009"
+Warning--I didn't find a database entry for "lei_tang_novel_2010"
+Warning--I didn't find a database entry for "li_efficient_2012"
 Warning--empty booktitle in manjunath_application_2016
 Warning--empty journal in nelson_cooperative_2005
 Warning--empty booktitle in griffiths_vector_2006
@@ -9,4 +13,4 @@ Warning--empty booktitle in pereira_framework_2016
 Warning--empty booktitle in zhou_vector_2014
 Warning--empty booktitle in goncalves_artificial_2009
 Warning--empty booktitle in louali_designing_2014
-(There were 8 warnings)
+(There were 12 warnings)

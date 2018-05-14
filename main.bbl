@@ -61,6 +61,48 @@ Yamasaki, T., Balakrishnan, S.~N., and Takano, H., \enquote{Integrated guidance
   and autopilot for a path-following {UAV} via high-order sliding modes,} {\em
   American {Control} {Conference} ({ACC}), 2012\/}, IEEE, 2012, pp. 143--148.
 
+\bibitem{khatib_real-time_1986}
+Khatib, O., \enquote{Real-time obstacle avoidance for manipulators and mobile
+  robots,} {\em The international journal of robotics research\/}, Vol.~5,
+  No.~1, 1986, pp.~90--98.
+
+\bibitem{rimon_exact_1992}
+Rimon, E., \enquote{Exact {Robot} {Navigation} {Using} {Artificial} {Potential}
+  {Functions}.pdf,} 1992.
+
+\bibitem{borenstein_real-time_1990}
+Borenstein, J. and Koren, Y., \enquote{Real-time obstacle avoidance for fast
+  mobile robots in cluttered environments,} {\em Robotics and {Automation},
+  1990. {Proceedings}., 1990 {IEEE} {International} {Conference} on\/}, IEEE,
+  1990, pp. 572--577.
+
+\bibitem{borenstein_vector_1991}
+Borenstein, J. and Koren, Y., \enquote{The vector field histogram-fast obstacle
+  avoidance for mobile robots,} {\em IEEE transactions on robotics and
+  automation\/}, Vol.~7, No.~3, 1991, pp.~278--288.
+
+\bibitem{koren_potential_1991}
+Koren, Y. and Borenstein, J., \enquote{Potential {Field} {Methods} and their
+  inherent limitions for morbile robot navigation.pdf,} 1991.
+
+\bibitem{liu_virtual-waypoint_2016}
+Liu, Y. and Zhao, Y., \enquote{A virtual-waypoint based artificial potential
+  field method for {UAV} path planning,} {\em Guidance, {Navigation} and
+  {Control} {Conference} ({CGNCC}), 2016 {IEEE} {Chinese}\/}, IEEE, 2016, pp.
+  949--953.
+
+\bibitem{goerzen_survey_2010}
+Goerzen, C., Kong, Z., and Mettler, B., \enquote{A {Survey} of {Motion}
+  {Planning} {Algorithms} from the {Perspective} of {Autonomous} {UAV}
+  {Guidance},} {\em Journal of Intelligent and Robotic Systems\/}, Vol.~57, No.
+  1-4, Jan. 2010, pp.~65--100.
+
+\bibitem{liao_vision-based_2016}
+Liao, F., Wang, J., Teo, R., Hu, Y., Lai, S., Cui, J., and Lin, F.,
+  \enquote{Vision-based autonomous flocking of {UAVs} in unknown forest
+  environment,} {\em Control and {Automation} ({ICCA}), 2016 12th {IEEE}
+  {International} {Conference} on\/}, IEEE, 2016, pp. 892--897.
+
 \bibitem{sujit_unmanned_2014}
 Sujit, P., Saripalli, S., and Sousa, J.~B., \enquote{Unmanned {Aerial}
   {Vehicle} {Path} {Following}: {A} {Survey} and {Analysis} of {Algorithms} for
@@ -85,48 +127,6 @@ Capello, E. and Tempo, R., \enquote{A simulation-based approach for control
 
 \bibitem{nelson_cooperative_2005}
 Nelson, D.~R., \enquote{Cooperative control of miniature air vehicles,} 2005.
-
-\bibitem{khatib_real-time_1986}
-Khatib, O., \enquote{Real-time obstacle avoidance for manipulators and mobile
-  robots,} {\em The international journal of robotics research\/}, Vol.~5,
-  No.~1, 1986, pp.~90--98.
-
-\bibitem{rimon_exact_1992}
-Rimon, E., \enquote{Exact {Robot} {Navigation} {Using} {Artificial} {Potential}
-  {Functions}.pdf,} 1992.
-
-\bibitem{liu_virtual-waypoint_2016}
-Liu, Y. and Zhao, Y., \enquote{A virtual-waypoint based artificial potential
-  field method for {UAV} path planning,} {\em Guidance, {Navigation} and
-  {Control} {Conference} ({CGNCC}), 2016 {IEEE} {Chinese}\/}, IEEE, 2016, pp.
-  949--953.
-
-\bibitem{koren_potential_1991}
-Koren, Y. and Borenstein, J., \enquote{Potential {Field} {Methods} and their
-  inherent limitions for morbile robot navigation.pdf,} 1991.
-
-\bibitem{liao_vision-based_2016}
-Liao, F., Wang, J., Teo, R., Hu, Y., Lai, S., Cui, J., and Lin, F.,
-  \enquote{Vision-based autonomous flocking of {UAVs} in unknown forest
-  environment,} {\em Control and {Automation} ({ICCA}), 2016 12th {IEEE}
-  {International} {Conference} on\/}, IEEE, 2016, pp. 892--897.
-
-\bibitem{borenstein_vector_1991}
-Borenstein, J. and Koren, Y., \enquote{The vector field histogram-fast obstacle
-  avoidance for mobile robots,} {\em IEEE transactions on robotics and
-  automation\/}, Vol.~7, No.~3, 1991, pp.~278--288.
-
-\bibitem{borenstein_real-time_1990}
-Borenstein, J. and Koren, Y., \enquote{Real-time obstacle avoidance for fast
-  mobile robots in cluttered environments,} {\em Robotics and {Automation},
-  1990. {Proceedings}., 1990 {IEEE} {International} {Conference} on\/}, IEEE,
-  1990, pp. 572--577.
-
-\bibitem{goerzen_survey_2010}
-Goerzen, C., Kong, Z., and Mettler, B., \enquote{A {Survey} of {Motion}
-  {Planning} {Algorithms} from the {Perspective} of {Autonomous} {UAV}
-  {Guidance},} {\em Journal of Intelligent and Robotic Systems\/}, Vol.~57, No.
-  1-4, Jan. 2010, pp.~65--100.
 
 \bibitem{nelson_vector_2006}
 Nelson, D.~R., Barber, D.~B., McLain, T.~W., and Beard, R.~W., \enquote{Vector

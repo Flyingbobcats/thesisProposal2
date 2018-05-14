@@ -197,6 +197,67 @@ Vector Field (VF) guidance is a method that is mainly used for path following an
 
  \pagebreak
  
+ \section{Methods Overview}
+ The proposed research will be conducted in three phases where VF guidance  singularities will be demonstrated, weighting functions will be investigated, and a developed GVF will be validated on a ground robot simulating a UAV.  Phases I and II will be conducted in a simulation environment that combines mission paths and obstacles into a single GVF. Phase III will be conducted with a ground robot simulating a UAV guided by the modified GVF in real-time. Dubin's fixed wing constraints will be imposed in simulations and experiments. 
+ 
+ 
+ \section{Phase I}
+ \textbf{Demonstrate GVF singularities for circular obstacles.} A simulation environment will be built that generates GVFs consisting of mission paths and obstacles. Circular and elliptical obstacles will be investigated and the resulting singularities will be characterized. Static weights will be used and the performance of the guidance measured in distance traveled and time of flight. 
+ 
+ 
+ 
+ \section{Phase II}
+ \textbf{Investigate GVF weighting functions that influence obstacle avoidance.} UAV closing rate, position, and range will be used to develop dynamic GVF weights for convergence and circulation. The modified GVF will be compared against a static and strictly repulsive GVF. Distance traveled and time of flight will be used to as metrics to compare the modified GVF to the unmodified GVF.  
+ 
+ 
+ 
+ \section{Phase III}
+ \textbf{Validate modified GVF model with ground robot experiments.} The modified GVF developed in Phase II will be implemented on a differential drive ground robot simulating a fixed wing UAV. Guidance performance while avoiding static obstacles will be demonstrated.
+ 
+ 
+ \section{Summary of Phases}
+ 
+ Each phase consists of an \textbf{objective} that will be accomplished by executing \textit{tasks}.
+ Completion of all objectives and phases will result in the final \underline{deliverable}. \\[1cm]
+ 
+ \noindent
+ \textbf{Phase I Objective:} Demonstrate Gradient Vector Field Singularities
+ \newline
+ \textit{
+ 	Tasks:
+ 	\begin{enumerate}
+ 		\item Build a GVF simulation environment
+ 		\item Evaluate scenarios where singularities are expected
+ 		\item Characterize location of singularities 
+ 	\end{enumerate}
+ }
+ 
+ \noindent
+ \textbf{Phase II Objective:} Investigate GVF weighting functions that influence obstacle avoidance
+ \newline
+ \textit{
+ 	Tasks:
+ 	\begin{enumerate}
+ 		\item Formulate circulation and convergence weights as functions of UAV state
+ 		\item Determine combination of GVF weights that produces optimal guidance in simulation
+ 	\end{enumerate}
+ }
+ 
+ \noindent
+ \textbf{Phase III Objective:} Validate modified GVF model with ground robot experiments
+ \newline
+ \textit{
+ 	Tasks:
+ 	\begin{enumerate}
+ 		\item Build differential drive robot
+ 		\item Build robotic framework to take guidance commands
+ 		\item Repeat simulations performed in Phase II on ground robot
+ 	\end{enumerate}
+ }
+ 
+ \noindent
+ \textbf{Deliverable:} \underline{Adaptive GVF parameterized weights optimal guidance for path following and static} \underline{ obstacle avoidance}.
+ 
  
 
 
@@ -227,17 +288,54 @@ The UAV autopilot is responsible for controlling a pre-planned path and maintain
 	\label{fig:autopilotloops}
 \end{figure}
 
-The UAV guidance system is responsible for taking high level pre-planned paths from the ground station and providing a reference heading command to the control system. Several methods for path following guidance were investigated in \cite{sujit_unmanned_2014} consisting of carrot chasing \cite{manjunath_application_2016}, non-linear guidance law, pure line-of-sight \cite{fortuna_cascaded_2015}, linear quadratic regulator \cite{capello_simulation-based_2012}, and vector field method \cite{nelson_cooperative_2005}. A Monte Carlo simulation with wind disturbances was conducted for the guidance methods above in \cite{sujit_unmanned_2014} to determine each method's performance based on accuracy, robustness, and control effort. The vector field method followed the path with the least tracking error and control effort which is the primary goal of path following. 
+\section{Path Planning}
+
+\section{Guidance}
+\subsection{Waypoint Guidance}
+Waypoint guidance aligns the vehicle with the current active waypoint that lies along a pre-planned path. Paths are typically generated off-line and can be optimized for shortest distance traveled and further refined to be flyable for a particular vehicle. Paths may also be optimized to produce flight patterns that increase sensor coverage of an area of interest \cite{wilhelm_direct_2017}. 
+
+If an obstacle lies along that sensor path, the UAV must avoid the obstacle but also return back to the sensor path such that a minimal length of the path is missed during data collection. The number of waypoints that divert around an obstacle effects how closely the UAV tracks the outside of the obstacle and how much of the original path can be traveled. Few obstacle diversion waypoints leads to excess path deviation. Increasing the number of diversion waypoints reduces path deviation, however has diminishing returns. A cost function $\gamma$ can be used to measure the deviation from a planned path while avoiding obstacles with diversion waypoints, shown in Equation \ref{eq:diversionCost}.
+
+\begin{equation}
+\label{eq:diversionCost}
+\begin{aligned}
+\gamma =  \frac{1}{r_O}\int_{0}^{tf}ydt
+\end{aligned}
+\end{equation}
 
 
-\section{Vector Field Guidance}
-\subsection{Introduction to Vector Field Guidance}
- Vector Field is a guidance and control approach that can be used to transition a robotic system from an initial state to a final state. Final states, or goals, act as artificial attractive forces that pull on the robotic system while obstacles act as artificial repulsive forces that push the robotic system away. Classes of vector fields can be categorized as point seeking or path following algorithms. Potential Field and Virtual Force Field (VFF) methods converge to a single point and avoid obstacles by applying artificial attractive and repulsive forces. Lyapunov and Gradient Vector Fields provide guidance that asymptotically converges and follows a path. Obstacle avoidance has been achieved with Gradient Vector Fields by assigning repulsive weights to a convergence term. Weights currently act as a high level specification of the desired guidance behavior and may be further optimized. 
+An example of a UAV following diversion waypoints is shown in Figure \ref{fig:numWaypointsPath} and the cost associated with increasing number of waypoints in Figure \ref{fig:numWaypoints}.
+
+
+\begin{figure}[H]
+	\begin{subfigmatrix}{2}% number of columns
+		\centering	
+		\subfigure []{\includegraphics[width=7cm,trim=40 0 60 0,clip] {Figures/Waypoints/1Wpts}}
+		\subfigure []{\includegraphics[width=7cm,trim=40 0 60 0,clip] {Figures/Waypoints/6Wpts}}
+		\hspace*{0mm}
+	\end{subfigmatrix}
+	\caption{Obstacle Diversion Waypoints}
+	\label{fig:numWaypointsPath}
+\end{figure}
+
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=10cm]{Figures/Waypoints/costVnumWpts}
+	\caption{Cost impact versus number of waypoints}
+	\label{fig:numWaypoints}
+\end{figure}
+
+It would be beneficial to include obstacle avoidance into a UAVs guidance system to remove the need to communicate with the ground station or use an on-board path planner which may be accomplished with potential field or vector field. \\
+
 
 \subsection{Potential Field}
-Potential field models a robot's workspace as a gradient potential of attractive and repulsive artificial forces \cite{khatib_real-time_1986}. Robots can be represented as a point mass initially located at a globally maximum potential that transitions to a goal located at a globally minimum potential. Obstacles are represented by a high potential that act as repulsive forces with an exponentially decaying strength as to only influence the robot when approaching the obstacle. The potential gradient can be depicted as a mesh such as that shown in Figure \ref{fig:pfobstacle}. Potential field is unique in that it combines path planning, trajectory planning, and control into a single system \cite{rimon_exact_1992}. 
 
-\begin{figure}[h!]
+
+Potential field is based on the principle of artificial attractive and repulsive forces acting on a point mass that is guided to a desired goal while avoiding static and dynamic obstacles \cite{khatib_real-time_1986}. Goal states are represented as an attractive force that pulls a point mass in the direction of minimal energy while obstacles are represented as repulsive forces that act locally to push the point mass away. Potential field is also capable of acting as a path and trajectory planning algorithm \cite{rimon_exact_1992}, possibly eliminating the off-board path planner. 
+
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=7cm]{PaperFigures/pfObstacle}
 	\caption{Single Obstacle Potential Field Gradient \cite{liu_virtual-waypoint_2016}}
@@ -245,8 +343,7 @@ Potential field models a robot's workspace as a gradient potential of attractive
 \end{figure}
 
 
-Inherent problems with potential field methods were identified when experimentally validating the Virtual Force Field (VFF) method in \cite{koren_potential_1991}, including local minimums and oscillation. VFF operates on the artificial  attractive and repulsive force principle and is intended specifically for mobile robots seeking a goal in an environment with initially unknown obstacles. VFF decomposes a robots workspace into discretized cells that contain an integer certainty value associated with the confidence that an obstacle occupies the cell. A global goal applies an artificial attractive force on the robot that pulls it closer to the goal. As the robot detects obstacles, the certainty value increases in the cell associated with the obstacle's position. Cells apply artificial repulsive forces with magnitudes dependent on the certainty value and the distance to the cell. A vision based autonomous flocking method represented obstacles in a similar approach in \cite{liao_vision-based_2016}.
-
+An example of potential field can be found in \cite{borenstein_real-time_1990,borenstein_vector_1991,koren_potential_1991} which allowed for real time goal seeking with obstacle avoidance on a mobile ground robot equipped with ultrasonic sensors. The robot located at $(x_0,y_0)$ is attracted towards a a goal with constant magnitude force $\overrightarrow{F_t}$ located at $(x_t,y_t)$ and a distance $d_t$ from the robot. In the immediate area of the robot, an active window exists which records integer certainty values inside discrete cells. Cells containing an obstacle provide a repulsive force $\overrightarrow{F_{i,j}}$ opposite in direction to the line-of-sight from vehicle to cell location $(x_i,y_j)$, where $(i,j$) represents the cell index, $F_{cr}$ is a constant repulsive force, $W$ the vehicle's width, $C_{i,j}$ a cell's certainty, and $d_{i,j}$ the distance to the center of the cell with respect to robots center.
 
 \begin{figure}[H]
 	\centering
@@ -255,7 +352,33 @@ Inherent problems with potential field methods were identified when experimental
 	\label{fig:histogram}
 \end{figure}
 
-The VFF histogram method was validated on a mobile robot platform using ultrasonic sensors in \cite{borenstein_real-time_1990} and \cite{borenstein_vector_1991}, avoiding obstacles and seeking a goal. Several problems inherent to all potential field methods were identified while validating the VFF histogram method. Local minimum produced by closely spaced obstacles may create a situation where a robot settles into a lower potential prior to finding the global minimum which is shown in Figure \ref{fig:pfLocalMin}. Additionally, closely spaced obstacles may also be difficult to pass between, shown in Figure \ref{fig:vff}a. Oscillations can also be experienced near obstacles or in narrow passages at high speeds, shown in Figure \ref{fig:vff}b. 
+\begin{equation}\label{eq:vffRepulse}
+\overrightarrow{F_{i,j}} = \frac{F_{cr}W^nC_{i,j}}{d^n_{i,j}} \bigg( \frac{x_i-x_0}{d_{i,j}}\hat{x} + \frac{y_i-y_0}{d_{i,j}}\hat{y}\bigg)
+\end{equation}
+
+The total repulsive force exerted on the robot is determined by summing the active cells, shown in Equation \ref{eq:vffRepulseSum}
+
+
+\begin{equation}\label{eq:vffRepulseSum}
+\overrightarrow{F_r} = \sum_{i,j}\overrightarrow{F_{i,j}}
+\end{equation}
+
+
+\begin{equation}\label{eq:vffGoal}
+\overrightarrow{F_t} = F_{ct} \bigg( \frac{x_t-x_0}{d_{t}}\hat{x} + \frac{y_t-y_0}{d_{t}}\hat{y}\bigg)
+\end{equation}
+
+Summing together attractive and repulsive forces produce a vector $\overrightarrow{R}$ that can be used for heading guidance, shown in Equation \ref{eq:vffHeading}.
+
+\begin{equation}\label{eq:vffHeading}
+\overrightarrow{R} = \overrightarrow{F_r} + \overrightarrow{F_t}
+\end{equation}
+
+Major drawbacks to potential field were identified in \cite{koren_potential_1991} consisting of local minimum and oscillations in corridors. The local minimum problem occurs when closely spaced obstacle's potential combine to produce a well on the descent gradient where a pre-mature stable point is reached, shown in Figure \ref{fig:pfLocalMin}. Additionally, closely spaced obstacles may also be difficult to pass between, shown in Figure \ref{fig:vff}a. Oscillations can also be experienced near obstacles or in narrow passages at high speeds, shown in Figure \ref{fig:vff}b.
+
+
+
+ 
 
 \begin{figure}[H]
 	\begin{subfigmatrix}{2}% number of columns
@@ -267,6 +390,8 @@ The VFF histogram method was validated on a mobile robot platform using ultrason
 	\label{fig:pfLocalMin}
 \end{figure}
 
+Proposed solutions to local minimum include object clustering and virtual waypoint method \cite{liu_virtual-waypoint_2016}, virtual escaping route \cite{kim_escaping_2009}, and use of navigation functions \cite{goerzen_survey_2010}. Oscillations in potential field were addressed in \cite{lei_tang_novel_2010} and \cite{li_efficient_2012}.
+
 \begin{figure}[H]
 	\begin{subfigmatrix}{2}% number of columns
 		\centering
@@ -277,16 +402,32 @@ The VFF histogram method was validated on a mobile robot platform using ultrason
 	\label{fig:vff}
 \end{figure}
 
-Navigation functions \cite{goerzen_survey_2010} and obstacle clustering \cite{liu_virtual-waypoint_2016} have been used to prevent local minimums. Navigation functions relate kinematic constraints to the gradient potential to produce a bounded and local minimum free solution \cite{rimon_exact_1992}. Clustering closely spaced obstacles into a single and equally repulsive obstacle prevents local minimum from forming. Typical clustering can be seen in Figure \ref{fig:obstacleclustering}. 
+Navigation functions \cite{goerzen_survey_2010} and obstacle clustering \cite{liu_virtual-waypoint_2016} have been used to prevent local minimums in potential field. Navigation functions relate kinematic constraints to the gradient potential to produce a bounded and local minimum free solution \cite{rimon_exact_1992}. Clustering closely spaced obstacles into a single and equally repulsive obstacle prevents local minimum from forming, shown in Figure \ref{fig:obstacleclustering}.  
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=5cm]{PaperFigures/obstacleClustering}
+	\includegraphics[width=6cm]{PaperFigures/obstacleClustering}
 	\caption{Obstacle Clustering \cite{liu_virtual-waypoint_2016}}
 	\label{fig:obstacleclustering}
 \end{figure}
 
-Potential Field's ability to avoid obstacles and combine path planning, trajectory planning, and control into a single computationally inexpensive system makes it an attractive motion control system for robots seeking a singular point, even with the limitations discussed in \cite{koren_potential_1991}. Unlike ground mobile robots, fixed wing UAVs must maintain a minimum forward velocity and cannot converge to a single point. Vector fields that direct a UAV to paths connecting waypoints have been developed using Lyapunov and gradient vector field techniques. 
+Potential Field's ability to avoid obstacles and combine path planning, trajectory planning, and control into a single computationally inexpensive system makes it an attractive motion control system for robots seeking a singular point, even with the limitations discussed in \cite{koren_potential_1991}. \\
+========================= \\
+
+In addition to local minimum and oscillations, potential field may not be ideal for providing guidance to return to a sensor path after avoiding an obstacle. Unlike the mobile ground robots in \cite{borenstein_real-time_1990}, fixed wing UAVs must maintain a minimum forward velocity, have limited turning radius, and cannot converge to a single point. Vehicles with velocity and turn rate constraints may not return to a pre-planned path once the obstacle has been avoided. Vector fields that direct a UAV to paths connecting waypoints have been developed using Lyapunov and gradient vector field techniques. 
+
+
+
+\subsection{Path Following Vector Field Guidance}
+
+The UAV guidance system is responsible for taking high level pre-planned paths from the ground station and providing a reference heading command to the control system. Several methods for path following guidance were investigated in \cite{sujit_unmanned_2014} consisting of carrot chasing \cite{manjunath_application_2016}, non-linear guidance law, pure line-of-sight \cite{fortuna_cascaded_2015}, linear quadratic regulator \cite{capello_simulation-based_2012}, and vector field method \cite{nelson_cooperative_2005}. A Monte Carlo simulation with wind disturbances was conducted for the guidance methods above in \cite{sujit_unmanned_2014} to determine each method's performance based on accuracy, robustness, and control effort. The vector field method followed the path with the least tracking error and control effort which is the primary goal of path following. 
+
+
+\section{Vector Field Guidance}
+\subsection{Introduction to Vector Field Guidance}
+ Vector Field is a guidance and control approach that can be used to transition a robotic system from an initial state to a final state. Final states, or goals, act as artificial attractive forces that pull on the robotic system while obstacles act as artificial repulsive forces that push the robotic system away. Classes of vector fields can be categorized as point seeking or path following algorithms. Potential Field and Virtual Force Field (VFF) methods converge to a single point and avoid obstacles by applying artificial attractive and repulsive forces. Lyapunov and Gradient Vector Fields provide guidance that asymptotically converges and follows a path. Obstacle avoidance has been achieved with Gradient Vector Fields by assigning repulsive weights to a convergence term. Weights currently act as a high level specification of the desired guidance behavior and may be further optimized. 
+
+
  
  
 \subsection{Lyapunov Vector Fields}
@@ -636,67 +777,35 @@ Testing new guidance, navigation, and control algorithms on flight hardware can 
 Vector fields can provide guidance and control for robots through the use of artificial attractive and repulsive forces. Converging to a singular point while avoiding obstacles can be achieved with Potential Field or Virtual Force Field methods. Fixed wing UAVs cannot converge to a singular point therefore vector fields that asymptotically converge and follow a path is beneficial. Lyapunov and Gradient Vector Fields have been used for path following, standoff tracking, and obstacle avoidance. Gradient Vector Field provides convenient and decoupled access to scalar multiplicative weights for the convergence, circulation, and time-varying terms. Negative weights can be used for obstacle avoidance, however have so far been used only as high level specification of guidance behavior. Specifying vector field weights as functions of a UAV's state may enable an optimal guidance for obstacle avoidance. Validation of a modified GVF guidance can be performed on mobile ground robots simulating UAV dynamics.
 
 \chapter{Methodology}
-\section{Methods Overview}
-The proposed research will be conducted in three phases where VF guidance  singularities will be demonstrated, weighting functions will be investigated, and a developed GVF will be validated on a ground robot simulating a UAV.  Phases I and II will be conducted in a simulation environment that combines mission paths and obstacles into a single GVF. Phase III will be conducted with a ground robot simulating a UAV guided by the modified GVF in real-time. Dubin's fixed wing constraints will be imposed in simulations and experiments. 
-
-
+\section{Introduction to Methodology}
 \section{Phase I}
-\textbf{Demonstrate GVF singularities for circular obstacles.} A simulation environment will be built that generates GVFs consisting of mission paths and obstacles. Circular and elliptical obstacles will be investigated and the resulting singularities will be characterized. Static weights will be used and the performance of the guidance measured in distance traveled and time of flight. 
 
+Phase I. Demonstration of vector field trap situations and vector field singularities
+Consists of path following vector field guidance summed with obstacle field 
 
+\begin{itemize}
+	\item Field Construction
+	\item Straight Path
+	\item Circular path
+	\item obstacle definition
+	\item Obstacle Field
+	\item Field decay radius definition
+	\item tanh function
+	\item repulsive and repulsive+circulation side-by-side
+\end{itemize}
 
 \section{Phase II}
-\textbf{Investigate GVF weighting functions that influence obstacle avoidance.} UAV closing rate, position, and range will be used to develop dynamic GVF weights for convergence and circulation. The modified GVF will be compared against a static and strictly repulsive GVF. Distance traveled and time of flight will be used to as metrics to compare the modified GVF to the unmodified GVF.  
-
-
-
 \section{Phase III}
-\textbf{Validate modified GVF model with ground robot experiments.} The modified GVF developed in Phase II will be implemented on a differential drive ground robot simulating a fixed wing UAV. Guidance performance while avoiding static obstacles will be demonstrated.
 
+\chapter{Results}
+\section{Introduction to Methodology}
+\section{Phase I}
+\section{Phase II}
+\section{Phase III}
 
-\section{Summary of Phases}
+\chapter{Conclusions}
 
-Each phase consists of an \textbf{objective} that will be accomplished by executing \textit{tasks}.
-Completion of all objectives and phases will result in the final \underline{deliverable}. \\[1cm]
-
-\noindent
-\textbf{Phase I Objective:} Demonstrate Gradient Vector Field Singularities
-\newline
-\textit{
-	Tasks:
-	\begin{enumerate}
-		\item Build a GVF simulation environment
-		\item Evaluate scenarios where singularities are expected
-		\item Characterize location of singularities 
-	\end{enumerate}
-}
-
-\noindent
-\textbf{Phase II Objective:} Investigate GVF weighting functions that influence obstacle avoidance
-\newline
-\textit{
-	Tasks:
-	\begin{enumerate}
-		\item Formulate circulation and convergence weights as functions of UAV state
-		\item Determine combination of GVF weights that produces optimal guidance in simulation
-	\end{enumerate}
-}
-
-\noindent
-\textbf{Phase III Objective:} Validate modified GVF model with ground robot experiments
-\newline
-\textit{
-Tasks:
-	\begin{enumerate}
-		\item Build differential drive robot
-		\item Build robotic framework to take guidance commands
-		\item Repeat simulations performed in Phase II on ground robot
-	\end{enumerate}
-}
-
-\noindent
-\textbf{Deliverable:} \underline{Adaptive GVF parameterized weights optimal guidance for path following and static} \underline{ obstacle avoidance}.
-
+\chapter{Future Work}
 
 
 \bibliographystyle{aiaa}   
