@@ -16,24 +16,26 @@
 \contentsline {section}{\numberline {2.4}Guidance}{14}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Waypoint Guidance}{14}{subsection.2.4.1}
 \contentsline {subsection}{\numberline {2.4.2}Potential Field}{16}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}Path Following Vector Field Guidance}{21}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.3}\texthl {Path Following Vector Field Guidance}}{22}{subsection.2.4.3}
 \contentsline {section}{\numberline {2.5}Vector Field Guidance}{22}{section.2.5}
 \contentsline {subsection}{\numberline {2.5.1}Introduction to Vector Field Guidance}{22}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}Lyapunov Vector Fields}{22}{subsection.2.5.2}
-\contentsline {subsection}{\numberline {2.5.3}Non-Lyapunov Vector Fields}{25}{subsection.2.5.3}
-\contentsline {subsection}{\numberline {2.5.4}Gradient Vector Field}{27}{subsection.2.5.4}
-\contentsline {section}{\numberline {2.6}Unmanned Aerial Vehicle Simulation}{38}{section.2.6}
-\contentsline {section}{\numberline {2.7}Literature Review Summary}{38}{section.2.7}
-\contentsline {chapter}{\numberline {3}Methodology}{40}{chapter.3}
-\contentsline {section}{\numberline {3.1}Introduction to Methodology}{40}{section.3.1}
-\contentsline {section}{\numberline {3.2}Phase I}{40}{section.3.2}
-\contentsline {section}{\numberline {3.3}Phase II}{40}{section.3.3}
-\contentsline {section}{\numberline {3.4}Phase III}{40}{section.3.4}
-\contentsline {chapter}{\numberline {4}Results}{41}{chapter.4}
-\contentsline {section}{\numberline {4.1}Introduction to Methodology}{41}{section.4.1}
-\contentsline {section}{\numberline {4.2}Phase I}{41}{section.4.2}
-\contentsline {section}{\numberline {4.3}Phase II}{41}{section.4.3}
-\contentsline {section}{\numberline {4.4}Phase III}{41}{section.4.4}
-\contentsline {chapter}{\numberline {5}Conclusions}{42}{chapter.5}
-\contentsline {chapter}{\numberline {6}Future Work}{43}{chapter.6}
-\contentsline {chapter}{References}{44}{schapter.5}
+\contentsline {subsection}{\numberline {2.5.2}Lyapunov Vector Fields}{23}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}Path Planning Vector Fields}{27}{subsection.2.5.3}
+\contentsline {subsection}{\numberline {2.5.4}Gradient Vector Field}{28}{subsection.2.5.4}
+\contentsline {section}{\numberline {2.6}Dubins Vehicle}{30}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}MOVE TO METHODOLOGY}{31}{subsection.2.6.1}
+\contentsline {section}{\numberline {2.7}Unmanned Aerial Vehicle Simulation}{36}{section.2.7}
+\contentsline {section}{\numberline {2.8}Literature Review Summary}{36}{section.2.8}
+\contentsline {chapter}{\numberline {3}Methodology}{38}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introduction to Methodology}{38}{section.3.1}
+\contentsline {section}{\numberline {3.2}Phase I}{38}{section.3.2}
+\contentsline {section}{\numberline {3.3}Phase II}{44}{section.3.3}
+\contentsline {section}{\numberline {3.4}Phase III}{44}{section.3.4}
+\contentsline {chapter}{\numberline {4}Results}{45}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introduction to Results}{45}{section.4.1}
+\contentsline {section}{\numberline {4.2}Phase I}{45}{section.4.2}
+\contentsline {section}{\numberline {4.3}Phase II}{45}{section.4.3}
+\contentsline {section}{\numberline {4.4}Phase III}{45}{section.4.4}
+\contentsline {chapter}{\numberline {5}Conclusions}{46}{chapter.5}
+\contentsline {chapter}{\numberline {6}Future Work}{47}{chapter.6}
+\contentsline {chapter}{References}{48}{schapter.5}

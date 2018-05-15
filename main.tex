@@ -18,6 +18,8 @@
 \usepackage{cite}
 \usepackage{notoccite}
 
+
+
 \usepackage{ragged2e}
 \usepackage{verbatim} 
 \usepackage{hyperref}
@@ -32,8 +34,15 @@
 \usepackage{wrapfig} % Figures in text
 \usepackage{listings}
 \usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+
+\floatstyle{boxed}
+\restylefloat{figure}
+
+
 \definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
 \definecolor{mylilas}{RGB}{170,55,241}
+
+
 %% Other packages that may be of use.  Delete or comment out (using a
 %% percent sign in the first column) if they are not desired.  Reference
 %% the corresponding documentation for more information on how to use these
@@ -412,13 +421,22 @@ Navigation functions \cite{goerzen_survey_2010} and obstacle clustering \cite{li
 \end{figure}
 
 Potential Field's ability to avoid obstacles and combine path planning, trajectory planning, and control into a single computationally inexpensive system makes it an attractive motion control system for robots seeking a singular point, even with the limitations discussed in \cite{koren_potential_1991}. \\
-========================= \\
 
 In addition to local minimum and oscillations, potential field may not be ideal for providing guidance to return to a sensor path after avoiding an obstacle. Unlike the mobile ground robots in \cite{borenstein_real-time_1990}, fixed wing UAVs must maintain a minimum forward velocity, have limited turning radius, and cannot converge to a single point. Vehicles with velocity and turn rate constraints may not return to a pre-planned path once the obstacle has been avoided. Vector fields that direct a UAV to paths connecting waypoints have been developed using Lyapunov and gradient vector field techniques. 
 
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{PaperFigures/Literature/vffSimulated}
+	\caption{UAV avoiding obstacle with VFF Guidance}
+	\label{fig:vffSimulated}
+\end{figure}
 
-\subsection{Path Following Vector Field Guidance}
+
+\subsection{\hl{Path Following Vector Field Guidance}}
+
+Path following can be accomplished with vector fields which produce a heading guidance that asymptotically converges and circulates a path. A comparison between vector field and waypoint guidance techniques was presented in \cite{sujit_unmanned_2014} where each method was evaluated based on its complexity, robustness, and accuracy. Vector field produced guidance that was both robust to external wind disturbances while maintaining a low cross track error.
+
 
 The UAV guidance system is responsible for taking high level pre-planned paths from the ground station and providing a reference heading command to the control system. Several methods for path following guidance were investigated in \cite{sujit_unmanned_2014} consisting of carrot chasing \cite{manjunath_application_2016}, non-linear guidance law, pure line-of-sight \cite{fortuna_cascaded_2015}, linear quadratic regulator \cite{capello_simulation-based_2012}, and vector field method \cite{nelson_cooperative_2005}. A Monte Carlo simulation with wind disturbances was conducted for the guidance methods above in \cite{sujit_unmanned_2014} to determine each method's performance based on accuracy, robustness, and control effort. The vector field method followed the path with the least tracking error and control effort which is the primary goal of path following. 
 
@@ -431,15 +449,109 @@ The UAV guidance system is responsible for taking high level pre-planned paths f
  
  
 \subsection{Lyapunov Vector Fields}
-Lyapunov vector fields produce heading guidance that asymptotically converges and circulates along a path passing through waypoints. Paths can be built from straight line and circular arc primitives taking UAV kinematic constraints into consideration. Vector Fields that guide to straight line and circular paths was introduced in \cite{nelson_cooperative_2005}. Farther away from the path, vectors are constant and point in the direction perpendicular to the path. Within a transition region the vectors begin to rotate and point more parallel to the path. Vectors on the path point directly in the direction of the path. Lyapunov vector fields for straight line and circular arcs are shown in Figure \ref{fig:nelsonlyapunov}.
+
+
+
+Lyapunov vector fields for converging and following straight and circular paths were described in \cite{nelson_cooperative_2005}. For converging and following a straight path, a guidance vector $\chi^{d}$ is determined in Equation \ref{eq:lyapunovStraight}, where $\chi^{\infty}$ is the course approach angle, $y$ is the lateral distance to the path, and $k$ is a positive constant that determines the rate of transition between convergence and following. An example of a Lyapunov vector field converging and following a straight line is shown in Figure \ref{fig:vfPrimitives}a.
+
+
+
+% and are defined in Equations \ref{eq:lyapunovStraight} and \ref{eq:lyapunovCirc} respectively.
+
+%------ Nelson VF equations -----
+\begin{equation}\label{eq:lyapunovStraight}
+\chi^d(y) = -\chi^{\infty}\frac{2}{\pi}\tan^{-1}(ky)
+\end{equation}
+
+
+
+For converging and following a circular path, a guidance vector $\chi^{d}$ is determined in Equation \ref{eq:lyapunovCirc}, where $\gamma$ is the UAVs angular position with respect to the circle, $r$ is the paths radius, $d$ is the distance from the circles center, and $k$ is a positive constant that determines the transition behavior. An example of a Lyapunov vector field for converging and following a circular path is shown in Figure \ref{fig:vfPrimitives}b.
+
+\begin{equation}\label{eq:lyapunovCirc}
+\chi^d(d) = \gamma-\frac{\pi}{2}-\tan^{-1} \bigg(k \frac{d-r}{r} \bigg)
+\end{equation}
+
+
 \begin{figure}
 	\centering
 	\includegraphics[width=13cm]{PaperFigures/nelsonLyapunov}
 	\caption{Lyapunov vector field for straight line and circular primitives \cite{nelson_cooperative_2005}}
-	\label{fig:nelsonlyapunov}
+	\label{fig:vfPathPrimitives}
 \end{figure}
 
-Combining path primitives together can result in fairly complex paths such as that shown in Figure \ref{fig:urbanfollowingnelson}. Each path primitive has a vector field associated with it and determining which field to use can be approached in two different ways. Fields from all of the primitives can be summed together similar to the attractive and repulsive forces in potential field. Second, fields can be selectively activated and deactivated based on the position of the UAV. Summing together vector fields, as pointed out in \cite{nelson_cooperative_2005}, can result in several problems including dead zones, sinks, and singularities. Selectively activating each vector field as a UAV nears waypoints was used in \cite{nelson_cooperative_2005,nelson_vector_2006,nelson_vector_2007,jung_unmanned_2016}.
+
+
+
+%A circular Lyapunov vector field can be generated by the methodology described in \cite{frew_cooperative_2007}. Given the Lyapunov function:
+%
+%
+%$y$ lateral distance from path \\
+%$\chi$ difference between direction of path and course of UAV \\
+%$k$ positive constant that influences the rate of transition \\
+%$\chi^{\infty}$  course approach angle at large distance \\
+%$\chi^{d}$ is commanded heading \\
+%
+%$d$ radial distance UAV from center of orbit \\
+%$\gamma$ angular position with respect to orbit center \\
+%$r$ orbit radius \\
+%
+%
+%
+%
+%\begin{figure}[H]
+%	\begin{subfigmatrix}{2}% number of columns
+%		\centering	
+%		\subfigure []{\includegraphics[width=7.5cm] {Figures/lineConvcirc}}
+%		\subfigure []{\includegraphics[width=7.5cm] {Figures/circConvCirc}}
+%		\hspace*{0mm}
+%	\end{subfigmatrix}
+%	\caption{Vector field converging and following a) straight path b) circular path}
+%	\label{fig:vfPrimitives}
+%\end{figure}
+%
+%
+%\begin{equation}\label{eq:lyapunovfunction}
+%V(x,y) = (r^2 - r_d^2)^2
+%\end{equation}
+%where $r$ is given by the equation
+%\begin{equation}
+%r = \sqrt{x^2+y^2}
+%\end{equation}
+%and the total time derivative of Equation \ref{eq:lyapunovfunction} is
+%\begin{equation}\label{eq:totaltimederivative}
+%\dot{V}(x,y) = \nabla{V} \cdotp [\dot{x},\dot{y}]^{T}
+%\end{equation}
+%Utilizing the following equation to select the desired relative velocity $\dot{x}$ and $\dot{y}$
+%\begin{equation}
+%\overrightarrow{V}_{Lyapunov}\!=\!\begin{bmatrix} \dot{x_d} \\ \dot{y_d} \end{bmatrix}\!= \alpha\!\left(\dfrac{-v}{r}\right)\!\begin{bmatrix} x \dfrac{r^2-r_d^2}{r^2+r_d^2} + y \dfrac{2 r r_d}{r^2+r_d^2} \\[12pt] y \dfrac{r^2-r_d^2}{r^2+r_d^2} - x \dfrac{2 r r_d}{r^2+r_d^2} \end{bmatrix}
+%\end{equation}
+%and assuming $\alpha$\,=\,1 and $r$\,=\,1, the final Lyapunov VF equation is generated:
+%\begin{equation}\label{eq:lyapunovvf}
+%\overrightarrow{V}_{Lyapunov} = \frac{v}{r^2+r_d^2} \begin{bmatrix} - x (r^2-r_d^2) - y (2 r r_d) \\[6pt] - y (r^2-r_d^2) + x (2 r r_d) \end{bmatrix}
+%\end{equation}
+
+
+
+Straight and circular path vector fields can be selectively activated throughout flight to form more complex paths, shown in \cite{nelson_cooperative_2005,nelson_vector_2006,nelson_vector_2007,jung_unmanned_2016}. Lyapunov vector field for curved path following was presented in \cite{griffiths_vector_2006} which may allow for more complex paths and eliminates the need to switch between vector fields. \\
+
+
+%
+%==========================\\
+%Lyapunov vector fields produce heading guidance that asymptotically converges and circulates along a path passing through waypoints. Paths can be built from straight line and circular arc primitives taking UAV kinematic constraints into consideration. Vector Fields that guide to straight line and circular paths was introduced in \cite{nelson_cooperative_2005}. Farther away from the path, vectors are constant and point in the direction perpendicular to the path. Within a transition region the vectors begin to rotate and point more parallel to the path. Vectors on the path point directly in the direction of the path. Lyapunov vector fields for straight line and circular arcs are shown in Figure \ref{fig:nelsonlyapunov}.
+%
+%=====================================
+
+Straight and circular path vector fields can be selectively activated throughout flight to form more complex paths, shown in \cite{nelson_cooperative_2005,nelson_vector_2006,nelson_vector_2007,jung_unmanned_2016} and Figure \ref{fig:urbanfollowingnelson}. 
+
+Each path primitive has a vector field associated with it and determining which field to use can be approached in two different ways. 
+
+Fields from all of the primitives can be summed together similar to the attractive and repulsive forces in potential field. 
+
+Second, fields can be selectively activated and deactivated based on the position of the UAV.
+
+ Summing together vector fields, as pointed out in \cite{nelson_cooperative_2005}, can result in several problems including dead zones, sinks, and singularities. 
+ 
+ Selectively activating each vector field as a UAV nears waypoints was used in \cite{nelson_cooperative_2005,nelson_vector_2006,nelson_vector_2007,jung_unmanned_2016}.
 
 \begin{figure}[H]
 	\centering
@@ -481,7 +593,7 @@ Target tracking Tangent Plus Lyapunov Vector Field (TPLVF) was introduced in \ci
 \end{figure}
 
 
-\subsection{Non-Lyapunov Vector Fields}
+\subsection{Path Planning Vector Fields}
 All methods that consider obstacles thus far built a vector field that guides the UAV to an obstacle free path. Another approach is to use vector fields as a high level specification for heuristic path planning algorithms \cite{pereira_framework_2016}. An optimal Rapid Random Trees (RRT*) algorithm used a vector field as a guide to explore the configuration space of the UAV for an obstacle free path. Branches extend from the root, or initial location of the UAV, randomly throughout the map with a finite deviation from the initial vector field. When a branch encounters an obstacle it is trimmed and no longer explored. The path of minimum cost, or least distance, is selected for the UAV to use as a reference path. An example of the algorithm is shown in Figure \ref{fig:rrtvf}.
 
 \begin{figure}
@@ -506,133 +618,75 @@ So far all of the vector field methods discussed have avoided obstacles by plann
 
 
 \subsection{Gradient Vector Field}
-Gradient vector field (GVF) is a method that produces an \textit{n}-dimensional vector field that converges and circulates a target path\cite{goncalves_artificial_2009}. Paths can be static or time-varying and consist of points that lie at the intersection of surfaces defined by implicit functions. The surface functions are used to calculate a total vector field that is a sum of a convergence, circulation, and time-varying term. Convergence effectively attracts a robot to the target curve while circulation guides the robot to traverse the target curve. Time-varying is a feed-forward term that accounts for changes in the target path as a function of time \textit{t}. The total field $\vec{v}$ is summarized in Equation \ref{simpleGVF}.
+The Gradient Vector Field (GVF) method produces a similar field, however has several advantages over LVFs. GVF produces an \textit{n}-dimensional vector field that converges and circulates to both static and time varying paths \cite{goncalves_artificial_2009}. Additionally, convergence, circulation, and time-varying terms that make up the GVF are decoupled from each other allowing for easy weighting of the total field \cite{goncalves_circulation_2010}. GVFs converge and circulate at the intersection, or level set, of $n-1$ dimensional implicit surfaces ($\alpha_i:\mathbb{R}^n\rightarrow\mathbb{R} | i=1,...,n-1$). The integral lines of the field are guaranteed to converge and circulate the level set when two conditions are met: $1)$ the implicit surface functions are positive definite and $2)$ have bounded derivatives. Consider the space with dimensions in set \textbf{q}:
+
+%The Goncalves Vector Field (GVF) method for producing vector fields has several advantages over the Lyapunov vector field generation methods.
+
+
+\begin{equation}
+\mathbf{q} = \begin{bmatrix} x_1, x_2, ..., x_{n}\end{bmatrix}
+\end{equation}
+
+\noindent
+The total vector field $\overrightarrow{V}$ is calculated by:
+\begin{equation}\label{eq:GVF}
+\overrightarrow{V} = G \nabla V + H \wedge_{i=1}^{n-1}\nabla_q\alpha_i  - LM(\alpha)^{-1} a(\alpha)
+\end{equation}
+
+\noindent
+or in component form:
 
 \begin{equation}\label{simpleGVF}
-\vec{v} = \vec{v}_{conv} + \vec{v}_{circ} + \vec{v}_{tv} 
-\end{equation}
+\overrightarrow{V} = \overrightarrow{V}_{conv} + \overrightarrow{V}_{circ} + \overrightarrow{V}_{tv} 
+\end{equation}	
 
-%\begin{equation}
-%% Component vector field with conv and circ
-%\vec{V} = \boldsymbol{G}||\vec{v}_{conv}|| + \boldsymbol{H}||\vec{v}_{circ}||
-%\label{gonAllComp}
-%\end{equation}
-%
-%\begin{equation}
-%% Component vector field with conv and circ
-%\boldsymbol{G}=1
-%\label{gonAllComp}
-%\end{equation}
-%
-%\begin{equation}
-%% Component vector field with conv and circ
-%\boldsymbol{H}=1
-%\label{gonAllComp}
-%\end{equation}
+\noindent
+where $\overrightarrow{V}_{conv}$ produces vectors perpendicular to the path, $\overrightarrow{V}_{circ}$ produces vectors parallel to the path, and $\overrightarrow{V}_{tv}$ is a feed-forward term that produces vectors accounting for a time varying path. 
 
-Multiplicative scalar weights (\textit{\textbf{G,H,L}}) have been used to modify the strength of each term in \cite{goncalves_circulation_2010}, shown in Equation \ref{weightedSimpleGVF}
-
-\begin{equation}\label{weightedSimpleGVF}
-\vec{v} = \boldsymbol{G}\vec{v}_{conv} + \boldsymbol{H}\vec{v}_{circ} + \boldsymbol{L}\vec{v}_{tv} 
-\end{equation}
-
-Producing a GVF that converges and circulates a target path consisting of points $q=[x_1(t),x_2(t)...x_n(t)]$ $\in$ $\mathbb{R}^n$, first requires \textit{(n-1)} implicit surface functions {$\alpha_i(x_1,x_2,...x_n,t), i=1,2,...n-1$} to be defined. UAVs are restricted to $\mathbb{R}^3$ spatial configuration space, therefore two surface functions must be defined to calculate a GVF. Surface functions must have 1) \textit{continuous first order partial derivatives} and 2)\textit{ bounded second order partial derivatives} to guarantee convergence to the curve \cite{goncalves_circulation_2010}. The total gradient vector field converges and circulates the intersection, or level sets, of the two surfaces. For a UAV traveling at constant altitude, the first surface can be represented as a flat plane in Equation \ref{planeZ}. Intersecting the flat plane with a static vertical plane, Equation \ref{planeX}, produces a gradient vector field that converges and follows a straight line, Figure \ref{fig:gvfLinePrimitive}.
-
-\begin{equation}
-\label{planeZ}
-\alpha_1 = z
-\end{equation}
-
-\begin{equation}
-\label{planeX}
-\alpha_2 = x
-\end{equation}
-
-\begin{figure}[H]
-	\begin{subfigmatrix}{2}% number of columns
-		\centering	
-		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/planeIntersection}}
-		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/compWithoutTitles/lineConvCirc}}
-		\hspace*{0mm}
-	\end{subfigmatrix}
-	\caption{Intersection of planes (a) and resultant Gradient Vector Field (b)}
-	\label{fig:gvfLinePrimitive}
-\end{figure}
-
-Similarly, intersecting the flat plane with a static cylinder, Equation \ref{cylinder}, results in a vector field that converges and follows a circular path shown in Figure \ref{fig:gvfCircPrimitive}.
-
-\begin{equation}
-\label{cylinder}
-\alpha_2 = x^2+y^2-r^2
-\end{equation}
-
-\begin{figure}[H]
-	\begin{subfigmatrix}{2}% number of columns
-		\centering	
-		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/cylinderIntersection}}
-		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/compWithoutTitles/circConvCirc}}
-		\hspace*{0mm}
-	\end{subfigmatrix}
-	\caption{Intersection of plane / cylinder (a) and resultant Gradient Vector Field (b)}
-	\label{fig:gvfCircPrimitive}
-\end{figure}
-
-Static paths do not require the time-varying term of the vector field calculation and can be considered zero in such cases. The convergence term of the vector field is calculated by summing the product of each implicit function with its own gradient, which is shown in Equation \ref{convOnly}.
+\noindent
+Convergence is calculated by:
 
 \begin{equation}
 % Total field with Conv, Circ, and Time
-\vec{v}_{conv} = \sum_{i=1}^{n-1}\alpha_i\nabla_q\alpha_i  
+\overrightarrow{V}_{conv} = G \nabla V  
 \label{convOnly}
 \end{equation}
 
+\noindent
+where scalar $G$ is multiplied by the gradient of the definite potential function $V$:
 
-Evaluating equation \ref{convOnly} for a cylinder intersecting a plane results in a vector field that converges to a circular path shown in Figure \ref{fig:gvfCircAttractive}a. Note that the vectors are not of equal length for the entire configuration space, decaying in strength when approaching the curve. Normalizing the field was done in \cite{goncalves_circulation_2010,goncalves_vector_2010,wwc} to allow for convenient weighting of each term at a later process. The normalized convergence field for a circular path is shown in Figure \ref{fig:gvfCircAttractive}b. 
+\begin{equation}
+V = -\sqrt{{\alpha_1}^2 + {\alpha_2}^2}
+\end{equation}
 
-\begin{figure}[H]
-	\begin{subfigmatrix}{2}% number of columns
-		\centering	
-		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/NNcompWithoutTitles/circAttractive}}
-		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/compWithoutTitles/circAttractive}}
-		\hspace*{0mm}
-	\end{subfigmatrix}
-	\caption{GVF circular attractive field without normalization (a) and with normalization (b)}
-	\label{fig:gvfCircAttractive}
-\end{figure}
 
-The circulation term is calculated by taking the wedge product of each surface's gradient, shown in Equation \ref{circOnly}. For surfaces in $\mathbb{R}^3$, the wedge product can be simplified to the cross product shown in Equation \ref{circOnlySimp}.
+\noindent
+Circulation is calculated by taking the wedge product of the gradient:
 
 \begin{equation}
 % Total field with Conv, Circ, and Time
-\vec{v}_{circ} =  \wedge_{i=1}^{n-1}\nabla_q\alpha_i 
+\overrightarrow{V}_{circ} =  \wedge_{i=1}^{n-1}\nabla_q\alpha_i 
 \label{circOnly}
 \end{equation}
 
+\noindent
+In the case of $(n=3)$ the wedge product simplifies as the cross product:
+
 \begin{equation}
 % Total field with Conv, Circ, and Time
-\vec{v}_{circ} =  \nabla_q\alpha_1 \times \nabla_q\alpha_2 
+\overrightarrow{V}_{circ} =  \nabla_q\alpha_1 \times \nabla_q\alpha_2 
 \label{circOnlySimp}
 \end{equation}
 
-
-Evaluating the circulation term results in a vector field that is parallel to a circular path, shown in Figure \ref{fig:gvfCircCirculation}a. The field is normalized to produce a field with equal length vectors for the configuration space which is shown in Figure \ref{fig:gvfCircCirculation}b. 
-
-\begin{figure}[H]
-	\begin{subfigmatrix}{2}% number of columns
-		\centering	
-		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/NNcompWithoutTitles/circCW}}
-		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/compWithoutTitles/circCW}}
-		\hspace*{0mm}
-	\end{subfigmatrix}
-	\caption{Circular GVF without normalization (a) and with normalization (b)}
-	\label{fig:gvfCircCirculation}
-\end{figure}
-
-For dynamic paths that vary in time \textit{t}, feedforward compensation is accomplished by calculating the time-varying term. The time-varying field $\vec{v}_{tv}$ is calculated by multiplying the inverse of a gradient matrix $M$ with the column vector $a$ shown in Equations \ref{mMatrix} and \ref{aVector} respectively. The resulting vector field for a circular path moving in the positive x direction can be shown in Figure \ref{fig:gvfCircTimeVarying}a and the normalized version in Figure \ref{fig:gvfCircTimeVarying}b.
-
+\noindent
+The feed-forward time-varying component is calculated by:
 \begin{equation}
 \label{tv}
-\vec{v}_{tv} = M^{-1}a
+\overrightarrow{V}_{tv} = M^{-1}a
 \end{equation}
+
+\noindent
+where,
 
 \begin{equation}
 \label{mMatrix}
@@ -651,32 +705,40 @@ a =\begin{bmatrix}
 \end{equation}
 
 
-\begin{figure}[H]
-	\begin{subfigmatrix}{2}% number of columns
-		\centering	
-		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/NNcompWithoutTitles/circTv}}
-		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/compWithoutTitles/circTv}}
-		\hspace*{0mm}
-	\end{subfigmatrix}
-	\caption{Circular time-varying GVF without normalization (a) and with normalization (b)}
-	\label{fig:gvfCircTimeVarying}
-\end{figure}
+\begin{itemize}
+	\item Talk about each Gonc paper
+	\item Discuss How Adam used GVF
+	\item Discuss how Jay used GVF for tracking a ground vehicle while avoiding obstacles
+	\item Discuss how summing fields together can result in vector field singularities
+	\item Discuss why adding circulation may fix that problem
+\end{itemize}
 
-Summing together the normalized convergence, circulation, and time-varying terms results in the total normalized and weighted field field $\vec{V}$ shown defined in Equation \ref{gonAllComp}. Scalar weights, (\textit{\textbf{G,H,L}}), are added after normalization to increase or decrease the contribution of convergence, circulation, and time-varying respectively. 
+\section{Dubins Vehicle}
+The dynamics of UAVs are often simplified when simulating guidance systems by modeling the UAV as a Dubin's vehicle \cite{frew_cooperative_2007,griffiths_vector_2006,nelson_cooperative_2005,nelson_vector_2006,nelson_vector_2007}. It is assumed that the autopilots control system is capable of maintaining stability, speed $u$, and can turn the vehicle at a fixed turn rate $\dot{\theta}$. The position of the UAV $\overrightarrow{X}$ at time $t$ is calculated from the integral of the velocity vector $\overrightarrow{U}$, Equation \ref{eq:uavPosition}. Heading is an input from a guidance system, such as waypoint, potential field, or vector field.
 
 \begin{equation}
-% Component vector field with conv and circ
-\vec{V} = \boldsymbol{G}||\vec{v}_{conv}|| + \boldsymbol{H}||\vec{v}_{circ}|| +  \boldsymbol{L}||\vec{v}_{tv}|| 
-\label{gonAllComp}
+\label{eq:uavVelocity}
+\overrightarrow{U}(t) = u \begin{bmatrix}
+cos(\theta(t)) \\
+sin(\theta(t))
+\end{bmatrix}
 \end{equation}
 
 
-\begin{figure}
-	\centering
-	\includegraphics[width=8cm]{PaperFigures/compWithoutTitles/circConvCircTv}
-	\caption{GVF with unity (\textit{\textbf{G=H=L=1}}) weights for a moving circular path}
-	\label{fig:circconvcirctv}
-\end{figure}
+\begin{equation}
+\label{eq:uavPosition}
+\overrightarrow{X}(t) = \overrightarrow{U}dt + \overrightarrow{X}(t-1)
+\end{equation}
+
+
+\begin{equation}
+\label{turnRate}
+\dot{\theta} \leq 20 deg/s
+\end{equation}
+
+
+\subsection{MOVE TO METHODOLOGY}
+
 
 The GVF weights are decoupled from each term calculation, therefore modifications to the GVF weights do not require a new derivation of the resulting field. Magnitude of the weights effectively scales the contribution of each term. Negating the GVF weights has been used to provide a repulsive field for obstacle avoidance in \cite{wwc} for a UAV tracking a moving loiter circle. Assigning weights \textbf{G=-1} and \textbf{H=L=0} rotates the attractive field vectors in Figure \ref{fig:gvfCircAttractive}b 180$^\circ$ about the tail of each vector, which is shown in Figure \ref{fig:gvfRepulsiveRadius}a. Note how the repulsive field vectors point away from the circular curve for the entire configuration space. Encircling an obstacle by a path produces vectors that may provide guidance into the obstacle, which is not desired. Reducing the radius to be smaller than the radius of the obstacle produces a GVF with nearly all vectors directing away. 
 
@@ -783,6 +845,164 @@ Vector fields can provide guidance and control for robots through the use of art
 Phase I. Demonstration of vector field trap situations and vector field singularities
 Consists of path following vector field guidance summed with obstacle field 
 
+
+
+Intersecting two flat planes $(\alpha_1 = z,\alpha_2 = x)$, shown in Figure \ref{fig:planeIntersection} produces a GVF that converges and circulates a straight path.
+%\begin{figure}[H]
+%	\begin{subfigmatrix}{2}% number of columns
+%		\centering	
+%		\subfigure []{\includegraphics[width=7cm] {Figures/planeIntersection}}
+%		\subfigure []{\includegraphics[width=7cm] {Figures/lineConvCirc}}
+%		\hspace*{0mm}
+%	\end{subfigmatrix}
+%	\caption{GVF converging and circulating straight path}
+%	\label{fig:GVFLine}
+%\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=8cm]{Figures/planeIntersection}
+	\caption{Place Intersection}
+	\label{fig:planeIntersection}
+\end{figure}
+
+How quickly the path following field transitions from convergence to circulation depends on the field weights. Equal parts convergence and circulation are shown in Figure \ref{fig:GVFLine}a $(G=H=1)$ and a larger circulation value in Figure \ref{fig:GVFLine}b $(G=1, H=5)$.
+
+
+\begin{figure}[H]
+	\begin{subfigmatrix}{2}% number of columns
+		\centering	
+		\subfigure []{\includegraphics[trim=15 10 0 30,clip,width=7cm] {Figures/methods/straightPathH1}}
+		\subfigure []{\includegraphics[trim=15 10 0 30,clip,width=7cm] {Figures/methods/straightPathH5}}
+		
+		\hspace*{0mm}
+	\end{subfigmatrix}
+	\caption{GVF converging and a) small circulation b) large circulation}
+	\label{fig:GVFLine}
+\end{figure} 
+
+A GVF for converging and following a circular path can be produced by intersecting a plane and a cylinder $(\alpha_1 = z,\alpha_2 = x^2+y^2-r^2)$, shown in Figure \ref{fig:GVFCirc}.
+
+
+
+\begin{figure}[H]
+	\begin{subfigmatrix}{2}% number of columns
+		\centering	
+		\subfigure []{\includegraphics[width=7cm] {Figures/cylinderIntersection}}
+		\subfigure []{\includegraphics[width=7cm] {Figures/circConvCirc}}
+		\hspace*{0mm}
+	\end{subfigmatrix}
+	\caption{GVF converging and circulating circular path}
+	\label{fig:GVFCirc}
+\end{figure}
+
+
+
+
+
+
+
+
+Static paths do not require the time-varying term of the vector field calculation and can be considered zero in such cases. 
+
+
+Evaluating equation \ref{convOnly} for a cylinder intersecting a plane results in a vector field that converges to a circular path shown in Figure \ref{fig:gvfCircAttractive}a. Note that the vectors are not of equal length for the entire configuration space, decaying in strength when approaching the curve. Normalizing the field was done in \cite{goncalves_circulation_2010,goncalves_vector_2010,wwc} to allow for convenient weighting of each term at a later process. The normalized convergence field for a circular path is shown in Figure \ref{fig:gvfCircAttractive}b. 
+
+\begin{figure}[H]
+	\begin{subfigmatrix}{2}% number of columns
+		\centering	
+		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/NNcompWithoutTitles/circAttractive}}
+		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/compWithoutTitles/circAttractive}}
+		\hspace*{0mm}
+	\end{subfigmatrix}
+	\caption{GVF circular attractive field without normalization (a) and with normalization (b)}
+	\label{fig:gvfCircAttractive}
+\end{figure}
+
+The circulation term is calculated by taking the wedge product of each surface's gradient, shown in Equation \ref{circOnly}. For surfaces in $\mathbb{R}^3$, the wedge product can be simplified to the cross product shown in Equation \ref{circOnlySimp}.
+
+\begin{equation}
+% Total field with Conv, Circ, and Time
+\vec{v}_{circ} =  \wedge_{i=1}^{n-1}\nabla_q\alpha_i 
+\label{circOnly}
+\end{equation}
+
+\begin{equation}
+% Total field with Conv, Circ, and Time
+\vec{v}_{circ} =  \nabla_q\alpha_1 \times \nabla_q\alpha_2 
+\label{circOnlySimp}
+\end{equation}
+
+
+Evaluating the circulation term results in a vector field that is parallel to a circular path, shown in Figure \ref{fig:gvfCircCirculation}a. The field is normalized to produce a field with equal length vectors for the configuration space which is shown in Figure \ref{fig:gvfCircCirculation}b. 
+
+\begin{figure}[H]
+	\begin{subfigmatrix}{2}% number of columns
+		\centering	
+		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/NNcompWithoutTitles/circCW}}
+		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/compWithoutTitles/circCW}}
+		\hspace*{0mm}
+	\end{subfigmatrix}
+	\caption{Circular GVF without normalization (a) and with normalization (b)}
+	\label{fig:gvfCircCirculation}
+\end{figure}
+
+For dynamic paths that vary in time \textit{t}, feedforward compensation is accomplished by calculating the time-varying term. The time-varying field $\vec{v}_{tv}$ is calculated by multiplying the inverse of a gradient matrix $M$ with the column vector $a$ shown in Equations \ref{mMatrix} and \ref{aVector} respectively. The resulting vector field for a circular path moving in the positive x direction can be shown in Figure \ref{fig:gvfCircTimeVarying}a and the normalized version in Figure \ref{fig:gvfCircTimeVarying}b.
+
+\begin{equation}
+\label{tv}
+\vec{v}_{tv} = M^{-1}a
+\end{equation}
+
+\begin{equation}
+\label{mMatrix}
+M =\begin{bmatrix}
+\nabla\alpha_1^T \\
+\nabla\alpha_2^T \\
+(\nabla\alpha_1 \times \nabla\alpha_2)^T
+\end{bmatrix}
+\end{equation}
+
+\begin{equation}
+\label{aVector}
+a =\begin{bmatrix}
+\frac{\partial \alpha_1}{\partial t} \quad   \frac{\partial \alpha_2}{\partial t} \quad   0
+\end{bmatrix}^T
+\end{equation}
+
+
+\begin{figure}[H]
+	\begin{subfigmatrix}{2}% number of columns
+		\centering	
+		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/NNcompWithoutTitles/circTv}}
+		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/compWithoutTitles/circTv}}
+		\hspace*{0mm}
+	\end{subfigmatrix}
+	\caption{Circular time-varying GVF without normalization (a) and with normalization (b)}
+	\label{fig:gvfCircTimeVarying}
+\end{figure}
+
+Summing together the normalized convergence, circulation, and time-varying terms results in the total normalized and weighted field field $\vec{V}$ shown defined in Equation \ref{gonAllComp}. Scalar weights, (\textit{\textbf{G,H,L}}), are added after normalization to increase or decrease the contribution of convergence, circulation, and time-varying respectively. 
+
+\begin{equation}
+% Component vector field with conv and circ
+\vec{V} = \boldsymbol{G}||\vec{v}_{conv}|| + \boldsymbol{H}||\vec{v}_{circ}|| +  \boldsymbol{L}||\vec{v}_{tv}|| 
+\label{gonAllComp}
+\end{equation}
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=8cm]{PaperFigures/compWithoutTitles/circConvCircTv}
+	\caption{GVF with unity (\textit{\textbf{G=H=L=1}}) weights for a moving circular path}
+	\label{fig:circconvcirctv}
+\end{figure}
+
+
+
+
+
 \begin{itemize}
 	\item Field Construction
 	\item Straight Path
@@ -798,7 +1018,7 @@ Consists of path following vector field guidance summed with obstacle field
 \section{Phase III}
 
 \chapter{Results}
-\section{Introduction to Methodology}
+\section{Introduction to Results}
 \section{Phase I}
 \section{Phase II}
 \section{Phase III}
