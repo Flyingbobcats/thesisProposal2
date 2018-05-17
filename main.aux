@@ -27,7 +27,7 @@
 \@writefile{lof}{\addvspace {\@lineskip }}
 \@writefile{lot}{\addvspace {\@lineskip }}
 \@writefile{toc}{\contentsline {section}{\numberline {1.1}Motivation and Problem Statement}{9}{section.1.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.2}Methods Overview}{10}{section.1.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}Objectives Overview}{10}{section.1.2}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.3}Phase I}{10}{section.1.3}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.4}Phase II}{10}{section.1.4}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.5}Phase III}{10}{section.1.5}}
@@ -35,41 +35,35 @@
 \citation{ariyur_autonomous_2008,teuliere_chasing_2011}
 \citation{oh_coordinated_2013,hyondong_oh_coordinated_2015,ulun_coordinated_2013}
 \citation{beard_small_2012}
-\citation{choi_open_2016,martinez_-board_2011}
-\citation{yamasaki_integrated_2012}
 \@writefile{toc}{\contentsline {chapter}{\numberline {2}Literature Review}{13}{chapter.2}}
 \@writefile{lof}{\addvspace {\@lineskip }}
 \@writefile{lot}{\addvspace {\@lineskip }}
 \@writefile{toc}{\contentsline {section}{\numberline {2.1}Introduction to Literature Review}{13}{section.2.1}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.2}Unmanned Aerial Vehicle}{13}{section.2.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Unmanned Aerial System (UAS)}}{13}{figure.2.1}}
-\newlabel{fig:uas}{{2.1}{13}{Unmanned Aerial Vehicle}{figure.2.1}{}}
-\citation{wilhelm_direct_2017}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Autopilot's Navigation, Guidance, and Control Architecture}}{14}{figure.2.2}}
-\newlabel{fig:autopilotloops}{{2.2}{14}{Unmanned Aerial Vehicle}{figure.2.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}Path Planning}{14}{section.2.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.4}Guidance}{14}{section.2.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}Waypoint Guidance}{14}{subsection.2.4.1}}
-\newlabel{eq:diversionCost}{{2.1}{15}{Waypoint Guidance}{equation.2.4.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Obstacle Diversion Waypoints}}{15}{figure.2.3}}
-\newlabel{fig:numWaypointsPath}{{2.3}{15}{Waypoint Guidance}{figure.2.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Fixed wing (a) and multirotor (b) UAVs}}{13}{figure.2.1}}
+\newlabel{fig:fixedMultirotor}{{2.1}{13}{Unmanned Aerial Vehicle}{figure.2.1}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{14}{figure.2.2}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{14}{figure.2.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Pixhawk autopilot}}{14}{figure.2.2}}
+\newlabel{fig:pixhawk}{{2.2}{14}{Unmanned Aerial Vehicle}{figure.2.2}{}}
+\citation{sujit_unmanned_2014}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Autopilot's Navigation, Guidance, and Control Architecture}}{15}{figure.2.3}}
+\newlabel{fig:autopilotloops}{{2.3}{15}{Unmanned Aerial Vehicle}{figure.2.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Path Planning and Guidance}{15}{section.2.3}}
 \citation{khatib_real-time_1986}
 \citation{rimon_exact_1992}
 \citation{liu_virtual-waypoint_2016}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Cost impact versus number of waypoints}}{16}{figure.2.4}}
-\newlabel{fig:numWaypoints}{{2.4}{16}{Waypoint Guidance}{figure.2.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.2}Potential Field}{16}{subsection.2.4.2}}
 \citation{borenstein_real-time_1990,borenstein_vector_1991,koren_potential_1991}
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}Potential Field}{16}{section.2.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Single Obstacle Potential Field Gradient \cite  {liu_virtual-waypoint_2016}}}{16}{figure.2.4}}
+\newlabel{fig:pfobstacle}{{2.4}{16}{Potential Field}{figure.2.4}{}}
 \citation{borenstein_vector_1991}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Single Obstacle Potential Field Gradient \cite  {liu_virtual-waypoint_2016}}}{17}{figure.2.5}}
-\newlabel{fig:pfobstacle}{{2.5}{17}{Potential Field}{figure.2.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Virtual force field histogram acting on a mobile robot \cite  {borenstein_vector_1991}}}{17}{figure.2.5}}
+\newlabel{fig:histogram}{{2.5}{17}{Potential Field}{figure.2.5}{}}
+\newlabel{eq:vffRepulse}{{2.1}{17}{Potential Field}{equation.2.4.1}{}}
+\newlabel{eq:vffRepulseSum}{{2.2}{17}{Potential Field}{equation.2.4.2}{}}
+\newlabel{eq:vffGoal}{{2.3}{17}{Potential Field}{equation.2.4.3}{}}
 \citation{koren_potential_1991}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces Virtual force field histogram acting on a mobile robot \cite  {borenstein_vector_1991}}}{18}{figure.2.6}}
-\newlabel{fig:histogram}{{2.6}{18}{Potential Field}{figure.2.6}{}}
-\newlabel{eq:vffRepulse}{{2.2}{18}{Potential Field}{equation.2.4.2}{}}
-\newlabel{eq:vffRepulseSum}{{2.3}{18}{Potential Field}{equation.2.4.3}{}}
-\newlabel{eq:vffGoal}{{2.4}{18}{Potential Field}{equation.2.4.4}{}}
-\newlabel{eq:vffHeading}{{2.5}{18}{Potential Field}{equation.2.4.5}{}}
 \citation{liu_virtual-waypoint_2016}
 \citation{liu_virtual-waypoint_2016}
 \citation{kim_escaping_2009}
@@ -77,58 +71,57 @@
 \citation{lei_tang_novel_2010}
 \citation{li_efficient_2012}
 \citation{liu_virtual-waypoint_2016}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces Potential Field Local Minimum \cite  {liu_virtual-waypoint_2016}}}{19}{figure.2.7}}
-\newlabel{fig:pfLocalMin}{{2.7}{19}{Potential Field}{figure.2.7}{}}
+\newlabel{eq:vffHeading}{{2.4}{18}{Potential Field}{equation.2.4.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces Potential Field Local Minimum \cite  {liu_virtual-waypoint_2016}}}{18}{figure.2.6}}
+\newlabel{fig:pfLocalMin}{{2.6}{18}{Potential Field}{figure.2.6}{}}
 \citation{goerzen_survey_2010}
 \citation{liu_virtual-waypoint_2016}
 \citation{rimon_exact_1992}
 \citation{liu_virtual-waypoint_2016}
 \citation{koren_potential_1991}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces Potential Field Local Minimum \cite  {liu_virtual-waypoint_2016}}}{20}{figure.2.8}}
-\newlabel{fig:vff}{{2.8}{20}{Potential Field}{figure.2.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces Obstacle Clustering \cite  {liu_virtual-waypoint_2016}}}{20}{figure.2.9}}
-\newlabel{fig:obstacleclustering}{{2.9}{20}{Potential Field}{figure.2.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces Potential Field Local Minimum \cite  {liu_virtual-waypoint_2016}}}{19}{figure.2.7}}
+\newlabel{fig:vff}{{2.7}{19}{Potential Field}{figure.2.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces Obstacle Clustering \cite  {liu_virtual-waypoint_2016}}}{19}{figure.2.8}}
+\newlabel{fig:obstacleclustering}{{2.8}{19}{Potential Field}{figure.2.8}{}}
 \citation{borenstein_real-time_1990}
 \citation{sujit_unmanned_2014}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.10}{\ignorespaces UAV avoiding obstacle with VFF Guidance}}{21}{figure.2.10}}
-\newlabel{fig:vffSimulated}{{2.10}{21}{Potential Field}{figure.2.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces UAV avoiding obstacle with VFF Guidance}}{20}{figure.2.9}}
+\newlabel{fig:vffSimulated}{{2.9}{20}{Potential Field}{figure.2.9}{}}
 \citation{sujit_unmanned_2014}
 \citation{manjunath_application_2016}
 \citation{fortuna_cascaded_2015}
 \citation{capello_simulation-based_2012}
 \citation{nelson_cooperative_2005}
 \citation{sujit_unmanned_2014}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.3}\texthl  {Path Following Vector Field Guidance}}{22}{subsection.2.4.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.5}Vector Field Guidance}{22}{section.2.5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.5.1}Introduction to Vector Field Guidance}{22}{subsection.2.5.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}\texthl  {Path Following Vector Field Guidance}}{21}{subsection.2.4.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.5}Vector Field Guidance}{21}{section.2.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5.1}Introduction to Vector Field Guidance}{21}{subsection.2.5.1}}
 \citation{nelson_cooperative_2005}
 \citation{nelson_cooperative_2005}
 \citation{nelson_cooperative_2005,nelson_vector_2006,nelson_vector_2007,jung_unmanned_2016}
 \citation{griffiths_vector_2006}
 \citation{nelson_cooperative_2005,nelson_vector_2006,nelson_vector_2007,jung_unmanned_2016}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.5.2}Lyapunov Vector Fields}{23}{subsection.2.5.2}}
-\newlabel{eq:lyapunovStraight}{{2.6}{23}{Lyapunov Vector Fields}{equation.2.5.6}{}}
-\newlabel{eq:lyapunovCirc}{{2.7}{23}{Lyapunov Vector Fields}{equation.2.5.7}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{23}{figure.2.11}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{23}{figure.2.11}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{23}{figure.2.11}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{23}{figure.2.11}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{23}{figure.2.11}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{23}{figure.2.11}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5.2}Lyapunov Vector Fields}{22}{subsection.2.5.2}}
+\newlabel{eq:lyapunovStraight}{{2.5}{22}{Lyapunov Vector Fields}{equation.2.5.5}{}}
+\newlabel{eq:lyapunovCirc}{{2.6}{22}{Lyapunov Vector Fields}{equation.2.5.6}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{22}{figure.2.10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{22}{figure.2.10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{22}{figure.2.10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{22}{figure.2.10}}
 \citation{nelson_cooperative_2005}
 \citation{nelson_cooperative_2005,nelson_vector_2006,nelson_vector_2007,jung_unmanned_2016}
 \citation{nelson_cooperative_2005}
 \citation{nelson_cooperative_2005}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.11}{\ignorespaces Lyapunov vector field for straight line and circular primitives \cite  {nelson_cooperative_2005}}}{24}{figure.2.11}}
-\newlabel{fig:vfPathPrimitives}{{2.11}{24}{Lyapunov Vector Fields}{figure.2.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.10}{\ignorespaces Lyapunov vector field for straight line and circular primitives \cite  {nelson_cooperative_2005}}}{23}{figure.2.10}}
+\newlabel{fig:vfPathPrimitives}{{2.10}{23}{Lyapunov Vector Fields}{figure.2.10}{}}
 \citation{griffiths_vector_2006}
 \citation{griffiths_vector_2006}
 \citation{frew_lyapunov_nodate,frew_cooperative_2007}
 \citation{frew_cooperative_2007}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.12}{\ignorespaces Straight path following in urban environment \cite  {nelson_cooperative_2005} using Lyapunov Vector Field}}{25}{figure.2.12}}
-\newlabel{fig:urbanfollowingnelson}{{2.12}{25}{Lyapunov Vector Fields}{figure.2.12}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.13}{\ignorespaces Lyapunov vector field approach curved path asymptotically \cite  {griffiths_vector_2006}}}{25}{figure.2.13}}
-\newlabel{fig:griffiths}{{2.13}{25}{Lyapunov Vector Fields}{figure.2.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.11}{\ignorespaces Straight path following in urban environment \cite  {nelson_cooperative_2005} using Lyapunov Vector Field}}{24}{figure.2.11}}
+\newlabel{fig:urbanfollowingnelson}{{2.11}{24}{Lyapunov Vector Fields}{figure.2.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.12}{\ignorespaces Lyapunov vector field approach curved path asymptotically \cite  {griffiths_vector_2006}}}{24}{figure.2.12}}
+\newlabel{fig:griffiths}{{2.12}{24}{Lyapunov Vector Fields}{figure.2.12}{}}
 \citation{frew_cooperative_2007}
 \citation{frew_lyapunov_nodate}
 \citation{frew_cooperative_2007}
@@ -138,120 +131,109 @@
 \citation{liang_tangent_2017}
 \citation{chen_uav_2013}
 \citation{pereira_framework_2016}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{26}{figure.2.14}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{26}{figure.2.14}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.14}{\ignorespaces Elliptical VF produced by non-linear coordinate transformations a)\cite  {frew_cooperative_2007} and b) \cite  {frew_lyapunov_nodate}}}{26}{figure.2.14}}
-\newlabel{fig:lyapunovFrew}{{2.14}{26}{Lyapunov Vector Fields}{figure.2.14}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{25}{figure.2.13}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{25}{figure.2.13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.13}{\ignorespaces Elliptical VF produced by non-linear coordinate transformations a)\cite  {frew_cooperative_2007} and b) \cite  {frew_lyapunov_nodate}}}{25}{figure.2.13}}
+\newlabel{fig:lyapunovFrew}{{2.13}{25}{Lyapunov Vector Fields}{figure.2.13}{}}
 \citation{pereira_framework_2016}
 \citation{pimenta_fully_2007}
 \citation{md_simplex_2017}
 \citation{pimenta_fully_2007}
 \citation{zhou_vector_2014,panagou_motion_2014,wwc}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.15}{\ignorespaces Tangent plus lyapunov vector fields for shortest path target tracking \cite  {chen_uav_2013}}}{27}{figure.2.15}}
-\newlabel{fig:lyapunovChen}{{2.15}{27}{Lyapunov Vector Fields}{figure.2.15}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.5.3}Path Planning Vector Fields}{27}{subsection.2.5.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.14}{\ignorespaces Tangent plus lyapunov vector fields for shortest path target tracking \cite  {chen_uav_2013}}}{26}{figure.2.14}}
+\newlabel{fig:lyapunovChen}{{2.14}{26}{Lyapunov Vector Fields}{figure.2.14}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5.3}Path Planning Vector Fields}{26}{subsection.2.5.3}}
 \citation{goncalves_artificial_2009}
 \citation{goncalves_circulation_2010}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.16}{\ignorespaces RRT* path planner with a VF used as a task specification \cite  {pereira_framework_2016}}}{28}{figure.2.16}}
-\newlabel{fig:rrtvf}{{2.16}{28}{Path Planning Vector Fields}{figure.2.16}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.17}{\ignorespaces Vector field within a set of delaunay triangles \cite  {pimenta_fully_2007}}}{28}{figure.2.17}}
-\newlabel{fig:cdtVF}{{2.17}{28}{Path Planning Vector Fields}{figure.2.17}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.5.4}Gradient Vector Field}{28}{subsection.2.5.4}}
-\newlabel{eq:GVF}{{2.9}{29}{Gradient Vector Field}{equation.2.5.9}{}}
-\newlabel{simpleGVF}{{2.10}{29}{Gradient Vector Field}{equation.2.5.10}{}}
-\newlabel{convOnly}{{2.11}{29}{Gradient Vector Field}{equation.2.5.11}{}}
-\citation{frew_cooperative_2007,griffiths_vector_2006,nelson_cooperative_2005,nelson_vector_2006,nelson_vector_2007}
-\newlabel{circOnly}{{2.13}{30}{Gradient Vector Field}{equation.2.5.13}{}}
-\newlabel{circOnlySimp}{{2.14}{30}{Gradient Vector Field}{equation.2.5.14}{}}
-\newlabel{tv}{{2.15}{30}{Gradient Vector Field}{equation.2.5.15}{}}
-\newlabel{mMatrix}{{2.16}{30}{Gradient Vector Field}{equation.2.5.16}{}}
-\newlabel{aVector}{{2.17}{30}{Gradient Vector Field}{equation.2.5.17}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.6}Dubins Vehicle}{30}{section.2.6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.15}{\ignorespaces RRT* path planner with a VF used as a task specification \cite  {pereira_framework_2016}}}{27}{figure.2.15}}
+\newlabel{fig:rrtvf}{{2.15}{27}{Path Planning Vector Fields}{figure.2.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.16}{\ignorespaces Vector field within a set of delaunay triangles \cite  {pimenta_fully_2007}}}{27}{figure.2.16}}
+\newlabel{fig:cdtVF}{{2.16}{27}{Path Planning Vector Fields}{figure.2.16}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5.4}Gradient Vector Field}{27}{subsection.2.5.4}}
+\newlabel{eq:GVF}{{2.8}{28}{Gradient Vector Field}{equation.2.5.8}{}}
+\newlabel{simpleGVF}{{2.9}{28}{Gradient Vector Field}{equation.2.5.9}{}}
+\newlabel{convOnly}{{2.10}{28}{Gradient Vector Field}{equation.2.5.10}{}}
+\citation{goncalves_artificial_2009,goncalves_circulation_2010,goncalves_vector_2010}
+\citation{gerlach_autonomous_2014,wwc}
 \citation{wwc}
+\newlabel{circOnly}{{2.12}{29}{Gradient Vector Field}{equation.2.5.12}{}}
+\newlabel{circOnlySimp}{{2.13}{29}{Gradient Vector Field}{equation.2.5.13}{}}
+\newlabel{tv}{{2.14}{29}{Gradient Vector Field}{equation.2.5.14}{}}
+\newlabel{mMatrix}{{2.15}{29}{Gradient Vector Field}{equation.2.5.15}{}}
+\newlabel{aVector}{{2.16}{29}{Gradient Vector Field}{equation.2.5.16}{}}
+\citation{goncalves_artificial_2009,goncalves_circulation_2010,goncalves_vector_2010}
+\citation{wwc}
+\citation{wwc}
+\citation{nelson_cooperative_2005}
+\citation{panagou_motion_2014}
+\newlabel{repulsiveDecay}{{2.17}{30}{Gradient Vector Field}{equation.2.5.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.17}{\ignorespaces Place holder image of UAV following ground target \cite  {wwc}}}{30}{figure.2.17}}
+\newlabel{fig:gvfMovingTarget}{{2.17}{30}{Gradient Vector Field}{figure.2.17}{}}
+\citation{frew_cooperative_2007,griffiths_vector_2006,nelson_cooperative_2005,nelson_vector_2006,nelson_vector_2007}
+\@writefile{toc}{\contentsline {section}{\numberline {2.6}Dubins Vehicle}{31}{section.2.6}}
 \newlabel{eq:uavVelocity}{{2.18}{31}{Dubins Vehicle}{equation.2.6.18}{}}
 \newlabel{eq:uavPosition}{{2.19}{31}{Dubins Vehicle}{equation.2.6.19}{}}
 \newlabel{turnRate}{{2.20}{31}{Dubins Vehicle}{equation.2.6.20}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.1}MOVE TO METHODOLOGY}{31}{subsection.2.6.1}}
-\citation{wwc}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.18}{\ignorespaces Repulsive field with large path radius (a) and small radius (b)}}{32}{figure.2.18}}
-\newlabel{fig:gvfRepulsiveRadius}{{2.18}{32}{MOVE TO METHODOLOGY}{figure.2.18}{}}
-\newlabel{repulsiveDecay}{{2.21}{32}{MOVE TO METHODOLOGY}{equation.2.6.21}{}}
-\newlabel{replulsiveField}{{2.22}{32}{MOVE TO METHODOLOGY}{equation.2.6.22}{}}
-\citation{panagou_motion_2014}
-\citation{wwc}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.19}{\ignorespaces Repulsive field activation \cite  {wwc} (a) resulting repulsive field (b)}}{33}{figure.2.19}}
-\newlabel{fig:tanhICUAS2018}{{2.19}{33}{MOVE TO METHODOLOGY}{figure.2.19}{}}
-\newlabel{summedAttRepulsive}{{2.23}{33}{MOVE TO METHODOLOGY}{equation.2.6.23}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{33}{figure.2.20}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{33}{figure.2.20}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{33}{figure.2.20}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{33}{figure.2.20}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.20}{\ignorespaces Place holder image of UAV following ground target \cite  {wwc}}}{34}{figure.2.20}}
-\newlabel{fig:gvfMovingTarget}{{2.20}{34}{MOVE TO METHODOLOGY}{figure.2.20}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.21}{\ignorespaces Strictly repulsive obstacle on straight path}}{35}{figure.2.21}}
-\newlabel{fig:singleobstacle}{{2.21}{35}{MOVE TO METHODOLOGY}{figure.2.21}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.22}{\ignorespaces Circulating repulsive obstacle on straight path}}{35}{figure.2.22}}
-\newlabel{fig:singleobstacleWithCirc}{{2.22}{35}{MOVE TO METHODOLOGY}{figure.2.22}{}}
 \citation{ren_experimental_2007}
 \citation{louali_designing_2014}
 \citation{louali_experimental_2016}
 \citation{kapitanyuk_guiding_2017}
 \citation{schmitt_obstacle_2016}
-\@writefile{toc}{\contentsline {section}{\numberline {2.7}Unmanned Aerial Vehicle Simulation}{36}{section.2.7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.23}{\ignorespaces Differential drive mobile robot simulating fixed wing UAV Dubins constraints}}{36}{figure.2.23}}
-\newlabel{fig:robot}{{2.23}{36}{Unmanned Aerial Vehicle Simulation}{figure.2.23}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.8}Literature Review Summary}{36}{section.2.8}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Methodology}{38}{chapter.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.7}Unmanned Aerial Vehicle Simulation}{32}{section.2.7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.18}{\ignorespaces Differential drive mobile robot simulating fixed wing UAV Dubins constraints}}{32}{figure.2.18}}
+\newlabel{fig:robot}{{2.18}{32}{Unmanned Aerial Vehicle Simulation}{figure.2.18}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.8}Literature Review Summary}{32}{section.2.8}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Methodology}{34}{chapter.3}}
 \@writefile{lof}{\addvspace {\@lineskip }}
 \@writefile{lot}{\addvspace {\@lineskip }}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Introduction to Methodology}{38}{section.3.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Phase I}{38}{section.3.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Place Intersection}}{38}{figure.3.1}}
-\newlabel{fig:planeIntersection}{{3.1}{38}{Phase I}{figure.3.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces GVF converging and a) small circulation b) large circulation}}{39}{figure.3.2}}
-\newlabel{fig:GVFLine}{{3.2}{39}{Phase I}{figure.3.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces GVF converging and circulating circular path}}{39}{figure.3.3}}
-\newlabel{fig:GVFCirc}{{3.3}{39}{Phase I}{figure.3.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Introduction to Methodology}{34}{section.3.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Phase I}{34}{section.3.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Place Intersection}}{34}{figure.3.1}}
+\newlabel{fig:planeIntersection}{{3.1}{34}{Phase I}{figure.3.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces GVF converging and a) small circulation b) large circulation}}{35}{figure.3.2}}
+\newlabel{fig:GVFLine}{{3.2}{35}{Phase I}{figure.3.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces GVF converging and circulating circular path}}{35}{figure.3.3}}
+\newlabel{fig:GVFCirc}{{3.3}{35}{Phase I}{figure.3.3}{}}
 \citation{goncalves_circulation_2010,goncalves_vector_2010,wwc}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces GVF circular attractive field without normalization (a) and with normalization (b)}}{40}{figure.3.4}}
-\newlabel{fig:gvfCircAttractive}{{3.4}{40}{Phase I}{figure.3.4}{}}
-\newlabel{circOnly}{{3.1}{41}{Phase I}{equation.3.2.1}{}}
-\newlabel{circOnlySimp}{{3.2}{41}{Phase I}{equation.3.2.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Circular GVF without normalization (a) and with normalization (b)}}{41}{figure.3.5}}
-\newlabel{fig:gvfCircCirculation}{{3.5}{41}{Phase I}{figure.3.5}{}}
-\newlabel{tv}{{3.3}{42}{Phase I}{equation.3.2.3}{}}
-\newlabel{mMatrix}{{3.4}{42}{Phase I}{equation.3.2.4}{}}
-\newlabel{aVector}{{3.5}{42}{Phase I}{equation.3.2.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Circular time-varying GVF without normalization (a) and with normalization (b)}}{42}{figure.3.6}}
-\newlabel{fig:gvfCircTimeVarying}{{3.6}{42}{Phase I}{figure.3.6}{}}
-\newlabel{gonAllComp}{{3.6}{43}{Phase I}{equation.3.2.6}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{43}{figure.3.7}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{43}{figure.3.7}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{43}{figure.3.7}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{43}{figure.3.7}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{43}{figure.3.7}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{43}{figure.3.7}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{43}{figure.3.7}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{43}{figure.3.7}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{43}{figure.3.7}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{43}{figure.3.7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces GVF with unity (\textit  {\textbf  {G=H=L=1}}) weights for a moving circular path}}{43}{figure.3.7}}
-\newlabel{fig:circconvcirctv}{{3.7}{43}{Phase I}{figure.3.7}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Phase II}{44}{section.3.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Phase III}{44}{section.3.4}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Results}{45}{chapter.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces GVF circular attractive field without normalization (a) and with normalization (b)}}{36}{figure.3.4}}
+\newlabel{fig:gvfCircAttractive}{{3.4}{36}{Phase I}{figure.3.4}{}}
+\newlabel{circOnly}{{3.1}{37}{Phase I}{equation.3.2.1}{}}
+\newlabel{circOnlySimp}{{3.2}{37}{Phase I}{equation.3.2.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Circular GVF without normalization (a) and with normalization (b)}}{37}{figure.3.5}}
+\newlabel{fig:gvfCircCirculation}{{3.5}{37}{Phase I}{figure.3.5}{}}
+\newlabel{tv}{{3.3}{38}{Phase I}{equation.3.2.3}{}}
+\newlabel{mMatrix}{{3.4}{38}{Phase I}{equation.3.2.4}{}}
+\newlabel{aVector}{{3.5}{38}{Phase I}{equation.3.2.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Circular time-varying GVF without normalization (a) and with normalization (b)}}{38}{figure.3.6}}
+\newlabel{fig:gvfCircTimeVarying}{{3.6}{38}{Phase I}{figure.3.6}{}}
+\newlabel{gonAllComp}{{3.6}{39}{Phase I}{equation.3.2.6}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{39}{figure.3.7}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{39}{figure.3.7}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{39}{figure.3.7}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{39}{figure.3.7}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{39}{figure.3.7}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{39}{figure.3.7}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{39}{figure.3.7}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{39}{figure.3.7}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{39}{figure.3.7}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{39}{figure.3.7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces GVF with unity (\textit  {\textbf  {G=H=L=1}}) weights for a moving circular path}}{39}{figure.3.7}}
+\newlabel{fig:circconvcirctv}{{3.7}{39}{Phase I}{figure.3.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Phase II}{40}{section.3.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Phase III}{40}{section.3.4}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Results}{41}{chapter.4}}
 \@writefile{lof}{\addvspace {\@lineskip }}
 \@writefile{lot}{\addvspace {\@lineskip }}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Introduction to Results}{45}{section.4.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Phase I}{45}{section.4.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Phase II}{45}{section.4.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Phase III}{45}{section.4.4}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Conclusions}{46}{chapter.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Introduction to Results}{41}{section.4.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Phase I}{41}{section.4.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Phase II}{41}{section.4.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Phase III}{41}{section.4.4}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Conclusions}{42}{chapter.5}}
 \@writefile{lof}{\addvspace {\@lineskip }}
 \@writefile{lot}{\addvspace {\@lineskip }}
 \bibstyle{aiaa}
 \bibdata{bib}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Future Work}{47}{chapter.6}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Future Work}{43}{chapter.6}}
 \@writefile{lof}{\addvspace {\@lineskip }}
 \@writefile{lot}{\addvspace {\@lineskip }}
 \bibcite{bone_uavs_2003}{1}
@@ -269,7 +251,7 @@
 \bibcite{khatib_real-time_1986}{13}
 \bibcite{rimon_exact_1992}{14}
 \bibcite{liu_virtual-waypoint_2016}{15}
-\@writefile{toc}{\contentsline {chapter}{References}{48}{schapter.5}}
+\@writefile{toc}{\contentsline {chapter}{References}{44}{schapter.5}}
 \bibcite{borenstein_real-time_1990}{16}
 \bibcite{borenstein_vector_1991}{17}
 \bibcite{koren_potential_1991}{18}
@@ -295,12 +277,13 @@
 \bibcite{goncalves_artificial_2009}{38}
 \bibcite{goncalves_circulation_2010}{39}
 \bibcite{goncalves_vector_2010}{40}
-\bibcite{ren_experimental_2007}{41}
-\bibcite{louali_designing_2014}{42}
-\bibcite{louali_experimental_2016}{43}
-\bibcite{kapitanyuk_guiding_2017}{44}
-\bibcite{schmitt_obstacle_2016}{45}
-\newlabel{LastPage}{{}{51}{}{page.51}{}}
-\xdef\lastpage@lastpage{51}
-\xdef\lastpage@lastpageHy{51}
+\bibcite{gerlach_autonomous_2014}{41}
+\bibcite{ren_experimental_2007}{42}
+\bibcite{louali_designing_2014}{43}
+\bibcite{louali_experimental_2016}{44}
+\bibcite{kapitanyuk_guiding_2017}{45}
+\bibcite{schmitt_obstacle_2016}{46}
+\newlabel{LastPage}{{}{47}{}{page.47}{}}
+\xdef\lastpage@lastpage{47}
+\xdef\lastpage@lastpageHy{47}
 \setcounter{@appcount}{0}
