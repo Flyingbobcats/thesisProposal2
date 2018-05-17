@@ -14,13 +14,12 @@
 \contentsline {section}{\numberline {2.2}Unmanned Aerial Vehicle}{13}{section.2.2}
 \contentsline {section}{\numberline {2.3}Path Planning and Guidance}{15}{section.2.3}
 \contentsline {section}{\numberline {2.4}Potential Field}{16}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}\texthl {Path Following Vector Field Guidance}}{21}{subsection.2.4.1}
 \contentsline {section}{\numberline {2.5}Vector Field Guidance}{21}{section.2.5}
 \contentsline {subsection}{\numberline {2.5.1}Introduction to Vector Field Guidance}{21}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}Lyapunov Vector Fields}{22}{subsection.2.5.2}
-\contentsline {subsection}{\numberline {2.5.3}Path Planning Vector Fields}{26}{subsection.2.5.3}
+\contentsline {subsection}{\numberline {2.5.2}Lyapunov Vector Fields}{21}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}Path Planning Vector Fields}{25}{subsection.2.5.3}
 \contentsline {subsection}{\numberline {2.5.4}Gradient Vector Field}{27}{subsection.2.5.4}
-\contentsline {section}{\numberline {2.6}Dubins Vehicle}{31}{section.2.6}
+\contentsline {section}{\numberline {2.6}Dubins Vehicle}{30}{section.2.6}
 \contentsline {section}{\numberline {2.7}Unmanned Aerial Vehicle Simulation}{32}{section.2.7}
 \contentsline {section}{\numberline {2.8}Literature Review Summary}{32}{section.2.8}
 \contentsline {chapter}{\numberline {3}Methodology}{34}{chapter.3}

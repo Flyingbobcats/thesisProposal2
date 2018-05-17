@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.9.26)  16 MAY 2018 20:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.9.26)  16 MAY 2018 20:57
 entering extended mode
 **./main.tex
 (main.tex
@@ -1008,11 +1008,15 @@ File: utxsyc.fd 2000/12/15 v3.1
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [5] (main.lof)
+ [5] (main.lof
+
+LaTeX Warning: Citation `wwc' on page 6 undefined on input line 27.
+
+)
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
-[6
+ [6
 
 ] [7
 
@@ -1026,6 +1030,9 @@ Chapter 1.
 Missing character: There is no â in font txr!
 Missing character: There is no € in font txr!
 Missing character: There is no ™ in font txr!
+
+LaTeX Warning: Citation `wwc' on page 9 undefined on input line 203.
+
 [9
 
 ]
@@ -1047,21 +1054,21 @@ Overfull \hbox (38.64pt too wide) in paragraph at lines 267--269
 
 [11] [12]
 Chapter 2.
-<PaperFigures/fixedwing.jpg, id=344, 903.375pt x 602.25pt>
+<PaperFigures/fixedwing.jpg, id=341, 903.375pt x 602.25pt>
 File: PaperFigures/fixedwing.jpg Graphic file (type jpg)
 
 <use PaperFigures/fixedwing.jpg>
 Package pdftex.def Info: PaperFigures/fixedwing.jpg used on input line 287.
 (pdftex.def)             Requested size: 184.9429pt x 123.29663pt.
 
-<PaperFigures/iris-1.jpg, id=346, 602.25pt x 462.72874pt>
+<PaperFigures/iris-1.jpg, id=343, 602.25pt x 462.72874pt>
 File: PaperFigures/iris-1.jpg Graphic file (type jpg)
 
 <use PaperFigures/iris-1.jpg>
 Package pdftex.def Info: PaperFigures/iris-1.jpg used on input line 288.
 (pdftex.def)             Requested size: 184.9429pt x 142.09584pt.
 
-<PaperFigures/pixhawk.jpg, id=349, 325.215pt x 178.5069pt>
+<PaperFigures/pixhawk.jpg, id=346, 325.215pt x 178.5069pt>
 File: PaperFigures/pixhawk.jpg Graphic file (type jpg)
 
 <use PaperFigures/pixhawk.jpg>
@@ -1070,7 +1077,7 @@ Package pdftex.def Info: PaperFigures/pixhawk.jpg used on input line 300.
  [13
 
  <./PaperFigures/fixedwing.jpg> <./PaperFigures/iris-1.jpg>]
-<PaperFigures/autopilotLoops.png, id=365, 952.30782pt x 249.18094pt>
+<PaperFigures/autopilotLoops.png, id=362, 952.30782pt x 249.18094pt>
 File: PaperFigures/autopilotLoops.png Graphic file (type png)
 
 <use PaperFigures/autopilotLoops.png>
@@ -1079,21 +1086,21 @@ Package pdftex.def Info: PaperFigures/autopilotLoops.png used on input line 323
 (pdftex.def)             Requested size: 426.79134pt x 111.6741pt.
  [14 <./PaperFigures/pixhawk.jpg>]
 [15 <./PaperFigures/autopilotLoops.png>]
-<PaperFigures/pfObstacle.png, id=380, 319.94531pt x 216.05719pt>
+<PaperFigures/pfObstacle.png, id=377, 319.94531pt x 216.05719pt>
 File: PaperFigures/pfObstacle.png Graphic file (type png)
 
 <use PaperFigures/pfObstacle.png>
 Package pdftex.def Info: PaperFigures/pfObstacle.png used on input line 378.
 (pdftex.def)             Requested size: 199.16928pt x 134.49802pt.
  [16 <./PaperFigures/pfObstacle.png>]
-<PaperFigures/histogram.png, id=393, 277.78781pt x 337.26pt>
+<PaperFigures/histogram.png, id=390, 277.78781pt x 337.26pt>
 File: PaperFigures/histogram.png Graphic file (type png)
 
 <use PaperFigures/histogram.png>
 Package pdftex.def Info: PaperFigures/histogram.png used on input line 388.
 (pdftex.def)             Requested size: 199.16928pt x 241.81322pt.
  [17 <./PaperFigures/histogram.png>]
-<PaperFigures/pfObstacleLocalMin.png, id=410, 295.1025pt x 194.22563pt>
+<PaperFigures/pfObstacleLocalMin.png, id=407, 295.1025pt x 194.22563pt>
 File: PaperFigures/pfObstacleLocalMin.png Graphic file (type png)
 
 <use PaperFigures/pfObstacleLocalMin.png>
@@ -1101,25 +1108,13 @@ Package pdftex.def Info: PaperFigures/pfObstacleLocalMin.png used on input line
  426.
 (pdftex.def)             Requested size: 199.16928pt x 131.08774pt.
 
-<PaperFigures/pfObstacleLocalMinTopology.png, id=411, 304.88907pt x 233.37187pt
+<PaperFigures/pfObstacleLocalMinTopology.png, id=408, 304.88907pt x 233.37187pt
 >
 File: PaperFigures/pfObstacleLocalMinTopology.png Graphic file (type png)
  <use PaperFigures/pfObstacleLocalMinTopology.png>
 Package pdftex.def Info: PaperFigures/pfObstacleLocalMinTopology.png used on in
 put line 427.
 (pdftex.def)             Requested size: 199.16928pt x 152.45552pt.
-
-
-LaTeX Warning: Citation `kim_escaping_2009' on page 18 undefined on input line 
-433.
-
-
-LaTeX Warning: Citation `lei_tang_novel_2010' on page 18 undefined on input lin
-e 433.
-
-
-LaTeX Warning: Citation `li_efficient_2012' on page 18 undefined on input line 
-433.
 
 <PaperFigures/multipleObsVff.png, id=415, 531.48563pt x 311.66437pt>
 File: PaperFigures/multipleObsVff.png Graphic file (type png)
@@ -1137,7 +1132,7 @@ ut line 439.
 (pdftex.def)             Requested size: 170.71652pt x 185.30359pt.
  [18 <./PaperFigures/pfObstacleLocalMin.png> <./PaperFigures/pfObstacleLocalMin
 Topology.png>]
-<PaperFigures/obstacleClustering.png, id=432, 319.1925pt x 242.40562pt>
+<PaperFigures/obstacleClustering.png, id=435, 319.1925pt x 242.40562pt>
 File: PaperFigures/obstacleClustering.png Graphic file (type png)
 
 <use PaperFigures/obstacleClustering.png>
@@ -1158,7 +1153,7 @@ Simulated-eps-converted-to.pdf PaperFigures/Literature/vffSimulated.eps>
 (epstopdf)             \includegraphics on input line 461.
 Package epstopdf Info: Output file is already uptodate.
 
-<PaperFigures/Literature/vffSimulated-eps-converted-to.pdf, id=446, 710.655pt x
+<PaperFigures/Literature/vffSimulated-eps-converted-to.pdf, id=450, 710.655pt x
  411.5375pt>
 File: PaperFigures/Literature/vffSimulated-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -1167,39 +1162,39 @@ Package pdftex.def Info: PaperFigures/Literature/vffSimulated-eps-converted-to.
 pdf used on input line 461.
 (pdftex.def)             Requested size: 426.79134pt x 247.15675pt.
 
-[20 <./PaperFigures/Literature/vffSimulated-eps-converted-to.pdf>] [21]
+[20 <./PaperFigures/Literature/vffSimulated-eps-converted-to.pdf>]
 
-LaTeX Warning: Reference `fig:vfPrimitives' on page 22 undefined on input line 
+LaTeX Warning: Reference `fig:vfPrimitives' on page 21 undefined on input line 
 486.
 
 
-LaTeX Warning: Reference `fig:vfPrimitives' on page 22 undefined on input line 
+LaTeX Warning: Reference `fig:vfPrimitives' on page 21 undefined on input line 
 499.
 
-<PaperFigures/nelsonLyapunov.png, id=471, 871.75688pt x 395.22656pt>
+[21] <PaperFigures/nelsonLyapunov.png, id=467, 871.75688pt x 395.22656pt>
 File: PaperFigures/nelsonLyapunov.png Graphic file (type png)
 
 <use PaperFigures/nelsonLyapunov.png>
 Package pdftex.def Info: PaperFigures/nelsonLyapunov.png used on input line 508
 .
 (pdftex.def)             Requested size: 369.88582pt x 167.69466pt.
- [22]
-<PaperFigures/urbanFollowingNelson.png, id=489, 310.91156pt x 319.94531pt>
+ [22 <./PaperFigures/nelsonLyapunov.png>]
+<PaperFigures/urbanFollowingNelson.png, id=484, 310.91156pt x 319.94531pt>
 File: PaperFigures/urbanFollowingNelson.png Graphic file (type png)
 
 <use PaperFigures/urbanFollowingNelson.png>
 Package pdftex.def Info: PaperFigures/urbanFollowingNelson.png used on input li
 ne 589.
 (pdftex.def)             Requested size: 199.16928pt x 204.95468pt.
- [23 <./PaperFigures/nelsonLyapunov.png>] <PaperFigures/griffiths.png, id=499, 
-560.0925pt x 526.96875pt>
+
+<PaperFigures/griffiths.png, id=489, 560.0925pt x 526.96875pt>
 File: PaperFigures/griffiths.png Graphic file (type png)
 
 <use PaperFigures/griffiths.png>
 Package pdftex.def Info: PaperFigures/griffiths.png used on input line 598.
 (pdftex.def)             Requested size: 199.16928pt x 187.39282pt.
- [24 <./PaperFigures/urbanFollowingNelson.png> <./PaperFigures/griffiths.png>]
-<PaperFigures/lyapunovFrewUncertain.png, id=512, 402.75468pt x 308.65312pt>
+ [23 <./PaperFigures/urbanFollowingNelson.png>] <PaperFigures/lyapunovFrewUncer
+tain.png, id=501, 402.75468pt x 308.65312pt>
 File: PaperFigures/lyapunovFrewUncertain.png Graphic file (type png)
 
 <use PaperFigures/lyapunovFrewUncertain.png>
@@ -1207,50 +1202,71 @@ Package pdftex.def Info: PaperFigures/lyapunovFrewUncertain.png used on input l
 ine 609.
 (pdftex.def)             Requested size: 227.62204pt x 174.43643pt.
 
-<PaperFigures/lyapunovFrew.png, id=513, 444.91219pt x 438.13687pt>
+<PaperFigures/lyapunovFrew.png, id=502, 444.91219pt x 438.13687pt>
 File: PaperFigures/lyapunovFrew.png Graphic file (type png)
 
 <use PaperFigures/lyapunovFrew.png>
 Package pdftex.def Info: PaperFigures/lyapunovFrew.png used on input line 610.
 (pdftex.def)             Requested size: 177.82971pt x 175.11792pt.
-
-<PaperFigures/lyapunovChen.png, id=522, 463.7325pt x 371.13657pt>
+ [24 <./PaperFigures/griffiths.png> <./PaperFigures/lyapunovFrewUncertain.png> 
+<./PaperFigures/lyapunovFrew.png>]
+<PaperFigures/lyapunovChen.png, id=520, 463.7325pt x 371.13657pt>
 File: PaperFigures/lyapunovChen.png Graphic file (type png)
 
 <use PaperFigures/lyapunovChen.png>
 Package pdftex.def Info: PaperFigures/lyapunovChen.png used on input line 621.
 (pdftex.def)             Requested size: 199.16928pt x 159.40439pt.
- [25 <./PaperFigures/lyapunovFrewUncertain.png> <./PaperFigures/lyapunovFrew.pn
-g>]
-<PaperFigures/rrtVF.png, id=537, 812.28468pt x 438.8897pt>
+
+<PaperFigures/rrtVF.png, id=524, 812.28468pt x 438.8897pt>
 File: PaperFigures/rrtVF.png Graphic file (type png)
 
 <use PaperFigures/rrtVF.png>
 Package pdftex.def Info: PaperFigures/rrtVF.png used on input line 632.
 (pdftex.def)             Requested size: 341.43306pt x 184.47974pt.
-
-<PaperFigures/cdtVF.png, id=542, 1389.69188pt x 505.13719pt>
+ [25 <./PaperFigures/lyapunovChen.png>]
+<PaperFigures/cdtVF.png, id=537, 1389.69188pt x 505.13719pt>
 File: PaperFigures/cdtVF.png Graphic file (type png)
 
 <use PaperFigures/cdtVF.png>
 Package pdftex.def Info: PaperFigures/cdtVF.png used on input line 643.
 (pdftex.def)             Requested size: 426.79134pt x 155.12643pt.
- [26 <./PaperFigures/lyapunovChen.png>] [27 <./PaperFigures/rrtVF.png> <./Paper
-Figures/cdtVF.png>] [28] [29]
+
+
+LaTeX Warning: Citation `wwc' on page 26 undefined on input line 648.
+
+[26 <./PaperFigures/rrtVF.png> <./PaperFigures/cdtVF.png>] [27]
+
+LaTeX Warning: Citation `wwc' on page 28 undefined on input line 739.
+
+[28]
+
+LaTeX Warning: Citation `wwc' on page 29 undefined on input line 742.
+
+
 Underfull \hbox (badness 1205) in paragraph at lines 753--754
 []\OT1/txr/m/n/12 The performance of Lyapunov [21] and gradient vector field [[
-][]38[][][][][]40[][]] were
+][]37[][][][][]39[][]] were
  []
 
-<PaperFigures/gvfMovingTarget.png, id=594, 753.5653pt x 535.2497pt>
+<PaperFigures/gvfMovingTarget.png, id=579, 753.5653pt x 535.2497pt>
 File: PaperFigures/gvfMovingTarget.png Graphic file (type png)
 
 <use PaperFigures/gvfMovingTarget.png>
 Package pdftex.def Info: PaperFigures/gvfMovingTarget.png used on input line 75
 8.
 (pdftex.def)             Requested size: 284.52756pt x 202.09023pt.
- [30 <./PaperFigures/gvfMovingTarget.png>] [31] <PaperFigures/robot.jpg, id=623
-, 5331.92pt x 2999.205pt>
+
+
+LaTeX Warning: Citation `wwc' on page 29 undefined on input line 759.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Citation `wwc' on page 29 undefined on input line 763.
+
+[29] [30 <./PaperFigures/gvfMovingTarget.png>] [31]
+<PaperFigures/robot.jpg, id=612, 5331.92pt x 2999.205pt>
 File: PaperFigures/robot.jpg Graphic file (type jpg)
 
 <use PaperFigures/robot.jpg>
@@ -1258,7 +1274,7 @@ Package pdftex.def Info: PaperFigures/robot.jpg used on input line 975.
 (pdftex.def)             Requested size: 426.79134pt x 240.03284pt.
  [32 <./PaperFigures/robot.jpg>] [33]
 Chapter 3.
-<Figures/planeIntersection.png, id=638, 361.35pt x 361.35pt>
+<Figures/planeIntersection.png, id=627, 361.35pt x 361.35pt>
 File: Figures/planeIntersection.png Graphic file (type png)
 
 <use Figures/planeIntersection.png>
@@ -1277,7 +1293,7 @@ hH1-eps-converted-to.pdf Figures/methods/straightPathH1.eps>
 (epstopdf)             \includegraphics on input line 1021.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/methods/straightPathH1-eps-converted-to.pdf, id=641, 361.35pt x 361.35
+<Figures/methods/straightPathH1-eps-converted-to.pdf, id=630, 361.35pt x 361.35
 pt>
 File: Figures/methods/straightPathH1-eps-converted-to.pdf Graphic file (type pd
 f)
@@ -1297,7 +1313,7 @@ hH5-eps-converted-to.pdf Figures/methods/straightPathH5.eps>
 (epstopdf)             \includegraphics on input line 1022.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/methods/straightPathH5-eps-converted-to.pdf, id=643, 361.35pt x 361.35
+<Figures/methods/straightPathH5-eps-converted-to.pdf, id=632, 361.35pt x 361.35
 pt>
 File: Figures/methods/straightPathH5-eps-converted-to.pdf Graphic file (type pd
 f)
@@ -1308,7 +1324,7 @@ ed on input line 1022.
  [34
 
  <./Figures/planeIntersection.png (PNG copy)>]
-<Figures/cylinderIntersection.png, id=650, 361.35pt x 361.35pt>
+<Figures/cylinderIntersection.png, id=639, 361.35pt x 361.35pt>
 File: Figures/cylinderIntersection.png Graphic file (type png)
 
 <use Figures/cylinderIntersection.png>
@@ -1316,7 +1332,7 @@ Package pdftex.def Info: Figures/cylinderIntersection.png used on input line 10
 37.
 (pdftex.def)             Requested size: 199.16928pt x 199.16766pt.
 
-<Figures/circConvCirc.pdf, id=651, 361.35pt x 361.35pt>
+<Figures/circConvCirc.pdf, id=640, 361.35pt x 361.35pt>
 File: Figures/circConvCirc.pdf Graphic file (type pdf)
 
 <use Figures/circConvCirc.pdf>
@@ -1325,7 +1341,11 @@ Package pdftex.def Info: Figures/circConvCirc.pdf used on input line 1038.
  [35 <./Figures/methods/straightPathH1-eps-converted-to.pdf> <./Figures/methods
 /straightPathH5-eps-converted-to.pdf> <./Figures/cylinderIntersection.png (PNG 
 copy)> <./Figures/circConvCirc.pdf>]
-<PaperFigures/NNcompWithoutTitles/circAttractive.pdf, id=676, 361.35pt x 361.35
+
+LaTeX Warning: Citation `wwc' on page 36 undefined on input line 1055.
+
+
+<PaperFigures/NNcompWithoutTitles/circAttractive.pdf, id=664, 361.35pt x 361.35
 pt>
 File: PaperFigures/NNcompWithoutTitles/circAttractive.pdf Graphic file (type pd
 f)
@@ -1334,7 +1354,7 @@ Package pdftex.def Info: PaperFigures/NNcompWithoutTitles/circAttractive.pdf us
 ed on input line 1060.
 (pdftex.def)             Requested size: 213.39566pt x 213.39867pt.
 
-<PaperFigures/compWithoutTitles/circAttractive.pdf, id=677, 361.35pt x 361.35pt
+<PaperFigures/compWithoutTitles/circAttractive.pdf, id=665, 361.35pt x 361.35pt
 >
 File: PaperFigures/compWithoutTitles/circAttractive.pdf Graphic file (type pdf)
 
@@ -1344,7 +1364,7 @@ Package pdftex.def Info: PaperFigures/compWithoutTitles/circAttractive.pdf used
 (pdftex.def)             Requested size: 213.39566pt x 213.39867pt.
  [36 <./PaperFigures/NNcompWithoutTitles/circAttractive.pdf> <./PaperFigures/co
 mpWithoutTitles/circAttractive.pdf>]
-<PaperFigures/NNcompWithoutTitles/circCW.pdf, id=694, 361.35pt x 361.35pt>
+<PaperFigures/NNcompWithoutTitles/circCW.pdf, id=682, 361.35pt x 361.35pt>
 File: PaperFigures/NNcompWithoutTitles/circCW.pdf Graphic file (type pdf)
 
 <use PaperFigures/NNcompWithoutTitles/circCW.pdf>
@@ -1352,7 +1372,7 @@ Package pdftex.def Info: PaperFigures/NNcompWithoutTitles/circCW.pdf used on in
 put line 1088.
 (pdftex.def)             Requested size: 213.39566pt x 213.39867pt.
 
-<PaperFigures/compWithoutTitles/circCW.pdf, id=695, 361.35pt x 361.35pt>
+<PaperFigures/compWithoutTitles/circCW.pdf, id=683, 361.35pt x 361.35pt>
 File: PaperFigures/compWithoutTitles/circCW.pdf Graphic file (type pdf)
 
 <use PaperFigures/compWithoutTitles/circCW.pdf>
@@ -1361,7 +1381,7 @@ t line 1089.
 (pdftex.def)             Requested size: 213.39566pt x 213.39867pt.
  [37 <./PaperFigures/NNcompWithoutTitles/circCW.pdf> <./PaperFigures/compWithou
 tTitles/circCW.pdf>]
-<PaperFigures/NNcompWithoutTitles/circTv.pdf, id=713, 361.35pt x 361.35pt>
+<PaperFigures/NNcompWithoutTitles/circTv.pdf, id=701, 361.35pt x 361.35pt>
 File: PaperFigures/NNcompWithoutTitles/circTv.pdf Graphic file (type pdf)
 
 <use PaperFigures/NNcompWithoutTitles/circTv.pdf>
@@ -1369,7 +1389,7 @@ Package pdftex.def Info: PaperFigures/NNcompWithoutTitles/circTv.pdf used on in
 put line 1123.
 (pdftex.def)             Requested size: 213.39566pt x 213.39867pt.
 
-<PaperFigures/compWithoutTitles/circTv.pdf, id=714, 361.35pt x 361.35pt>
+<PaperFigures/compWithoutTitles/circTv.pdf, id=702, 361.35pt x 361.35pt>
 File: PaperFigures/compWithoutTitles/circTv.pdf Graphic file (type pdf)
 
 <use PaperFigures/compWithoutTitles/circTv.pdf>
@@ -1378,7 +1398,7 @@ t line 1124.
 (pdftex.def)             Requested size: 213.39566pt x 213.39867pt.
  [38 <./PaperFigures/NNcompWithoutTitles/circTv.pdf> <./PaperFigures/compWithou
 tTitles/circTv.pdf>]
-<PaperFigures/compWithoutTitles/circConvCircTv.pdf, id=728, 361.35pt x 361.35pt
+<PaperFigures/compWithoutTitles/circConvCircTv.pdf, id=716, 361.35pt x 361.35pt
 >
 File: PaperFigures/compWithoutTitles/circConvCircTv.pdf Graphic file (type pdf)
 
@@ -1399,17 +1419,11 @@ Chapter 6.
 (main.bbl [43
 
 ]
-Underfull \hbox (badness 1226) in paragraph at lines 22--25
+Underfull \hbox (badness 1226) in paragraph at lines 18--21
 []\OT1/txr/m/n/12 Teuliere, C., Eck, L., and Marchand, E., ``Chasing a moving t
 arget from a
  []
 
-Missing character: There is no Ã in font txr!
-Missing character: There is no ­ in font txr!
-Missing character: There is no Ã in font txr!
-Missing character: There is no ³ in font txr!
-Missing character: There is no Ã in font txr!
-Missing character: There is no © in font txr!
 [44
 
 ] [45]
@@ -1418,7 +1432,7 @@ Missing character: There is no § in font txr!
 Missing character: There is no Ã in font txr!
 Missing character: There is no § in font txr!
  [46]
-Underfull \hbox (badness 1231) in paragraph at lines 226--230
+Underfull \hbox (badness 1231) in paragraph at lines 221--225
 \OT1/txr/m/n/12 for Evaluating an UAV COTS-Based Embedded Sensors System,'' \OT
 1/txr/m/it/12 Journal of
  []
@@ -1447,28 +1461,31 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1180.
  ) 
 Here is how much of TeX's memory you used:
- 10674 strings out of 493320
- 156191 string characters out of 3138948
- 268115 words of memory out of 3000000
- 13714 multiletter control sequences out of 15000+200000
+ 10669 strings out of 493320
+ 156104 string characters out of 3138948
+ 268121 words of memory out of 3000000
+ 13710 multiletter control sequences out of 15000+200000
  36106 words of font info for 86 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,14n,40p,1667b,496s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/txfonts/rtcxr.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/txfonts/rtxbi.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/t
-xfonts/rtxbsc.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/txfonts/rtxi.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/txfonts/rtxmi.pfb><C:/Progr
-am Files/MiKTeX 2.9/fonts/type1/public/txfonts/rtxr.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/txfonts/txex.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/txfonts/txsy.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/
-utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (47 pages, 5073552 bytes).
+ 34i,14n,40p,1667b,498s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{subsection.2.4.1} has been referenced but does no
+t exist, replaced by a fixed one
+
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/txfonts/rtcxr.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/txfonts/rtxbi.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/txf
+onts/rtxbsc.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/txfonts/rtxi.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/txfonts/rtxmi.pfb><C:/Program
+ Files/MiKTeX 2.9/fonts/type1/public/txfonts/rtxr.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/txfonts/txex.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/txfonts/txsy.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/ut
+mb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (47 pages, 5070625 bytes).
 PDF statistics:
- 861 PDF objects out of 1000 (max. 8388607)
- 213 named destinations out of 1000 (max. 500000)
+ 849 PDF objects out of 1000 (max. 8388607)
+ 212 named destinations out of 1000 (max. 500000)
  467 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -4,10 +4,6 @@
 \bibitem{bone_uavs_2003}
 Bone, E., \enquote{{UAVs} backbround and issues for congress.pdf,} 2003.
 
-\bibitem{wwc}
-Wilhelm, J.~P., Wambold, G., and Clem, G., \enquote{Vector field avoidance,}
-  {\em ICUAS\/}, 2018.
-
 \bibitem{panagou_motion_2014}
 Panagou, D., \enquote{Motion planning and collision avoidance using navigation
   vector fields,} {\em Robotics and {Automation} ({ICRA}), 2014 {IEEE}
@@ -45,21 +41,11 @@ Beard, R.~W. and McLain, T.~W., {\em Small unmanned aircraft: theory and
   practice\/}, Princeton University Press, Princeton, N.J, 2012, OCLC:
   ocn724663112.
 
-\bibitem{choi_open_2016}
-Choi, H., Geeves, M., Alsalam, B., and Gonzalez, F., \enquote{Open source
-  computer-vision based guidance system for {UAVs} on-board decision making,}
-  {\em Aerospace {Conference}, 2016 {IEEE}\/}, IEEE, 2016, pp. 1--5.
-
-\bibitem{martinez_-board_2011}
-Martínez, C., Mondragón, I.~F., Olivares-Méndez, M.~A., and Campoy, P.,
-  \enquote{On-board and {Ground} {Visual} {Pose} {Estimation} {Techniques} for
-  {UAV} {Control},} {\em Journal of Intelligent \& Robotic Systems\/}, Vol.~61,
-  No. 1-4, Jan. 2011, pp.~301--320.
-
-\bibitem{yamasaki_integrated_2012}
-Yamasaki, T., Balakrishnan, S.~N., and Takano, H., \enquote{Integrated guidance
-  and autopilot for a path-following {UAV} via high-order sliding modes,} {\em
-  American {Control} {Conference} ({ACC}), 2012\/}, IEEE, 2012, pp. 143--148.
+\bibitem{sujit_unmanned_2014}
+Sujit, P., Saripalli, S., and Sousa, J.~B., \enquote{Unmanned {Aerial}
+  {Vehicle} {Path} {Following}: {A} {Survey} and {Analysis} of {Algorithms} for
+  {Fixed}-{Wing} {Unmanned} {Aerial} {Vehicless},} {\em IEEE Control
+  Systems\/}, Vol.~34, No.~1, Feb. 2014, pp.~42--59.
 
 \bibitem{khatib_real-time_1986}
 Khatib, O., \enquote{Real-time obstacle avoidance for manipulators and mobile
@@ -91,17 +77,26 @@ Borenstein, J. and Koren, Y., \enquote{The vector field histogram-fast obstacle
 Koren, Y. and Borenstein, J., \enquote{Potential {Field} {Methods} and their
   inherent limitions for morbile robot navigation.pdf,} 1991.
 
+\bibitem{kim_escaping_2009}
+Kim, D.~H., \enquote{Escaping route method for a trap situation in local path
+  planning,} {\em International Journal of Control, Automation and Systems\/},
+  Vol.~7, No.~3, June 2009, pp.~495--500.
+
 \bibitem{goerzen_survey_2010}
 Goerzen, C., Kong, Z., and Mettler, B., \enquote{A {Survey} of {Motion}
   {Planning} {Algorithms} from the {Perspective} of {Autonomous} {UAV}
   {Guidance},} {\em Journal of Intelligent and Robotic Systems\/}, Vol.~57, No.
   1-4, Jan. 2010, pp.~65--100.
 
-\bibitem{sujit_unmanned_2014}
-Sujit, P., Saripalli, S., and Sousa, J.~B., \enquote{Unmanned {Aerial}
-  {Vehicle} {Path} {Following}: {A} {Survey} and {Analysis} of {Algorithms} for
-  {Fixed}-{Wing} {Unmanned} {Aerial} {Vehicless},} {\em IEEE Control
-  Systems\/}, Vol.~34, No.~1, Feb. 2014, pp.~42--59.
+\bibitem{lei_tang_novel_2010}
+{Lei Tang}, {Songyi Dian}, {Gangxu Gu}, {Kunli Zhou}, {Suihe Wang}, and
+  {Xinghuan Feng}, \enquote{A novel potential field method for obstacle
+  avoidance and path planning of mobile robot,} IEEE, July 2010, pp. 633--637.
+
+\bibitem{li_efficient_2012}
+Li, G., Yamashita, A., Asama, H., and Tamura, Y., \enquote{An efficient
+  improved artificial potential field based regression search method for robot
+  path planning,} IEEE, Aug. 2012, pp. 1227--1232.
 
 \bibitem{manjunath_application_2016}
 Manjunath, A., Mehrok, P., Sharma, R., and Ratnoo, A., \enquote{Application of
@@ -203,8 +198,8 @@ Gonçalves, V.~M., Pimenta, L.~C., Maia, C.~A., Pereira, G.~A., Dutra, B.~C.,
 \bibitem{goncalves_vector_2010}
 Gonçalves, V.~M., Pimenta, L.~C., Maia, C.~A., Dutra, B.~C., and Pereira,
   G.~A., \enquote{Vector fields for robot navigation along time-varying curves
-  in $n$-dimensions,} {\em IEEE Transactions on Robotics\/}, Vol.~26, No.~4,
-  2010, pp.~647--659.
+  in \$ n \$-dimensions,} {\em IEEE Transactions on Robotics\/}, Vol.~26,
+  No.~4, 2010, pp.~647--659.
 
 \bibitem{gerlach_autonomous_2014}
 Gerlach, A.~R., {\em Autonomous {Path}-{Following} by {Approximate} {Inverse}
