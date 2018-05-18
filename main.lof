@@ -17,7 +17,7 @@
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{22}{figure.2.10}
 \contentsline {figure}{\numberline {2.10}{\ignorespaces Lyapunov vector field for straight line and circular primitives \cite {nelson_cooperative_2005}}}{22}{figure.2.10}
 \contentsline {figure}{\numberline {2.11}{\ignorespaces Straight path following in urban environment \cite {nelson_cooperative_2005} using Lyapunov Vector Field}}{23}{figure.2.11}
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Lyapunov vector field approach curved path asymptotically \cite {griffiths_vector_2006}}}{24}{figure.2.12}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Lyapunov vector field approach curved path asymptotically \cite {griffiths_vector_2006}}}{23}{figure.2.12}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{24}{figure.2.13}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{24}{figure.2.13}
 \contentsline {figure}{\numberline {2.13}{\ignorespaces Elliptical VF produced by non-linear coordinate transformations a)\cite {frew_cooperative_2007} and b) \cite {frew_lyapunov_nodate}}}{24}{figure.2.13}
@@ -25,25 +25,20 @@
 \contentsline {figure}{\numberline {2.15}{\ignorespaces RRT* path planner with a VF used as a task specification \cite {pereira_framework_2016}}}{26}{figure.2.15}
 \contentsline {figure}{\numberline {2.16}{\ignorespaces Vector field within a set of delaunay triangles \cite {pimenta_fully_2007}}}{26}{figure.2.16}
 \contentsline {figure}{\numberline {2.17}{\ignorespaces Place holder image of UAV following ground target \cite {wwc}}}{30}{figure.2.17}
-\contentsline {figure}{\numberline {2.18}{\ignorespaces Differential drive mobile robot simulating fixed wing UAV Dubins constraints}}{32}{figure.2.18}
 \addvspace {\@lineskip }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Place Intersection}}{34}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces GVF converging and a) small circulation b) large circulation}}{35}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces GVF converging and circulating circular path}}{35}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces GVF circular attractive field without normalization (a) and with normalization (b)}}{36}{figure.3.4}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Circular GVF without normalization (a) and with normalization (b)}}{37}{figure.3.5}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Circular time-varying GVF without normalization (a) and with normalization (b)}}{38}{figure.3.6}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{39}{figure.3.7}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{39}{figure.3.7}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{39}{figure.3.7}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{39}{figure.3.7}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{39}{figure.3.7}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{39}{figure.3.7}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{39}{figure.3.7}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{39}{figure.3.7}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{39}{figure.3.7}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{39}{figure.3.7}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces GVF with unity (\textit {\textbf {G=H=L=1}}) weights for a moving circular path}}{39}{figure.3.7}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Place Intersection}}{33}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces GVF converging and a) small circulation b) large circulation}}{34}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces GVF circular attractive field without normalization (a) and normalization (b)}}{36}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Repulsive Circular Field with Large Radius}}{36}{figure.3.4}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Repulsive Circular Field with Small Radius}}{37}{figure.3.5}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Circular GVF without normalization (a) and with normalization (b)}}{38}{figure.3.6}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces }}{39}{figure.3.7}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Repulsive GVF a) no circulation and b) with circulation}}{39}{figure.3.8}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Summed Fields Without Total Normalization}}{40}{figure.3.9}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Summed Fields Without Total Normalization}}{41}{figure.3.10}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces GVF converging and circulating circular path}}{42}{figure.3.11}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Summed Field Guidance with circulation}}{43}{figure.3.12}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Fixed Wing converging and following a path}}{44}{figure.3.13}
 \addvspace {\@lineskip }
 \addvspace {\@lineskip }
 \addvspace {\@lineskip }
