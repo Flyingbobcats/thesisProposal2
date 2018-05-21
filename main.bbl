@@ -98,22 +98,6 @@ Li, G., Yamashita, A., Asama, H., and Tamura, Y., \enquote{An efficient
   improved artificial potential field based regression search method for robot
   path planning,} IEEE, Aug. 2012, pp. 1227--1232.
 
-\bibitem{manjunath_application_2016}
-Manjunath, A., Mehrok, P., Sharma, R., and Ratnoo, A., \enquote{Application of
-  virtual target based guidance laws to path following of a quadrotor {UAV},}
-  IEEE, June 2016, pp. 252--260.
-
-\bibitem{fortuna_cascaded_2015}
-Fortuna, J. and Fossen, T.~I., \enquote{Cascaded line-of-sight path-following
-  and sliding mode controllers for fixed-wing {UAVs},} {\em Control
-  {Applications} ({CCA}), 2015 {IEEE} {Conference} on\/}, IEEE, 2015, pp.
-  798--803.
-
-\bibitem{capello_simulation-based_2012}
-Capello, E. and Tempo, R., \enquote{A simulation-based approach for control
-  design of uncertain {UAVs},} {\em Decision and {Control} ({CDC}), 2012 {IEEE}
-  51st {Annual} {Conference} on\/}, IEEE, 2012, pp. 3086--3091.
-
 \bibitem{nelson_cooperative_2005}
 Nelson, D.~R., \enquote{Cooperative control of miniature air vehicles,} 2005.
 
@@ -205,34 +189,5 @@ Gonçalves, V.~M., Pimenta, L.~C., Maia, C.~A., Dutra, B.~C., and Pereira,
 Gerlach, A.~R., {\em Autonomous {Path}-{Following} by {Approximate} {Inverse}
   {Dynamics} and {Vector} {Field} {Prediction}\/}, University of Cincinnati,
   2014.
-
-\bibitem{ren_experimental_2007}
-Ren, W., McLain, T., Sun, J.-S., and Beard, R., \enquote{Experimental
-  validation of an autonomous control system on a mobile robot platform,} {\em
-  IET Control Theory \& Applications\/}, Vol.~1, No.~6, Nov. 2007,
-  pp.~1621--1629.
-
-\bibitem{louali_designing_2014}
-Louali, R., Djouadi, M.~S., Nemra, A., Bouaziz, S., and Elouardi, A.,
-  \enquote{Designing embedded systems for fixed-wing {UAVs}: {Dynamic} models
-  study for the choice of an emulation vehicle,} IEEE, Feb. 2014, pp. 1--6.
-
-\bibitem{louali_experimental_2016}
-Louali, R., Elouardi, A., Bouaziz, S., and Djouadi, M.~S.,
-  \enquote{Experimental {Approach} for {Evaluating} an {UAV} {COTS}-{Based}
-  {Embedded} {Sensors} {System},} {\em Journal of Intelligent \& Robotic
-  Systems\/}, Vol.~83, No.~2, Aug. 2016, pp.~289--313.
-
-\bibitem{kapitanyuk_guiding_2017}
-Kapitanyuk, Y.~A., Proskurnikov, A.~V., and Cao, M., \enquote{A {Guiding}
-  {Vector}-{Field} {Algorithm} for {Path}-{Following} {Control} of
-  {Nonholonomic} {Mobile} {Robots},} {\em IEEE Transactions on Control Systems
-  Technology\/}, 2017, pp.~1--14.
-
-\bibitem{schmitt_obstacle_2016}
-Schmitt, S., Le~Bars, F., Jaulin, L., and Latzel, T., \enquote{Obstacle
-  {Avoidance} for an {Autonomous} {Marine} {Robot}—{A} {Vector} {Field}
-  {Approach},} {\em Quantitative {Monitoring} of the {Underwater}
-  {Environment}\/}, Springer, 2016, pp. 119--131.
 
 \end{thebibliography}
