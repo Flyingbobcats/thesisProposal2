@@ -305,6 +305,12 @@ Unmanned aerial vehicles (UAVs) are gaining popularity in military and civilian 
 
 Using UAVs has several advantages over manned aircraft consisting of low operating cost, reduced risk to human operators, and the ability to perform mundane and repetitive tasks autonomously without heavy human interaction. Open source and versatile autopilots developed by a world-wide community of hobbyist and professionals have made UAV technology widely available on relatively inexpensive hardware [pixhawk, ardupilot]. UAVs can be piloted remotely, removing pilots from potentially dangerous situations if an aircraft experiences mechanical failure. The power behind UAVs lies in their ability to be programmed to carry out tasks autonomously and with little human interaction, allowing operators to monitor multiple vehicles simultaneously. Tasks may be carried out by a single UAV or in cooperation other air or ground vehicles \cite{oh_coordinated_2013,hyondong_oh_coordinated_2015,ulun_coordinated_2013}. The aircraft's route can be controlled directly by an operator's radio controller input when the vehicle is within line-of-sight (LOS). For long endurance or beyond LOS missions, the UAV can be programmed to autonomously follow a mission path that is typically generated prior to flight on a dedicated ground station. Flying autonomous missions typically requires not only the UAV and the autopilot, but a ground support station and hardware to communicate with the ground. 
 
+ \begin{figure}[H]
+	\centering
+	\includegraphics[width=12cm]{PaperFigures/UAVFrame}
+	\caption{}
+	\label{fig:uavframe}
+\end{figure}
 %The UAV, ground station, and communication hardware is referred to as an unmanned aerial system (UAS).
 
 
@@ -1000,43 +1006,16 @@ Vector fields can provide guidance and control for robots through the use of art
 
 
 \section{Introduction to Methodology}
-A real-time circular obstacle avoidance guidance is achieved by summing together a path following and obstacle avoidance vector field with optimized decay and circulation weights. Singularities in summed vector fields are defined and a method for numerically locating their position is presented in Phase I and it is shown how adding circulation to repulsive GVFs may remove singularities from the UAVs path. Phase II investigates a method for selecting the combination of repulsive GVF decay radius and circulation weights that minimizes a path deviation cost function. The optimized GVF guidance is implemented on a multirotor UAV operating under fixed wing constraints in Phase III.
+A real-time circular obstacle avoidance guidance is achieved by summing together a path following and obstacle avoidance vector field with optimized decay and circulation weights. Singularities in summed vector fields are defined and a method for numerically locating their position is presented in Phase I and it is shown how adding circulation to repulsive GVFs may remove singularities from the UAVs path. Phase II investigates a method for selecting the combination of repulsive GVF decay radius and circulation weights that minimizes a path deviation cost function. The optimized GVF guidance is implemented on an indoor multirotor UAV operating under fixed wing constraints in Phase III.
 
 
 \section{Phase I: Gradient vector field singularity detection}
- \textbf{The objective of Phase I is to characterize and present a method for locating singularities in a summed gradient vector field in simulation.} Phase I consists of presenting the GVF equations found in literature, deriving fields for path following and avoidance, followed by a method for detecting singularities in summed fields. Circulation will be added to a repulsive field to demonstrate how singularities may be mitigated by removing regions of direct field opposition.
-% 
-% Singularities may indicate regions where the summed vector fields directly oppose each other which may result in trap situations and should be avoided. Phase I consists of recreating the path following GVF in literature for guiding a fixed wing Dubins UAV along a pre-planned path. A scenario will be presented where a circular obstacle along the path is to be avoided by a repulsive GVF and summed with the path following guidance. 
- 
+ \textbf{The objective of Phase I is to characterize and present a method for locating singularities in a summed gradient vector field in simulation.} Phase I consists of calculating guidance for converging and following a straight path using the GVF method in literature. An obstacle field is constructed for avoiding circular obstacles along the path by modifying GVF's convergence and circulation weights. Summing the attractive and repulsive GVFs results in guidance that guides the UAV along the planned path while pushing away from an obstacle. Regions in the summed guidance where the path following and obstacle guidance directly oppose each other, called singularities, result in vectors of zero length. A method for identifying the location of singularities is presented along with a method for mitigating them. 
  
 
- 
- \subsection{Path Following Vector Field Guidance}
- 
- \begin{figure}[H]
- 	\centering
- 	\includegraphics[width=12cm]{PaperFigures/UAVFrame}
- 	\caption{}
- 	\label{fig:uavframe}
- \end{figure}
- 
- 
-% \begin{itemize}
-% 	\item Present why we're using GVF guidance
-% 	\item Assuming a pre-planned path was calculated off-board and relayed to the UAV guidance system
-% 	\item Introduce Dubins model
-% 	\item Problem of getting onto the path
-% 	\item Recreate vector field guidance from literature review
-% 	\item Show current GVF method with thorough explanation of the construction
-% 	\item Show UAV flight path and how it is effected by circulation value for 	converging and following the path
-% 	\item Obstacle or no-fly zone is enacted along the pre-planned path and must be avoided without intervention from a ground station. 
-% 	\item Representation of obstacle or no-fly zone
-% 	\item Circular, why a circular obstacle
-%
-% \end{itemize}
+\subsection{Path Following Vector Field Guidance}
+Guidance for converging and following a path using GVF guidance is achieved by summing together convergence and circulation terms that are multiplied by scalars $G$ and $H$ respectively, shown in Equation \ref{eq:GVFNoTV}. The potential function $V$, Equation \ref{eq:potV} decreases asymptotically to null when approaching the target path and therefore the convergence vector begins to decrease as well. As the potential function decreases, the circulation term begins to dominate the guidance, promoting path following. How close to the target path the transition between convergence and circulation depends on the scalar weights $G$ and $H$ respectively. 
 
-
-GVFs for time-invariant paths were calculated by summing together a convergence and circulation term in Equation \ref{eq:GVFNoTV}. The potential function $V$ is shown in Equation \ref{eq:potV}, where $\alpha_1$ and $\alpha_2$ are functions of implicit surfaces.
 
 \begin{equation}\label{eq:GVFNoTV}
 \overrightarrow{V} = G \nabla V + H(\nabla\alpha_1 \times \nabla\alpha_2)
@@ -1047,23 +1026,26 @@ V = -\sqrt{{\alpha_1}^2 + {\alpha_2}^2}
 \label{eq:potV}
 \end{equation}
 
-\noindent
-The scalars $G$ and $H$ will be used to specify field behavior after normalizing each component, shown in Equation \ref{gonAllCompNormalized}. The term $\overrightarrow{V}_{conv}$ produces vectors perpendicular to the path and $\overrightarrow{V}_{circ}$ produces vectors parallel to the path. 
+
+
+Equation \ref{eq:GVFNoTV} for straight path following will be represented in component form for convenience, shown in Equation \ref{gonAllCompNormalized}. The total vector $\overrightarrow{V}_p$ represents the non-normalized attractive path following vector comprised of both convergence and circulation terms. 
 
 \begin{equation}
 % Component vector field with conv and circ
-\overrightarrow{V} = G \frac{\overrightarrow{V}_{conv}}{||\overrightarrow{V}_{conv}||} +H\frac{\overrightarrow{V}_{circ}}{||\overrightarrow{V}_{circ}||}
+\overrightarrow{V}_{p} = G \overrightarrow{V}_{conv} +H\overrightarrow{V}_{circ}
 \label{gonAllCompNormalized}
 \end{equation}
 
-Path following guidance for a planar UAV at position $(x,y)$ for a time invariant line at an angle $\delta$ is achieved by intersecting two planes, Figure \ref{fig:planeIntersection}, defined by implicit surface function $\alpha_1$ and $\alpha_2$ shown in Equations \ref{eq:pathFunction} and \ref{eq:pathFunctionZ} respectively.
+The shape of the target path that the vectors converge and follow depend on the specification of the implicit 3-dimensional surface functions $\alpha_1$ and $\alpha_2$. Intersecting two planes, shown in Figure \ref{fig:planeIntersection}, can be used to generate a GVF that converges and follows a straight path. The vertical plane, described in Equation \ref{eq:pathFunction}, at angle $\delta$ is intersecting with a horizontal plane at constant height $z$, Equation \ref{eq:pathFunctionZ}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=8cm]{Figures/planeIntersection}
-	\caption{Place Intersection}
+	\caption{Intersection of planes defined by implicit surface functions}
 	\label{fig:planeIntersection}
 \end{figure}
+
+
 
 \begin{equation}
 \label{eq:pathFunction}
@@ -1094,38 +1076,59 @@ Circulation is calculated by the cross product of the surface function gradients
 \begin{equation}
 \label{eq:circStraightPart2}
 \overrightarrow{V}_{circ} = \begin{bmatrix}
-sin(\theta) \\
--cos(\theta) \\
+sin(\delta) \\
+-cos(\delta) \\
 0
 \end{bmatrix}
 \end{equation}
 
-Guidance for a path at angle $\delta = 0$ and equal parts circulation and convergence weights $G=H=1$ is shown in Figure \ref{fig:GVFLine}a. How quickly the path following field transitions from convergence to circulation depends on the field weights. Equal parts convergence and circulation are shown in Figure \ref{fig:GVFLine}a $(G=H=1)$ and a larger circulation value in Figure \ref{fig:GVFLine}b $(G=1, H=5)$. \\
+Prior to using the path following guidance $\overrightarrow{V}_p$, it is normalized to have a magnitude $||\overrightarrow{V}_p|| = 1$. The reason for normalizing the vector is threefold. First, the vector is used as a heading controller only, therefore the angle of the vector is the necessary information. Second, the normalized vectors result in quiver plots with equal density arrows making the field easier to visualize. Lastly, normalizing the path following vector $\overrightarrow{V}_p$ fixes the length of the vector allowing for prediction of singularity location after summing the field, which will be discussed in the next section. Before discussing singularities, the obstacle field is introduced. 
 
 
-\begin{figure}[H]
-	\begin{subfigmatrix}{2}% number of columns
-		\centering	
-		\subfigure []{\includegraphics[trim=15 10 0 30,clip,width=7cm] {Figures/methods/straightPathH1}}
-		\subfigure []{\includegraphics[trim=15 10 0 30,clip,width=7cm] {Figures/methods/straightPathH5}}
-		
-		\hspace*{0mm}
-	\end{subfigmatrix}
-	\caption{GVF converging and a) small circulation b) large circulation}
-	\label{fig:GVFLine}
-\end{figure} 
+\begin{equation}
+% Component vector field with conv and circ
+\overrightarrow{V}_{||P||} = \frac{\overrightarrow{V}_p}{||\overrightarrow{V}_p||}
+\label{gonAllCompNormalized}
+\end{equation}
+
+To produce guidance for following a path and avoiding obstacles, a repulsive obstacle vector field $\overrightarrow{V}_{||O||}$ needs to be constructed and summed with the path following guidance $\overrightarrow{V}_{||P||}$. The repulsive vector field is multiplied 
+The sum of the two guidances is represented by $\overrightarrow{V}_g$ and is shown in Equation \ref{eq:totalGuidance}
 
 
+\begin{equation}\label{eq:totalGuidance}
+\overrightarrow{V}_g = \overrightarrow{V}_{||P||} + P\overrightarrow{V}_{||O||}
+\end{equation}
 
-
-
+\noindent
+Constructing the obstacle avoidance vector field will now be discussed.
 
 \subsection{Constructing an Avoidance Vector Field}
-A circular avoidance vector field centered at $(x_c,y_c)$ is constructed by intersecting a cylinder, Equation \ref{eq:alphaCylinder}, and a plane \ref{eq:pathFunctionZ}. 
+
+A circular avoidance vector field will now be constructed in a way similar to that of the path following field in the previous section. What differentiates the obstacle field from the path following field is that the individual convergence and circulation components are normalized prior to normalizing the summed obstacle field $\overrightarrow{V}_o$. Additionally, negative convergence weights will be used to produce vectors that diverge away from the path. The obstacle vector field is constructed using the normalized component Equation \ref{eq:obstComponents} with obstacle convergence and circulation weights $G_o$ and $H_o$ respectively.
+
+
+\begin{equation}
+% Component vector field with conv and circ
+\overrightarrow{V}_{o} = G_o\frac{\overrightarrow{V}_{conv}}{||\overrightarrow{V}_{conv}||}+H_o\frac{\overrightarrow{V}_{circ}}{||\overrightarrow{V}_{circ}||}
+\label{eq:obstComponents}
+\end{equation}
+
+
+
+A circular avoidance vector field with radius $r$ centered at $(x_c,y_c)$ is constructed by intersecting a cylinder, Equation \ref{eq:alphaCylinder}, and a plane Equation \ref{eq:pathFunctionZ}. 
 
 \begin{equation}\label{eq:alphaCylinder}
 \alpha_1 = (x-x_c)^2 + (y-y_c)^2-r^2
 \end{equation}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=10cm]{Figures/cylinderIntersection}
+	\caption{Intersection of a cylinder and plane defined by implicit surface functions}
+	\label{fig:cylinderIntersection}
+\end{figure}
+
 
 
 Convergence is calculated by the gradient of the potential function \ref{eq:potentialFunctionGrad}, which when simplified evaluates to
@@ -1159,65 +1162,15 @@ and
 \end{equation}
 
 
-Evaluating equation \ref{eq:AB} results in a vector field that converges to a circular path shown in Figure \ref{fig:gvfCircAttractive}a. Note that the vectors are not of equal length for the entire configuration space, decaying in strength when approaching the curve. Normalizing the field allows for convenient weighting of each term at a later process. The normalized convergence field for a circular path is shown in Figure \ref{fig:gvfCircAttractive}b. 
-
-\begin{figure}[H]
-	\begin{subfigmatrix}{2}% number of columns
-		\centering	
-		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/NNcompWithoutTitles/circAttractive}}
-		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/compWithoutTitles/circAttractive}}
-		\hspace*{0mm}
-	\end{subfigmatrix}
-	\caption{GVF circular attractive field without normalization (a) and normalization (b)}
-	\label{fig:gvfCircAttractive}
-\end{figure}
+Evaluating equation \ref{eq:AB} results in a vector field that converges to a circular path. Circulation is calculated from the cross product of each implicit surface function's gradient, which simplifies to
 
 
-\noindent
-
-Guidance that repels from a circular path can be produced by setting the convergence weight $G=-1$, shown in Figure \ref{fig:largerepulsive}. 
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\linewidth]{Figures/methods/largeRepulsive}
-	\caption{Repulsive Circular Field with Large Radius}
-	\label{fig:largerepulsive}
-\end{figure}
-
-Note that inside of the path, vectors point towards the center of the circle which may produce a trap situation if the UAV ends up inside the radius. The radius of the path can be reduced, as shown in Figure \ref{fig:normalizedrepulsive} where $r=0.01$, to prevent trap situations.
-
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\linewidth]{Figures/methods/normalizedRepulsive}
-	\caption{Repulsive Circular Field with Small Radius}
-	\label{fig:normalizedrepulsive}
-\end{figure}
-
-Circulation is calculated from the cross product of each implicit surface function's gradient, which simplifies to
 
 \begin{equation}\label{eq:vcirc_circle}
 \overrightarrow{V}_{circ} =  \begin{bmatrix}  2(y-y_c) \\[6pt] -2(x-x_c) \\[6pt] 0\end{bmatrix}
 \end{equation}
 
-
-
-\noindent
-Evaluating the circulation term results in a vector field that is parallel to a circular path, shown in Figure \ref{fig:gvfCircCirculation}a. The field is normalized to produce a field with equal length vectors for the configuration space which is shown in Figure \ref{fig:gvfCircCirculation}b. 
-
-\begin{figure}[H]
-	\begin{subfigmatrix}{2}% number of columns
-		\centering	
-		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/NNcompWithoutTitles/circCW}}
-		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/compWithoutTitles/circCW}}
-		\hspace*{0mm}
-	\end{subfigmatrix}
-	\caption{Circular GVF without normalization (a) and with normalization (b)}
-	\label{fig:gvfCircCirculation}
-\end{figure}
-
-
-
+ Note that the magnitude of the vectors in $\overrightarrow{V}_{conv}$ and $\overrightarrow{V}_{circ}$ change in length as they converge to the path. Normalizing the component vectors in Equation \ref{eq:obstComponents} constraints the vectors to a length of unity. The contribution of each component is modified by varying the scalars $G_o$ and $H_o$.  \\
 
 Obstacle fields should only act locally on a UAV guidance which is accomplished by applying a decay function for a field of radius $R$. The decay strength $P$ is determined in \ref{eq:decay}, where $d$ is the euclidean distance, or range, between the UAV and the center of the obstacle, shown in Equation \ref{eq:range}. At a distance $d>R$ the decay strength $P$ is effectively zero, having virtual no influence on the total guidance. At a distance $d\leq R$, the field strength is bounded between $[0,2]$.
 
@@ -1235,41 +1188,12 @@ d = \sqrt{ \bar{x}^2+\bar{y}^2}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{Figures/methods/tanH}
-	\caption{}
+	\caption{Repulsive GVF decay function P}
 	\label{fig:tanh}
 \end{figure}
 
 
-A strictly repulsive field $\overrightarrow{V}_{obst}$ with $G=-1$, $H=0$, $r=0.01$, and $R = 35$ is shown in Figure \ref{fig:decayApplied}a. Adding equal magnitude circulation and decay $G=-1$, $H=1$ is shown in Figure \ref{fig:decayApplied}b.
 
-\begin{figure}[H]
-	\begin{subfigmatrix}{2}% number of columns
-		\centering	
-		\subfigure []{\includegraphics[trim=0 10 20 20,clip,width=7cm] {Figures/methods/decayApplied}}
-		\subfigure []{\includegraphics[trim=0 10 20 20,clip,width=7cm] {Figures/methods/decayAppliedCirculation}}
-		\hspace*{0mm}
-	\end{subfigmatrix}
-	\caption{Repulsive GVF a) no circulation and b) with circulation}
-	\label{fig:decayApplied}
-\end{figure} 
-
-
-
-
-Path following guidance and repulsive obstacle avoidance is achieved by summing the two fields together, producing the UAVs guidance $\overrightarrow{V}_G$ shown in Equation \ref{eq:totalGuidanceObstacle}
-
-\begin{equation}
-\label{eq:totalGuidanceObstacle}
-\overrightarrow{V}_g = \overrightarrow{V}_{path} + P\overrightarrow{V}_{obst}
-\end{equation}
-
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[trim=25 35 25 50,clip,width=14cm]{PaperFigures/Methods/summedFieldsNoNorm}
-	\caption{Summed Fields Without Total Normalization}
-	\label{fig:summedFieldsNoNorm}
-\end{figure}
 
 
 Summing GVFs together may lead to small regions where the vector magnitude is near or equal to zero, Equation \ref{eq:singularityCondition}. Singularities are expected to exist where two summed fields have equal strength. The location of the singularities can be approximated by plotting the magnitude of the summed field near the obstacle. 
@@ -1280,36 +1204,24 @@ Summing GVFs together may lead to small regions where the vector magnitude is ne
 \end{equation}
 
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[trim=25 60 25 85,clip,width=14cm]{Figures/methods/summedHeatMapSimple}
-	\caption{Summed Fields Without Total Normalization}
-	\label{fig:summedHeatMap}
-\end{figure}
+\begin{equation}
+\label{eq:zeroVectorCondition}
+\overrightarrow{0} = \overrightarrow{V}_{path} +P\overrightarrow{V}_o
+\end{equation}
+
+\begin{equation}
+\label{eq:zeroVectorCondition2}
+\overrightarrow{V}_{path}=-P\overrightarrow{V_o}
+\end{equation}
+
+\begin{equation}
+\label{eq:zeroVectorCondition2}
+-P = \tanh
+	\end{equation}
 
 
- Multiple singularities may exist so several initial conditions must be evaluated to detect all singularities present. Several initial conditions placed near the radius of equal strength, $R/2$, on the side of the obstacle where singularities are expected results in the detection of three singularities, shown in Figure \ref{fig:noCircSingularityDetection}
- 
- 
-\begin{figure}[H]
-	\begin{subfigmatrix}{2}% number of columns
-		\centering	
-		\subfigure []{\includegraphics[trim=70 0 80 0,clip,width=7cm] {Figures/methods/noCircSingularityR10}}
-		\subfigure []{\includegraphics[trim=70 0 80 0,clip,width=7cm] {Figures/methods/noCircSingularityR30}}
-		\hspace*{0mm}
-	\end{subfigmatrix}
-	\caption{GVF converging and circulating circular path}
-	\label{fig:noCircSingularityDetection}
-\end{figure}
 
-Evaluating initial conditions both inside and outside of the obstacle radius results in singularity detection. Singularities are a result of two vector fields directly and equally opposing each other, which may be mitigated by modifying the repulsive field with circulation. Equal magnitudes repulsion and circulation $G=-1,H=1$ are shown in Figure \ref{fig:summedGuidanceWithcirc}, which results in a single singularity removed from the planned path as well as the integral guidance line. 
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[trim=0 0 0 0,clip,width=14cm]{PaperFigures/Methods/summedFieldsCircSingularity}
-	\caption{Summed Field Guidance with circulation}
-	\label{fig:summedGuidanceWithcirc}
-\end{figure}
 
 %\subsection{Summary of Phase I}
 %GVF equations were derived for straight path following and circular obstacle avoidance. Singularities and their expected location within a summed field were characterized. A method for detecting GVF singularities numerically was presented. Circulation was added to the repulsive GVF to demonstrate the mitigation of GVF singularities. A method for selecting GVF obstacle radius and circulation strength will be discussed next.
@@ -1446,6 +1358,133 @@ How quickly the UAV converges and follows the path is determined by the combinat
 	\caption{Fixed Wing converging and following a path}
 	\label{fig:uavPathMultipleHsLateral}
 \end{figure}
+
+
+Guidance for a path at angle $\delta = 0$ and equal parts circulation and convergence weights $G=H=1$ is shown in Figure \ref{fig:GVFLine}a. How quickly the path following field transitions from convergence to circulation depends on the field weights. Equal parts convergence and circulation are shown in Figure \ref{fig:GVFLine}a $(G=H=1)$ and a larger circulation value in Figure \ref{fig:GVFLine}b $(G=1, H=5)$. \\
+
+
+\begin{figure}[H]
+	\begin{subfigmatrix}{2}% number of columns
+		\centering	
+		\subfigure []{\includegraphics[trim=15 10 0 30,clip,width=7cm] {Figures/methods/straightPathH1}}
+		\subfigure []{\includegraphics[trim=15 10 0 30,clip,width=7cm] {Figures/methods/straightPathH5}}
+		
+		\hspace*{0mm}
+	\end{subfigmatrix}
+	\caption{GVF converging and a) small circulation b) large circulation}
+	\label{fig:GVFLine}
+\end{figure} 
+
+
+\begin{figure}[H]
+	\begin{subfigmatrix}{2}% number of columns
+		\centering	
+		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/NNcompWithoutTitles/circAttractive}}
+		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/compWithoutTitles/circAttractive}}
+		\hspace*{0mm}
+	\end{subfigmatrix}
+	\caption{GVF circular attractive field without normalization (a) and normalization (b)}
+	\label{fig:gvfCircAttractive}
+\end{figure}
+
+
+\noindent
+
+Guidance that repels from a circular path can be produced by setting the convergence weight $G=-1$, shown in Figure \ref{fig:largerepulsive}. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Figures/methods/largeRepulsive}
+	\caption{Repulsive Circular Field with Large Radius}
+	\label{fig:largerepulsive}
+\end{figure}
+
+Note that inside of the path, vectors point towards the center of the circle which may produce a trap situation if the UAV ends up inside the radius. The radius of the path can be reduced, as shown in Figure \ref{fig:normalizedrepulsive} where $r=0.01$, to prevent trap situations.
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Figures/methods/normalizedRepulsive}
+	\caption{Repulsive Circular Field with Small Radius}
+	\label{fig:normalizedrepulsive}
+\end{figure}
+
+\noindent
+Evaluating the circulation term results in a vector field that is parallel to a circular path, shown in Figure \ref{fig:gvfCircCirculation}a. The field is normalized to produce a field with equal length vectors for the configuration space which is shown in Figure \ref{fig:gvfCircCirculation}b. 
+
+\begin{figure}[H]
+	\begin{subfigmatrix}{2}% number of columns
+		\centering	
+		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/NNcompWithoutTitles/circCW}}
+		\subfigure []{\includegraphics[width=7.5cm] {PaperFigures/compWithoutTitles/circCW}}
+		\hspace*{0mm}
+	\end{subfigmatrix}
+	\caption{Circular GVF without normalization (a) and with normalization (b)}
+	\label{fig:gvfCircCirculation}
+\end{figure}
+
+A strictly repulsive field $\overrightarrow{V}_{obst}$ with $G=-1$, $H=0$, $r=0.01$, and $R = 35$ is shown in Figure \ref{fig:decayApplied}a. Adding equal magnitude circulation and decay $G=-1$, $H=1$ is shown in Figure \ref{fig:decayApplied}b.
+
+\begin{figure}[H]
+	\begin{subfigmatrix}{2}% number of columns
+		\centering	
+		\subfigure []{\includegraphics[trim=0 10 20 20,clip,width=7cm] {Figures/methods/decayApplied}}
+		\subfigure []{\includegraphics[trim=0 10 20 20,clip,width=7cm] {Figures/methods/decayAppliedCirculation}}
+		\hspace*{0mm}
+	\end{subfigmatrix}
+	\caption{Repulsive GVF a) no circulation and b) with circulation}
+	\label{fig:decayApplied}
+\end{figure} 
+
+
+
+
+Path following guidance and repulsive obstacle avoidance is achieved by summing the two fields together, producing the UAVs guidance $\overrightarrow{V}_G$ shown in Equation \ref{eq:totalGuidanceObstacle}
+
+\begin{equation}
+\label{eq:totalGuidanceObstacle}
+\overrightarrow{V}_g = \overrightarrow{V}_{path} + P\overrightarrow{V}_{obst}
+\end{equation}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim=25 35 25 50,clip,width=14cm]{PaperFigures/Methods/summedFieldsNoNorm}
+	\caption{Summed Fields Without Total Normalization}
+	\label{fig:summedFieldsNoNorm}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim=25 60 25 85,clip,width=14cm]{Figures/methods/summedHeatMapSimple}
+	\caption{Summed Fields Without Total Normalization}
+	\label{fig:summedHeatMap}
+\end{figure}
+
+
+Multiple singularities may exist so several initial conditions must be evaluated to detect all singularities present. Several initial conditions placed near the radius of equal strength, $R/2$, on the side of the obstacle where singularities are expected results in the detection of three singularities, shown in Figure \ref{fig:noCircSingularityDetection}
+
+
+\begin{figure}[H]
+	\begin{subfigmatrix}{2}% number of columns
+		\centering	
+		\subfigure []{\includegraphics[trim=70 0 80 0,clip,width=7cm] {Figures/methods/noCircSingularityR10}}
+		\subfigure []{\includegraphics[trim=70 0 80 0,clip,width=7cm] {Figures/methods/noCircSingularityR30}}
+		\hspace*{0mm}
+	\end{subfigmatrix}
+	\caption{GVF converging and circulating circular path}
+	\label{fig:noCircSingularityDetection}
+\end{figure}
+
+Evaluating initial conditions both inside and outside of the obstacle radius results in singularity detection. Singularities are a result of two vector fields directly and equally opposing each other, which may be mitigated by modifying the repulsive field with circulation. Equal magnitudes repulsion and circulation $G=-1,H=1$ are shown in Figure \ref{fig:summedGuidanceWithcirc}, which results in a single singularity removed from the planned path as well as the integral guidance line. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim=0 0 0 0,clip,width=14cm]{PaperFigures/Methods/summedFieldsCircSingularity}
+	\caption{Summed Field Guidance with circulation}
+	\label{fig:summedGuidanceWithcirc}
+\end{figure}
+
 \section{Phase II}
 \section{Phase III}
 
