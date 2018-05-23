@@ -17,6 +17,10 @@
 \documentclass[numbered,pdftex]{ohio-etd}
 \usepackage{cite}
 \usepackage{notoccite}
+\usepackage{bbding}
+\usepackage[utf8]{inputenc}
+
+
 
 \usepackage[normalem]{ulem}
 
@@ -1058,7 +1062,7 @@ The shape of the target path that the vectors converge and follow depend on the 
 \end{equation}
 
 \noindent
-The gradient potential, $\nabla V$ is shown in Equation \ref{eq:potentialFunctionGrad}.
+The gradient potential, $\nabla V$, for calculating the path following convergence term is shown in Equation \ref{eq:potentialFunctionGrad}.
 
 \begin{equation}
 \label{eq:potentialFunctionGrad}
@@ -1091,11 +1095,11 @@ Prior to using the path following guidance $\overrightarrow{V}_p$, it is normali
 \label{gonAllCompNormalized}
 \end{equation}
 
-To produce guidance for following a path and avoiding obstacles, a repulsive obstacle vector field $\overrightarrow{V}_{||O||}$ needs to be constructed and summed with the path following guidance $\overrightarrow{V}_{||P||}$. The repulsive vector field is multiplied 
-The sum of the two guidances is represented by $\overrightarrow{V}_g$ and is shown in Equation \ref{eq:totalGuidance}
+To produce guidance for following a path and avoiding an obstacle, a repulsive obstacle vector field $\overrightarrow{V}_{||O||}$ needs to be constructed and summed with the normalized path following guidance $\overrightarrow{V}_{||P||}$. The repulsive vector field is multiplied by a decay function $P$ which limits the influence of the obstacle to a finite range and will be discussed after the avoidance field equations are presented. The sum of the two guidances is represented by $\overrightarrow{V}_g$ and is shown in Equation \ref{eq:totalGuidance}
 
 
-\begin{equation}\label{eq:totalGuidance}
+\begin{equation}
+\label{eq:totalGuidance}
 \overrightarrow{V}_g = \overrightarrow{V}_{||P||} + P\overrightarrow{V}_{||O||}
 \end{equation}
 
@@ -1104,7 +1108,7 @@ Constructing the obstacle avoidance vector field will now be discussed.
 
 \subsection{Constructing an Avoidance Vector Field}
 
-A circular avoidance vector field will now be constructed in a way similar to that of the path following field in the previous section. What differentiates the obstacle field from the path following field is that the individual convergence and circulation components are normalized prior to normalizing the summed obstacle field $\overrightarrow{V}_o$. Additionally, negative convergence weights will be used to produce vectors that diverge away from the path. The obstacle vector field is constructed using the normalized component Equation \ref{eq:obstComponents} with obstacle convergence and circulation weights $G_o$ and $H_o$ respectively.
+A circular avoidance vector field will now be constructed in a way similar to that of the path following field in the previous section. What differentiates the obstacle field from the path following field is that the individual convergence and circulation components are normalized prior to normalizing the summed obstacle field $\overrightarrow{V}_o$. The benefit of normalized each field component before multiplying by their respective scalars and summing is to produce a obstacle field with uniform behavior as distance from the obstacle increases. In short, normalizing each component allows both convergence and circulation terms to be present in the obstacle guidance at larger distances. Additionally, negative convergence weights will be used to produce vectors that diverge away from the path. The obstacle vector field is constructed using the normalized component Equation \ref{eq:obstComponents} with obstacle convergence and circulation weights $G_o$ and $H_o$ respectively.
 
 
 \begin{equation}
@@ -1170,9 +1174,7 @@ Evaluating equation \ref{eq:AB} results in a vector field that converges to a ci
 \overrightarrow{V}_{circ} =  \begin{bmatrix}  2(y-y_c) \\[6pt] -2(x-x_c) \\[6pt] 0\end{bmatrix}
 \end{equation}
 
- Note that the magnitude of the vectors in $\overrightarrow{V}_{conv}$ and $\overrightarrow{V}_{circ}$ change in length as they converge to the path. Normalizing the component vectors in Equation \ref{eq:obstComponents} constraints the vectors to a length of unity. The contribution of each component is modified by varying the scalars $G_o$ and $H_o$.  \\
-
-Obstacle fields should only act locally on a UAV guidance which is accomplished by applying a decay function for a field of radius $R$. The decay strength $P$ is determined in \ref{eq:decay}, where $d$ is the euclidean distance, or range, between the UAV and the center of the obstacle, shown in Equation \ref{eq:range}. At a distance $d>R$ the decay strength $P$ is effectively zero, having virtual no influence on the total guidance. At a distance $d\leq R$, the field strength is bounded between $[0,2]$.
+Obstacle fields should only act locally on a UAV guidance which is accomplished by applying a decay function for a field of radius $R$. The decay strength $P$ is determined in \ref{eq:decay}, where $d$ is the euclidean distance, or range, between the UAV and the center of the obstacle, shown in Equation \ref{eq:range}. At a distance $d>R$ the decay strength $P$ is effectively zero, having virtual no influence on the total guidance. At a distance $d\leq R$, the field strength is bounded between $[0,2]$. The selection of the decay function $P$ to be bounded as such is so that the obstacle field $\overrightarrow{V}_o$ eventually overpowers the path field $\overrightarrow{V}_{||P||}$. A plot of the decay function in Equation \ref{eq:decay} is shown in Figure \ref{eq:range}.
 
 
 \begin{equation}
@@ -1192,33 +1194,80 @@ d = \sqrt{ \bar{x}^2+\bar{y}^2}
 	\label{fig:tanh}
 \end{figure}
 
+Prior to applying the decay function the sum of obstacle field's convergence and circulation terms are normalized to ensure the vector's magnitudes are of length unity, shown in Equation \ref{eq:obstNormalized}.
 
 
+\begin{equation}
+% Component vector field with conv and circ
+\overrightarrow{V}_{||o||} = \frac{\overrightarrow{V}_{o}}{||\overrightarrow{V}_{o}||}
+\label{eq:obstNormalized}
+\end{equation}
 
 
-Summing GVFs together may lead to small regions where the vector magnitude is near or equal to zero, Equation \ref{eq:singularityCondition}. Singularities are expected to exist where two summed fields have equal strength. The location of the singularities can be approximated by plotting the magnitude of the summed field near the obstacle. 
+\subsection{Summed Guidance and Singularity Definition}
+The total summed guidance $\overrightarrow{V}_g$ defined in Equation \ref{eq:totalGuidance} can now be calculated and visualized, Figure \ref{fig:summedFieldsNoNorm}. In general, the GVF guidance is more easily visualized if the final guidance is normalized yet again, however, plotting the path following and obstacle guidance $\overrightarrow{V}_g$ demonstrates regions where the fields oppose each other, possibly leading to GVF singularities. For a strictly repulsive field that is centered on a straight path, regions of both constructive and destructive summation occurs. Note the vectors on the positive x-axis increasing in length as the two fields come together. Conversely, vectors in the negative x-axis show decreasing length and in some areas disappearing entirely.  
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim=25 35 25 50,clip,width=14cm]{PaperFigures/Methods/summedFieldsNoNorm}
+	\caption{Summed fields without total normalization $\protect \overrightarrow{V}_g$}
+	\label{fig:summedFieldsNoNorm}
+\end{figure}
+
+It appears that the regions leading up to the singularities have vectors that guide towards the singularities. Opposing vectors that lead into a well may produce trap situations where a UAV may be unable to escape if continuing to use GVF guidance. The location of the singularities can be approximated by plotting the magnitude of the summed field near the obstacle. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim=25 60 25 85,clip,width=14cm]{Figures/methods/summedHeatMapSimple}
+	\caption{Summed Fields Without Total Normalization}
+	\label{fig:summedHeatMap}
+\end{figure}
+
+ Singularities may be used to detect these regions and possibly protect UAVs from entering trap situations. Singularities in the vector field are defined as a region in the GVF space where the vector has zero magnitude, shown in Equation \ref{eq:singularityCondition}.
+
 
 \begin{equation}
 \label{eq:singularityCondition}
 ||\overrightarrow{V}_g || = 0
 \end{equation}
 
+\noindent
+By extension, singularities are a result of a zero vector, shown in Equation \ref{eq:zeroVectorCondition} and Equation \ref{eq:zeroVectorCondition2}.
+
+
 
 \begin{equation}
 \label{eq:zeroVectorCondition}
-\overrightarrow{0} = \overrightarrow{V}_{path} +P\overrightarrow{V}_o
+\overrightarrow{0} = \overrightarrow{V}_{||P||} +P\overrightarrow{V}_{||O||}
 \end{equation}
 
 \begin{equation}
 \label{eq:zeroVectorCondition2}
-\overrightarrow{V}_{path}=-P\overrightarrow{V_o}
+\overrightarrow{V}_{||P||}=-P\overrightarrow{V}_{||O||}
 \end{equation}
 
-\begin{equation}
-\label{eq:zeroVectorCondition2}
--P = \tanh
-	\end{equation}
+Vectors $\overrightarrow{V}_{||P||}$ and $\overrightarrow{V}_{||O||}$ are normalized, meaning that their magnitudes are of equal length $||\overrightarrow{V}_{||P||}||=||\overrightarrow{V}_{||O||}||$. For the condition shown in Equation \ref{eq:zeroVectorCondition2} to be true for an obstacle field with a negative convergence weight $G=-1$, the decay function $P$ must be unity. Setting Equation \ref{eq:decay} equal to $1$, the distance at which the fields have equal strength is determined to be that shown in Equation \ref{eq:equalStrength}
 
+\begin{equation}
+\label{eq:equalStrength}
+d = \frac{R}{2}
+\end{equation}
+
+An example of using a numerical solver with various initial conditions placed along a radius of $d=r/2$ is shown in Figure \ref{fig:noCircSingularityDetection}
+
+
+\begin{figure}[H]
+	\begin{subfigmatrix}{2}% number of columns
+		\centering	
+		\subfigure []{\includegraphics[trim=70 0 80 0,clip,width=7cm] {Figures/methods/noCircSingularityR10}}
+		\subfigure []{\includegraphics[trim=70 0 80 0,clip,width=7cm] {Figures/methods/noCircSingularityR30}}
+		\hspace*{0mm}
+	\end{subfigmatrix}
+	\caption{GVF converging and circulating circular path}
+	\label{fig:noCircSingularityDetection}
+\end{figure}
+
+The method for constructing path following and obstacle GVFs will be used in Phase II along with singularity detection.
 
 
 
@@ -1465,16 +1514,7 @@ Path following guidance and repulsive obstacle avoidance is achieved by summing 
 Multiple singularities may exist so several initial conditions must be evaluated to detect all singularities present. Several initial conditions placed near the radius of equal strength, $R/2$, on the side of the obstacle where singularities are expected results in the detection of three singularities, shown in Figure \ref{fig:noCircSingularityDetection}
 
 
-\begin{figure}[H]
-	\begin{subfigmatrix}{2}% number of columns
-		\centering	
-		\subfigure []{\includegraphics[trim=70 0 80 0,clip,width=7cm] {Figures/methods/noCircSingularityR10}}
-		\subfigure []{\includegraphics[trim=70 0 80 0,clip,width=7cm] {Figures/methods/noCircSingularityR30}}
-		\hspace*{0mm}
-	\end{subfigmatrix}
-	\caption{GVF converging and circulating circular path}
-	\label{fig:noCircSingularityDetection}
-\end{figure}
+
 
 Evaluating initial conditions both inside and outside of the obstacle radius results in singularity detection. Singularities are a result of two vector fields directly and equally opposing each other, which may be mitigated by modifying the repulsive field with circulation. Equal magnitudes repulsion and circulation $G=-1,H=1$ are shown in Figure \ref{fig:summedGuidanceWithcirc}, which results in a single singularity removed from the planned path as well as the integral guidance line. 
 

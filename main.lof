@@ -28,23 +28,25 @@
 \contentsline {figure}{\numberline {2.18}{\ignorespaces Place holder image of UAV following ground target \cite {wwc}}}{32}{figure.2.18}
 \addvspace {\@lineskip }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Intersection of planes defined by implicit surface functions}}{36}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Intersection of a cylinder and plane defined by implicit surface functions}}{38}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Repulsive GVF decay function P}}{40}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Fixed Wing converging and following a path}}{42}{figure.3.4}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces UAV encountering a circular obstacle centered on pre-planned path, no circulation}}{43}{figure.3.5}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces }}{45}{figure.3.6}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Intersection of a cylinder and plane defined by implicit surface functions}}{39}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Repulsive GVF decay function P}}{41}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Summed fields without total normalization $\overrightarrow {V}_g$}}{42}{figure.3.4}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Summed Fields Without Total Normalization}}{43}{figure.3.5}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces GVF converging and circulating circular path}}{44}{figure.3.6}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Fixed Wing converging and following a path}}{46}{figure.3.7}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces UAV encountering a circular obstacle centered on pre-planned path, no circulation}}{47}{figure.3.8}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces }}{49}{figure.3.9}
 \addvspace {\@lineskip }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Fixed Wing converging and following a path}}{46}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Fixed Wing converging and following a path}}{47}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces GVF converging and a) small circulation b) large circulation}}{47}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces GVF circular attractive field without normalization (a) and normalization (b)}}{48}{figure.4.4}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Repulsive Circular Field with Large Radius}}{48}{figure.4.5}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Repulsive Circular Field with Small Radius}}{49}{figure.4.6}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Circular GVF without normalization (a) and with normalization (b)}}{50}{figure.4.7}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Repulsive GVF a) no circulation and b) with circulation}}{51}{figure.4.8}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Summed Fields Without Total Normalization}}{52}{figure.4.9}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Summed Fields Without Total Normalization}}{52}{figure.4.10}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces GVF converging and circulating circular path}}{53}{figure.4.11}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Summed Field Guidance with circulation}}{54}{figure.4.12}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Fixed Wing converging and following a path}}{50}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Fixed Wing converging and following a path}}{51}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces GVF converging and a) small circulation b) large circulation}}{51}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces GVF circular attractive field without normalization (a) and normalization (b)}}{52}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Repulsive Circular Field with Large Radius}}{52}{figure.4.5}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Repulsive Circular Field with Small Radius}}{53}{figure.4.6}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Circular GVF without normalization (a) and with normalization (b)}}{54}{figure.4.7}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Repulsive GVF a) no circulation and b) with circulation}}{55}{figure.4.8}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Summed Fields Without Total Normalization}}{56}{figure.4.9}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Summed Fields Without Total Normalization}}{56}{figure.4.10}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Summed Field Guidance with circulation}}{57}{figure.4.11}
 \addvspace {\@lineskip }
 \addvspace {\@lineskip }

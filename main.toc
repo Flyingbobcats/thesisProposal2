@@ -25,15 +25,16 @@
 \contentsline {section}{\numberline {3.1}Introduction to Methodology}{34}{section.3.1}
 \contentsline {section}{\numberline {3.2}Phase I: Gradient vector field singularity detection}{34}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Path Following Vector Field Guidance}{35}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Constructing an Avoidance Vector Field}{37}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}Phase II}{41}{section.3.3}
-\contentsline {section}{\numberline {3.4}Phase III}{45}{section.3.4}
-\contentsline {section}{\numberline {3.5}Summary of Methodology}{45}{section.3.5}
-\contentsline {chapter}{\numberline {4}Results}{46}{chapter.4}
-\contentsline {section}{\numberline {4.1}Introduction to Results}{46}{section.4.1}
-\contentsline {section}{\numberline {4.2}Phase I}{46}{section.4.2}
-\contentsline {section}{\numberline {4.3}Phase II}{54}{section.4.3}
-\contentsline {section}{\numberline {4.4}Phase III}{54}{section.4.4}
-\contentsline {chapter}{\numberline {5}Conclusions}{55}{chapter.5}
-\contentsline {chapter}{\numberline {6}Future Work}{56}{chapter.6}
-\contentsline {chapter}{References}{57}{schapter.5}
+\contentsline {subsection}{\numberline {3.2.2}Constructing an Avoidance Vector Field}{38}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Summed Guidance and Singularity Definition}{41}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}Phase II}{44}{section.3.3}
+\contentsline {section}{\numberline {3.4}Phase III}{49}{section.3.4}
+\contentsline {section}{\numberline {3.5}Summary of Methodology}{49}{section.3.5}
+\contentsline {chapter}{\numberline {4}Results}{50}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introduction to Results}{50}{section.4.1}
+\contentsline {section}{\numberline {4.2}Phase I}{50}{section.4.2}
+\contentsline {section}{\numberline {4.3}Phase II}{57}{section.4.3}
+\contentsline {section}{\numberline {4.4}Phase III}{57}{section.4.4}
+\contentsline {chapter}{\numberline {5}Conclusions}{58}{chapter.5}
+\contentsline {chapter}{\numberline {6}Future Work}{59}{chapter.6}
+\contentsline {chapter}{References}{60}{schapter.5}
