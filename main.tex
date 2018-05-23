@@ -223,7 +223,7 @@ Vector Field (VF) guidance is a method that is mainly used for path following an
  
  
  \section{Phase II}
- \textbf{Determine combination of GVF circulation and decay radius for least cost circular obstacle avoidance.} UAV closing rate, position, and range will be used to develop dynamic GVF weights for convergence and circulation. The modified GVF will be compared against a static and strictly repulsive GVF. Distance traveled and time of flight will be used to as metrics to compare the modified GVF to the unmodified GVF.  
+ \textbf{Determine a combination of circulation and decay radius for a circular obstacle GVF that produces an optimized obstacle avoidance.} UAV closing rate, position, and range will be used to develop dynamic GVF weights for convergence and circulation. The modified GVF will be compared against a static and strictly repulsive GVF. Distance traveled and time of flight will be used to as metrics to compare the modified GVF to the unmodified GVF.  
  
  
  
@@ -1278,9 +1278,11 @@ The method for constructing path following and obstacle GVFs will be used in Pha
 %
 %A cost function for evaluating GVF performance for obstacle avoidance is presented. Justification for selecting which GVF weighting parameters is provided. An evaluation of multiple parameters for a worst case encounter is described and the effect on cost discussed. 
 
-\section{Phase II}
-\textbf{The objective of Phase II is to determine the combination of gradient vector field circulation and decay radius for least cost circular obstacle avoidance.} \\
+\pagebreak
 
+\section{Phase II: Optimization of Obstacle Field}
+\textbf{The objective of Phase II is to determine a combination of circulation and decay radius for a circular obstacle GVF that produces an optimized obstacle avoidance.} Phase II consists of presenting a Dubin's fixed wing UAV kinematics to be used in simulating the GVF guidance. 
+A demonstration of the modeled UAV converging and following a straight path for various target patch circulations is provided. A circular obstacle represented by a strictly repulsive GVF will be added to the path and the avoidance observed. Obstacles radius and their associated GVF decay radius will now be represented in terms of the UAVs turning radius for convenience. Next, a path deviation cost function is described and is to be minimized to provide an optimized GVF obstacle avoidance guidance. It is shown how cost is effected by modifying the decay radius and circulation for the worst-case obstacle avoidance scenario presented. Lastly, a method for solving for circulation and decay radius numerically is presented. 
 
 
 The dynamics of UAVs are often simplified when simulating guidance systems by modeling the UAV as a Dubin's vehicle \cite{frew_cooperative_2007,griffiths_vector_2006,nelson_cooperative_2005,nelson_vector_2006,nelson_vector_2007}. It is assumed that the autopilots control system is capable of maintaining stability, speed $u$, and can turn the vehicle at a fixed turn rate $\dot{\theta}$. The position of the UAV $\overrightarrow{X}$ at time $t$ is calculated from the integral of the velocity vector $\overrightarrow{U}$, Equation \ref{eq:uavPosition}. Heading is an input from a guidance system, such as waypoint, potential field, or vector field.

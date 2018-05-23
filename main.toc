@@ -27,7 +27,7 @@
 \contentsline {subsection}{\numberline {3.2.1}Path Following Vector Field Guidance}{35}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Constructing an Avoidance Vector Field}{38}{subsection.3.2.2}
 \contentsline {subsection}{\numberline {3.2.3}Summed Guidance and Singularity Definition}{41}{subsection.3.2.3}
-\contentsline {section}{\numberline {3.3}Phase II}{44}{section.3.3}
+\contentsline {section}{\numberline {3.3}Phase II: Optimization of Obstacle Field}{45}{section.3.3}
 \contentsline {section}{\numberline {3.4}Phase III}{49}{section.3.4}
 \contentsline {section}{\numberline {3.5}Summary of Methodology}{49}{section.3.5}
 \contentsline {chapter}{\numberline {4}Results}{50}{chapter.4}
