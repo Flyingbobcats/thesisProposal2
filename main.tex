@@ -196,7 +196,7 @@ GVF & Gradient Vector Field & \\
 %% that case, the files would be loaded here using "\input{filename}"
 
 
-\chapter{Introduction}
+ \chapter{Introduction}
 \section{Motivation and Problem Statement}
 
 %Fixed wing Unmanned Aerial Vehicles are used for missions such as surveillance and reconnaissance that might put pilots harm’s way \cite{bone_uavs_2003}. Missions consist of sequential objectives that are represented by a path that the UAV attempts to follow. Paths are typically pre-planned before flight and are constructed by connecting straight lines and circular arcs. Vehicle turn rate constraints and obstacles are considered when planning a path to prevent collisions or entry into no-fly zones. UAVs are guided to follow a path by implementing guidance algorithms which calculate headings that minimize the distance to a path. UAVs may encounter an obstacle whose position was previously unknown while following a pre-planned path which may require a new path to be generated. Guidance that follows mission paths while avoiding obstacles without the need for re-planning may be beneficial. 
@@ -1478,7 +1478,7 @@ The micro quadcopter, crazyflie 2.0, designed by Bitcraze was selected as the ex
 \end{figure}
 
 \subsection{Crazyflie 2.0}
-
+The crazieflie 2.0 is a micro-quadcopter is a lightweight UAV weighing in at 27 grams and has an approximate payload capacity of 10 grams. An on-board flight controller maintains vehicle stability by estimating it's attitude and making corrections to the four brushed motors. Several built in flight modes such as altitude hold and position hold are available, both of which require additional sensors such as a time-of-flight sensor and flow sensor respectively. One of the conveniences of the crazyflie 2.0 is the ability to send roll rate, pitch rate, yaw, and thrust over radio in order to control the UAV directly. The software package, cfClient, interfaces with the crazyflie to accept and transmits these control messages over radio. 
 
 
 \begin{figure}[H]
@@ -1488,6 +1488,7 @@ The micro quadcopter, crazyflie 2.0, designed by Bitcraze was selected as the ex
 	\label{fig:cfClient}
 \end{figure}
 
+The guidance and control software that calculates these command messages was hosted on a remote machine and not on-board the UAV, primarily for the convenience of fast development. The guidance and control was written in Python, which is highly portable and could easily be implemented on-board a UAV. 
 
 \subsection{Vicon Motion Capture}
 
@@ -1510,75 +1511,104 @@ The micro quadcopter, crazyflie 2.0, designed by Bitcraze was selected as the ex
 
 \subsection{Python Guidance and Control Ground Station}
 
+The guidance and control framework developed for experimentation resembles that described in Figure \ref{fig:autopilotloops}. A navigation script taps into a stream of data provided by the Vicon tracker software and distributes that data to guidance and control algorithms. Position $(x,y,z)$ and yaw $\phi$ are provided to the control algorithm which consists of four PID controllers. The UAV was set to fly at constant altitude for all simulations and experimentation, therefore only planar position $(x,y)$ were provided to the guidance system. Heading guidance from the optimized GVF was converted to a carrot located at a position $(xc,yc)$ is sent to the control system to be used as set-points. Control messages are relayed to a radio interface software, cfClient, which communicates the control messages with the crazyflie. An overview of the described system is shown in Figure \ref{fig:cfControlClass}.
+
 \begin{figure}[H]
 	\centering
-	\includegraphics[trim=10 0 10 0,clip,width=14cm]{PaperFigures/Methods/cfControlClassFlow}
+	\includegraphics[trim=0 0 1 0,clip,width=14cm]{PaperFigures/Methods/cfControlClass}
 	\caption{Crazyflie Guidance and Control Software Framework}
 	\label{fig:cfControlClass}
 \end{figure}
 
+The control algorithm consists of four PID controllers which are used to calculate roll rate, pitch rate, yaw, and thrust to drive the UAV to a desired setpoint. The error is measured by subtracting the measured state $(x,y,z,yaw)$ from the desired setpoint. The block diagram of the PID controller is shown in Figure \ref{fig:pid}. Gains P, I, and D for each controller is tabulated in Table \ref{table:pidGains} below. 
 
 
 
-- A ground station software containing the vector field guidance and a PID controller are used to calculate the necessary roll, pitch, yaw, thrust.
-
-- The commands are then sent to quadcopter over radio
-
-Finding a safe airspace to fly 
-
-There are several logistical challenges with flying fixed wing UAVs including 
-
-
-
-
-
-
-\begin{figure}
+\begin{figure}[H]
 	\centering
-	\includegraphics[trim=0 230 0 260,clip,width=16cm]{PaperFigures/Methods/resultsPython/dubinsPaths}
-	\caption{}
-	\label{fig:pythonMATDubins}
+	\includegraphics[trim=0 0 0 0,clip,width=14cm]{PaperFigures/Methods/pid}
+	\caption{Crazyflie Guidance and Control Software Framework}
+	\label{fig:pid}
 \end{figure}
+
+\begin{table}[H]
+	\centering
+	\caption{Tuned PID gains for roll, pitch, yaw, and thrust controller}
+	\label{table:pidGains}
+	\begin{tabular}{|c|c|c|c|}
+		\hline 
+		Control Parameter & P & I & D \\ 
+		\hline 
+		Roll Rate & 29 & 2.5 & 19 \\ 
+		\hline 
+		Pitch Rate & 29 & 2.5 & 19 \\ 
+		\hline 
+		Yaw & 80 & 50 & 30 \\ 
+		\hline 
+		Thrust & 100 & 90 & 70 \\ 
+		\hline 
+	\end{tabular}
+\end{table}
+ 
+
+The optimized GVF guidance developed in MATLAB in Phases I and II was programmed into Python and compared under several scenarios to ensure that the methods were identical. First, a path following GVF was calculated in Python for a straight line and results overlaid with an identical scenario in MATLAB. The quiver plots show guidance calculated by MATLAB aligning with the guidance calculated in Python shown in Figure \ref{fig:valPythonStraightPath}.
+
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim=0 160 0 160,clip,width=10cm]{PaperFigures/Methods/resultsPython/PathConfirm}
+	\caption{Validation of Python straight path guidance overlaid with MATLAB}
+	\label{fig:valPythonStraightPath}
+\end{figure}
+
+Validating for an avoidance field with equal parts circulation and repulsion are shown in Figure \ref{fig:valPythonAvoidance}
+
 
 \begin{figure}
 	\centering
 	\includegraphics[trim=0 140 0 140,clip,width=10cm]{PaperFigures/Methods/resultsPython/obstacle}
-	\caption{}
-	\label{fig:dubinspaths}
+	\caption{Validation of Python obstacle guidance overlaid with MATLAB}
+	\label{fig:valPythonAvoidance}
 \end{figure}
 
-\begin{figure}
+Avoidance field with the decay applied in Figure \ref{fig:valPythonAvoidanceDecay}
+
+\begin{figure}[H]
 	\centering
-	\includegraphics[trim=0 140 0 140,clip,width=10cm]{PaperFigures/Methods/resultsPython/obstacleWithDecay}
-	\caption{}
-	\label{fig:dubinspaths}
+	\includegraphics[trim=0 140 0 140,clip,width=10cm]{PaperFigures/Methods/resultsPython/obstacleWithDecayAndCirculation}
+	\caption{Validation of Python obstacle decay guidance overlaid with MATLAB}
+	\label{fig:valPythonAvoidanceDecay}
 \end{figure}
 
-\begin{figure}
-	\centering
-	\includegraphics[trim=0 160 0 160,clip,width=10cm]{PaperFigures/Methods/resultsPython/obstacleWithDecayAndCirculation}
-	\caption{}
-	\label{fig:dubinspaths}
-\end{figure}
+Summed path following and obstacle avoidance guidance with an obstacle field with no circulation is shown in Figure \ref{fig:valPythonSummed}.
 
-
-\begin{figure}
-	\centering
-	\includegraphics[trim=0 160 0 160,clip,width=10cm]{PaperFigures/Methods/resultsPython/PathConfirm}
-	\caption{}
-	\label{fig:dubinspaths}
-\end{figure}
-
-
-\begin{figure}
+\begin{figure}[H]
 	\centering
 	\includegraphics[trim=0 140 0 140,clip,width=10cm]{PaperFigures/Methods/resultsPython/summedFields}
-	\caption{}
-	\label{fig:dubinspaths}
+	\caption{Validation of Python summed guidance overlaid with MATLAB}
+	\label{fig:valPythonSummed}
+\end{figure}
+
+Lastly, the Python guidance was simulated with an identical Dubins vehicle as MATLAB and compared in Figure \ref{fig:pythonMATDubins}
+
+\begin{figure}
+	\centering
+	\includegraphics[trim=0 230 0 260,clip,width=16cm]{PaperFigures/Methods/resultsPython/dubinsPaths}
+	\caption{Validation of Python Dubins UAV route overlaid with MATLAB}
+	\label{fig:pythonMATDubins}
 \end{figure}
 
 
 
+\subsection{Flight Scenarios}
+
+\begin{itemize}
+	\item Head on collision
+	\item Offset collision
+	\item Small obstacle
+	\item Large obstacle 
+\end{itemize}
 
 
 \section{Summary of Methodology}
