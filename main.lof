@@ -34,19 +34,36 @@
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Summed Fields Without Total Normalization}}{43}{figure.3.5}
 \contentsline {figure}{\numberline {3.6}{\ignorespaces GVF converging and circulating circular path}}{44}{figure.3.6}
 \contentsline {figure}{\numberline {3.7}{\ignorespaces Fixed Wing converging and following a path}}{46}{figure.3.7}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces UAV encountering a circular obstacle centered on pre-planned path, no circulation}}{47}{figure.3.8}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces }}{49}{figure.3.9}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Fixed Wing converging and following a path}}{47}{figure.3.8}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Lateral error for fixed wing guided by GVF guidance of multiple circulations}}{47}{figure.3.9}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces UAV encountering a circular obstacle centered on pre-planned path, no circulation}}{49}{figure.3.10}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces UAV encountering a circular obstacle centered on pre-planned path with circulation}}{50}{figure.3.11}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Heatmap of cost as function of $k$ and $H_o$}}{52}{figure.3.12}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Cost function reduction in fmincon()}}{53}{figure.3.13}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces UAV path from optimized GVF}}{54}{figure.3.14}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{55}{figure.3.15}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{55}{figure.3.15}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Micro quadcopter Crazyflie 2.0 by bitcraze}}{55}{figure.3.15}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Indoor quadcopter flight experimental layout}}{56}{figure.3.16}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Crazieflie client radio communication software}}{57}{figure.3.17}
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Indoor quadcopter flight experimental layout}}{58}{figure.3.18}
+\contentsline {figure}{\numberline {3.19}{\ignorespaces \texthl {TEMPORARY VICON AREA PHOTO}}}{58}{figure.3.19}
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Crazyflie Guidance and Control Software Framework}}{59}{figure.3.20}
+\contentsline {figure}{\numberline {3.21}{\ignorespaces }}{60}{figure.3.21}
+\contentsline {figure}{\numberline {3.22}{\ignorespaces }}{60}{figure.3.22}
+\contentsline {figure}{\numberline {3.23}{\ignorespaces }}{61}{figure.3.23}
+\contentsline {figure}{\numberline {3.24}{\ignorespaces }}{61}{figure.3.24}
+\contentsline {figure}{\numberline {3.25}{\ignorespaces }}{62}{figure.3.25}
+\contentsline {figure}{\numberline {3.26}{\ignorespaces }}{62}{figure.3.26}
 \addvspace {\@lineskip }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Fixed Wing converging and following a path}}{50}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Fixed Wing converging and following a path}}{51}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces GVF converging and a) small circulation b) large circulation}}{51}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces GVF circular attractive field without normalization (a) and normalization (b)}}{52}{figure.4.4}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Repulsive Circular Field with Large Radius}}{52}{figure.4.5}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Repulsive Circular Field with Small Radius}}{53}{figure.4.6}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Circular GVF without normalization (a) and with normalization (b)}}{54}{figure.4.7}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Repulsive GVF a) no circulation and b) with circulation}}{55}{figure.4.8}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Summed Fields Without Total Normalization}}{56}{figure.4.9}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Summed Fields Without Total Normalization}}{56}{figure.4.10}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Summed Field Guidance with circulation}}{57}{figure.4.11}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces GVF converging and a) small circulation b) large circulation}}{63}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces GVF circular attractive field without normalization (a) and normalization (b)}}{64}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Repulsive Circular Field with Large Radius}}{64}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Repulsive Circular Field with Small Radius}}{65}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Circular GVF without normalization (a) and with normalization (b)}}{66}{figure.4.5}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Repulsive GVF a) no circulation and b) with circulation}}{67}{figure.4.6}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Summed Fields Without Total Normalization}}{68}{figure.4.7}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Summed Fields Without Total Normalization}}{68}{figure.4.8}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Summed Field Guidance with circulation}}{69}{figure.4.9}
 \addvspace {\@lineskip }
 \addvspace {\@lineskip }

@@ -9,15 +9,10 @@ Panagou, D., \enquote{Motion planning and collision avoidance using navigation
   vector fields,} {\em Robotics and {Automation} ({ICRA}), 2014 {IEEE}
   {International} {Conference} on\/}, IEEE, 2014, pp. 2513--2518.
 
-\bibitem{ariyur_autonomous_2008}
-Ariyur, K.~B. and Fregene, K.~O., \enquote{Autonomous tracking of a ground
-  vehicle by a {UAV},} {\em American {Control} {Conference}, 2008\/}, IEEE,
-  2008, pp. 669--671.
-
-\bibitem{teuliere_chasing_2011}
-Teuliere, C., Eck, L., and Marchand, E., \enquote{Chasing a moving target from
-  a flying {UAV},} {\em Intelligent {Robots} and {Systems} ({IROS}), 2011
-  {IEEE}/{RSJ} {International} {Conference} on\/}, IEEE, 2011, pp. 4929--4934.
+\bibitem{beard_small_2012}
+Beard, R.~W. and McLain, T.~W., {\em Small unmanned aircraft: theory and
+  practice\/}, Princeton University Press, Princeton, N.J, 2012, OCLC:
+  ocn724663112.
 
 \bibitem{oh_coordinated_2013}
 Oh, H., Kim, S., Shin, H.-S., Tsourdos, A., and White, B., \enquote{Coordinated
@@ -35,11 +30,6 @@ Oh, H., Kim, S., Shin, H.-S., Tsourdos, A., and White, B., \enquote{Coordinated
 Ulun, S. and Unel, M., \enquote{Coordinated motion of {UGVs} and a {UAV},} {\em
   Industrial {Electronics} {Society}, {IECON} 2013-39th {Annual} {Conference}
   of the {IEEE}\/}, IEEE, 2013, pp. 4079--4084.
-
-\bibitem{beard_small_2012}
-Beard, R.~W. and McLain, T.~W., {\em Small unmanned aircraft: theory and
-  practice\/}, Princeton University Press, Princeton, N.J, 2012, OCLC:
-  ocn724663112.
 
 \bibitem{sujit_unmanned_2014}
 Sujit, P., Saripalli, S., and Sousa, J.~B., \enquote{Unmanned {Aerial}

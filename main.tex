@@ -1285,8 +1285,7 @@ The method for constructing path following and obstacle GVFs will be used in Pha
 A demonstration of the modeled UAV converging and following a straight path for various target patch circulations is provided. A circular obstacle represented by a strictly repulsive GVF will be added to the path and the avoidance observed. Obstacles radius and their associated GVF decay radius will now be represented in terms of the UAVs turning radius for convenience. Next, a path deviation cost function is described and is to be minimized to provide an optimized GVF obstacle avoidance guidance. It is shown how cost is effected by modifying the decay radius and circulation for the worst-case obstacle avoidance scenario presented. Lastly, a method for solving for circulation and decay radius numerically is presented. 
 
 
-The dynamics of UAVs are often simplified when simulating guidance systems by modeling the UAV as a Dubin's vehicle \cite{frew_cooperative_2007,griffiths_vector_2006,nelson_cooperative_2005,nelson_vector_2006,nelson_vector_2007}. It is assumed that the autopilots control system is capable of maintaining stability, speed $u$, and can turn the vehicle at a fixed turn rate $\dot{\theta}$. The position of the UAV $\overrightarrow{X}$ at time $t$ is calculated from the integral of the velocity vector $\overrightarrow{U}$, Equation \ref{eq:uavPosition}. Heading is an input from a guidance system, such as waypoint, potential field, or vector field.
-
+The dynamics of UAVs are often simplified when simulating guidance systems by modeling the UAV as a Dubin's vehicle \cite{frew_cooperative_2007,griffiths_vector_2006,nelson_cooperative_2005,nelson_vector_2006,nelson_vector_2007}. It is assumed that the autopilot's control system is capable of maintaining stability, speed $u$, and can turn the vehicle at a fixed turn rate $\dot{\theta}$. The position of the UAV $\overrightarrow{X}$ at time $t$ is calculated from the integral of the velocity vector $\overrightarrow{U}$, Equation \ref{eq:uavPosition}. Heading $\theta$ is an input from a guidance system, such as waypoint, potential field, or vector field. Here the turnrate of the UAV is restricted to $20$ degrees per second.
 \begin{equation}
 \label{eq:uavVelocity}
 \overrightarrow{U}(t) = u \begin{bmatrix}
@@ -1307,8 +1306,6 @@ sin(\theta(t))
 \dot{\theta} \leq 20 deg/s
 \end{equation}
 
-
-
 A UAV that travels at a constant speed and has a fixed turn rate $\dot{\theta}$ can be guided to converge and follow a straight path the GVF guidance introduced in Phase I. Demonstrated in Figure \ref{fig:uavPathFollowDemo}, a UAV at initial position $(-45,20)$ and heading $\theta$ of $45^\circ$ is shown converging and following a path by GVF guidance with weights $G=1,H=5$.
 
 
@@ -1319,10 +1316,30 @@ A UAV that travels at a constant speed and has a fixed turn rate $\dot{\theta}$ 
 	\label{fig:uavPathFollowDemo}
 \end{figure}
 
+The effect of modifying $G$ and $H$ has not been well documented in literature when the GVF is normalized for a heading guidance. Increasing circulation, as described in Phase I, increases the range that circulation begins to effect the guidance.  A low circulation weight allows convergence to dominate the guidance, causing the UAV to quickly reach the path, however will have significant overshoot and may continue to oscillate. High convergence weights prevent oscillation but increase the time taken to converge to the path. Multiple UAV routes for a UAV traveling at a speed of $u=20m/s$ using guidance of various path circulation weights and convergence $G=1$ is shown in Figure \ref{fig:uavPathMultipleHs} below. The lateral error from the path is shown in Figure \ref{fig:uavPathMultipleHsLateral}. 
 
 
 
-Obstacles along the pre-planned path are described using two parameters, the radius $r_o$ and the lateral distance from the path $y_o$. It is assumed here that the radius of the obstacle is no smaller than the turn radius of the UAV $\theta_r$, which is calculated in Equation \ref{eq:turning_radius}. It is convenient to represent the obstacle's radius, Equation \ref{eq:obstR}, as a multiple of the UAVs turning radius for reasons that will be discussed further into the methodology.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim=0 30 0 65,clip,width=14cm]{PaperFigures/Methods/pathMultipleHs}
+	\caption{Fixed Wing converging and following a path}
+	\label{fig:uavPathMultipleHs}
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim=0 0 0 0,clip,width=16cm]{PaperFigures/Methods/lateralErrorVsTime}
+	\caption{Lateral error for fixed wing guided by GVF guidance of multiple circulations}
+	\label{fig:uavPathMultipleHsLateral}
+\end{figure}
+
+From the above simulation it is observed that a circulation near the UAVs velocity provides a flight route that is in-between the high oscillation and overshoot of a circulation $H=1$ while not having a longer settling time with high circulation $H=50$. For future simulations the circulation of the path will be assumed to be equal to that of the UAVs velocity.
+
+
+Obstacles along the pre-planned path are described using two parameters, the radius $r_o$ and the lateral distance from the path $y_o$. It is assumed here that the radius of the obstacle is no smaller than the turn radius of the UAV $\theta_r$, which is calculated in Equation \ref{eq:turning_radius}. Obstacles larger than the UAV's turning radius would require a diversion path with radius, at minimum, of that in Equation \ref{eq:turning_radius}. It is convenient to represent the obstacle's radius, Equation \ref{eq:obstR}, as a multiple of the UAV's turning radius for reasons that will be discussed further into the methodology.
 
 
 \begin{equation}
@@ -1342,25 +1359,45 @@ r_o = n \theta_r
  R = k r_o
  \end{equation}
  
- Strictly repulsive GVF obstacle fields can provide avoidance, however may cause excess deviation from the pre-planned path and unnecessary turns. The repulsive vectors directly and equally oppose the path following vectors shown in Figure \ref{fig:uavPathObstNoCirc}. 
+ A cost function can be used to measure the deviation from a planned path while avoiding an obstacle with GVF in Equation \ref{eq:staticCost}. The deviation, y, is the lateral distance of the UAV to the planned path, $R$ is the obstacle radius, and the function j(x,y) increases the cost when the UAV violates the obstacles radius.
+ 
+ \begin{equation}
+ \label{eq:staticCost}
+ \gamma = \frac{1}{R}\int_{0}^{tf}ydt
+ \end{equation}
+ 
+ 
+ Strictly repulsive GVF obstacle fields can provide avoidance, however may cause excess deviation from the pre-planned path, cause unnecessary turns, and flight routes near or through guidance singularities. A UAV traveling at a speed of $10m/s$ and a turn rate of $20 deg/s$ is given a summed path following and obstacle avoidance guidance $\overrightarrow{V}_g$, defined in Equation \ref{eq:totalGuidance} in Phase I. An obstacle centered on the path $y_o=0$ and radius $r_0 = 1.5\theta_r$ is to be avoided. The decay radius multiplier $k$ was increased manually over several simulations until avoidance was achieved. The flight path of the UAV flying with summed guidance is shown in Figure \ref{fig:uavPathObstNoCirc}. Note that the UAV experiences excessive deviation and takes considerable time to settle back to the planned path. Additionally, the guidance directs the UAV to pass directly through a singularity and passes near an additional singularity towards the top of the obstacle. The cost for avoidance using the strictly repulsive guidance for head on collision scenario is $\gamma=28$.
+ 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[trim=0 100 0 125,clip,width=14cm]{PaperFigures/Methods/uavPathFollowObstacleNoCirc}
+	%Simulations performed with findSingularities.m
+	%G=-1,H=0, n = 1.5,k=2.8
+	\includegraphics[width=14cm]{PaperFigures/Methods/uavPathFollowObstacleNoCirc}
 	\caption{UAV encountering a circular obstacle centered on pre-planned path, no circulation}
 	\label{fig:uavPathObstNoCirc}
 \end{figure}
 
+Adding circulation to the obstacle guidance $\overrightarrow{V}_o$ improves the UAVs avoidance performance. Equal magnitudes convergence $G_o$ and circulation $H_o$ removes the guidance singularities from the UAV's path, adds a more gentle transition between fields, and guides the UAV back to the planned path more quickly, shown in Figure\ref{fig:uavPathObstWithCirc}. The cost of the head on collision avoidance using GVF guidance with obstacle circulation results in a cost of $\gamma=17$.
 
-So far GVF weights and decay radii have been used as a high level specification of desired behavior, i.e pushing away from on obstacle region while circumnavigating a target [wwc]. Selecting obstacle GVF circulation $H$ and decay radius $R$ such that the deviation from a planned path is minimized would be beneficial in situations such as target tracking or surveying a sensor line. Additionally, it was shown in Phase I that adding circulation to a GVF can remove singularities from the GVF path. 
 
-A cost function can be used to measure the deviation from a planned path while avoiding an obstacle with GVF in Equation \ref{eq:staticCost}. The deviation, y, is the lateral distance of the UAV to the planned path, $R$ is the obstacle radius, and the function j(x,y) increases the cost when the UAV violates the obstacles radius.
 
-\begin{equation}
-\label{eq:staticCost}
-\gamma = \frac{1}{R}\int_{0}^{tf}ydt + j(x,y) 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=16cm]{PaperFigures/Methods/uavPathFollowObstacleWithCirc}
+	\caption{UAV encountering a circular obstacle centered on pre-planned path with circulation}
+	\label{fig:uavPathObstWithCirc}
+\end{figure}
+
+
+Determining the combination of decay radius multiplier $k$ and circulation $H_o$ that optimized the GVF is now considered. One method for selecting what these field parameters should be is to evaluated a large range of parameters and observe the cost for avoidance with each combination. The cost function shown in Equation \ref{eq:staticCost} only penalized the UAV for path deviation, however should be modified to also be penalized for violating the obstacle space. The new cost function $\bar{\gamma}$ adds an additional piecewise function which increases the cost if the UAV is inside or on the obstacles edge, shown in Equation \ref{eq:staticCostWithObst}
+
+
+ \begin{equation}
+\label{eq:staticCostWithObst}
+\bar{\gamma} = \frac{1}{R}\int_{0}^{tf}ydt + j(x,y)
 \end{equation}
-
 
 \begin{equation}
 j(x,y) = \left\{
@@ -1371,19 +1408,178 @@ j(x,y) = \left\{
 \right.
 \end{equation}
 
-The performance of a Dubin's UAV with a speed $u=20m/s$ and turnrate $\dot{\theta}$ avoiding an obstacle of radius $2.5m$ with a range of circulation and decay radii $R$ is shown in Figure \ref{fig:costHandR}. 
+
+Using the above cost function $\bar{\gamma}$ in the same scenario presented in Figure \ref{fig:uavPathObstNoCirc}, several simulations were conducted with identical UAV parameters and obstacle radius $r_o$ with varying $k$ and $H$ values. The cost of each simulation is shown in the heatmap shown in Figure \ref{fig:costHandR}. Modifying circulation by itself reduces the cost in the given scenario, however is not enough control alone to provide a low cost avoidance. Modification the obstacle field's decay radius has a significant impact on the performance, bringing cost down.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim=0 0 0 10,clip,width=16cm]{PaperFigures/Methods/costHandR}
+	\caption{Heatmap of cost as function of $k$ and $H_o$}
+	\label{fig:costHandR}
+\end{figure}
+
+The combination of decay multiplier $k$ and obstacle circulation $H_o$ that results in minimal cost can be used to provide an optimal avoidance. Solving the desired parameters for an optimal guidance using this method for the general case is computationally expensive and can take many hundreds of simulations to evaluate the desired space. The problem becomes one of minimization of the cost function and to find a solution numerically without solving for a large range of parameters. 
+
+\begin{equation}
+\label{eq:staticCost}
+\begin{aligned}
+& \underset{H,k}{\text{minimize}}
+& & \frac{1}{R}\int_{0}^{tf}ydt + j(x,y) 
+\end{aligned}
+\end{equation}
+
+A numerical solver which attempts to minimize a given cost function can be found in MATLAB called $fmincon()$. The minimizer operates on the following principle. Provided an initial condition array $X_I$, minimize the function $\bar{\gamma}$ by observing the change in $\bar{\gamma}$ within certain bounds. Using the minimizer method a solution to the above problem of a UAV following a path with a head-on collision scenario with an obstacle was found in 5.2 seconds compared to [insert time for finding solution with heat map]. The reduction in cost as the minimizer runs is shown in Figure \ref{fig:finalfunctionvalue}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=12cm]{PaperFigures/Methods/finalFunctionValue}
+	\caption{Cost function reduction in fmincon()}
+	\label{fig:finalfunctionvalue}
+\end{figure}
+
+The optimizer found a solution combination of $k=2.7$ and $H_o = 1.8$ and results in a path with cost $\bar{\gamma}=14$. The path can be seen below in Figure \ref{fig:optimizedPath}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=16cm]{PaperFigures/Methods/numericallySolvedPath}
+	\caption{UAV path from optimized GVF}
+	\label{fig:optimizedPath}
+\end{figure}
+
+
+The optimized GVF guidance was shown to provide a route for the UAV with lower deviation compared to the non-optimized GVF and also reduced the number of singularities. The guidance optimized guidance will be programmed into python and compared with that in MATLAB to validate they are identical. Next, the guidance will be used to guide an indoor multirotor UAV.
+
+
+
+\section{Phase III}
+\textbf{The objective of Phase III is to demonstrate the optimized gradient vector field guidance presented in Phase II on multirotor UAV flying with fixed wing turn-rate constraints.} A description of the experimental setup will be given for both the hardware and software that was implemented to achieve GVF guidance. An overview of the validation of a conversion to python from MATLAB is discussed. Lastly a description of an avoidance scenario is presented.
+
+
+\subsection{Experimental Overview}
+All of the scenarios discussed using GVF guidance have involved simulating a fixed wing UAV modeled as a Dubin's vehicle. To demonstrate the GVF on actual flight hardware, a indoor quadcopter, Figure \ref{fig:crazyflie2}, will be used in place of a fixed wing UAV. There are several reasons why using an indoor quadcopter is advantageous for experimental flight tests, such as new guidance systems. First, finding an airspace to safely test the guidance system with an adequate clearing for takeoff and landing can be difficult. Many environmental complications such as high winds, precipitation, and low visibility could delay or prevent flight tests all together. Testing the GVF guidance method on an indoor quadcopter remove these complications. Additionally, the Dubin's turn rate constrains can be applied to limit the maneuverability of the quadcopter so that it behaves similar to that of a fixed wing UAV. Flying indoors also allows for more repeatable experimentation, environmental control, and use of high speed motion capture systems to provide position information to guidance and control systems. 
+
+
+
+\begin{figure}
+	\centering
+	\includegraphics[trim=0 25 0 30,clip,width=7cm]{PaperFigures/crazyflie}
+	\caption{Micro quadcopter Crazyflie 2.0 by bitcraze}
+	\label{fig:crazyflie2}
+\end{figure}
+
+
+The micro quadcopter, crazyflie 2.0, designed by Bitcraze was selected as the experimental flight vehicle due to its low cost and the ability to send the vehicle roll rate, pitch rate, yaw, and thrust commands directly over radio. The control messages can be sent through the object oriented and scripted language Python, a language with syntax very similar to MATLAB. The UAV was viewed by 8 vicon vero cameras detect infrared light reflected by small markers placed on the vehicle. Video captured by the cameras at 100Hz is sent to a PC with a software package that estimates the pose of the vehicle and sends that information over a local area network (LAN) to a ground station PC where guidance and control calculates are made. The command messages are then sent over radio to the crazyflie where an on-board controller accepts the commands and outputs the necessary motor output to achieve the commands. A high level overview of the experimental framework described is shown in Figure \ref{fig:experimentalFramework}. Each component of the framework will be discussed in more detail in the proceeding sections. 
+
+\begin{figure}
+	\centering
+	\includegraphics[trim=0 0 0 0,clip,width=16cm]{PaperFigures/Methods/experimentalSetup}
+	\caption{Indoor quadcopter flight experimental layout}
+	\label{fig:experimentalFramework}
+\end{figure}
+
+\subsection{Crazyflie 2.0}
+
 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[trim=0 0 0 0,clip,width=16cm]{PaperFigures/Methods/costHandR}
-	\caption{}
-	\label{fig:costHandR}
+	\includegraphics[trim=0 0 0 0,clip,width=12cm]{PaperFigures/Methods/cfClient}
+	\caption{Crazieflie client radio communication software}
+	\label{fig:cfClient}
 \end{figure}
 
 
-\section{Phase III}
-\textbf{The objective of Phase III is to demonstrate the optimized gradient vector field guidance presented in Phase II on multirotor UAV flying with fixed wing turn-rate constraints.}
+\subsection{Vicon Motion Capture}
+
+\begin{figure}
+	\centering
+	\includegraphics[trim=20 100 100 100,clip,width=12cm]{PaperFigures/Methods/viconObject}
+	\caption{Indoor quadcopter flight experimental layout}
+	\label{fig:viconObject}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim=0 0 0 0,clip,width=14cm]{PaperFigures/Methods/viconArea}
+	\caption{\hl{TEMPORARY VICON AREA PHOTO}}
+	\label{fig:cfControlClass}
+\end{figure}
+
+
+
+
+\subsection{Python Guidance and Control Ground Station}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim=10 0 10 0,clip,width=14cm]{PaperFigures/Methods/cfControlClassFlow}
+	\caption{Crazyflie Guidance and Control Software Framework}
+	\label{fig:cfControlClass}
+\end{figure}
+
+
+
+
+- A ground station software containing the vector field guidance and a PID controller are used to calculate the necessary roll, pitch, yaw, thrust.
+
+- The commands are then sent to quadcopter over radio
+
+Finding a safe airspace to fly 
+
+There are several logistical challenges with flying fixed wing UAVs including 
+
+
+
+
+
+
+\begin{figure}
+	\centering
+	\includegraphics[trim=0 230 0 260,clip,width=16cm]{PaperFigures/Methods/resultsPython/dubinsPaths}
+	\caption{}
+	\label{fig:pythonMATDubins}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[trim=0 140 0 140,clip,width=10cm]{PaperFigures/Methods/resultsPython/obstacle}
+	\caption{}
+	\label{fig:dubinspaths}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[trim=0 140 0 140,clip,width=10cm]{PaperFigures/Methods/resultsPython/obstacleWithDecay}
+	\caption{}
+	\label{fig:dubinspaths}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[trim=0 160 0 160,clip,width=10cm]{PaperFigures/Methods/resultsPython/obstacleWithDecayAndCirculation}
+	\caption{}
+	\label{fig:dubinspaths}
+\end{figure}
+
+
+\begin{figure}
+	\centering
+	\includegraphics[trim=0 160 0 160,clip,width=10cm]{PaperFigures/Methods/resultsPython/PathConfirm}
+	\caption{}
+	\label{fig:dubinspaths}
+\end{figure}
+
+
+\begin{figure}
+	\centering
+	\includegraphics[trim=0 140 0 140,clip,width=10cm]{PaperFigures/Methods/resultsPython/summedFields}
+	\caption{}
+	\label{fig:dubinspaths}
+\end{figure}
+
+
+
+
 
 \section{Summary of Methodology}
 
@@ -1391,24 +1587,11 @@ The performance of a Dubin's UAV with a speed $u=20m/s$ and turnrate $\dot{\thet
 \chapter{Results}
 \section{Introduction to Results}
 \section{Phase I}
-How quickly the UAV converges and follows the path is determined by the combination of convergence and circulation weights. A low circulation weight allows convergence to dominate the guidance, causing the UAV to quickly reach the path, however will have significant overshoot and may continue to oscillate. High convergence weights prevent oscillation but increase the time taken to converge to the path. Multiple UAV routes for a UAV traveling at a speed of $u=20m/s$ using guidance of various path circulation weights and convergence $G=1$ is shown in Figure \ref{fig:uavPathMultipleHs} below. The lateral error from the path is shown in Figure \ref{fig:uavPathMultipleHsLateral}. 
-
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[trim=0 30 0 65,clip,width=14cm]{PaperFigures/Methods/pathMultipleHs}
-	\caption{Fixed Wing converging and following a path}
-	\label{fig:uavPathMultipleHs}
-\end{figure}
 
 
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[trim=0 0 0 0,clip,width=16cm]{PaperFigures/Methods/lateralErrorVsTime}
-	\caption{Fixed Wing converging and following a path}
-	\label{fig:uavPathMultipleHsLateral}
-\end{figure}
+
+
 
 
 Guidance for a path at angle $\delta = 0$ and equal parts circulation and convergence weights $G=H=1$ is shown in Figure \ref{fig:GVFLine}a. How quickly the path following field transitions from convergence to circulation depends on the field weights. Equal parts convergence and circulation are shown in Figure \ref{fig:GVFLine}a $(G=H=1)$ and a larger circulation value in Figure \ref{fig:GVFLine}b $(G=1, H=5)$. \\

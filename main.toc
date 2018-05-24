@@ -28,13 +28,17 @@
 \contentsline {subsection}{\numberline {3.2.2}Constructing an Avoidance Vector Field}{38}{subsection.3.2.2}
 \contentsline {subsection}{\numberline {3.2.3}Summed Guidance and Singularity Definition}{41}{subsection.3.2.3}
 \contentsline {section}{\numberline {3.3}Phase II: Optimization of Obstacle Field}{45}{section.3.3}
-\contentsline {section}{\numberline {3.4}Phase III}{49}{section.3.4}
-\contentsline {section}{\numberline {3.5}Summary of Methodology}{49}{section.3.5}
-\contentsline {chapter}{\numberline {4}Results}{50}{chapter.4}
-\contentsline {section}{\numberline {4.1}Introduction to Results}{50}{section.4.1}
-\contentsline {section}{\numberline {4.2}Phase I}{50}{section.4.2}
-\contentsline {section}{\numberline {4.3}Phase II}{57}{section.4.3}
-\contentsline {section}{\numberline {4.4}Phase III}{57}{section.4.4}
-\contentsline {chapter}{\numberline {5}Conclusions}{58}{chapter.5}
-\contentsline {chapter}{\numberline {6}Future Work}{59}{chapter.6}
-\contentsline {chapter}{References}{60}{schapter.5}
+\contentsline {section}{\numberline {3.4}Phase III}{54}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Experimental Overview}{55}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Crazyflie 2.0}{57}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Vicon Motion Capture}{58}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.4}Python Guidance and Control Ground Station}{59}{subsection.3.4.4}
+\contentsline {section}{\numberline {3.5}Summary of Methodology}{59}{section.3.5}
+\contentsline {chapter}{\numberline {4}Results}{63}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introduction to Results}{63}{section.4.1}
+\contentsline {section}{\numberline {4.2}Phase I}{63}{section.4.2}
+\contentsline {section}{\numberline {4.3}Phase II}{69}{section.4.3}
+\contentsline {section}{\numberline {4.4}Phase III}{69}{section.4.4}
+\contentsline {chapter}{\numberline {5}Conclusions}{70}{chapter.5}
+\contentsline {chapter}{\numberline {6}Future Work}{71}{chapter.6}
+\contentsline {chapter}{References}{72}{schapter.5}
