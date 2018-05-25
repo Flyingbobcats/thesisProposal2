@@ -1602,7 +1602,6 @@ Lastly, the Python guidance was simulated with an identical Dubins vehicle as MA
 
 
 \subsection{Flight Scenarios}
-
 \begin{itemize}
 	\item Head on collision
 	\item Offset collision
@@ -1616,13 +1615,11 @@ Lastly, the Python guidance was simulated with an identical Dubins vehicle as MA
 
 \chapter{Results}
 \section{Introduction to Results}
+
 \section{Phase I}
 
-
-
-
-
-
+GVF guidance for following a straight path and avoiding circular obstacles was replicated from literature. A summed GVF for path following and circular obstacle avoidance was evaluated for GVF singularities. A method for determine the location of singularities in a summed GVF was presented. A worst case obstacle avoidance scenario with a circular obstacle centered on a straight path represented by a strictly repulsive field was evaluated for singularities. Circulation was added to the GVF to demonstrate mitigation of GVF singularities in a summed field. 
+ 
 
 Guidance for a path at angle $\delta = 0$ and equal parts circulation and convergence weights $G=H=1$ is shown in Figure \ref{fig:GVFLine}a. How quickly the path following field transitions from convergence to circulation depends on the field weights. Equal parts convergence and circulation are shown in Figure \ref{fig:GVFLine}a $(G=H=1)$ and a larger circulation value in Figure \ref{fig:GVFLine}b $(G=1, H=5)$. \\
 
@@ -1639,6 +1636,7 @@ Guidance for a path at angle $\delta = 0$ and equal parts circulation and conver
 	\label{fig:GVFLine}
 \end{figure} 
 
+An obstacle field construction begins with the intersection of a cylinder and a plane. The non-normalized convergence guidance is shown in Figure \ref{fig:gvfCircAttractive}a. Normalizing the convergence vectors is shown in Figure \ref{fig:gvfCircAttractive}b.
 
 \begin{figure}[H]
 	\begin{subfigmatrix}{2}% number of columns
@@ -1651,8 +1649,6 @@ Guidance for a path at angle $\delta = 0$ and equal parts circulation and conver
 	\label{fig:gvfCircAttractive}
 \end{figure}
 
-
-\noindent
 
 Guidance that repels from a circular path can be produced by setting the convergence weight $G=-1$, shown in Figure \ref{fig:largerepulsive}. 
 
@@ -1687,7 +1683,7 @@ Evaluating the circulation term results in a vector field that is parallel to a 
 	\label{fig:gvfCircCirculation}
 \end{figure}
 
-A strictly repulsive field $\overrightarrow{V}_{obst}$ with $G=-1$, $H=0$, $r=0.01$, and $R = 35$ is shown in Figure \ref{fig:decayApplied}a. Adding equal magnitude circulation and decay $G=-1$, $H=1$ is shown in Figure \ref{fig:decayApplied}b.
+Obstacle vector fields are shown below with no circulation $H_o=0$, Figure \ref{fig:decayApplied}a, and equal magnitude convergence and circulation $H_o=1$, Figure \ref{fig:decayApplied}b.
 
 \begin{figure}[H]
 	\begin{subfigmatrix}{2}% number of columns
@@ -1701,36 +1697,7 @@ A strictly repulsive field $\overrightarrow{V}_{obst}$ with $G=-1$, $H=0$, $r=0.
 \end{figure} 
 
 
-
-
-Path following guidance and repulsive obstacle avoidance is achieved by summing the two fields together, producing the UAVs guidance $\overrightarrow{V}_G$ shown in Equation \ref{eq:totalGuidanceObstacle}
-
-\begin{equation}
-\label{eq:totalGuidanceObstacle}
-\overrightarrow{V}_g = \overrightarrow{V}_{path} + P\overrightarrow{V}_{obst}
-\end{equation}
-
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[trim=25 35 25 50,clip,width=14cm]{PaperFigures/Methods/summedFieldsNoNorm}
-	\caption{Summed Fields Without Total Normalization}
-	\label{fig:summedFieldsNoNorm}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[trim=25 60 25 85,clip,width=14cm]{Figures/methods/summedHeatMapSimple}
-	\caption{Summed Fields Without Total Normalization}
-	\label{fig:summedHeatMap}
-\end{figure}
-
-
-Multiple singularities may exist so several initial conditions must be evaluated to detect all singularities present. Several initial conditions placed near the radius of equal strength, $R/2$, on the side of the obstacle where singularities are expected results in the detection of three singularities, shown in Figure \ref{fig:noCircSingularityDetection}
-
-
-
-
+=======================================\\
 Evaluating initial conditions both inside and outside of the obstacle radius results in singularity detection. Singularities are a result of two vector fields directly and equally opposing each other, which may be mitigated by modifying the repulsive field with circulation. Equal magnitudes repulsion and circulation $G=-1,H=1$ are shown in Figure \ref{fig:summedGuidanceWithcirc}, which results in a single singularity removed from the planned path as well as the integral guidance line. 
 
 \begin{figure}[H]
@@ -1741,9 +1708,61 @@ Evaluating initial conditions both inside and outside of the obstacle radius res
 \end{figure}
 
 \section{Phase II}
+A method for optimizing the GVF for obstacle avoidance by modifying decay radius multiplier $k$ and circulation $H_o$ was presented and simulated. Several scenarios with varying obstacle lateral positions $y_o$, radii $r_o$, and UAV speeds $u$ were simulated. A comparison for worst case head on obstacle scenario is presented and compared against VFF and waypoint guidance methods. It was determined that an optimized GVF avoids obstacles at a lower cost than VFF and performs similarly to waypoint with the need to re-plan mission paths. 
+
+
+A UAV with speed $u=10m/s$ and fixed turn rate $\dot{\theta} = 20deg/s$ is assumed to be following a straight path when an unplanned obstacle is detected with lateral distance $y_o$ from the path and radius $r_o$. The optimized GVF guidance solves the combination of circulation $H_o$ and decay radius multiplier $k$ to minimize the path deviation cost function. Several scenarios will be considered below. 
+
+In general, the worst case avoidance scenario involves an obstacle centered on the target path, $y_o=0$. With a path centered obstacle the UAV will be required to deviate at least one half of the obstacles radius in order to prevent a collision. Additionally, GVF guidance may have singularities where the two fields oppose each other. For a path centered obstacle with radius $r_o=\theta_r$, the optimized GVF circulation and radius multiplier are $1.75$ and $2.72$ respectively with a path deviation cost of $6.96$. Due to the addition of circulation to the obstacle GVF a singularity exists on the opposite side of the UAVs route. The route of the UAV is shown in Figure \ref{fig:centeredOneRadius}
+
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim=0 60 0 60,clip,width=16cm]{PaperFigures/Methods/PhaseIISimulations/centeredOneRadius}
+	\caption{Centered obstacle avoidance with minimum radius}
+	\label{fig:centeredOneRadius}
+\end{figure}
+
+Increasing the radius of the obstacle to be $n=2$ times the UAVs turning radius results in a similar avoidance route, shown in Figure \ref{fig:centeredTwoRadius}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim=0 60 0 60,clip,width=16cm]{PaperFigures/Methods/PhaseIISimulations/centeredTwoRadius}
+	\caption{Centered obstacle avoidance with radius $2\theta_r$}
+	\label{fig:centeredTwoRadius}
+\end{figure}
+
+Off centered obstacles where $y_o \ne 0$ for the same scenario can be avoided. The obstacle translated to $y_o=-1/2r_o$ is shown in Figure \ref{fig:offcenteredOneRadius}. Identical conditions for a obstacle of radius $r_o=2\theta_r$ is shown in Figure \ref{fig:offcenteredTwoRadius}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim=0 60 0 60,clip,width=16cm]{PaperFigures/Methods/PhaseIISimulations/offcenteredOneRadius}
+	\caption{Off centered obstacle avoidance with minimum radius}
+	\label{fig:offcenteredOneRadius}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim=0 60 0 60,clip,width=16cm]{PaperFigures/Methods/PhaseIISimulations/offcenteredTwoRadius}
+	\caption{Off centered obstacle avoidance with radius $2\theta_r$}
+	\label{fig:offcenteredTwoRadius}
+\end{figure}
+
+
+Several avoidance scenarios with a circular obstacle present on a target path were avoided by a fixed wing UAV flying under Dubin's constraints. Obstacle field circulation $H_o$ and decay radius multiplier $k$ are solved numerically by minimizing a path deviation cost. The UAV is guided to leave the path to circumnavigate the obstacle and quickly return to the path with minimal deviation. Experimental framework described in Phase III will replicate the simulations provide in this section and compare the results. 
+
+
+
 \section{Phase III}
 
+Optimized GVF guidance was programmed into a python written ground station to control a crazyflie 2.0 indoor quadcopter. Several obstacle scenarios presented in Phase II results were replicated and compared. Dubin's constraints were applied to the quadcopter to emulate fixed wing UAV dynamics in lieu of outdoor flight tests. Scenarios will be first presented followed by actual 
+
+
 \chapter{Conclusions}
+
+UAVs encountering obstacles along pre-planned routes can avoid obstacles through the use of an optimized gradient vector field. 
+
 \begin{itemize}
 	\item Singularity detection may also be useful when summing wind fields into guidance
 	\item Expand optimized GVF weights for a curved planned path

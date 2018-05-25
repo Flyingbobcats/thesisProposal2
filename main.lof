@@ -56,14 +56,16 @@
 \contentsline {figure}{\numberline {3.25}{\ignorespaces Validation of Python summed guidance overlaid with MATLAB}}{63}{figure.3.25}
 \contentsline {figure}{\numberline {3.26}{\ignorespaces Validation of Python Dubins UAV route overlaid with MATLAB}}{64}{figure.3.26}
 \addvspace {\@lineskip }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces GVF converging and a) small circulation b) large circulation}}{65}{figure.4.1}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces GVF converging and a) small circulation b) large circulation}}{66}{figure.4.1}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces GVF circular attractive field without normalization (a) and normalization (b)}}{66}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Repulsive Circular Field with Large Radius}}{66}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Repulsive Circular Field with Small Radius}}{67}{figure.4.4}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Circular GVF without normalization (a) and with normalization (b)}}{68}{figure.4.5}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Repulsive Circular Field with Large Radius}}{67}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Repulsive Circular Field with Small Radius}}{68}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Circular GVF without normalization (a) and with normalization (b)}}{69}{figure.4.5}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Repulsive GVF a) no circulation and b) with circulation}}{69}{figure.4.6}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Summed Fields Without Total Normalization}}{70}{figure.4.7}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Summed Fields Without Total Normalization}}{70}{figure.4.8}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Summed Field Guidance with circulation}}{71}{figure.4.9}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Summed Field Guidance with circulation}}{70}{figure.4.7}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Centered obstacle avoidance with minimum radius}}{72}{figure.4.8}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Centered obstacle avoidance with radius $2\theta _r$}}{73}{figure.4.9}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Off centered obstacle avoidance with minimum radius}}{74}{figure.4.10}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Off centered obstacle avoidance with radius $2\theta _r$}}{74}{figure.4.11}
 \addvspace {\@lineskip }
 \addvspace {\@lineskip }
