@@ -44,10 +44,8 @@ Panagou, D., \enquote{Motion planning and collision avoidance using navigation
   vector fields,} {\em Robotics and {Automation} ({ICRA}), 2014 {IEEE}
   {International} {Conference} on\/}, IEEE, 2014, pp. 2513--2518.
 
-\bibitem{beard_small_2012}
-Beard, R.~W. and McLain, T.~W., {\em Small unmanned aircraft: theory and
-  practice\/}, Princeton University Press, Princeton, N.J, 2012, OCLC:
-  ocn724663112.
+\bibitem{bone_uavs_2003}
+Bone, E., \enquote{{UAVs} backbround and issues for congress.pdf,} 2003.
 
 \bibitem{oh_coordinated_2013}
 Oh, H., Kim, S., Shin, H.-S., Tsourdos, A., and White, B., \enquote{Coordinated
@@ -61,10 +59,47 @@ Oh, H., Kim, S., Shin, H.-S., Tsourdos, A., and White, B., \enquote{Coordinated
   {UAVs},} {\em IEEE Transactions on Aerospace and Electronic Systems\/},
   Vol.~51, No.~2, April 2015, pp.~1501--1514.
 
+\bibitem{wise_uav_2006}
+Wise, R.~A. and Rysdyk, R.~T., \enquote{{UAV} coordination for autonomous
+  target tracking,} {\em Proceedings of the {AIAA} {Guidance}, {Navigation},
+  and {Control} {Conference}, {Keystone}, {CO}, {Aug}\/}, 2006, pp. 21--24.
+
 \bibitem{ulun_coordinated_2013}
 Ulun, S. and Unel, M., \enquote{Coordinated motion of {UGVs} and a {UAV},} {\em
   Industrial {Electronics} {Society}, {IECON} 2013-39th {Annual} {Conference}
   of the {IEEE}\/}, IEEE, 2013, pp. 4079--4084.
+
+\bibitem{beard_small_2012}
+Beard, R.~W. and McLain, T.~W., {\em Small unmanned aircraft: theory and
+  practice\/}, Princeton University Press, Princeton, N.J, 2012, OCLC:
+  ocn724663112.
+
+\bibitem{piccolo}
+Technology, C.~C., \enquote{{},} 2018.
+
+\bibitem{kestrel}
+Martin, L., \enquote{{Kestral Flight Systems And Autopilot},} 2018.
+
+\bibitem{pix}
+DroneCode, \enquote{{Pixhawk 1 Flight Controller} Guide,} 2018.
+
+\bibitem{nelson_cooperative_2005}
+Nelson, D.~R., \enquote{Cooperative control of miniature air vehicles,} 2005.
+
+\bibitem{nelson_vector_2006}
+Nelson, D.~R., Barber, D.~B., McLain, T.~W., and Beard, R.~W., \enquote{Vector
+  field path following for small unmanned air vehicles,} {\em American
+  {Control} {Conference}, 2006\/}, IEEE, 2006, pp. 7--pp.
+
+\bibitem{nelson_vector_2007}
+Nelson, D., Barber, D., McLain, T., and Beard, R., \enquote{Vector {Field}
+  {Path} {Following} for {Miniature} {Air} {Vehicles},} {\em IEEE Transactions
+  on Robotics\/}, Vol.~23, No.~3, June 2007, pp.~519--529.
+
+\bibitem{manjunath_application_2016}
+Manjunath, A., Mehrok, P., Sharma, R., and Ratnoo, A., \enquote{Application of
+  virtual target based guidance laws to path following of a quadrotor {UAV},}
+  IEEE, June 2016, pp. 252--260.
 
 \bibitem{sujit_unmanned_2014}
 Sujit, P., Saripalli, S., and Sousa, J.~B., \enquote{Unmanned {Aerial}
@@ -122,19 +157,6 @@ Goerzen, C., Kong, Z., and Mettler, B., \enquote{A {Survey} of {Motion}
 Li, G., Yamashita, A., Asama, H., and Tamura, Y., \enquote{An efficient
   improved artificial potential field based regression search method for robot
   path planning,} IEEE, Aug. 2012, pp. 1227--1232.
-
-\bibitem{nelson_cooperative_2005}
-Nelson, D.~R., \enquote{Cooperative control of miniature air vehicles,} 2005.
-
-\bibitem{nelson_vector_2006}
-Nelson, D.~R., Barber, D.~B., McLain, T.~W., and Beard, R.~W., \enquote{Vector
-  field path following for small unmanned air vehicles,} {\em American
-  {Control} {Conference}, 2006\/}, IEEE, 2006, pp. 7--pp.
-
-\bibitem{nelson_vector_2007}
-Nelson, D., Barber, D., McLain, T., and Beard, R., \enquote{Vector {Field}
-  {Path} {Following} for {Miniature} {Air} {Vehicles},} {\em IEEE Transactions
-  on Robotics\/}, Vol.~23, No.~3, June 2007, pp.~519--529.
 
 \bibitem{jung_unmanned_2016}
 Jung, W., Lim, S., Lee, D., and Bang, H., \enquote{Unmanned {Aircraft} {Vector}
