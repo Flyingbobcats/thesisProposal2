@@ -1,8 +1,43 @@
 \begin{thebibliography}{10}
 \newcommand{\enquote}[1]{``#1''}
 
-\bibitem{bone_uavs_2003}
-Bone, E., \enquote{{UAVs} backbround and issues for congress.pdf,} 2003.
+\bibitem{ariyur_autonomous_2008}
+Ariyur, K.~B. and Fregene, K.~O., \enquote{Autonomous tracking of a ground
+  vehicle by a {UAV},} {\em American {Control} {Conference}, 2008\/}, IEEE,
+  2008, pp. 669--671.
+
+\bibitem{teuliere_chasing_2011}
+Teuliere, C., Eck, L., and Marchand, E., \enquote{Chasing a moving target from
+  a flying {UAV},} {\em Intelligent {Robots} and {Systems} ({IROS}), 2011
+  {IEEE}/{RSJ} {International} {Conference} on\/}, IEEE, 2011, pp. 4929--4934.
+
+\bibitem{frew_cooperative_2007}
+Frew, E.~W., \enquote{Cooperative standoff tracking of uncertain moving targets
+  using active robot networks,} {\em Robotics and {Automation}, 2007 {IEEE}
+  {International} {Conference} on\/}, IEEE, 2007, pp. 3277--3282.
+
+\bibitem{griffiths_vector_2006}
+Griffiths, S., \enquote{Vector {Field} {Approach} for {Curved} {Path}
+  {Following} for {Miniature} {Aerial} {Vehicles},} American Institute of
+  Aeronautics and Astronautics, Aug. 2006.
+
+\bibitem{goncalves_artificial_2009}
+Goncalves, V.~M., Pimenta, L. C.~A., Maia, C.~A., and Pereira, G. A.~S.,
+  \enquote{Artificial vector fields for robot convergence and circulation of
+  time-varying curves in n-dimensional spaces,} IEEE, 2009, pp. 2012--2017.
+
+\bibitem{goncalves_circulation_2010}
+Gonçalves, V.~M., Pimenta, L.~C., Maia, C.~A., Pereira, G.~A., Dutra, B.~C.,
+  Michael, N., Fink, J., and Kumar, V., \enquote{Circulation of curves using
+  vector fields: actual robot experiments in 2D and 3D workspaces,} {\em
+  Robotics and {Automation} ({ICRA}), 2010 {IEEE} {International} {Conference}
+  on\/}, IEEE, 2010, pp. 1136--1141.
+
+\bibitem{goncalves_vector_2010}
+Gonçalves, V.~M., Pimenta, L.~C., Maia, C.~A., Dutra, B.~C., and Pereira,
+  G.~A., \enquote{Vector fields for robot navigation along time-varying curves
+  in \$ n \$-dimensions,} {\em IEEE Transactions on Robotics\/}, Vol.~26,
+  No.~4, 2010, pp.~647--659.
 
 \bibitem{panagou_motion_2014}
 Panagou, D., \enquote{Motion planning and collision avoidance using navigation
@@ -106,19 +141,9 @@ Jung, W., Lim, S., Lee, D., and Bang, H., \enquote{Unmanned {Aircraft} {Vector}
   {Field} {Path} {Following} with {Arrival} {Angle} {Control},} {\em Journal of
   Intelligent \& Robotic Systems\/}, Vol.~84, No. 1-4, Dec. 2016, pp.~311--325.
 
-\bibitem{griffiths_vector_2006}
-Griffiths, S., \enquote{Vector {Field} {Approach} for {Curved} {Path}
-  {Following} for {Miniature} {Aerial} {Vehicles},} American Institute of
-  Aeronautics and Astronautics, Aug. 2006.
-
 \bibitem{frew_lyapunov_nodate}
 Frew, E., \enquote{Lyapunov {Guidance} {Vector} {Fields} for {Unmanned}
   {Aircraft} {Applications}.pdf,} .
-
-\bibitem{frew_cooperative_2007}
-Frew, E.~W., \enquote{Cooperative standoff tracking of uncertain moving targets
-  using active robot networks,} {\em Robotics and {Automation}, 2007 {IEEE}
-  {International} {Conference} on\/}, IEEE, 2007, pp. 3277--3282.
 
 \bibitem{chen_tracking_2009}
 Chen, H., Chang, K., and Agate, C.~S., \enquote{Tracking with {UAV} using
@@ -156,24 +181,6 @@ Md, Z., Rg, C., and Dj, G., \enquote{Simplex {Solutions} for {Optimal}
 \bibitem{zhou_vector_2014}
 Zhou, D. and Schwager, M., \enquote{Vector field following for quadrotors using
   differential flatness,} IEEE, May 2014, pp. 6567--6572.
-
-\bibitem{goncalves_artificial_2009}
-Goncalves, V.~M., Pimenta, L. C.~A., Maia, C.~A., and Pereira, G. A.~S.,
-  \enquote{Artificial vector fields for robot convergence and circulation of
-  time-varying curves in n-dimensional spaces,} IEEE, 2009, pp. 2012--2017.
-
-\bibitem{goncalves_circulation_2010}
-Gonçalves, V.~M., Pimenta, L.~C., Maia, C.~A., Pereira, G.~A., Dutra, B.~C.,
-  Michael, N., Fink, J., and Kumar, V., \enquote{Circulation of curves using
-  vector fields: actual robot experiments in 2D and 3D workspaces,} {\em
-  Robotics and {Automation} ({ICRA}), 2010 {IEEE} {International} {Conference}
-  on\/}, IEEE, 2010, pp. 1136--1141.
-
-\bibitem{goncalves_vector_2010}
-Gonçalves, V.~M., Pimenta, L.~C., Maia, C.~A., Dutra, B.~C., and Pereira,
-  G.~A., \enquote{Vector fields for robot navigation along time-varying curves
-  in \$ n \$-dimensions,} {\em IEEE Transactions on Robotics\/}, Vol.~26,
-  No.~4, 2010, pp.~647--659.
 
 \bibitem{gerlach_autonomous_2014}
 Gerlach, A.~R., {\em Autonomous {Path}-{Following} by {Approximate} {Inverse}
