@@ -20,6 +20,9 @@
 \usepackage{bbding}
 \usepackage[utf8]{inputenc}
 
+\usepackage{array}
+
+
 
 
 \usepackage[normalem]{ulem}
@@ -45,6 +48,10 @@
 
 \definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
 \definecolor{mylilas}{RGB}{170,55,241}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
 
 %% Other packages that may be of use.  Delete or comment out (using a
@@ -1758,6 +1765,129 @@ Scenario 4 consists of a path off centered obstacle with a radius equal to 5 tim
 \section{Phase III}
 
 Optimized GVF guidance was programmed into a python written ground station to control a crazyflie 2.0 indoor quadcopter. Several obstacle scenarios presented in Phase II results were replicated and compared. Dubin's constraints were applied to the quadcopter to emulate fixed wing UAV dynamics in lieu of outdoor flight tests. Scenarios will be first presented followed by actual 
+
+
+
+\begin{table}[]
+	\centering
+	\caption{My caption}
+	\label{my-label}
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		Scenario Number & m   & $y_o$             & k   & $H_o$ \\ \hline
+		1               & 1   & 0              & 2.2 & 2.9   \\ \hline
+		2               & 1   & $0.5 \theta_r$ & 2.0 & -4.6  \\ \hline
+		3               & 1.5 & 0              & 2.4 & 2.7   \\ \hline
+		4               & 1.5 & $0.5 \theta_r$ & 2.1 & -3.5  \\ \hline
+	\end{tabular}
+\end{table}
+
+
+
+
+\begin{table}[]
+	\centering
+	\caption{My caption}
+	\label{my-label}
+	\begin{tabular}{|c|L{2.5cm}|L{2.5cm}|L{2.5cm}|L{2.5cm}|}
+		\hline
+		Scenario & Simulation Cost & Experiment Cost & Cost \% Difference & Mean Experiment Velocity \\ \hline
+		1               & 7.6                                  & 10.3                                 & 31                                      & 0.15+-0.1                                     \\ \hline
+		2               & 3.6                                  & 5.0                                  & 32                                      & 0.16 +- 0.1                                   \\ \hline
+		3               & 13.4                                 & 13.7                                 & 2.5                                     & 0.16+-0.1                                     \\ \hline
+		4               & 5.2                                  & 9.2                                  & 56                                      & 0.14 +- 0.1                                   \\ \hline
+	\end{tabular}
+\end{table}
+
+
+\subsection{Scenario 1}
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim = 50 300 0 285, clip, width=16.5cm]{Figures/results/compareFigures/1Quiver}
+	\caption{}
+	\label{fig:1Quiver}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim = 0 150 0 200, clip, width=12cm]{Figures/results/compareFigures/1u}
+	\caption{}
+	\label{fig:1u}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim = 65 200 0 200, clip, width=17cm]{Figures/results/compareFigures/1Controller}
+	\caption{}
+	\label{fig:1Controller}
+\end{figure}
+
+\subsection{Scenario 2}
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim = 50 300 0 285, clip, width=16.5cm]{Figures/results/compareFigures/2Quiver}
+	\caption{}
+	\label{fig:2Quiver}
+	\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim = 0 150 0 200, clip, width=12cm]{Figures/results/compareFigures/2u}
+	\caption{}
+	\label{fig:2u}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim = 65 200 0 200, clip, width=17cm]{Figures/results/compareFigures/2Controller}
+	\caption{}
+	\label{fig:2Controller}
+\end{figure}
+
+\subsection{Scenario 3}
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim = 50 300 0 285, clip, width=16.5cm]{Figures/results/compareFigures/2Quiver}
+	\caption{}
+	\label{fig:3Quiver}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim = 0 150 0 200, clip, width=12cm]{Figures/results/compareFigures/2u}
+	\caption{}
+	\label{fig:3u}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim = 65 200 0 200, clip, width=17cm]{Figures/results/compareFigures/3Controller}
+	\caption{}
+	\label{fig:3Controller}
+\end{figure}
+
+\subsection{Scenario 4}
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim = 50 300 0 285, clip, width=16.5cm]{Figures/results/compareFigures/2Quiver}
+	\caption{}
+	\label{fig:4Quiver}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim = 0 150 0 200, clip, width=12cm]{Figures/results/compareFigures/2u}
+	\caption{}
+	\label{fig:4u}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim = 65 200 0 200, clip, width=17cm]{Figures/results/compareFigures/4Controller}
+	\caption{}
+	\label{fig:4Controller}
+\end{figure}
+
 
 
 \chapter{Conclusions}
