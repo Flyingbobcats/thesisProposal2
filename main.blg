@@ -2,11 +2,13 @@ This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
 The style file: aiaa.bst
 Database file #1: bib.bib
 Warning--entry type for "pix" isn't style-file defined
---line 1464 of file bib.bib
+--line 1236 of file bib.bib
 Warning--entry type for "piccolo" isn't style-file defined
---line 1474 of file bib.bib
+--line 1246 of file bib.bib
 Warning--entry type for "kestrel" isn't style-file defined
---line 1483 of file bib.bib
+--line 1255 of file bib.bib
+Warning--entry type for "qgc" isn't style-file defined
+--line 1263 of file bib.bib
 Warning--I didn't find a database entry for "wwc"
 Warning--empty booktitle in griffiths_vector_2006
 Warning--empty pages in griffiths_vector_2006
@@ -17,4 +19,4 @@ Warning--empty booktitle in lei_tang_novel_2010
 Warning--empty booktitle in li_efficient_2012
 Warning--empty booktitle in pereira_framework_2016
 Warning--empty booktitle in zhou_vector_2014
-(There were 13 warnings)
+(There were 14 warnings)

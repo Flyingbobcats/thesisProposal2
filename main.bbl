@@ -69,10 +69,18 @@ Ulun, S. and Unel, M., \enquote{Coordinated motion of {UGVs} and a {UAV},} {\em
   Industrial {Electronics} {Society}, {IECON} 2013-39th {Annual} {Conference}
   of the {IEEE}\/}, IEEE, 2013, pp. 4079--4084.
 
+\bibitem{austin2011unmanned}
+Austin, R., {\em Unmanned aircraft systems: UAVS design, development and
+  deployment\/}, Vol.~54, John Wiley \& Sons, 2011.
+
 \bibitem{beard_small_2012}
 Beard, R.~W. and McLain, T.~W., {\em Small unmanned aircraft: theory and
   practice\/}, Princeton University Press, Princeton, N.J, 2012, OCLC:
   ocn724663112.
+
+\bibitem{qgc}
+DroneCode, \enquote{{QGroundControl - Intuitative and powerful ground control
+  station for PX4 and ArduPilot UAVs},} 2018.
 
 \bibitem{piccolo}
 Technology, C.~C., \enquote{{},} 2018.
@@ -82,6 +90,12 @@ Martin, L., \enquote{{Kestral Flight Systems And Autopilot},} 2018.
 
 \bibitem{pix}
 DroneCode, \enquote{{Pixhawk 1 Flight Controller} Guide,} 2018.
+
+\bibitem{de_marina_guidance_2017}
+de~Marina, H.~G., Kapitanyuk, Y.~A., Bronz, M., Hattenberger, G., and Cao, M.,
+  \enquote{Guidance algorithm for smooth trajectory tracking of a fixed wing
+  {UAV} flying in wind flows,} {\em Robotics and {Automation} ({ICRA}), 2017
+  {IEEE} {International} {Conference} on\/}, IEEE, 2017, pp. 5740--5745.
 
 \bibitem{nelson_cooperative_2005}
 Nelson, D.~R., \enquote{Cooperative control of miniature air vehicles,} 2005.

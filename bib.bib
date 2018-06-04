@@ -70,21 +70,6 @@
 	author = {Nelson, Derek R.},
 	year = {2005},
 	keywords = {Path Following, Lyapunov, Dubins, Vector Field, Wind, Experiment, Constant Velocity, Sliding Mode, Singularity},
-	annote = {
-Vector fields serve as course commands to the MAV
-
- 
-
-The notion of vector fields is similar to that of potential fields, which have been widely used as a tool for path planning in the robotics community.
- 
-Vector fields are different from potential fields in that they do not necessarily represent the gradient of a potential. Rather, the vector field simply indicates a desired direction of travel
- 
-
- 
-
-Two primitive path types are used (straight lines, and circular orbits)
-To spice together paths made up of straight lines and circular arcs, each portion of the path is turned on and off depending on the time or location of the UAV. By only having a single field active at any given time, you prevent dead zones, singularities, or kinks that would otherwise be present when summing the field. The challenge then becomes when and where to transition between these zones. For complex geometry this may be difficult
-},
 	file = {Vector Field Path Following for Miniature Air Vehicles.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\3RFFX53U\\Vector Field Path Following for Miniature Air Vehicles.pdf:application/pdf}
 }
 
@@ -99,13 +84,6 @@ To spice together paths made up of straight lines and circular arcs, each portio
 	year = {2010},
 	keywords = {Path Following, Lyapunov, Dubins, Vector Field},
 	pages = {255--265},
-	annote = {
-The work presented in this paper builds on the concept of path following through the construction of a three dimensional vector field around the path to be followed. Controlling heading rate and the pitch rate using ground track heading and vertical flight path angle automatically accounts for the wind condition thus reducing deleterious effects of wind
- 
-
-
-By allowing the aircraft to travel in 3d, the UAV will have higher maneuverability
-},
 	file = {Vector field guidance for path following MAVs in three dimensions for variable altitude maneuvers.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\4CTDJXQT\\Vector field guidance for path following MAVs in three dimensions for variable altitude maneuvers.pdf:application/pdf}
 }
 
@@ -138,19 +116,6 @@ By allowing the aircraft to travel in 3d, the UAV will have higher maneuverabili
 	year = {2016},
 	keywords = {Dubins, Vector Field, Wind, Path Primitives, Arrival Angle},
 	pages = {311--325},
-	annote = {
-Waypoints and paths are planned before UA are operated
- 
-
- 
-
-After planning waypoints, paths are then planned by connecting each point together
-
-
-Come back to this for ideas on citing path generation techniques
-
- 
- },
 	file = {Unmanned Aircraft Vector Field Path Following with Arrival Angle Control.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\UR6958BU\\Unmanned Aircraft Vector Field Path Following with Arrival Angle Control.pdf:application/pdf}
 }
 
@@ -176,40 +141,6 @@ Come back to this for ideas on citing path generation techniques
 	author = {Chen, Hongda and Chang, KuoChu and Agate, Craig S.},
 	year = {2009},
 	pages = {363--372},
-	annote = {Optimal, cost criterion, Simulation, Tracking, Moving Target, Wind, Path Planning, Obstacle Avoidance, Dubins Model, Near Constant Velocity
-
-
-Dynamic path-planning algorithm for tracking ground targets
-Combines Tangent Vector Field Guidance (TVFG) and Lyapunov Vector Field Guidance (LVFG)
-Theoretically optimal path is derived with UAV operational constraints
-Only physical limitations considered (max turn rate, nominal cruising speed)
-Appears to be an interesting optimal take on Dubins path. Some initial state (x,y,heading) and a goal state (xg,yg,heading) with some constraints. Find the optimal way to get from one state to the
-
- 
-The overall goal is to transition from these initial to goal states, and like Dubins paths, it will be constructed of straight line and circular arcs. The line to enter the second circular path will always be tangent to the turn.
- 
-Two propositions
-
-Shortest distance to objective circle around a target, the optimal UAV path is found by using the nearest Tangent Vector Field Guidance
-If the tangents are available between a UAVs turning limit circle and an objective circle, TVFG provides more efficient path planning than LVFG
-
- 
-
-Tangent VF guidance provides a more efficient path (Distance wise) than Lyapunov
-Lyapunov also fails to converge to the circle and has some offset (the offset is dependent on the UAVs velocity and the sampling interval)
-Tangent VF has no guidance inside of the objective circle, therefore two low hanging fruit are available to remedy this issue
-
-
- Continue forward movement until a guidance vector is available
-Use Lyapunov inside of the objective circle
-
- 
-Obstacle Avoidance
- 
-
-Algorithm considers obstacles by placing an objective circle around the obstacle so that the UAV will be guided around said obstacle. Problem with generalizing all objects as circular regions removes free space from the mission that would otherwise be available (think a long obstacle that would be better suited for a elliptical "objective field"
-
-},
 	file = {Tracking with UAV using Tangent-plus-lyapunov vector field guidance.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\X4S8QGAE\\Tracking with UAV using Tangent-plus-lyapunov vector field guidance.pdf:application/pdf}
 }
 
@@ -223,7 +154,6 @@ Algorithm considers obstacles by placing an objective circle around the obstacle
 	author = {Borenstein, Johann and Koren, Yoram},
 	year = {1991},
 	pages = {278--288},
-	annote = {More or less the same as the proceeding two papers (1990,1991). Slightly more detail is available, so if clarification is needed give it a second read},
 	file = {The_Vector_Field_HistogramuFast_Obstacle_Avoidance.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\QDRKS94E\\The_Vector_Field_HistogramuFast_Obstacle_Avoidance.pdf:application/pdf}
 }
 
@@ -240,31 +170,6 @@ Algorithm considers obstacles by placing an objective circle around the obstacle
 	month = jun,
 	year = {2017},
 	pages = {49--58},
-	annote = {Tangent, Path Following, Differentiable, Lyapunov Stability, Point Mass Kinematics, 
- 
- 
-
-Path following is preferred to trajectory tracking since there is no consideration for time paramaterization
-Cites Sujit et al, survey path planner paper, recalls that
-
-
-Classifies path following into control techniques and geometric methods
-For straight lines and circles, VF is more accurate and requires less control effort compared to the other methods (NGL, pure pursuit, LQR)
-
-
-The paper is compared strongly against the 2006 AIAA work, claiming the main contributions are
-
-
-Derivation of an equivalent tangent vector field
-Input saturation constraint is imposed
-Saturation turning velocity controller is designed
-Lyapunov stability of the controller is detailed
-
- 
-
-Saturation constraints for fixed wing are given
-Tangent vector field
-},
 	file = {Tangent vector field approach for curved path following with input saturation.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\Z682MBH2\\Tangent vector field approach for curved path following with input saturation.pdf:application/pdf}
 }
 
@@ -292,24 +197,6 @@ Tangent vector field
 	author = {Borenstein, Johann and Koren, Yoram},
 	year = {1990},
 	pages = {572--577},
-	annote = {
-Vector Field Histogram (VFH) is used, previously discussed in the Inherited problems with PF paper
-Avoids collisions while simultaneously steering towards the target
-2D Histogram grid
-A 1-D polar histogram plot is used to find the heading with minimum object density and travels along said vector
-Previous force-field approaches do not allow the robot to pass through narrow passages
-Each cell in the grid has a corresponding certainty value (as the value increases, the more certain the algorithm is that an obstacle is present)
-A better description is a Histogram Probability Distribution
-
- 
-
-Data is reduced and handled in the following ways:
-
-
-The entire histogram is absolute and is stationary (ground frame)
-Only a small region is considered "active"
-Active cells are a region around the robot, these active cells are the only cells that have influence of the robots control
-},
 	file = {Real-time obstacle avoidance for fast mobile robots in cluttered environments.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\VMFKIPH9\\Real-time obstacle avoidance for fast mobile robots in cluttered environments.pdf:application/pdf}
 }
 
@@ -323,11 +210,6 @@ Active cells are a region around the robot, these active cells are the only cell
 	year = {2016},
 	keywords = {Lyapunov, Moving Targets, Experiment, Simulation},
 	pages = {6004--6009},
-	annote = {
-A lot of really ugly math that is not necessary to understand at this time.
-
-Key takeaways:
-Vector fields have been constructed for following a target in 3D. Circumnavigation with multiple vehicles},
 	file = {Orthogonal Vector Field-based Control for a multi-robot system circumnavigating a moving target in 3d.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\BRDTQ6SR\\Orthogonal Vector Field-based Control for a multi-robot system circumnavigating a moving target in 3d.pdf:application/pdf}
 }
 
@@ -354,15 +236,6 @@ Vector fields have been constructed for following a target in 3D. Circumnavigati
 	author = {de Marina, Hector Garcia and Kapitanyuk, Yuri A. and Bronz, Murat and Hattenberger, Gautier and Cao, Ming},
 	year = {2017},
 	pages = {5740--5745},
-	annote = {Wind, Constant Velocity, Simulation, Experiment, Non-holonomic 
-
-Algorithm is currently present on the paparazzi autopilot and is ready for use by the general public (First one so far. . ."
-Continuation of Russian authors work from 2016
-Normal vector n(p) is the gradient of the level set
-The tangent can be mapped from the normal through the matrix E
-
- 
-The article is very math heavy and difficult to understand. I may have to come back at some point, but the material is essentially a continuation of the 2016 work.},
 	file = {Guidance algorithm for smooth trajectory tracking of a fixed wing uav flying in wind flows.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\8K4AA4N2\\Guidance algorithm for smooth trajectory tracking of a fixed wing uav flying in wind flows.pdf:application/pdf}
 }
 
@@ -390,22 +263,6 @@ The article is very math heavy and difficult to understand. I may have to come b
 	year = {2003},
 	keywords = {Potential Field, Obstacle, Navigation Functions, Vector Field},
 	pages = {2926--2931},
-	annote = {
-This work is motivated by the need to redesign the potential field each time an environment change is detected.
- 
-
- 
-
-Previous research has focused on either known or unknown environments
-This paper"bridges" the gap between these two methods
-
- 
-
-Our basic idea is to construct a discontinuous vector field which acts as the predefined navigation field away from unmodelled obstacles and as a vorticity-line field close to them
- 
-
-The above statement reinforces the idea that the arbitrary categories of potential field and vector field, really are not separate. A potential field is in fact a vector field. 
- },
 	file = {Closed Loop Motion Planning and Control for Mobile Robots in Uncertain Environments.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\3KIX8PSW\\Closed Loop Motion Planning and Control for Mobile Robots in Uncertain Environments.pdf:application/pdf}
 }
 
@@ -430,25 +287,6 @@ The above statement reinforces the idea that the arbitrary categories of potenti
 	year = {2002},
 	keywords = {Obstacle, Lyapunov, on-line, Motion Planning, Navigation Functions, Normalized, Nonholonomic, Backstepping, Unicycle, level sets},
 	pages = {1691--1696},
-	annote = {
-Completeness - Guaranteed to find a solution if one exists
-Reactive motion planning is the real time response from external stimuli (sensors, etc) to respond to changes in the environment, which works well for dynamic environments. These reactive motion planners may not have a solution
-Static obstacles known at the generation of map
-
- 
-
-Since we place few restrictions on the dynamic nature of the constraints one cannot always guarantee that the problem can be solved globally
-
-It appears the above statement is still correct to this day, at least in terms of guarunteeing a solution for a dynamic environment in which the dynamics are not known in full a priori 
- 
-Navigation functions represent an algorithmically complete closed loop solution to the planning problem
- 
- 
-
-Proposition 1 looks very familiar to Goncalves work for generating vector fields, excluding the time varying term.
-
- 
- },
 	file = {A Method for Modifying Closed-Loop Motion Plans to Satisfy Unpredictable Dynamic Constraints at Runtime.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\36TGXQ2D\\A Method for Modifying Closed-Loop Motion Plans to Satisfy Unpredictable Dynamic Constraints at Runtime.pdf:application/pdf}
 }
 
@@ -474,7 +312,6 @@ Proposition 1 looks very familiar to Goncalves work for generating vector fields
 	author = {Egeland, Olav and Gravdahl, Jan Tommy},
 	year = {2003},
 	note = {OCLC: 255655256},
-	annote = {Literaturverz. S. 627 - 634},
 	file = {Vision assisted autonomous path following for unmanned aerial vehicles.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\I6C3FQEB\\Vision assisted autonomous path following for unmanned aerial vehicles.pdf:application/pdf}
 }
 
@@ -855,16 +692,6 @@ Proposition 1 looks very familiar to Goncalves work for generating vector fields
 	title = {Lyapunov {Guidance} {Vector} {Fields} for {Unmanned} {Aircraft} {Applications}.pdf},
 	author = {Frew, Eric},
 	keywords = {Lyapunov, Loiter, Moving Targets, Dubins, Coordinate Transformation},
-	annote = {
-Vector field produces a globally attractive limit cycle
-(assuming they mean that the VF produces a region or line that the guidance points to)
-To account for wind, the scaling factor alpha must be modified
-Experimental flight data (notice how the path goes through the loiter circle, the guidance is just that guidance)
-
-
-
-Vector field stretched / Transformed into an elliptical or pill shape
-},
 	file = {Lyapunov Guidance Vector Fields for Unmanned Aircraft Applications.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\WEK2U8F2\\Lyapunov Guidance Vector Fields for Unmanned Aircraft Applications.pdf:application/pdf}
 }
 
@@ -914,10 +741,6 @@ Vector field stretched / Transformed into an elliptical or pill shape
 	month = aug,
 	year = {2006},
 	keywords = {Dubins, Vector Field, Wind, Experiment, MAV},
-	annote = {
-Objective of this paper is to present a new method for MAVs to accurately follow curved paths in the presence of wind
-
- },
 	file = {Vector Field Approach for Curved Path Following for Miniature Aerial Vehicles.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\NFJD7TUK\\Vector Field Approach for Curved Path Following for Miniature Aerial Vehicles.pdf:application/pdf}
 }
 
@@ -932,45 +755,6 @@ Objective of this paper is to present a new method for MAVs to accurately follow
 	year = {1986},
 	keywords = {Potential Field, Holonomic, Decay Function, Local Minima},
 	pages = {90--98},
-	annote = {
-Traditionally obstacle avoidance has been a high level controls problem (Esentially, don't even go in that area)
-PF lets you distribute avoidance into multiple layers of control
-PF implemented into a robotic manipulator
-Time varying Potential field for moving obstacles
-
- 
-
-Operational Space Formulation is the basis for the application of the potential field approach to robot manipulators
- 
-
-
-Paper focuses strongly on the fundamentals of the operational space formulation and the artificial potential field concept
-Lagrangian equation (minimal energy, principle of least action)
-
- 
-Artificial Potential Field Approach
-
-Presented in the context of manipulator collision avoidance
-
-
-The manipulator moves in a field of forces. The position to be reached is an attractive pole for the end effector and obstacles are repulsive surfaces for the manipulator parts
-
- 
-
-Artificial forces are applied to the manipulator from the PF, which are determined by the negative gradient
-The field, if interpreted straight up, will give both direction and magnitude. In this instance, the magnitude is limited to some v\_max, but the direction is maintained
-Obstacle field should be nonnegative, continuous, and differentiable, tend to infinity
-
- 
-
-Used a peicewise decay function (my words, not Khatib's) to limit the influence of the obstacle
-
- 
-
-Local minima can occur in the resultant potential field...this can lead to a stable positioning of the robot before reaching its goal
-
- 
- },
 	file = {Real-Time Obstacle Avoidance for Manipulators and Mobile Robots.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\9EKEA2BZ\\Real-Time Obstacle Avoidance for Manipulators and Mobile Robots.pdf:application/pdf}
 }
 
@@ -1039,19 +823,6 @@ Local minima can occur in the resultant potential field...this can lead to a sta
 	author = {Rimon, Elon},
 	year = {1992},
 	keywords = {Potential Field, Navigation Functions, Lagrangian},
-	annote = {
-Traditional robot navigation through an environment is done in 3 distinct and separate stages
-
-    Path planning - Given geometric data and goal, find a collision-free curve connecting the initial state and desired state. Vehicle dynamics are not considered
-Given the collision free curve, find the time parameterization for the curve under certain constraints
-A controller is designed to follow the reference trajectory as closely as possible
-
-
-
- 
-
-Potential field approach combines all of the three methods into a single step
-},
 	file = {Exact Robot Navigation Using Artificial Potential Functions.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\4JXC56VJ\\Exact Robot Navigation Using Artificial Potential Functions.pdf:application/pdf}
 }
 
@@ -1065,7 +836,6 @@ Potential field approach combines all of the three methods into a single step
 	year = {2012},
 	note = {OCLC: ocn724663112},
 	keywords = {Automatic control, Control systems, Drone aircraft, Guidance systems (Flight)},
-	annote = {Includes bibliographical references (p. [291]-298) and index},
 	file = {Small Unmanned Aircraft.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\NWPKVMUK\\Small Unmanned Aircraft.pdf:application/pdf}
 }
 
@@ -1129,10 +899,6 @@ Potential field approach combines all of the three methods into a single step
 	year = {2007},
 	keywords = {Lyapunov, Dubins, Vector Field, Wind, Constant Velocity, Uncertain Target, Standoff Tracking},
 	pages = {3277--3282},
-	annote = {
-Lyapunov based vector field
-elliptical field is constructed by applying a linear transformation with a non singular matrix whose values are determined from uncertainty in target position estimate
-},
 	file = {Cooperative Standoff Tracking of Uncertain Moving Targets using active robot networks.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\TSPEN9GD\\Cooperative Standoff Tracking of Uncertain Moving Targets using active robot networks.pdf:application/pdf}
 }
 
@@ -1251,10 +1017,6 @@ elliptical field is constructed by applying a linear transformation with a non s
 	year = {2016},
 	keywords = {Potential Field, Local Minima, Path Planning},
 	pages = {949--953},
-	annote = {
-Attractive and repulsive fields generated seperately and added together via superposition
-
-},
 	file = {A Virtual-Waypoint Based Artificial Potential Field Method for UAV Path Planning.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\AS9MIQAT\\A Virtual-Waypoint Based Artificial Potential Field Method for UAV Path Planning.pdf:application/pdf}
 }
 
@@ -1460,6 +1222,16 @@ Attractive and repulsive fields generated seperately and added together via supe
 	file = {Lei Tang et al. - 2010 - A novel potential field method for obstacle avoida.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\WB7G35R5\\Lei Tang et al. - 2010 - A novel potential field method for obstacle avoida.pdf:application/pdf}
 }
 
+@inproceedings{park_new_2004,
+	title = {A {New} {Nonlinear} {Guidance} {Logic} for {Trajectory} {Tracking}.pdf},
+	doi = {https://doi.org/10.2514/6.2004-4900},
+	publisher = {AIAA},
+	author = {Park, S and Deyst, J and How, J},
+	year = {2004},
+	file = {A New Nonlinear Guidance Logic for Trajectory Tracking.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\7LUQDKZV\\A New Nonlinear Guidance Logic for Trajectory Tracking.pdf:application/pdf}
+}
+
+
 
 @online{pix,
 	author = {DroneCode},
@@ -1486,4 +1258,23 @@ Attractive and repulsive fields generated seperately and added together via supe
 	year = 2018,
 	url = {https://www.lockheedmartin.com/en-us/products/procerus-technologies/kestrel.html},
 	urldate = {2018-05-25}
+}
+
+@online{qgc,
+	author = {DroneCode},
+	title = {{QGroundControl - Intuitative and powerful ground control station for PX4 and ArduPilot UAVs}},
+	year = 2018,
+	url = {http://qgroundcontrol.com/},
+	urldate = {2018-05-25}
+}
+
+
+
+
+@book{austin2011unmanned,
+	title={Unmanned aircraft systems: UAVS design, development and deployment},
+	author={Austin, Reg},
+	volume={54},
+	year={2011},
+	publisher={John Wiley \& Sons}
 }
