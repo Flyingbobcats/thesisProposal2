@@ -223,22 +223,15 @@ Vector Field (VF) guidance is a method that is mainly used for path following an
  
 
  \section{Phase I}
- \textbf{Characterize and present a method for locating singularities in a summed GVF.} Equations for constructing GVFs for path following and obstacles are presented. Target path following and obstacle fields are summed together and the presents of singularities is discussed. A method for locating singularities numerically in a summed field is presented.
+ \textbf{Characterize and present a method for locating singularities in a summed GVF.} Equations for constructing path following and repulsive GVFs are presented. Target path following and obstacle fields are summed together and the presence of singularities is discussed. A method for locating singularities numerically in a summed field is provided.
  
  
  
  \section{Phase II}
- \textbf{Determine a combination of circulation and decay radius for a circular obstacle GVF that produces an optimized obstacle avoidance.} A UAV modeled as a Dubin's vehicle is used to demonstrate GVF guidance for converging and following a straight path. A worst case collision scenario is presented along with several GVF guidance solutions. The path deviation of each GVF guidance is 
- 
-  A worst case collision scenario where an obstacle lies centered on the path is presented and guidance for various GVF weights 
- 
- 
- Obstacle field decay radius and circulation weight is determined by searching a large parameter space as well as numerically. The modified GVF will be compared against a static and strictly repulsive GVF. Deviation from the target path while avoiding the obstacle is used to compare the optimized GVF with unmodified GVF. 
- 
- 
+ \textbf{Determine a combination of circulation and decay radius for a circular obstacle GVF that produces an optimized obstacle avoidance.} A UAV modeled as a Dubin's vehicle is used to demonstrate GVF guidance for converging and following a straight path. A worst case collision scenario is presented where an obstacle centered on a planned path is to be avoided. Obstacle GVF decay radius and circulation are optimized to minimize a path deviation cost function. The optimized GVF is compared against both waypoint and potential field. 
  
  \section{Phase III}
- \textbf{Demonstrate optimized GVF guidance on multirotor UAV flying with fixed wing turn-rate constraints.} The modified GVF developed in Phase II will be implemented on a crazyflie 2.0 quadcopter flying in an indoor environment.  Dubin's turn rate constraints will be applied in order to emulate the behavior of a fixed wing UAV. Deviation from a planned path while avoiding a circular obstacle will be compared to simulation results. 
+ \textbf{Demonstrate optimized GVF guidance on multirotor UAV flying with fixed wing turn-rate constraints.} The modified GVF developed in Phase II was implemented on a crazyflie 2.0 quadcopter flying in an indoor environment.  Dubin's turn rate constraints will be applied in order to emulate the behavior of a fixed wing UAV. Deviation from a planned path while avoiding a circular obstacle was compared to simulations for several avoidance scenarios.
 
  
  \section{Summary of Objectives}
@@ -258,7 +251,7 @@ Vector Field (VF) guidance is a method that is mainly used for path following an
  }
  
  \noindent
- \textbf{Phase II Objective:} Determine combination of repulsive gradient vector field circulation and decay radius that minimizes path deviation
+ \textbf{Phase II Objective:} Determine combination of repulsive gradient vector field circulation and decay radius that minimizes path deviation cost function
  \newline
  \textit{
  	Tasks:
@@ -269,13 +262,13 @@ Vector Field (VF) guidance is a method that is mainly used for path following an
  }
  
  \noindent
- \textbf{Phase III Objective:} Validate modified gradient vector field guidance with indoor quadrotor experiments
+ \textbf{Phase III Objective:} Validate modified gradient vector field guidance with indoor quadrotor experiments emulating fixed wing turn rate constraints
  \newline
  \textit{
  	Tasks:
  	\begin{enumerate}
- 		\item Build quadcopter and assemble testing hardware
- 		\item Program guidance and control systems into Python ground station
+ 		\item Build quadcopter and modify for roll, pitch, thrust, and yaw rate control
+ 		\item Program optimized GVF guidance and PID control systems into Python ground station
  		\item Repeat simulations performed in Phase II on quadcopter and compare results
  	\end{enumerate}
  }
@@ -288,10 +281,10 @@ Vector Field (VF) guidance is a method that is mainly used for path following an
 \chapter{Literature Review}
 \section{Literature Review Introduction}
 \hl{fill out}
- 
+
 
 \section{Unmanned Aerial Vehicles}
-Unmanned aerial vehicles (UAV)s are pilotless aircraft used by military, police, and civilian communities for tasks that may put pilots of conventional manned aircraft in harms way \cite{bone_uavs_2003}. Tasks can be carried out by a single UAV or in cooperation with another air \cite{oh_coordinated_2013,hyondong_oh_coordinated_2015,wise_uav_2006}, ground \cite{ulun_coordinated_2013}, or marine vehicles. Using UAVs has several advantages over manned aircraft consisting of low operating cost, reduced risk to human operators, and the ability to perform mundane and repetitive tasks autonomously without heavy human interaction. In general, UAVs are categorized into fixed wing and rotor craft varieties \cite{beard_small_2012} that range in size, payload, and flight time capabilities. Fixed wing UAVs (Figure \ref{fig:fixedMultirotor}a) are typically used for tasks that require longer flight times and larger payloads, such as cameras and cargo. Multirotor UAVs (Figure \ref{fig:fixedMultirotor}b), in general, have lower payload capabilities compared to fixed wing UAVs, however have the ability to hover and have a small turning radius making them highly maneuverable.
+Unmanned aerial vehicles (UAV)s are pilotless aircraft used by military, police, and civilian communities for tasks that may put pilots of conventional manned aircraft in harms way \cite{bone_uavs_2003}. Tasks can be carried out by a single UAV or in cooperation with another air \cite{oh_coordinated_2013,hyondong_oh_coordinated_2015,wise_uav_2006}, ground \cite{ulun_coordinated_2013}, or marine vehicles. Using UAVs has several advantages over manned aircraft consisting of low operating cost, reduced risk to human operators, and the ability to perform mundane and repetitive tasks autonomously without heavy human interaction. In general, UAVs are categorized into fixed wing and rotor craft varieties that range in size, payload, and flight time capabilities \cite{beard_small_2012}. Fixed wing UAVs (Figure \ref{fig:fixedMultirotor}a) are typically used for tasks that require longer flight times and larger payloads, such as cameras and cargo. Multirotor UAVs (Figure \ref{fig:fixedMultirotor}b), in general, have lower payload capabilities compared to fixed wing UAVs, however have the ability to hover and have a small turning radius making them highly maneuverable.
 
 \begin{figure}[H]
 	\begin{subfigmatrix}{2}% number of columns
@@ -300,15 +293,14 @@ Unmanned aerial vehicles (UAV)s are pilotless aircraft used by military, police,
 		\subfigure []{\includegraphics[width=6.5cm,trim=0 0 0 0,clip] {PaperFigures/iris-1}}
 		\hspace*{0mm}
 	\end{subfigmatrix}
-	\caption{Fixed wing (a) and multirotor (b) UAVs}
+	\caption{Fixed wing UAV (a) and multirotor UAV (b)}
 	\label{fig:fixedMultirotor}
 \end{figure}
 
-
-Weather it is a fixed wing or rotorcraft, UAVs typically accomplish tasks autonomously by following a pre-planned path. Flight paths are typically generated off-line at dedicated ground station and relayed to the UAV over radio. 
+Weather it is a fixed wing or rotorcraft, UAVs can be programmed to fly autonomously without the direct input of a pilot. When flying autonomously, the vehicle typically accomplishes tasks by following a pre-planned flight path. Flight paths are often generated off-line at dedicated ground station and relayed to the UAV over radio. 
 
 \subsection{Ground Stations}
-Ground stations are the hardware and software framework used to configure UAV settings, plan missions, and collect mission data. Commercial open source ground stations such as qground control depend on a human operator's knowledge of the environment to plan an obstacle free path. Takeoff, landing, and emergency return-to-home locations are designated in safe clearings capable of accommodating the vehicle. Other tasks such as area surveying and loitering can be assigned at certain points along the mission path. An example of a mission consisting of taking off, surveying, and landing is shown in Figure \ref{fig:groundstationplanning}
+Ground stations are the hardware and software framework used to configure UAV settings, plan missions, and collect mission data. Commercial open source ground stations such as qground control depend on a human operator's knowledge of the environment to plan an obstacle free path. Takeoff, landing, and emergency return-to-home locations are designated in safe clearings capable of accommodating the vehicle. Other tasks such as area surveying and loitering can be assigned at certain points along the mission path. An example of a mission path consisting of taking off, surveying, and landing is shown in Figure \ref{fig:groundstationplanning}
 
 
 
@@ -378,7 +370,8 @@ sin(\theta(t))
 
 
 \section{UAV Guidance}
-On-board guidance systems attempt to minimize the lateral error to the path by commanding a heading pointing to the path. Guidance methods for following a pre-planned path include geometric methods such as carrot chasing \cite{manjunath_application_2016} and control techniques such as proportional-integral-derivative (PID), non-linear guidance laws, and linear quadratic regulator (LQR) \cite{sujit_unmanned_2014}. Due to traditional guidance method's dependence on a path planner to construct an obstacle free and flyable path, these methods often lack a mechanism to avoid new obstacles. Re-planning and relaying a new obstacle free path may be impossible under certain conditions, such as flying beyond line-of-sight. It would be beneficial to include obstacle avoidance into a UAVs guidance system to remove the need to communicate with the ground station or use an on-board path planner which may be accomplished with potential field or vector field. \\
+On-board guidance systems attempt to minimize the lateral error to the path by commanding a heading pointing to the path. Guidance methods for following a pre-planned path include geometric methods such as carrot chasing \cite{manjunath_application_2016} and control techniques such as proportional-integral-derivative (PID), non-linear guidance laws, and linear quadratic regulator (LQR) \cite{sujit_unmanned_2014}. These methods generally rely on the path planner to provide an obstacle free path and may not have the ability to avoid new or previously unknown obstacles without path re-planning. Re-planning and relaying a new obstacle free path may be impossible under certain conditions, such as flying beyond line-of-sight. It would be beneficial to remove the guidance systems dependence on the path planner to produce a new obstacle free path when new obstacles are encountered. Avoiding obstacles without the need to re-plan has been achieved with potential field and vector field, which represents obstacles as artificial repulsive forces that locally push away from obstacles. 
+
 
 
 %\subsection{Waypoint Guidance}
@@ -422,7 +415,7 @@ On-board guidance systems attempt to minimize the lateral error to the path by c
 
 \subsection{Potential Field}
 
-Potential field is based on the principle of driving a point masses state from a high potential to a globally low potential using artificial attractive and repulsive forces \cite{khatib_real-time_1986}. Attractive forces represent a goal, such as a waypoint, that directs the point mass in the goal's direction. Obstacles can be represented as repulsive forces that act locally to push the point mass away. An example of a point mass directed by potential field from a high potential to a globally minimum potential while avoiding an obstacle is shown in Figure \ref{fig:pfobstacle}. Potential field is also capable of acting as a path and trajectory planning algorithm \cite{rimon_exact_1992}, possibly eliminating the off-board path planner. 
+Potential field is based on the principle of driving a point masses state from a high potential to a globally low potential using artificial attractive and repulsive forces \cite{khatib_real-time_1986}. An attractive force directs the point mass in the direction of a goal located at a globally minimum potential and obstacles can be represented as repulsive forces that act locally to push the point mass away. An example of a point mass directed by potential field from a high potential to a globally minimum potential while avoiding an obstacle is shown in Figure \ref{fig:pfobstacle}. Potential field is also capable of acting as a path and trajectory planning algorithm \cite{rimon_exact_1992}, possibly eliminating the off-board path planner. 
 
 \begin{figure}[H]
 	\centering
@@ -432,7 +425,7 @@ Potential field is based on the principle of driving a point masses state from a
 \end{figure}
 
 
-An implementation of potential field on a mobile ground robot equipped with ultrasonic sensors for real-time obstacle detection can be found in \cite{borenstein_real-time_1990,borenstein_vector_1991,koren_potential_1991}. The differential drive robot was guided to a goal with the guidance $\overrightarrow{R}$ while avoiding obstacles. The robot was attracted towards a goal with constant magnitude force $\overrightarrow{F_t}$ located at $(x_t,y_t)$ and a distance $d_t$ from the robot. In the immediate area of the robot, an active window exists which records integer certainty values inside discrete cells. Cells containing an obstacle provide a repulsive force $\overrightarrow{F_{i,j}}$ opposite in direction to the line-of-sight from vehicle to cell location $(x_i,y_j)$, where $(i,j$) represents the cell index, $F_{cr}$ is a constant repulsive force, $W$ the vehicle's width, $C_{i,j}$ a cell's certainty, and $d_{i,j}$ the distance to the center of the cell with respect to robots center.
+An implementation of potential field on a mobile ground robot equipped with ultrasonic sensors for real-time obstacle detection can be found in \cite{borenstein_real-time_1990,borenstein_vector_1991,koren_potential_1991}. A differential drive robot was guided  with the guidance $\overrightarrow{R}$ which directed the robot towards a goal and away from nearby obstacles. The robot was attracted towards a goal with constant magnitude force $\overrightarrow{F_t}$ located at $(x_t,y_t)$ and a distance $d_t$ from the robot. In the immediate area of the robot, an active window recorded integer certainty values inside discrete cells. Cells containing an obstacle provide a repulsive force $\overrightarrow{F_{i,j}}$ opposite in direction to the line-of-sight from vehicle to cell location $(x_i,y_j)$, where $(i,j$) represents the cell index, $F_{cr}$ is a constant repulsive force, $W$ the vehicle's width, $C_{i,j}$ a cell's certainty, and $d_{i,j}$ the distance to the center of the cell with respect to robots center.
 
 \begin{equation}\label{eq:vffHeading}
 \overrightarrow{R} = \overrightarrow{F_r} + \overrightarrow{F_t}
@@ -624,7 +617,8 @@ For converging and following a circular path, a guidance vector $\chi^{d}$ is de
 %
 %=====================================
 
-Straight and circular path vector fields can be selectively activated throughout flight to form more complex paths, shown in \cite{nelson_cooperative_2005,nelson_vector_2006,nelson_vector_2007,jung_unmanned_2016} and Figure \ref{fig:urbanfollowingnelson}. Each path primitive has a vector field associated with it and determining which field to use can be approached in two different ways. Fields from all of the primitives can be summed together similar to the attractive and repulsive forces in potential field. Second, fields can be selectively activated and deactivated based on the position of the UAV. Summing together vector fields, as pointed out in \cite{nelson_cooperative_2005}, can result in several problems including dead zones, sinks, and singularities. Selectively activating each vector field as a UAV nears waypoints was used in \cite{nelson_cooperative_2005,nelson_vector_2006,nelson_vector_2007,jung_unmanned_2016}.
+Straight and circular path vector fields can be selectively activated throughout flight to form more complex paths, shown in \cite{nelson_cooperative_2005,nelson_vector_2006,nelson_vector_2007,jung_unmanned_2016} and Figure \ref{fig:urbanfollowingnelson}. Selectively activating, or stitching together, vector fields to produce more complex paths was the preferred method in \cite{nelson_cooperative_2005} since summing together all of the fields has the possibility to produce dead zones, sinks, and singularities.
+ 
 
 \begin{figure}[H]
 	\centering
@@ -743,7 +737,7 @@ Circulation is calculated by taking the wedge product of the gradient:
 \end{equation}
 
 \noindent
-In the case of $(n=3)$ the wedge product simplifies as the cross product:
+In the case of $(n=3)$ dimensions the wedge product simplifies as the cross product:
 
 \begin{equation}
 % Total field with Conv, Circ, and Time
