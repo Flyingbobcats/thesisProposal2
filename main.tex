@@ -1682,7 +1682,7 @@ Equations for path following and obstacle vector field guidance were presented. 
 
 \section{Phase I \& II}
 
-The methods discussed in Phase I and Phase II for detecting singularities in a GVF and optimizing obstacle field decay radius and circulation will now be demonstrated for several scenarios involving a fixed wing UAV. Avoidance scenarios that represent the possible configurations of an obstacle that lies along a pre-planned path consist of small obstacles, large obstacles, path centered obstacles, and path offset obstacles. small obstacles are considered those with radius $r_o = \theta_r$ while large obstacles have a radius $r_o\ge5\theta_r$. Centered obstacles represent the worst case avoidance scenario where the UAV must deviate at least $50\%$ of the obstacles radius in order to successfully avoid. For the path centered obstacle, counterclockwise and clockwise avoidance have identical costs. In the centered obstacle scenarios presented, it is assumed that clockwise avoidance is desired and the initial conditions and bounds are set accordingly. A table of the avoidance scenarios demonstrated is shown below in Table \ref{table:avoidanceScenarios} below.
+The methods discussed in Phase I and Phase II for detecting singularities in a summed GVF and optimizing obstacle field decay radius and circulation will now be demonstrated for several scenarios involving a fixed wing UAV modeled as a Dubin's vehicle with turn rate constraints. Avoidance scenarios that represent the possible configurations of an obstacle that lies along a pre-planned path consist of small obstacles, large obstacles, path centered obstacles, and path offset obstacles. small obstacles are considered those with radius $r_o = \theta_r$ while large obstacles have a radius $r_o\ge5\theta_r$. Centered obstacles represent the worst case avoidance scenario where the UAV must deviate at least $50\%$ of the obstacle's radius in order to successfully avoid. For the path centered obstacle, counterclockwise and clockwise avoidance have identical costs. In the centered obstacle scenarios presented, it is assumed that clockwise avoidance is desired and the initial conditions and bounds were set accordingly. A table of the avoidance scenarios demonstrated is shown below in Table \ref{table:avoidanceScenarios} below.
 
 
 \begin{table}[]
@@ -1691,7 +1691,7 @@ The methods discussed in Phase I and Phase II for detecting singularities in a G
 	\label{table:avoidanceScenarios}
 	\begin{tabular}{|l|c|c|}
 		\hline
-		\multicolumn{1}{|c|}{Scenario Number} & M & $y_o$    \\ \hline
+		\multicolumn{1}{|c|}{Scenario Number} & Obstacle radius multiplier m & Obstacle lateral position $y_o$    \\ \hline
 		1                                     & 1 & 0     \\ \hline
 		2                                     & 5 & 0     \\ \hline
 		3                                     & 1 & $0.5r_o$ \\ \hline
@@ -1702,36 +1702,35 @@ The methods discussed in Phase I and Phase II for detecting singularities in a G
 
 
 
-For each scenario a fixed wing UAV is assumed to be following a pre-planned path traveling at constant speed $u=15m/s$ with a turnrate $\dot{\theta}=20 deg/s$. The UAV's initial position is set to $(100M,0)$ and heading $\theta = 180^\circ$ for each simulation to ensure a small length of the planned path is traveled prior to avoiding the obstacle. \\
+For each scenario a fixed wing UAV is assumed to be following a pre-planned path traveling at constant speed $u=15m/s$ with a turnrate $\dot{\theta}=20 deg/s$. The UAV's initial position is set to $(100M,0)$ and heading $\theta = 180^\circ$ for each simulation to ensure a small length of the planned path is traveled prior to avoiding the obstacle. Each scenario tabulated in Table \ref{table:avoidanceScenarios} are discussed and obstacle GVF decay radius, circulation, and cost are summarized.\\
 
-Scenario 1 consists of a path centered obstacle with a radius equal to that of the UAV's turning radius $\theta_r$. Minimizing the path deviation cost function  $\bar{\gamma}$ in Phase II results in a route that avoids the obstacle and quickly returns to the planned path. The total cost of scenario 1 for avoiding the obstacle is $\bar{\gamma}=7$ for decay radius multiplier $k=2.8$ and circulation $2.1$, shown in Figure \ref{fig:m1y0solved}.
-
+Scenario 1 consists of a path centered obstacle with a radius equal to that of the UAV's turning radius $\theta_r$. Minimizing the path deviation cost function  $\bar{\gamma}$ in Phase II results in a route that avoids the obstacle and quickly returns to the planned path. The total cost of scenario 1 for avoiding the obstacle is $\bar{\gamma}=7$ for decay radius multiplier $k=2.8$ and circulation $H_o = 2.1$, shown in Figure \ref{fig:m1y0solved}. A single singularity is found from searching for solutions to the singularity condition defined in Equation \ref{eq:singularityCondition} in Phase I. The singularity is removed from the UAVs route through the addition of circulation, as discussed in Phase I.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[trim = 0 85 0 85, clip, width=16cm]{Figures/results/m1Y0Solved}
-	\caption{}
+	\caption{Centered obstacle with small radius avoided by Dubin's UAV in simulation}
 	\label{fig:m1y0solved}
 \end{figure}
 
-Scenario 2 consists of a path centered obstacle with a radius equal to that of 5 times the UAV's turning radius $\theta_r$. The total cost of scenario 2 for avoiding the obstacle is $\bar{\gamma}=37$ for decay radius multiplier $k=2.8$ and circulation $2.1$, shown in Figure \ref{fig:m1y0solved}. Note that the optimized weights are identical to that of scenario I in this case. 
+Scenario 2 consists of a path centered obstacle with a radius equal to that of 5 times the UAV's turning radius $\theta_r$. The total cost of scenario 2 for avoiding the obstacle is $\bar{\gamma}=37$ for decay radius multiplier $k=2.8$ and circulation $H = 2.1$, shown in Figure \ref{fig:m1y0solved}. A single singularity is detected on the radius of equal strength, however does not lie along the UAVs path.
 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[trim = 0 85 0 85, clip, width=16cm]{Figures/results/m5Y0Solved}
-	\caption{}
+	\caption{Centered obstacle with large radius avoided by Dubin's UAV in simulation}
 	\label{fig:m5y0solved}
 \end{figure}
 
-Scenario 3 consists of a path off centered obstacle with a radius equal to that of the UAV's turning radius $\theta_r$. The shortest direction around the obstacle can be determined from inspection, therefore negative initial conditions and bounds are given to the minimizer to produce the guidance shown in Figure \ref{fig:m1y05}. The total cost of scenario 3 for avoiding the obstacle is $\bar{\gamma}=3$ for decay radius multiplier $k=2.4$ and circulation $H_o = -2.6$.
+Scenario 3 consists of a path off centered obstacle with a radius equal to that of the UAV's turning radius $\theta_r$. The shortest direction around the obstacle can be determined from inspection, therefore negative initial conditions and bounds are given to the minimizer to produce the guidance shown in Figure \ref{fig:m1y05} for counterclockwise circumnavigation. The total cost of scenario 3 for avoiding the obstacle is $\bar{\gamma}=3$ for decay radius multiplier $k=2.4$ and circulation $H_o = -2.6$.
 
 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[trim = 0 85 0 85, clip, width=16cm]{Figures/results/m1Y05}
-	\caption{}
+	\caption{Off centered obstacle with small radius avoided by Dubin's UAV in simulation}
 	\label{fig:m1y05}
 \end{figure}
 
@@ -1741,40 +1740,25 @@ Scenario 4 consists of a path off centered obstacle with a radius equal to 5 tim
 \begin{figure}[H]
 	\centering
 	\includegraphics[trim = 0 85 0 85, clip, width=16cm]{Figures/results/m5Y05}
-	\caption{}
+	\caption{Off centered obstacle with large radius avoided by Dubin's UAV in simulation}
 	\label{fig:m5y05}
 \end{figure}
-
-
-
-%A method for optimizing the GVF for obstacle avoidance by modifying decay radius multiplier $k$ and circulation $H_o$ was presented and simulated. Several scenarios with varying obstacle lateral positions $y_o$, radii $r_o$, and UAV speeds $u$ were simulated. A comparison for worst case head on obstacle scenario is presented and compared against VFF and waypoint guidance methods. It was determined that an optimized GVF avoids obstacles at a lower cost than VFF and performs similarly to waypoint with the need to re-plan mission paths. 
-%
-%
-%A UAV with speed $u=10m/s$ and fixed turn rate $\dot{\theta} = 20deg/s$ is assumed to be following a straight path when an unplanned obstacle is detected with lateral distance $y_o$ from the path and radius $r_o$. The optimized GVF guidance solves the combination of circulation $H_o$ and decay radius multiplier $k$ to minimize the path deviation cost function. Several scenarios will be considered below. 
-%
-%In general, the worst case avoidance scenario involves an obstacle centered on the target path, $y_o=0$. With a path centered obstacle the UAV will be required to deviate at least one half of the obstacles radius in order to prevent a collision. Additionally, GVF guidance may have singularities where the two fields oppose each other. For a path centered obstacle with radius $r_o=\theta_r$, the optimized GVF circulation and radius multiplier are $1.75$ and $2.72$ respectively with a path deviation cost of $6.96$. Due to the addition of circulation to the obstacle GVF a singularity exists on the opposite side of the UAVs route. The route of the UAV is shown in Figure \ref{fig:centeredOneRadius}
-%
-%Several avoidance scenarios with a circular obstacle present on a target path were avoided by a fixed wing UAV flying under Dubin's constraints. Obstacle field circulation $H_o$ and decay radius multiplier $k$ are solved numerically by minimizing a path deviation cost. The UAV is guided to leave the path to circumnavigate the obstacle and quickly return to the path with minimal deviation. Experimental framework described in Phase III will replicate the simulations provide in this section and compare the results. 
-
-
-
 
 
 
 
 \section{Phase III}
 
-Optimized GVF guidance was programmed into a python written ground station to control a crazyflie 2.0 indoor quadcopter. Several obstacle scenarios presented in Phase II results were replicated and compared. Dubin's constraints were applied to the quadcopter to emulate fixed wing UAV dynamics in lieu of outdoor flight tests. Scenarios will be first presented followed by actual 
+The optimized GVF guidance was used to guide a turn rate constrained crazyflie 2.0 along a path and around a virtual obstacle that lied along the planned path. Several obstacle avoidance scenarios consisting of path centered, off centered, and multiple radii obstacles were conducted using the GVF guidance. The four avoidance scenarios tested are summarized in Table \ref{table:flightScenarios}. Due to space limitations, obstacles larger than $1.5 \theta_r$ were not considered. Each scenario is presented followed by a vector quiver plot containing both simulation and experimental UAV flight route. For the first scenario, both speed and PID controller response plots will be discussed. Speed and controller response plots for scenarios 2,3 and 4 can be found in the appendix. 
 
 
-
-\begin{table}[]
+\begin{table}[H]
 	\centering
-	\caption{My caption}
-	\label{my-label}
+	\caption{Experimental scenarios conducted for crazyflie quadcopter}
+	\label{table:flightScenarios}
 	\begin{tabular}{|c|c|c|c|c|}
 		\hline
-		Scenario Number & m   & $y_o$             & k   & $H_o$ \\ \hline
+		Scenario Number & Obstacle radius multiplier m   & Obstacle lateral position$y_o$             & k   & $H_o$ \\ \hline
 		1               & 1   & 0              & 2.2 & 2.9   \\ \hline
 		2               & 1   & $0.5 \theta_r$ & 2.0 & -4.6  \\ \hline
 		3               & 1.5 & 0              & 2.4 & 2.7   \\ \hline
@@ -1783,12 +1767,72 @@ Optimized GVF guidance was programmed into a python written ground station to co
 \end{table}
 
 
+Scenario 1 consisted of a quadcopter placed at initial conditions $(-2,0) meters$ along a pre-planned path and traveled at a mean speed of $0.15 m/s$. An obstacle of radius $r_o = \theta_r$ was avoided by summing a repulsive obstacle GVF with the path following GVF. Cost for the simulated Dubin's UAV was $\bar{\gamma} = 7.6$ and experimental flight $\bar{\gamma} = 10.3$, a $31 \%$ difference. The experimental UAV avoids the obstacle and returns to the pre-planned path, exhibiting a similar flight path as the simulated UAV. The route of the experimental flight and simulation are found in Figure \ref{fig:1Quiver} below.
 
-
-\begin{table}[]
+\begin{figure}[H]
 	\centering
-	\caption{My caption}
-	\label{my-label}
+	\includegraphics[trim = 50 300 0 285, clip, width=16.5cm]{Figures/results/compareFigures/1Quiver}
+	\caption{Simulated and experimental UAV routes for path centered obstacle with small radius}
+	\label{fig:1Quiver}
+\end{figure}
+
+The most likely reason for the difference between simulation and experimental cost is the lack of a velocity controller. Carrot chasing set-points does not guarantee that a fixed speed $u$ can be maintained, even if the set-points are of equal distance away from the UAV. Additionally, in order to properly apply the Dubin's constraints of allowing finite changes in the UAVs heading, an accurate measurement of the current heading is necessary. Heading is estimated from the numerical derivative of the UAV's position at the current and last time step $t$, $t-1$, and time between updates $dt$. Due to both measurement and process noise from Vicon and the inherent instability of quadcopters respectively, measuring the state at lower speeds had significant uncertainty. The estimated speed from the numerical derivative of position is shown in Figure \ref{fig:1u} below. The mean path following speed is the mean of the speed estimates ranging from the start to the end of path following and obstacle avoidance. Takeoff and landing speeds prior to path following were not included when calculating the  mean speed. 
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim = 0 150 0 200, clip, width=12cm]{Figures/results/compareFigures/1u}
+	\caption{UAV speed versus time during flight experiment of scenario 1}
+	\label{fig:1u}
+\end{figure}
+
+
+The planar position states $x$ ,$y$, altitude $z$, and yaw rate for scenario was is shown in Figure \ref{fig:1Controller}. The PID controllers were sent planar carrot set-points based on the GVF guidance, shown in red, and the state response measured with Vicon is shown in blue. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim = 65 200 0 200, clip, width=17cm]{Figures/results/compareFigures/1Controller}
+	\caption{State response plots for scenario 1}
+	\label{fig:1Controller}
+\end{figure}
+
+
+
+Scenario 2 consisted of a quadcopter placed at initial conditions $(-2,0) meters$ along a pre-planned path and traveled at a mean speed of $0.16 m/s$. An obstacle of radius $r_o = \theta_r$ and lateral position $y_o=0.5 \theta_r$ was avoided by summing a repulsive obstacle GVF with the path following GVF. Cost for the simulated Dubin's UAV was $\bar{\gamma} = 3.6$ and experimental flight $\bar{\gamma} = 5.0$, a $32 \%$ difference. The experimental UAV avoids the obstacle and returns to the pre-planned path, exhibiting a similar flight path as the simulated UAV. The route of the experimental flight and simulation are found in Figure \ref{fig:2Quiver} below. The combination of the path following and obstacle fields did not result in any GVF singularities in this scenario. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim = 50 300 0 285, clip, width=16.5cm]{Figures/results/compareFigures/2Quiver}
+	\caption{Simulated and experimental UAV routes for off centered obstacle with small radius}
+	\label{fig:2Quiver}
+	\end{figure}
+
+Scenario 3 consisted of a quadcopter placed at initial conditions $(-2,0) meters$ along a pre-planned path and traveled at a mean speed of $0.16 m/s$. An obstacle of radius $r_o = 1.5 \theta_r$ and lateral position $y_o=0$ was avoided by summing a repulsive obstacle GVF with the path following GVF. Cost for the simulated Dubin's UAV was $\bar{\gamma} = 13.4$ and experimental flight $\bar{\gamma} = 13.7$, a $2.5 \%$ difference. The experimental UAV avoids the obstacle and returns to the pre-planned path, exhibiting a similar flight path as the simulated UAV. The route of the experimental flight and simulation are found in Figure \ref{fig:3Quiver} below. 
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim = 50 300 0 285, clip, width=16.5cm]{Figures/results/compareFigures/3Quiver}
+	\caption{Simulated and experimental UAV routes for path centered obstacle with large radius}
+	\label{fig:3Quiver}
+\end{figure}
+
+Scenario 4 consisted of a quadcopter placed at initial conditions $(-2,0) meters$ along a pre-planned path and traveled at a mean speed of $0.14 m/s$. An obstacle of radius $r_o = 1.5 \theta_r$ and lateral position $y_o=0.5*r_o$ was avoided by summing a repulsive obstacle GVF with the path following GVF. Cost for the simulated Dubin's UAV was $\bar{\gamma} = 5.2$ and experimental flight $\bar{\gamma} = 9.2$, a $56 \%$ difference. The experimental UAV avoids the obstacle and returns to the pre-planned path, exhibiting a similar flight path as the simulated UAV. The route of the experimental flight and simulation are found in Figure \ref{fig:4Quiver} below. 
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[trim = 50 275 0 250, clip, width=16.5cm]{Figures/results/compareFigures/4Quiver}
+	\caption{Simulated and experimental UAV routes for off centered obstacle with large radius}
+	\label{fig:4Quiver}
+\end{figure}
+
+A summary of the scenarios tested and the cost associated with each simulation and flight test are shown in Table \ref{table:compareResults} below. 
+
+\begin{table}[H]
+	\centering
+	\caption{Simulation and experimental cost comparison table for scenarios 1-4}
+	\label{table:compareResults}
 	\begin{tabular}{|c|L{2.5cm}|L{2.5cm}|L{2.5cm}|L{2.5cm}|}
 		\hline
 		Scenario & Simulation Cost & Experiment Cost & Cost \% Difference & Mean Experiment Velocity \\ \hline
@@ -1800,36 +1844,35 @@ Optimized GVF guidance was programmed into a python written ground station to co
 \end{table}
 
 
-\subsection{Scenario 1}
-\begin{figure}[H]
-	\centering
-	\includegraphics[trim = 50 300 0 285, clip, width=16.5cm]{Figures/results/compareFigures/1Quiver}
-	\caption{}
-	\label{fig:1Quiver}
-\end{figure}
+\subsection{Summary of results}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[trim = 0 150 0 200, clip, width=12cm]{Figures/results/compareFigures/1u}
-	\caption{}
-	\label{fig:1u}
-\end{figure}
+An optimized GVF for path following and obstacle avoidance with singularities removed from the UAV's path was presented. Singularities in the summed GVF were detected numerically by searching for the location of null magnitude vectors in the summed field with initial conditions placed on the radius of equal strength. Decay radius and circulation weights were determined by minimizing a cost function that penalizes the UAV for deviating from the path and violating the obstacle's space. The optimized GVF was simulated for a fixed wing UAV under various scenarios consisting of path centered, off centered, and multiple radii obstacles. Experimental flight tests were conducted with a crazyflie 2.0 quadcopter with fixed wing constraints and the flight path cost was compared against that of simulation. 
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[trim = 65 200 0 200, clip, width=17cm]{Figures/results/compareFigures/1Controller}
-	\caption{}
-	\label{fig:1Controller}
-\end{figure}
+
+
+
+
+
+
+\chapter{Conclusions}
+
+
+Guidance for converging and following a straight path using GVFs using methods found in literature was presented. A repulsive GVF is constructed for avoiding circular obstacles along the path by modifying the GVF's decay radius, convergence, and circulation weights.  It was shown that summing the attractive and repulsive GVFs can result in guidance that directs the UAV along the planned path while pushing away from the obstacle. Singularities in the summed GVF, regions of guidance where path following and obstacle fields directly oppose each other, were defined and their location on the radius of equal strength was discussed. A method for identifying the location of singularities numerically by was presented. It was shown that adding circulation to the obstacle GVF may remove singularities from the UAV’s route. \\
+
+The GVF presented in Phase I for converging and following a straight path was demonstrated in simulation with a  UAV modeled as a Dubin's vehicle with various target path circulation weights. It was shown that equating the path’s circulation weight to that of the UAV’s speed provides a balance between rise time and overshoot when convering and following a path. A repulsive GVF was added to the path following GVF and a array of decay radii and circulation weights were evaluated for their path deviation costs in simulation. Optimized weights was selected by determining the combination of radius and circulation weight that yields the least cost. Evaluating a large array of parameters takes significant time and may be unique to each obstacle size, position, and UAV characteristics, therefore a numerical approach for minimizing the cost function for finding an optimized combination rapidly was presented. \\
+
+The optimized GVF guidance for path following and obstacle avoidance was implemented on a crazyflie 2.0 quadcopter flying under fixed wing constraints. Several path following and circular obstacle avoidance scenarios were tested consisting of path centered, off center, and multiple radii obstacles. Flight test and simulation flight routes were compared for both their general behavior and costs. The quadcopter followed the same general path as the simulated UAV, however had an average of $30 \$$ higher cost compared to the simulated path. The difference in cost is attributed to both the lack of a velocity controller and the high process and measurement noise when measuring the UAV’s velocity. 
+
+
+UAVs typically rely on path planning algorithms to provide an obstacle free and flyable path prior to flight. In the event that unplanned obstacles are encountered a new path may have to be re-generated which may not be possible if communication with a ground station is lost. Path following and obstacle avoidance was achieved without the need to re-plan the mission path by using optimized GVF decay radius and circulation parameters. Simulations were conducted with a fixed wing UAV modeled as a Dubin's vehicle using the GVF guidance and circulation and decay radius were selected which minimized a path deviation cost function. Singularities in the GVF were characterized and located numerically. The optimized GVF guidance was implemented in a indoor quadcopter with turn-rate constraints to emulate a fixed wing UAV. Results comparing simulations and indoor flight tests were compared. \\
+
+Guidance for path following and obstacle avoidance without the need to re-plan mission paths has the potential to aid in increasing unmanned systems autonomy. Obstacles can be avoided without the intervention of a human operator and they can do so at minimal deviation from the planned path. These planned paths represent a route in which a task must be completed, therefore, remaining close the path increases the UAVs overall effectiveness. The optimized GVF guidance promotes this increased mission effectiveness. 
+
+
+
+\chapter{Appendix figures}
 
 \subsection{Scenario 2}
-\begin{figure}[H]
-	\centering
-	\includegraphics[trim = 50 300 0 285, clip, width=16.5cm]{Figures/results/compareFigures/2Quiver}
-	\caption{}
-	\label{fig:2Quiver}
-	\end{figure}
-
 \begin{figure}[H]
 	\centering
 	\includegraphics[trim = 0 150 0 200, clip, width=12cm]{Figures/results/compareFigures/2u}
@@ -1844,14 +1887,7 @@ Optimized GVF guidance was programmed into a python written ground station to co
 	\label{fig:2Controller}
 \end{figure}
 
-\subsection{Scenario 3}
-\begin{figure}[H]
-	\centering
-	\includegraphics[trim = 50 300 0 285, clip, width=16.5cm]{Figures/results/compareFigures/2Quiver}
-	\caption{}
-	\label{fig:3Quiver}
-\end{figure}
-
+\subsection{scenario 3}
 \begin{figure}[H]
 	\centering
 	\includegraphics[trim = 0 150 0 200, clip, width=12cm]{Figures/results/compareFigures/2u}
@@ -1866,14 +1902,7 @@ Optimized GVF guidance was programmed into a python written ground station to co
 	\label{fig:3Controller}
 \end{figure}
 
-\subsection{Scenario 4}
-\begin{figure}[H]
-	\centering
-	\includegraphics[trim = 50 300 0 285, clip, width=16.5cm]{Figures/results/compareFigures/2Quiver}
-	\caption{}
-	\label{fig:4Quiver}
-\end{figure}
-
+\subsection{scenario 4}
 \begin{figure}[H]
 	\centering
 	\includegraphics[trim = 0 150 0 200, clip, width=12cm]{Figures/results/compareFigures/2u}
@@ -1890,11 +1919,6 @@ Optimized GVF guidance was programmed into a python written ground station to co
 
 
 
-\chapter{Conclusions}
-
-UAVs typically rely on path planning algorithms to provide an obstacle free and flyable path prior to flight. In the event that unplanned obstacles are encountered a new path may have to be re-generated which may not be possible if communication with a ground station is lost. Path following and obstacle avoidance was achieved without the need to re-plan the mission path by using optimized GVF decay radius and circulation parameters. Simulations were conducted with a fixed wing UAV modeled as a Dubin's vehicle using the GVF guidance and circulation and decay radius were selected which minimized a path deviation cost function. Singularities in the GVF were characterized and located numerically. The optimized GVF guidance was implemented in a indoor quadcopter with turn-rate constraints to emulate a fixed wing UAV. Results comparing simulations and indoor flight tests were compared. \\
-
-Guidance for path following and obstacle avoidance without the need to re-plan mission paths has the potential to aid in increasing unmanned systems autonomy. Obstacles can be avoided without the intervention of a human operator and they can do so at minimal deviation from the planned path. These planned paths represent a route in which a task must be completed, therefore, remaining close the path increases the UAVs overall effectiveness. The optimized GVF guidance promotes this increased mission effectiveness. 
 
 \chapter{OLD}
 GVF guidance for following a straight path and avoiding circular obstacles was replicated from literature. A summed GVF for path following and circular obstacle avoidance was evaluated for GVF singularities. A method for determine the location of singularities in a summed GVF was presented. A worst case obstacle avoidance scenario with a circular obstacle centered on a straight path represented by a strictly repulsive field was evaluated for singularities. Circulation was added to the GVF to demonstrate mitigation of GVF singularities in a summed field. 

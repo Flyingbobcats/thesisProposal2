@@ -41,13 +41,14 @@
 \contentsline {section}{\numberline {4.1}Introduction to Results}{69}{section.4.1}
 \contentsline {section}{\numberline {4.2}Phase I \& II}{69}{section.4.2}
 \contentsline {section}{\numberline {4.3}Phase III}{73}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Scenario 1}{74}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Scenario 2}{77}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Scenario 3}{79}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Scenario 4}{81}{subsection.4.3.4}
-\contentsline {chapter}{\numberline {5}Conclusions}{83}{chapter.5}
-\contentsline {chapter}{\numberline {6}OLD}{84}{chapter.6}
-\contentsline {subsection}{\numberline {6.0.1}Path Following Vector Field Guidance}{84}{subsection.6.0.1}
-\contentsline {subsection}{\numberline {6.0.2}Avoidance Vector Field Guidance}{85}{subsection.6.0.2}
-\contentsline {chapter}{\numberline {7}Future Work}{90}{chapter.7}
-\contentsline {chapter}{References}{91}{schapter.5}
+\contentsline {subsection}{\numberline {4.3.1}Summary of results}{80}{subsection.4.3.1}
+\contentsline {chapter}{\numberline {5}Conclusions}{81}{chapter.5}
+\contentsline {chapter}{\numberline {6}Appendix figures}{83}{chapter.6}
+\contentsline {subsection}{\numberline {6.0.1}Scenario 2}{83}{subsection.6.0.1}
+\contentsline {subsection}{\numberline {6.0.2}scenario 3}{85}{subsection.6.0.2}
+\contentsline {subsection}{\numberline {6.0.3}scenario 4}{87}{subsection.6.0.3}
+\contentsline {chapter}{\numberline {7}OLD}{89}{chapter.7}
+\contentsline {subsection}{\numberline {7.0.1}Path Following Vector Field Guidance}{89}{subsection.7.0.1}
+\contentsline {subsection}{\numberline {7.0.2}Avoidance Vector Field Guidance}{90}{subsection.7.0.2}
+\contentsline {chapter}{\numberline {8}Future Work}{95}{chapter.8}
+\contentsline {chapter}{References}{96}{schapter.5}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.9.26)  1 JUN 2018 18:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.9.26)  3 JUN 2018 20:18
 entering extended mode
 **./main.tex
 (main.tex
@@ -1274,9 +1274,6 @@ Package: fancyref 1999/02/03 v0.9c Fancy cross-referencing
 
 LaTeX Warning: Label `eq:vffHeading' multiply defined.
 
-
-LaTeX Warning: Label `my-label' multiply defined.
-
 )
 \openout1 = `main.aux'.
 
@@ -1436,14 +1433,14 @@ $[]$
 
 [13]
 Chapter 2.
-<PaperFigures/fixedwing.jpg, id=460, 903.375pt x 602.25pt>
+<PaperFigures/fixedwing.jpg, id=469, 903.375pt x 602.25pt>
 File: PaperFigures/fixedwing.jpg Graphic file (type jpg)
 
 <use PaperFigures/fixedwing.jpg>
 Package pdftex.def Info: PaperFigures/fixedwing.jpg used on input line 299.
 (pdftex.def)             Requested size: 184.9429pt x 123.29663pt.
 
-<PaperFigures/iris-1.jpg, id=462, 602.25pt x 462.72874pt>
+<PaperFigures/iris-1.jpg, id=471, 602.25pt x 462.72874pt>
 File: PaperFigures/iris-1.jpg Graphic file (type jpg)
 
 <use PaperFigures/iris-1.jpg>
@@ -1458,7 +1455,7 @@ mplish tasks
 [14
 
  <./PaperFigures/fixedwing.jpg> <./PaperFigures/iris-1.jpg>]
-<PaperFigures/Literature/groundStationPlanning.png, id=478, 411.03563pt x 308.6
+<PaperFigures/Literature/groundStationPlanning.png, id=487, 411.03563pt x 308.6
 5312pt>
 File: PaperFigures/Literature/groundStationPlanning.png Graphic file (type png)
 
@@ -1467,7 +1464,7 @@ Package pdftex.def Info: PaperFigures/Literature/groundStationPlanning.png used
  on input line 318.
 (pdftex.def)             Requested size: 341.43306pt x 256.38924pt.
  [15 <./PaperFigures/Literature/groundStationPlanning.png>]
-<PaperFigures/autopilotLoops2.png, id=489, 750.55406pt x 239.39438pt>
+<PaperFigures/autopilotLoops2.png, id=498, 750.55406pt x 239.39438pt>
 File: PaperFigures/autopilotLoops2.png Graphic file (type png)
 
 <use PaperFigures/autopilotLoops2.png>
@@ -1475,21 +1472,21 @@ Package pdftex.def Info: PaperFigures/autopilotLoops2.png used on input line 35
 2.
 (pdftex.def)             Requested size: 426.79134pt x 136.1311pt.
  [16 <./PaperFigures/autopilotLoops2.png>] [17] <PaperFigures/pfObstacle.png, i
-d=519, 673.01437pt x 436.63126pt>
+d=528, 673.01437pt x 436.63126pt>
 File: PaperFigures/pfObstacle.png Graphic file (type png)
 
 <use PaperFigures/pfObstacle.png>
 Package pdftex.def Info: PaperFigures/pfObstacle.png used on input line 429.
 (pdftex.def)             Requested size: 284.52756pt x 184.58977pt.
  [18 <./PaperFigures/pfObstacle.png>]
-<PaperFigures/histogram.png, id=532, 277.78781pt x 337.26pt>
+<PaperFigures/histogram.png, id=541, 277.78781pt x 337.26pt>
 File: PaperFigures/histogram.png Graphic file (type png)
 
 <use PaperFigures/histogram.png>
 Package pdftex.def Info: PaperFigures/histogram.png used on input line 445.
 (pdftex.def)             Requested size: 199.16928pt x 241.81322pt.
  [19 <./PaperFigures/histogram.png>]
-<PaperFigures/pfObstacleLocalMin.png, id=550, 770.12718pt x 535.2497pt>
+<PaperFigures/pfObstacleLocalMin.png, id=559, 770.12718pt x 535.2497pt>
 File: PaperFigures/pfObstacleLocalMin.png Graphic file (type png)
 
 <use PaperFigures/pfObstacleLocalMin.png>
@@ -1497,7 +1494,7 @@ Package pdftex.def Info: PaperFigures/pfObstacleLocalMin.png used on input line
  483.
 (pdftex.def)             Requested size: 199.16928pt x 138.41841pt.
 
-<PaperFigures/pfObstacleLocalMinTopology.png, id=551, 769.37437pt x 581.92406pt
+<PaperFigures/pfObstacleLocalMinTopology.png, id=560, 769.37437pt x 581.92406pt
 >
 File: PaperFigures/pfObstacleLocalMinTopology.png Graphic file (type png)
  <use PaperFigures/pfObstacleLocalMinTopology.png>
@@ -1505,7 +1502,7 @@ Package pdftex.def Info: PaperFigures/pfObstacleLocalMinTopology.png used on in
 put line 484.
 (pdftex.def)             Requested size: 199.16928pt x 150.6396pt.
 
-<PaperFigures/multipleObsVff.png, id=558, 531.48563pt x 311.66437pt>
+<PaperFigures/multipleObsVff.png, id=567, 531.48563pt x 311.66437pt>
 File: PaperFigures/multipleObsVff.png Graphic file (type png)
 
 <use PaperFigures/multipleObsVff.png>
@@ -1513,7 +1510,7 @@ Package pdftex.def Info: PaperFigures/multipleObsVff.png used on input line 495
 .
 (pdftex.def)             Requested size: 256.0748pt x 150.1631pt.
 
-<PaperFigures/unstableCooridorMotionVff.png, id=559, 387.69844pt x 420.82219pt>
+<PaperFigures/unstableCooridorMotionVff.png, id=568, 387.69844pt x 420.82219pt>
 File: PaperFigures/unstableCooridorMotionVff.png Graphic file (type png)
 <use PaperFigures/unstableCooridorMotionVff.png>
 Package pdftex.def Info: PaperFigures/unstableCooridorMotionVff.png used on inp
@@ -1521,7 +1518,7 @@ ut line 496.
 (pdftex.def)             Requested size: 170.71652pt x 185.30359pt.
  [20 <./PaperFigures/pfObstacleLocalMin.png> <./PaperFigures/pfObstacleLocalMin
 Topology.png>]
-<PaperFigures/obstacleClustering.png, id=575, 319.1925pt x 242.40562pt>
+<PaperFigures/obstacleClustering.png, id=584, 319.1925pt x 242.40562pt>
 File: PaperFigures/obstacleClustering.png Graphic file (type png)
 
 <use PaperFigures/obstacleClustering.png>
@@ -1542,7 +1539,7 @@ Simulated-eps-converted-to.pdf PaperFigures/Literature/vffSimulated.eps>
 (epstopdf)             \includegraphics on input line 516.
 Package epstopdf Info: Output file is already uptodate.
 
-<PaperFigures/Literature/vffSimulated-eps-converted-to.pdf, id=592, 710.655pt x
+<PaperFigures/Literature/vffSimulated-eps-converted-to.pdf, id=601, 710.655pt x
  411.5375pt>
 File: PaperFigures/Literature/vffSimulated-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -1553,7 +1550,7 @@ pdf used on input line 516.
 
 [22 <./PaperFigures/obstacleClustering.png>] [23 <./PaperFigures/Literature/vff
 Simulated-eps-converted-to.pdf>]
-<PaperFigures/nelsonLyapunov.png, id=612, 871.75688pt x 395.22656pt>
+<PaperFigures/nelsonLyapunov.png, id=621, 871.75688pt x 395.22656pt>
 File: PaperFigures/nelsonLyapunov.png Graphic file (type png)
 
 <use PaperFigures/nelsonLyapunov.png>
@@ -1561,14 +1558,14 @@ Package pdftex.def Info: PaperFigures/nelsonLyapunov.png used on input line 560
 .
 (pdftex.def)             Requested size: 369.88582pt x 167.69466pt.
 
-<PaperFigures/urbanFollowingNelson.png, id=622, 310.91156pt x 319.94531pt>
+<PaperFigures/urbanFollowingNelson.png, id=631, 310.91156pt x 319.94531pt>
 File: PaperFigures/urbanFollowingNelson.png Graphic file (type png)
 
 <use PaperFigures/urbanFollowingNelson.png>
 Package pdftex.def Info: PaperFigures/urbanFollowingNelson.png used on input li
 ne 631.
 (pdftex.def)             Requested size: 199.16928pt x 204.95468pt.
- [24 <./PaperFigures/nelsonLyapunov.png>] <PaperFigures/griffiths.png, id=633, 
+ [24 <./PaperFigures/nelsonLyapunov.png>] <PaperFigures/griffiths.png, id=642, 
 560.0925pt x 526.96875pt>
 File: PaperFigures/griffiths.png Graphic file (type png)
 
@@ -1576,7 +1573,7 @@ File: PaperFigures/griffiths.png Graphic file (type png)
 Package pdftex.def Info: PaperFigures/griffiths.png used on input line 640.
 (pdftex.def)             Requested size: 199.16928pt x 187.39282pt.
  [25 <./PaperFigures/urbanFollowingNelson.png> <./PaperFigures/griffiths.png>]
-<PaperFigures/lyapunovFrewUncertain.png, id=647, 402.75468pt x 308.65312pt>
+<PaperFigures/lyapunovFrewUncertain.png, id=656, 402.75468pt x 308.65312pt>
 File: PaperFigures/lyapunovFrewUncertain.png Graphic file (type png)
 
 <use PaperFigures/lyapunovFrewUncertain.png>
@@ -1584,14 +1581,14 @@ Package pdftex.def Info: PaperFigures/lyapunovFrewUncertain.png used on input l
 ine 651.
 (pdftex.def)             Requested size: 227.62204pt x 174.43643pt.
 
-<PaperFigures/lyapunovFrew.png, id=648, 444.91219pt x 438.13687pt>
+<PaperFigures/lyapunovFrew.png, id=657, 444.91219pt x 438.13687pt>
 File: PaperFigures/lyapunovFrew.png Graphic file (type png)
 
 <use PaperFigures/lyapunovFrew.png>
 Package pdftex.def Info: PaperFigures/lyapunovFrew.png used on input line 652.
 (pdftex.def)             Requested size: 177.82971pt x 175.11792pt.
 
-<PaperFigures/lyapunovChen.png, id=657, 463.7325pt x 371.13657pt>
+<PaperFigures/lyapunovChen.png, id=666, 463.7325pt x 371.13657pt>
 File: PaperFigures/lyapunovChen.png Graphic file (type png)
 
 <use PaperFigures/lyapunovChen.png>
@@ -1599,14 +1596,14 @@ Package pdftex.def Info: PaperFigures/lyapunovChen.png used on input line 663.
 (pdftex.def)             Requested size: 284.52756pt x 227.71812pt.
  [26 <./PaperFigures/lyapunovFrewUncertain.png> <./PaperFigures/lyapunovFrew.pn
 g>]
-<PaperFigures/rrtVF.png, id=671, 812.28468pt x 438.8897pt>
+<PaperFigures/rrtVF.png, id=680, 812.28468pt x 438.8897pt>
 File: PaperFigures/rrtVF.png Graphic file (type png)
 
 <use PaperFigures/rrtVF.png>
 Package pdftex.def Info: PaperFigures/rrtVF.png used on input line 674.
 (pdftex.def)             Requested size: 341.43306pt x 184.47974pt.
  [27 <./PaperFigures/lyapunovChen.png>]
-<PaperFigures/cdtVF.png, id=681, 1389.69188pt x 505.13719pt>
+<PaperFigures/cdtVF.png, id=690, 1389.69188pt x 505.13719pt>
 File: PaperFigures/cdtVF.png Graphic file (type png)
 
 <use PaperFigures/cdtVF.png>
@@ -1625,7 +1622,7 @@ h-eps-converted-to.pdf PaperFigures/Literature/tanh.eps>
 (epstopdf)             \includegraphics on input line 802.
 Package epstopdf Info: Output file is already uptodate.
 
-<PaperFigures/Literature/tanh-eps-converted-to.pdf, id=723, 578.16pt x 433.62pt
+<PaperFigures/Literature/tanh-eps-converted-to.pdf, id=732, 578.16pt x 433.62pt
 >
 File: PaperFigures/Literature/tanh-eps-converted-to.pdf Graphic file (type pdf)
 
@@ -1634,7 +1631,7 @@ Package pdftex.def Info: PaperFigures/Literature/tanh-eps-converted-to.pdf used
  on input line 802.
 (pdftex.def)             Requested size: 341.43306pt x 256.07178pt.
  [31]
-<PaperFigures/gvfMovingTarget.png, id=734, 753.5653pt x 535.2497pt>
+<PaperFigures/gvfMovingTarget.png, id=743, 753.5653pt x 535.2497pt>
 File: PaperFigures/gvfMovingTarget.png Graphic file (type png)
 
 <use PaperFigures/gvfMovingTarget.png>
@@ -1650,7 +1647,7 @@ gvfMovingTarget.png>] [34]
 Chapter 3.
 [35
 
-] [36] <Figures/planeIntersection.png, id=771, 361.35pt x 361.35pt>
+] [36] <Figures/planeIntersection.png, id=780, 361.35pt x 361.35pt>
 File: Figures/planeIntersection.png Graphic file (type png)
 
 <use Figures/planeIntersection.png>
@@ -1658,7 +1655,7 @@ Package pdftex.def Info: Figures/planeIntersection.png used on input line 1082.
 
 (pdftex.def)             Requested size: 227.62204pt x 227.62413pt.
  [37 <./Figures/planeIntersection.png (PNG copy)>] [38] [39]
-<Figures/cylinderIntersection.png, id=802, 361.35pt x 361.35pt>
+<Figures/cylinderIntersection.png, id=811, 361.35pt x 361.35pt>
 File: Figures/cylinderIntersection.png Graphic file (type png)
 
 <use Figures/cylinderIntersection.png>
@@ -1679,7 +1676,7 @@ FieldsNoNorm-eps-converted-to.pdf PaperFigures/Methods/summedFieldsNoNorm.eps>
 (epstopdf)             \includegraphics on input line 1205.
 Package epstopdf Info: Output file is already uptodate.
 
-<PaperFigures/Methods/summedFieldsNoNorm-eps-converted-to.pdf, id=814, 532.9912
+<PaperFigures/Methods/summedFieldsNoNorm-eps-converted-to.pdf, id=823, 532.9912
 6pt x 349.305pt>
 File: PaperFigures/Methods/summedFieldsNoNorm-eps-converted-to.pdf Graphic file
  (type pdf)
@@ -1689,7 +1686,7 @@ Package pdftex.def Info: PaperFigures/Methods/summedFieldsNoNorm-eps-converted-
 to.pdf used on input line 1205.
 (pdftex.def)             Requested size: 398.33858pt x 217.81131pt.
  [41]
-<Figures/methods/summedHeatMapSimple2.png, id=822, 869.49844pt x 417.05812pt>
+<Figures/methods/summedHeatMapSimple2.png, id=831, 869.49844pt x 417.05812pt>
 File: Figures/methods/summedHeatMapSimple2.png Graphic file (type png)
 
 <use Figures/methods/summedHeatMapSimple2.png>
@@ -1710,7 +1707,7 @@ larityR10-eps-converted-to.pdf Figures/methods/noCircSingularityR10.eps>
 (epstopdf)             \includegraphics on input line 1255.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/methods/noCircSingularityR10-eps-converted-to.pdf, id=851, 489.83pt x 
+<Figures/methods/noCircSingularityR10-eps-converted-to.pdf, id=860, 489.83pt x 
 357.335pt>
 File: Figures/methods/noCircSingularityR10-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -1730,7 +1727,7 @@ larityR30-eps-converted-to.pdf Figures/methods/noCircSingularityR30.eps>
 (epstopdf)             \includegraphics on input line 1256.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/methods/noCircSingularityR30-eps-converted-to.pdf, id=853, 487.8225pt 
+<Figures/methods/noCircSingularityR30-eps-converted-to.pdf, id=862, 487.8225pt 
 x 355.3275pt>
 File: Figures/methods/noCircSingularityR30-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -1754,7 +1751,7 @@ hFollowDemo-eps-converted-to.pdf PaperFigures/Methods/uavPathFollowDemo.eps>
 (epstopdf)             \includegraphics on input line 1279.
 Package epstopdf Info: Output file is already uptodate.
 
-<PaperFigures/Methods/uavPathFollowDemo-eps-converted-to.pdf, id=872, 421.575pt
+<PaperFigures/Methods/uavPathFollowDemo-eps-converted-to.pdf, id=881, 421.575pt
  x 316.18124pt>
 File: PaperFigures/Methods/uavPathFollowDemo-eps-converted-to.pdf Graphic file 
 (type pdf)
@@ -1776,7 +1773,7 @@ ltipleHs-eps-converted-to.pdf PaperFigures/Methods/pathMultipleHs.eps>
 (epstopdf)             \includegraphics on input line 1289.
 Package epstopdf Info: Output file is already uptodate.
 
-<PaperFigures/Methods/pathMultipleHs-eps-converted-to.pdf, id=880, 421.575pt x 
+<PaperFigures/Methods/pathMultipleHs-eps-converted-to.pdf, id=889, 421.575pt x 
 316.18124pt>
 File: PaperFigures/Methods/pathMultipleHs-eps-converted-to.pdf Graphic file (ty
 pe pdf)
@@ -1799,7 +1796,7 @@ lErrorVsTime-eps-converted-to.pdf PaperFigures/Methods/lateralErrorVsTime.eps>
 (epstopdf)             \includegraphics on input line 1297.
 Package epstopdf Info: Output file is already uptodate.
 
-<PaperFigures/Methods/lateralErrorVsTime-eps-converted-to.pdf, id=890, 577.1562
+<PaperFigures/Methods/lateralErrorVsTime-eps-converted-to.pdf, id=899, 577.1562
 5pt x 215.80624pt>
 File: PaperFigures/Methods/lateralErrorVsTime-eps-converted-to.pdf Graphic file
  (type pdf)
@@ -1815,7 +1812,7 @@ Overfull \hbox (21.62407pt too wide) in paragraph at lines 1297--1300
 
 [47 <./PaperFigures/Methods/pathMultipleHs-eps-converted-to.pdf> <./PaperFigure
 s/Methods/lateralErrorVsTime-eps-converted-to.pdf>]
-<Figures/methods/obstacleOnPath.png, id=904, 952.30782pt x 421.575pt>
+<Figures/methods/obstacleOnPath.png, id=913, 952.30782pt x 421.575pt>
 File: Figures/methods/obstacleOnPath.png Graphic file (type png)
 
 <use Figures/methods/obstacleOnPath.png>
@@ -1837,7 +1834,7 @@ ps>
 (epstopdf)             \includegraphics on input line 1351.
 Package epstopdf Info: Output file is already uptodate.
 
-<PaperFigures/Methods/bruteForceSolveN1V10-eps-converted-to.pdf, id=919, 578.16
+<PaperFigures/Methods/bruteForceSolveN1V10-eps-converted-to.pdf, id=928, 578.16
 pt x 433.62pt>
 File: PaperFigures/Methods/bruteForceSolveN1V10-eps-converted-to.pdf Graphic fi
 le (type pdf)
@@ -1861,8 +1858,8 @@ vedN1V10WithCirc.eps>
 (epstopdf)             \includegraphics on input line 1362.
 Package epstopdf Info: Output file is already uptodate.
 
-<PaperFigures/Methods/bruteForceSolvedN1V10WithCirc-eps-converted-to.pdf, id=92
-9, 578.16pt x 433.62pt>
+<PaperFigures/Methods/bruteForceSolvedN1V10WithCirc-eps-converted-to.pdf, id=93
+8, 578.16pt x 433.62pt>
 File: PaperFigures/Methods/bruteForceSolvedN1V10WithCirc-eps-converted-to.pdf G
 raphic file (type pdf)
 
@@ -1872,7 +1869,7 @@ Package pdftex.def Info: PaperFigures/Methods/bruteForceSolvedN1V10WithCirc-eps
 (pdftex.def)             Requested size: 426.79134pt x 194.13019pt.
 
 [50 <./PaperFigures/Methods/bruteForceSolveN1V10-eps-converted-to.pdf>]
-<PaperFigures/Methods/costHandR.png, id=944, 578.16pt x 433.62pt>
+<PaperFigures/Methods/costHandR.png, id=953, 578.16pt x 433.62pt>
 File: PaperFigures/Methods/costHandR.png Graphic file (type png)
 
 <use PaperFigures/Methods/costHandR.png>
@@ -1899,7 +1896,7 @@ unctionValue-eps-converted-to.pdf PaperFigures/Methods/finalFunctionValue.eps>
 (epstopdf)             \includegraphics on input line 1408.
 Package epstopdf Info: Output file is already uptodate.
 
-<PaperFigures/Methods/finalFunctionValue-eps-converted-to.pdf, id=964, 421.575p
+<PaperFigures/Methods/finalFunctionValue-eps-converted-to.pdf, id=973, 421.575p
 t x 316.18124pt>
 File: PaperFigures/Methods/finalFunctionValue-eps-converted-to.pdf Graphic file
  (type pdf)
@@ -1920,7 +1917,7 @@ N1V10-eps-converted-to.pdf PaperFigures/Methods/solvedN1V10.eps>
 (epstopdf)             \includegraphics on input line 1417.
 Package epstopdf Info: Output file is already uptodate.
 
-<PaperFigures/Methods/solvedN1V10-eps-converted-to.pdf, id=966, 578.16pt x 433.
+<PaperFigures/Methods/solvedN1V10-eps-converted-to.pdf, id=975, 578.16pt x 433.
 62pt>
 File: PaperFigures/Methods/solvedN1V10-eps-converted-to.pdf Graphic file (type 
 pdf)
@@ -1935,7 +1932,7 @@ Overfull \hbox (11.84332pt too wide) in paragraph at lines 1417--1420
 
 [53 <./PaperFigures/Methods/finalFunctionValue-eps-converted-to.pdf>] [54 <./Pa
 perFigures/Methods/solvedN1V10-eps-converted-to.pdf>]
-<Figures/optimalPath/optimalPath.pdf, id=992, 794.97pt x 614.295pt>
+<Figures/optimalPath/optimalPath.pdf, id=1001, 794.97pt x 614.295pt>
 File: Figures/optimalPath/optimalPath.pdf Graphic file (type pdf)
 
 <use Figures/optimalPath/optimalPath.pdf>
@@ -1955,7 +1952,7 @@ df>
 (epstopdf)             \includegraphics on input line 1481.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Waypoints/1Wpts-eps-converted-to.pdf, id=1024, 565.11125pt x 376.40625
+<Figures/Waypoints/1Wpts-eps-converted-to.pdf, id=1033, 565.11125pt x 376.40625
 pt>
 File: Figures/Waypoints/1Wpts-eps-converted-to.pdf Graphic file (type pdf)
  <use Figures/Waypoints/1Wpts-eps-converted-to.pdf>
@@ -1974,7 +1971,7 @@ df>
 (epstopdf)             \includegraphics on input line 1482.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Waypoints/6Wpts-eps-converted-to.pdf, id=1026, 565.11125pt x 376.40625
+<Figures/Waypoints/6Wpts-eps-converted-to.pdf, id=1035, 565.11125pt x 376.40625
 pt>
 File: Figures/Waypoints/6Wpts-eps-converted-to.pdf Graphic file (type pdf)
  <use Figures/Waypoints/6Wpts-eps-converted-to.pdf>
@@ -1993,7 +1990,7 @@ pts-eps-converted-to.pdf Figures/Waypoints/costVnumWpts.eps>
 (epstopdf)             \includegraphics on input line 1491.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Waypoints/costVnumWpts-eps-converted-to.pdf, id=1028, 421.575pt x 316.
+<Figures/Waypoints/costVnumWpts-eps-converted-to.pdf, id=1037, 421.575pt x 316.
 18124pt>
 File: Figures/Waypoints/costVnumWpts-eps-converted-to.pdf Graphic file (type pd
 f)
@@ -2016,7 +2013,7 @@ Methods-eps-converted-to.pdf Figures/Simulations/compareMethods.eps>
 (epstopdf)             \includegraphics on input line 1506.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Simulations/compareMethods-eps-converted-to.pdf, id=1055, 677.53125pt 
+<Figures/Simulations/compareMethods-eps-converted-to.pdf, id=1064, 677.53125pt 
 x 451.6875pt>
 File: Figures/Simulations/compareMethods-eps-converted-to.pdf Graphic file (typ
 e pdf)
@@ -2037,7 +2034,7 @@ Performance-eps-converted-to.pdf Figures/Simulations/barPlotPerformance.eps>
 (epstopdf)             \includegraphics on input line 1515.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/Simulations/barPlotPerformance-eps-converted-to.pdf, id=1057, 779.9137
+<Figures/Simulations/barPlotPerformance-eps-converted-to.pdf, id=1066, 779.9137
 6pt x 211.79124pt>
 File: Figures/Simulations/barPlotPerformance-eps-converted-to.pdf Graphic file 
 (type pdf)
@@ -2048,14 +2045,14 @@ o.pdf used on input line 1515.
 (pdftex.def)             Requested size: 426.79134pt x 115.89737pt.
  [58 <./Figures/Simulations/compareMethods-eps-converted-to.pdf>] [59 <./Figure
 s/Simulations/barPlotPerformance-eps-converted-to.pdf>]
-<PaperFigures/crazyflie.jpg, id=1074, 140.9265pt x 140.9265pt>
+<PaperFigures/crazyflie.jpg, id=1083, 140.9265pt x 140.9265pt>
 File: PaperFigures/crazyflie.jpg Graphic file (type jpg)
 
 <use PaperFigures/crazyflie.jpg>
 Package pdftex.def Info: PaperFigures/crazyflie.jpg used on input line 1535.
 (pdftex.def)             Requested size: 199.16928pt x 121.1505pt.
 
-<PaperFigures/Methods/experimentalSetup.png, id=1077, 1019.30812pt x 376.40625p
+<PaperFigures/Methods/experimentalSetup.png, id=1086, 1019.30812pt x 376.40625p
 t>
 File: PaperFigures/Methods/experimentalSetup.png Graphic file (type png)
  <use PaperFigures/Methods/experimentalSetup.png>
@@ -2063,7 +2060,7 @@ Package pdftex.def Info: PaperFigures/Methods/experimentalSetup.png used on inp
 ut line 1545.
 (pdftex.def)             Requested size: 426.79134pt x 157.60709pt.
  [60 <./PaperFigures/crazyflie.jpg>]
-<PaperFigures/Methods/cfClient.png, id=1084, 645.91313pt x 529.22719pt>
+<PaperFigures/Methods/cfClient.png, id=1093, 645.91313pt x 529.22719pt>
 File: PaperFigures/Methods/cfClient.png Graphic file (type png)
 
 <use PaperFigures/Methods/cfClient.png>
@@ -2072,7 +2069,7 @@ Package pdftex.def Info: PaperFigures/Methods/cfClient.png used on input line 1
 (pdftex.def)             Requested size: 341.43306pt x 279.75421pt.
  [61 <./PaperFigures/Methods/experimentalSetup.png>] [62 <./PaperFigures/Method
 s/cfClient.png>]
-<PaperFigures/Methods/cfControlClass.png, id=1101, 1051.67906pt x 329.73187pt>
+<PaperFigures/Methods/cfControlClass.png, id=1110, 1051.67906pt x 329.73187pt>
 File: PaperFigures/Methods/cfControlClass.png Graphic file (type png)
 
 <use PaperFigures/Methods/cfControlClass.png>
@@ -2080,7 +2077,7 @@ Package pdftex.def Info: PaperFigures/Methods/cfControlClass.png used on input
 line 1588.
 (pdftex.def)             Requested size: 398.33858pt x 125.00758pt.
 
-<PaperFigures/Methods/pid.png, id=1105, 968.11688pt x 398.23781pt>
+<PaperFigures/Methods/pid.png, id=1114, 968.11688pt x 398.23781pt>
 File: PaperFigures/Methods/pid.png Graphic file (type png)
 
 <use PaperFigures/Methods/pid.png>
@@ -2088,7 +2085,7 @@ Package pdftex.def Info: PaperFigures/Methods/pid.png used on input line 1599.
 (pdftex.def)             Requested size: 398.33858pt x 163.85583pt.
  [63 <./PaperFigures/Methods/cfControlClass.png> <./PaperFigures/Methods/pid.pn
 g>]
-<PaperFigures/Methods/resultsPython/PathConfirm.pdf, id=1117, 614.295pt x 794.9
+<PaperFigures/Methods/resultsPython/PathConfirm.pdf, id=1126, 614.295pt x 794.9
 7pt>
 File: PaperFigures/Methods/resultsPython/PathConfirm.pdf Graphic file (type pdf
 )
@@ -2097,7 +2094,7 @@ Package pdftex.def Info: PaperFigures/Methods/resultsPython/PathConfirm.pdf use
 d on input line 1630.
 (pdftex.def)             Requested size: 284.52756pt x 228.7385pt.
 
-<PaperFigures/Methods/resultsPython/obstacle.pdf, id=1120, 614.295pt x 794.97pt
+<PaperFigures/Methods/resultsPython/obstacle.pdf, id=1129, 614.295pt x 794.97pt
 >
 File: PaperFigures/Methods/resultsPython/obstacle.pdf Graphic file (type pdf)
  <use PaperFigures/Methods/resultsPython/obstacle.pdf>
@@ -2111,8 +2108,8 @@ n input line 1640.
                                                   \fi \fi 
 l.1643 \end{figure}
                     <./PaperFigures/Methods/resultsPython/PathConfirm.pdf>]
-<PaperFigures/Methods/resultsPython/obstacleWithDecayAndCirculation.pdf, id=113
-1, 614.295pt x 794.97pt>
+<PaperFigures/Methods/resultsPython/obstacleWithDecayAndCirculation.pdf, id=114
+0, 614.295pt x 794.97pt>
 File: PaperFigures/Methods/resultsPython/obstacleWithDecayAndCirculation.pdf Gr
 aphic file (type pdf)
 
@@ -2122,7 +2119,7 @@ dCirculation.pdf used on input line 1649.
 (pdftex.def)             Requested size: 284.52756pt x 238.03685pt.
 
 [65 <./PaperFigures/Methods/resultsPython/obstacle.pdf>]
-<PaperFigures/Methods/resultsPython/summedFields.pdf, id=1142, 614.295pt x 794.
+<PaperFigures/Methods/resultsPython/summedFields.pdf, id=1151, 614.295pt x 794.
 97pt>
 File: PaperFigures/Methods/resultsPython/summedFields.pdf Graphic file (type pd
 f)
@@ -2131,7 +2128,7 @@ Package pdftex.def Info: PaperFigures/Methods/resultsPython/summedFields.pdf us
 ed on input line 1658.
 (pdftex.def)             Requested size: 284.52756pt x 238.03685pt.
 
-<PaperFigures/Methods/resultsPython/dubinsPaths.pdf, id=1145, 614.295pt x 794.9
+<PaperFigures/Methods/resultsPython/dubinsPaths.pdf, id=1154, 614.295pt x 794.9
 7pt>
 File: PaperFigures/Methods/resultsPython/dubinsPaths.pdf Graphic file (type pdf
 )
@@ -2159,8 +2156,8 @@ as been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1706 
-       ]
+l.1705 ... circulation, and cost are summarized.\\
+                                                  ]
 Package epstopdf Info: Source file: <Figures/results/m1Y0Solved.eps>
 (epstopdf)                    date: 2018-05-29 18:01:50
 (epstopdf)                    size: 199812 bytes
@@ -2170,20 +2167,21 @@ o.pdf>
 (epstopdf)                    size: 32364 bytes
 (epstopdf)             Command: <epstopdf --outfile=Figures/results/m1Y0Solved-
 eps-converted-to.pdf Figures/results/m1Y0Solved.eps>
-(epstopdf)             \includegraphics on input line 1712.
+(epstopdf)             \includegraphics on input line 1711.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/results/m1Y0Solved-eps-converted-to.pdf, id=1195, 578.16pt x 433.62pt>
+<Figures/results/m1Y0Solved-eps-converted-to.pdf, id=1206, 578.16pt x 433.62pt>
 File: Figures/results/m1Y0Solved-eps-converted-to.pdf Graphic file (type pdf)
 <use Figures/results/m1Y0Solved-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/results/m1Y0Solved-eps-converted-to.pdf used o
-n input line 1712.
+n input line 1711.
 (pdftex.def)             Requested size: 455.24408pt x 207.0714pt.
 
-Overfull \hbox (21.62407pt too wide) in paragraph at lines 1712--1715
+Overfull \hbox (21.62407pt too wide) in paragraph at lines 1711--1714
  [][] 
  []
 
+[70 <./Figures/results/m1Y0Solved-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <Figures/results/m5Y0Solved.eps>
 (epstopdf)                    date: 2018-05-29 18:02:15
 (epstopdf)                    size: 212168 bytes
@@ -2193,21 +2191,20 @@ o.pdf>
 (epstopdf)                    size: 36805 bytes
 (epstopdf)             Command: <epstopdf --outfile=Figures/results/m5Y0Solved-
 eps-converted-to.pdf Figures/results/m5Y0Solved.eps>
-(epstopdf)             \includegraphics on input line 1722.
+(epstopdf)             \includegraphics on input line 1721.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/results/m5Y0Solved-eps-converted-to.pdf, id=1198, 578.16pt x 433.62pt>
+<Figures/results/m5Y0Solved-eps-converted-to.pdf, id=1218, 578.16pt x 433.62pt>
 File: Figures/results/m5Y0Solved-eps-converted-to.pdf Graphic file (type pdf)
 <use Figures/results/m5Y0Solved-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/results/m5Y0Solved-eps-converted-to.pdf used o
-n input line 1722.
+n input line 1721.
 (pdftex.def)             Requested size: 455.24408pt x 207.0714pt.
 
-Overfull \hbox (21.62407pt too wide) in paragraph at lines 1722--1725
+Overfull \hbox (21.62407pt too wide) in paragraph at lines 1721--1724
  [][] 
  []
 
-[70 <./Figures/results/m1Y0Solved-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <Figures/results/m1Y05.eps>
 (epstopdf)                    date: 2018-05-29 18:02:53
 (epstopdf)                    size: 199183 bytes
@@ -2217,18 +2214,17 @@ Package epstopdf Info: Source file: <Figures/results/m1Y05.eps>
 (epstopdf)                    size: 31377 bytes
 (epstopdf)             Command: <epstopdf --outfile=Figures/results/m1Y05-eps-c
 onverted-to.pdf Figures/results/m1Y05.eps>
-(epstopdf)             \includegraphics on input line 1733.
+(epstopdf)             \includegraphics on input line 1732.
 Package epstopdf Info: Output file is already uptodate.
-
-<Figures/results/m1Y05-eps-converted-to.pdf, id=1210, 578.16pt x 433.62pt>
+<Figures/results/m1Y05-eps-converted-to.pdf, id=1221, 578.16pt x 433.62pt>
 File: Figures/results/m1Y05-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/results/m1Y05-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/results/m1Y05-eps-converted-to.pdf used on inp
-ut line 1733.
+ut line 1732.
 (pdftex.def)             Requested size: 455.24408pt x 207.0714pt.
 
-Overfull \hbox (21.62407pt too wide) in paragraph at lines 1733--1736
+Overfull \hbox (21.62407pt too wide) in paragraph at lines 1732--1735
  [][] 
  []
 
@@ -2242,174 +2238,183 @@ Package epstopdf Info: Source file: <Figures/results/m5Y05.eps>
 (epstopdf)                    size: 35366 bytes
 (epstopdf)             Command: <epstopdf --outfile=Figures/results/m5Y05-eps-c
 onverted-to.pdf Figures/results/m5Y05.eps>
-(epstopdf)             \includegraphics on input line 1743.
+(epstopdf)             \includegraphics on input line 1742.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/results/m5Y05-eps-converted-to.pdf, id=1221, 578.16pt x 433.62pt>
+<Figures/results/m5Y05-eps-converted-to.pdf, id=1232, 578.16pt x 433.62pt>
 File: Figures/results/m5Y05-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figures/results/m5Y05-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/results/m5Y05-eps-converted-to.pdf used on inp
-ut line 1743.
+ut line 1742.
 (pdftex.def)             Requested size: 455.24408pt x 207.0714pt.
 
-Overfull \hbox (21.62407pt too wide) in paragraph at lines 1743--1746
+Overfull \hbox (21.62407pt too wide) in paragraph at lines 1742--1745
  [][] 
  []
 
 [72 <./Figures/results/m1Y05-eps-converted-to.pdf>]
+Overfull \hbox (10.55998pt too wide) in paragraph at lines 1759--1767
+ [][] 
+ []
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbh') on input line 1771.
-
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbh') on input line 1788.
-
-<Figures/results/compareFigures/1Quiver.pdf, id=1232, 614.295pt x 794.97pt>
+[73 <./Figures/results/m5Y05-eps-converted-to.pdf>]
+<Figures/results/compareFigures/1Quiver.pdf, id=1256, 614.295pt x 794.97pt>
 File: Figures/results/compareFigures/1Quiver.pdf Graphic file (type pdf)
 
 <use Figures/results/compareFigures/1Quiver.pdf>
 Package pdftex.def Info: Figures/results/compareFigures/1Quiver.pdf used on inp
-ut line 1806.
+ut line 1774.
 (pdftex.def)             Requested size: 469.47046pt x 172.9191pt.
 
-Overfull \hbox (35.85045pt too wide) in paragraph at lines 1806--1809
+Overfull \hbox (35.85045pt too wide) in paragraph at lines 1774--1777
  [][] 
  []
 
-[73pdfTeX warning (ext4): destination with the same identifier (name{table.4.2}
+[74pdfTeX warning (ext4): destination with the same identifier (name{table.4.2}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1810 
-        <./Figures/results/m5Y05-eps-converted-to.pdf>]
-<Figures/results/compareFigures/1u.pdf, id=1245, 614.295pt x 794.97pt>
+l.1780 
+        <./Figures/results/compareFigures/1Quiver.pdf>]
+<Figures/results/compareFigures/1u.pdf, id=1267, 614.295pt x 794.97pt>
 File: Figures/results/compareFigures/1u.pdf Graphic file (type pdf)
 
 <use Figures/results/compareFigures/1u.pdf>
 Package pdftex.def Info: Figures/results/compareFigures/1u.pdf used on input li
-ne 1813.
+ne 1784.
 (pdftex.def)             Requested size: 341.43306pt x 246.59114pt.
- [74pdfTeX warning (ext4): destination with the same identifier (name{table.4.3
-}) has been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1817 
-        <./Figures/results/compareFigures/1Quiver.pdf>]
-<Figures/results/compareFigures/1Controller.pdf, id=1256, 614.295pt x 794.97pt>
+<Figures/results/compareFigures/1Controller.pdf, id=1270, 614.295pt x 794.97pt>
 File: Figures/results/compareFigures/1Controller.pdf Graphic file (type pdf)
 <use Figures/results/compareFigures/1Controller.pdf>
 Package pdftex.def Info: Figures/results/compareFigures/1Controller.pdf used on
- input line 1820.
+ input line 1794.
 (pdftex.def)             Requested size: 483.69684pt x 346.64406pt.
 
-Overfull \hbox (50.07683pt too wide) in paragraph at lines 1820--1823
+Overfull \hbox (50.07683pt too wide) in paragraph at lines 1794--1797
  [][] 
  []
 
-[75 <./Figures/results/compareFigures/1u.pdf>]
-<Figures/results/compareFigures/2Quiver.pdf, id=1279, 614.295pt x 794.97pt>
+[75 <./Figures/results/compareFigures/1u.pdf>] [76 <./Figures/results/compareFi
+gures/1Controller.pdf>]
+<Figures/results/compareFigures/2Quiver.pdf, id=1359, 614.295pt x 794.97pt>
 File: Figures/results/compareFigures/2Quiver.pdf Graphic file (type pdf)
 
 <use Figures/results/compareFigures/2Quiver.pdf>
 Package pdftex.def Info: Figures/results/compareFigures/2Quiver.pdf used on inp
-ut line 1828.
+ut line 1805.
 (pdftex.def)             Requested size: 469.47046pt x 172.9191pt.
 
-Overfull \hbox (35.85045pt too wide) in paragraph at lines 1828--1831
+Overfull \hbox (35.85045pt too wide) in paragraph at lines 1805--1808
  [][] 
  []
 
-[76 <./Figures/results/compareFigures/1Controller.pdf>]
-<Figures/results/compareFigures/2u.pdf, id=1346, 614.295pt x 794.97pt>
+<Figures/results/compareFigures/3Quiver.pdf, id=1362, 614.295pt x 794.97pt>
+File: Figures/results/compareFigures/3Quiver.pdf Graphic file (type pdf)
+
+<use Figures/results/compareFigures/3Quiver.pdf>
+Package pdftex.def Info: Figures/results/compareFigures/3Quiver.pdf used on inp
+ut line 1815.
+(pdftex.def)             Requested size: 469.47046pt x 172.9191pt.
+
+Overfull \hbox (35.85045pt too wide) in paragraph at lines 1815--1818
+ [][] 
+ []
+
+[77 <./Figures/results/compareFigures/2Quiver.pdf>]
+<Figures/results/compareFigures/4Quiver.pdf, id=1373, 614.295pt x 794.97pt>
+File: Figures/results/compareFigures/4Quiver.pdf Graphic file (type pdf)
+
+<use Figures/results/compareFigures/4Quiver.pdf>
+Package pdftex.def Info: Figures/results/compareFigures/4Quiver.pdf used on inp
+ut line 1825.
+(pdftex.def)             Requested size: 469.47046pt x 223.04105pt.
+
+Overfull \hbox (35.85045pt too wide) in paragraph at lines 1825--1828
+ [][] 
+ []
+
+[78 <./Figures/results/compareFigures/3Quiver.pdf>] [79pdfTeX warning (ext4): d
+estination with the same identifier (name{table.4.3}) has been already used, du
+plicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1850 
+        <./Figures/results/compareFigures/4Quiver.pdf>] [80]
+Chapter 5.
+
+Underfull \hbox (badness 1062) in paragraph at lines 1860--1860
+\OT1/txr/m/n/12 obstacles along the path by modifying the GVF's decay radius, c
+onvergence, and
+ []
+
+[81
+
+] [82]
+Chapter 6.
+<Figures/results/compareFigures/2u.pdf, id=1406, 614.295pt x 794.97pt>
 File: Figures/results/compareFigures/2u.pdf Graphic file (type pdf)
 
 <use Figures/results/compareFigures/2u.pdf>
 Package pdftex.def Info: Figures/results/compareFigures/2u.pdf used on input li
-ne 1835.
+ne 1878.
 (pdftex.def)             Requested size: 341.43306pt x 246.59114pt.
 
-<Figures/results/compareFigures/2Controller.pdf, id=1348, 614.295pt x 794.97pt>
+<Figures/results/compareFigures/2Controller.pdf, id=1408, 614.295pt x 794.97pt>
 File: Figures/results/compareFigures/2Controller.pdf Graphic file (type pdf)
 <use Figures/results/compareFigures/2Controller.pdf>
 Package pdftex.def Info: Figures/results/compareFigures/2Controller.pdf used on
- input line 1842.
+ input line 1885.
 (pdftex.def)             Requested size: 483.69684pt x 346.64406pt.
 
-Overfull \hbox (50.07683pt too wide) in paragraph at lines 1842--1845
+Overfull \hbox (50.07683pt too wide) in paragraph at lines 1885--1888
  [][] 
  []
 
-[77 <./Figures/results/compareFigures/2Quiver.pdf> <./Figures/results/compareFi
-gures/2u.pdf>]
-File: Figures/results/compareFigures/2Quiver.pdf Graphic file (type pdf)
- <use Figures/results/compareFigures/2Quiver.pdf>
-Package pdftex.def Info: Figures/results/compareFigures/2Quiver.pdf used on inp
-ut line 1850.
-(pdftex.def)             Requested size: 469.47046pt x 172.9191pt.
+[83
 
-Overfull \hbox (35.85045pt too wide) in paragraph at lines 1850--1853
- [][] 
- []
-
-[78 <./Figures/results/compareFigures/2Controller.pdf>]
+ <./Figures/results/compareFigures/2u.pdf>]
 File: Figures/results/compareFigures/2u.pdf Graphic file (type pdf)
 
 <use Figures/results/compareFigures/2u.pdf>
 Package pdftex.def Info: Figures/results/compareFigures/2u.pdf used on input li
-ne 1857.
+ne 1893.
 (pdftex.def)             Requested size: 341.43306pt x 246.59114pt.
-
-<Figures/results/compareFigures/3Controller.pdf, id=1442, 614.295pt x 794.97pt>
+ [84 <./Figures/results/compareFigures/2Controller.pdf>]
+<Figures/results/compareFigures/3Controller.pdf, id=1497, 614.295pt x 794.97pt>
 File: Figures/results/compareFigures/3Controller.pdf Graphic file (type pdf)
 <use Figures/results/compareFigures/3Controller.pdf>
 Package pdftex.def Info: Figures/results/compareFigures/3Controller.pdf used on
- input line 1864.
+ input line 1900.
 (pdftex.def)             Requested size: 483.69684pt x 346.64406pt.
 
-Overfull \hbox (50.07683pt too wide) in paragraph at lines 1864--1867
+Overfull \hbox (50.07683pt too wide) in paragraph at lines 1900--1903
  [][] 
  []
 
-[79]
-File: Figures/results/compareFigures/2Quiver.pdf Graphic file (type pdf)
- <use Figures/results/compareFigures/2Quiver.pdf>
-Package pdftex.def Info: Figures/results/compareFigures/2Quiver.pdf used on inp
-ut line 1872.
-(pdftex.def)             Requested size: 469.47046pt x 172.9191pt.
-
-Overfull \hbox (35.85045pt too wide) in paragraph at lines 1872--1875
- [][] 
- []
-
-[80 <./Figures/results/compareFigures/3Controller.pdf>]
+[85]
 File: Figures/results/compareFigures/2u.pdf Graphic file (type pdf)
-
-<use Figures/results/compareFigures/2u.pdf>
+ <use Figures/results/compareFigures/2u.pdf>
 Package pdftex.def Info: Figures/results/compareFigures/2u.pdf used on input li
-ne 1879.
+ne 1908.
 (pdftex.def)             Requested size: 341.43306pt x 246.59114pt.
-
-<Figures/results/compareFigures/4Controller.pdf, id=1519, 614.295pt x 794.97pt>
+ [86 <./Figures/results/compareFigures/3Controller.pdf>]
+<Figures/results/compareFigures/4Controller.pdf, id=1572, 614.295pt x 794.97pt>
 File: Figures/results/compareFigures/4Controller.pdf Graphic file (type pdf)
 <use Figures/results/compareFigures/4Controller.pdf>
 Package pdftex.def Info: Figures/results/compareFigures/4Controller.pdf used on
- input line 1886.
+ input line 1915.
 (pdftex.def)             Requested size: 483.69684pt x 346.64406pt.
 
-Overfull \hbox (50.07683pt too wide) in paragraph at lines 1886--1889
+Overfull \hbox (50.07683pt too wide) in paragraph at lines 1915--1918
  [][] 
  []
 
-[81] [82 <./Figures/results/compareFigures/4Controller.pdf>]
-Chapter 5.
-[83
-
-]
-Chapter 6.
+[87] [88 <./Figures/results/compareFigures/4Controller.pdf>]
+Chapter 7.
 Package epstopdf Info: Source file: <Figures/methods/straightPathH1.eps>
 (epstopdf)                    date: 2018-05-08 12:30:31
 (epstopdf)                    size: 108470 bytes
@@ -2419,16 +2424,16 @@ ed-to.pdf>
 (epstopdf)                    size: 11907 bytes
 (epstopdf)             Command: <epstopdf --outfile=Figures/methods/straightPat
 hH1-eps-converted-to.pdf Figures/methods/straightPathH1.eps>
-(epstopdf)             \includegraphics on input line 1911.
+(epstopdf)             \includegraphics on input line 1935.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/methods/straightPathH1-eps-converted-to.pdf, id=1596, 361.35pt x 361.3
+<Figures/methods/straightPathH1-eps-converted-to.pdf, id=1644, 361.35pt x 361.3
 5pt>
 File: Figures/methods/straightPathH1-eps-converted-to.pdf Graphic file (type pd
 f)
  <use Figures/methods/straightPathH1-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/methods/straightPathH1-eps-converted-to.pdf us
-ed on input line 1911.
+ed on input line 1935.
 (pdftex.def)             Requested size: 199.16928pt x 184.74242pt.
 Package epstopdf Info: Source file: <Figures/methods/straightPathH5.eps>
 (epstopdf)                    date: 2018-05-08 12:30:11
@@ -2439,40 +2444,40 @@ ed-to.pdf>
 (epstopdf)                    size: 11914 bytes
 (epstopdf)             Command: <epstopdf --outfile=Figures/methods/straightPat
 hH5-eps-converted-to.pdf Figures/methods/straightPathH5.eps>
-(epstopdf)             \includegraphics on input line 1912.
+(epstopdf)             \includegraphics on input line 1936.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/methods/straightPathH5-eps-converted-to.pdf, id=1598, 361.35pt x 361.3
+<Figures/methods/straightPathH5-eps-converted-to.pdf, id=1646, 361.35pt x 361.3
 5pt>
 File: Figures/methods/straightPathH5-eps-converted-to.pdf Graphic file (type pd
 f)
  <use Figures/methods/straightPathH5-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/methods/straightPathH5-eps-converted-to.pdf us
-ed on input line 1912.
+ed on input line 1936.
 (pdftex.def)             Requested size: 199.16928pt x 184.74242pt.
- [84
+ [89
 
  <./Figures/methods/straightPathH1-eps-converted-to.pdf> <./Figures/methods/str
 aightPathH5-eps-converted-to.pdf>]
-<PaperFigures/NNcompWithoutTitles/circAttractive.pdf, id=1616, 361.35pt x 361.3
+<PaperFigures/NNcompWithoutTitles/circAttractive.pdf, id=1664, 361.35pt x 361.3
 5pt>
 File: PaperFigures/NNcompWithoutTitles/circAttractive.pdf Graphic file (type pd
 f)
  <use PaperFigures/NNcompWithoutTitles/circAttractive.pdf>
 Package pdftex.def Info: PaperFigures/NNcompWithoutTitles/circAttractive.pdf us
-ed on input line 1926.
+ed on input line 1950.
 (pdftex.def)             Requested size: 213.39566pt x 213.39867pt.
 
-<PaperFigures/compWithoutTitles/circAttractive.pdf, id=1617, 361.35pt x 361.35p
+<PaperFigures/compWithoutTitles/circAttractive.pdf, id=1665, 361.35pt x 361.35p
 t>
 File: PaperFigures/compWithoutTitles/circAttractive.pdf Graphic file (type pdf)
 
  <use PaperFigures/compWithoutTitles/circAttractive.pdf>
 Package pdftex.def Info: PaperFigures/compWithoutTitles/circAttractive.pdf used
- on input line 1927.
+ on input line 1951.
 (pdftex.def)             Requested size: 213.39566pt x 213.39867pt.
 
-Underfull \hbox (badness 1360) in paragraph at lines 1935--1936
+Underfull \hbox (badness 1360) in paragraph at lines 1959--1960
 []\OT1/txr/m/n/12 Guidance that repels from a circular path can be produced by 
 setting the
  []
@@ -2486,18 +2491,18 @@ ed-to.pdf>
 (epstopdf)                    size: 18166 bytes
 (epstopdf)             Command: <epstopdf --outfile=Figures/methods/largeRepuls
 ive-eps-converted-to.pdf Figures/methods/largeRepulsive.eps>
-(epstopdf)             \includegraphics on input line 1939.
+(epstopdf)             \includegraphics on input line 1963.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/methods/largeRepulsive-eps-converted-to.pdf, id=1619, 421.575pt x 316.
+<Figures/methods/largeRepulsive-eps-converted-to.pdf, id=1667, 421.575pt x 316.
 18124pt>
 File: Figures/methods/largeRepulsive-eps-converted-to.pdf Graphic file (type pd
 f)
  <use Figures/methods/largeRepulsive-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/methods/largeRepulsive-eps-converted-to.pdf us
-ed on input line 1939.
+ed on input line 1963.
 (pdftex.def)             Requested size: 303.53267pt x 227.65514pt.
- [85 <./PaperFigures/NNcompWithoutTitles/circAttractive.pdf> <./PaperFigures/co
+ [90 <./PaperFigures/NNcompWithoutTitles/circAttractive.pdf> <./PaperFigures/co
 mpWithoutTitles/circAttractive.pdf>]
 Package epstopdf Info: Source file: <Figures/methods/normalizedRepulsive.eps>
 (epstopdf)                    date: 2018-03-29 10:28:07
@@ -2508,35 +2513,35 @@ nverted-to.pdf>
 (epstopdf)                    size: 15943 bytes
 (epstopdf)             Command: <epstopdf --outfile=Figures/methods/normalizedR
 epulsive-eps-converted-to.pdf Figures/methods/normalizedRepulsive.eps>
-(epstopdf)             \includegraphics on input line 1949.
+(epstopdf)             \includegraphics on input line 1973.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/methods/normalizedRepulsive-eps-converted-to.pdf, id=1633, 421.575pt x
+<Figures/methods/normalizedRepulsive-eps-converted-to.pdf, id=1680, 421.575pt x
  316.18124pt>
 File: Figures/methods/normalizedRepulsive-eps-converted-to.pdf Graphic file (ty
 pe pdf)
  <use Figures/methods/normalizedRepulsive-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/methods/normalizedRepulsive-eps-converted-to.p
-df used on input line 1949.
+df used on input line 1973.
 (pdftex.def)             Requested size: 303.53267pt x 227.65514pt.
 
-[86 <./Figures/methods/largeRepulsive-eps-converted-to.pdf>]
-<PaperFigures/NNcompWithoutTitles/circCW.pdf, id=1644, 361.35pt x 361.35pt>
+[91 <./Figures/methods/largeRepulsive-eps-converted-to.pdf>]
+<PaperFigures/NNcompWithoutTitles/circCW.pdf, id=1692, 361.35pt x 361.35pt>
 File: PaperFigures/NNcompWithoutTitles/circCW.pdf Graphic file (type pdf)
 
 <use PaperFigures/NNcompWithoutTitles/circCW.pdf>
 Package pdftex.def Info: PaperFigures/NNcompWithoutTitles/circCW.pdf used on in
-put line 1960.
+put line 1984.
 (pdftex.def)             Requested size: 213.39566pt x 213.39867pt.
 
-<PaperFigures/compWithoutTitles/circCW.pdf, id=1645, 361.35pt x 361.35pt>
+<PaperFigures/compWithoutTitles/circCW.pdf, id=1693, 361.35pt x 361.35pt>
 File: PaperFigures/compWithoutTitles/circCW.pdf Graphic file (type pdf)
 
 <use PaperFigures/compWithoutTitles/circCW.pdf>
 Package pdftex.def Info: PaperFigures/compWithoutTitles/circCW.pdf used on inpu
-t line 1961.
+t line 1985.
 (pdftex.def)             Requested size: 213.39566pt x 213.39867pt.
- [87 <./Figures/methods/normalizedRepulsive-eps-converted-to.pdf>]
+ [92 <./Figures/methods/normalizedRepulsive-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <Figures/methods/decayApplied.eps>
 (epstopdf)                    date: 2018-05-08 12:11:39
 (epstopdf)                    size: 125523 bytes
@@ -2546,16 +2551,16 @@ Package epstopdf Info: Source file: <Figures/methods/decayApplied.eps>
 (epstopdf)                    size: 14727 bytes
 (epstopdf)             Command: <epstopdf --outfile=Figures/methods/decayApplie
 d-eps-converted-to.pdf Figures/methods/decayApplied.eps>
-(epstopdf)             \includegraphics on input line 1974.
+(epstopdf)             \includegraphics on input line 1998.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/methods/decayApplied-eps-converted-to.pdf, id=1654, 361.35pt x 361.35p
+<Figures/methods/decayApplied-eps-converted-to.pdf, id=1702, 361.35pt x 361.35p
 t>
 File: Figures/methods/decayApplied-eps-converted-to.pdf Graphic file (type pdf)
 
  <use Figures/methods/decayApplied-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/methods/decayApplied-eps-converted-to.pdf used
- on input line 1974.
+ on input line 1998.
 (pdftex.def)             Requested size: 199.16928pt x 193.3157pt.
 Package epstopdf Info: Source file: <Figures/methods/decayAppliedCirculation.ep
 s>
@@ -2567,23 +2572,23 @@ s-converted-to.pdf>
 (epstopdf)                    size: 15131 bytes
 (epstopdf)             Command: <epstopdf --outfile=Figures/methods/decayApplie
 dCirculation-eps-converted-to.pdf Figures/methods/decayAppliedCirculation.eps>
-(epstopdf)             \includegraphics on input line 1975.
+(epstopdf)             \includegraphics on input line 1999.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figures/methods/decayAppliedCirculation-eps-converted-to.pdf, id=1656, 361.35p
+<Figures/methods/decayAppliedCirculation-eps-converted-to.pdf, id=1704, 361.35p
 t x 361.35pt>
 File: Figures/methods/decayAppliedCirculation-eps-converted-to.pdf Graphic file
  (type pdf)
 
 <use Figures/methods/decayAppliedCirculation-eps-converted-to.pdf>
 Package pdftex.def Info: Figures/methods/decayAppliedCirculation-eps-converted-
-to.pdf used on input line 1975.
+to.pdf used on input line 1999.
 (pdftex.def)             Requested size: 199.16928pt x 193.3157pt.
- [88 <./PaperFigures/NNcompWithoutTitles/circCW.pdf> <./PaperFigures/compWithou
-tTitles/circCW.pdf>] [89 <./Figures/methods/decayApplied-eps-converted-to.pdf> 
+ [93 <./PaperFigures/NNcompWithoutTitles/circCW.pdf> <./PaperFigures/compWithou
+tTitles/circCW.pdf>] [94 <./Figures/methods/decayApplied-eps-converted-to.pdf> 
 <./Figures/methods/decayAppliedCirculation-eps-converted-to.pdf>]
-Chapter 7.
-(main.bbl [90
+Chapter 8.
+(main.bbl [95
 
 ]
 Underfull \hbox (badness 1226) in paragraph at lines 10--13
@@ -2591,19 +2596,19 @@ Underfull \hbox (badness 1226) in paragraph at lines 10--13
 arget from a
  []
 
-[91
+[96
 
-] [92] [93]) 
+] [97] [98]) 
 AED: lastpage setting LastPage
-[94]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1994.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1994.
+[99]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2018.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2018.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1994.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1994.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2018.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2018.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 3D1B584DB25D02D2134573F6D7319D57;1939.
+(rerunfilecheck)             Checksum: A8BF5615D624F8363D824CA2A7FE90B1;1992.
 
 
 LaTeX Warning: There were undefined references.
@@ -2611,13 +2616,13 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1994.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2018.
  ) 
 Here is how much of TeX's memory you used:
- 11897 strings out of 493320
- 177111 string characters out of 3138948
- 280579 words of memory out of 3000000
- 14725 multiletter control sequences out of 15000+200000
+ 11916 strings out of 493320
+ 177626 string characters out of 3138948
+ 281004 words of memory out of 3000000
+ 14736 multiletter control sequences out of 15000+200000
  34028 words of font info for 83 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  34i,18n,40p,1677b,503s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2631,9 +2636,9 @@ m Files/MiKTeX 2.9/fonts/type1/public/txfonts/txex.pfb><C:/Program Files/MiKTeX
  2.9/fonts/type1/public/txfonts/txsy.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
 e1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr
 8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (94 pages, 6784776 bytes).
+Output written on main.pdf (99 pages, 7013397 bytes).
 PDF statistics:
- 1818 PDF objects out of 2073 (max. 8388607)
- 349 named destinations out of 1000 (max. 500000)
- 914 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1867 PDF objects out of 2073 (max. 8388607)
+ 355 named destinations out of 1000 (max. 500000)
+ 932 words of extra memory for PDF output out of 10000 (max. 10000000)
 
