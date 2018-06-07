@@ -41,30 +41,26 @@
 \contentsline {figure}{\numberline {3.12}{\ignorespaces Heatmap of cost as function of $k$ and $H_o$}}{52}{figure.3.12}
 \contentsline {figure}{\numberline {3.13}{\ignorespaces Cost function reduction in fmincon()}}{53}{figure.3.13}
 \contentsline {figure}{\numberline {3.14}{\ignorespaces UAV path from optimized GVF}}{54}{figure.3.14}
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Optimal Kinematic Path Around Circular Obstacle}}{55}{figure.3.15}
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Obstacle Diversion Waypoints}}{56}{figure.3.16}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Optimal Kinematic Path Around Circular Obstacle}}{56}{figure.3.15}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Obstacle Diversion Waypoints}}{57}{figure.3.16}
 \contentsline {figure}{\numberline {3.17}{\ignorespaces Cost impact versus number of waypoints}}{57}{figure.3.17}
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Path of UAV guided by guidance methods}}{58}{figure.3.18}
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Path of UAV guided by guidance methods}}{59}{figure.3.18}
 \contentsline {figure}{\numberline {3.19}{\ignorespaces Cost performance for various UAV guidance methods}}{59}{figure.3.19}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{60}{figure.3.20}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{60}{figure.3.20}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{60}{figure.3.20}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{60}{figure.3.20}
 \contentsline {figure}{\numberline {3.20}{\ignorespaces Micro quadcopter Crazyflie 2.0 by bitcraze}}{60}{figure.3.20}
 \contentsline {figure}{\numberline {3.21}{\ignorespaces Indoor quadcopter flight experimental layout}}{61}{figure.3.21}
 \contentsline {figure}{\numberline {3.22}{\ignorespaces Crazieflie client radio communication software}}{62}{figure.3.22}
 \contentsline {figure}{\numberline {3.23}{\ignorespaces Crazyflie Guidance and Control Software Framework}}{63}{figure.3.23}
-\contentsline {figure}{\numberline {3.24}{\ignorespaces Crazyflie Guidance and Control Software Framework}}{63}{figure.3.24}
-\contentsline {figure}{\numberline {3.25}{\ignorespaces Validation of Python straight path guidance overlaid with MATLAB}}{64}{figure.3.25}
-\contentsline {figure}{\numberline {3.26}{\ignorespaces Validation of Python obstacle guidance overlaid with MATLAB}}{65}{figure.3.26}
-\contentsline {figure}{\numberline {3.27}{\ignorespaces Validation of Python obstacle decay guidance overlaid with MATLAB}}{66}{figure.3.27}
-\contentsline {figure}{\numberline {3.28}{\ignorespaces Validation of Python summed guidance overlaid with MATLAB}}{66}{figure.3.28}
-\contentsline {figure}{\numberline {3.29}{\ignorespaces Validation of Python Dubins UAV route overlaid with MATLAB}}{67}{figure.3.29}
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Crazyflie Guidance and Control Software Framework}}{64}{figure.3.24}
+\contentsline {figure}{\numberline {3.25}{\ignorespaces Validation of Python straight path guidance overlaid with MATLAB}}{65}{figure.3.25}
+\contentsline {figure}{\numberline {3.26}{\ignorespaces Validation of Python summed guidance overlaid with MATLAB}}{65}{figure.3.26}
+\contentsline {figure}{\numberline {3.27}{\ignorespaces Validation of Python Dubins UAV route overlaid with MATLAB}}{66}{figure.3.27}
 \addvspace {\@lineskip }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Centered obstacle with small radius avoided by Dubin's UAV in simulation}}{70}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Centered obstacle with large radius avoided by Dubin's UAV in simulation}}{71}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Off centered obstacle with small radius avoided by Dubin's UAV in simulation}}{72}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Off centered obstacle with large radius avoided by Dubin's UAV in simulation}}{73}{figure.4.4}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Centered obstacle with small radius avoided by Dubin's UAV in simulation}}{69}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Centered obstacle with large radius avoided by Dubin's UAV in simulation}}{70}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Off centered obstacle with small radius avoided by Dubin's UAV in simulation}}{71}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Off centered obstacle with large radius avoided by Dubin's UAV in simulation}}{72}{figure.4.4}
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Simulated and experimental UAV routes for path centered obstacle with small radius}}{74}{figure.4.5}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces UAV speed versus time during flight experiment of scenario 1}}{75}{figure.4.6}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces State response plots for scenario 1}}{76}{figure.4.7}
@@ -73,17 +69,19 @@
 \contentsline {figure}{\numberline {4.10}{\ignorespaces Simulated and experimental UAV routes for off centered obstacle with large radius}}{79}{figure.4.10}
 \addvspace {\@lineskip }
 \addvspace {\@lineskip }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces }}{83}{figure.6.1}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces }}{84}{figure.6.2}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces }}{85}{figure.6.3}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces }}{86}{figure.6.4}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces }}{87}{figure.6.5}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces }}{88}{figure.6.6}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Validation of Python obstacle guidance overlaid with MATLAB}}{83}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Validation of Python obstacle decay guidance overlaid with MATLAB}}{84}{figure.6.2}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces }}{84}{figure.6.3}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces }}{85}{figure.6.4}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces }}{86}{figure.6.5}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces }}{87}{figure.6.6}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces }}{88}{figure.6.7}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces }}{89}{figure.6.8}
 \addvspace {\@lineskip }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces GVF converging and a) small circulation b) large circulation}}{89}{figure.7.1}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces GVF circular attractive field without normalization (a) and normalization (b)}}{90}{figure.7.2}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Repulsive Circular Field with Large Radius}}{91}{figure.7.3}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Repulsive Circular Field with Small Radius}}{92}{figure.7.4}
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Circular GVF without normalization (a) and with normalization (b)}}{93}{figure.7.5}
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Repulsive GVF a) no circulation $H_o=0$ and b) with circulation $H_o=1$}}{94}{figure.7.6}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces GVF converging and a) small circulation b) large circulation}}{90}{figure.7.1}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces GVF circular attractive field without normalization (a) and normalization (b)}}{91}{figure.7.2}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Repulsive Circular Field with Large Radius}}{92}{figure.7.3}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Repulsive Circular Field with Small Radius}}{93}{figure.7.4}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Circular GVF without normalization (a) and with normalization (b)}}{94}{figure.7.5}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Repulsive GVF a) no circulation $H_o=0$ and b) with circulation $H_o=1$}}{95}{figure.7.6}
 \addvspace {\@lineskip }
