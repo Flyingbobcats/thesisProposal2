@@ -13,3 +13,56 @@ keywords = {Optimal control, Optimization, Unmanned systems, Direct orthogonal c
 year = {2017},
 }
 
+
+
+
+
+
+
+@ARTICLE {,
+    author  = "Jay P. Wilhelm",
+    title   = "Circumnavigation and obstacle avoidance guidance for UAVs using Gradient Vector Fields",
+    journal = "AIAA",
+    year    = "2019"
+}
+
+
+@online{piccolo,
+	author = {Cloud Cap Technology},
+	title = {{}},
+	year = 2018,
+	url = {http://www.cloudcaptech.com/},
+	urldate = {2018-05-28}
+}
+
+
+@online{kestrel,
+	author = {Lockheed Martin},
+	title = {{Kestral Flight Systems And Autopilot}},
+	year = 2018,
+	url = {https://www.lockheedmartin.com/en-us/products/procerus-technologies/kestrel.html},
+	urldate = {2018-05-25}
+}
+
+@online{qgc,
+	author = {DroneCode},
+	title = {{QGroundControl - Intuitative and powerful ground control station for PX4 and ArduPilot UAVs}},
+	year = 2018,
+	url = {http://qgroundcontrol.com/},
+	urldate = {2018-05-25}
+}
+
+
+
+
+@book{austin2011unmanned,
+	title={Unmanned aircraft systems: UAVS design, development and deployment},
+	author={Austin, Reg},
+	volume={54},
+	year={2011},
+	publisher={John Wiley \& Sons}
+}
+
+
+
+
