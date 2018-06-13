@@ -42,8 +42,8 @@
 \usepackage{listings}
 \usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
 
-\floatstyle{boxed}
-\restylefloat{figure}
+%\floatstyle{boxed}
+%\restylefloat{figure}
 
 
 \definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
@@ -1861,7 +1861,7 @@ Guidance for converging and following a straight path with a GVF guidance method
 
 The GVF presented in Phase I for converging and following a straight path was demonstrated in simulation with a UAV modeled as a Dubin's vehicle with various target path circulation weights. It was shown that equating the path’s circulation weight to that of the UAV’s speed provides a balance between rise time and overshoot when converging and following a path. A repulsive GVF was added to the path following GVF and an array of decay radii and circulation weights were evaluated for their path deviation costs in simulation. An array of circulation weights and decay radii were evaluated for their cost to determine which combination results in an optimized path.  Evaluating a large array of parameters takes significant time and may be unique to each obstacle size, position, and UAV characteristics, therefore a numerical approach for minimizing the cost function for finding an optimized combination rapidly was presented. \\
 
-The optimized GVF guidance for path following and obstacle avoidance was implemented on a crazyflie 2.0 quadcopter flying under fixed wing constraints. Several path following and circular obstacle avoidance scenarios were tested consisting of path centered, off center, and multiple radii obstacles. Flight test and simulation flight routes were compared for both their general behavior and costs. The quadcopter followed the same general path as the simulated UAV, however had an average of $30 \%$ higher cost compared to the simulated path. The difference in cost is attributed to both the lack of a velocity controller and the high process and measurement noise when measuring the UAV’s velocity. 
+The optimized GVF guidance for path following and obstacle avoidance was implemented on a crazyflie 2.0 quadcopter flying under fixed wing constraints. Several path following and circular obstacle avoidance scenarios were tested consisting of path centered, off center, and multiple radii obstacles. Flight test and simulation flight routes were compared for both their general behavior and costs. The quadcopter followed the same general path as the simulated UAV, however had an average of $30 \%$ higher cost compared to the simulated path. The difference in cost is attributed to both the lack of a velocity controller and the high process and measurement noise when measuring the UAV’s velocity.  \\
 
 
 UAVs typically rely on path planning algorithms to provide an obstacle free and flyable path prior to flight. In the event that unplanned obstacles are encountered a new path may have to be re-generated which may not be possible if communication with a ground station is lost. Path following and obstacle avoidance was achieved without the need to re-plan the mission path by using optimized GVF decay radius and circulation parameters. Simulations were conducted with a fixed wing UAV modeled as a Dubin's vehicle using the GVF guidance and circulation and decay radius were selected which minimized a path deviation cost function. Singularities in the GVF were characterized and located numerically. The optimized GVF guidance was implemented in an indoor quadcopter with turn-rate constraints to emulate a fixed wing UAV. Results comparing simulations and indoor flight tests were compared. \\
