@@ -3,50 +3,50 @@
 \contentsline {chapter}{Acknowledgments}{5}{schapter.3}
 \contentsline {chapter}{List of Figures}{8}{schapter.4}
 \contentsline {chapter}{List of Symbols}{10}{schapter.5}
-\contentsline {chapter}{List of Acronyms}{11}{schapter.6}
-\contentsline {chapter}{\numberline {1}Introduction}{12}{chapter.1}
-\contentsline {section}{\numberline {1.1}Motivation and Problem Statement}{12}{section.1.1}
-\contentsline {section}{\numberline {1.2}Methods Overview}{13}{section.1.2}
-\contentsline {section}{\numberline {1.3}Phase I}{13}{section.1.3}
-\contentsline {section}{\numberline {1.4}Phase II}{13}{section.1.4}
-\contentsline {section}{\numberline {1.5}Phase III}{14}{section.1.5}
-\contentsline {section}{\numberline {1.6}Summary of Objectives}{14}{section.1.6}
-\contentsline {chapter}{\numberline {2}Literature Review}{16}{chapter.2}
-\contentsline {section}{\numberline {2.1}Literature Review Introduction}{16}{section.2.1}
-\contentsline {section}{\numberline {2.2}Unmanned Aerial Vehicles}{16}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Ground Stations}{17}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Autopilot}{18}{subsection.2.2.2}
-\contentsline {section}{\numberline {2.3}Dubins Vehicle Model}{19}{section.2.3}
-\contentsline {section}{\numberline {2.4}UAV Guidance}{20}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Potential Field}{20}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}Lyapunov Vector Fields}{25}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}Path Planning Vector Fields}{29}{subsection.2.4.3}
-\contentsline {subsection}{\numberline {2.4.4}Gradient Vector Field}{31}{subsection.2.4.4}
-\contentsline {section}{\numberline {2.5}Literature Review Summary}{35}{section.2.5}
-\contentsline {chapter}{\numberline {3}Methodology}{36}{chapter.3}
-\contentsline {section}{\numberline {3.1}Introduction to Methodology}{36}{section.3.1}
-\contentsline {section}{\numberline {3.2}Phase I: Gradient vector field singularity detection}{36}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Path Following Vector Field Guidance}{37}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Constructing an Avoidance Vector Field}{39}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Summed Guidance and Singularity Definition}{42}{subsection.3.2.3}
-\contentsline {section}{\numberline {3.3}Phase II: Optimization of Obstacle Field}{46}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Vehicle and Obstacle Definition}{47}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Obstacle on planned path}{50}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Optimal Avoidance Route for Straight Path}{57}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}Optimal Avoidance Path and Waypoints}{58}{subsection.3.3.4}
-\contentsline {subsection}{\numberline {3.3.5}Worst Case Avoidance Scenario}{59}{subsection.3.3.5}
-\contentsline {section}{\numberline {3.4}Phase III}{61}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Experimental Overview}{62}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Crazyflie 2.0}{63}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Python Guidance and Control Ground Station}{64}{subsection.3.4.3}
-\contentsline {section}{\numberline {3.5}Summary of Methodology}{68}{section.3.5}
-\contentsline {chapter}{\numberline {4}Results}{70}{chapter.4}
-\contentsline {section}{\numberline {4.1}Introduction to Results}{70}{section.4.1}
-\contentsline {section}{\numberline {4.2}Phase I \& II}{70}{section.4.2}
-\contentsline {section}{\numberline {4.3}Phase III}{75}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Summary of results}{83}{subsection.4.3.1}
-\contentsline {chapter}{\numberline {5}Conclusions}{84}{chapter.5}
-\contentsline {chapter}{\numberline {6}Appendix - Methodology Phase I}{86}{chapter.6}
-\contentsline {chapter}{\numberline {7}Appendix - Methodology Phase III}{89}{chapter.7}
-\contentsline {chapter}{\numberline {8}Appendix - Results Phase III}{90}{chapter.8}
-\contentsline {chapter}{References}{93}{schapter.7}
+\contentsline {chapter}{List of Acronyms}{12}{schapter.6}
+\contentsline {chapter}{\numberline {1}Introduction}{13}{chapter.1}
+\contentsline {section}{\numberline {1.1}Motivation and Problem Statement}{13}{section.1.1}
+\contentsline {section}{\numberline {1.2}Methods Overview}{14}{section.1.2}
+\contentsline {section}{\numberline {1.3}Phase I}{14}{section.1.3}
+\contentsline {section}{\numberline {1.4}Phase II}{14}{section.1.4}
+\contentsline {section}{\numberline {1.5}Phase III}{15}{section.1.5}
+\contentsline {section}{\numberline {1.6}Summary of Objectives}{15}{section.1.6}
+\contentsline {chapter}{\numberline {2}Literature Review}{17}{chapter.2}
+\contentsline {section}{\numberline {2.1}Literature Review Introduction}{17}{section.2.1}
+\contentsline {section}{\numberline {2.2}Unmanned Aerial Vehicles}{17}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Ground Stations}{18}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Autopilot}{19}{subsection.2.2.2}
+\contentsline {section}{\numberline {2.3}Dubins Vehicle Model}{20}{section.2.3}
+\contentsline {section}{\numberline {2.4}UAV Guidance}{21}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Potential Field}{21}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Lyapunov Vector Fields}{26}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Path Planning Vector Fields}{30}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.4}Gradient Vector Field}{32}{subsection.2.4.4}
+\contentsline {section}{\numberline {2.5}Literature Review Summary}{36}{section.2.5}
+\contentsline {chapter}{\numberline {3}Methodology}{38}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introduction to Methodology}{38}{section.3.1}
+\contentsline {section}{\numberline {3.2}Phase I: Gradient vector field singularity detection}{38}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Path Following Vector Field Guidance}{39}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Constructing an Avoidance Vector Field}{41}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Summed Guidance and Singularity Definition}{44}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}Phase II: Optimization of Obstacle Field}{48}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Vehicle and Obstacle Definition}{49}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Obstacle on planned path}{52}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Optimal Avoidance Route for Straight Path}{59}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Avoidance Path and Waypoints}{60}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Worst Case Avoidance Scenario}{61}{subsection.3.3.5}
+\contentsline {section}{\numberline {3.4}Phase III}{64}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Experimental Overview}{64}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Crazyflie 2.0}{66}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Python Guidance and Control Ground Station}{67}{subsection.3.4.3}
+\contentsline {section}{\numberline {3.5}Summary of Methodology}{71}{section.3.5}
+\contentsline {chapter}{\numberline {4}Results}{73}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introduction to Results}{73}{section.4.1}
+\contentsline {section}{\numberline {4.2}Phase I \& II}{73}{section.4.2}
+\contentsline {section}{\numberline {4.3}Phase III}{78}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Summary of results}{86}{subsection.4.3.1}
+\contentsline {chapter}{\numberline {5}Conclusions}{87}{chapter.5}
+\contentsline {chapter}{\numberline {6}Appendix - Methodology Phase I}{89}{chapter.6}
+\contentsline {chapter}{\numberline {7}Appendix - Methodology Phase III}{92}{chapter.7}
+\contentsline {chapter}{\numberline {8}Appendix - Results Phase III}{93}{chapter.8}
+\contentsline {chapter}{References}{96}{schapter.7}
