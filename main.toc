@@ -35,18 +35,18 @@
 \contentsline {subsection}{\numberline {3.3.3}Optimal Avoidance Route for Straight Path}{59}{subsection.3.3.3}
 \contentsline {subsection}{\numberline {3.3.4}Avoidance Path and Waypoints}{60}{subsection.3.3.4}
 \contentsline {subsection}{\numberline {3.3.5}Worst Case Avoidance Scenario}{61}{subsection.3.3.5}
-\contentsline {section}{\numberline {3.4}Phase III}{64}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Experimental Overview}{64}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Crazyflie 2.0}{66}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Python Guidance and Control Ground Station}{67}{subsection.3.4.3}
-\contentsline {section}{\numberline {3.5}Summary of Methodology}{71}{section.3.5}
-\contentsline {chapter}{\numberline {4}Results}{73}{chapter.4}
-\contentsline {section}{\numberline {4.1}Introduction to Results}{73}{section.4.1}
-\contentsline {section}{\numberline {4.2}Phase I \& II}{73}{section.4.2}
-\contentsline {section}{\numberline {4.3}Phase III}{78}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Summary of results}{86}{subsection.4.3.1}
-\contentsline {chapter}{\numberline {5}Conclusions}{87}{chapter.5}
-\contentsline {chapter}{\numberline {6}Appendix - Methodology Phase I}{89}{chapter.6}
-\contentsline {chapter}{\numberline {7}Appendix - Methodology Phase III}{92}{chapter.7}
-\contentsline {chapter}{\numberline {8}Appendix - Results Phase III}{93}{chapter.8}
-\contentsline {chapter}{References}{96}{schapter.7}
+\contentsline {section}{\numberline {3.4}Phase III: Flight tests}{66}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Experimental Overview}{66}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Crazyflie 2.0}{68}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Python Guidance and Control Ground Station}{69}{subsection.3.4.3}
+\contentsline {section}{\numberline {3.5}Summary of Methodology}{72}{section.3.5}
+\contentsline {chapter}{\numberline {4}Results}{74}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introduction to Results}{74}{section.4.1}
+\contentsline {section}{\numberline {4.2}Phase I \& II}{74}{section.4.2}
+\contentsline {section}{\numberline {4.3}Phase III}{79}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Summary of results}{87}{subsection.4.3.1}
+\contentsline {chapter}{\numberline {5}Conclusions}{88}{chapter.5}
+\contentsline {chapter}{\numberline {6}Appendix - Methodology Phase I}{90}{chapter.6}
+\contentsline {chapter}{\numberline {7}Appendix - Methodology Phase III}{93}{chapter.7}
+\contentsline {chapter}{\numberline {8}Appendix - Results Phase III}{94}{chapter.8}
+\contentsline {chapter}{References}{97}{schapter.7}

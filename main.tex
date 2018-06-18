@@ -42,8 +42,8 @@
 \usepackage{listings}
 \usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
 
-%\floatstyle{boxed}
-%\restylefloat{figure}
+\floatstyle{boxed}
+\restylefloat{figure}
 
 
 \definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
@@ -1598,8 +1598,27 @@ A gradient vector field for path following and circular obstacle avoidance was o
 
 
 
+GVF guidance provided a low cost avoidance that quickly returns to the planned path, however the time to reach a solution increases as the size of the obstacle increases. Failure to reach a solution before the obstacle is encountered may result in the UAV violating the no-fly zone or colliding with the obstacle. It is beneficial to construct lookup tables for both circulation weight $H_o$ and obstacle decay radius $k$ that can be referenced with virtually no computation time to select the appropriate field parameters when an obstacle is encountered. Circulation and decay radius are dependent on the obstacle's radius and the lateral position with respect to the path. Expressing the obstacle's radius and lateral position in terms of positive multipliers of the UAV's turning radius allows a single lookup table to be used for multiple UAV speeds, resulting in less scenarios to be evaluated. Below is an example of a lookup table where $n$ represents the radius of the obstacle in terms of UAV's turning radius and $c$ represents the lateral position of the obstacle in multiples of UAV turning radius. The lookup tables generated for obstacle radii $n = [1,5]$ and lateral position $c = [0,0.9]$ are shown in Figure \ref{fig:lookupTables}.
 
-\section{Phase III}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=12cm]{PaperFigures/Methods/LookupTable/circulationTable}
+	\caption{Optimized obstacle field circulation $H_o$ surface for non-dimensional parameters}
+	\label{fig:circulationtable}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=10cm]{PaperFigures/Methods/LookupTable/decayRadiusTable}
+	\caption{Optimized obstacle field decay radius $k$ surface for non-dimensional parameters}
+	\label{fig:decayradiustable}
+\end{figure}
+
+
+
+
+
+\section{Phase III: Flight tests}
 \textbf{The objective of Phase III is to demonstrate the optimized gradient vector field guidance presented in Phase II on multirotor UAV flying with fixed wing turn-rate constraints.} An overview of the experimental setup will be given for both the hardware and software that was implemented to achieve GVF guidance on a crazyflie quadcopter. Python and MATLAB GVF guidances are compared to confirm that they are equivalent.
 
 \subsection{Experimental Overview}
