@@ -1,6 +1,19 @@
 \begin{thebibliography}{10}
 \newcommand{\enquote}[1]{``#1''}
 
+\bibitem{fernandez_galarreta_uav-based_2015}
+Fernandez~Galarreta, J., Kerle, N., and Gerke, M., \enquote{{UAV}-based urban
+  structural damage assessment using object-based image analysis and semantic
+  reasoning,} {\em Natural Hazards and Earth System Science\/}, Vol.~15, No.~6,
+  June 2015, pp.~1087--1101.
+
+\bibitem{remondino_uav_2012}
+Remondino, F., Barazzetti, L., Nex, F., Scaioni, M., and Sarazzi, D.,
+  \enquote{{UAV} {PHOTOGRAMMETRY} {FOR} {MAPPING} {AND} 3D {MODELING} –
+  {CURRENT} {STATUS} {AND} {FUTURE} {PERSPECTIVES},} {\em ISPRS - International
+  Archives of the Photogrammetry, Remote Sensing and Spatial Information
+  Sciences\/}, Vol.~XXXVIII-1/C22, Sept. 2012, pp.~25--31.
+
 \bibitem{ariyur_autonomous_2008}
 Ariyur, K.~B. and Fregene, K.~O., \enquote{Autonomous tracking of a ground
   vehicle by a {UAV},} {\em American {Control} {Conference}, 2008\/}, IEEE,
@@ -15,6 +28,43 @@ Teuliere, C., Eck, L., and Marchand, E., \enquote{Chasing a moving target from
 Frew, E.~W., \enquote{Cooperative standoff tracking of uncertain moving targets
   using active robot networks,} {\em Robotics and {Automation}, 2007 {IEEE}
   {International} {Conference} on\/}, IEEE, 2007, pp. 3277--3282.
+
+\bibitem{oh_coordinated_2013}
+Oh, H., Kim, S., Shin, H.-S., Tsourdos, A., and White, B., \enquote{Coordinated
+  standoff tracking of groups of moving targets using multiple {UAVs},} {\em
+  Control \& {Automation} ({MED}), 2013 21st {Mediterranean} {Conference}
+  on\/}, IEEE, 2013, pp. 969--977.
+
+\bibitem{hyondong_oh_coordinated_2015}
+{Hyondong Oh}, {Seungkeun Kim}, {Hyo-sang Shin}, and Tsourdos, A.,
+  \enquote{Coordinated standoff tracking of moving target groups using multiple
+  {UAVs},} {\em IEEE Transactions on Aerospace and Electronic Systems\/},
+  Vol.~51, No.~2, April 2015, pp.~1501--1514.
+
+\bibitem{oliveira_moving_2016}
+Oliveira, T., Aguiar, A.~P., and Encarnacao, P., \enquote{Moving {Path}
+  {Following} for {Unmanned} {Aerial} {Vehicles} {With} {Applications} to
+  {Single} and {Multiple} {Target} {Tracking} {Problems},} {\em IEEE
+  Transactions on Robotics\/}, Vol.~32, No.~5, Oct. 2016, pp.~1062--1078.
+
+\bibitem{osborne_waypoint_2005}
+Osborne, J. and Rysdyk, R., \enquote{Waypoint {Guidance} for {Small} {UAVs} in
+  {Wind},} American Institute of Aeronautics and Astronautics, Sept. 2005.
+
+\bibitem{rhee2010tight}
+Rhee, I., Park, S., and Ryoo, C.-K., \enquote{A tight path following algorithm
+  of an UAS based on PID control,} {\em SICE Annual Conference 2010,
+  Proceedings of\/}, IEEE, 2010, pp. 1270--1273.
+
+\bibitem{park2007performance}
+Park, S., Deyst, J., and How, J.~P., \enquote{Performance and lyapunov
+  stability of a nonlinear path following guidance method,} {\em Journal of
+  Guidance, Control, and Dynamics\/}, Vol.~30, No.~6, 2007, pp.~1718--1728.
+
+\bibitem{ratnoo_adaptive_2011}
+Ratnoo, A., Sujit, P., and Kothari, M., \enquote{Adaptive {Optimal} {Path}
+  {Following} for {High} {Wind} {Flights},} {\em IFAC Proceedings Volumes\/},
+  Vol.~44, No.~1, Jan. 2011, pp.~12985--12990.
 
 \bibitem{griffiths_vector_2006}
 Griffiths, S., \enquote{Vector {Field} {Approach} for {Curved} {Path}
@@ -50,18 +100,6 @@ Wilhelm, J.~P., \enquote{Circumnavigation and obstacle avoidance guidance for
 
 \bibitem{bone_uavs_2003}
 Bone, E., \enquote{{UAVs} backbround and issues for congress.pdf,} 2003.
-
-\bibitem{oh_coordinated_2013}
-Oh, H., Kim, S., Shin, H.-S., Tsourdos, A., and White, B., \enquote{Coordinated
-  standoff tracking of groups of moving targets using multiple {UAVs},} {\em
-  Control \& {Automation} ({MED}), 2013 21st {Mediterranean} {Conference}
-  on\/}, IEEE, 2013, pp. 969--977.
-
-\bibitem{hyondong_oh_coordinated_2015}
-{Hyondong Oh}, {Seungkeun Kim}, {Hyo-sang Shin}, and Tsourdos, A.,
-  \enquote{Coordinated standoff tracking of moving target groups using multiple
-  {UAVs},} {\em IEEE Transactions on Aerospace and Electronic Systems\/},
-  Vol.~51, No.~2, April 2015, pp.~1501--1514.
 
 \bibitem{wise_uav_2006}
 Wise, R.~A. and Rysdyk, R.~T., \enquote{{UAV} coordination for autonomous
@@ -118,12 +156,6 @@ Nelson, D., Barber, D., McLain, T., and Beard, R., \enquote{Vector {Field}
 Manjunath, A., Mehrok, P., Sharma, R., and Ratnoo, A., \enquote{Application of
   virtual target based guidance laws to path following of a quadrotor {UAV},}
   IEEE, June 2016, pp. 252--260.
-
-\bibitem{sujit_unmanned_2014}
-Sujit, P., Saripalli, S., and Sousa, J.~B., \enquote{Unmanned {Aerial}
-  {Vehicle} {Path} {Following}: {A} {Survey} and {Analysis} of {Algorithms} for
-  {Fixed}-{Wing} {Unmanned} {Aerial} {Vehicless},} {\em IEEE Control
-  Systems\/}, Vol.~34, No.~1, Feb. 2014, pp.~42--59.
 
 \bibitem{khatib_real-time_1986}
 Khatib, O., \enquote{Real-time obstacle avoidance for manipulators and mobile
