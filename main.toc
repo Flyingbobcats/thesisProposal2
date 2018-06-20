@@ -46,7 +46,10 @@
 \contentsline {section}{\numberline {4.3}Phase III}{79}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}Summary of results}{87}{subsection.4.3.1}
 \contentsline {chapter}{\numberline {5}Conclusions}{88}{chapter.5}
-\contentsline {chapter}{\numberline {6}Appendix - Methodology Phase I}{90}{chapter.6}
-\contentsline {chapter}{\numberline {7}Appendix - Methodology Phase III}{93}{chapter.7}
-\contentsline {chapter}{\numberline {8}Appendix - Results Phase III}{94}{chapter.8}
-\contentsline {chapter}{References}{97}{schapter.7}
+\setcounter {tocdepth}{0}
+\contentsline {chapter}{Appendix A: Methodology Phase I}{90}{appendix.A}
+\contentsline {chapter}{Appendix B: Methodology Phase III}{93}{appendix.B}
+\contentsline {chapter}{Appendix C: Appendix - Results Phase III}{94}{appendix.C}
+\contentsline {chapter}{Appendix D: Optimization MATLAB source}{97}{appendix.D}
+\contentsline {chapter}{Appendix E: Vector Field Construction source}{101}{appendix.E}
+\contentsline {chapter}{References}{107}{schapter.7}

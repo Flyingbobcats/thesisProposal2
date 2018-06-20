@@ -89,6 +89,19 @@ Gonçalves, V.~M., Pimenta, L.~C., Maia, C.~A., Dutra, B.~C., and Pereira,
   in \$ n \$-dimensions,} {\em IEEE Transactions on Robotics\/}, Vol.~26,
   No.~4, 2010, pp.~647--659.
 
+\bibitem{nelson_cooperative_2005}
+Nelson, D.~R., \enquote{Cooperative control of miniature air vehicles,} 2005.
+
+\bibitem{nelson_vector_2006}
+Nelson, D.~R., Barber, D.~B., McLain, T.~W., and Beard, R.~W., \enquote{Vector
+  field path following for small unmanned air vehicles,} {\em American
+  {Control} {Conference}, 2006\/}, IEEE, 2006, pp. 7--pp.
+
+\bibitem{nelson_vector_2007}
+Nelson, D., Barber, D., McLain, T., and Beard, R., \enquote{Vector {Field}
+  {Path} {Following} for {Miniature} {Air} {Vehicles},} {\em IEEE Transactions
+  on Robotics\/}, Vol.~23, No.~3, June 2007, pp.~519--529.
+
 \bibitem{panagou_motion_2014}
 Panagou, D., \enquote{Motion planning and collision avoidance using navigation
   vector fields,} {\em Robotics and {Automation} ({ICRA}), 2014 {IEEE}
@@ -124,6 +137,11 @@ Beard, R.~W. and McLain, T.~W., {\em Small unmanned aircraft: theory and
 DroneCode, \enquote{{QGroundControl - Intuitative and powerful ground control
   station for PX4 and ArduPilot UAVs},} 2018.
 
+\bibitem{wilhelm_direct_2017}
+Wilhelm, J., Clem, G., and Eberhart, G., \enquote{Direct {Entry} {Minimal}
+  {Path} {UAV} {Loitering} {Path} {Planning},} {\em Aerospace\/}, Vol.~4,
+  No.~2, April 2017, pp.~23.
+
 \bibitem{piccolo}
 Technology, C.~C., \enquote{{},} 2018.
 
@@ -138,19 +156,6 @@ de~Marina, H.~G., Kapitanyuk, Y.~A., Bronz, M., Hattenberger, G., and Cao, M.,
   \enquote{Guidance algorithm for smooth trajectory tracking of a fixed wing
   {UAV} flying in wind flows,} {\em Robotics and {Automation} ({ICRA}), 2017
   {IEEE} {International} {Conference} on\/}, IEEE, 2017, pp. 5740--5745.
-
-\bibitem{nelson_cooperative_2005}
-Nelson, D.~R., \enquote{Cooperative control of miniature air vehicles,} 2005.
-
-\bibitem{nelson_vector_2006}
-Nelson, D.~R., Barber, D.~B., McLain, T.~W., and Beard, R.~W., \enquote{Vector
-  field path following for small unmanned air vehicles,} {\em American
-  {Control} {Conference}, 2006\/}, IEEE, 2006, pp. 7--pp.
-
-\bibitem{nelson_vector_2007}
-Nelson, D., Barber, D., McLain, T., and Beard, R., \enquote{Vector {Field}
-  {Path} {Following} for {Miniature} {Air} {Vehicles},} {\em IEEE Transactions
-  on Robotics\/}, Vol.~23, No.~3, June 2007, pp.~519--529.
 
 \bibitem{manjunath_application_2016}
 Manjunath, A., Mehrok, P., Sharma, R., and Ratnoo, A., \enquote{Application of

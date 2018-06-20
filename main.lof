@@ -71,21 +71,24 @@
 \contentsline {figure}{\numberline {4.10}{\ignorespaces Simulated and experimental UAV routes for off centered obstacle with large radius}}{86}{figure.4.10}
 \addvspace {\@lineskip }
 \addvspace {\@lineskip }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces GVF circular attractive field without normalization (a) and normalization (b)}}{90}{figure.6.1}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Repulsive Circular Field with Large Radius}}{90}{figure.6.2}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Repulsive Circular Field with Small Radius}}{91}{figure.6.3}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Circular GVF without normalization (a) and with normalization (b)}}{91}{figure.6.4}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Repulsive GVF a) no circulation $H_o=0$ and b) with circulation $H_o=1$}}{92}{figure.6.5}
 \addvspace {\@lineskip }
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{93}{figure.7.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{93}{figure.7.1}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{93}{figure.7.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{93}{figure.7.1}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{93}{figure.7.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{93}{figure.7.1}
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Validation of Python obstacle guidance overlaid with MATLAB}}{93}{figure.7.1}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Validation of Python obstacle decay guidance overlaid with MATLAB}}{93}{figure.7.2}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces GVF circular attractive field without normalization (a) and normalization (b)}}{90}{figure.A.1}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Repulsive Circular Field with Large Radius}}{90}{figure.A.2}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Repulsive Circular Field with Small Radius}}{91}{figure.A.3}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Circular GVF without normalization (a) and with normalization (b)}}{91}{figure.A.4}
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Repulsive GVF a) no circulation $H_o=0$ and b) with circulation $H_o=1$}}{92}{figure.A.5}
 \addvspace {\@lineskip }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Experimental Scenario 2 UAV Speed and Controller Response}}{94}{figure.8.1}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Experimental Scenario 3 UAV Speed and Controller Response}}{95}{figure.8.2}
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Experimental Scenario 4 UAV Speed and Controller Response}}{96}{figure.8.3}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{93}{figure.B.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{93}{figure.B.1}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{93}{figure.B.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{93}{figure.B.1}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{93}{figure.B.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{93}{figure.B.1}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Validation of Python obstacle guidance overlaid with MATLAB}}{93}{figure.B.1}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Validation of Python obstacle decay guidance overlaid with MATLAB}}{93}{figure.B.2}
+\addvspace {\@lineskip }
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Experimental Scenario 2 UAV Speed and Controller Response}}{94}{figure.C.1}
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Experimental Scenario 3 UAV Speed and Controller Response}}{95}{figure.C.2}
+\contentsline {figure}{\numberline {C.3}{\ignorespaces Experimental Scenario 4 UAV Speed and Controller Response}}{96}{figure.C.3}
+\addvspace {\@lineskip }
+\addvspace {\@lineskip }
