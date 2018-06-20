@@ -77,7 +77,9 @@
 \graphicspath{{figures/}} % Allows graphics files to be stored in a
                           % separate directory
 \usepackage{fancyref}
-\usepackage{}
+
+
+
 
 %% Required front matter definitions
 
@@ -94,7 +96,7 @@
                                     %      and Computer Science
 \college   {Russ College of Engineering and Technology}   % e.g. Russ College of Engineering and
                                      %      Technology
-\abstract  {Unmanned Aerial Vehicles (UAVs) are guided to fly along straight line, obstacle free paths that connect pre-planned waypoints. Initially undiscovered obstacles encountered during flight may require waypoints to be re-planned. Obstacles could be avoided without the need to re-plan mission waypoints by implementing vector field path following in conjunction with repulsive obstacle vector fields. Vector fields that combine weighted repulsive and attractive components to provide an optimized obstacle avoidance guidance was investigated to avoid singularities and improve path tracking performance compared to potential field.}
+\abstract  {Unmanned Aerial Vehicles (UAVs) conventionally navigate by following a series of pre-planned waypoints. When flying, obstacles such as no-fly zones or other aircraft, the vehicle's path or waypoints may need to be re-planned. Waypoint guidance can be used to avoid obstacles which is typically generated off-line and relayed to the UAV requiring active communications. Vector Fields (VFs) that are generated based on a desired path can provide guidance around a newly discovered obstacle without the need for a re-plan. VF convergence and circulation components were optimized to minimize deviation from a desired path when guiding around a circular obstacle. Results indicated that the developed VF obstacle avoidance optimizer has similar path deviation as waypoints without the need for re-planning.}
  
 
 %% Optional front matter definitions.  Delete or comment out if not needed
@@ -103,7 +105,7 @@
 
 \dedication{In memory of Jack Clem}
 %
-\acknowledgments{Throughout my graduate studies I have had the privilege of working with many unique and sophisticated people. First and foremost, I would like to thank my advisor Dr. Jay Wilhelm for his seemingly limitless academic support. Without his leadership this work would not have been completed. I would like to also thank my committee members for their time, suggestions, and stimulating discussions in regards to the contents of this research.  \\
+\acknowledgments{Throughout my graduate studies I have had the privilege of working with many unique and sophisticated people. First and foremost, I would like to thank my advisor Dr. Jay Wilhelm for his seemingly limitless academic support. Without his leadership this work would not have been completed. I would like to also thank my committee members, Dr. Casbeer, Dr. Williams, and Dr. Uijt de Haag for their time, suggestions, and stimulating discussions in regards to the contents of this research.  \\
 To my first lab colleague, Gina, your mentoring and friendship were invaluable and I cannot see myself completing this program without  your support and humor. Hunter and Travis, your assistance with debugging the control software was vital to the success of this project. My roommates, Sean, Justin, and Jacob, you all provided welcome distractions. To my mother, who I grew closer with over the past few years, this is for you. Lastly, I would like to thank my best friend Emily whose love and support constantly reminded me why I continued my education to better myself. 
 }
 %% If you prefer to provide "acknowledgements" instead (note the added "e"
@@ -244,16 +246,16 @@ GVF & Gradient Vector Field & \\
 \section{Motivation and Problem Statement}
 
 
-Unmanned aerial vehicles (UAV)s are pilotless aircraft used by military, police, and civilian communities for tasks such as damage assessment \cite{fernandez_galarreta_uav-based_2015}, surveying \cite{remondino_uav_2012}, and target tracking \cite{ariyur_autonomous_2008,teuliere_chasing_2011,frew_cooperative_2007,oh_coordinated_2013,hyondong_oh_coordinated_2015,oliveira_moving_2016}. Many of these tasks depend on the UAVs ability to autonomously follow a path while potentially avoiding obstacles and no-fly zones. UAV paths are typically followed by implementing heading guidance systems such as waypoint \cite{osborne_waypoint_2005}, Proportional-Integral-Derivative (PID) \cite{rhee2010tight}, non-linear guidance laws \cite{park2007performance}, or Linear Quadratic Regulator (LQR) \cite{ratnoo_adaptive_2011}. Conventional path following guidance systems are typically not capable of avoiding obstacles without partially or completely re-planning the path. Vehicle paths are typically generated on a remote ground station and relayed to the UAV’s autopilot which may be impossible under certain conditions, such as flying beyond line-of-sight. Heading guidance that accomplishes path following while avoiding obstacles without the need for re-planning waypoints may be beneficial. Avoiding obstacles without path re-planning has been achieved by vector field guidance \cite{frew_cooperative_2007,griffiths_vector_2006,goncalves_artificial_2009,goncalves_circulation_2010,goncalves_vector_2010} guidance.\\
+Unmanned aerial vehicles (UAV)s are pilotless aircraft used by military, police, and civilian communities for tasks such as damage assessment \cite{fernandez_galarreta_uav-based_2015}, surveying \cite{remondino_uav_2012}, and target tracking \cite{ariyur_autonomous_2008,teuliere_chasing_2011,frew_cooperative_2007,oh_coordinated_2013,hyondong_oh_coordinated_2015,oliveira_moving_2016}. Many of these tasks depend on the UAVs ability to autonomously follow a path while potentially avoiding obstacles and no-fly zones. UAV paths are typically followed by implementing heading guidance systems such as waypoint \cite{osborne_waypoint_2005}, Proportional-Integral-Derivative (PID) \cite{rhee2010tight}, non-linear guidance laws \cite{park2007performance}, or Linear Quadratic Regulator (LQR) \cite{ratnoo_adaptive_2011}. Conventional path following guidance systems are typically not capable of avoiding obstacles without partially or completely re-planning the mission path. Vehicle paths are typically generated on a remote ground station and relayed to the UAV’s autopilot which may be impossible under certain conditions, such as flying beyond line-of-sight. Heading guidance that accomplishes path following while avoiding obstacles without the need for re-planning waypoints may be beneficial. Methods of minimally deviating from a planned mission path when new obstacles are encountered are desired. Avoiding obstacles without path re-planning has been achieved by vector field guidance \cite{frew_cooperative_2007,griffiths_vector_2006,goncalves_artificial_2009,goncalves_circulation_2010,goncalves_vector_2010} guidance.\\
 
  
 
-Vector Field (VF) guidance is a method that is mainly used for path following \cite{nelson_cooperative_2005,nelson_vector_2006,nelson_vector_2007,griffiths_vector_2006,goncalves_artificial_2009,goncalves_circulation_2010,goncalves_vector_2010} and can be useful for obstacle avoidance \cite{panagou_motion_2014,wilhelm_2019}. VFs can produce continuous heading vectors that can be used to guide a UAV to coverage and follow a path. Vectors are calculated by summing together convergence and circulation terms that are weighted by static scalars. Obstacles can be represented as repulsive VFs that direct the UAV away from the no-fly zone. Strictly repulsive VFs do not always route the UAV around an obstacle and can cause singularities, small regions where path following and obstacle vectors cancel. Modifying repulsive VFs to include circulation and an appropriate decay radius may be used to produce an optimal guidance. \textbf{A method for optimizing obstacle field decay radius and circulation with singularity detection is the contribution of this thesis.}
+Vector Field (VF) guidance is a method that is mainly used for path following \cite{nelson_cooperative_2005,nelson_vector_2006,nelson_vector_2007,griffiths_vector_2006,goncalves_artificial_2009,goncalves_circulation_2010,goncalves_vector_2010} and can be useful for obstacle avoidance \cite{panagou_motion_2014,wilhelm_2019}. VFs can produce continuous heading vectors that can be used to guide a UAV to coverage and follow a path. Vectors are calculated by summing together convergence and circulation terms that are weighted by static scalars. Obstacles can be represented as repulsive VFs that direct the UAV away from the no-fly zone. Strictly repulsive VFs do not always route the UAV around an obstacle and can cause singularities, small regions where path following and obstacle vectors cancel. Modifying repulsive VFs to include circulation and an appropriate decay radius may be used to produce an optimal guidance. \textbf{Problem Statement: Utilize vector field guidance to enable  optimal obstacle avoidance without re-planning waypoints}
  \pagebreak
  
  \section{Methods Overview}
  
- This research was conducted in three phases consisting of numerical simulations and indoor flight experiments. Phase I describes the construction of path following and repulsive gradient vector fields (GVFs) followed by the characterization of regions of null guidance in summed fields, called singularities. Phase II investigated a numerical method for optimizing obstacle field decay radius and circulation weight which minimizes a path deviation cost function. Lastly, the optimized GVF was implemented on an indoor flying quadcopter with fixed wing Dubin's constraints. Flight tests and simulation costs were compared. A summary of each phase's objective is provided below.
+ This research was conducted in three phases consisting of numerical simulations and indoor flight experiments. Phase I describes the construction of path following and repulsive gradient vector fields (GVFs) followed by the characterization of regions of null guidance in summed fields, called singularities. Phase II investigated a numerical method for optimizing obstacle field decay radius and circulation weight which minimizes a path deviation cost function. Lastly, the optimized GVF was implemented on an indoor flying quadcopter with Dubin's constraints in order to emulate a fixed wing aircraft. Flight tests and simulation costs were compared. A summary of each phase's objective is provided below.
  
  
 
@@ -263,10 +265,10 @@ Vector Field (VF) guidance is a method that is mainly used for path following \c
  
  
  \section{Phase II}
- \textbf{Determine a combination of circulation and decay radius for a circular obstacle GVF that produces an optimized obstacle avoidance.} A UAV modeled as a Dubin's vehicle is used to demonstrate GVF guidance for converging and following a straight path. A worst case collision scenario is presented where an obstacle centered on a planned path is to be avoided. Obstacle GVF decay radius and circulation are optimized to minimize a path deviation cost function. The optimized GVF is compared against both waypoint and potential field methods for the UAV's path deviation. 
+ \textbf{Determine a combination of circulation and decay radius for a circular obstacle GVF that produces an optimized obstacle avoidance.} A UAV modeled as a Dubin's vehicle was used to demonstrate GVF guidance for converging and following a straight path. A worst case collision scenario was presented where an obstacle centered on a planned path was to be avoided. Obstacle GVF decay radius and circulation were optimized to minimize a path deviation cost function. The optimized GVF was compared against both waypoint and potential field methods for the UAV's path deviation. 
  
  \section{Phase III}
- \textbf{Demonstrate optimized GVF guidance on multirotor UAV flying with fixed wing turn-rate constraints.} The modified GVF developed in Phase II was implemented on a crazyflie 2.0 quadcopter flying in an indoor environment.  Dubin's turn rate constraints were applied in order to emulate the behavior of a fixed wing UAV. Deviation from a planned path while avoiding a circular obstacle is compared to simulations for several avoidance scenarios.
+ \textbf{Demonstrate optimized GVF guidance on multirotor UAV flying with fixed wing turn-rate constraints.} The modified GVF developed in Phase II was implemented on a crazyflie 2.0 quadcopter flying in an indoor environment.  Dubin's turn rate constraints were applied in order to emulate the behavior of a fixed wing UAV. Deviation from a planned path while avoiding a circular obstacle was compared to simulations for several avoidance scenarios.
 
  
  \section{Summary of Objectives}
@@ -316,11 +318,11 @@ Vector Field (VF) guidance is a method that is mainly used for path following \c
 \chapter{Literature Review}
 \section{Literature Review Introduction}
 
-A literature review was conducted on unmanned aerial vehicles (UAVs), the tasks that they are typically used for, and how the crafts accomplish their intended tasks. It was determined that UAVs accomplish tasks by following pre-planned paths that are generally calculated on an off-board ground station. Guidance systems for following pre-planned paths in literature are discussed. In general, guidance systems were found to not be equipped to avoid obstacles without the need to re-plan mission paths. Guidances for avoiding obstacles without the need to re-plan an obstacle free path are presented and compared.
+Unmanned aerial vehicles (UAVs) were determined from literature to a wide range applications. Tasks are typically accomplished by following pre-planned paths that are generally calculated on an off-board ground station. Guidance systems for following pre-planned paths in literature are discussed. In general, guidance systems were found to not be equipped to avoid obstacles without the need to re-plan mission paths. Methods for avoiding obstacles without the need to re-plan an obstacle free path are presented and compared.
 
 
 \section{Unmanned Aerial Vehicles}
-UAVs are pilotless aircraft used by military, police, and civilian communities for tasks that may put pilots of conventional manned aircraft in harms way \cite{bone_uavs_2003}. Tasks can be carried out by a single UAV or in cooperation with other air \cite{oh_coordinated_2013,hyondong_oh_coordinated_2015,wise_uav_2006} or ground \cite{ulun_coordinated_2013} vehicles. Using UAVs has several advantages over manned aircraft consisting of low operating cost, reduced risk to human operators, and the ability to perform mundane and repetitive tasks autonomously without heavy human interaction \cite{austin2011unmanned}. In general, UAVs are categorized into fixed wing and rotor craft varieties that range in size, payload, and flight time capabilities \cite{beard_small_2012}. Fixed wing UAVs, Figure \ref{fig:fixedMultirotor}a, are typically used for tasks that require longer flight times and larger payloads, such as cameras and cargo. Rotor craft, Figure \ref{fig:fixedMultirotor}, have a lower payload capacity compared to fixed wings, have the ability to hover, and are highly maneuverable.
+UAVs have gained popularity in both civil and private sectors due to their ability to perform tasks that may put pilots of conventional manned aircraft in harms way \cite{bone_uavs_2003}. Tasks can be carried out by a single UAV or in cooperation with other air \cite{oh_coordinated_2013,hyondong_oh_coordinated_2015,wise_uav_2006} or ground \cite{ulun_coordinated_2013} vehicles. UAVs have several advantages over manned aircraft consisting of low operating cost, reduced risk to human operators, and the ability to perform mundane and repetitive tasks autonomously without heavy human interaction \cite{austin2011unmanned}. In general, UAVs are categorized into fixed wing and rotor craft varieties that range in size, payload, and flight time capabilities \cite{beard_small_2012}. Fixed wing UAVs, Figure \ref{fig:fixedMultirotor}a, are typically used for tasks that require longer flight times and larger payloads, such as cameras and cargo. Rotor craft, Figure \ref{fig:fixedMultirotor}, have a lower payload capacity compared to fixed wings, have the ability to hover, and are highly maneuverable.
 \begin{figure}[H]
 	\begin{subfigmatrix}{2}% number of columns
 		\centering	
@@ -332,10 +334,10 @@ UAVs are pilotless aircraft used by military, police, and civilian communities f
 	\label{fig:fixedMultirotor}
 \end{figure}
 
-Whether it is a fixed wing or rotor craft, UAVs can be programmed to fly autonomously without the direct input of a pilot. When flying autonomously, the vehicle typically accomplishes tasks by following a pre-planned flight path. Flight paths are often generated off-line at dedicated ground station and relayed to the UAV over radio. 
+UAVs can be programmed to fly autonomously without the direct input of a pilot. When flying autonomously, the vehicle typically accomplishes tasks by following a pre-planned flight path. Flight paths are often generated off-line at dedicated ground station and relayed to the UAV over radio. 
 
 \subsection{Ground Stations}
-Ground stations are the hardware and software framework used to configure UAV settings, plan missions, and collect mission data. Commercial open source ground stations such as QGround Control \cite{qgc} depend on a human operator's knowledge of the environment to plan an obstacle free path. Takeoff, landing, and emergency return-to-home locations are designated in safe clearings capable of accommodating the vehicle. Other tasks such as area surveying and loitering can be assigned at certain points along the mission path \cite{wilhelm_direct_2017}. An example of a mission path consisting of taking off, surveying, and landing is shown in Figure \ref{fig:groundstationplanning}
+Ground stations are the software framework used to configure UAV settings, plan missions, and collect mission data. Commercial open source ground stations such as QGround Control \cite{qgc} depend on a human operator's knowledge of the environment to plan an obstacle free path. Takeoff, landing, and emergency return-to-home locations are designated in safe clearings capable of accommodating the vehicle. Other tasks such as area surveying and loitering can be assigned at certain points along the mission path \cite{wilhelm_direct_2017}. An example of a mission path consisting of taking off, surveying, and landing is shown in Figure \ref{fig:groundstationplanning}
 
 
 
@@ -347,11 +349,11 @@ Ground stations are the hardware and software framework used to configure UAV se
 	\label{fig:groundstationplanning}
 \end{figure}
 
-Paths are commonly represented as a series of finite waypoints in commercial UAV autopilots such as  the Piccolo \cite{piccolo}, Kestral \cite{kestrel}, and Pixhawk \cite{pix}.
+
 
 
 \subsection{Autopilot}
-The UAV autopilot is responsible for controlling a pre-planned path and maintaining vehicle stability while under the influence of environmental disturbances. Stable flight while path following is accomplished by implementing feed-back control, navigation, and guidance systems \cite{beard_small_2012}. Feed-back refers to the closure of an open-loop control system which allows a reference error to be calculated between the desired state of the UAV, the reference, and the current state of the UAV. Reference error is used to calculate the actuator output required to modify the vehicle's attitude and position while preventing unbounded oscillation. Attitude and position feed-back is provided by the navigation system by sampling on-board sensors such as global position system (GPS) and inertial measurement units (IMUs). Filtering and fusing noisy data from multiple sources is often accomplished through estimation techniques such as the Kalman filter \cite{de_marina_guidance_2017}. The guidance system directs the UAV with a commanded heading towards a desired goal, such as a waypoint or path. A high level overview of the autopilot's systems can be seen in Figure \ref{fig:autopilotloops}. When simulating new guidance or navigation systems it is common to model the plant as a Dubin's vehicle with turn rate constraints for simplicity. UAVs are high order and non-linear systems that can be complex to model \cite{beard_small_2012}, making Dubin's modeling a convenient simplification.
+Paths are commonly represented as a series of finite waypoints in commercial UAV autopilots such as  the Piccolo \cite{piccolo}, Kestral \cite{kestrel}, and Pixhawk \cite{pix}. The UAV autopilot is responsible for controlling a pre-planned path and maintaining vehicle stability while under the influence of environmental disturbances. Stable flight while path following is accomplished by implementing feed-back control, navigation, and guidance systems \cite{beard_small_2012}. Feed-back refers to the closure of an open-loop control system which allows a reference error to be calculated between the desired state of the UAV, the reference, and the current state of the UAV. Reference error is used to calculate the actuator output required to modify the vehicle's attitude and position while preventing unbounded oscillation. Attitude and position feed-back is provided by the navigation system by sampling on-board sensors such as global position system (GPS) and inertial measurement units (IMUs). Filtering and fusing noisy data from multiple sources is often accomplished through estimation techniques such as the Kalman filter \cite{de_marina_guidance_2017}. The guidance system directs the UAV with a commanded heading towards a desired goal, such as a waypoint or path. A high level overview of the autopilot's systems can be seen in Figure \ref{fig:autopilotloops}. When simulating new guidance or navigation systems it is common to model the plant as a Dubin's vehicle with turn rate constraints for simplicity. UAVs are high order and non-linear systems that can be represented as a Dubin's vehicle \cite{beard_small_2012}.
 
 
 
@@ -382,7 +384,7 @@ The UAV autopilot is responsible for controlling a pre-planned path and maintain
 \end{figure}
 
 \section{Dubins Vehicle Model}
-The dynamics of a UAV are often simplified by modeling the UAV as a Dubin's vehicle when simulating guidance systems \cite{frew_cooperative_2007,griffiths_vector_2006,nelson_cooperative_2005,nelson_vector_2006,nelson_vector_2007}. It is assumed that the autopilot's control system is capable of maintaining stability, speed $u$, and can turn the vehicle at a maximum fixed turn rate $\dot{\theta}$. The position of the UAV $\overrightarrow{X}$ at time $t$ is calculated from the integral of the velocity vector $\overrightarrow{U}$, Equation \ref{eq:uavPosition}. Heading $\theta$ is an input from a guidance system. Here the turn rate of the UAV is restricted to $20$ degrees per second.
+The dynamics of a UAV are often simplified by modeling the UAV as a Dubin's vehicle when simulating guidance systems \cite{frew_cooperative_2007,griffiths_vector_2006,nelson_cooperative_2005,nelson_vector_2006,nelson_vector_2007}. It is assumed that the autopilot's control system is capable of maintaining stability, speed $u$, and altitude, and can turn the vehicle at a maximum fixed turn rate $\dot{\theta}$. The position of the UAV $\overrightarrow{X}$ at time $t$ is calculated from the integral of the velocity vector $\overrightarrow{U}$, Equation \ref{eq:uavPosition}. Heading $\theta$ is an input from a guidance system. Here the turn rate of the UAV is restricted to $20$ degrees per second which is typical for small unmanned aircraft.
 \begin{equation}
 \label{eq:uavVelocity}
 \overrightarrow{U}(t) = u \begin{bmatrix}
@@ -405,11 +407,11 @@ sin(\theta(t))
 
 
 \section{UAV Guidance}
-On-board guidance systems attempt to minimize the lateral error to the path by commanding a heading pointing to the path. Guidance methods for following a pre-planned path include geometric methods such as waypont \cite{osborne_waypoint_2005} or carrot chasing \cite{manjunath_application_2016} and control techniques such as proportional-integral-derivative (PID) \cite{rhee2010tight}, non-linear guidance laws \cite{park2007performance}, and linear quadratic regulator (LQR) \cite{ratnoo_adaptive_2011}. These methods may not have the ability to avoid new or previously unknown obstacles without the need to generate a new path. Re-planning and relaying a new obstacle free path may be impossible under certain conditions, such as flying beyond radio communication range. It would be beneficial to remove the guidance system's dependence on the path planner to produce a new obstacle free path when new obstacles are encountered. Avoiding obstacles without the need to re-plan has been achieved with potential field and vector field, which represents obstacles as artificial repulsive forces that locally push away from obstacles. 
+Guidance methods for following a pre-planned path include geometric methods such as waypont \cite{osborne_waypoint_2005} or carrot chasing \cite{manjunath_application_2016} and control techniques such as proportional-integral-derivative (PID) \cite{rhee2010tight}, non-linear guidance laws \cite{park2007performance}, and linear quadratic regulator (LQR) \cite{ratnoo_adaptive_2011}. These methods may not have the ability to avoid new or previously unknown obstacles without the need to generate a new path. Re-planning and relaying a new obstacle free path may be impossible under certain conditions, such as flying beyond radio communication range. It would be beneficial to remove the guidance system's dependence on the path planner to produce a new obstacle free path when new obstacles are encountered. Avoiding obstacles without the need to re-plan has been achieved with potential field and vector field, which represents obstacles as artificial repulsive forces that locally push away from obstacles. 
 
 \subsection{Potential Field}
 
-Potential field is based on the principle of driving a point masses state from a high potential to a globally low potential using artificial attractive and repulsive forces \cite{khatib_real-time_1986}. An attractive force directs the point mass in the direction of a goal located at a globally minimum potential and obstacles can be represented as repulsive forces that act locally to push the point mass away. An example of a point mass directed by potential field from a high potential to a globally minimum potential while avoiding an obstacle is shown in Figure \ref{fig:pfobstacle}. Potential field is also capable of acting as a path and trajectory planning algorithm \cite{rimon_exact_1992}, possibly eliminating the off-board path planner. 
+Potential field is based on the principle of driving a point mass from a high potential state to a globally low potential state using artificial attractive and repulsive forces \cite{khatib_real-time_1986}. An attractive force directs the point mass in the direction of a goal located at a globally minimum potential and obstacles can be represented as repulsive forces that act locally to push the point mass away. An example of a point mass directed by potential field from a high potential to a globally minimum potential while avoiding an obstacle is shown in Figure \ref{fig:pfobstacle}. Potential field is also capable of acting as a path and trajectory planning algorithm \cite{rimon_exact_1992}, possibly eliminating the off-board path planner. 
 
 \begin{figure}[H]
 	\centering
@@ -589,14 +591,14 @@ A VF was constructed inside a configuration space with edges defined by Delauny 
 \begin{figure}
 	\centering
 	\includegraphics[width=15cm]{PaperFigures/cdtVF}
-	\caption{Vector field within a set of delaunay triangles \cite{pimenta_fully_2007}}
+	\caption{Vector field within a set of Delaunay triangles \cite{pimenta_fully_2007}}
 	\label{fig:cdtVF}
 \end{figure}
 
 So far all of the vector field methods discussed have avoided obstacles by planning paths around them. Paths are typically calculated at the ground station and if communication is lost a new path may not be relayed to a UAV encountering a new obstacle. A possible solution is using vector fields to provide a repulsive force such as that seen in \cite{panagou_motion_2014,zhou_vector_2014,wilhelm_2019}. 
 
 \subsection{Gradient Vector Field}
-The Gradient Vector Field (GVF) method produces a similar field, however has several advantages over LVFs. GVF produces an \textit{n}-dimensional vector field that converges and circulates to both static and time varying paths \cite{goncalves_artificial_2009}. Additionally, convergence, circulation, and time-varying terms that make up the GVF are decoupled from each other allowing for easy weighting of the total field \cite{goncalves_circulation_2010}. GVFs converge and circulate at the intersection, or level set, of $n-1$ dimensional implicit surfaces ($\alpha_i:\mathbb{R}^n\rightarrow\mathbb{R} | i=1,...,n-1$). The integral lines of the field are guaranteed to converge and circulate the level set when two conditions are met: $1)$ the implicit surface functions are positive definite and $2)$ have bounded derivatives. Consider the space with dimensions in set \textbf{q}:
+The Gradient Vector Field (GVF) method produces a similar field to LVF, however has several advantages. GVF produces an \textit{n}-dimensional vector field that converges and circulates to both static and time varying paths \cite{goncalves_artificial_2009}. Additionally, convergence, circulation, and time-varying terms that make up the GVF are decoupled from each other allowing for easy weighting of the total field \cite{goncalves_circulation_2010}. GVFs converge and circulate at the intersection, or level set, of $n-1$ dimensional implicit surfaces ($\alpha_i:\mathbb{R}^n\rightarrow\mathbb{R} | i=1,...,n-1$). The integral lines of the field are guaranteed to converge and circulate the level set when two conditions are met: $1)$ the implicit surface functions are positive definite and $2)$ have bounded derivatives. Consider the space with dimensions in set \textbf{q}:
 
 
 
@@ -722,13 +724,15 @@ Summing attractive and repulsive vector fields may result in null guidance where
 \section{Literature Review Summary}
 UAVs are versatile tools that can be used for remote data collection without putting a pilot in harms way. Tasks are typically accomplished by following a series of waypoints that lie along an obstacle free and flyable pre-planned path. When unplanned or previously unknown obstacles are discovered along the UAVs planned path, a new obstacle free and flyable path may have to be generated which could be impossible if the ground station is beyond communications range. Methods such as potential field and vector field have been used to avoid obstacles without re-planning mission waypoints through the use of artificial attractive and repulsive forces. Potential field is not ideal for fixed wing UAVs since it converges to a singular point whereas LVFs and GVFs can converge and follow paths. GVFs allows for easy weighting of individual convergence and circulation terms making it convenient to modify field behavior without re-solving the Lyapunov equations. A summary of each guidance method discussed is shown in Table \ref{table:compareMeth} below.
 
+
+\setlength{\tabcolsep}{10pt} % Default value: 6pt
+\renewcommand{\arraystretch}{0.5} % Default value: 1
 \begin{table}[]
-	\centering
 	\caption{Comparison of UAV guidance methods}
 	\label{table:compareMeth}
-	\begin{tabular}{|C{2.5cm}|C{2.5cm}|C{2.5cm}|C{2.5cm}|C{2.5cm}|}
+	\begin{tabular}{|C{2.5cm}|C{2.5cm}|C{2.5cm}|C{2.5cm}|C{2.5cm}|}	
 		\hline
-		Guidance Method & Avoids without re-plan    & Quickly returns to path   & De-coupled vectors        & Time-varying              \\ \hline
+		Guidance Method & Avoids without re-plan    & Returns to path   & De-coupled convergence and circulation vectors       & Time-varying              \\ \hline
 		Waypoint        &                           & \Checkmark & N/A                       & N/A                       \\ \hline
 		VFF             & \Checkmark &                           &                           &                           \\ \hline
 		LVF             & \Checkmark & \Checkmark &                           &                           \\ \hline
@@ -736,21 +740,22 @@ UAVs are versatile tools that can be used for remote data collection without put
 	\end{tabular}
 \end{table}
 
+
  Summing paths and negating GVF convergence weight can be used for obstacle avoidance, however have so far been used only as high level specification of guidance behavior. Determining repulsive field weights and decay radius has not been optimized for obstacle avoidance. Additionally, characterization of vector field singularities in a summed field has yet to be addressed in literature due to most methods avoiding summation entirely. The contribution of this research is to characterize GVF singularities and provide an optimized decay radius and circulation weight for repulsive fields that minimize path deviation. 
 
 \chapter{Methodology}
 
 
 \section{Introduction to Methodology}
-A real-time circular obstacle avoidance guidance will be achieved by summing together a path following and obstacle avoidance vector field with optimized decay and circulation weights. Singularities in summed vector fields are defined and a method for numerically locating their position is presented in Phase I and it is shown how adding circulation to repulsive GVFs may remove singularities from the UAVs path. Phase II investigates a method for selecting the combination of repulsive GVF decay radius and circulation weights that minimizes a path deviation cost function. The optimized GVF guidance is implemented on an indoor multirotor UAV operating under fixed wing constraints in Phase III.
+Circular obstacle avoidance guidance without the need to re-plan a mission path was achieved by summing together a path following and obstacle avoidance vector field with optimized decay and circulation weights. Singularities in summed vector fields were defined and a method for numerically locating their position is presented in Phase I and demonstation of how adding circulation to repulsive GVFs may remove singularities from the UAVs path. Phase II investigated a method for selecting the combination of repulsive GVF decay radius and circulation weights that minimize a path deviation cost function. The optimized GVF guidance was implemented on an indoor multirotor UAV operating under fixed wing constraints in Phase III.
 
 
 \section{Phase I: Gradient vector field singularity detection}
- \textbf{The objective of Phase I is to characterize and present a method of locating singularities in a summed gradient vector field.} Phase I presents guidance equations for calculating GVFs that converge and follow a straight path using the GVF method in literature \cite{goncalves_artificial_2009,goncalves_circulation_2010,goncalves_vector_2010}. Repulsive GVF for avoiding circular obstacles along the path is achieved by modifying a circular GVF's decay radius, convergence, and circulation weights. Summing the attractive and repulsive GVFs results in guidance that directs the UAV along the planned path while pushing away from the obstacle. Regions in the summed guidance where the path following and obstacle guidance directly oppose each other can result in vectors of zero length, called singularities. A method for identifying the location of singularities is presented along with a method for mitigating them. 
+ \textbf{The objective of Phase I was to characterize and present a method of locating singularities in a summed gradient vector field.} Phase I presents guidance equations for calculating GVFs that converge and follow a line path using the GVF method in literature \cite{goncalves_artificial_2009,goncalves_circulation_2010,goncalves_vector_2010}. Repulsive GVF for avoiding circular obstacles along the path is achieved by modifying a circular GVF's decay radius, convergence, and circulation weights. Summing the attractive and repulsive GVFs results in guidance that directs the UAV along the planned path while pushing away from the obstacle. Regions in the summed guidance where the path following and obstacle guidance directly oppose each other can result in vectors of zero length, called singularities. A method for identifying the location of singularities is presented along with a method for mitigating them. 
  
 
 \subsection{Path Following Vector Field Guidance}
-Guidance for converging and following a time-invariant path using GVF guidance is achieved by summing together convergence $\overrightarrow{V}_{conv}$ and circulation $\overrightarrow{V}_{circ}$ terms that are multiplied by scalars $G$ and $H$ respectively, shown in Equation \ref{simpleGVF}. The potential function $V$ in Equation \ref{potentialV} decreases asymptotically to null when approaching the target path and therefore the convergence vector begins to decrease as well \cite{goncalves_artificial_2009}. As the potential function decreases, the circulation term begins to dominate the total guidance, promoting path following. The distance from the target path at which the field begins to transition to circulation depends on the scalar weights $G$ and $H$ respectively. The total vector $\overrightarrow{V}_p$ represents the non-normalized attractive path following vector field comprised of both convergence and circulation terms. The shape of the target path that the vectors converge and follow depend on the specification of the implicit 3-dimensional surface functions $\alpha_1$ and $\alpha_2$. Intersecting two planes can be used to generate a GVF that converges and follows a straight path. The vertical plane, described in Equation \ref{eq:pathFunction}, at angle $\delta$ with respect to the paths $y-axis$, is intersected with a horizontal plane at constant altitude $z$, Equation \ref{eq:pathFunctionZ}.
+Two vector fields were constructed consisting of a path following and repulsive obstacle field. Guidance for converging and following a time-invariant path using GVF guidance is achieved by summing together convergence $\overrightarrow{V}_{conv}$ and circulation $\overrightarrow{V}_{circ}$ terms that are multiplied by scalars $G$ and $H$ respectively, shown in Equation \ref{simpleGVF}. The potential function $V$ in Equation \ref{potentialV} decreases asymptotically to null when approaching the target path and therefore the convergence vector begins to decrease as well \cite{goncalves_artificial_2009}. As the potential function decreases, the circulation term begins to dominate the total guidance, promoting path following. The distance from the target path at which the field begins to transition to circulation depends on the scalar weights $G$ and $H$ respectively. The total vector $\overrightarrow{V}_p$ represents the non-normalized attractive path following vector field comprised of both convergence and circulation terms. The shape of the target path that the vectors converge and follow depend on the specification of the implicit 3-dimensional surface functions $\alpha_1$ and $\alpha_2$. Intersecting two planes can be used to generate a GVF that converges and follows a straight path. The vertical plane, described in Equation \ref{eq:pathFunction}, at angle $\delta$ with respect to the paths $y-axis$, is intersected with a horizontal plane at constant altitude $z$, Equation \ref{eq:pathFunctionZ}.
 
 
 
@@ -822,7 +827,7 @@ Constructing the obstacle avoidance vector field $\overrightarrow{V}_{||O||}$ wi
 
 \subsection{Constructing an Avoidance Vector Field}
 
-A circular avoidance vector field can be constructed in a way similar to that of the path following field in the previous section. What differentiates the obstacle field from the path following field is that the individual convergence $\overrightarrow{V}_{conv}$ and circulation $\overrightarrow{V}_{circ}$ components are normalized prior to summing to result in the obstacle field $\overrightarrow{V}_o$. The benefit of normalizing each field component before multiplying by their respective scalars $G$ and $H$ prior to summing is to produce an obstacle field with uniform behavior as distance from the obstacle increases. In short, normalizing each component allows both convergence and circulation terms to be present in the obstacle guidance at larger distances. Additionally, negative convergence weights will be used to produce vectors that diverge away from the path. The obstacle vector field is constructed using the normalized component Equation \ref{eq:obstComponents} with obstacle convergence and circulation weights $G_o$ and $H_o$ respectively.
+A circular avoidance vector field can be constructed in a way similar to that of the path following field in the previous section. What differentiates the obstacle field from the path following field is that the individual convergence $\overrightarrow{V}_{conv}$ and circulation $\overrightarrow{V}_{circ}$ components are normalized prior to summing to result in the obstacle field $\overrightarrow{V}_o$. The benefit of normalizing each field component before multiplying by their respective scalars $G$ and $H$ prior to summing is to produce an obstacle field with uniform behavior as distance from the obstacle increases. Normalizing each component allows both convergence and circulation terms to be present in the obstacle guidance at larger distances. Additionally, negative convergence weights will be used to produce vectors that diverge away from the path. The obstacle vector field is constructed using the normalized component Equation \ref{eq:obstComponents} with obstacle convergence and circulation weights $G_o$ and $H_o$ respectively.
 
 
 \begin{equation}
@@ -889,7 +894,7 @@ The guidance $\overrightarrow{V}_o$ described by intersecting a cylinder and a p
 	\label{fig:cylinderIntersection}
 \end{figure}
 
-Obstacle fields should only act locally on a UAV guidance which is accomplished by applying a decay function for a field of radius $R$. The decay strength $P$ is determined in \ref{eq:decay}, where $d$ is the Euclidean distance, or range, between the UAV and the center of the obstacle, shown in Equation \ref{eq:range}. At a distance $d>R$ the decay strength $P$ is effectively zero, having virtual no influence on the total guidance. At a distance $d\leq R$, the field strength is bounded between $[0,2]$. The selection of the decay function $P$ to be bounded as such is so that the obstacle field $\overrightarrow{V}_o$ eventually overpowers the path field $\overrightarrow{V}_{||P||}$. 
+Obstacle fields should only act locally on the UAV guidance, which is accomplished by applying a decay function for a field of radius $R$. The decay strength $P$ is determined in \ref{eq:decay}, where $d$ is the Euclidean distance, or range, between the UAV and the center of the obstacle, shown in Equation \ref{eq:range}. At a distance $d>R$ the decay strength $P$ is effectively zero, having virtual no influence on the total guidance. At a distance $d\leq R$, the field strength is bounded between $[0,2]$. The selection of the decay function $P$ to be bounded as such is so that the obstacle field $\overrightarrow{V}_o$ eventually overpowers the path field $\overrightarrow{V}_{||P||}$. 
 
 
 \begin{equation}
@@ -914,12 +919,12 @@ Prior to applying the decay function $P$ the obstacle field $\overrightarrow{V}_
 
 
 \subsection{Summed Guidance and Singularity Definition}
-The total summed guidance $\overrightarrow{V}_g$ defined in Equation \ref{eq:totalGuidance} can now be calculated and visualized, Figure \ref{fig:summedFieldsNoNorm}. In general, the GVF guidance is more easily visualized if the final guidance is normalized yet again, however, plotting the guidance $\overrightarrow{V}_g$ demonstrates regions where the fields oppose each other and decrease the total fields magnitude. For a strictly repulsive field that is centered on a straight path, regions of both constructive and destructive summation occurs. Note the vectors on the positive x-axis increasing in length as the two fields come together. Conversely, vectors in the negative x-axis show decreasing length and in some areas disappearing entirely.  
+The total summed guidance $\overrightarrow{V}_g$ defined in Equation \ref{eq:totalGuidance} can now be calculated and visualized, Figure \ref{fig:summedFieldsNoNorm}. In general, the GVF guidance is normalized for plotting, however, plotting the non-normalized guidance $\overrightarrow{V}_g$ demonstrates regions where the fields oppose each other and decrease the total fields magnitude. Guidance from summing a strictly repulsive field that is centered on a straight path, regions of both constructive and destructive summation occurs. Note the vectors on the positive x-axis increasing in length as the two fields come together. Conversely, vectors in the negative x-axis show decreasing length and in some areas disappearing entirely.  
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[trim=25 35 25 50,clip,width=14cm]{PaperFigures/Methods/summedFieldsNoNorm}
-	\caption{Summed fields without total normalization $\protect \overrightarrow{V}_g$}
+	\caption{Summed fields without total normalization $\protect \overrightarrow{V}_g$ with no circulation}
 	\label{fig:summedFieldsNoNorm}
 \end{figure}
 
@@ -976,7 +981,7 @@ Searching the GVF for locations that satisfy Equation \ref{eq:singularityConditi
 	\label{fig:noCircSingularityDetection}
 \end{figure}
 
-By definition singularities are caused by the two vector fields directly opposing each other, described in Equation \ref{eq:zeroVectorCondition2}. Adding circulation to the repulsive GVF may prevent the summed vectors from canceling out completely. To demonstrate the prevention of vector cancellation, the above scenario is repeated with equal magnitude convergence and circulation components. Note that by adding circulation to the obstacle vector field singularities are prevented from forming along the route the UAV is likely to take, shown in Figure \ref{fig:summedfieldscircsingularity}. Additionally, adding circulation provides a deterministic guidance on how to circumnavigate an obstacle. In literature, obstacles directed the UAV away and relied on the path following field for direction. 
+Singularities are caused by the two vector fields directly opposing each other, described in Equation \ref{eq:zeroVectorCondition2}. Adding circulation to the repulsive GVF may prevent the summed vectors from canceling out completely. To demonstrate the prevention of vector cancellation, the above scenario is repeated with equal magnitude convergence and circulation components. Note that by adding circulation to the obstacle vector field singularities are prevented from forming along the route the UAV is likely to take, shown in Figure \ref{fig:summedfieldscircsingularity}. Additionally, adding circulation provides a deterministic guidance on how to circumnavigate an obstacle. In literature, obstacles directed the UAV away and relied on the path following field for direction. 
 
 \begin{figure}
 	\centering
@@ -988,12 +993,12 @@ By definition singularities are caused by the two vector fields directly opposin
 
 
 \section{Phase II: Optimization of Obstacle Field}
-\textbf{The objective of Phase II is to determine a combination of GVF circulation and decay radius for an optimized circular obstacle avoidance.} A demonstration of a UAV modeled as a Dubin's vehicle with maximum turn rate constraints converging and following a straight path for various target path circulations is provided. A circular obstacle represented by a strictly repulsive GVF will be added to the path and the avoidance observed. Obstacles radius and their associated GVF decay radius will now be represented in terms of the UAVs turning radius for convenience. Next, a path deviation cost function is described and is to be minimized to provide an optimized GVF obstacle avoidance guidance. It is shown how cost is effected by modifying the decay radius and circulation for the worst-case obstacle avoidance scenario presented. Lastly, a method for solving for circulation and decay radius numerically is presented. 
+\textbf{The objective of Phase II was to determine a combination of GVF circulation and decay radius for an optimized circular obstacle avoidance.} Demonstration of a UAV modeled as a Dubin's vehicle with maximum turn rate constraints converging and following a straight path for various target path circulations was provided. A circular obstacle represented by a strictly repulsive GVF was added to the path and the avoidance observed. Obstacles radius and their associated GVF decay radius were represented in terms of the UAVs turning radius for convenience. Next, a path deviation cost function was described and was to minimized to provide an optimized GVF obstacle avoidance guidance. Reduction in path deviation cost was achieved for a worst-case obstacle avoidance scenario presented. Lastly, a method for solving circulation and decay radius numerically was presented. 
 
 
 \subsection{Vehicle and Obstacle Definition}
 
-As discussed in literature and Phase I, GVF can be used to guide a UAV to get on and follow a path. An example of a UAV traveling at constant speed $u=20m/s$ and fixed turn rate $\dot{\theta}=20deg/s$ converging and circulating a straight path using the GVF guidance described in Phase I is shown in Figure \ref{fig:uavPathFollowDemo}. Starting at an initial position of $(-45,20)m$ and heading $\theta$ of $45^\circ$, the UAV is shown converging and following a straight GVF path with weights $G=1,H=5$.
+As discussed in literature and Phase I, GVF can be used to guide a UAV to converge and circulate a path. An example of a UAV traveling at constant speed $u=20m/s$ and fixed turn rate $\dot{\theta}=20deg/s$ converging and circulating a straight path using the GVF guidance described in Phase I is shown in Figure \ref{fig:uavPathFollowDemo}. Starting at an initial position of $(-45,20) \ m$ and heading $\theta$ of $45^\circ$, the UAV is shown converging and following a straight GVF path with weights $G=1,H=5$.
 
 
 \begin{figure}[H]
@@ -1003,7 +1008,7 @@ As discussed in literature and Phase I, GVF can be used to guide a UAV to get on
 	\label{fig:uavPathFollowDemo}
 \end{figure}
 
-The effect of modifying $G$ and $H$ has not been well documented in literature when the GVF is normalized for a heading guidance. To determine an appropriate relationship between circulation and UAV velocity, various path circulation weights for a fixed UAV velocity were conducted and the lateral error with respect to time recorded. As discussed in Phase I, increased circulation results in the vector field transitioning to path following more quickly. A low circulation weight allows convergence to dominate closer to the path. The UAV's route for converging and following a path with $G=1$ and multiple path circulation weights $H$ is shown in Figure \ref{fig:uavPathMultipleHs}. As expected, a low circulation results in a UAV route that quickly approaches the path, however begins to oscillate and has a larger stead-state error compared to fields with larger circulation. The largest circulation field $H=50$, does not oscillate, but takes considerably longer to converge. Circulation approximately the same value as the UAV's velocity results in a compromise between fast convergence and no oscillation. The lateral error from the path is shown in Figure \ref{fig:uavPathMultipleHsLateral}. 
+The effect of modifying $G$ and $H$ has not been well documented in literature when the GVF is normalized for a heading guidance. Various path circulation weights for a fixed UAV velocity were conducted and the lateral error with respect to time recorded to determine an appropriate relationship between circulation and UAV velocity. Increased circulation results in the vector field transitioning to path following more quickly. Low circulation weights allows convergence to dominate closer to the path. The UAV's route for converging and following a path with $G=1$ and multiple path circulation weights $H$ is shown in Figure \ref{fig:uavPathMultipleHs}. Low circulation results in a UAV route that quickly approaches the path, however begins to oscillate and has a larger stead-state error compared to fields with larger circulation. The largest circulation field $H=50$, does not oscillate, but takes considerably longer to converge. Circulation approximately the same value as the UAV's velocity results in a compromise between fast convergence and no oscillation. The lateral error from the path is shown in Figure \ref{fig:uavPathMultipleHsLateral}. 
 
 
 \begin{figure}[H]
@@ -1033,7 +1038,7 @@ As the UAV travels the path using GVF guidance, an obstacle may be encountered t
 	\label{fig:obstacleonpath}
 \end{figure}
 
- It is assumed here that the radius of the obstacle is no smaller than the turn radius of the UAV $\theta_r$, which is calculated in Equation \ref{eq:turning_radius}. It is convenient to represent the obstacle's radius as $m$ multiples of the UAV's turning radius, shown in  Equation \ref{eq:obstR}.
+ It is assumed here that the radius of the obstacle is no smaller than the turn radius of the UAV $\theta_r$, which is calculated in Equation \ref{eq:turning_radius}. The obstacles radius and lateral position can be expressed in terms of the UAVs turning radius by the ratios $m$ and $c$ shown in Equations \ref{eq:obstR} and \ref{eq:obstC} respectively. Representing the obstacle by these ratios is convenient because it allows for a single set of optimized parameters to be used for a UAV of multiple velocities. 
  
 
 
@@ -1047,7 +1052,12 @@ As the UAV travels the path using GVF guidance, an obstacle may be encountered t
 r_o = m \theta_r
 \end{equation}
 
-The decay radius of the repulsive vector field, $R$, is defined in $k$ multiples of the obstacle's radius, shown in Equation \ref{eq:decayR}. 
+\begin{equation}
+\label{eq:obstC}
+Y_o = c \theta_r
+\end{equation}
+
+The decay radius of the repulsive vector field, $R$, was defined in $k$ multiples of the obstacle's radius, shown in Equation \ref{eq:decayR}. 
  
  \begin{equation}
  \label{eq:decayR}
@@ -1056,7 +1066,7 @@ The decay radius of the repulsive vector field, $R$, is defined in $k$ multiples
  
  
 
- A cost function can be used to measure the deviation from a planned path while avoiding an obstacle with GVF in Equation \ref{eq:staticCost}. The deviation, y, is the lateral distance of the UAV to the planned path, $R$ is the obstacle radius.
+ A cost function can be used to measure the deviation from a planned path while avoiding an obstacle with GVF in Equation \ref{eq:staticCost}. The lateral distance of the UAV to the planned path was represented by $y$ and $r_o$ is the obstacle radius.
  
  \begin{equation}
  \label{eq:staticCost}
@@ -1064,7 +1074,7 @@ The decay radius of the repulsive vector field, $R$, is defined in $k$ multiples
  \end{equation}
  
  
- Strictly repulsive GVF obstacle fields can provide avoidance, however may cause excess deviation from the pre-planned path, cause unnecessary turns, and flight routes near or through guidance singularities. A UAV traveling at a speed of $10m/s$ and a turn rate of $20 deg/s$ is given a summed path following and obstacle avoidance guidance $\overrightarrow{V}_g$, defined in Equation \ref{eq:totalGuidance} in Phase I. An obstacle centered on the path $y_o=0$ and radius $r_0 = \theta_r$ is to be avoided. The decay radius multiplier $k$ was increased manually over several simulations until avoidance was achieved. The flight path of the UAV flying with summed guidance is shown in Figure \ref{fig:uavPathObstNoCirc}. The UAV experiences excessive path deviation and takes considerable time to settle back to the planned path. Additionally, the guidance directs the UAV to pass directly through a singularity and passes near an additional singularity towards the top of the obstacle. The cost, calculated from Equation \ref{eq:staticCost}, for avoidance using the strictly repulsive guidance for head on collision scenario is $\gamma=25$.
+ Strictly repulsive GVF obstacle fields can provide avoidance, however may cause excess deviation from the pre-planned path, cause unnecessary turns, and flight routes near or through guidance singularities. A UAV traveling at a speed of $10m/s$ and a turn rate of $20 deg/s$ is given a summed path following and obstacle avoidance guidance $\overrightarrow{V}_g$, defined in Equation \ref{eq:totalGuidance} in Phase I. An obstacle centered on the path $y_o=0$ and radius $r_0 = \theta_r$ is to be avoided. The decay radius multiplier $k$ was increased manually over several simulations until avoidance was achieved. The flight path of the UAV with summed guidance is shown in Figure \ref{fig:uavPathObstNoCirc}. The UAV experiences excessive path deviation and takes considerable time to settle back to the planned path. Additionally, the guidance directs the UAV to pass directly through a singularity and passes near an additional singularity towards the top of the obstacle. The cost, calculated from Equation \ref{eq:staticCost}, for avoidance using the strictly repulsive guidance for head on collision scenario is $\gamma=25$.
  
 
 \begin{figure}[H]
@@ -1076,7 +1086,7 @@ The decay radius of the repulsive vector field, $R$, is defined in $k$ multiples
 	\label{fig:uavPathObstNoCirc}
 \end{figure}
 
-Adding circulation to the obstacle guidance $\overrightarrow{V}_o$, as described in Phase I, may remove singularities from the UAVs route. Additionally, circulation adds deterministic information on how to circumnavigate an obstacle whereas strictly repulsive fields rely on the path following field to determine circumnavigation direction. Equal magnitudes convergence $G_o$ and circulation $H_o$ removes the guidance singularities from the UAV's path, adds a more gentle transition between fields shown in Figure \ref{fig:uavPathObstWithCirc}. The cost of the head on collision avoidance using GVF guidance with obstacle circulation results in a cost of $\gamma=7$.
+Adding circulation to the obstacle guidance $\overrightarrow{V}_o$, as described in Phase I, may remove singularities from the UAVs route and reduce deviation from the planned path. Additionally, circulation adds deterministic information on how to circumnavigate an obstacle whereas strictly repulsive fields rely on the path following field to determine circumnavigation direction. Equal magnitudes convergence $G_o$ and circulation $H_o$ removes the guidance singularities from the UAV's path, adds a more gentle transition between fields shown in Figure \ref{fig:uavPathObstWithCirc}. The cost of the head on collision avoidance using GVF guidance with obstacle circulation results in a cost of $\gamma=7$.
 
 
 
@@ -1143,7 +1153,7 @@ The optimizer found a solution combination of $k=2.7$ and $H_o = 1.8$ and result
 \end{figure}
 
 
-It was shown that avoidance can be achieved with a strictly repulsive GVF without the need to add circulation, however the simulated UAV encountered singularities along the route and had excess path deviation. Equal magnitudes convergence and circulation decreased the path deviation cost and no time was required to optimize the circulation weight. Searching the configuration space for a range of decay radius multipliers $k$ and obstacle circulation weights $H_o$ decreases the cost further compared to equal magnitude, however takes significant amount of time determine the cost for all combinations inside the configuration space. The optimized GVF guidance was shown to provide guidance with the same cost as the configuration space search with significantly reduced time from 10 hours to 5.2 seconds. All simulations were performed on an Intel i-7 8000 processor with 16Gb of ram. \\
+It was shown that avoidance can be achieved with a strictly repulsive GVF without the need to add circulation, however the simulated UAV encountered singularities along the route and had excess path deviation. Equal magnitudes convergence and circulation decreased the path deviation cost and no time was required to optimize the circulation weight. Searching the configuration space for a range of decay radius multipliers $k$ and obstacle circulation weights $H_o$ decreases the cost further compared to equal magnitude, however takes significant amount of time determine the cost for all combinations inside the configuration space. The optimized GVF guidance was shown to provide guidance with the same cost as the configuration space search with significantly reduced time from 10 hours to 5.2 seconds. All simulations were performed on an Intel i-7 7700k processor with 8Gb of ram. \\
 
 
 Determining how GVF compares against other methods such as VFF, waypoint, and the optimal path around an obstacle is now discussed. A summary of the methods investigated for selecting GVF decay radius and circulation are shown in Table \ref{table:gvfMethodTable} below.
@@ -1258,50 +1268,91 @@ VFF results in a UAV route that has excess deviation from the planned path with 
 	\label{fig:barplotperformance}
 \end{figure}
 
-A gradient vector field for path following and circular obstacle avoidance was optimized and shown to have similar performance to waypoint avoidance without the need to re-plan the mission path. The obstacle avoidance GVF acts on the same principle as VFF, however guidance vectors are given circulation which aid in returning the UAV back to the planned path without intervention. A summary of the simulation costs for the scenario presented is shown in Table \ref{table}.
+Gradient vector field for path following and circular obstacle avoidance was optimized and shown to have similar performance to waypoint avoidance without the need to re-plan the mission path. The obstacle avoidance GVF acts on the same principle as VFF, however guidance vectors are given circulation which aid in returning the UAV back to the planned path without intervention. Solving for optimized circulation and decay radius values during flight may be problematic since the time to reach a solution increases with the size of the obstacle.
 
-\begin{table}[H]
-	\centering
-	\caption{Obstacle Avoidance Method's Performance Summary }
-	\label{table}
-	\begin{tabular}{|l|c|c|c|}
-		\hline
-		\multicolumn{1}{|c|}{Method} & Cost {[}-{]} & Returns to path quickly & Avoids obstacle without replanning \\ \hline
-		VFF                          & 31.8         &                         & \Checkmark
-		\\ \hline
-		GVF                          & 13.2         & \Checkmark                       & \Checkmark                                  \\ \hline
-		WP                           & 12.7         & \Checkmark                       &                                    \\ \hline
-	\end{tabular}
-\end{table}
+\subsection{Circulation and decay lookup tables}
+Solving for optimized circulation and decay radius during flight may be problematic since the time to reach a solution increases with the size of the obstacle. Optimized GVF circulation and decay radius could be selected from a pre-computed lookup table in real time, removing the need to calculate the optimized parameters during flight. Lookup tables were generated by determining the optimized circulation and decay radius for a range of possible obstacle configurations. The obstacle's radius is again described in positive multiples of the UAVs turning radius, described in Equation \ref{eq:obstR}. It is also convenient to describe the obstacles lateral position to the path in terms of the UAV's turning radius by the multiple $c$ shown in Equation \ref{eq:latC}.
 
+\begin{equation}
+\label{eq:latC}
+Y_o = c \theta_r
+\end{equation}
 
-
-
-GVF guidance provided a low cost avoidance that quickly returns to the planned path, however the time to reach a solution using a numerical solver for the optimized set $k$ and $H_o$ increases as the size of the obstacle increases. Failure to reach a solution in adequate time may result in the UAV violating the no-fly zone or colliding with the obstacle. Lookup tables were constructed for both circulation weight $H_o$ and obstacle decay radius $k$ that were be referenced with minimal computation time compared to a single numerical optimization solution. Circulation and decay radius are dependent on the obstacle's radius and the lateral position with respect to the path. Expressing the obstacle's radius and lateral position in terms of positive multipliers of the UAV's turning radius allows a single lookup table to be used for multiple UAV speeds, resulting in less scenarios to be evaluated. Below is an example of a lookup table where $n$ represents the radius of the obstacle in terms of UAV's turning radius and $c$ represents the lateral position of the obstacle in multiples of UAV turning radius. The lookup tables generated for obstacle radii $n = [1,5]$ and lateral position $c = [0,0.9]$ are shown in Figure \ref{fig:circulationtable} and \ref{fig:decayradiustable}.
+Obstacle configurations were evaluated for a range of radii $m$ on the interval $[1,5]$ with a step size of 0.5 and lateral positions $c$ with an step size of 0.1. The UAV was assumed to travel at $10m/s$ with a maximum turn rate of $20 deg/s$ with a time step $dt$ of $0.01$ seconds. Lookup tables for obstacle field circulation $H_o$ and decay radius $k$ are shown in the heatmaps in Figures \ref{fig:htableheat} and \ref{fig:ktable} respectively. 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=12cm]{PaperFigures/Methods/LookupTable/circulationTable}
-	\caption{Optimized obstacle field circulation $H_o$ surface for non-dimensional parameters}
-	\label{fig:circulationtable}
+	\includegraphics[width=10cm]{PaperFigures/Methods/LookupTable/hTableHeat}
+	\caption{Obstacle circulation lookup table, smoothed by interpolation}
+	\label{fig:htableheat}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=10cm]{PaperFigures/Methods/LookupTable/decayRadiusTable}
-	\caption{Optimized obstacle field decay radius $k$ surface for non-dimensional parameters}
-	\label{fig:decayradiustable}
+	\includegraphics[width=10cm]{PaperFigures/Methods/LookupTable/kTableHeat}
+	\caption{Obstacle decay radius lookup table, smoothed by interpolation}
+	\label{fig:ktable}
 \end{figure}
 
+For obstacle configurations that were not optimized, circulation and decay radius may be determined by interpolation. To determine how the performance of interpolated solutions compare against an optimized solution, interpolation points were selected in a grid pattern between the tabulated values and the cost of each solution recorded. The interpolated points that were evaluated are shown in Figures \ref{fig:htableInterp} and \ref{fig:ktableInterp} below. 
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=12cm]{PaperFigures/Methods/LookupTable/hTableInterpolationPoints}
+	\caption{Obstacle circulation lookup table with interpolation points}
+	\label{fig:htableInterp}
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=12cm]{PaperFigures/Methods/LookupTable/kTableInterpolationPoints}
+	\caption{Obstacle decay radius lookup table with interpolation points}
+	\label{fig:ktableInterp}
+\end{figure}
+
+The cost of optimized versus the cost of interpolated solutions are represented as two planes overlaid in Figure \ref{fig:costplanes} below. The interpolated solution resembles the same behavior as the optimized solution, and for the configuration evaluated has a mean square error of $2.5$. Expressing the obstacle's radius and lateral position in terms of positive multipliers of the UAV's turning radius allows a single lookup table to be used for multiple UAV speeds, resulting in less scenarios to be evaluated.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=12cm]{PaperFigures/Methods/LookupTable/costPlanes}
+	\caption{Cost of UAV obstacle avoidance using interpolated and optimized parameters}
+	\label{fig:costplanes}
+\end{figure}
+
+
+
+
+% A summary of the simulation costs for the scenario presented is shown in Table \ref{table}.
+%
+%\begin{table}[H]
+%	\centering
+%	\caption{Obstacle Avoidance Method's Performance Summary }
+%	\label{table}
+%	\begin{tabular}{|l|c|c|c|}
+%		\hline
+%		\multicolumn{1}{|c|}{Method} & Cost {[}-{]} & Returns to path quickly & Avoids obstacle without replanning \\ \hline
+%		VFF                          & 31.8         &                         & \Checkmark
+%		\\ \hline
+%		GVF                          & 13.2         & \Checkmark                       & \Checkmark                                  \\ \hline
+%		WP                           & 12.7         & \Checkmark                       &                                    \\ \hline
+%	\end{tabular}
+%\end{table}
+
+
+
+
+GVF guidance provided a low cost avoidance that quickly returns to the planned path, however the time to reach a solution using a numerical solver for the optimized set $k$ and $H_o$ increases as the size of the obstacle increases. Failure to reach a solution in adequate time may result in the UAV violating the no-fly zone or colliding with the obstacle. Lookup tables were constructed for both circulation weight $H_o$ and obstacle decay radius $k$ that were be referenced with minimal computation time compared to a single numerical optimization solution. The obstacles configuration, radius and lateral position, were non-dimensionalized by expressing said parameters in multiplicative factors of the UAV's turning radius. Non-dimensionalizing the obstacles configuration allows for a single lookup table to be used for multiple UAV velocities. 
 
 
 
 
 \section{Phase III: Flight tests}
-\textbf{The objective of Phase III is to demonstrate the optimized gradient vector field guidance presented in Phase II on multirotor UAV flying with fixed wing turn-rate constraints.} An overview of the experimental setup will be given for both the hardware and software that was implemented to achieve GVF guidance on a crazyflie quadcopter. Python and MATLAB GVF guidances are compared to confirm that they are equivalent.
+\textbf{The objective of Phase III was to demonstrate the optimized gradient vector field guidance presented in Phase II on multirotor UAV flying with fixed wing turn-rate constraints.} An overview of the experimental setup will be given for both the hardware and software that was implemented to achieve GVF guidance on a crazyflie quadcopter. Python and MATLAB GVF guidances are compared to confirm that they are equivalent.
 
 \subsection{Experimental Overview}
-All of the scenarios discussed using GVF guidance have involved simulating a fixed wing UAV modeled as a Dubin's vehicle. To demonstrate the GVF on actual flight hardware, an indoor quadcopter, Figure \ref{fig:crazyflie2}, will be used in place of a fixed wing UAV. There are several reasons why using an indoor quadcopter is advantageous for experimental flight tests, such as new guidance systems. First, finding an airspace to safely test the guidance system with an adequate clearing for takeoff and landing can be difficult. Many environmental complications such as high winds, precipitation, and low visibility could delay or prevent flight tests all together. Testing the GVF guidance method on an indoor quadcopter remove these complications. Additionally, the Dubin's turn rate constrains can be applied to limit the maneuverability of the quadcopter so that it behaves similar to that of a fixed wing UAV. Flying indoors also allows for more repeatable experimentation, environmental control, and use of high speed motion capture systems to provide position information to guidance and control systems. 
+All of the scenarios discussed using GVF guidance have involved simulating a fixed wing UAV modeled as a Dubin's vehicle. The micro quadcopter shown in Figure \ref{fig:crazyflie2} was used in place of a fixed wing UAV for experimental flight tests. There are several reasons why using an indoor quadcopter is advantageous for experimental flight tests, such as new guidance systems. First, finding an airspace to safely test the guidance system with an adequate clearing for takeoff and landing can be difficult. Many environmental complications such as high winds, precipitation, and low visibility could delay or prevent flight tests all together. Testing the GVF guidance method on an indoor quadcopter remove these complications. Additionally, the Dubin's turn rate constrains can be applied to limit the maneuverability of the quadcopter so that it behaves similar to that of a fixed wing UAV. Flying indoors also allows for more repeatable experimentation, environmental control, and use of high speed motion capture systems to provide position information to guidance and control systems. 
 
 
 
@@ -1417,18 +1468,18 @@ Additional validation quiver plots with the obstacle field, decay field, and cir
 
 \section{Summary of Methodology}
 
-Equations for path following and obstacle vector field guidance were presented. Singularities in a summed field were discussed and a method for locating them numerically was provided. A fixed wing UAV modeled as a Dubin's vehicle with fixed turn rate constraint was guided by a path following guidance to converge and follow a straight line. Obstacles were defined in terms of UAV turning radius for convenience and the obstacle field summed with path following field. Cost functions for evaluating the performance of obstacle avoidance in terms of path deviation was provided. Paths with strictly repulsive guidance were shown to guide the UAV away from the obstacle but with excess path deviation, unnecessary turns, and slow path convergence. Adding circulation to the obstacle field improved performance and reduced the overall cost. A large space of circulation and decay multipliers were evaluated and the cost displayed in a heatmap. The combination of parameters that provide the least cost guidance can be selected to provide an optimized guidance, however takes significant computation time to evaluate the large parameter space. A numerical method for determining parameters was presented and an example of it's execution provided. Lastly, the optimized GVF guidance was implemented into python to be used for real-time obstacle avoidance guidance for the crazyflie quadcopter. Next, results for each phase will be discussed. 
+Equations for path following and obstacle vector field guidance were presented. Singularities in a summed field were discussed and a method for locating them numerically was provided. The fixed wing UAV modeled as a Dubin's vehicle with fixed turn rate constraint was guided by a path following guidance to converge and follow a straight line. Obstacles were defined in terms of UAV turning radius for convenience and the obstacle field summed with path following field. Cost functions for evaluating the performance of obstacle avoidance in terms of path deviation was provided. Paths with strictly repulsive guidance were shown to guide the UAV away from the obstacle but with excess path deviation, unnecessary turns, and slow path convergence. Adding circulation to the obstacle field improved performance and reduced the overall cost. A large space of circulation and decay multipliers were evaluated and the cost displayed in a heatmap. The combination of parameters that provide the least cost guidance can be selected to provide an optimized guidance, however takes significant computation time to evaluate the large parameter space. A numerical method for determining parameters was presented and an example of it's execution provided. Lastly, the optimized GVF guidance was implemented into python to be used for real-time obstacle avoidance guidance for the crazyflie quadcopter. Next, results for each phase will be discussed. 
 
 
 \chapter{Results}
 \section{Introduction to Results}
 
-The singularity detection method discussed in Phase I and optimized path following and obstacle avoidance guidance presented in Phase II are demonstrated in four scenarios. Both path centered and off-centered obstacles of various radii are evaluated with a simulated fixed wing UAV. The optimized GVF circulation $H_o$, decay radius multiplier $k$, and cost $\bar{\gamma}$ is documented for each scenario. The optimized GVF guidance implemented on a crazyflie quadcopter is then used in four scenarios consisting of centered, off-centered, and various radii obstacles. Cost for experimental flights and simulation are compared for their percent difference in cost.
+The singularity detection method discussed in Phase I and optimized path following and obstacle avoidance guidance presented in Phase II were demonstrated in four scenarios. Both path centered and off-centered obstacles of various radii are evaluated with a simulated fixed wing UAV. The optimized GVF circulation $H_o$, decay radius multiplier $k$, and path deviation cost $\bar{\gamma}$ is documented for each scenario. The optimized GVF guidance implemented on a crazyflie quadcopter is then used in four scenarios consisting of centered, off-centered, and various radii obstacles. Path deviation cost for experimental flights and simulation are compared for their percent difference in cost.
 
 
 \section{Phase I \& II}
 
-The methods discussed in Phase I and Phase II for detecting singularities in a summed GVF and optimizing obstacle field decay radius and circulation will now be demonstrated for several scenarios involving a Dubin's vehicle modeling a fixed wing with turn rate constraints. Avoidance scenarios that represent the possible configurations of an obstacle that lies along a pre-planned path consist of small obstacles, large obstacles, path centered obstacles, and path offset obstacles. small obstacles are considered those with radius $r_o = \theta_r$ while large obstacles have a radius $r_o\ge5\theta_r$. Centered obstacles represent the worst case avoidance scenario where the UAV must deviate at least $50\%$ of the obstacle's radius in order to successfully avoid. For the path centered obstacle, counterclockwise and clockwise avoidance have identical costs. In the centered obstacle scenarios presented, it is assumed that clockwise avoidance is desired and the initial conditions and bounds were set accordingly. A table of the avoidance scenarios demonstrated is shown below in Table \ref{table:avoidanceScenarios} below.
+The methods discussed in Phase I and Phase II for detecting singularities in a summed GVF and optimizing obstacle field decay radius and circulation will now be demonstrated for several scenarios involving a Dubin's vehicle modeling a fixed wing with turn rate constraints. Avoidance scenarios that represent the possible configurations of an obstacle that lies along a pre-planned path consist of small obstacles, large obstacles, path centered obstacles, and path offset obstacles. small obstacles are considered those with radius $r_o = \theta_r$ while large obstacles have a radius $r_o\ge5\theta_r$. Centered obstacles represent the worst case avoidance scenario where the UAV must deviate at least $50\%$ of the obstacle's radius in order to successfully avoid. Counterclockwise and clockwise avoidance have identical costs for the path centered obstacle since the routes determined from the optimizer are symmetric. In the centered obstacle scenarios presented, it is assumed that clockwise avoidance is desired and the initial conditions and bounds were set accordingly. Table \ref{table:avoidanceScenarios} lists four avoidance avoidance scenarios that were evaluated.
 
 
 \begin{table}[]
@@ -1515,7 +1566,7 @@ The optimized GVF guidance was used to guide a turn rate constrained crazyflie 2
 \end{table}
 
 
-Scenario 1 consisted of a quadcopter placed at initial conditions $(-2,0) meters$ along a pre-planned path and traveled at a mean speed of $0.15 m/s$. An obstacle of radius $r_o = \theta_r$ was avoided by summing a repulsive obstacle GVF with the path following GVF. Cost for the simulated Dubin's UAV was $\bar{\gamma} = 7.6$ and experimental flight $\bar{\gamma} = 10.3$, a $31 \%$ difference. The experimental UAV avoids the obstacle and returns to the pre-planned path, exhibiting a similar flight path as the simulated UAV. The route of the experimental flight and simulation are found in Figure \ref{fig:1Quiver} below.
+Scenario 1 consisted of a quadcopter placed at initial conditions $(-2,0) \ m$ along a pre-planned path and traveled at a mean speed of $0.15 m/s$. An obstacle of radius $r_o = \theta_r$ was avoided by summing a repulsive obstacle GVF with the path following GVF. Cost for the simulated Dubin's UAV was $\bar{\gamma} = 7.6$ and experimental flight $\bar{\gamma} = 10.3$, a $31 \%$ difference. The experimental UAV avoids the obstacle and returns to the pre-planned path, exhibiting a similar flight path as the simulated UAV. The route of the experimental flight and simulation are found in Figure \ref{fig:1Quiver} below.
 
 \begin{figure}[H]
 	\centering
@@ -1565,7 +1616,7 @@ Scenario 3 consisted of a quadcopter placed at initial conditions $(-2,0) meters
 	\label{fig:3Quiver}
 \end{figure}
 
-Scenario 4 consisted of a quadcopter placed at initial conditions $(-2,0) meters$ along a pre-planned path and traveled at a mean speed of $0.14 m/s$. An obstacle of radius $r_o = 1.5 \theta_r$ and lateral position $y_o=0.5*r_o$ was avoided by summing a repulsive obstacle GVF with the path following GVF. Cost for the simulated Dubin's UAV was $\bar{\gamma} = 5.2$ and experimental flight $\bar{\gamma} = 9.2$, a $56 \%$ difference. The experimental UAV avoids the obstacle and returns to the pre-planned path, exhibiting a similar flight path as the simulated UAV. The route of the experimental flight and simulation are found in Figure \ref{fig:4Quiver} below. 
+Scenario 4 consisted of a quadcopter placed at initial conditions $(-2,0) meters$ along a pre-planned path and traveled at a mean speed of $0.14 m/s$. An obstacle of radius $r_o = 1.5 \theta_r$ and lateral position $y_o=0.5r_o$ was avoided by summing a repulsive obstacle GVF with the path following GVF. Cost for the simulated Dubin's UAV was $\bar{\gamma} = 5.2$ and experimental flight $\bar{\gamma} = 9.2$, a $56 \%$ difference. The experimental UAV avoids the obstacle and returns to the pre-planned path, exhibiting a similar flight path as the simulated UAV. The route of the experimental flight and simulation are found in Figure \ref{fig:4Quiver} below. 
 
 
 \begin{figure}[H]
@@ -1598,17 +1649,20 @@ An optimized GVF for path following and obstacle avoidance with singularities re
 
 \chapter{Conclusions}
 
+A GVF for path following and circular obstacle avoidance was optimized and shown to have similar performance to waypoint avoidance with the benefits of VFF. The obstacle avoidance GVF acts on the same principle as VFF, however guidance vectors are given circulation which aid in guiding the UAV back to the planned path without intervention. Singularities in summed GVFs were identified by numerically finding locations where GVF magnitudes were null in a summed field. It was shown that optimizing circulation and decay radius of a repulsive GVF removed singularities from a UAVs path and reduced path deviation cost function compared to VFF. Lookup tables for both circulation and decay radius were constructed for a range of obstacle configurations which can be used real time. The optimized avoidance was then used to guide a multirotor UAV in several avoidance scenarios. Contributions from each phase is summarized below. \\
 
-Guidance for converging and following a straight path with a GVF guidance method found in literature was presented. A repulsive GVF was constructed for avoiding circular obstacles along the path by modifying the GVF's decay radius, convergence, and circulation weights.  It was shown that summing the attractive and repulsive GVFs can result in guidance that directs the UAV along the planned path while pushing away from the obstacle. Singularities in the summed GVF, regions of guidance where path following and obstacle fields directly oppose each other, were defined and their location on the radius of equal strength was discussed. A method for identifying the location of singularities numerically with initial conditions placed on the radius of equal strength was presented. It was shown that adding circulation to the obstacle GVF may remove singularities from the UAV’s route. \\
-
-The GVF presented in Phase I for converging and following a straight path was demonstrated in simulation with a UAV modeled as a Dubin's vehicle with various target path circulation weights. It was shown that equating the path’s circulation weight to that of the UAV’s speed provides a balance between rise time and overshoot when converging and following a path. A repulsive GVF was added to the path following GVF and an array of decay radii and circulation weights were evaluated for their path deviation costs in simulation. An array of circulation weights and decay radii were evaluated for their cost to determine which combination results in an optimized path.  Evaluating a large array of parameters takes significant time and may be unique to each obstacle size, position, and UAV characteristics, therefore a numerical approach for minimizing the cost function for finding an optimized combination rapidly was presented. \\
-
-The optimized GVF guidance for path following and obstacle avoidance was implemented on a crazyflie 2.0 quadcopter flying under fixed wing constraints. Several path following and circular obstacle avoidance scenarios were tested consisting of path centered, off center, and multiple radii obstacles. Flight test and simulation flight routes were compared for both their general behavior and costs. The quadcopter followed the same general path as the simulated UAV, however had an average of $30 \%$ higher cost compared to the simulated path. The difference in cost is attributed to both the lack of a velocity controller and the high process and measurement noise when measuring the UAV’s velocity.  \\
+\textbf{The objective of Phase I was to characterize and present a method of locating singularities in a summed GVF.}
+Attractive path following and repulsive GVF guidance for avoiding circular obstacles along a planned path was achieved by modifying a circular GVF's decay radius, convergence, and circulation weights. Summing the attractive and repulsive GVFs was shown to result in guidance that directs the UAV along the planned path while pushing away from the obstacle. Regions in the summed guidance where the path following and obstacle guidance directly oppose each other can result in vectors of zero length, called singularities. The location of singularities was predicted to be along the radius of equal strength, where both fields have equal vector magnitudes. A method for numerically identifying the location of singularities was presented along with a method for mitigating them by adding circulation. 
 
 
-UAVs typically rely on path planning algorithms to provide an obstacle free and flyable path prior to flight. In the event that unplanned obstacles are encountered a new path may have to be re-generated which may not be possible if communication with a ground station is lost. Path following and obstacle avoidance was achieved without the need to re-plan the mission path by using optimized GVF decay radius and circulation parameters. Simulations were conducted with a fixed wing UAV modeled as a Dubin's vehicle using the GVF guidance and circulation and decay radius were selected which minimized a path deviation cost function. Singularities in the GVF were characterized and located numerically. The optimized GVF guidance was implemented in an indoor quadcopter with turn-rate constraints to emulate a fixed wing UAV. Results comparing simulations and indoor flight tests were compared. \\
+\textbf{The objective of Phase II was to determine a combination of circulation and decay radius for a circular obstacle GVF that produces an optimized obstacle avoidance.} It was shown that equating the path’s circulation weight to that of the UAV’s speed provides a balance between rise time and overshoot when converging and following a path. A Repulsive GVF was added to the path following GVF and an array of decay radii and circulation weights were evaluated for their path deviation costs in simulation for a worst case head on collision scenario. The minimal cost from a configuration search could be used to provide an optimal guidance, however evaluating a large array of parameters takes significant time and may be unique to each obstacle size, position, and UAV characteristics. An optimization problem was described and a method of solving for GVF circulation and decay weight with reduced computation time was presented. Optimizing GVF parameters real-time is problematic for large obstacles because computation time increases as the obstacle's radius increases. Pre-computing possible obstacle configurations and storing circulation and decay radius into a lookup table was shown to provide similar performance to optimization alone.\\
 
-Guidance for path following and obstacle avoidance without the need to re-plan mission paths has the potential to aid in increasing unmanned systems autonomy. Obstacles can be avoided without the intervention of a human operator and they can do so at minimal deviation from the planned path. These planned paths represent a route in which a task must be completed, therefore, remaining close the path increases the UAVs overall effectiveness. The optimized GVF guidance promotes this increased mission effectiveness. 
+\textbf{The objective of Phase III was to demonstrate optimized GVF guidance on multirotor UAV flying with fixed wing turn-rate constraints.} The optimized GVF for path following and obstacle avoidance was implemented on a crazyflie 2.0 quadcopter for real time guidance while flying under fixed wing constraints. Several path following and circular obstacle avoidance scenarios were tested consisting of path centered, off center, and multiple radii obstacles. Flight test and simulation flight routes were compared for both their general behavior and costs. The quadcopter followed the same general path as the simulated UAV, however had an average of $30 \%$ higher cost compared to the simulated path. The difference in cost is attributed to both the lack of a velocity controller and the high process and measurement noise when measuring the UAV’s velocity.  \\
+
+
+UAVs typically rely on path planning algorithms to provide an obstacle free and flyable path prior to flight. In the event that unplanned obstacles are encountered a new path may have to be generated which may not be possible if communication with a ground station is lost. Path following and obstacle avoidance was achieved without the need to re-plan the mission path by using optimized GVF decay radius and circulation parameters. Simulations were conducted with a fixed wing UAV modeled as a Dubin's vehicle using the GVF guidance and circulation and decay radius were selected which minimized a path deviation cost function. Singularities in the GVF were characterized and located numerically. The optimized GVF guidance was implemented in an indoor quadcopter with turn-rate constraints to emulate a fixed wing UAV. Results comparing simulations and indoor flight tests were compared. \\
+
+Guidance for path following and obstacle avoidance without the need to re-plan mission paths has the potential to aid in increasing unmanned systems autonomy. Obstacles can be avoided without the intervention of a human operator and they can do so at minimal deviation from the planned path. These planned paths represent a route in which a task must be completed, therefore, remaining close the path increases the UAVs overall effectiveness.
 
 
 \appendix
