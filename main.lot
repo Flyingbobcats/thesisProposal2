@@ -1,13 +1,13 @@
 \addvspace {\@lineskip }
 \addvspace {\@lineskip }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Comparison of UAV Guidance Methods}}{38}{table.2.1}
+\contentsline {table}{\numberline {2.1}{\ignorespaces Comparison of UAV Guidance Methods}}{39}{table.2.1}
 \addvspace {\@lineskip }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Investigated Weighting Methods}}{61}{table.3.1}
-\contentsline {table}{\numberline {3.2}{\ignorespaces Tuned PID Gains for Roll, Pitch, Yaw Rate, and Thrust Controller}}{72}{table.3.2}
+\contentsline {table}{\numberline {3.1}{\ignorespaces Investigated Weighting Methods}}{62}{table.3.1}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Tuned PID Gains for Roll, Pitch, Yaw Rate, and Thrust Controller}}{73}{table.3.2}
 \addvspace {\@lineskip }
-\contentsline {table}{\numberline {4.1}{\ignorespaces GVF Avoidance Scenarios}}{77}{table.4.1}
-\contentsline {table}{\numberline {4.2}{\ignorespaces Experimental Scenarios Conducted for Crazyflie Quadcopter}}{84}{table.4.2}
-\contentsline {table}{\numberline {4.3}{\ignorespaces Simulation and Experimental Cost Comparison Table for Scenarios 1-4}}{89}{table.4.3}
+\contentsline {table}{\numberline {4.1}{\ignorespaces GVF Avoidance Scenarios}}{78}{table.4.1}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Experimental Scenarios Conducted for Crazyflie Quadcopter}}{85}{table.4.2}
+\contentsline {table}{\numberline {4.3}{\ignorespaces Simulation and Experimental Cost Comparison Table for Scenarios 1-4}}{90}{table.4.3}
 \addvspace {\@lineskip }
 \addvspace {\@lineskip }
 \addvspace {\@lineskip }
