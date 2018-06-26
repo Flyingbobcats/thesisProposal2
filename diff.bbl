@@ -1,0 +1,107 @@
+\begin{thebibliography}{10}
+\newcommand{\enquote}[1]{``#1''}
+
+\bibitem{bone_uavs_2003}
+Bone, E., \enquote{{UAVs} backbround and issues for congress.pdf,} 2003.
+
+\bibitem{sujit_unmanned_2014}
+Sujit, P., Saripalli, S., and Sousa, J.~B., \enquote{Unmanned {Aerial}
+  {Vehicle} {Path} {Following}: {A} {Survey} and {Analysis} of {Algorithms} for
+  {Fixed}-{Wing} {Unmanned} {Aerial} {Vehicless},} {\em IEEE Control
+  Systems\/}, Vol.~34, No.~1, Feb. 2014, pp.~42--59.
+
+\bibitem{beard_small_2012}
+Beard, R.~W. and McLain, T.~W., {\em Small unmanned aircraft: theory and
+  practice\/}, Princeton University Press, Princeton, N.J, 2012, OCLC:
+  ocn724663112.
+
+\bibitem{khatib_real-time_1986}
+Khatib, O., \enquote{Real-time obstacle avoidance for manipulators and mobile
+  robots,} {\em The international journal of robotics research\/}, Vol.~5,
+  No.~1, 1986, pp.~90--98.
+
+\bibitem{liu_virtual-waypoint_2016}
+Liu, Y. and Zhao, Y., \enquote{A virtual-waypoint based artificial potential
+  field method for {UAV} path planning,} {\em Guidance, {Navigation} and
+  {Control} {Conference} ({CGNCC}), 2016 {IEEE} {Chinese}\/}, IEEE, 2016, pp.
+  949--953.
+
+\bibitem{rimon_exact_1992}
+Rimon, E., \enquote{Exact {Robot} {Navigation} {Using} {Artificial} {Potential}
+  {Functions}.pdf,} 1992.
+
+\bibitem{goerzen_survey_2010}
+Goerzen, C., Kong, Z., and Mettler, B., \enquote{A {Survey} of {Motion}
+  {Planning} {Algorithms} from the {Perspective} of {Autonomous} {UAV}
+  {Guidance},} {\em Journal of Intelligent and Robotic Systems\/}, Vol.~57, No.
+  1-4, Jan. 2010, pp.~65--100.
+
+\bibitem{borenstein_real-time_1990}
+Borenstein, J. and Koren, Y., \enquote{Real-time obstacle avoidance for fast
+  mobile robots in cluttered environments,} {\em Robotics and {Automation},
+  1990. {Proceedings}., 1990 {IEEE} {International} {Conference} on\/}, IEEE,
+  1990, pp. 572--577.
+
+\bibitem{borenstein_vector_1991}
+Borenstein, J. and Koren, Y., \enquote{The vector field histogram-fast obstacle
+  avoidance for mobile robots,} {\em IEEE transactions on robotics and
+  automation\/}, Vol.~7, No.~3, 1991, pp.~278--288.
+
+\bibitem{nelson_cooperative_2005}
+Nelson, D.~R., \enquote{Cooperative control of miniature air vehicles,} 2005.
+
+\bibitem{frew_lyapunov_nodate}
+Frew, E., \enquote{Lyapunov {Guidance} {Vector} {Fields} for {Unmanned}
+  {Aircraft} {Applications}.pdf,} .
+
+\bibitem{frew_cooperative_2007}
+Frew, E.~W., \enquote{Cooperative standoff tracking of uncertain moving targets
+  using active robot networks,} {\em Robotics and {Automation}, 2007 {IEEE}
+  {International} {Conference} on\/}, IEEE, 2007, pp. 3277--3282.
+
+\bibitem{chen_tracking_2009}
+Chen, H., Chang, K., and Agate, C.~S., \enquote{Tracking with {UAV} using
+  tangent-plus-{Lyapunov} vector field guidance,} {\em Information {Fusion},
+  2009. {FUSION}'09. 12th {International} {Conference} on\/}, IEEE, 2009, pp.
+  363--372.
+
+\bibitem{chen_uav_2013}
+Chen, H., Chang, K., and Agate, C.~S., \enquote{{UAV} path planning with
+  tangent-plus-{Lyapunov} vector field guidance and obstacle avoidance,} {\em
+  IEEE Transactions on Aerospace and Electronic Systems\/}, Vol.~49, No.~2,
+  2013, pp.~840--856.
+
+\bibitem{md_simplex_2017}
+Md, Z., Rg, C., and Dj, G., \enquote{Simplex {Solutions} for {Optimal}
+  {Control} {Flight} {Paths} in {Urban} {Environments},} {\em Journal of
+  Aeronautics \& Aerospace Engineering\/}, Vol.~06, No.~03, 2017.
+
+\bibitem{pimenta_fully_2007}
+Pimenta, L.~C., Pereira, G.~A., and Mesquita, R.~C., \enquote{Fully continuous
+  vector fields for mobile robot navigation on sequences of discrete triangular
+  regions,} {\em Robotics and {Automation}, 2007 {IEEE} {International}
+  {Conference} on\/}, IEEE, 2007, pp. 1992--1997.
+
+\bibitem{goncalves_artificial_2009}
+Goncalves, V.~M., Pimenta, L. C.~A., Maia, C.~A., and Pereira, G. A.~S.,
+  \enquote{Artificial vector fields for robot convergence and circulation of
+  time-varying curves in n-dimensional spaces,} IEEE, 2009, pp. 2012--2017.
+
+\bibitem{ren_experimental_2007}
+Ren, W., McLain, T., Sun, J.-S., and Beard, R., \enquote{Experimental
+  validation of an autonomous control system on a mobile robot platform,} {\em
+  IET Control Theory \& Applications\/}, Vol.~1, No.~6, Nov. 2007,
+  pp.~1621--1629.
+
+\bibitem{louali_designing_2014}
+Louali, R., Djouadi, M.~S., Nemra, A., Bouaziz, S., and Elouardi, A.,
+  \enquote{Designing embedded systems for fixed-wing {UAVs}: {Dynamic} models
+  study for the choice of an emulation vehicle,} IEEE, Feb. 2014, pp. 1--6.
+
+\bibitem{louali_experimental_2016}
+Louali, R., Elouardi, A., Bouaziz, S., and Djouadi, M.~S.,
+  \enquote{Experimental {Approach} for {Evaluating} an {UAV} {COTS}-{Based}
+  {Embedded} {Sensors} {System},} {\em Journal of Intelligent \& Robotic
+  Systems\/}, Vol.~83, No.~2, Aug. 2016, pp.~289--313.
+
+\end{thebibliography}

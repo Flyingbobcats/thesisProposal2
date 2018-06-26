@@ -1,22 +1,25 @@
 %=========================================================================
 % optimizedGVF.m
 %
-% 
-% Script for optimized GVF decay radius multiplier k and circulathion Ho.
-% Results from thesis work 
+% Script for optimized GVF decay radius multiplier k and circulation Ho.
+% Results from thesis work. Usage:
 %
-%
+%        INPUT                                            OUTPUT
+% ------------------------------------------------------------------------
+% UAV initial y position
+% UAV velocity                                       path deviation cost
+% UAV initial heading          ====> fmincon ===>    decay radius k
+% Simulation dt                                      circulation  Ho
+% Obstacle size (n)
+% Obstacle Lateral position Yo
 %
 %                               Method and code developed by: Garrett Clem
 %==========================================================================
-
-
 clc
 clear
 close all
 
 numSolved = true;       % true numerically solves for k and H
-
 
 %UAV initial state
 ys = 0;
@@ -33,33 +36,33 @@ xs = -100*n;
 xf = 125*n;
 
 if numSolved
-plotFinal = false;
-fr = @(X) GVF(X,velocity,dt,plotFinal,obstR,obstY,xs,ys,n,xf);
-
-% Optimization options
-options = optimoptions('fmincon','Display','final-detailed');
-options.DiffMinChange = 0.1;
-options.DiffMaxChange = 0.2;
-options.PlotFcn = @optimplotfval;
-options.StepTolerance = 1e-3;
-
-%Optimizer initial conditions and bounds
-x0 = [2,2];
-A = [];
-b = [];
-Aeq = [];
-beq = [];
-lb = [2,1];
-ub = [4,6];
-
-%Solve for k and H - record time to reach solution
-tic
-[Xsolved,costR] = fmincon(fr,x0,A,b,Aeq,beq,lb,ub,[],options);
-sim_time = toc;
-
+    plotFinal = false;
+    fr = @(X) GVF(X,velocity,dt,plotFinal,obstR,obstY,xs,ys,n,xf);
+    
+    % Optimization options
+    options = optimoptions('fmincon','Display','final-detailed');
+    options.DiffMinChange = 0.1;
+    options.DiffMaxChange = 0.2;
+    options.PlotFcn = @optimplotfval;
+    options.StepTolerance = 1e-3;
+    
+    %Optimizer initial conditions and bounds
+    x0 = [2,2];
+    A = [];
+    b = [];
+    Aeq = [];
+    beq = [];
+    lb = [2,1];
+    ub = [4,6];
+    
+    %Solve for k and H - record time to reach solution
+    tic
+    [Xsolved,costR] = fmincon(fr,x0,A,b,Aeq,beq,lb,ub,[],options);
+    sim_time = toc;
+    
 else
-%If solver not used, manually enter k and H
-Xsolved = [2.95,0.1];
+    %If solver not used, manually enter k and H
+    Xsolved = [2.95,0.1];
 end
 
 %Run optimized scenario and plot result
@@ -69,13 +72,7 @@ figure('pos',[10 10 900 600]);
 fr = @(X) GVF(X,velocity,dt,plotFinal,obstR,obstY,xs,ys,n,xf);
 fr(Xsolved);
 
-
-
-
-
 function GVFcost = GVF(X,velocity,dt,plotFinal,obstR,obstY,xs,ys,n,xf)
-
-
 obstX = 0;
 
 %Parameters to solve for
@@ -88,7 +85,6 @@ else
     H = X(2);
 end
 
-
 %Setup vector field
 vf = vectorField();
 
@@ -99,7 +95,6 @@ vf.NormSummedFields = true;
 vf.avf{1}.H = velocity*n;
 vf.avf{1}.normComponents = false;
 vf.normAttractiveFields = false;
-
 
 %Obstacle
 vf = vf.nrvf('circ');
@@ -120,11 +115,9 @@ uav.plotUAV = false;
 uav.plotUAVPath = true;
 uav.plotFlightEnv = false;
 
-
 %Set decay field strength based on gamma ratio
 vf.rvf{1}.decayR = k*obstR;
 vf.rvf{1} = vf.rvf{1}.modDecay('hyper');
-
 
 COST = [];
 ERROR = [];
@@ -154,14 +147,14 @@ while uav.x<=xf
     %Determine cost and error
     [cost,error,location] = costANDerror(uav,obstR,obstX,obstY,optPath,dt);
     COST  = [COST;cost];
-    ERROR = [ERROR;error];  
+    ERROR = [ERROR;error];
 end
 
 %Determine total cost
 GVFcost = sum(COST);
 
 %Plot vector field, obstacle, UAV path, and singularities
-if plotFinal == true   
+if plotFinal == true
     vf.NormSummedFields = true;
     vf = vf.xydomain(xs*(n+1),0,0,45);
     plotHeat = false;
@@ -185,7 +178,7 @@ if plotFinal == true
     p5 = plot(uav.xs,uav.ys,'k-','linewidth',2);
     p3 = plot(uav.xs(1),uav.ys(1),'db','markersize',10,'markerfacecolor','b');
     p4 = plot(uav.xs(end),uav.ys(end),'sr','markersize',10,'markerfacecolor','r');
-
+    
     p8 = vf.rvf{1}.pltEqualStrength;
     optPath = genOptPath(uav,obstR+1,vf.rvf{1}.x,vf.rvf{1}.y);
     
@@ -201,23 +194,6 @@ if plotFinal == true
     str = strcat('m=',num2str(n),{'  '}, 'G=',num2str(-1),{'  '},'H=',num2str(sprintf('%0.1f',H)),{'  '},'k=',num2str(sprintf('%0.1f',k)),{'  '},'Cost=',num2str(sprintf('%0.0f',GVFcost)));
     title(str);
     xlabel('East [m]');
-    ylabel('North [m]'); 
+    ylabel('North [m]');
 end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

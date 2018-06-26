@@ -1,99 +1,99 @@
 \addvspace {\@lineskip }
 \addvspace {\@lineskip }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Fixed wing UAV (a) and multirotor UAV (b)}}{19}{figure.2.1}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Ground station software planning a waypoint based mission}}{20}{figure.2.2}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Autopilot's Navigation, Guidance, and Control Architecture}}{21}{figure.2.3}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Single Obstacle Potential Field Gradient \cite {liu_virtual-waypoint_2016}}}{23}{figure.2.4}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Virtual force field histogram acting on a mobile robot \cite {borenstein_vector_1991}}}{24}{figure.2.5}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Potential Field Local Minimum \cite {liu_virtual-waypoint_2016}}}{25}{figure.2.6}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Potential Field Local Minimum \cite {liu_virtual-waypoint_2016}}}{26}{figure.2.7}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Obstacle Clustering to Prevent Local Minimum \cite {liu_virtual-waypoint_2016}}}{26}{figure.2.8}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces UAV avoiding obstacle with VFF Guidance}}{27}{figure.2.9}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{28}{figure.2.10}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{28}{figure.2.10}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{28}{figure.2.10}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{28}{figure.2.10}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{28}{figure.2.10}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{28}{figure.2.10}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Lyapunov vector field for straight line and circular primitives \cite {nelson_cooperative_2005}}}{28}{figure.2.10}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Straight path following in urban environment \cite {nelson_cooperative_2005} using Lyapunov Vector Field}}{29}{figure.2.11}
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Lyapunov vector field approach curved path asymptotically \cite {griffiths_vector_2006}}}{30}{figure.2.12}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{30}{figure.2.13}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{30}{figure.2.13}
-\contentsline {figure}{\numberline {2.13}{\ignorespaces Elliptical VF produced by non-linear coordinate transformations a)\cite {frew_cooperative_2007} and b) \cite {frew_lyapunov_nodate}}}{30}{figure.2.13}
-\contentsline {figure}{\numberline {2.14}{\ignorespaces Tangent plus lyapunov vector fields for shortest path target tracking \cite {chen_uav_2013}}}{31}{figure.2.14}
-\contentsline {figure}{\numberline {2.15}{\ignorespaces RRT* path planner with a VF used as a task specification \cite {pereira_framework_2016}}}{32}{figure.2.15}
-\contentsline {figure}{\numberline {2.16}{\ignorespaces Vector field within a set of Delaunay triangles \cite {pimenta_fully_2007}}}{32}{figure.2.16}
-\contentsline {figure}{\numberline {2.17}{\ignorespaces Tangent Hyperbolic Function for Obstacle Decay in \cite {wilhelm_2019}}}{36}{figure.2.17}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Fixed wing UAV (a) and multirotor UAV (b)}}{20}{figure.2.1}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{20}{figure.2.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{20}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Ground station software planning a waypoint based mission}}{21}{figure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Autopilot's Navigation, Guidance, and Control Architecture}}{22}{figure.2.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Single Obstacle Potential Field Gradient \cite {liu_virtual-waypoint_2016}}}{24}{figure.2.4}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Virtual force field histogram acting on a mobile robot \cite {borenstein_vector_1991}}}{25}{figure.2.5}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Potential Field Local Minimum \cite {liu_virtual-waypoint_2016}}}{26}{figure.2.6}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{26}{figure.2.6}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{26}{figure.2.6}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Potential Field Local Minimum \cite {liu_virtual-waypoint_2016}}}{27}{figure.2.7}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{27}{figure.2.7}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{27}{figure.2.7}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Obstacle Clustering to Prevent Local Minimum \cite {liu_virtual-waypoint_2016}}}{27}{figure.2.8}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces UAV avoiding obstacle with VFF Guidance}}{28}{figure.2.9}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Lyapunov vector field for straight line and circular primitives \cite {nelson_cooperative_2005}}}{29}{figure.2.10}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Straight path following in urban environment \cite {nelson_cooperative_2005} using Lyapunov Vector Field}}{30}{figure.2.11}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Lyapunov vector field approach curved path asymptotically \cite {griffiths_vector_2006}}}{31}{figure.2.12}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Elliptical VF produced by non-linear coordinate transformations a)\cite {frew_cooperative_2007} and b) \cite {frew_lyapunov_nodate}}}{31}{figure.2.13}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{31}{figure.2.13}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{31}{figure.2.13}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Tangent plus lyapunov vector fields for shortest path target tracking \cite {chen_uav_2013}}}{32}{figure.2.14}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces RRT* path planner with a VF used as a task specification \cite {pereira_framework_2016}}}{33}{figure.2.15}
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Vector field within a set of Delaunay triangles \cite {pimenta_fully_2007}}}{33}{figure.2.16}
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Tangent Hyperbolic Function for Obstacle Decay in \cite {wilhelm_2019}}}{37}{figure.2.17}
 \addvspace {\@lineskip }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Intersection of planes defined by implicit surface functions}}{41}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Intersection of a cylinder and plane defined by implicit surface functions}}{44}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Summed fields without total normalization $\overrightarrow {V}_g$ with no circulation}}{46}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Summed Fields Without Total Normalization}}{47}{figure.3.4}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces GVF converging and circulating circular path}}{48}{figure.3.5}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{49}{figure.3.6}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{49}{figure.3.6}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Singularity in Summed Field with Equal Magnitude Convergence and Circulation}}{49}{figure.3.6}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Fixed wing converging and following a path simulation}}{51}{figure.3.7}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Fixed Wing converging and following a path}}{52}{figure.3.8}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Lateral error for fixed wing guided by GVF guidance of multiple circulations}}{52}{figure.3.9}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Circular obstacle along planned path}}{53}{figure.3.10}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces UAV encountering a circular obstacle centered on pre-planned path, no circulation}}{55}{figure.3.11}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces UAV encountering a circular obstacle centered on pre-planned path with circulation}}{56}{figure.3.12}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Heatmap of cost as function of $k$ and $H_o$}}{57}{figure.3.13}
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Cost function reduction in fmincon()}}{58}{figure.3.14}
-\contentsline {figure}{\numberline {3.15}{\ignorespaces UAV path from optimized GVF}}{59}{figure.3.15}
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Optimal Kinematic Path Around Circular Obstacle}}{61}{figure.3.16}
-\contentsline {figure}{\numberline {3.17}{\ignorespaces Obstacle Diversion Waypoints}}{62}{figure.3.17}
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Cost impact versus number of waypoints}}{62}{figure.3.18}
-\contentsline {figure}{\numberline {3.19}{\ignorespaces Path of UAV guided by guidance methods}}{64}{figure.3.19}
-\contentsline {figure}{\numberline {3.20}{\ignorespaces Cost performance for various UAV guidance methods}}{64}{figure.3.20}
-\contentsline {figure}{\numberline {3.21}{\ignorespaces Obstacle circulation lookup table, smoothed by interpolation}}{66}{figure.3.21}
-\contentsline {figure}{\numberline {3.22}{\ignorespaces Obstacle decay radius lookup table, smoothed by interpolation}}{66}{figure.3.22}
-\contentsline {figure}{\numberline {3.23}{\ignorespaces Obstacle circulation lookup table with interpolation points}}{67}{figure.3.23}
-\contentsline {figure}{\numberline {3.24}{\ignorespaces Obstacle decay radius lookup table with interpolation points}}{68}{figure.3.24}
-\contentsline {figure}{\numberline {3.25}{\ignorespaces Cost of UAV obstacle avoidance using interpolated and optimized parameters}}{69}{figure.3.25}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{70}{figure.3.26}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{70}{figure.3.26}
-\contentsline {figure}{\numberline {3.26}{\ignorespaces Micro quadcopter Crazyflie 2.0 by bitcraze}}{71}{figure.3.26}
-\contentsline {figure}{\numberline {3.27}{\ignorespaces Indoor quadcopter flight experimental layout}}{71}{figure.3.27}
-\contentsline {figure}{\numberline {3.28}{\ignorespaces Crazieflie client radio communication software}}{72}{figure.3.28}
-\contentsline {figure}{\numberline {3.29}{\ignorespaces Crazyflie Guidance and Control Software Framework}}{73}{figure.3.29}
-\contentsline {figure}{\numberline {3.30}{\ignorespaces Crazyflie Guidance and Control Software Framework}}{74}{figure.3.30}
-\contentsline {figure}{\numberline {3.31}{\ignorespaces Validation of Python straight path guidance overlaid with MATLAB}}{75}{figure.3.31}
-\contentsline {figure}{\numberline {3.32}{\ignorespaces Validation of Python summed guidance overlaid with MATLAB}}{75}{figure.3.32}
-\contentsline {figure}{\numberline {3.33}{\ignorespaces Validation of Python Dubins UAV route overlaid with MATLAB}}{76}{figure.3.33}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Intersection of planes defined by implicit surface functions}}{42}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Intersection of a cylinder and plane defined by implicit surface functions}}{45}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Summed fields without total normalization $\overrightarrow {V}_g$ with no circulation}}{47}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Summed Fields Without Total Normalization}}{48}{figure.3.4}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces GVF converging and circulating circular path}}{49}{figure.3.5}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{49}{figure.3.5}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{49}{figure.3.5}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Singularity in Summed Field with Equal Magnitude Convergence and Circulation}}{50}{figure.3.6}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Fixed wing converging and following a path simulation}}{52}{figure.3.7}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Fixed Wing converging and following a path}}{53}{figure.3.8}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Lateral error for fixed wing guided by GVF guidance of multiple circulations}}{53}{figure.3.9}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Circular obstacle along planned path}}{54}{figure.3.10}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces UAV encountering a circular obstacle centered on pre-planned path, no circulation}}{56}{figure.3.11}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces UAV encountering a circular obstacle centered on pre-planned path with circulation}}{57}{figure.3.12}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Heatmap of cost as function of $k$ and $H_o$}}{58}{figure.3.13}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Cost function reduction in fmincon()}}{59}{figure.3.14}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces UAV path from optimized GVF}}{60}{figure.3.15}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Optimal Kinematic Path Around Circular Obstacle}}{62}{figure.3.16}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Obstacle Diversion Waypoints}}{63}{figure.3.17}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{63}{figure.3.17}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{63}{figure.3.17}
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Cost impact versus number of waypoints}}{63}{figure.3.18}
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Obstacle circulation lookup table, smoothed by interpolation}}{64}{figure.3.19}
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Obstacle decay radius lookup table, smoothed by interpolation}}{65}{figure.3.20}
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Obstacle circulation lookup table with interpolation points}}{66}{figure.3.21}
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Obstacle decay radius lookup table with interpolation points}}{66}{figure.3.22}
+\contentsline {figure}{\numberline {3.23}{\ignorespaces Cost of UAV obstacle avoidance using interpolated and optimized parameters}}{67}{figure.3.23}
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Micro quadcopter Crazyflie 2.0 by bitcraze}}{69}{figure.3.24}
+\contentsline {figure}{\numberline {3.25}{\ignorespaces Indoor quadcopter flight experimental layout}}{70}{figure.3.25}
+\contentsline {figure}{\numberline {3.26}{\ignorespaces Crazieflie client radio communication software}}{70}{figure.3.26}
+\contentsline {figure}{\numberline {3.27}{\ignorespaces Crazyflie Guidance and Control Software Framework}}{71}{figure.3.27}
+\contentsline {figure}{\numberline {3.28}{\ignorespaces Crazyflie Guidance and Control Software Framework}}{72}{figure.3.28}
+\contentsline {figure}{\numberline {3.29}{\ignorespaces Validation of Python straight path guidance overlaid with MATLAB}}{73}{figure.3.29}
+\contentsline {figure}{\numberline {3.30}{\ignorespaces Validation of Python summed guidance overlaid with MATLAB}}{74}{figure.3.30}
+\contentsline {figure}{\numberline {3.31}{\ignorespaces Validation of Python Dubins UAV route overlaid with MATLAB}}{74}{figure.3.31}
 \addvspace {\@lineskip }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Centered obstacle with small radius avoided by Dubin's UAV in simulation}}{80}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Centered obstacle with large radius avoided by Dubin's UAV in simulation}}{81}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Off centered obstacle with small radius avoided by Dubin's UAV in simulation}}{82}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Off centered obstacle with large radius avoided by Dubin's UAV in simulation}}{83}{figure.4.4}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Simulated and experimental UAV routes for path centered obstacle with small radius}}{84}{figure.4.5}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces UAV speed versus time during flight experiment of scenario 1}}{85}{figure.4.6}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces State response plots for scenario 1}}{86}{figure.4.7}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Simulated and experimental UAV routes for off centered obstacle with small radius}}{87}{figure.4.8}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Simulated and experimental UAV routes for path centered obstacle with large radius}}{88}{figure.4.9}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Simulated and experimental UAV routes for off centered obstacle with large radius}}{89}{figure.4.10}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Path of UAV guided by guidance methods}}{78}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Cost performance for various UAV guidance methods}}{78}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Centered obstacle with small radius avoided by Dubin's UAV in simulation}}{80}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Centered obstacle with large radius avoided by Dubin's UAV in simulation}}{81}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Off centered obstacle with small radius avoided by Dubin's UAV in simulation}}{82}{figure.4.5}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Off centered obstacle with large radius avoided by Dubin's UAV in simulation}}{83}{figure.4.6}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Simulated and experimental UAV routes for path centered obstacle with small radius}}{84}{figure.4.7}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces UAV speed versus time during flight experiment of scenario 1}}{85}{figure.4.8}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces State response plots for scenario 1}}{86}{figure.4.9}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Simulated and experimental UAV routes for off centered obstacle with small radius}}{87}{figure.4.10}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Simulated and experimental UAV routes for path centered obstacle with large radius}}{88}{figure.4.11}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Simulated and experimental UAV routes for off centered obstacle with large radius}}{89}{figure.4.12}
 \addvspace {\@lineskip }
 \addvspace {\@lineskip }
 \addvspace {\@lineskip }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces GVF circular attractive field without normalization (a) and normalization (b)}}{94}{figure.A.1}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Repulsive Circular Field with Large Radius}}{94}{figure.A.2}
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Repulsive Circular Field with Small Radius}}{95}{figure.A.3}
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Circular GVF without normalization (a) and with normalization (b)}}{95}{figure.A.4}
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Repulsive GVF a) no circulation $H_o=0$ and b) with circulation $H_o=1$}}{96}{figure.A.5}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces GVF circular attractive field without normalization (a) and normalization (b)}}{99}{figure.A.1}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{99}{figure.A.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{99}{figure.A.1}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Repulsive Circular Field with Large Radius}}{100}{figure.A.2}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Repulsive Circular Field with Small Radius}}{100}{figure.A.3}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Circular GVF without normalization (a) and with normalization (b)}}{101}{figure.A.4}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{101}{figure.A.4}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{101}{figure.A.4}
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Repulsive GVF a) no circulation $H_o=0$ and b) with circulation $H_o=1$}}{102}{figure.A.5}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{102}{figure.A.5}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{102}{figure.A.5}
 \addvspace {\@lineskip }
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{97}{figure.B.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{97}{figure.B.1}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{97}{figure.B.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{97}{figure.B.1}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{97}{figure.B.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{97}{figure.B.1}
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Validation of Python obstacle guidance overlaid with MATLAB}}{97}{figure.B.1}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Validation of Python obstacle decay guidance overlaid with MATLAB}}{97}{figure.B.2}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Validation of Python obstacle guidance overlaid with MATLAB}}{103}{figure.B.1}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Validation of Python obstacle decay guidance overlaid with MATLAB}}{104}{figure.B.2}
 \addvspace {\@lineskip }
-\contentsline {figure}{\numberline {C.1}{\ignorespaces Experimental Scenario 2 UAV Speed and Controller Response}}{98}{figure.C.1}
-\contentsline {figure}{\numberline {C.2}{\ignorespaces Experimental Scenario 3 UAV Speed and Controller Response}}{99}{figure.C.2}
-\contentsline {figure}{\numberline {C.3}{\ignorespaces Experimental Scenario 4 UAV Speed and Controller Response}}{100}{figure.C.3}
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Experimental Scenario 2 UAV Speed and Controller Response}}{106}{figure.C.1}
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Experimental Scenario 3 UAV Speed and Controller Response}}{107}{figure.C.2}
+\contentsline {figure}{\numberline {C.3}{\ignorespaces Experimental Scenario 4 UAV Speed and Controller Response}}{108}{figure.C.3}
 \addvspace {\@lineskip }
 \addvspace {\@lineskip }

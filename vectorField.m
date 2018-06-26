@@ -1,5 +1,11 @@
 %Main vector field object to store, create, and modify multiple vector
-%fields
+%fields. Usage:
+%
+% vf = vectorField()    %Instance of class
+% vf = vf.navf{'line'}  %Construct a (n)ew (a)ttractive (v)ector (f)ield
+% vf = vf.nrvf{'circ'}  %Construct a (n)ew (r)epulsive  (v)ector (f)ield
+% heading = vf.heading(x,y) %Get [u,v] heading components at (x,y)
+% vf.pltff()            %Plots full quiver vector field
 
 classdef vectorField
     %Master vector field class that handles all attractive fields and major
@@ -81,9 +87,6 @@ classdef vectorField
             
         end
         
-        
-        
-        
         function [X,Y,Ut,Vt] = sumFields(self)
             
             if length(self.avf) + length(self.rvf) < 1
@@ -94,7 +97,6 @@ classdef vectorField
                 Vt = NaN;
                 return
             end
-            
             %Get all of the attractive fields
             Usa = cell(length(self.avf));
             Vsa = cell(length(self.avf));
@@ -105,8 +107,7 @@ classdef vectorField
                     Vsa{i} = V;
                 end
             end
-            
-            %Summ all attractive fields into one set
+            %Sum all attractive fields into one set
             Uta = zeros(length(self.xspace));
             Vta = zeros(length(self.yspace));
             for i = 1:length(Usa)
@@ -125,10 +126,7 @@ classdef vectorField
                     end
                 end
             end
-            
-            
-            
-            
+ 
             %Geta all of the repulsive vector vields
             Usr = cell(length(self.rvf));
             Vsr = cell(length(self.rvf));
@@ -139,8 +137,7 @@ classdef vectorField
                     Vsr{i} = V;
                 end
             end
-            
-            
+ 
             %Sum together all of the repulsive vector fields
             Utr = zeros(length(self.xspace));
             Vtr = zeros(length(self.yspace));
@@ -158,9 +155,7 @@ classdef vectorField
                     end
                 end
             end
-            
-            
-            
+
             %Sum together attractive and repulsive vector field
             Ut = NaN(length(self.xspace));
             Vt = NaN(length(self.xspace));
@@ -178,11 +173,7 @@ classdef vectorField
                 end
             end
         end
-        
-        
-        
-       
-        
+
         function [Ut,Vt] = heading(self,x,y)
             
             posx = x;
@@ -239,40 +230,25 @@ classdef vectorField
             end
         end
         
-        
         %=================== Plotting ====================================%
-        function fig = pltff(self)
+        function fig = pltff(self)              %Plot full field
             [x,y,u,v] = self.sumFields;   
-%             if sum(isnan(u(:))) > 0 || sum(isnan(v(:))) > 0
-%                warning('sumFields returned NaN'); 
-%             end
-            
             quiver(x,y,u,v,'linewidth',1);
             axis equal
-            
             fig = gca;
         end
         
-        function pltPaths(self)
+        function pltPaths(self)                 %Plot attractive path
             for i = 1:length(self.avf)
                 self.avf{i}.pltfnc;
             end
         end
         
-        
-        function pltDecay(self)
+       function pltDecay(self)                 %Plot repulsive decay
             for i = 1:length(self.rvf)
                self.rvf{i}.pltDecay; 
             end
-        end
-        %%%% ============= Helper / Debugger Functions ======================
-        %Number of vector fields
-        function numvf(self)
-            length(self.avf)
-        end
-        
-        
-        
+        end  
     end
     
 end
