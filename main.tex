@@ -96,7 +96,7 @@
                                     %      and Computer Science
 \college   {Russ College of Engineering and Technology}   % e.g. Russ College of Engineering and
                                      %      Technology
-\abstract  {Unmanned Aerial Vehicles (UAVs) conventionally navigate by following a series of pre-planned waypoints. When encountering an obstacle during flight, such as no-fly zone or other aircraft, the vehicle's path or waypoints may need to be re-planned. Waypoint guidance can be used to avoid obstacles which is typically generated off-line and relayed to the UAV requiring active communications. Vector Fields (VFs) that are generated based on a desired path can provide guidance around a newly discovered obstacle without the need for a re-plan. Convergence and circulation terms that make up the VF can be controlled by modifying static multiplicative scalars. Additionally, a decay radius can be applied to limit the effects of a repulsive VF, representing an obstacle. VF convergence and circulation components were optimized to minimize deviation from a desired path when guiding around a circular obstacle. Results indicated that the developed VF obstacle avoidance optimizer guidance directs the UAV along a similar route as waypoint guidance without the need for re-planning.}
+\abstract  {Unmanned Aerial Vehicles (UAVs) conventionally navigate by following a series of pre-planned waypoints. When encountering an obstacle in flight, such as no-fly zones or other aircraft, the vehicle's path or waypoints may need to be re-planned. Waypoint guidance can be used to avoid obstacles, which are typically generated off-line and relayed to the UAV requiring active communications. Vector Fields (VFs) that are generated based on a desired path can provide guidance around a newly discovered obstacle without the need for a re-plan. VF convergence and circulation components were optimized to minimize deviation from a desired path when guiding around a circular obstacle. Results indicated that the developed VF obstacle avoidance optimizer provides similar path deviation performance as waypoints without the need for re-planning. Lookup tables for GVF circulation and decay radius were constructed allowing for real time obstacle avoidance without the need to re-plan mission waypoints. Experimental flight tests were conducted using a indoor quadcopter with imposed turn rate constraints, emulating a fixed wing UAV. Deviation from the planned path for simulation and experimentation were compared.}
  
 
 %% Optional front matter definitions.  Delete or comment out if not needed
@@ -250,7 +250,7 @@ Unmanned aerial vehicles (UAV) are pilotless aircraft used by military, police, 
 
  
 
-Vector Field (VF) guidance is a method that is mainly used for path following \cite{nelson_cooperative_2005,nelson_vector_2006,nelson_vector_2007,griffiths_vector_2006,goncalves_artificial_2009,goncalves_circulation_2010,goncalves_vector_2010} and can be useful for obstacle avoidance \cite{panagou_motion_2014,wilhelm_2019}. VFs can produce continuous heading vectors that can be used to guide a UAV to coverage and follow a path. Vectors are calculated by summing together convergence and circulation terms that are weighted by static scalars. Obstacles can be represented as repulsive VFs that direct the UAV away from the no-fly zone. Strictly repulsive VFs do not always route the UAV around an obstacle and can cause singularities, small regions where path following and obstacle vectors cancel. Modifying repulsive VFs to include circulation and an appropriate decay radius may be used to produce an optimal guidance. \textbf{Problem Statement: Utilize vector field guidance to enable an optimized obstacle avoidance without re-planning waypoints.}
+Vector Field (VF) guidance is a method that is mainly used for path following \cite{nelson_cooperative_2005,nelson_vector_2006,nelson_vector_2007,griffiths_vector_2006,goncalves_artificial_2009,goncalves_circulation_2010,goncalves_vector_2010} and can be useful for obstacle avoidance \cite{panagou_motion_2014,wilhelm_2019}. VFs can produce continuous heading vectors that can be used to guide a UAV to coverage and follow a path. Vectors are calculated by summing together convergence and circulation terms that are weighted by static scalars. Obstacles can be represented as repulsive VFs that direct the UAV away from the no-fly zone. Strictly repulsive VFs do not always route the UAV around an obstacle and can cause singularities, small regions where path following and obstacle vectors cancel. Modifying repulsive VFs to include circulation and an appropriate decay radius may be used to produce an optimal guidance. \textbf{Problem Statement: Optimization of Gradient Vector Field guidance to direct a UAV with turn rate constraints around an obstacle with minimal path deviation was sought.}
  \pagebreak
  
  \section{Methods Overview}
@@ -1769,9 +1769,4 @@ The script optimizedGVF.m contains the optimization algorithm to determine optim
 The MATLAB class vectorField.m manages the creation, summation, and plotting of GVF guidance. Instructions on how to use the class are provided in the comments above the class definition. Usage of the class is also shown in optimizationGVF.m script.
 
 \lstinputlisting{vectorField.m}
-
-
-
-
-
 \end{document}
