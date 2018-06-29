@@ -14,8 +14,29 @@
 \BOOKMARK [1][-]{section.1.5}{Phase III}{chapter.1}% 14
 \BOOKMARK [1][-]{section.1.6}{Summary of Objectives}{chapter.1}% 15
 \BOOKMARK [0][-]{chapter.2}{Literature Review}{}% 16
-\BOOKMARK [1][-]{section.2.1}{Introduction to Literature Review}{chapter.2}% 17
-\BOOKMARK [1][-]{section.2.2}{Fixed Wing Unmanned Aerial Vehicle}{chapter.2}% 18
-\BOOKMARK [1][-]{section.2.3}{Navigation, Guidance and Control}{chapter.2}% 19
-\BOOKMARK [1][-]{section.2.4}{Literature Review Summary}{chapter.2}% 20
-\BOOKMARK [0][-]{schapter.8}{References}{}% 21
+\BOOKMARK [1][-]{section.2.1}{Literature Review Introduction}{chapter.2}% 17
+\BOOKMARK [1][-]{section.2.2}{Unmanned Aerial Vehicles}{chapter.2}% 18
+\BOOKMARK [1][-]{section.2.3}{Dubins Vehicle Model}{chapter.2}% 19
+\BOOKMARK [1][-]{section.2.4}{UAV Guidance}{chapter.2}% 20
+\BOOKMARK [1][-]{section.2.5}{Literature Review Summary}{chapter.2}% 21
+\BOOKMARK [0][-]{chapter.3}{Methodology}{}% 22
+\BOOKMARK [1][-]{section.3.1}{Introduction to Methodology}{chapter.3}% 23
+\BOOKMARK [1][-]{section.3.2}{Phase I: Gradient Vector Field Singularity Detection}{chapter.3}% 24
+\BOOKMARK [1][-]{section.3.3}{Phase II: Optimization of Obstacle Field}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.4}{Phase III: Flight tests}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.5}{Python Guidance Validation}{chapter.3}% 27
+\BOOKMARK [1][-]{section.3.6}{Summary of Methodology}{chapter.3}% 28
+\BOOKMARK [0][-]{chapter.4}{Results}{}% 29
+\BOOKMARK [1][-]{section.4.1}{Introduction to Results}{chapter.4}% 30
+\BOOKMARK [1][-]{section.4.2}{Phase I \046 II}{chapter.4}% 31
+\BOOKMARK [1][-]{section.4.3}{Worst Case Avoidance Scenario}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.4}{Four Avoidance Scenarios}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.5}{Phase III}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.6}{Summary of results}{chapter.4}% 35
+\BOOKMARK [0][-]{chapter.5}{Conclusions}{}% 36
+\BOOKMARK [0][-]{schapter.8}{References}{}% 37
+\BOOKMARK [0][-]{appendix.A}{Appendix A: Methodology Phase I}{}% 38
+\BOOKMARK [0][-]{appendix.B}{Appendix B: Methodology Phase III}{}% 39
+\BOOKMARK [0][-]{appendix.C}{Appendix C: Appendix - Results Phase III}{}% 40
+\BOOKMARK [0][-]{appendix.D}{Appendix D: Optimization MATLAB source code}{}% 41
+\BOOKMARK [0][-]{appendix.E}{Appendix E: Vector Field Construction source code}{}% 42

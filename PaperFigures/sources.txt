@@ -5,7 +5,7 @@ ptichrollyaw.png
 https://aviation.stackexchange.com/questions/14623/what-is-the-function-of-the-tail-section-on-a-fixed-wing-aircraft
 
 pixhawk.jpg
-http://www.robotshop.com/en/3dr-px4-pixhawk-advanced-autopilot-gps.html
+https://docs.px4.io/en/assembly/quick_start_pixhawk.html
 
 handlaunched.jpg
 https://www.army.mil/e2/-images/2006/11/22/1023/army.mil-2006-11-22-114606.jpg
@@ -13,5 +13,27 @@ https://www.army.mil/e2/-images/2006/11/22/1023/army.mil-2006-11-22-114606.jpg
 globalhawk.jpg
 http://www.northropgrumman.com/Photos/pgL_GL-10001_002.jpg
 
+qGround
+https://docs.qgroundcontrol.com/en/
+
+frSky
+https://docs.px4.io/en/getting_started/rc_transmitter_receiver.html
+
+researchUAV.png
+http://aerialdatasystems.com/fixed-wing/
+
+3drIris
+http://drone-pilot-zone.com/wp-content/uploads/2015/06/3-3DR-IRIS-Battery-5100-mAh-3S-8C-3DR-Balance-Charger-for-IRIS-Flight-Battery-Microfiber-Cleaning-Cloth-for-3DR-IRIS-Quadcopter-0-4.jpg
+
+pfObstacle PfObstacleLocalMin PfObstacleLocalMinTopology
+A Virtual-Waypoint Based Artificial Potential Field Method for UAV Path Planning
 
 
+drone-in-the-sky-clipart-3
+https://classroomclipart.com/clipart-view/Clipart/Aircraft/drone-in-the-sky-clipart-3_jpg.htm
+
+3dr
+https://www.bhphotovideo.com/images/images1000x1000/3dr_3dr0651_aero_m_drone_with_fpv_1160233.jpg
+
+iris-1
+http://www.bestflyingdrone.com/wp-content/uploads/2016/10/iris-1.jpg

@@ -443,7 +443,7 @@ Thesis and Dissertation Class]
 	  \begin{center}
 	    \@dsp
 	    This \@doctype\ titled\\
-	    \@title\\[2\@lineskip minus 3\@doubleskip]
+	    \@title\\[6\@lineskip minus 6\@doubleskip]
 	    by\\
 	    \MakeUppercase{\@author}\\[1\@doubleskip]
 	    has been approved for \\
@@ -479,7 +479,7 @@ Thesis and Dissertation Class]
         \raggedright
         \MakeUppercase\@authorreversed,
         \@degreeabbr, \@gradmonth\ \@gradyear, \@program\\
-        \ul\@titleoneline\ (\pageref{LastPage} pp.)\\
+        \ul\@titleoneline\\
         \if@coadvise
           Directors of \@Doctype: \@advisor\ and \@coadvisor\\
         \else

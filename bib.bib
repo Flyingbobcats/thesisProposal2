@@ -70,21 +70,6 @@
 	author = {Nelson, Derek R.},
 	year = {2005},
 	keywords = {Path Following, Lyapunov, Dubins, Vector Field, Wind, Experiment, Constant Velocity, Sliding Mode, Singularity},
-	annote = {
-Vector fields serve as course commands to the MAV
-
- 
-
-The notion of vector fields is similar to that of potential fields, which have been widely used as a tool for path planning in the robotics community.
- 
-Vector fields are different from potential fields in that they do not necessarily represent the gradient of a potential. Rather, the vector field simply indicates a desired direction of travel
- 
-
- 
-
-Two primitive path types are used (straight lines, and circular orbits)
-To spice together paths made up of straight lines and circular arcs, each portion of the path is turned on and off depending on the time or location of the UAV. By only having a single field active at any given time, you prevent dead zones, singularities, or kinks that would otherwise be present when summing the field. The challenge then becomes when and where to transition between these zones. For complex geometry this may be difficult
-},
 	file = {Vector Field Path Following for Miniature Air Vehicles.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\3RFFX53U\\Vector Field Path Following for Miniature Air Vehicles.pdf:application/pdf}
 }
 
@@ -97,15 +82,8 @@ To spice together paths made up of straight lines and circular arcs, each portio
 	journal = {International Journal of Micro Air Vehicles},
 	author = {Meenakshisundaram, Vaitheeswaran S. and Gundappa, Venkatanarayana K. and Kanth, B. Sashi},
 	year = {2010},
-	keywords = {Dubins, Lyapunov, Path Following, Vector Field},
+	keywords = {Path Following, Lyapunov, Dubins, Vector Field},
 	pages = {255--265},
-	annote = {
-The work presented in this paper builds on the concept of path following through the construction of a three dimensional vector field around the path to be followed. Controlling heading rate and the pitch rate using ground track heading and vertical flight path angle automatically accounts for the wind condition thus reducing deleterious effects of wind
- 
-
-
-By allowing the aircraft to travel in 3d, the UAV will have higher maneuverability
-},
 	file = {Vector field guidance for path following MAVs in three dimensions for variable altitude maneuvers.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\4CTDJXQT\\Vector field guidance for path following MAVs in three dimensions for variable altitude maneuvers.pdf:application/pdf}
 }
 
@@ -136,21 +114,8 @@ By allowing the aircraft to travel in 3d, the UAV will have higher maneuverabili
 	author = {Jung, Wooyoung and Lim, Seunghan and Lee, Dongjin and Bang, Hyochoong},
 	month = dec,
 	year = {2016},
-	keywords = {Arrival Angle, Dubins, Path Primitives, Vector Field, Wind},
+	keywords = {Dubins, Vector Field, Wind, Path Primitives, Arrival Angle},
 	pages = {311--325},
-	annote = {
-Waypoints and paths are planned before UA are operated
- 
-
- 
-
-After planning waypoints, paths are then planned by connecting each point together
-
-
-Come back to this for ideas on citing path generation techniques
-
- 
- },
 	file = {Unmanned Aircraft Vector Field Path Following with Arrival Angle Control.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\UR6958BU\\Unmanned Aircraft Vector Field Path Following with Arrival Angle Control.pdf:application/pdf}
 }
 
@@ -176,40 +141,6 @@ Come back to this for ideas on citing path generation techniques
 	author = {Chen, Hongda and Chang, KuoChu and Agate, Craig S.},
 	year = {2009},
 	pages = {363--372},
-	annote = {Optimal, cost criterion, Simulation, Tracking, Moving Target, Wind, Path Planning, Obstacle Avoidance, Dubins Model, Near Constant Velocity
-
-
-Dynamic path-planning algorithm for tracking ground targets
-Combines Tangent Vector Field Guidance (TVFG) and Lyapunov Vector Field Guidance (LVFG)
-Theoretically optimal path is derived with UAV operational constraints
-Only physical limitations considered (max turn rate, nominal cruising speed)
-Appears to be an interesting optimal take on Dubins path. Some initial state (x,y,heading) and a goal state (xg,yg,heading) with some constraints. Find the optimal way to get from one state to the
-
- 
-The overall goal is to transition from these initial to goal states, and like Dubins paths, it will be constructed of straight line and circular arcs. The line to enter the second circular path will always be tangent to the turn.
- 
-Two propositions
-
-Shortest distance to objective circle around a target, the optimal UAV path is found by using the nearest Tangent Vector Field Guidance
-If the tangents are available between a UAVs turning limit circle and an objective circle, TVFG provides more efficient path planning than LVFG
-
- 
-
-Tangent VF guidance provides a more efficient path (Distance wise) than Lyapunov
-Lyapunov also fails to converge to the circle and has some offset (the offset is dependent on the UAVs velocity and the sampling interval)
-Tangent VF has no guidance inside of the objective circle, therefore two low hanging fruit are available to remedy this issue
-
-
- Continue forward movement until a guidance vector is available
-Use Lyapunov inside of the objective circle
-
- 
-Obstacle Avoidance
- 
-
-Algorithm considers obstacles by placing an objective circle around the obstacle so that the UAV will be guided around said obstacle. Problem with generalizing all objects as circular regions removes free space from the mission that would otherwise be available (think a long obstacle that would be better suited for a elliptical "objective field"
-
-},
 	file = {Tracking with UAV using Tangent-plus-lyapunov vector field guidance.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\X4S8QGAE\\Tracking with UAV using Tangent-plus-lyapunov vector field guidance.pdf:application/pdf}
 }
 
@@ -223,7 +154,6 @@ Algorithm considers obstacles by placing an objective circle around the obstacle
 	author = {Borenstein, Johann and Koren, Yoram},
 	year = {1991},
 	pages = {278--288},
-	annote = {More or less the same as the proceeding two papers (1990,1991). Slightly more detail is available, so if clarification is needed give it a second read},
 	file = {The_Vector_Field_HistogramuFast_Obstacle_Avoidance.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\QDRKS94E\\The_Vector_Field_HistogramuFast_Obstacle_Avoidance.pdf:application/pdf}
 }
 
@@ -240,31 +170,6 @@ Algorithm considers obstacles by placing an objective circle around the obstacle
 	month = jun,
 	year = {2017},
 	pages = {49--58},
-	annote = {Tangent, Path Following, Differentiable, Lyapunov Stability, Point Mass Kinematics, 
- 
- 
-
-Path following is preferred to trajectory tracking since there is no consideration for time paramaterization
-Cites Sujit et al, survey path planner paper, recalls that
-
-
-Classifies path following into control techniques and geometric methods
-For straight lines and circles, VF is more accurate and requires less control effort compared to the other methods (NGL, pure pursuit, LQR)
-
-
-The paper is compared strongly against the 2006 AIAA work, claiming the main contributions are
-
-
-Derivation of an equivalent tangent vector field
-Input saturation constraint is imposed
-Saturation turning velocity controller is designed
-Lyapunov stability of the controller is detailed
-
- 
-
-Saturation constraints for fixed wing are given
-Tangent vector field
-},
 	file = {Tangent vector field approach for curved path following with input saturation.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\Z682MBH2\\Tangent vector field approach for curved path following with input saturation.pdf:application/pdf}
 }
 
@@ -292,24 +197,6 @@ Tangent vector field
 	author = {Borenstein, Johann and Koren, Yoram},
 	year = {1990},
 	pages = {572--577},
-	annote = {
-Vector Field Histogram (VFH) is used, previously discussed in the Inherited problems with PF paper
-Avoids collisions while simultaneously steering towards the target
-2D Histogram grid
-A 1-D polar histogram plot is used to find the heading with minimum object density and travels along said vector
-Previous force-field approaches do not allow the robot to pass through narrow passages
-Each cell in the grid has a corresponding certainty value (as the value increases, the more certain the algorithm is that an obstacle is present)
-A better description is a Histogram Probability Distribution
-
- 
-
-Data is reduced and handled in the following ways:
-
-
-The entire histogram is absolute and is stationary (ground frame)
-Only a small region is considered "active"
-Active cells are a region around the robot, these active cells are the only cells that have influence of the robots control
-},
 	file = {Real-time obstacle avoidance for fast mobile robots in cluttered environments.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\VMFKIPH9\\Real-time obstacle avoidance for fast mobile robots in cluttered environments.pdf:application/pdf}
 }
 
@@ -321,13 +208,8 @@ Active cells are a region around the robot, these active cells are the only cell
 	publisher = {IEEE},
 	author = {Miao, Zhiqiang and Thakur, Divya and Erwin, R. Scott and Pierre, Jean and Wang, Yaonan and Fierro, Rafael},
 	year = {2016},
-	keywords = {Experiment, Lyapunov, Moving Targets, Simulation},
+	keywords = {Lyapunov, Moving Targets, Experiment, Simulation},
 	pages = {6004--6009},
-	annote = {
-A lot of really ugly math that is not necessary to understand at this time.
-
-Key takeaways:
-Vector fields have been constructed for following a target in 3D. Circumnavigation with multiple vehicles},
 	file = {Orthogonal Vector Field-based Control for a multi-robot system circumnavigating a moving target in 3d.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\BRDTQ6SR\\Orthogonal Vector Field-based Control for a multi-robot system circumnavigating a moving target in 3d.pdf:application/pdf}
 }
 
@@ -354,15 +236,6 @@ Vector fields have been constructed for following a target in 3D. Circumnavigati
 	author = {de Marina, Hector Garcia and Kapitanyuk, Yuri A. and Bronz, Murat and Hattenberger, Gautier and Cao, Ming},
 	year = {2017},
 	pages = {5740--5745},
-	annote = {Wind, Constant Velocity, Simulation, Experiment, Non-holonomic 
-
-Algorithm is currently present on the paparazzi autopilot and is ready for use by the general public (First one so far. . ."
-Continuation of Russian authors work from 2016
-Normal vector n(p) is the gradient of the level set
-The tangent can be mapped from the normal through the matrix E
-
- 
-The article is very math heavy and difficult to understand. I may have to come back at some point, but the material is essentially a continuation of the 2016 work.},
 	file = {Guidance algorithm for smooth trajectory tracking of a fixed wing uav flying in wind flows.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\8K4AA4N2\\Guidance algorithm for smooth trajectory tracking of a fixed wing uav flying in wind flows.pdf:application/pdf}
 }
 
@@ -390,22 +263,6 @@ The article is very math heavy and difficult to understand. I may have to come b
 	year = {2003},
 	keywords = {Potential Field, Obstacle, Navigation Functions, Vector Field},
 	pages = {2926--2931},
-	annote = {
-This work is motivated by the need to redesign the potential field each time an environment change is detected.
- 
-
- 
-
-Previous research has focused on either known or unknown environments
-This paper"bridges" the gap between these two methods
-
- 
-
-Our basic idea is to construct a discontinuous vector field which acts as the predefined navigation field away from unmodelled obstacles and as a vorticity-line field close to them
- 
-
-The above statement reinforces the idea that the arbitrary categories of potential field and vector field, really are not separate. A potential field is in fact a vector field. 
- },
 	file = {Closed Loop Motion Planning and Control for Mobile Robots in Uncertain Environments.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\3KIX8PSW\\Closed Loop Motion Planning and Control for Mobile Robots in Uncertain Environments.pdf:application/pdf}
 }
 
@@ -430,25 +287,6 @@ The above statement reinforces the idea that the arbitrary categories of potenti
 	year = {2002},
 	keywords = {Obstacle, Lyapunov, on-line, Motion Planning, Navigation Functions, Normalized, Nonholonomic, Backstepping, Unicycle, level sets},
 	pages = {1691--1696},
-	annote = {
-Completeness - Guaranteed to find a solution if one exists
-Reactive motion planning is the real time response from external stimuli (sensors, etc) to respond to changes in the environment, which works well for dynamic environments. These reactive motion planners may not have a solution
-Static obstacles known at the generation of map
-
- 
-
-Since we place few restrictions on the dynamic nature of the constraints one cannot always guarantee that the problem can be solved globally
-
-It appears the above statement is still correct to this day, at least in terms of guarunteeing a solution for a dynamic environment in which the dynamics are not known in full a priori 
- 
-Navigation functions represent an algorithmically complete closed loop solution to the planning problem
- 
- 
-
-Proposition 1 looks very familiar to Goncalves work for generating vector fields, excluding the time varying term.
-
- 
- },
 	file = {A Method for Modifying Closed-Loop Motion Plans to Satisfy Unpredictable Dynamic Constraints at Runtime.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\36TGXQ2D\\A Method for Modifying Closed-Loop Motion Plans to Satisfy Unpredictable Dynamic Constraints at Runtime.pdf:application/pdf}
 }
 
@@ -474,7 +312,6 @@ Proposition 1 looks very familiar to Goncalves work for generating vector fields
 	author = {Egeland, Olav and Gravdahl, Jan Tommy},
 	year = {2003},
 	note = {OCLC: 255655256},
-	annote = {Literaturverz. S. 627 - 634},
 	file = {Vision assisted autonomous path following for unmanned aerial vehicles.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\I6C3FQEB\\Vision assisted autonomous path following for unmanned aerial vehicles.pdf:application/pdf}
 }
 
@@ -847,7 +684,7 @@ Proposition 1 looks very familiar to Goncalves work for generating vector fields
 	publisher = {IEEE},
 	author = {Koren, Yoram and Borenstein, Johann},
 	year = {1991},
-	keywords = {Histogram, Obstacle, Potential Field},
+	keywords = {Histogram, Potential Field, Obstacle},
 	file = {Potential Field Methods and their inherent limitions for morbile robot navigation.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\TRAGE9GA\\Potential Field Methods and their inherent limitions for morbile robot navigation.pdf:application/pdf}
 }
 
@@ -855,16 +692,6 @@ Proposition 1 looks very familiar to Goncalves work for generating vector fields
 	title = {Lyapunov {Guidance} {Vector} {Fields} for {Unmanned} {Aircraft} {Applications}.pdf},
 	author = {Frew, Eric},
 	keywords = {Lyapunov, Loiter, Moving Targets, Dubins, Coordinate Transformation},
-	annote = {
-Vector field produces a globally attractive limit cycle
-(assuming they mean that the VF produces a region or line that the guidance points to)
-To account for wind, the scaling factor alpha must be modified
-Experimental flight data (notice how the path goes through the loiter circle, the guidance is just that guidance)
-
-
-
-Vector field stretched / Transformed into an elliptical or pill shape
-},
 	file = {Lyapunov Guidance Vector Fields for Unmanned Aircraft Applications.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\WEK2U8F2\\Lyapunov Guidance Vector Fields for Unmanned Aircraft Applications.pdf:application/pdf}
 }
 
@@ -913,11 +740,7 @@ Vector field stretched / Transformed into an elliptical or pill shape
 	author = {Griffiths, Stephen},
 	month = aug,
 	year = {2006},
-	keywords = {Dubins, Experiment, MAV, Vector Field, Wind},
-	annote = {
-Objective of this paper is to present a new method for MAVs to accurately follow curved paths in the presence of wind
-
- },
+	keywords = {Dubins, Vector Field, Wind, Experiment, MAV},
 	file = {Vector Field Approach for Curved Path Following for Miniature Aerial Vehicles.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\NFJD7TUK\\Vector Field Approach for Curved Path Following for Miniature Aerial Vehicles.pdf:application/pdf}
 }
 
@@ -930,47 +753,8 @@ Objective of this paper is to present a new method for MAVs to accurately follow
 	journal = {The international journal of robotics research},
 	author = {Khatib, Oussama},
 	year = {1986},
-	keywords = {Decay Function, Holonomic, Local Minima, Potential Field},
+	keywords = {Potential Field, Holonomic, Decay Function, Local Minima},
 	pages = {90--98},
-	annote = {
-Traditionally obstacle avoidance has been a high level controls problem (Esentially, don't even go in that area)
-PF lets you distribute avoidance into multiple layers of control
-PF implemented into a robotic manipulator
-Time varying Potential field for moving obstacles
-
- 
-
-Operational Space Formulation is the basis for the application of the potential field approach to robot manipulators
- 
-
-
-Paper focuses strongly on the fundamentals of the operational space formulation and the artificial potential field concept
-Lagrangian equation (minimal energy, principle of least action)
-
- 
-Artificial Potential Field Approach
-
-Presented in the context of manipulator collision avoidance
-
-
-The manipulator moves in a field of forces. The position to be reached is an attractive pole for the end effector and obstacles are repulsive surfaces for the manipulator parts
-
- 
-
-Artificial forces are applied to the manipulator from the PF, which are determined by the negative gradient
-The field, if interpreted straight up, will give both direction and magnitude. In this instance, the magnitude is limited to some v\_max, but the direction is maintained
-Obstacle field should be nonnegative, continuous, and differentiable, tend to infinity
-
- 
-
-Used a peicewise decay function (my words, not Khatib's) to limit the influence of the obstacle
-
- 
-
-Local minima can occur in the resultant potential field...this can lead to a stable positioning of the robot before reaching its goal
-
- 
- },
 	file = {Real-Time Obstacle Avoidance for Manipulators and Mobile Robots.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\9EKEA2BZ\\Real-Time Obstacle Avoidance for Manipulators and Mobile Robots.pdf:application/pdf}
 }
 
@@ -981,7 +765,7 @@ Local minima can occur in the resultant potential field...this can lead to a sta
 	booktitle = {The 9th {International} {Workshop} on {Advanced} {Motion} {Control} {March}},
 	author = {Masoud, Ahmad A.},
 	year = {2006},
-	keywords = {Harmonic Potential, Potential Field},
+	keywords = {Potential Field, Harmonic Potential},
 	pages = {27--29},
 	file = {Managing the Dynamic of a Potential Field-Guided Robot in a Cluttered Environment.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\VLXUHSJK\\Managing the Dynamic of a Potential Field-Guided Robot in a Cluttered Environment.pdf:application/pdf}
 }
@@ -1033,22 +817,12 @@ Local minima can occur in the resultant potential field...this can lead to a sta
 	file = {Multi-Agent Motion Planning and Coordination in Polygonal Environments using Vector Fields and Model Predictive Control.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\5B6N6QLV\\Multi-Agent Motion Planning and Coordination in Polygonal Environments using Vector Fields and Model Predictive Control.pdf:application/pdf}
 }
 
-@misc{noauthor_exact_nodate,
+@misc{rimon_exact_1992,
 	title = {Exact {Robot} {Navigation} {Using} {Artificial} {Potential} {Functions}.pdf},
+	publisher = {IEEE},
+	author = {Rimon, Elon},
+	year = {1992},
 	keywords = {Potential Field, Navigation Functions, Lagrangian},
-	annote = {
-Traditional robot navigation through an environment is done in 3 distinct and separate stages
-
-    Path planning - Given geometric data and goal, find a collision-free curve connecting the initial state and desired state. Vehicle dynamics are not considered
-Given the collision free curve, find the time parameterization for the curve under certain constraints
-A controller is designed to follow the reference trajectory as closely as possible
-
-
-
- 
-
-Potential field approach combines all of the three methods into a single step
-},
 	file = {Exact Robot Navigation Using Artificial Potential Functions.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\4JXC56VJ\\Exact Robot Navigation Using Artificial Potential Functions.pdf:application/pdf}
 }
 
@@ -1062,7 +836,6 @@ Potential field approach combines all of the three methods into a single step
 	year = {2012},
 	note = {OCLC: ocn724663112},
 	keywords = {Automatic control, Control systems, Drone aircraft, Guidance systems (Flight)},
-	annote = {Includes bibliographical references (p. [291]-298) and index},
 	file = {Small Unmanned Aircraft.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\NWPKVMUK\\Small Unmanned Aircraft.pdf:application/pdf}
 }
 
@@ -1124,12 +897,8 @@ Potential field approach combines all of the three methods into a single step
 	publisher = {IEEE},
 	author = {Frew, Eric W.},
 	year = {2007},
-	keywords = {Constant Velocity, Dubins, Lyapunov, Standoff Tracking, Uncertain Target, Vector Field, Wind},
+	keywords = {Lyapunov, Dubins, Vector Field, Wind, Constant Velocity, Uncertain Target, Standoff Tracking},
 	pages = {3277--3282},
-	annote = {
-Lyapunov based vector field
-elliptical field is constructed by applying a linear transformation with a non singular matrix whose values are determined from uncertainty in target position estimate
-},
 	file = {Cooperative Standoff Tracking of Uncertain Moving Targets using active robot networks.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\TSPEN9GD\\Cooperative Standoff Tracking of Uncertain Moving Targets using active robot networks.pdf:application/pdf}
 }
 
@@ -1156,8 +925,7 @@ elliptical field is constructed by applying a linear transformation with a non s
 	journal = {IEEE Transactions on Control Systems Technology},
 	author = {Kapitanyuk, Yuri A. and Proskurnikov, Anton V. and Cao, Ming},
 	year = {2017},
-	pages = {1--14},
-	file = {A Guiding Vector-Field Algorithm for Path-Following Control of Nonholonomic Mobile Robots.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\GCSC38UM\\A Guiding Vector-Field Algorithm for Path-Following Control of Nonholonomic Mobile Robots.pdf:application/pdf}
+	pages = {1--14}
 }
 
 @incollection{schmitt_obstacle_2016,
@@ -1211,7 +979,7 @@ elliptical field is constructed by applying a linear transformation with a non s
 	publisher = {Springer India},
 	author = {Suresh, B.N. and Sivan, K.},
 	year = {2015},
-	note = {DOI: 10.1007/978-81-322-2532-4},
+	doi = {10.1007/978-81-322-2532-4},
 	file = {Integrated Design for Space Transportation System.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\Q75XPYR8\\Integrated Design for Space Transportation System.pdf:application/pdf}
 }
 
@@ -1236,5 +1004,387 @@ elliptical field is constructed by applying a linear transformation with a non s
 	booktitle = {{AIAA} {Conference} of {Guidance}, {Navigation} and {Control} conference},
 	author = {Cichella, Venanzio and Xargay, Enric and Dobrokhodov, Vladimir and Kaminer, Isaac and Pascoal, António M. and Hovakimyan, Naira},
 	year = {2011},
-	file = {Geometric 3d path-following control for a fixed-wing on s03.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\CYGDKL63\\Geometric 3d path-following control for a fixed-wing on s03.pdf:application/pdf}
+	file = {Geometric 3d path-following control for a fixed-wing on s03.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\CYGDKL63\\Geometric 3d path-following control for a fixed-wing on s03.pdf:application/pdf;UAV path following for constant line of sight.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\KP5K62PU\\UAV path following for constant line of sight.pdf:application/pdf}
+}
+
+@inproceedings{liu_virtual-waypoint_2016,
+	title = {A virtual-waypoint based artificial potential field method for {UAV} path planning},
+	url = {http://ieeexplore.ieee.org/abstract/document/7828913/},
+	urldate = {2017-10-11},
+	booktitle = {Guidance, {Navigation} and {Control} {Conference} ({CGNCC}), 2016 {IEEE} {Chinese}},
+	publisher = {IEEE},
+	author = {Liu, Yuecheng and Zhao, Yongjia},
+	year = {2016},
+	keywords = {Potential Field, Local Minima, Path Planning},
+	pages = {949--953},
+	file = {A Virtual-Waypoint Based Artificial Potential Field Method for UAV Path Planning.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\AS9MIQAT\\A Virtual-Waypoint Based Artificial Potential Field Method for UAV Path Planning.pdf:application/pdf}
+}
+
+@article{baron_moderatormediator_1986,
+	title = {The moderator–mediator variable distinction in social psychological research: {Conceptual}, strategic, and statistical considerations.},
+	volume = {51},
+	shorttitle = {The moderator–mediator variable distinction in social psychological research},
+	url = {http://psycnet.apa.org/psycinfo/1987-13085-001},
+	number = {6},
+	urldate = {2017-10-12},
+	journal = {Journal of personality and social psychology},
+	author = {Baron, Reuben M. and Kenny, David A.},
+	year = {1986},
+	pages = {1173},
+	file = {UAVs backbround and issues for congress.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\8EPRRU4G\\UAVs backbround and issues for congress.pdf:application/pdf}
+}
+
+@misc{bone_uavs_2003,
+	title = {{UAVs} backbround and issues for congress.pdf},
+	publisher = {Congressional Research Service},
+	author = {Bone, Elizabeth},
+	year = {2003},
+	file = {UAVs backbround and issues for congress.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\W95D7ZZH\\UAVs backbround and issues for congress.pdf:application/pdf}
+}
+
+@inproceedings{yamasaki_advanced_2009,
+	title = {Advanced pure pursuit guidance via sliding mode approach for chase {UAV}},
+	volume = {6298},
+	booktitle = {Proceedings of {AIAA} {Guidance}, {Navigation} and {Control} {Conference}, {AIAA}},
+	author = {Yamasaki, Takeshi and Enomoto, Keisuke and Takano, Hiroyuki and Baba, Yoriaki and Balakrishnan, S. N.},
+	year = {2009},
+	pages = {2009},
+	file = {Advanced Pure Pursuit Guidance via Sliding Mode Approach for Chase UAV.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\C2V462S9\\Advanced Pure Pursuit Guidance via Sliding Mode Approach for Chase UAV.pdf:application/pdf}
+}
+
+@inproceedings{ariyur_autonomous_2008,
+	title = {Autonomous tracking of a ground vehicle by a {UAV}},
+	booktitle = {American {Control} {Conference}, 2008},
+	publisher = {IEEE},
+	author = {Ariyur, Kartik B. and Fregene, Kingsley O.},
+	year = {2008},
+	pages = {669--671},
+	file = {Autonomous Tracking of a Ground Vehicle by a UAV.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\IFY2YBQW\\Autonomous Tracking of a Ground Vehicle by a UAV.pdf:application/pdf}
+}
+
+@inproceedings{teuliere_chasing_2011,
+	title = {Chasing a moving target from a flying {UAV}},
+	booktitle = {Intelligent {Robots} and {Systems} ({IROS}), 2011 {IEEE}/{RSJ} {International} {Conference} on},
+	publisher = {IEEE},
+	author = {Teuliere, Celine and Eck, Laurent and Marchand, Eric},
+	year = {2011},
+	pages = {4929--4934},
+	file = {Chasing a moving target from a flying UAV.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\VANY7D7Q\\Chasing a moving target from a flying UAV.pdf:application/pdf}
+}
+
+@inproceedings{baek_optimal_2013-1,
+	title = {Optimal path planning of a target-following fixed-wing {UAV} using sequential decision processes},
+	isbn = {978-1-4673-6358-7 978-1-4673-6357-0},
+	url = {http://ieeexplore.ieee.org/document/6696775/},
+	doi = {10.1109/IROS.2013.6696775},
+	urldate = {2017-10-22},
+	publisher = {IEEE},
+	author = {Baek, Stanley S. and {Hyukseong Kwon} and Yoder, Josiah A. and Pack, Daniel},
+	month = nov,
+	year = {2013},
+	pages = {2955--2962},
+	file = {Optimal path planning of a target-following fixed-wing uav using sequential decision processes.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\CZCNW626\\Optimal path planning of a target-following fixed-wing uav using sequential decision processes.pdf:application/pdf}
+}
+
+@inproceedings{lee_strategies_2003,
+	title = {Strategies of path-planning for a {UAV} to track a ground vehicle},
+	volume = {2003},
+	booktitle = {{AINS} {Conference}},
+	author = {Lee, Jusuk and Huang, Rosemary and Vaughn, Andrew and Xiao, Xiao and Hedrick, J. Karl and Zennaro, Marco and Sengupta, Raja},
+	year = {2003},
+	file = {Strategies of path-planning for a uav to track a ground vehicle.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\XTCTSIJD\\Strategies of path-planning for a uav to track a ground vehicle.pdf:application/pdf}
+}
+
+@inproceedings{wise_uav_2006,
+	title = {{UAV} coordination for autonomous target tracking},
+	booktitle = {Proceedings of the {AIAA} {Guidance}, {Navigation}, and {Control} {Conference}, {Keystone}, {CO}, {Aug}},
+	author = {Wise, Richard A. and Rysdyk, Rolf T.},
+	year = {2006},
+	pages = {21--24},
+	file = {UAV coordination for autonomous target tracking.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\DIRKX25E\\UAV coordination for autonomous target tracking.pdf:application/pdf}
+}
+
+@article{md_simplex_2017,
+	title = {Simplex {Solutions} for {Optimal} {Control} {Flight} {Paths} in {Urban} {Environments}},
+	volume = {06},
+	issn = {21689792},
+	url = {https://www.omicsonline.org/open-access/simplex-solutions-for-optimal-control-flight-paths-in-urban-environments-2168-9792-1000197.php?aid=93708},
+	doi = {10.4172/2168-9792.1000197},
+	number = {03},
+	urldate = {2017-10-25},
+	journal = {Journal of Aeronautics \& Aerospace Engineering},
+	author = {Md, Zollars and Rg, Cobb and Dj, Grymin},
+	year = {2017},
+	file = {simplex-solutions-for-optimal-control-flight-paths-in-urban-environments-2168-9792-1000197.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\95C9MRQX\\simplex-solutions-for-optimal-control-flight-paths-in-urban-environments-2168-9792-1000197.pdf:application/pdf}
+}
+
+@inproceedings{goncalves_circulation_2010,
+	title = {Circulation of curves using vector fields: actual robot experiments in 2D and 3D workspaces},
+	shorttitle = {Circulation of curves using vector fields},
+	booktitle = {Robotics and {Automation} ({ICRA}), 2010 {IEEE} {International} {Conference} on},
+	publisher = {IEEE},
+	author = {Gonçalves, Vinícius M. and Pimenta, Luciano CA and Maia, Carlos A. and Pereira, Guilherme AS and Dutra, Bruno CO and Michael, Nathan and Fink, Jonathan and Kumar, Vijay},
+	year = {2010},
+	pages = {1136--1141},
+	file = {Circulation of curves using vector fields actual robot experiments in 2d and 3d workspaces.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\YWJQD42F\\Circulation of curves using vector fields actual robot experiments in 2d and 3d workspaces.pdf:application/pdf}
+}
+
+@article{barton_fundamentals_2012,
+	title = {Fundamentals of small unmanned aircraft flight},
+	volume = {31},
+	number = {2},
+	journal = {Johns Hopkins APL technical digest},
+	author = {Barton, Jeffrey D.},
+	year = {2012},
+	pages = {132--149},
+	file = {Fundamentals of Small Unmanned Aircraft Flight.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\6MBZXSXA\\Fundamentals of Small Unmanned Aircraft Flight.pdf:application/pdf}
+}
+
+@article{nelson_vector_2007,
+	title = {Vector {Field} {Path} {Following} for {Miniature} {Air} {Vehicles}},
+	volume = {23},
+	issn = {1552-3098},
+	url = {http://ieeexplore.ieee.org/document/4252175/},
+	doi = {10.1109/TRO.2007.898976},
+	number = {3},
+	urldate = {2017-11-07},
+	journal = {IEEE Transactions on Robotics},
+	author = {Nelson, D.R. and Barber, D.B. and McLain, T.W. and Beard, R.W.},
+	month = jun,
+	year = {2007},
+	pages = {519--529},
+	file = {Vector Field Path Following for MAV.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\C6QQZTCQ\\Vector Field Path Following for MAV.pdf:application/pdf}
+}
+
+@article{wilhelm_direct_2017,
+	title = {Direct {Entry} {Minimal} {Path} {UAV} {Loitering} {Path} {Planning}},
+	volume = {4},
+	issn = {2226-4310},
+	url = {http://www.mdpi.com/2226-4310/4/2/23},
+	doi = {10.3390/aerospace4020023},
+	abstract = {Fixed Wing Unmanned Aerial Vehicles (UAVs) performing Intelligence, Surveillance and Reconnaissance (ISR) typically ﬂy over Areas of Interest (AOIs) to collect sensor data of the ground from the air. If needed, the traditional method of extending sensor collection time is to loiter or turn circularly around the center of an AOI. Current Autopilot systems on small UAVs can be limited in their feature set and typically follow a waypoint chain system that allows for loitering, but requires that the center of the AOI to be traversed which may produce unwanted turns outside of the AOI before entering the loiter. An investigation was performed to compare the current loitering techniques against two novel smart loitering methods. The ﬁrst method investigated, Tangential Loitering Path Planner (TLPP), utilized paths tangential to the AOIs to enter and exit efﬁciently, eliminating unnecessary turns outside of the AOI. The second method, Least Distance Loitering Path Planner (LDLPP), utilized four unique ﬂight maneuvers that reduce transit distances while eliminating unnecessary turns outside of the AOI present in the TLPP method. Simulation results concluded that the Smart Loitering Methods provide better AOI coverage during six mission scenarios. It was also determined that the LDLPP method spends less time in transit between AOIs. The reduction in required transit time could be used for surveying additional AOIs.},
+	language = {en},
+	number = {2},
+	urldate = {2018-04-16},
+	journal = {Aerospace},
+	author = {Wilhelm, Jay and Clem, Garrett and Eberhart, Gina},
+	month = apr,
+	year = {2017},
+	pages = {23},
+	file = {Wilhelm et al. - 2017 - Direct Entry Minimal Path UAV Loitering Path Plann.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\BHIPZVPN\\Wilhelm et al. - 2017 - Direct Entry Minimal Path UAV Loitering Path Plann.pdf:application/pdf}
+}
+
+@article{kim_escaping_2009,
+	title = {Escaping route method for a trap situation in local path planning},
+	volume = {7},
+	issn = {1598-6446},
+	url = {http://link.springer.com/10.1007/s12555-009-0320-7},
+	doi = {10.1007/s12555-009-0320-7},
+	abstract = {This paper introduces a new framework for escaping from a local minimum in path planning based on artificial potential functions (APFs). In particular, this paper presents a set of analytical guidelines for designing potential functions to avoid local minima in a trap situation (in this case, the robot is trapped in a local minimum by the potential of obstacles). The virtual escaping route method is proposed to allow a robot to escape from a local minimum in a trap situation where the total forces are composed of repulsive forces by obstacles and attractive force by a goal are zero. The example results show that the proposed scheme can effectively construct a path planning system with the capability of reaching a goal and avoiding obstacles, despite a trapped situation under possible local minima.},
+	language = {en},
+	number = {3},
+	urldate = {2018-05-17},
+	journal = {International Journal of Control, Automation and Systems},
+	author = {Kim, Dong Hun},
+	month = jun,
+	year = {2009},
+	pages = {495--500},
+	file = {Kim - 2009 - Escaping route method for a trap situation in loca.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\MQYGRB8K\\Kim - 2009 - Escaping route method for a trap situation in loca.pdf:application/pdf}
+}
+
+@inproceedings{li_efficient_2012,
+	title = {An efficient improved artificial potential field based regression search method for robot path planning},
+	isbn = {978-1-4673-1278-3 978-1-4673-1275-2 978-1-4673-1277-6},
+	url = {http://ieeexplore.ieee.org/document/6283526/},
+	doi = {10.1109/ICMA.2012.6283526},
+	abstract = {Path planning field for autonomous mobile robot is an optimization problem that involves computing a collisionfree path between initial location and goal location. In this paper, we present an improved artificial potential field based regression search (Improved APF-based RS) method which can obtain a global sub-optimal/optimal path efficiently without local minima and oscillations in complete known environment information. We redefine potential functions to eliminate non-reachable and local minima problems, and utilize virtual local target for robot to escape oscillations. Due to the planned path by improved APF is not the shortest/approximate shortest trajectory, we develop a regression search (RS) method to optimize the planned path. The optimization path is calculated by connecting the sequential points which produced by improved APF. Amount of simulations demonstrate that the improved APF method very easily escape from local minima and oscillatory movements. Moreover, the simulation results confirm that our proposed path planning approach could always calculate a more global optimal/nearoptimal, collision-free and safety path to its destination compare with general APF. That proves our improved APF-based RS method very feasibility and efficiency to solve path planning which is a NP-hard problem for autonomous mobile robot.},
+	urldate = {2018-03-14},
+	publisher = {IEEE},
+	author = {Li, Guanghui and Yamashita, Atsushi and Asama, Hajime and Tamura, Yusuke},
+	month = aug,
+	year = {2012},
+	pages = {1227--1232},
+	file = {Li et al. - 2012 - An efficient improved artificial potential field b.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\A3S7DJ78\\Li et al. - 2012 - An efficient improved artificial potential field b.pdf:application/pdf}
+}
+
+@inproceedings{lei_tang_novel_2010,
+	title = {A novel potential field method for obstacle avoidance and path planning of mobile robot},
+	isbn = {978-1-4244-5537-9},
+	url = {http://ieeexplore.ieee.org/document/5565069/},
+	doi = {10.1109/ICCSIT.2010.5565069},
+	abstract = {This paper presents a novel artificial potential field method for obstacle avoidance and path planning of mobile robots. By analyzing the shortcoming of the artificial potential field methods for robot path planning, we propose an obstacle avoidance method based on gravity chain. Suppose that there is a rubber band which connects with the beginning and the ending in the obstacle potential field space. As the rubber band will be the role of potential field power, we can build a model to simulate the shape of the rubber band. Then this method will generate a steer angle tangent to the rubber band instead of the angle of artificial potential field. By putting effective obstacle avoidance information into potential field through gravity chain, we solve the problems that the artificial potential field method often converges to local minima, as well as it hardly reach the ending and oscillatory movement. The Simulation results show that the method proposed is correct and effective.},
+	urldate = {2018-03-14},
+	publisher = {IEEE},
+	author = {{Lei Tang} and {Songyi Dian} and {Gangxu Gu} and {Kunli Zhou} and {Suihe Wang} and {Xinghuan Feng}},
+	month = jul,
+	year = {2010},
+	pages = {633--637},
+	file = {Lei Tang et al. - 2010 - A novel potential field method for obstacle avoida.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\WB7G35R5\\Lei Tang et al. - 2010 - A novel potential field method for obstacle avoida.pdf:application/pdf}
+}
+
+
+
+
+
+
+@article{fernandez_galarreta_uav-based_2015,
+	title = {{UAV}-based urban structural damage assessment using object-based image analysis and semantic reasoning},
+	volume = {15},
+	issn = {1684-9981},
+	url = {http://www.nat-hazards-earth-syst-sci.net/15/1087/2015/},
+	doi = {10.5194/nhess-15-1087-2015},
+	abstract = {Structural damage assessment is critical after disasters but remains a challenge. Many studies have explored the potential of remote sensing data, but limitations of vertical data persist. Oblique imagery has been identiﬁed as more useful, though the multi-angle imagery also adds a new dimension of complexity. This paper addresses damage assessment based on multi-perspective, overlapping, very high resolution oblique images obtained with unmanned aerial vehicles (UAVs). 3-D point-cloud assessment for the entire building is combined with detailed object-based image analysis (OBIA) of façades and roofs. This research focuses not on automatic damage assessment, but on creating a methodology that supports the often ambiguous classiﬁcation of intermediate damage levels, aiming at producing comprehensive per-building damage scores. We identify completely damaged structures in the 3-D point cloud, and for all other cases provide the OBIA-based damage indicators to be used as auxiliary information by damage analysts. The results demonstrate the usability of the 3-D point-cloud data to identify major damage features. Also the UAV-derived and OBIA-processed oblique images are shown to be a suitable basis for the identiﬁcation of detailed damage features on façades and roofs. Finally, we also demonstrate the possibility of aggregating the multi-perspective damage information at building level.},
+	language = {en},
+	number = {6},
+	urldate = {2018-05-28},
+	journal = {Natural Hazards and Earth System Science},
+	author = {Fernandez Galarreta, J. and Kerle, N. and Gerke, M.},
+	month = jun,
+	year = {2015},
+	pages = {1087--1101},
+	file = {Fernandez Galarreta et al. - 2015 - UAV-based urban structural damage assessment using.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\8DUIBZJK\\Fernandez Galarreta et al. - 2015 - UAV-based urban structural damage assessment using.pdf:application/pdf}
+}
+
+@article{remondino_uav_2012,
+	title = {UAV Photogrammetry for Mapping and 3D Modeling - Current Status and Future Perspectives},
+	volume = {XXXVIII-1/C22},
+	issn = {1682-1777},
+	url = {http://www.int-arch-photogramm-remote-sens-spatial-inf-sci.net/XXXVIII-1-C22/25/2011/},
+	doi = {10.5194/isprsarchives-XXXVIII-1-C22-25-2011},
+	abstract = {UAV platforms are nowadays a valuable source of data for inspection, surveillance, mapping and 3D modeling issues. New applications in the short- and close-range domain are introduced, being the UAVs a low-cost alternatives to the classical manned aerial photogrammetry. Rotary or fixed wing UAVs, capable of performing the photogrammetric data acquisition with amateur or SLR digital cameras, can fly in manual, semi-automated and autonomous modes. With a typical photogrammetric pipeline, 3D results like DSM/DTM, contour lines, textured 3D models, vector data, etc. can be produced, in a reasonable automated way. The paper reports the latest developments of UAV image processing methods for photogrammetric applications, mapping and 3D modeling issues. Automation is nowadays necessary and feasible at the image orientation, DSM generation and orthophoto production stages, while accurate feature extraction is still an interactive procedure. New perspectives are also addressed.},
+	language = {en},
+	urldate = {2018-05-28},
+	journal = {ISPRS - International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences},
+	author = {Remondino, F. and Barazzetti, L. and Nex, F. and Scaioni, M. and Sarazzi, D.},
+	month = sep,
+	year = {2012},
+	pages = {25--31},
+	file = {Remondino et al. - 2012 - UAV PHOTOGRAMMETRY FOR MAPPING AND 3D MODELING – C.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\2H4HXIHX\\Remondino et al. - 2012 - UAV PHOTOGRAMMETRY FOR MAPPING AND 3D MODELING – C.pdf:application/pdf}
+}
+
+
+@inproceedings{osborne_waypoint_2005,
+	title = {Waypoint {Guidance} for {Small} {UAVs} in {Wind}},
+	isbn = {978-1-62410-069-7},
+	url = {http://arc.aiaa.org/doi/10.2514/6.2005-6951},
+	doi = {10.2514/6.2005-6951},
+	language = {en},
+	urldate = {2018-06-15},
+	publisher = {American Institute of Aeronautics and Astronautics},
+	author = {Osborne, John and Rysdyk, Rolf},
+	month = sep,
+	year = {2005},
+	file = {Osborne and Rysdyk - 2005 - Waypoint Guidance for Small UAVs in Wind.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\XZEESCTY\\Osborne and Rysdyk - 2005 - Waypoint Guidance for Small UAVs in Wind.pdf:application/pdf}
+}
+
+@inproceedings{rhee2010tight,
+	title={A tight path following algorithm of an UAS based on PID control},
+	author={Rhee, Ihnseok and Park, Sanghyuk and Ryoo, Chang-Kyung},
+	booktitle={SICE Annual Conference 2010, Proceedings of},
+	pages={1270--1273},
+	year={2010},
+	organization={IEEE}
+}
+
+
+
+
+@article{ratnoo_adaptive_2011,
+	title = {Adaptive {Optimal} {Path} {Following} for {High} {Wind} {Flights}},
+	volume = {44},
+	issn = {14746670},
+	url = {http://linkinghub.elsevier.com/retrieve/pii/S147466701645706X},
+	doi = {10.3182/20110828-6-IT-1002.03720},
+	abstract = {Unmanned aerial vehicle path following is addressed as an inﬁnite horizon regulator problem. Using the linear quadratic regulator technique an optimal guidance law is derived. The state weighting matrix is chosen as a function of the position error and this adaptive nature of the cost function controls the UAV errors tightly. Numerical simulations are carried out for straight line and circular paths under various wind conditions. Results show considerably lower position errors as compared to an existing guidance law. Path following with winds up to half the vehicle airspeed is achieved.},
+	language = {en},
+	number = {1},
+	urldate = {2018-06-15},
+	journal = {IFAC Proceedings Volumes},
+	author = {Ratnoo, Ashwini and Sujit, P.B. and Kothari, Mangal},
+	month = jan,
+	year = {2011},
+	pages = {12985--12990},
+	file = {Ratnoo et al. - 2011 - Adaptive Optimal Path Following for High Wind Flig.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\PWRNNZBS\\Ratnoo et al. - 2011 - Adaptive Optimal Path Following for High Wind Flig.pdf:application/pdf}
+}
+
+
+
+
+@article{park2007performance,
+	title={Performance and lyapunov stability of a nonlinear path following guidance method},
+	author={Park, Sanghyuk and Deyst, John and How, Jonathan P},
+	journal={Journal of Guidance, Control, and Dynamics},
+	volume={30},
+	number={6},
+	pages={1718--1728},
+	year={2007}
+}
+
+
+
+
+@inproceedings{park_new_2004,
+	title = {A {New} {Nonlinear} {Guidance} {Logic} for {Trajectory} {Tracking}.pdf},
+	doi = {https://doi.org/10.2514/6.2004-4900},
+	publisher = {AIAA},
+	author = {Park, S and Deyst, J and How, J},
+	year = {2004},
+	file = {A New Nonlinear Guidance Logic for Trajectory Tracking.pdf:C\:\\Users\\gc117711\\Zotero\\storage\\7LUQDKZV\\A New Nonlinear Guidance Logic for Trajectory Tracking.pdf:application/pdf}
+}
+
+
+
+@online{pix,
+	author = {DroneCode},
+	title = {{Pixhawk 1 Flight Controller} Guide},
+	year = 2018,
+	url = {https://docs.px4.io/en/flight_controller/pixhawk.html},
+	urldate = {2018-05-22}
+}
+
+
+
+@online{piccolo,
+	author = {Cloud Cap Technology},
+	title = {{Piccolo Autopilot}},
+	year = 2018,
+	url = {http://www.cloudcaptech.com/},
+	urldate = {2018-05-28}
+}
+
+
+@online{kestrel,
+	author = {Lockheed Martin},
+	title = {{Kestral Flight Systems And Autopilot}},
+	year = 2018,
+	url = {https://www.lockheedmartin.com/en-us/products/procerus-technologies/kestrel.html},
+	urldate = {2018-05-25}
+}
+
+@online{qgc,
+	author = {DroneCode},
+	title = {{QGroundControl - Intuitative and powerful ground control station for PX4 and ArduPilot UAVs}},
+	year = 2018,
+	url = {http://qgroundcontrol.com/},
+	urldate = {2018-05-25}
+}
+
+
+
+
+@book{austin2011unmanned,
+	title={Unmanned aircraft systems: UAVS design, development and deployment},
+	author={Austin, Reg},
+	volume={54},
+	year={2011},
+	publisher={John Wiley \& Sons}
+}
+
+
+
+@ARTICLE {wilhelm_2019,
+	author  = "Jay P. Wilhelm",
+	title   = "Circumnavigation and obstacle avoidance guidance for UAVs using Gradient Vector Fields",
+	journal = "AIAA",
+	year    = "2019"
 }
